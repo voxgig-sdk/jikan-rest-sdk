@@ -1,0 +1,100 @@
+{
+  "existing": {
+    "anime": {
+      "ANIME00": {
+        "author_url": "sbe",
+        "author_username": "sbf",
+        "character": {},
+        "comment": "sc1",
+        "data": {},
+        "date": "sc3",
+        "entry": {},
+        "image": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "sc8",
+        "pagination": {},
+        "person": {},
+        "position": [],
+        "relation": "scc",
+        "role": "scd",
+        "title": "sce",
+        "url": "scf",
+        "voice_actor": [],
+        "episode": "EPISODE01",
+        "id": "ANIME00"
+      },
+      "ANIME01": {
+        "author_url": "s17c",
+        "author_username": "s17d",
+        "character": {},
+        "comment": "s17f",
+        "data": {},
+        "date": "s181",
+        "entry": {},
+        "image": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s186",
+        "pagination": {},
+        "person": {},
+        "position": [],
+        "relation": "s18a",
+        "role": "s18b",
+        "title": "s18c",
+        "url": "s18d",
+        "voice_actor": [],
+        "episode": "EPISODE01",
+        "id": "ANIME01"
+      },
+      "ANIME02": {
+        "author_url": "s23a",
+        "author_username": "s23b",
+        "character": {},
+        "comment": "s23d",
+        "data": {},
+        "date": "s23f",
+        "entry": {},
+        "image": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s244",
+        "pagination": {},
+        "person": {},
+        "position": [],
+        "relation": "s248",
+        "role": "s249",
+        "title": "s24a",
+        "url": "s24b",
+        "voice_actor": [],
+        "episode": "EPISODE01",
+        "id": "ANIME02"
+      }
+    }
+  },
+  "new": {
+    "anime": {
+      "anime_ref01": {
+        "author_url": "s2f8",
+        "author_username": "s2f9",
+        "character": {},
+        "comment": "s2fb",
+        "data": {},
+        "date": "s2fd",
+        "entry": {},
+        "image": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s302",
+        "pagination": {},
+        "person": {},
+        "position": [],
+        "relation": "s306",
+        "role": "s307",
+        "title": "s308",
+        "url": "s309",
+        "voice_actor": []
+      }
+    }
+  }
+}

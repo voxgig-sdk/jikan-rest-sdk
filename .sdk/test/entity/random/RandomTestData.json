@@ -1,0 +1,25 @@
+{
+  "existing": {
+    "random": {
+      "RANDOM00": {
+        "data": {},
+        "id": "RANDOM00"
+      },
+      "RANDOM01": {
+        "data": {},
+        "id": "RANDOM01"
+      },
+      "RANDOM02": {
+        "data": {},
+        "id": "RANDOM02"
+      }
+    }
+  },
+  "new": {
+    "random": {
+      "random_ref01": {
+        "data": {}
+      }
+    }
+  }
+}

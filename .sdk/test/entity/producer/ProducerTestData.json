@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "producer": {
+      "PRODUCER00": {
+        "data": {},
+        "name": "s29",
+        "pagination": {},
+        "url": "s2b",
+        "id": "PRODUCER00"
+      },
+      "PRODUCER01": {
+        "data": {},
+        "name": "s51",
+        "pagination": {},
+        "url": "s53",
+        "id": "PRODUCER01"
+      },
+      "PRODUCER02": {
+        "data": {},
+        "name": "s79",
+        "pagination": {},
+        "url": "s7b",
+        "id": "PRODUCER02"
+      }
+    }
+  },
+  "new": {
+    "producer": {
+      "producer_ref01": {
+        "data": {},
+        "name": "sa1",
+        "pagination": {},
+        "url": "sa3"
+      }
+    }
+  }
+}

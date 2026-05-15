@@ -1,0 +1,22 @@
+# BasicWatchPromoFlow
+
+main: kit: flow: BasicWatchPromoFlow:
+{
+  entity: "watch_promo",
+  kind: "basic",
+  name: "BasicWatchPromoFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "watch_promo_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWatchPromoFlow"
+}

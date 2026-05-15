@@ -1,0 +1,63 @@
+# Entity: user_update
+
+main: kit: entity: user_update: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "data"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "user_update"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "username"
+                orig: "username"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/users/{username}/userupdates"
+          parts: [
+            "users"
+            "{username}"
+            "userupdates"
+          ]
+          select: {
+            exist: [
+              "username"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "user"
+      ]
+    ]
+  }
+
+
+
+}

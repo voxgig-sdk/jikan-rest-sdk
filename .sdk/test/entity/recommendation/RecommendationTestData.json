@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "recommendation": {
+      "RECOMMENDATION00": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "RECOMMENDATION00"
+      },
+      "RECOMMENDATION01": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "RECOMMENDATION01"
+      },
+      "RECOMMENDATION02": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "RECOMMENDATION02"
+      }
+    }
+  },
+  "new": {
+    "recommendation": {
+      "recommendation_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

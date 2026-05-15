@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "character": {
+      "CHARACTER00": {
+        "anime": {},
+        "data": {},
+        "image_url": "s5c",
+        "language": "s5d",
+        "large_image_url": "s5e",
+        "manga": {},
+        "pagination": {},
+        "person": {},
+        "role": "s62",
+        "id": "CHARACTER00"
+      },
+      "CHARACTER01": {
+        "anime": {},
+        "data": {},
+        "image_url": "sb6",
+        "language": "sb7",
+        "large_image_url": "sb8",
+        "manga": {},
+        "pagination": {},
+        "person": {},
+        "role": "sbc",
+        "id": "CHARACTER01"
+      },
+      "CHARACTER02": {
+        "anime": {},
+        "data": {},
+        "image_url": "s110",
+        "language": "s111",
+        "large_image_url": "s112",
+        "manga": {},
+        "pagination": {},
+        "person": {},
+        "role": "s116",
+        "id": "CHARACTER02"
+      }
+    }
+  },
+  "new": {
+    "character": {
+      "character_ref01": {
+        "anime": {},
+        "data": {},
+        "image_url": "s16a",
+        "language": "s16b",
+        "large_image_url": "s16c",
+        "manga": {},
+        "pagination": {},
+        "person": {},
+        "role": "s170"
+      }
+    }
+  }
+}

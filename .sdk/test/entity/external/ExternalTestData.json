@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "external": {
+      "EXTERNAL00": {
+        "name": "s14",
+        "url": "s15",
+        "username": "USERNAME01",
+        "id": "EXTERNAL00"
+      },
+      "EXTERNAL01": {
+        "name": "s28",
+        "url": "s29",
+        "username": "USERNAME01",
+        "id": "EXTERNAL01"
+      },
+      "EXTERNAL02": {
+        "name": "s3c",
+        "url": "s3d",
+        "username": "USERNAME01",
+        "id": "EXTERNAL02"
+      }
+    }
+  },
+  "new": {
+    "external": {
+      "external_ref01": {
+        "name": "s50",
+        "url": "s51"
+      }
+    }
+  }
+}

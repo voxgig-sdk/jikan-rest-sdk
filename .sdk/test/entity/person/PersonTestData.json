@@ -1,0 +1,53 @@
+{
+  "existing": {
+    "person": {
+      "PERSON00": {
+        "anime": {},
+        "character": {},
+        "data": {},
+        "jpg": {},
+        "manga": {},
+        "pagination": {},
+        "position": "s56",
+        "role": "s57",
+        "id": "PERSON00"
+      },
+      "PERSON01": {
+        "anime": {},
+        "character": {},
+        "data": {},
+        "jpg": {},
+        "manga": {},
+        "pagination": {},
+        "position": "sa6",
+        "role": "sa7",
+        "id": "PERSON01"
+      },
+      "PERSON02": {
+        "anime": {},
+        "character": {},
+        "data": {},
+        "jpg": {},
+        "manga": {},
+        "pagination": {},
+        "position": "sf6",
+        "role": "sf7",
+        "id": "PERSON02"
+      }
+    }
+  },
+  "new": {
+    "person": {
+      "person_ref01": {
+        "anime": {},
+        "character": {},
+        "data": {},
+        "jpg": {},
+        "manga": {},
+        "pagination": {},
+        "position": "s146",
+        "role": "s147"
+      }
+    }
+  }
+}

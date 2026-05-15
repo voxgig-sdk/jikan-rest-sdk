@@ -1,0 +1,22 @@
+# BasicPeopleSearchFlow
+
+main: kit: flow: BasicPeopleSearchFlow:
+{
+  entity: "people_search",
+  kind: "basic",
+  name: "BasicPeopleSearchFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "people_search_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPeopleSearchFlow"
+}

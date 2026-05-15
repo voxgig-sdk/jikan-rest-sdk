@@ -1,0 +1,26 @@
+# BasicUserClubFlow
+
+main: kit: flow: BasicUserClubFlow:
+{
+  entity: "user_club",
+  kind: "basic",
+  name: "BasicUserClubFlow",
+  step: [
+    {
+      match: {
+        username: "username01"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "user_club_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserClubFlow"
+}

@@ -1,0 +1,83 @@
+# Entity: user_history
+
+main: kit: entity: user_history: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "entry"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "increment"
+      req: false
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "user_history"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "username"
+                orig: "username"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/users/{username}/history"
+          parts: [
+            "users"
+            "{username}"
+            "history"
+          ]
+          select: {
+            exist: [
+              "type"
+              "username"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "users"
+      ]
+    ]
+  }
+
+
+
+}

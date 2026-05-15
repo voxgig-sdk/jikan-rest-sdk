@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "user_club": {
+      "USER_CLUB00": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_CLUB00"
+      },
+      "USER_CLUB01": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_CLUB01"
+      },
+      "USER_CLUB02": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_CLUB02"
+      }
+    }
+  },
+  "new": {
+    "user_club": {
+      "user_club_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+# Entity: user_statistic
+
+main: kit: entity: user_statistic: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "data"
+      req: false
+      type: "`$OBJECT`"
+    }
+  ]
+
+  name: "user_statistic"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "username"
+                orig: "username"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/users/{username}/statistics"
+          parts: [
+            "users"
+            "{username}"
+            "statistics"
+          ]
+          select: {
+            exist: [
+              "username"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "user"
+      ]
+    ]
+  }
+
+
+
+}

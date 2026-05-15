@@ -1,0 +1,26 @@
+# BasicUserFriendFlow
+
+main: kit: flow: BasicUserFriendFlow:
+{
+  entity: "user_friend",
+  kind: "basic",
+  name: "BasicUserFriendFlow",
+  step: [
+    {
+      match: {
+        username: "username01"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "user_friend_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserFriendFlow"
+}

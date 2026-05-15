@@ -1,0 +1,22 @@
+# BasicMagazineFlow
+
+main: kit: flow: BasicMagazineFlow:
+{
+  entity: "magazine",
+  kind: "basic",
+  name: "BasicMagazineFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "magazine_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMagazineFlow"
+}

@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "user": {
+      "USER00": {
+        "data": "s14",
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER00"
+      },
+      "USER01": {
+        "data": "s28",
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER01"
+      },
+      "USER02": {
+        "data": "s3c",
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER02"
+      }
+    }
+  },
+  "new": {
+    "user": {
+      "user_ref01": {
+        "data": "s50",
+        "pagination": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# BasicUserUpdateFlow
+
+main: kit: flow: BasicUserUpdateFlow:
+{
+  entity: "user_update",
+  kind: "basic",
+  name: "BasicUserUpdateFlow",
+  step: [
+    {
+      input: {
+        ref: "user_update_ref01",
+        srcdatavar: "user_update_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "user_update01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-user_update_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserUpdateFlow"
+}

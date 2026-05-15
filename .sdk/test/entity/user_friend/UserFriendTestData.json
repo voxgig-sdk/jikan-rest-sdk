@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "user_friend": {
+      "USER_FRIEND00": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_FRIEND00"
+      },
+      "USER_FRIEND01": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_FRIEND01"
+      },
+      "USER_FRIEND02": {
+        "data": [],
+        "pagination": {},
+        "username": "USERNAME01",
+        "id": "USER_FRIEND02"
+      }
+    }
+  },
+  "new": {
+    "user_friend": {
+      "user_friend_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "user_history": {
+      "USER_HISTORY00": {
+        "date": "s1e",
+        "entry": {},
+        "increment": "s20",
+        "username": "USERNAME01",
+        "id": "USER_HISTORY00"
+      },
+      "USER_HISTORY01": {
+        "date": "s3c",
+        "entry": {},
+        "increment": "s3e",
+        "username": "USERNAME01",
+        "id": "USER_HISTORY01"
+      },
+      "USER_HISTORY02": {
+        "date": "s5a",
+        "entry": {},
+        "increment": "s5c",
+        "username": "USERNAME01",
+        "id": "USER_HISTORY02"
+      }
+    }
+  },
+  "new": {
+    "user_history": {
+      "user_history_ref01": {
+        "date": "s78",
+        "entry": {},
+        "increment": "s7a"
+      }
+    }
+  }
+}

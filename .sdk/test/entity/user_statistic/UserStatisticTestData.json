@@ -1,0 +1,28 @@
+{
+  "existing": {
+    "user_statistic": {
+      "USER_STATISTIC00": {
+        "data": {},
+        "username": "USERNAME01",
+        "id": "USER_STATISTIC00"
+      },
+      "USER_STATISTIC01": {
+        "data": {},
+        "username": "USERNAME01",
+        "id": "USER_STATISTIC01"
+      },
+      "USER_STATISTIC02": {
+        "data": {},
+        "username": "USERNAME01",
+        "id": "USER_STATISTIC02"
+      }
+    }
+  },
+  "new": {
+    "user_statistic": {
+      "user_statistic_ref01": {
+        "data": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# BasicUserAboutFlow
+
+main: kit: flow: BasicUserAboutFlow:
+{
+  entity: "user_about",
+  kind: "basic",
+  name: "BasicUserAboutFlow",
+  step: [
+    {
+      match: {
+        username: "username01"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "user_about_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserAboutFlow"
+}

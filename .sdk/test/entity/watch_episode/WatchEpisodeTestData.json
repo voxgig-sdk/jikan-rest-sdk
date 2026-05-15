@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "watch_episode": {
+      "WATCH_EPISODE00": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_EPISODE00"
+      },
+      "WATCH_EPISODE01": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_EPISODE01"
+      },
+      "WATCH_EPISODE02": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_EPISODE02"
+      }
+    }
+  },
+  "new": {
+    "watch_episode": {
+      "watch_episode_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

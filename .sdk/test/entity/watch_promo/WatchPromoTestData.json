@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "watch_promo": {
+      "WATCH_PROMO00": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_PROMO00"
+      },
+      "WATCH_PROMO01": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_PROMO01"
+      },
+      "WATCH_PROMO02": {
+        "data": [],
+        "pagination": {},
+        "id": "WATCH_PROMO02"
+      }
+    }
+  },
+  "new": {
+    "watch_promo": {
+      "watch_promo_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

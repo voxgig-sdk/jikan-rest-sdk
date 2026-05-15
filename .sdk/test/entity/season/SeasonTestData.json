@@ -1,0 +1,37 @@
+{
+  "existing": {
+    "season": {
+      "SEASON00": {
+        "data": [],
+        "pagination": {},
+        "season": [],
+        "year": "s2b",
+        "id": "SEASON00"
+      },
+      "SEASON01": {
+        "data": [],
+        "pagination": {},
+        "season": [],
+        "year": "s53",
+        "id": "SEASON01"
+      },
+      "SEASON02": {
+        "data": [],
+        "pagination": {},
+        "season": [],
+        "year": "s7b",
+        "id": "SEASON02"
+      }
+    }
+  },
+  "new": {
+    "season": {
+      "season_ref01": {
+        "data": [],
+        "pagination": {},
+        "season": [],
+        "year": "sa3"
+      }
+    }
+  }
+}

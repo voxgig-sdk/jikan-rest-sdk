@@ -1,0 +1,26 @@
+# BasicUserHistoryFlow
+
+main: kit: flow: BasicUserHistoryFlow:
+{
+  entity: "user_history",
+  kind: "basic",
+  name: "BasicUserHistoryFlow",
+  step: [
+    {
+      match: {
+        username: "username01"
+      }
+
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "user_history_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserHistoryFlow"
+}

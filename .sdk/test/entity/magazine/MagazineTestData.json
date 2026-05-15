@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "magazine": {
+      "MAGAZINE00": {
+        "data": [],
+        "pagination": {},
+        "id": "MAGAZINE00"
+      },
+      "MAGAZINE01": {
+        "data": [],
+        "pagination": {},
+        "id": "MAGAZINE01"
+      },
+      "MAGAZINE02": {
+        "data": [],
+        "pagination": {},
+        "id": "MAGAZINE02"
+      }
+    }
+  },
+  "new": {
+    "magazine": {
+      "magazine_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

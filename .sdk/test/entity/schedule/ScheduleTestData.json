@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "schedule": {
+      "SCHEDULE00": {
+        "data": [],
+        "pagination": {},
+        "id": "SCHEDULE00"
+      },
+      "SCHEDULE01": {
+        "data": [],
+        "pagination": {},
+        "id": "SCHEDULE01"
+      },
+      "SCHEDULE02": {
+        "data": [],
+        "pagination": {},
+        "id": "SCHEDULE02"
+      }
+    }
+  },
+  "new": {
+    "schedule": {
+      "schedule_ref01": {
+        "data": [],
+        "pagination": {}
+      }
+    }
+  }
+}

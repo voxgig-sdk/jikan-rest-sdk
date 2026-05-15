@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "manga": {
+      "MANGA00": {
+        "author_url": "saa",
+        "author_username": "sab",
+        "character": {},
+        "comment": "sad",
+        "data": {},
+        "date": "saf",
+        "entry": {},
+        "jpg": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "sb4",
+        "pagination": {},
+        "relation": "sb6",
+        "role": "sb7",
+        "title": "sb8",
+        "url": "sb9",
+        "webp": {},
+        "id": "MANGA00"
+      },
+      "MANGA01": {
+        "author_url": "s154",
+        "author_username": "s155",
+        "character": {},
+        "comment": "s157",
+        "data": {},
+        "date": "s159",
+        "entry": {},
+        "jpg": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s15e",
+        "pagination": {},
+        "relation": "s160",
+        "role": "s161",
+        "title": "s162",
+        "url": "s163",
+        "webp": {},
+        "id": "MANGA01"
+      },
+      "MANGA02": {
+        "author_url": "s1fe",
+        "author_username": "s1ff",
+        "character": {},
+        "comment": "s201",
+        "data": {},
+        "date": "s203",
+        "entry": {},
+        "jpg": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s208",
+        "pagination": {},
+        "relation": "s20a",
+        "role": "s20b",
+        "title": "s20c",
+        "url": "s20d",
+        "webp": {},
+        "id": "MANGA02"
+      }
+    }
+  },
+  "new": {
+    "manga": {
+      "manga_ref01": {
+        "author_url": "s2a8",
+        "author_username": "s2a9",
+        "character": {},
+        "comment": "s2ab",
+        "data": {},
+        "date": "s2ad",
+        "entry": {},
+        "jpg": {},
+        "last_comment": {},
+        "mal_id": "MAL01",
+        "name": "s2b2",
+        "pagination": {},
+        "relation": "s2b4",
+        "role": "s2b5",
+        "title": "s2b6",
+        "url": "s2b7",
+        "webp": {}
+      }
+    }
+  }
+}

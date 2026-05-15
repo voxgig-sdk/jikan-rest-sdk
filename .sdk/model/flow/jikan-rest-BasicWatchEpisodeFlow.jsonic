@@ -1,0 +1,22 @@
+# BasicWatchEpisodeFlow
+
+main: kit: flow: BasicWatchEpisodeFlow:
+{
+  entity: "watch_episode",
+  kind: "basic",
+  name: "BasicWatchEpisodeFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "watch_episode_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicWatchEpisodeFlow"
+}
