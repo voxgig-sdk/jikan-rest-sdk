@@ -72,7 +72,7 @@ function season_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["season01", "season02", "season03", "seasons01", "seasons02", "seasons03"] as $k) {
+    foreach (["season01", "season02", "season03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

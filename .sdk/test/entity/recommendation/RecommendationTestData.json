@@ -4,20 +4,17 @@
       "RECOMMENDATION00": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "RECOMMENDATION00"
+        "username": "USERNAME01"
       },
       "RECOMMENDATION01": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "RECOMMENDATION01"
+        "username": "USERNAME01"
       },
       "RECOMMENDATION02": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "RECOMMENDATION02"
+        "username": "USERNAME01"
       }
     }
   },

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/jikan-rest-sdk"
-	"github.com/voxgig-sdk/jikan-rest-sdk/core"
+	sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
+	"github.com/voxgig-sdk/jikan-rest-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jikan-rest-sdk/go/utility/struct"
 )
 
 func TestAnimeEntity(t *testing.T) {
@@ -110,7 +110,7 @@ func animeBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap := vs.Transform(
-		[]any{"anime01", "anime02", "anime03", "episodes01", "episodes02", "episodes03"},
+		[]any{"anime01", "anime02", "anime03", "episode01", "episode02", "episode03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

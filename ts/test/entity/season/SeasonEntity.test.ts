@@ -94,7 +94,7 @@ function basicSetup(extra?: any) {
   const transform = struct.transform
 
   let idmap = transform(
-    ['season01','season02','season03','seasons01','seasons02','seasons03'],
+    ['season01','season02','season03','season01','season02','season03'],
     {
       '`$PACK`': ['', {
         '`$KEY`': '`$COPY`',

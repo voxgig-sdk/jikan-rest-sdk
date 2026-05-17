@@ -71,7 +71,7 @@ function user_statistic_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["user_statistic01", "user_statistic02", "user_statistic03", "users01", "users02", "users03"] as $k) {
+    foreach (["user_statistic01", "user_statistic02", "user_statistic03", "user01", "user02", "user03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

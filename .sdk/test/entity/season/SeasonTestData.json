@@ -5,22 +5,19 @@
         "data": [],
         "pagination": {},
         "season": [],
-        "year": "s2b",
-        "id": "SEASON00"
+        "year": "s2b"
       },
       "SEASON01": {
         "data": [],
         "pagination": {},
         "season": [],
-        "year": "s53",
-        "id": "SEASON01"
+        "year": "s53"
       },
       "SEASON02": {
         "data": [],
         "pagination": {},
         "season": [],
-        "year": "s7b",
-        "id": "SEASON02"
+        "year": "s7b"
       }
     }
   },

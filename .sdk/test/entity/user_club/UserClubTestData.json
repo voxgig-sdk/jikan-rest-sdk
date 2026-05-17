@@ -4,20 +4,17 @@
       "USER_CLUB00": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_CLUB00"
+        "username": "USERNAME01"
       },
       "USER_CLUB01": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_CLUB01"
+        "username": "USERNAME01"
       },
       "USER_CLUB02": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_CLUB02"
+        "username": "USERNAME01"
       }
     }
   },

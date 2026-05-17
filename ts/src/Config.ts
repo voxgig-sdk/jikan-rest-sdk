@@ -1304,7 +1304,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "episodes"
+            "episode"
           ]
         ]
       }
@@ -2055,7 +2055,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -4045,7 +4045,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -4582,7 +4582,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "seasons"
+            "season"
           ]
         ]
       }
@@ -5057,7 +5057,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5117,7 +5117,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5195,7 +5195,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5273,7 +5273,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5358,7 +5358,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5418,7 +5418,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }
@@ -5478,7 +5478,7 @@ class Config {
       "relations": {
         "ancestors": [
           [
-            "users"
+            "user"
           ]
         ]
       }

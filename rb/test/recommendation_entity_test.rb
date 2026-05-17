@@ -64,7 +64,7 @@ def recommendation_basic_setup(extra)
 
   # Generate idmap via transform.
   idmap = Vs.transform(
-    ["recommendation01", "recommendation02", "recommendation03", "users01", "users02", "users03"],
+    ["recommendation01", "recommendation02", "recommendation03", "user01", "user02", "user03"],
     {
       "`$PACK`" => ["", {
         "`$KEY`" => "`$COPY`",

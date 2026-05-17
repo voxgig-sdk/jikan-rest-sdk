@@ -3,18 +3,15 @@
     "watch_episode": {
       "WATCH_EPISODE00": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_EPISODE00"
+        "pagination": {}
       },
       "WATCH_EPISODE01": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_EPISODE01"
+        "pagination": {}
       },
       "WATCH_EPISODE02": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_EPISODE02"
+        "pagination": {}
       }
     }
   },

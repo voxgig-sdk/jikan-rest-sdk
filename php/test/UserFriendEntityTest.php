@@ -74,7 +74,7 @@ function user_friend_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["user_friend01", "user_friend02", "user_friend03", "users01", "users02", "users03", "username01"] as $k) {
+    foreach (["user_friend01", "user_friend02", "user_friend03", "user01", "user02", "user03", "username01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

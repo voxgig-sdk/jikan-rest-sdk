@@ -79,7 +79,7 @@ function anime_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "anime01", "anime02", "anime03", "episodes01", "episodes02", "episodes03" },
+    { "anime01", "anime02", "anime03", "episode01", "episode02", "episode03" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/jikan-rest-sdk"
-	"github.com/voxgig-sdk/jikan-rest-sdk/core"
+	sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
+	"github.com/voxgig-sdk/jikan-rest-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jikan-rest-sdk/go/utility/struct"
 )
 
 func TestSeasonEntity(t *testing.T) {
@@ -100,7 +100,7 @@ func seasonBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap := vs.Transform(
-		[]any{"season01", "season02", "season03", "seasons01", "seasons02", "seasons03"},
+		[]any{"season01", "season02", "season03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

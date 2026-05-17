@@ -1231,7 +1231,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'episodes',
+                'episode',
               ],
             ],
           ],
@@ -1982,7 +1982,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -3972,7 +3972,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -4509,7 +4509,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'seasons',
+                'season',
               ],
             ],
           ],
@@ -4984,7 +4984,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5044,7 +5044,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5122,7 +5122,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5200,7 +5200,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5285,7 +5285,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5345,7 +5345,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],
@@ -5405,7 +5405,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'users',
+                'user',
               ],
             ],
           ],

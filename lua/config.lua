@@ -1225,7 +1225,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "episodes",
+              "episode",
             },
           },
         },
@@ -1976,7 +1976,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -3966,7 +3966,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -4503,7 +4503,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "seasons",
+              "season",
             },
           },
         },
@@ -4978,7 +4978,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5038,7 +5038,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5116,7 +5116,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5194,7 +5194,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5279,7 +5279,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5339,7 +5339,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },
@@ -5399,7 +5399,7 @@ local function make_config()
         ["relations"] = {
           ["ancestors"] = {
             {
-              "users",
+              "user",
             },
           },
         },

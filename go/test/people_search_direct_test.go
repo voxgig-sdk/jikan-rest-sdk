@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/jikan-rest-sdk"
-	"github.com/voxgig-sdk/jikan-rest-sdk/core"
+	sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
+	"github.com/voxgig-sdk/jikan-rest-sdk/go/core"
 )
 
 func TestPeopleSearchDirect(t *testing.T) {

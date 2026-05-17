@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/jikan-rest-sdk"
-	"github.com/voxgig-sdk/jikan-rest-sdk/core"
+	sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
+	"github.com/voxgig-sdk/jikan-rest-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jikan-rest-sdk/go/utility/struct"
 )
 
 func TestRecommendationEntity(t *testing.T) {
@@ -100,7 +100,7 @@ func recommendationBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap := vs.Transform(
-		[]any{"recommendation01", "recommendation02", "recommendation03", "users01", "users02", "users03"},
+		[]any{"recommendation01", "recommendation02", "recommendation03", "user01", "user02", "user03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

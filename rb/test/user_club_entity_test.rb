@@ -66,7 +66,7 @@ def user_club_basic_setup(extra)
 
   # Generate idmap via transform.
   idmap = Vs.transform(
-    ["user_club01", "user_club02", "user_club03", "users01", "users02", "users03", "username01"],
+    ["user_club01", "user_club02", "user_club03", "user01", "user02", "user03", "username01"],
     {
       "`$PACK`" => ["", {
         "`$KEY`" => "`$COPY`",

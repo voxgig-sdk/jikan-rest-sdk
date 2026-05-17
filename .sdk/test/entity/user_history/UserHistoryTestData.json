@@ -5,22 +5,19 @@
         "date": "s1e",
         "entry": {},
         "increment": "s20",
-        "username": "USERNAME01",
-        "id": "USER_HISTORY00"
+        "username": "USERNAME01"
       },
       "USER_HISTORY01": {
         "date": "s3c",
         "entry": {},
         "increment": "s3e",
-        "username": "USERNAME01",
-        "id": "USER_HISTORY01"
+        "username": "USERNAME01"
       },
       "USER_HISTORY02": {
         "date": "s5a",
         "entry": {},
         "increment": "s5c",
-        "username": "USERNAME01",
-        "id": "USER_HISTORY02"
+        "username": "USERNAME01"
       }
     }
   },

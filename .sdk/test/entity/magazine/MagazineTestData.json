@@ -3,18 +3,15 @@
     "magazine": {
       "MAGAZINE00": {
         "data": [],
-        "pagination": {},
-        "id": "MAGAZINE00"
+        "pagination": {}
       },
       "MAGAZINE01": {
         "data": [],
-        "pagination": {},
-        "id": "MAGAZINE01"
+        "pagination": {}
       },
       "MAGAZINE02": {
         "data": [],
-        "pagination": {},
-        "id": "MAGAZINE02"
+        "pagination": {}
       }
     }
   },

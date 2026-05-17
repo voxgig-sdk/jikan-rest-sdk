@@ -3,18 +3,15 @@
     "schedule": {
       "SCHEDULE00": {
         "data": [],
-        "pagination": {},
-        "id": "SCHEDULE00"
+        "pagination": {}
       },
       "SCHEDULE01": {
         "data": [],
-        "pagination": {},
-        "id": "SCHEDULE01"
+        "pagination": {}
       },
       "SCHEDULE02": {
         "data": [],
-        "pagination": {},
-        "id": "SCHEDULE02"
+        "pagination": {}
       }
     }
   },

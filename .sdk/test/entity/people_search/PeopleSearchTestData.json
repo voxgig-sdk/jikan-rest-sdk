@@ -3,18 +3,15 @@
     "people_search": {
       "PEOPLE_SEARCH00": {
         "data": [],
-        "pagination": {},
-        "id": "PEOPLE_SEARCH00"
+        "pagination": {}
       },
       "PEOPLE_SEARCH01": {
         "data": [],
-        "pagination": {},
-        "id": "PEOPLE_SEARCH01"
+        "pagination": {}
       },
       "PEOPLE_SEARCH02": {
         "data": [],
-        "pagination": {},
-        "id": "PEOPLE_SEARCH02"
+        "pagination": {}
       }
     }
   },

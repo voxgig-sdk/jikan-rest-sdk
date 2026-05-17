@@ -75,7 +75,7 @@ function user_friend_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "user_friend01", "user_friend02", "user_friend03", "users01", "users02", "users03", "username01" },
+    { "user_friend01", "user_friend02", "user_friend03", "user01", "user02", "user03", "username01" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

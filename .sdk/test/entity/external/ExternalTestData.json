@@ -4,20 +4,17 @@
       "EXTERNAL00": {
         "name": "s14",
         "url": "s15",
-        "username": "USERNAME01",
-        "id": "EXTERNAL00"
+        "username": "USERNAME01"
       },
       "EXTERNAL01": {
         "name": "s28",
         "url": "s29",
-        "username": "USERNAME01",
-        "id": "EXTERNAL01"
+        "username": "USERNAME01"
       },
       "EXTERNAL02": {
         "name": "s3c",
         "url": "s3d",
-        "username": "USERNAME01",
-        "id": "EXTERNAL02"
+        "username": "USERNAME01"
       }
     }
   },

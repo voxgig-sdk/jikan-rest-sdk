@@ -74,7 +74,7 @@ function user_club_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["user_club01", "user_club02", "user_club03", "users01", "users02", "users03", "username01"] as $k) {
+    foreach (["user_club01", "user_club02", "user_club03", "user01", "user02", "user03", "username01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

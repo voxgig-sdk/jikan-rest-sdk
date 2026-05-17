@@ -64,7 +64,7 @@ def season_basic_setup(extra)
 
   # Generate idmap via transform.
   idmap = Vs.transform(
-    ["season01", "season02", "season03", "seasons01", "seasons02", "seasons03"],
+    ["season01", "season02", "season03"],
     {
       "`$PACK`" => ["", {
         "`$KEY`" => "`$COPY`",

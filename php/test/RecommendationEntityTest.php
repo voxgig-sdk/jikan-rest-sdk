@@ -72,7 +72,7 @@ function recommendation_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["recommendation01", "recommendation02", "recommendation03", "users01", "users02", "users03"] as $k) {
+    foreach (["recommendation01", "recommendation02", "recommendation03", "user01", "user02", "user03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

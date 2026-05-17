@@ -74,7 +74,7 @@ function external_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["external01", "external02", "external03", "users01", "users02", "users03", "username01"] as $k) {
+    foreach (["external01", "external02", "external03", "user01", "user02", "user03", "username01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

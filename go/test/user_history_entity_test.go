@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/jikan-rest-sdk"
-	"github.com/voxgig-sdk/jikan-rest-sdk/core"
+	sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
+	"github.com/voxgig-sdk/jikan-rest-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/jikan-rest-sdk/go/utility/struct"
 )
 
 func TestUserHistoryEntity(t *testing.T) {
@@ -102,7 +102,7 @@ func user_historyBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap := vs.Transform(
-		[]any{"user_history01", "user_history02", "user_history03", "users01", "users02", "users03", "username01"},
+		[]any{"user_history01", "user_history02", "user_history03", "user01", "user02", "user03", "username01"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

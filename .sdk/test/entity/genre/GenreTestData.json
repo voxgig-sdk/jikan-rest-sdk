@@ -5,22 +5,19 @@
         "count": "s28",
         "mal_id": "MAL01",
         "name": "s2a",
-        "url": "s2b",
-        "id": "GENRE00"
+        "url": "s2b"
       },
       "GENRE01": {
         "count": "s50",
         "mal_id": "MAL01",
         "name": "s52",
-        "url": "s53",
-        "id": "GENRE01"
+        "url": "s53"
       },
       "GENRE02": {
         "count": "s78",
         "mal_id": "MAL01",
         "name": "s7a",
-        "url": "s7b",
-        "id": "GENRE02"
+        "url": "s7b"
       }
     }
   },

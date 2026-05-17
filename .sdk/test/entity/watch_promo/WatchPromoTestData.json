@@ -3,18 +3,15 @@
     "watch_promo": {
       "WATCH_PROMO00": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_PROMO00"
+        "pagination": {}
       },
       "WATCH_PROMO01": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_PROMO01"
+        "pagination": {}
       },
       "WATCH_PROMO02": {
         "data": [],
-        "pagination": {},
-        "id": "WATCH_PROMO02"
+        "pagination": {}
       }
     }
   },

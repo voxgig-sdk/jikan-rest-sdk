@@ -71,7 +71,7 @@ function user_update_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["user_update01", "user_update02", "user_update03", "users01", "users02", "users03"] as $k) {
+    foreach (["user_update01", "user_update02", "user_update03", "user01", "user02", "user03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

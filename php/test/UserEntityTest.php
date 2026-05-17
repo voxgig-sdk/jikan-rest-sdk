@@ -78,7 +78,7 @@ function user_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["user01", "user02", "user03", "users01", "users02", "users03"] as $k) {
+    foreach (["user01", "user02", "user03"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

@@ -4,20 +4,17 @@
       "USER_FRIEND00": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_FRIEND00"
+        "username": "USERNAME01"
       },
       "USER_FRIEND01": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_FRIEND01"
+        "username": "USERNAME01"
       },
       "USER_FRIEND02": {
         "data": [],
         "pagination": {},
-        "username": "USERNAME01",
-        "id": "USER_FRIEND02"
+        "username": "USERNAME01"
       }
     }
   },

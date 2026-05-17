@@ -78,7 +78,7 @@ def _user_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["user01", "user02", "user03", "users01", "users02", "users03"],
+        ["user01", "user02", "user03"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",
