@@ -122,8 +122,53 @@ By using the API, you are agreeing to Jikan's [terms of use](https://jikan.moe/t
       termsOfService: "https://jikan.moe/terms"
       title: "Jikan API"
       version: "4.0.0"
+      tagline: "Query MyAnimeList anime, manga, characters, people, and community data through an unofficial REST API"
+      homepage: "https://jikan.moe"
+      docs_url: "https://docs.api.jikan.moe/"
+      license_short: "MIT licensed, community-maintained, not affiliated with MyAnimeList"
+      license_md: `- Source code is released under the MIT License
+- Jikan is an unofficial, community-run project and is not endorsed by or affiliated with MyAnimeList
+- Data is sourced by scraping MyAnimeList; downstream use should respect MyAnimeList's terms
+- Attribution to the Jikan project is appreciated when redistributing data`
+      about_md: `[Jikan](https://jikan.moe) is an unofficial REST API for [MyAnimeList](https://myanimelist.net), maintained by an independent open-source community led by Irfan Dahir. Because MyAnimeList does not offer a full public API, Jikan scrapes and parses the site to expose its catalogue as JSON over HTTPS.
+
+What you get from the API:
+
+- Anime and manga records including titles, synopses, scores, rankings, genres, and related entries
+- Character, person (voice actor / staff), producer, magazine, and club profiles
+- Discovery endpoints for top lists, seasonal charts, broadcast schedules, random picks, recommendations, and reviews
+- User profiles, friends lists, clubs, history, statistics, and update feeds
+- Streaming and promotional video metadata under the watch endpoints
+
+The public instance is served from \`https://api.jikan.moe/v4\` with CORS enabled and no authentication. Usage is throttled to roughly 3 requests per second and 60 requests per minute, with no hard daily cap. Because the data is scraped, freshness and availability depend on MyAnimeList being reachable; status is reported at [status.jikan.moe](https://status.jikan.moe).`
+      entity_desc: {
+        anime: "Anime titles and their detail sub-resources (characters, staff, episodes, news, videos, statistics, etc.) under `/anime` and `/anime/{id}/...`"
+        character: "Character profiles with associated anime, manga, and voice actors under `/characters`"
+        club: "MyAnimeList community clubs, their members, and related listings under `/clubs`"
+        external: "External site links attached to anime, manga, or other resources via `.../external` sub-paths"
+        genre: "Genre, theme, and demographic taxonomies for anime and manga under `/genres/anime` and `/genres/manga`"
+        magazine: "Manga magazines and serializations under `/magazines`"
+        manga: "Manga titles and their detail sub-resources (characters, statistics, reviews, recommendations, etc.) under `/manga` and `/manga/{id}/...`"
+        people_search: "Search across people (voice actors, directors, staff) via `/people` query endpoints"
+        person: "Individual person profiles with their anime, manga, and voice roles under `/people/{id}`"
+        producer: "Anime producers, studios, and licensors under `/producers`"
+        random: "Random selection endpoints that return a single resource per call under `/random/anime`, `/random/manga`, `/random/characters`, `/random/people`, `/random/users`"
+        recommendation: "User-submitted anime and manga recommendations under `/recommendations/anime` and `/recommendations/manga`"
+        review: "User-submitted reviews for anime and manga under `/reviews/anime` and `/reviews/manga`"
+        schedule: "Weekly broadcast schedule for currently airing anime under `/schedules`"
+        season: "Seasonal anime listings (current, upcoming, archive) under `/seasons`, `/seasons/now`, and `/seasons/{year}/{season}`"
+        top: "Top-ranked lists for anime, manga, characters, people, and reviews under `/top/...`"
+        user: "MyAnimeList user lookups and listings under `/users`"
+        user_about: "The free-form 'about me' section of a user profile under `/users/{username}/about`"
+        user_club: "Clubs a given user belongs to under `/users/{username}/clubs`"
+        user_friend: "A user's friends list under `/users/{username}/friends`"
+        user_history: "A user's recent anime or manga activity under `/users/{username}/history`"
+        user_statistic: "Aggregated watching and reading statistics for a user under `/users/{username}/statistics`"
+        user_update: "A user's most recent list updates under `/users/{username}/userupdates`"
+        watch_episode: "Recently added and popular episode releases under `/watch/episodes`"
+        watch_promo: "Recent and popular anime promotional videos under `/watch/promos`"
+      }
+      auth: false
     }
   }
-}
-
 }

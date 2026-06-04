@@ -20,9 +20,6 @@ class JikanRestConfig
             ],
             "options" => [
                 "base" => "https://api.jikan.moe/v4",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

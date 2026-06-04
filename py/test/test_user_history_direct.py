@@ -73,14 +73,12 @@ def _user_history_direct_setup(mockres):
     env = runner.env_override({
         "JIKANREST_TEST_USER_HISTORY_ENTID": {},
         "JIKANREST_TEST_LIVE": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     live = env.get("JIKANREST_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("JIKANREST_APIKEY"),
         }
         client = JikanRestSDK(merged_opts)
         return {
