@@ -1,22 +1,8 @@
 # JikanRest SDK
 
-Query MyAnimeList anime, manga, characters, people, and community data through an unofficial REST API
+Jikan API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Jikan API
-
-[Jikan](https://jikan.moe) is an unofficial REST API for [MyAnimeList](https://myanimelist.net), maintained by an independent open-source community led by Irfan Dahir. Because MyAnimeList does not offer a full public API, Jikan scrapes and parses the site to expose its catalogue as JSON over HTTPS.
-
-What you get from the API:
-
-- Anime and manga records including titles, synopses, scores, rankings, genres, and related entries
-- Character, person (voice actor / staff), producer, magazine, and club profiles
-- Discovery endpoints for top lists, seasonal charts, broadcast schedules, random picks, recommendations, and reviews
-- User profiles, friends lists, clubs, history, statistics, and update feeds
-- Streaming and promotional video metadata under the watch endpoints
-
-The public instance is served from `https://api.jikan.moe/v4` with CORS enabled and no authentication. Usage is throttled to roughly 3 requests per second and 60 requests per minute, with no hard daily cap. Because the data is scraped, freshness and availability depend on MyAnimeList being reachable; status is reported at [status.jikan.moe](https://status.jikan.moe).
 
 ## Try it
 
@@ -50,29 +36,31 @@ gem install jikan-rest-sdk
 luarocks install jikan-rest-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { JikanRestSDK } from 'jikan-rest'
 
-const client = new JikanRestSDK({})
+const client = new JikanRestSDK({
+  apikey: process.env.JIKAN-REST_APIKEY,
+})
 
 // List all animes
 const animes = await client.Anime().list()
+console.log(animes.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -102,31 +90,31 @@ The API exposes 25 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Anime** | Anime titles and their detail sub-resources (characters, staff, episodes, news, videos, statistics, etc.) under `/anime` and `/anime/{id}/...` | `/anime` |
-| **Character** | Character profiles with associated anime, manga, and voice actors under `/characters` | `/characters` |
-| **Club** | MyAnimeList community clubs, their members, and related listings under `/clubs` | `/clubs` |
-| **External** | External site links attached to anime, manga, or other resources via `.../external` sub-paths | `/users/{username}/external` |
-| **Genre** | Genre, theme, and demographic taxonomies for anime and manga under `/genres/anime` and `/genres/manga` | `/genres/anime` |
-| **Magazine** | Manga magazines and serializations under `/magazines` | `/magazines` |
-| **Manga** | Manga titles and their detail sub-resources (characters, statistics, reviews, recommendations, etc.) under `/manga` and `/manga/{id}/...` | `/manga` |
-| **PeopleSearch** | Search across people (voice actors, directors, staff) via `/people` query endpoints | `/top/people` |
-| **Person** | Individual person profiles with their anime, manga, and voice roles under `/people/{id}` | `/people` |
-| **Producer** | Anime producers, studios, and licensors under `/producers` | `/producers` |
-| **Random** | Random selection endpoints that return a single resource per call under `/random/anime`, `/random/manga`, `/random/characters`, `/random/people`, `/random/users` | `/random/anime` |
-| **Recommendation** | User-submitted anime and manga recommendations under `/recommendations/anime` and `/recommendations/manga` | `/users/{username}/recommendations` |
-| **Review** | User-submitted reviews for anime and manga under `/reviews/anime` and `/reviews/manga` | `/reviews/anime` |
-| **Schedule** | Weekly broadcast schedule for currently airing anime under `/schedules` | `/schedules` |
-| **Season** | Seasonal anime listings (current, upcoming, archive) under `/seasons`, `/seasons/now`, and `/seasons/{year}/{season}` | `/seasons/{year}/{season}` |
-| **Top** | Top-ranked lists for anime, manga, characters, people, and reviews under `/top/...` | `/top/reviews` |
-| **User** | MyAnimeList user lookups and listings under `/users` | `/users` |
-| **UserAbout** | The free-form 'about me' section of a user profile under `/users/{username}/about` | `/users/{username}/about` |
-| **UserClub** | Clubs a given user belongs to under `/users/{username}/clubs` | `/users/{username}/clubs` |
-| **UserFriend** | A user's friends list under `/users/{username}/friends` | `/users/{username}/friends` |
-| **UserHistory** | A user's recent anime or manga activity under `/users/{username}/history` | `/users/{username}/history` |
-| **UserStatistic** | Aggregated watching and reading statistics for a user under `/users/{username}/statistics` | `/users/{username}/statistics` |
-| **UserUpdate** | A user's most recent list updates under `/users/{username}/userupdates` | `/users/{username}/userupdates` |
-| **WatchEpisode** | Recently added and popular episode releases under `/watch/episodes` | `/watch/episodes` |
-| **WatchPromo** | Recent and popular anime promotional videos under `/watch/promos` | `/watch/promos` |
+| **Anime** |  | `/anime` |
+| **Character** |  | `/characters` |
+| **Club** |  | `/clubs` |
+| **External** |  | `/users/{username}/external` |
+| **Genre** |  | `/genres/anime` |
+| **Magazine** |  | `/magazines` |
+| **Manga** |  | `/manga` |
+| **PeopleSearch** |  | `/top/people` |
+| **Person** |  | `/people` |
+| **Producer** |  | `/producers` |
+| **Random** |  | `/random/anime` |
+| **Recommendation** |  | `/users/{username}/recommendations` |
+| **Review** |  | `/reviews/anime` |
+| **Schedule** |  | `/schedules` |
+| **Season** |  | `/seasons/{year}/{season}` |
+| **Top** |  | `/top/reviews` |
+| **User** |  | `/users` |
+| **UserAbout** |  | `/users/{username}/about` |
+| **UserClub** |  | `/users/{username}/clubs` |
+| **UserFriend** |  | `/users/{username}/friends` |
+| **UserHistory** |  | `/users/{username}/history` |
+| **UserStatistic** |  | `/users/{username}/statistics` |
+| **UserUpdate** |  | `/users/{username}/userupdates` |
+| **WatchEpisode** |  | `/watch/episodes` |
+| **WatchPromo** |  | `/watch/promos` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -136,17 +124,20 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from jikanrest_sdk import JikanRestSDK
 
-client = JikanRestSDK({})
+client = JikanRestSDK({
+    "apikey": os.environ.get("JIKAN-REST_APIKEY"),
+})
 
 # List all animes
-animes, err = client.Anime(None).list(None, None)
+animes, err = client.Anime().list()
+print(animes)
 
 # Load a specific anime
-anime, err = client.Anime(None).load(
-    {"id": "example_id"}, None
-)
+anime, err = client.Anime().load({"id": "example_id"})
+print(anime)
 ```
 
 ### PHP
@@ -155,15 +146,17 @@ anime, err = client.Anime(None).load(
 <?php
 require_once 'jikanrest_sdk.php';
 
-$client = new JikanRestSDK([]);
+$client = new JikanRestSDK([
+    "apikey" => getenv("JIKAN-REST_APIKEY"),
+]);
 
 // List all animes
-[$animes, $err] = $client->Anime(null)->list(null, null);
+[$animes, $err] = $client->Anime()->list();
+print_r($animes);
 
 // Load a specific anime
-[$anime, $err] = $client->Anime(null)->load(
-    ["id" => "example_id"], null
-);
+[$anime, $err] = $client->Anime()->load(["id" => "example_id"]);
+print_r($anime);
 ```
 
 ### Golang
@@ -171,10 +164,13 @@ $client = new JikanRestSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/jikan-rest-sdk/go"
 
-client := sdk.NewJikanRestSDK(map[string]any{})
+client := sdk.NewJikanRestSDK(map[string]any{
+    "apikey": os.Getenv("JIKAN-REST_APIKEY"),
+})
 
 // List all animes
 animes, err := client.Anime(nil).List(nil, nil)
+fmt.Println(animes)
 ```
 
 ### Ruby
@@ -182,15 +178,17 @@ animes, err := client.Anime(nil).List(nil, nil)
 ```ruby
 require_relative "JikanRest_sdk"
 
-client = JikanRestSDK.new({})
+client = JikanRestSDK.new({
+  "apikey" => ENV["JIKAN-REST_APIKEY"],
+})
 
 # List all animes
-animes, err = client.Anime(nil).list(nil, nil)
+animes, err = client.Anime().list
+puts animes
 
 # Load a specific anime
-anime, err = client.Anime(nil).load(
-  { "id" => "example_id" }, nil
-)
+anime, err = client.Anime().load({ "id" => "example_id" })
+puts anime
 ```
 
 ### Lua
@@ -198,15 +196,17 @@ anime, err = client.Anime(nil).load(
 ```lua
 local sdk = require("jikan-rest_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("JIKAN-REST_APIKEY"),
+})
 
 -- List all animes
-local animes, err = client:Anime(nil):list(nil, nil)
+local animes, err = client:Anime():list()
+print(animes)
 
 -- Load a specific anime
-local anime, err = client:Anime(nil):load(
-  { id = "example_id" }, nil
-)
+local anime, err = client:Anime():load({ id = "example_id" })
+print(anime)
 ```
 
 ## Unit testing in offline mode
@@ -225,25 +225,21 @@ const result = await client.Anime().load({ id: 'test01' })
 ### Python
 
 ```python
-client = JikanRestSDK.test(None, None)
-result, err = client.Anime(None).load(
-    {"id": "test01"}, None
-)
+client = JikanRestSDK.test()
+result, err = client.Anime().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = JikanRestSDK::test(null, null);
-[$result, $err] = $client->Anime(null)->load(
-    ["id" => "test01"], null
-);
+$client = JikanRestSDK::test();
+[$result, $err] = $client->Anime()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Anime(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -252,19 +248,15 @@ result, err := client.Anime(nil).Load(
 ### Ruby
 
 ```ruby
-client = JikanRestSDK.test(nil, nil)
-result, err = client.Anime(nil).load(
-  { "id" => "test01" }, nil
-)
+client = JikanRestSDK.test
+result, err = client.Anime().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Anime(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Anime():load({ id = "test01" })
 ```
 
 ## How it works
@@ -368,16 +360,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Jikan API
-
-- Upstream: [https://jikan.moe](https://jikan.moe)
-- API docs: [https://docs.api.jikan.moe/](https://docs.api.jikan.moe/)
-
-- Source code is released under the MIT License
-- Jikan is an unofficial, community-run project and is not endorsed by or affiliated with MyAnimeList
-- Data is sourced by scraping MyAnimeList; downstream use should respect MyAnimeList's terms
-- Attribution to the Jikan project is appreciated when redistributing data
 
 ---
 

@@ -114,6 +114,7 @@ function basicSetup(extra?: any) {
     'JIKAN_REST_TEST_MANGA_ENTID': idmap,
     'JIKAN_REST_TEST_LIVE': 'FALSE',
     'JIKAN_REST_TEST_EXPLAIN': 'FALSE',
+    'JIKAN_REST_APIKEY': 'NONE',
   })
 
   idmap = env['JIKAN_REST_TEST_MANGA_ENTID']
@@ -123,6 +124,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new JikanRestSDK(merge([
       {
+        apikey: env.JIKAN_REST_APIKEY,
       },
       extra
     ]))

@@ -93,12 +93,14 @@ func scheduleDirectSetup(mockres any) *scheduleDirectSetupResult {
 	env := envOverride(map[string]any{
 		"JIKANREST_TEST_SCHEDULE_ENTID": map[string]any{},
 		"JIKANREST_TEST_LIVE":    "FALSE",
+		"JIKANREST_APIKEY":       "NONE",
 	})
 
 	live := env["JIKANREST_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["JIKANREST_APIKEY"],
 		}
 		client := sdk.NewJikanRestSDK(mergedOpts)
 

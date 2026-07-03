@@ -76,12 +76,14 @@ def user_about_direct_setup(mockres)
   env = Runner.env_override({
     "JIKANREST_TEST_USER_ABOUT_ENTID" => {},
     "JIKANREST_TEST_LIVE" => "FALSE",
+    "JIKANREST_APIKEY" => "NONE",
   })
 
   live = env["JIKANREST_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
+      "apikey" => env["JIKANREST_APIKEY"],
     }
     client = JikanRestSDK.new(merged_opts)
     return {

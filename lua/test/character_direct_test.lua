@@ -117,12 +117,14 @@ function character_direct_setup(mockres)
   local env = runner.env_override({
     ["JIKANREST_TEST_CHARACTER_ENTID"] = {},
     ["JIKANREST_TEST_LIVE"] = "FALSE",
+    ["JIKANREST_APIKEY"] = "NONE",
   })
 
   local live = env["JIKANREST_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["JIKANREST_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

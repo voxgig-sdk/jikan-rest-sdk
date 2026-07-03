@@ -77,12 +77,14 @@ function user_update_direct_setup($mockres)
     $env = Runner::env_override([
         "JIKANREST_TEST_USER_UPDATE_ENTID" => [],
         "JIKANREST_TEST_LIVE" => "FALSE",
+        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $live = $env["JIKANREST_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["JIKANREST_APIKEY"],
         ];
         $client = new JikanRestSDK($merged_opts);
         return [

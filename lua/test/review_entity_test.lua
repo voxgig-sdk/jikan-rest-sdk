@@ -91,6 +91,7 @@ function review_basic_setup(extra)
     ["JIKANREST_TEST_REVIEW_ENTID"] = idmap,
     ["JIKANREST_TEST_LIVE"] = "FALSE",
     ["JIKANREST_TEST_EXPLAIN"] = "FALSE",
+    ["JIKANREST_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function review_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["JIKANREST_APIKEY"],
       },
       extra or {},
     })
