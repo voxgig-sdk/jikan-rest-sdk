@@ -10,13 +10,13 @@ The Ruby SDK for the JikanRest API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install jikan-rest-sdk
+gem install voxgig-sdk-jikan-rest
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "jikan-rest-sdk"
+gem "voxgig-sdk-jikan-rest"
 ```
 
 Then run:

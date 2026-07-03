@@ -10,7 +10,7 @@ The Lua SDK for the JikanRest API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install jikan-rest-sdk
+luarocks install voxgig-sdk-jikan-rest
 ```
 
 If the module is not yet published, add the source directory to

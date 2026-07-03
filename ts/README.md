@@ -10,7 +10,7 @@ The TypeScript SDK for the JikanRest API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install jikan-rest
+npm install @voxgig-sdk/jikan-rest
 ```
 ## Tutorial: your first API call
 

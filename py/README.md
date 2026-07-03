@@ -10,7 +10,7 @@ The Python SDK for the JikanRest API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install jikan-rest-sdk
+pip install voxgig-sdk-jikan-rest
 ```
 
 Or install from source:

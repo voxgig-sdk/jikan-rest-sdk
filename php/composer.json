@@ -1,8 +1,17 @@
 {
   "name": "voxgig-sdk/jikan-rest",
-  "description": "JikanRest SDK for PHP",
+  "description": "Unofficial generated PHP SDK for the Jikan public API. Not affiliated with or endorsed by the upstream API provider.",
   "type": "library",
+  "keywords": ["voxgig", "sdk", "generated-sdk", "openapi", "api-client", "jikan-rest"],
+  "homepage": "https://github.com/voxgig-sdk/jikan-rest-sdk",
   "license": "MIT",
+  "authors": [
+    { "name": "Voxgig", "homepage": "https://voxgig.com" }
+  ],
+  "support": {
+    "issues": "https://github.com/voxgig-sdk/jikan-rest-sdk/issues",
+    "source": "https://github.com/voxgig-sdk/jikan-rest-sdk"
+  },
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.2"
