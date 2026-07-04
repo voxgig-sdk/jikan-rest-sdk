@@ -26,9 +26,11 @@ import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
 
 const client = new JikanRestSDK()
 
-// List all animes
-const animes = await client.anime.list()
-console.log(animes.data)
+// List all animes (returns Anime[])
+const animes = await client.Anime().list()
+for (const anime of animes) {
+  console.log(anime)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -107,12 +109,13 @@ from jikanrest_sdk import JikanRestSDK
 
 client = JikanRestSDK()
 
-# List all animes
-animes = client.anime.list()
-print(animes)
+# List all animes (returns a list, raises on error)
+animes = client.Anime().list({})
+for anime in animes:
+    print(anime)
 
-# Load a specific anime
-anime = client.anime.load({"id": "example_id"})
+# Load a specific anime (returns the record, raises on error)
+anime = client.Anime().load({"id": "example_id"})
 print(anime)
 ```
 
@@ -124,12 +127,12 @@ require_once 'jikanrest_sdk.php';
 
 $client = new JikanRestSDK();
 
-// List all animes (throws on error)
-$animes = $client->anime()->list();
+// List all animes (returns an array; throws on error)
+$animes = $client->Anime()->list();
 print_r($animes);
 
-// Load a specific anime
-$anime = $client->anime()->load(["id" => "example_id"]);
+// Load a specific anime (returns the bare record; throws on error)
+$anime = $client->Anime()->load(["id" => "example_id"]);
 print_r($anime);
 ```
 
@@ -152,12 +155,12 @@ require_relative "JikanRest_sdk"
 
 client = JikanRestSDK.new
 
-# List all animes
-animes = client.anime.list
+# List all animes (returns an Array; raises on error)
+animes = client.Anime.list
 puts animes
 
-# Load a specific anime
-anime = client.anime.load({ "id" => "example_id" })
+# Load a specific anime (returns the bare record; raises on error)
+anime = client.Anime.load({ "id" => "example_id" })
 puts anime
 ```
 
@@ -169,11 +172,11 @@ local sdk = require("jikan-rest_sdk")
 local client = sdk.new()
 
 -- List all animes
-local animes, err = client:anime():list()
+local animes, err = client:Anime():list()
 print(animes)
 
 -- Load a specific anime
-local anime, err = client:anime():load({ id = "example_id" })
+local anime, err = client:Anime():load({ id = "example_id" })
 print(anime)
 ```
 
@@ -186,22 +189,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = JikanRestSDK.test()
-const result = await client.anime.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const anime = await client.Anime().load({ id: 'test01' })
+// anime is a bare Anime populated with mock data
+console.log(anime)
 ```
 
 ### Python
 
 ```python
 client = JikanRestSDK.test()
-result = client.anime.load({"id": "test01"})
+anime = client.Anime().load({"id": "test01"})
+print(anime)
 ```
 
 ### PHP
 
 ```php
-$client = JikanRestSDK::test();
-$result = $client->anime()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = JikanRestSDK::test([
+    "entity" => ["anime" => ["test01" => ["id" => "test01"]]],
+]);
+$anime = $client->Anime()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -216,15 +224,18 @@ result, err := client.Anime(nil).Load(
 ### Ruby
 
 ```ruby
-client = JikanRestSDK.test
-result = client.anime.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = JikanRestSDK.test({
+  "entity" => { "anime" => { "test01" => { "id" => "test01" } } },
+})
+anime = client.Anime.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:anime():load({ id = "test01" })
+local result, err = client:Anime():load({ id = "test01" })
 ```
 
 ## How it works
@@ -272,6 +283,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

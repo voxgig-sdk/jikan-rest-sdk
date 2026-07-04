@@ -4,379 +4,326 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Anime:
-    author_url: Optional[str] = None
-    author_username: Optional[str] = None
-    character: Optional[dict] = None
-    comment: Optional[int] = None
-    data: Optional[dict] = None
-    date: Optional[str] = None
-    entry: Optional[dict] = None
-    image: Optional[dict] = None
-    last_comment: Optional[dict] = None
-    mal_id: Optional[int] = None
-    name: Optional[str] = None
-    pagination: Optional[dict] = None
-    person: Optional[dict] = None
-    position: Optional[list] = None
-    relation: Optional[str] = None
-    role: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
-    voice_actor: Optional[list] = None
+class Anime(TypedDict, total=False):
+    author_url: str
+    author_username: str
+    character: dict
+    comment: int
+    data: dict
+    date: str
+    entry: dict
+    image: dict
+    last_comment: dict
+    mal_id: int
+    name: str
+    pagination: dict
+    person: dict
+    position: list
+    relation: str
+    role: str
+    title: str
+    url: str
+    voice_actor: list
 
 
-@dataclass
-class AnimeLoadMatch:
+class AnimeLoadMatch(TypedDict):
     episode: int
     id: int
 
 
-@dataclass
-class AnimeListMatch:
+class AnimeListMatch(TypedDict):
     id: int
 
 
-@dataclass
-class Character:
-    anime: Optional[dict] = None
-    data: Optional[dict] = None
-    image_url: Optional[str] = None
-    language: Optional[str] = None
-    large_image_url: Optional[str] = None
-    manga: Optional[dict] = None
-    pagination: Optional[dict] = None
-    person: Optional[dict] = None
-    role: Optional[str] = None
+class Character(TypedDict, total=False):
+    anime: dict
+    data: dict
+    image_url: str
+    language: str
+    large_image_url: str
+    manga: dict
+    pagination: dict
+    person: dict
+    role: str
 
 
-@dataclass
-class CharacterLoadMatch:
+class CharacterLoadMatch(TypedDict):
     id: int
 
 
-@dataclass
-class CharacterListMatch:
+class CharacterListMatch(TypedDict):
     id: int
 
 
-@dataclass
-class Club:
-    data: Optional[dict] = None
-    pagination: Optional[dict] = None
-    url: Optional[str] = None
-    username: Optional[str] = None
-
-
-@dataclass
-class ClubLoadMatch:
-    id: int
-
-
-@dataclass
-class ClubListMatch:
-    id: int
-
-
-@dataclass
-class External:
-    name: Optional[str] = None
-    url: Optional[str] = None
-
-
-@dataclass
-class ExternalListMatch:
+class Club(TypedDict, total=False):
+    data: dict
+    pagination: dict
+    url: str
     username: str
 
 
-@dataclass
-class Genre:
-    count: Optional[int] = None
-    mal_id: Optional[int] = None
-    name: Optional[str] = None
-    url: Optional[str] = None
-
-
-@dataclass
-class GenreListMatch:
-    count: Optional[int] = None
-    mal_id: Optional[int] = None
-    name: Optional[str] = None
-    url: Optional[str] = None
-
-
-@dataclass
-class Magazine:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-
-
-@dataclass
-class MagazineListMatch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-
-
-@dataclass
-class Manga:
-    author_url: Optional[str] = None
-    author_username: Optional[str] = None
-    character: Optional[dict] = None
-    comment: Optional[int] = None
-    data: Optional[dict] = None
-    date: Optional[str] = None
-    entry: Optional[dict] = None
-    jpg: Optional[dict] = None
-    last_comment: Optional[dict] = None
-    mal_id: Optional[int] = None
-    name: Optional[str] = None
-    pagination: Optional[dict] = None
-    relation: Optional[str] = None
-    role: Optional[str] = None
-    title: Optional[str] = None
-    url: Optional[str] = None
-    webp: Optional[dict] = None
-
-
-@dataclass
-class MangaLoadMatch:
+class ClubLoadMatch(TypedDict):
     id: int
 
 
-@dataclass
-class MangaListMatch:
+class ClubListMatch(TypedDict):
     id: int
 
 
-@dataclass
-class PeopleSearch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class External(TypedDict, total=False):
+    name: str
+    url: str
 
 
-@dataclass
-class PeopleSearchListMatch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-
-
-@dataclass
-class Person:
-    anime: Optional[dict] = None
-    character: Optional[dict] = None
-    data: Optional[dict] = None
-    jpg: Optional[dict] = None
-    manga: Optional[dict] = None
-    pagination: Optional[dict] = None
-    position: Optional[str] = None
-    role: Optional[str] = None
-
-
-@dataclass
-class PersonLoadMatch:
-    id: int
-
-
-@dataclass
-class PersonListMatch:
-    id: int
-
-
-@dataclass
-class Producer:
-    data: Optional[dict] = None
-    name: Optional[str] = None
-    pagination: Optional[dict] = None
-    url: Optional[str] = None
-
-
-@dataclass
-class ProducerLoadMatch:
-    id: int
-
-
-@dataclass
-class ProducerListMatch:
-    id: int
-
-
-@dataclass
-class Random:
-    data: Optional[dict] = None
-
-
-@dataclass
-class RandomLoadMatch:
-    data: Optional[dict] = None
-
-
-@dataclass
-class Recommendation:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-
-
-@dataclass
-class RecommendationListMatch:
+class ExternalListMatch(TypedDict):
     username: str
 
 
-@dataclass
-class Review:
+class Genre(TypedDict, total=False):
+    count: int
+    mal_id: int
+    name: str
+    url: str
+
+
+class GenreListMatch(TypedDict, total=False):
+    count: int
+    mal_id: int
+    name: str
+    url: str
+
+
+class Magazine(TypedDict, total=False):
+    data: list
+    pagination: dict
+
+
+class MagazineListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict
+
+
+class Manga(TypedDict, total=False):
+    author_url: str
+    author_username: str
+    character: dict
+    comment: int
+    data: dict
+    date: str
+    entry: dict
+    jpg: dict
+    last_comment: dict
+    mal_id: int
+    name: str
+    pagination: dict
+    relation: str
+    role: str
+    title: str
+    url: str
+    webp: dict
+
+
+class MangaLoadMatch(TypedDict):
+    id: int
+
+
+class MangaListMatch(TypedDict):
+    id: int
+
+
+class PeopleSearch(TypedDict, total=False):
+    data: list
+    pagination: dict
+
+
+class PeopleSearchListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict
+
+
+class Person(TypedDict, total=False):
+    anime: dict
+    character: dict
+    data: dict
+    jpg: dict
+    manga: dict
+    pagination: dict
+    position: str
+    role: str
+
+
+class PersonLoadMatch(TypedDict):
+    id: int
+
+
+class PersonListMatch(TypedDict):
+    id: int
+
+
+class Producer(TypedDict, total=False):
+    data: dict
+    name: str
+    pagination: dict
+    url: str
+
+
+class ProducerLoadMatch(TypedDict):
+    id: int
+
+
+class ProducerListMatch(TypedDict):
+    id: int
+
+
+class Random(TypedDict, total=False):
+    data: dict
+
+
+class RandomLoadMatch(TypedDict, total=False):
+    data: dict
+
+
+class Recommendation(TypedDict, total=False):
+    data: list
+    pagination: dict
+
+
+class RecommendationListMatch(TypedDict):
+    username: str
+
+
+class Review(TypedDict):
     pass
 
 
-@dataclass
-class ReviewLoadMatch:
+class ReviewLoadMatch(TypedDict):
     pass
 
 
-@dataclass
-class Schedule:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class Schedule(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class ScheduleListMatch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class ScheduleListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class Season:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-    season: Optional[list] = None
-    year: Optional[int] = None
+class Season(TypedDict, total=False):
+    data: list
+    pagination: dict
+    season: list
+    year: int
 
 
-@dataclass
-class SeasonListMatch:
+class SeasonListMatch(TypedDict):
     season: str
     year: int
 
 
-@dataclass
-class Top:
-    data: Optional[Any] = None
+class Top(TypedDict, total=False):
+    data: Any
 
 
-@dataclass
-class TopLoadMatch:
-    data: Optional[Any] = None
+class TopLoadMatch(TypedDict, total=False):
+    data: Any
 
 
-@dataclass
-class User:
-    data: Optional[Any] = None
-    pagination: Optional[dict] = None
+class User(TypedDict, total=False):
+    data: Any
+    pagination: dict
 
 
-@dataclass
-class UserLoadMatch:
+class UserLoadMatch(TypedDict):
     username: str
     id: int
 
 
-@dataclass
-class UserListMatch:
-    data: Optional[Any] = None
-    pagination: Optional[dict] = None
+class UserListMatch(TypedDict, total=False):
+    data: Any
+    pagination: dict
 
 
-@dataclass
-class UserAbout:
-    about: Optional[str] = None
+class UserAbout(TypedDict, total=False):
+    about: str
 
 
-@dataclass
-class UserAboutListMatch:
+class UserAboutListMatch(TypedDict):
     username: str
 
 
-@dataclass
-class UserClub:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class UserClub(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class UserClubListMatch:
+class UserClubListMatch(TypedDict):
     username: str
 
 
-@dataclass
-class UserFriend:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class UserFriend(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class UserFriendListMatch:
+class UserFriendListMatch(TypedDict):
     username: str
 
 
-@dataclass
-class UserHistory:
-    date: Optional[str] = None
-    entry: Optional[dict] = None
-    increment: Optional[int] = None
+class UserHistory(TypedDict, total=False):
+    date: str
+    entry: dict
+    increment: int
 
 
-@dataclass
-class UserHistoryListMatch:
+class UserHistoryListMatch(TypedDict):
     username: str
 
 
-@dataclass
-class UserStatistic:
-    data: Optional[dict] = None
+class UserStatistic(TypedDict, total=False):
+    data: dict
 
 
-@dataclass
-class UserStatisticLoadMatch:
+class UserStatisticLoadMatch(TypedDict):
     username: str
 
 
-@dataclass
-class UserUpdate:
-    data: Optional[dict] = None
+class UserUpdate(TypedDict, total=False):
+    data: dict
 
 
-@dataclass
-class UserUpdateLoadMatch:
+class UserUpdateLoadMatch(TypedDict):
     username: str
 
 
-@dataclass
-class WatchEpisode:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class WatchEpisode(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class WatchEpisodeListMatch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class WatchEpisodeListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class WatchPromo:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
+class WatchPromo(TypedDict, total=False):
+    data: list
+    pagination: dict
 
 
-@dataclass
-class WatchPromoListMatch:
-    data: Optional[list] = None
-    pagination: Optional[dict] = None
-
+class WatchPromoListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict

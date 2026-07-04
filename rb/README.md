@@ -28,16 +28,14 @@ require_relative "JikanRest_sdk"
 client = JikanRestSDK.new
 ```
 
-### 2. List animes
+### 2. List anime records
 
 ```ruby
 begin
-  result = client.anime.list
-  if result.is_a?(Array)
-    result.each do |item|
-      d = item.data_get
-      puts "#{d["id"]} #{d["name"]}"
-    end
+  # list returns an Array of Anime records — iterate directly.
+  animes = client.Anime.list
+  animes.each do |item|
+    puts "#{item["id"]} #{item["name"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -48,8 +46,9 @@ end
 
 ```ruby
 begin
-  result = client.anime.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Anime record (raises on error).
+  anime = client.Anime.load({ "id" => "example_id" })
+  puts anime
 rescue => err
   warn "load failed: #{err}"
 end
@@ -96,13 +95,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = JikanRestSDK.test
+client = JikanRestSDK.test({
+  "entity" => { "anime" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.anime.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+anime = client.Anime.load({ "id" => "test01" })
+puts anime
 ```
 
 ### Use a custom fetch function
@@ -178,10 +181,10 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `Anime` | `(data) -> AnimeEntity` | Create a Anime entity instance. |
+| `Anime` | `(data) -> AnimeEntity` | Create an Anime entity instance. |
 | `Character` | `(data) -> CharacterEntity` | Create a Character entity instance. |
 | `Club` | `(data) -> ClubEntity` | Create a Club entity instance. |
-| `External` | `(data) -> ExternalEntity` | Create a External entity instance. |
+| `External` | `(data) -> ExternalEntity` | Create an External entity instance. |
 | `Genre` | `(data) -> GenreEntity` | Create a Genre entity instance. |
 | `Magazine` | `(data) -> MagazineEntity` | Create a Magazine entity instance. |
 | `Manga` | `(data) -> MangaEntity` | Create a Manga entity instance. |
@@ -194,13 +197,13 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `Schedule` | `(data) -> ScheduleEntity` | Create a Schedule entity instance. |
 | `Season` | `(data) -> SeasonEntity` | Create a Season entity instance. |
 | `Top` | `(data) -> TopEntity` | Create a Top entity instance. |
-| `User` | `(data) -> UserEntity` | Create a User entity instance. |
-| `UserAbout` | `(data) -> UserAboutEntity` | Create a UserAbout entity instance. |
-| `UserClub` | `(data) -> UserClubEntity` | Create a UserClub entity instance. |
-| `UserFriend` | `(data) -> UserFriendEntity` | Create a UserFriend entity instance. |
-| `UserHistory` | `(data) -> UserHistoryEntity` | Create a UserHistory entity instance. |
-| `UserStatistic` | `(data) -> UserStatisticEntity` | Create a UserStatistic entity instance. |
-| `UserUpdate` | `(data) -> UserUpdateEntity` | Create a UserUpdate entity instance. |
+| `User` | `(data) -> UserEntity` | Create an User entity instance. |
+| `UserAbout` | `(data) -> UserAboutEntity` | Create an UserAbout entity instance. |
+| `UserClub` | `(data) -> UserClubEntity` | Create an UserClub entity instance. |
+| `UserFriend` | `(data) -> UserFriendEntity` | Create an UserFriend entity instance. |
+| `UserHistory` | `(data) -> UserHistoryEntity` | Create an UserHistory entity instance. |
+| `UserStatistic` | `(data) -> UserStatisticEntity` | Create an UserStatistic entity instance. |
+| `UserUpdate` | `(data) -> UserUpdateEntity` | Create an UserUpdate entity instance. |
 | `WatchEpisode` | `(data) -> WatchEpisodeEntity` | Create a WatchEpisode entity instance. |
 | `WatchPromo` | `(data) -> WatchPromoEntity` | Create a WatchPromo entity instance. |
 
@@ -570,7 +573,7 @@ API path: `/watch/promos`
 
 ### Anime
 
-Create an instance: `const anime = client.anime`
+Create an instance: `anime = client.Anime`
 
 #### Operations
 
@@ -605,20 +608,22 @@ Create an instance: `const anime = client.anime`
 
 #### Example: Load
 
-```ts
-const anime = await client.anime.load({ id: 'anime_id' })
+```ruby
+# load returns the bare Anime record (raises on error).
+anime = client.Anime.load({ "id" => "anime_id" })
 ```
 
 #### Example: List
 
-```ts
-const animes = await client.anime.list()
+```ruby
+# list returns an Array of Anime records (raises on error).
+animes = client.Anime.list
 ```
 
 
 ### Character
 
-Create an instance: `const character = client.character`
+Create an instance: `character = client.Character`
 
 #### Operations
 
@@ -643,20 +648,22 @@ Create an instance: `const character = client.character`
 
 #### Example: Load
 
-```ts
-const character = await client.character.load({ id: 'character_id' })
+```ruby
+# load returns the bare Character record (raises on error).
+character = client.Character.load({ "id" => "character_id" })
 ```
 
 #### Example: List
 
-```ts
-const characters = await client.character.list()
+```ruby
+# list returns an Array of Character records (raises on error).
+characters = client.Character.list
 ```
 
 
 ### Club
 
-Create an instance: `const club = client.club`
+Create an instance: `club = client.Club`
 
 #### Operations
 
@@ -676,20 +683,22 @@ Create an instance: `const club = client.club`
 
 #### Example: Load
 
-```ts
-const club = await client.club.load({ id: 'club_id' })
+```ruby
+# load returns the bare Club record (raises on error).
+club = client.Club.load({ "id" => "club_id" })
 ```
 
 #### Example: List
 
-```ts
-const clubs = await client.club.list()
+```ruby
+# list returns an Array of Club records (raises on error).
+clubs = client.Club.list
 ```
 
 
 ### External
 
-Create an instance: `const external = client.external`
+Create an instance: `external = client.External`
 
 #### Operations
 
@@ -706,14 +715,15 @@ Create an instance: `const external = client.external`
 
 #### Example: List
 
-```ts
-const externals = await client.external.list()
+```ruby
+# list returns an Array of External records (raises on error).
+externals = client.External.list
 ```
 
 
 ### Genre
 
-Create an instance: `const genre = client.genre`
+Create an instance: `genre = client.Genre`
 
 #### Operations
 
@@ -732,14 +742,15 @@ Create an instance: `const genre = client.genre`
 
 #### Example: List
 
-```ts
-const genres = await client.genre.list()
+```ruby
+# list returns an Array of Genre records (raises on error).
+genres = client.Genre.list
 ```
 
 
 ### Magazine
 
-Create an instance: `const magazine = client.magazine`
+Create an instance: `magazine = client.Magazine`
 
 #### Operations
 
@@ -756,14 +767,15 @@ Create an instance: `const magazine = client.magazine`
 
 #### Example: List
 
-```ts
-const magazines = await client.magazine.list()
+```ruby
+# list returns an Array of Magazine records (raises on error).
+magazines = client.Magazine.list
 ```
 
 
 ### Manga
 
-Create an instance: `const manga = client.manga`
+Create an instance: `manga = client.Manga`
 
 #### Operations
 
@@ -796,20 +808,22 @@ Create an instance: `const manga = client.manga`
 
 #### Example: Load
 
-```ts
-const manga = await client.manga.load({ id: 'manga_id' })
+```ruby
+# load returns the bare Manga record (raises on error).
+manga = client.Manga.load({ "id" => "manga_id" })
 ```
 
 #### Example: List
 
-```ts
-const mangas = await client.manga.list()
+```ruby
+# list returns an Array of Manga records (raises on error).
+mangas = client.Manga.list
 ```
 
 
 ### PeopleSearch
 
-Create an instance: `const people_search = client.people_search`
+Create an instance: `people_search = client.PeopleSearch`
 
 #### Operations
 
@@ -826,14 +840,15 @@ Create an instance: `const people_search = client.people_search`
 
 #### Example: List
 
-```ts
-const people_searchs = await client.people_search.list()
+```ruby
+# list returns an Array of PeopleSearch records (raises on error).
+people_searchs = client.PeopleSearch.list
 ```
 
 
 ### Person
 
-Create an instance: `const person = client.person`
+Create an instance: `person = client.Person`
 
 #### Operations
 
@@ -857,20 +872,22 @@ Create an instance: `const person = client.person`
 
 #### Example: Load
 
-```ts
-const person = await client.person.load({ id: 'person_id' })
+```ruby
+# load returns the bare Person record (raises on error).
+person = client.Person.load({ "id" => "person_id" })
 ```
 
 #### Example: List
 
-```ts
-const persons = await client.person.list()
+```ruby
+# list returns an Array of Person records (raises on error).
+persons = client.Person.list
 ```
 
 
 ### Producer
 
-Create an instance: `const producer = client.producer`
+Create an instance: `producer = client.Producer`
 
 #### Operations
 
@@ -890,20 +907,22 @@ Create an instance: `const producer = client.producer`
 
 #### Example: Load
 
-```ts
-const producer = await client.producer.load({ id: 'producer_id' })
+```ruby
+# load returns the bare Producer record (raises on error).
+producer = client.Producer.load({ "id" => "producer_id" })
 ```
 
 #### Example: List
 
-```ts
-const producers = await client.producer.list()
+```ruby
+# list returns an Array of Producer records (raises on error).
+producers = client.Producer.list
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.random`
+Create an instance: `random = client.Random`
 
 #### Operations
 
@@ -919,14 +938,15 @@ Create an instance: `const random = client.random`
 
 #### Example: Load
 
-```ts
-const random = await client.random.load({ id: 'random_id' })
+```ruby
+# load returns the bare Random record (raises on error).
+random = client.Random.load({ "id" => "random_id" })
 ```
 
 
 ### Recommendation
 
-Create an instance: `const recommendation = client.recommendation`
+Create an instance: `recommendation = client.Recommendation`
 
 #### Operations
 
@@ -943,14 +963,15 @@ Create an instance: `const recommendation = client.recommendation`
 
 #### Example: List
 
-```ts
-const recommendations = await client.recommendation.list()
+```ruby
+# list returns an Array of Recommendation records (raises on error).
+recommendations = client.Recommendation.list
 ```
 
 
 ### Review
 
-Create an instance: `const review = client.review`
+Create an instance: `review = client.Review`
 
 #### Operations
 
@@ -960,14 +981,15 @@ Create an instance: `const review = client.review`
 
 #### Example: Load
 
-```ts
-const review = await client.review.load({ id: 'review_id' })
+```ruby
+# load returns the bare Review record (raises on error).
+review = client.Review.load({ "id" => "review_id" })
 ```
 
 
 ### Schedule
 
-Create an instance: `const schedule = client.schedule`
+Create an instance: `schedule = client.Schedule`
 
 #### Operations
 
@@ -984,14 +1006,15 @@ Create an instance: `const schedule = client.schedule`
 
 #### Example: List
 
-```ts
-const schedules = await client.schedule.list()
+```ruby
+# list returns an Array of Schedule records (raises on error).
+schedules = client.Schedule.list
 ```
 
 
 ### Season
 
-Create an instance: `const season = client.season`
+Create an instance: `season = client.Season`
 
 #### Operations
 
@@ -1010,14 +1033,15 @@ Create an instance: `const season = client.season`
 
 #### Example: List
 
-```ts
-const seasons = await client.season.list()
+```ruby
+# list returns an Array of Season records (raises on error).
+seasons = client.Season.list
 ```
 
 
 ### Top
 
-Create an instance: `const top = client.top`
+Create an instance: `top = client.Top`
 
 #### Operations
 
@@ -1033,14 +1057,15 @@ Create an instance: `const top = client.top`
 
 #### Example: Load
 
-```ts
-const top = await client.top.load({ id: 'top_id' })
+```ruby
+# load returns the bare Top record (raises on error).
+top = client.Top.load({ "id" => "top_id" })
 ```
 
 
 ### User
 
-Create an instance: `const user = client.user`
+Create an instance: `user = client.User`
 
 #### Operations
 
@@ -1058,20 +1083,22 @@ Create an instance: `const user = client.user`
 
 #### Example: Load
 
-```ts
-const user = await client.user.load({ id: 'user_id' })
+```ruby
+# load returns the bare User record (raises on error).
+user = client.User.load({ "id" => "user_id" })
 ```
 
 #### Example: List
 
-```ts
-const users = await client.user.list()
+```ruby
+# list returns an Array of User records (raises on error).
+users = client.User.list
 ```
 
 
 ### UserAbout
 
-Create an instance: `const user_about = client.user_about`
+Create an instance: `user_about = client.UserAbout`
 
 #### Operations
 
@@ -1087,14 +1114,15 @@ Create an instance: `const user_about = client.user_about`
 
 #### Example: List
 
-```ts
-const user_abouts = await client.user_about.list()
+```ruby
+# list returns an Array of UserAbout records (raises on error).
+user_abouts = client.UserAbout.list
 ```
 
 
 ### UserClub
 
-Create an instance: `const user_club = client.user_club`
+Create an instance: `user_club = client.UserClub`
 
 #### Operations
 
@@ -1111,14 +1139,15 @@ Create an instance: `const user_club = client.user_club`
 
 #### Example: List
 
-```ts
-const user_clubs = await client.user_club.list()
+```ruby
+# list returns an Array of UserClub records (raises on error).
+user_clubs = client.UserClub.list
 ```
 
 
 ### UserFriend
 
-Create an instance: `const user_friend = client.user_friend`
+Create an instance: `user_friend = client.UserFriend`
 
 #### Operations
 
@@ -1135,14 +1164,15 @@ Create an instance: `const user_friend = client.user_friend`
 
 #### Example: List
 
-```ts
-const user_friends = await client.user_friend.list()
+```ruby
+# list returns an Array of UserFriend records (raises on error).
+user_friends = client.UserFriend.list
 ```
 
 
 ### UserHistory
 
-Create an instance: `const user_history = client.user_history`
+Create an instance: `user_history = client.UserHistory`
 
 #### Operations
 
@@ -1160,14 +1190,15 @@ Create an instance: `const user_history = client.user_history`
 
 #### Example: List
 
-```ts
-const user_historys = await client.user_history.list()
+```ruby
+# list returns an Array of UserHistory records (raises on error).
+user_historys = client.UserHistory.list
 ```
 
 
 ### UserStatistic
 
-Create an instance: `const user_statistic = client.user_statistic`
+Create an instance: `user_statistic = client.UserStatistic`
 
 #### Operations
 
@@ -1183,14 +1214,15 @@ Create an instance: `const user_statistic = client.user_statistic`
 
 #### Example: Load
 
-```ts
-const user_statistic = await client.user_statistic.load({ id: 'user_statistic_id' })
+```ruby
+# load returns the bare UserStatistic record (raises on error).
+user_statistic = client.UserStatistic.load({ "id" => "user_statistic_id" })
 ```
 
 
 ### UserUpdate
 
-Create an instance: `const user_update = client.user_update`
+Create an instance: `user_update = client.UserUpdate`
 
 #### Operations
 
@@ -1206,14 +1238,15 @@ Create an instance: `const user_update = client.user_update`
 
 #### Example: Load
 
-```ts
-const user_update = await client.user_update.load({ id: 'user_update_id' })
+```ruby
+# load returns the bare UserUpdate record (raises on error).
+user_update = client.UserUpdate.load({ "id" => "user_update_id" })
 ```
 
 
 ### WatchEpisode
 
-Create an instance: `const watch_episode = client.watch_episode`
+Create an instance: `watch_episode = client.WatchEpisode`
 
 #### Operations
 
@@ -1230,14 +1263,15 @@ Create an instance: `const watch_episode = client.watch_episode`
 
 #### Example: List
 
-```ts
-const watch_episodes = await client.watch_episode.list()
+```ruby
+# list returns an Array of WatchEpisode records (raises on error).
+watch_episodes = client.WatchEpisode.list
 ```
 
 
 ### WatchPromo
 
-Create an instance: `const watch_promo = client.watch_promo`
+Create an instance: `watch_promo = client.WatchPromo`
 
 #### Operations
 
@@ -1254,8 +1288,9 @@ Create an instance: `const watch_promo = client.watch_promo`
 
 #### Example: List
 
-```ts
-const watch_promos = await client.watch_promo.list()
+```ruby
+# list returns an Array of WatchPromo records (raises on error).
+watch_promos = client.WatchPromo.list
 ```
 
 
@@ -1330,7 +1365,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-anime = client.anime
+anime = client.Anime
 anime.load({ "id" => "example_id" })
 
 # anime.data_get now returns the loaded anime data

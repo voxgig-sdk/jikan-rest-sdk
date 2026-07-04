@@ -233,10 +233,10 @@ class JikanRestSDK
 
     private $_anime = null;
 
-    // Idiomatic facade: $client->anime()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Anime() (PHP method
-    // names are case-insensitive).
-    public function anime($data = null)
+    // Canonical facade: $client->Anime()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->anime()
+    // resolves here too.
+    public function Anime($data = null)
     {
         require_once __DIR__ . '/entity/anime_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class JikanRestSDK
 
     private $_character = null;
 
-    // Idiomatic facade: $client->character()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Character() (PHP method
-    // names are case-insensitive).
-    public function character($data = null)
+    // Canonical facade: $client->Character()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->character()
+    // resolves here too.
+    public function Character($data = null)
     {
         require_once __DIR__ . '/entity/character_entity.php';
         if ($data === null) {
@@ -269,10 +269,10 @@ class JikanRestSDK
 
     private $_club = null;
 
-    // Idiomatic facade: $client->club()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Club() (PHP method
-    // names are case-insensitive).
-    public function club($data = null)
+    // Canonical facade: $client->Club()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->club()
+    // resolves here too.
+    public function Club($data = null)
     {
         require_once __DIR__ . '/entity/club_entity.php';
         if ($data === null) {
@@ -287,10 +287,10 @@ class JikanRestSDK
 
     private $_external = null;
 
-    // Idiomatic facade: $client->external()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias External() (PHP method
-    // names are case-insensitive).
-    public function external($data = null)
+    // Canonical facade: $client->External()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->external()
+    // resolves here too.
+    public function External($data = null)
     {
         require_once __DIR__ . '/entity/external_entity.php';
         if ($data === null) {
@@ -305,10 +305,10 @@ class JikanRestSDK
 
     private $_genre = null;
 
-    // Idiomatic facade: $client->genre()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Genre() (PHP method
-    // names are case-insensitive).
-    public function genre($data = null)
+    // Canonical facade: $client->Genre()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->genre()
+    // resolves here too.
+    public function Genre($data = null)
     {
         require_once __DIR__ . '/entity/genre_entity.php';
         if ($data === null) {
@@ -323,10 +323,10 @@ class JikanRestSDK
 
     private $_magazine = null;
 
-    // Idiomatic facade: $client->magazine()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Magazine() (PHP method
-    // names are case-insensitive).
-    public function magazine($data = null)
+    // Canonical facade: $client->Magazine()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->magazine()
+    // resolves here too.
+    public function Magazine($data = null)
     {
         require_once __DIR__ . '/entity/magazine_entity.php';
         if ($data === null) {
@@ -341,10 +341,10 @@ class JikanRestSDK
 
     private $_manga = null;
 
-    // Idiomatic facade: $client->manga()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Manga() (PHP method
-    // names are case-insensitive).
-    public function manga($data = null)
+    // Canonical facade: $client->Manga()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->manga()
+    // resolves here too.
+    public function Manga($data = null)
     {
         require_once __DIR__ . '/entity/manga_entity.php';
         if ($data === null) {
@@ -359,10 +359,10 @@ class JikanRestSDK
 
     private $_people_search = null;
 
-    // Idiomatic facade: $client->people_search()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias PeopleSearch() (PHP method
-    // names are case-insensitive).
-    public function people_search($data = null)
+    // Canonical facade: $client->PeopleSearch()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->people_search()
+    // resolves here too.
+    public function PeopleSearch($data = null)
     {
         require_once __DIR__ . '/entity/people_search_entity.php';
         if ($data === null) {
@@ -377,10 +377,10 @@ class JikanRestSDK
 
     private $_person = null;
 
-    // Idiomatic facade: $client->person()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Person() (PHP method
-    // names are case-insensitive).
-    public function person($data = null)
+    // Canonical facade: $client->Person()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->person()
+    // resolves here too.
+    public function Person($data = null)
     {
         require_once __DIR__ . '/entity/person_entity.php';
         if ($data === null) {
@@ -395,10 +395,10 @@ class JikanRestSDK
 
     private $_producer = null;
 
-    // Idiomatic facade: $client->producer()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Producer() (PHP method
-    // names are case-insensitive).
-    public function producer($data = null)
+    // Canonical facade: $client->Producer()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->producer()
+    // resolves here too.
+    public function Producer($data = null)
     {
         require_once __DIR__ . '/entity/producer_entity.php';
         if ($data === null) {
@@ -413,10 +413,10 @@ class JikanRestSDK
 
     private $_random = null;
 
-    // Idiomatic facade: $client->random()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Random() (PHP method
-    // names are case-insensitive).
-    public function random($data = null)
+    // Canonical facade: $client->Random()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->random()
+    // resolves here too.
+    public function Random($data = null)
     {
         require_once __DIR__ . '/entity/random_entity.php';
         if ($data === null) {
@@ -431,10 +431,10 @@ class JikanRestSDK
 
     private $_recommendation = null;
 
-    // Idiomatic facade: $client->recommendation()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Recommendation() (PHP method
-    // names are case-insensitive).
-    public function recommendation($data = null)
+    // Canonical facade: $client->Recommendation()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->recommendation()
+    // resolves here too.
+    public function Recommendation($data = null)
     {
         require_once __DIR__ . '/entity/recommendation_entity.php';
         if ($data === null) {
@@ -449,10 +449,10 @@ class JikanRestSDK
 
     private $_review = null;
 
-    // Idiomatic facade: $client->review()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Review() (PHP method
-    // names are case-insensitive).
-    public function review($data = null)
+    // Canonical facade: $client->Review()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->review()
+    // resolves here too.
+    public function Review($data = null)
     {
         require_once __DIR__ . '/entity/review_entity.php';
         if ($data === null) {
@@ -467,10 +467,10 @@ class JikanRestSDK
 
     private $_schedule = null;
 
-    // Idiomatic facade: $client->schedule()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Schedule() (PHP method
-    // names are case-insensitive).
-    public function schedule($data = null)
+    // Canonical facade: $client->Schedule()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->schedule()
+    // resolves here too.
+    public function Schedule($data = null)
     {
         require_once __DIR__ . '/entity/schedule_entity.php';
         if ($data === null) {
@@ -485,10 +485,10 @@ class JikanRestSDK
 
     private $_season = null;
 
-    // Idiomatic facade: $client->season()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Season() (PHP method
-    // names are case-insensitive).
-    public function season($data = null)
+    // Canonical facade: $client->Season()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->season()
+    // resolves here too.
+    public function Season($data = null)
     {
         require_once __DIR__ . '/entity/season_entity.php';
         if ($data === null) {
@@ -503,10 +503,10 @@ class JikanRestSDK
 
     private $_top = null;
 
-    // Idiomatic facade: $client->top()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Top() (PHP method
-    // names are case-insensitive).
-    public function top($data = null)
+    // Canonical facade: $client->Top()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->top()
+    // resolves here too.
+    public function Top($data = null)
     {
         require_once __DIR__ . '/entity/top_entity.php';
         if ($data === null) {
@@ -521,10 +521,10 @@ class JikanRestSDK
 
     private $_user = null;
 
-    // Idiomatic facade: $client->user()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias User() (PHP method
-    // names are case-insensitive).
-    public function user($data = null)
+    // Canonical facade: $client->User()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user()
+    // resolves here too.
+    public function User($data = null)
     {
         require_once __DIR__ . '/entity/user_entity.php';
         if ($data === null) {
@@ -539,10 +539,10 @@ class JikanRestSDK
 
     private $_user_about = null;
 
-    // Idiomatic facade: $client->user_about()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserAbout() (PHP method
-    // names are case-insensitive).
-    public function user_about($data = null)
+    // Canonical facade: $client->UserAbout()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_about()
+    // resolves here too.
+    public function UserAbout($data = null)
     {
         require_once __DIR__ . '/entity/user_about_entity.php';
         if ($data === null) {
@@ -557,10 +557,10 @@ class JikanRestSDK
 
     private $_user_club = null;
 
-    // Idiomatic facade: $client->user_club()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserClub() (PHP method
-    // names are case-insensitive).
-    public function user_club($data = null)
+    // Canonical facade: $client->UserClub()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_club()
+    // resolves here too.
+    public function UserClub($data = null)
     {
         require_once __DIR__ . '/entity/user_club_entity.php';
         if ($data === null) {
@@ -575,10 +575,10 @@ class JikanRestSDK
 
     private $_user_friend = null;
 
-    // Idiomatic facade: $client->user_friend()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserFriend() (PHP method
-    // names are case-insensitive).
-    public function user_friend($data = null)
+    // Canonical facade: $client->UserFriend()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_friend()
+    // resolves here too.
+    public function UserFriend($data = null)
     {
         require_once __DIR__ . '/entity/user_friend_entity.php';
         if ($data === null) {
@@ -593,10 +593,10 @@ class JikanRestSDK
 
     private $_user_history = null;
 
-    // Idiomatic facade: $client->user_history()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserHistory() (PHP method
-    // names are case-insensitive).
-    public function user_history($data = null)
+    // Canonical facade: $client->UserHistory()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_history()
+    // resolves here too.
+    public function UserHistory($data = null)
     {
         require_once __DIR__ . '/entity/user_history_entity.php';
         if ($data === null) {
@@ -611,10 +611,10 @@ class JikanRestSDK
 
     private $_user_statistic = null;
 
-    // Idiomatic facade: $client->user_statistic()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserStatistic() (PHP method
-    // names are case-insensitive).
-    public function user_statistic($data = null)
+    // Canonical facade: $client->UserStatistic()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_statistic()
+    // resolves here too.
+    public function UserStatistic($data = null)
     {
         require_once __DIR__ . '/entity/user_statistic_entity.php';
         if ($data === null) {
@@ -629,10 +629,10 @@ class JikanRestSDK
 
     private $_user_update = null;
 
-    // Idiomatic facade: $client->user_update()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias UserUpdate() (PHP method
-    // names are case-insensitive).
-    public function user_update($data = null)
+    // Canonical facade: $client->UserUpdate()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->user_update()
+    // resolves here too.
+    public function UserUpdate($data = null)
     {
         require_once __DIR__ . '/entity/user_update_entity.php';
         if ($data === null) {
@@ -647,10 +647,10 @@ class JikanRestSDK
 
     private $_watch_episode = null;
 
-    // Idiomatic facade: $client->watch_episode()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias WatchEpisode() (PHP method
-    // names are case-insensitive).
-    public function watch_episode($data = null)
+    // Canonical facade: $client->WatchEpisode()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->watch_episode()
+    // resolves here too.
+    public function WatchEpisode($data = null)
     {
         require_once __DIR__ . '/entity/watch_episode_entity.php';
         if ($data === null) {
@@ -665,10 +665,10 @@ class JikanRestSDK
 
     private $_watch_promo = null;
 
-    // Idiomatic facade: $client->watch_promo()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias WatchPromo() (PHP method
-    // names are case-insensitive).
-    public function watch_promo($data = null)
+    // Canonical facade: $client->WatchPromo()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->watch_promo()
+    // resolves here too.
+    public function WatchPromo($data = null)
     {
         require_once __DIR__ . '/entity/watch_promo_entity.php';
         if ($data === null) {

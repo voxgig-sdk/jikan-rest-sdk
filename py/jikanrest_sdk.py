@@ -220,409 +220,159 @@ class JikanRestSDK:
         }
 
 
-    @property
-    def anime(self):
-        """Idiomatic facade: client.anime.list() / client.anime.load({"id": ...})."""
-        from entity.anime_entity import AnimeEntity
-        cached = getattr(self, "_anime", None)
-        if cached is None:
-            cached = AnimeEntity(self, None)
-            self._anime = cached
-        return cached
-
-    def Anime(self, data=None):
-        # Deprecated: use client.anime instead.
+    def Anime(self, data=None) -> "AnimeEntity":
+        """Entity factory: client.Anime().list({}) / client.Anime().load({"id": ...})."""
         from entity.anime_entity import AnimeEntity
         return AnimeEntity(self, data)
 
 
-    @property
-    def character(self):
-        """Idiomatic facade: client.character.list() / client.character.load({"id": ...})."""
-        from entity.character_entity import CharacterEntity
-        cached = getattr(self, "_character", None)
-        if cached is None:
-            cached = CharacterEntity(self, None)
-            self._character = cached
-        return cached
-
-    def Character(self, data=None):
-        # Deprecated: use client.character instead.
+    def Character(self, data=None) -> "CharacterEntity":
+        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
-    @property
-    def club(self):
-        """Idiomatic facade: client.club.list() / client.club.load({"id": ...})."""
-        from entity.club_entity import ClubEntity
-        cached = getattr(self, "_club", None)
-        if cached is None:
-            cached = ClubEntity(self, None)
-            self._club = cached
-        return cached
-
-    def Club(self, data=None):
-        # Deprecated: use client.club instead.
+    def Club(self, data=None) -> "ClubEntity":
+        """Entity factory: client.Club().list({}) / client.Club().load({"id": ...})."""
         from entity.club_entity import ClubEntity
         return ClubEntity(self, data)
 
 
-    @property
-    def external(self):
-        """Idiomatic facade: client.external.list() / client.external.load({"id": ...})."""
-        from entity.external_entity import ExternalEntity
-        cached = getattr(self, "_external", None)
-        if cached is None:
-            cached = ExternalEntity(self, None)
-            self._external = cached
-        return cached
-
-    def External(self, data=None):
-        # Deprecated: use client.external instead.
+    def External(self, data=None) -> "ExternalEntity":
+        """Entity factory: client.External().list({}) / client.External().load({"id": ...})."""
         from entity.external_entity import ExternalEntity
         return ExternalEntity(self, data)
 
 
-    @property
-    def genre(self):
-        """Idiomatic facade: client.genre.list() / client.genre.load({"id": ...})."""
-        from entity.genre_entity import GenreEntity
-        cached = getattr(self, "_genre", None)
-        if cached is None:
-            cached = GenreEntity(self, None)
-            self._genre = cached
-        return cached
-
-    def Genre(self, data=None):
-        # Deprecated: use client.genre instead.
+    def Genre(self, data=None) -> "GenreEntity":
+        """Entity factory: client.Genre().list({}) / client.Genre().load({"id": ...})."""
         from entity.genre_entity import GenreEntity
         return GenreEntity(self, data)
 
 
-    @property
-    def magazine(self):
-        """Idiomatic facade: client.magazine.list() / client.magazine.load({"id": ...})."""
-        from entity.magazine_entity import MagazineEntity
-        cached = getattr(self, "_magazine", None)
-        if cached is None:
-            cached = MagazineEntity(self, None)
-            self._magazine = cached
-        return cached
-
-    def Magazine(self, data=None):
-        # Deprecated: use client.magazine instead.
+    def Magazine(self, data=None) -> "MagazineEntity":
+        """Entity factory: client.Magazine().list({}) / client.Magazine().load({"id": ...})."""
         from entity.magazine_entity import MagazineEntity
         return MagazineEntity(self, data)
 
 
-    @property
-    def manga(self):
-        """Idiomatic facade: client.manga.list() / client.manga.load({"id": ...})."""
-        from entity.manga_entity import MangaEntity
-        cached = getattr(self, "_manga", None)
-        if cached is None:
-            cached = MangaEntity(self, None)
-            self._manga = cached
-        return cached
-
-    def Manga(self, data=None):
-        # Deprecated: use client.manga instead.
+    def Manga(self, data=None) -> "MangaEntity":
+        """Entity factory: client.Manga().list({}) / client.Manga().load({"id": ...})."""
         from entity.manga_entity import MangaEntity
         return MangaEntity(self, data)
 
 
-    @property
-    def people_search(self):
-        """Idiomatic facade: client.people_search.list() / client.people_search.load({"id": ...})."""
-        from entity.people_search_entity import PeopleSearchEntity
-        cached = getattr(self, "_people_search", None)
-        if cached is None:
-            cached = PeopleSearchEntity(self, None)
-            self._people_search = cached
-        return cached
-
-    def PeopleSearch(self, data=None):
-        # Deprecated: use client.people_search instead.
+    def PeopleSearch(self, data=None) -> "PeopleSearchEntity":
+        """Entity factory: client.PeopleSearch().list({}) / client.PeopleSearch().load({"id": ...})."""
         from entity.people_search_entity import PeopleSearchEntity
         return PeopleSearchEntity(self, data)
 
 
-    @property
-    def person(self):
-        """Idiomatic facade: client.person.list() / client.person.load({"id": ...})."""
-        from entity.person_entity import PersonEntity
-        cached = getattr(self, "_person", None)
-        if cached is None:
-            cached = PersonEntity(self, None)
-            self._person = cached
-        return cached
-
-    def Person(self, data=None):
-        # Deprecated: use client.person instead.
+    def Person(self, data=None) -> "PersonEntity":
+        """Entity factory: client.Person().list({}) / client.Person().load({"id": ...})."""
         from entity.person_entity import PersonEntity
         return PersonEntity(self, data)
 
 
-    @property
-    def producer(self):
-        """Idiomatic facade: client.producer.list() / client.producer.load({"id": ...})."""
-        from entity.producer_entity import ProducerEntity
-        cached = getattr(self, "_producer", None)
-        if cached is None:
-            cached = ProducerEntity(self, None)
-            self._producer = cached
-        return cached
-
-    def Producer(self, data=None):
-        # Deprecated: use client.producer instead.
+    def Producer(self, data=None) -> "ProducerEntity":
+        """Entity factory: client.Producer().list({}) / client.Producer().load({"id": ...})."""
         from entity.producer_entity import ProducerEntity
         return ProducerEntity(self, data)
 
 
-    @property
-    def random(self):
-        """Idiomatic facade: client.random.list() / client.random.load({"id": ...})."""
-        from entity.random_entity import RandomEntity
-        cached = getattr(self, "_random", None)
-        if cached is None:
-            cached = RandomEntity(self, None)
-            self._random = cached
-        return cached
-
-    def Random(self, data=None):
-        # Deprecated: use client.random instead.
+    def Random(self, data=None) -> "RandomEntity":
+        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
-    @property
-    def recommendation(self):
-        """Idiomatic facade: client.recommendation.list() / client.recommendation.load({"id": ...})."""
-        from entity.recommendation_entity import RecommendationEntity
-        cached = getattr(self, "_recommendation", None)
-        if cached is None:
-            cached = RecommendationEntity(self, None)
-            self._recommendation = cached
-        return cached
-
-    def Recommendation(self, data=None):
-        # Deprecated: use client.recommendation instead.
+    def Recommendation(self, data=None) -> "RecommendationEntity":
+        """Entity factory: client.Recommendation().list({}) / client.Recommendation().load({"id": ...})."""
         from entity.recommendation_entity import RecommendationEntity
         return RecommendationEntity(self, data)
 
 
-    @property
-    def review(self):
-        """Idiomatic facade: client.review.list() / client.review.load({"id": ...})."""
-        from entity.review_entity import ReviewEntity
-        cached = getattr(self, "_review", None)
-        if cached is None:
-            cached = ReviewEntity(self, None)
-            self._review = cached
-        return cached
-
-    def Review(self, data=None):
-        # Deprecated: use client.review instead.
+    def Review(self, data=None) -> "ReviewEntity":
+        """Entity factory: client.Review().list({}) / client.Review().load({"id": ...})."""
         from entity.review_entity import ReviewEntity
         return ReviewEntity(self, data)
 
 
-    @property
-    def schedule(self):
-        """Idiomatic facade: client.schedule.list() / client.schedule.load({"id": ...})."""
-        from entity.schedule_entity import ScheduleEntity
-        cached = getattr(self, "_schedule", None)
-        if cached is None:
-            cached = ScheduleEntity(self, None)
-            self._schedule = cached
-        return cached
-
-    def Schedule(self, data=None):
-        # Deprecated: use client.schedule instead.
+    def Schedule(self, data=None) -> "ScheduleEntity":
+        """Entity factory: client.Schedule().list({}) / client.Schedule().load({"id": ...})."""
         from entity.schedule_entity import ScheduleEntity
         return ScheduleEntity(self, data)
 
 
-    @property
-    def season(self):
-        """Idiomatic facade: client.season.list() / client.season.load({"id": ...})."""
-        from entity.season_entity import SeasonEntity
-        cached = getattr(self, "_season", None)
-        if cached is None:
-            cached = SeasonEntity(self, None)
-            self._season = cached
-        return cached
-
-    def Season(self, data=None):
-        # Deprecated: use client.season instead.
+    def Season(self, data=None) -> "SeasonEntity":
+        """Entity factory: client.Season().list({}) / client.Season().load({"id": ...})."""
         from entity.season_entity import SeasonEntity
         return SeasonEntity(self, data)
 
 
-    @property
-    def top(self):
-        """Idiomatic facade: client.top.list() / client.top.load({"id": ...})."""
-        from entity.top_entity import TopEntity
-        cached = getattr(self, "_top", None)
-        if cached is None:
-            cached = TopEntity(self, None)
-            self._top = cached
-        return cached
-
-    def Top(self, data=None):
-        # Deprecated: use client.top instead.
+    def Top(self, data=None) -> "TopEntity":
+        """Entity factory: client.Top().list({}) / client.Top().load({"id": ...})."""
         from entity.top_entity import TopEntity
         return TopEntity(self, data)
 
 
-    @property
-    def user(self):
-        """Idiomatic facade: client.user.list() / client.user.load({"id": ...})."""
-        from entity.user_entity import UserEntity
-        cached = getattr(self, "_user", None)
-        if cached is None:
-            cached = UserEntity(self, None)
-            self._user = cached
-        return cached
-
-    def User(self, data=None):
-        # Deprecated: use client.user instead.
+    def User(self, data=None) -> "UserEntity":
+        """Entity factory: client.User().list({}) / client.User().load({"id": ...})."""
         from entity.user_entity import UserEntity
         return UserEntity(self, data)
 
 
-    @property
-    def user_about(self):
-        """Idiomatic facade: client.user_about.list() / client.user_about.load({"id": ...})."""
-        from entity.user_about_entity import UserAboutEntity
-        cached = getattr(self, "_user_about", None)
-        if cached is None:
-            cached = UserAboutEntity(self, None)
-            self._user_about = cached
-        return cached
-
-    def UserAbout(self, data=None):
-        # Deprecated: use client.user_about instead.
+    def UserAbout(self, data=None) -> "UserAboutEntity":
+        """Entity factory: client.UserAbout().list({}) / client.UserAbout().load({"id": ...})."""
         from entity.user_about_entity import UserAboutEntity
         return UserAboutEntity(self, data)
 
 
-    @property
-    def user_club(self):
-        """Idiomatic facade: client.user_club.list() / client.user_club.load({"id": ...})."""
-        from entity.user_club_entity import UserClubEntity
-        cached = getattr(self, "_user_club", None)
-        if cached is None:
-            cached = UserClubEntity(self, None)
-            self._user_club = cached
-        return cached
-
-    def UserClub(self, data=None):
-        # Deprecated: use client.user_club instead.
+    def UserClub(self, data=None) -> "UserClubEntity":
+        """Entity factory: client.UserClub().list({}) / client.UserClub().load({"id": ...})."""
         from entity.user_club_entity import UserClubEntity
         return UserClubEntity(self, data)
 
 
-    @property
-    def user_friend(self):
-        """Idiomatic facade: client.user_friend.list() / client.user_friend.load({"id": ...})."""
-        from entity.user_friend_entity import UserFriendEntity
-        cached = getattr(self, "_user_friend", None)
-        if cached is None:
-            cached = UserFriendEntity(self, None)
-            self._user_friend = cached
-        return cached
-
-    def UserFriend(self, data=None):
-        # Deprecated: use client.user_friend instead.
+    def UserFriend(self, data=None) -> "UserFriendEntity":
+        """Entity factory: client.UserFriend().list({}) / client.UserFriend().load({"id": ...})."""
         from entity.user_friend_entity import UserFriendEntity
         return UserFriendEntity(self, data)
 
 
-    @property
-    def user_history(self):
-        """Idiomatic facade: client.user_history.list() / client.user_history.load({"id": ...})."""
-        from entity.user_history_entity import UserHistoryEntity
-        cached = getattr(self, "_user_history", None)
-        if cached is None:
-            cached = UserHistoryEntity(self, None)
-            self._user_history = cached
-        return cached
-
-    def UserHistory(self, data=None):
-        # Deprecated: use client.user_history instead.
+    def UserHistory(self, data=None) -> "UserHistoryEntity":
+        """Entity factory: client.UserHistory().list({}) / client.UserHistory().load({"id": ...})."""
         from entity.user_history_entity import UserHistoryEntity
         return UserHistoryEntity(self, data)
 
 
-    @property
-    def user_statistic(self):
-        """Idiomatic facade: client.user_statistic.list() / client.user_statistic.load({"id": ...})."""
-        from entity.user_statistic_entity import UserStatisticEntity
-        cached = getattr(self, "_user_statistic", None)
-        if cached is None:
-            cached = UserStatisticEntity(self, None)
-            self._user_statistic = cached
-        return cached
-
-    def UserStatistic(self, data=None):
-        # Deprecated: use client.user_statistic instead.
+    def UserStatistic(self, data=None) -> "UserStatisticEntity":
+        """Entity factory: client.UserStatistic().list({}) / client.UserStatistic().load({"id": ...})."""
         from entity.user_statistic_entity import UserStatisticEntity
         return UserStatisticEntity(self, data)
 
 
-    @property
-    def user_update(self):
-        """Idiomatic facade: client.user_update.list() / client.user_update.load({"id": ...})."""
-        from entity.user_update_entity import UserUpdateEntity
-        cached = getattr(self, "_user_update", None)
-        if cached is None:
-            cached = UserUpdateEntity(self, None)
-            self._user_update = cached
-        return cached
-
-    def UserUpdate(self, data=None):
-        # Deprecated: use client.user_update instead.
+    def UserUpdate(self, data=None) -> "UserUpdateEntity":
+        """Entity factory: client.UserUpdate().list({}) / client.UserUpdate().load({"id": ...})."""
         from entity.user_update_entity import UserUpdateEntity
         return UserUpdateEntity(self, data)
 
 
-    @property
-    def watch_episode(self):
-        """Idiomatic facade: client.watch_episode.list() / client.watch_episode.load({"id": ...})."""
-        from entity.watch_episode_entity import WatchEpisodeEntity
-        cached = getattr(self, "_watch_episode", None)
-        if cached is None:
-            cached = WatchEpisodeEntity(self, None)
-            self._watch_episode = cached
-        return cached
-
-    def WatchEpisode(self, data=None):
-        # Deprecated: use client.watch_episode instead.
+    def WatchEpisode(self, data=None) -> "WatchEpisodeEntity":
+        """Entity factory: client.WatchEpisode().list({}) / client.WatchEpisode().load({"id": ...})."""
         from entity.watch_episode_entity import WatchEpisodeEntity
         return WatchEpisodeEntity(self, data)
 
 
-    @property
-    def watch_promo(self):
-        """Idiomatic facade: client.watch_promo.list() / client.watch_promo.load({"id": ...})."""
-        from entity.watch_promo_entity import WatchPromoEntity
-        cached = getattr(self, "_watch_promo", None)
-        if cached is None:
-            cached = WatchPromoEntity(self, None)
-            self._watch_promo = cached
-        return cached
-
-    def WatchPromo(self, data=None):
-        # Deprecated: use client.watch_promo instead.
+    def WatchPromo(self, data=None) -> "WatchPromoEntity":
+        """Entity factory: client.WatchPromo().list({}) / client.WatchPromo().load({"id": ...})."""
         from entity.watch_promo_entity import WatchPromoEntity
         return WatchPromoEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "JikanRestSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -642,3 +392,33 @@ class JikanRestSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.anime_entity import AnimeEntity
+    from entity.character_entity import CharacterEntity
+    from entity.club_entity import ClubEntity
+    from entity.external_entity import ExternalEntity
+    from entity.genre_entity import GenreEntity
+    from entity.magazine_entity import MagazineEntity
+    from entity.manga_entity import MangaEntity
+    from entity.people_search_entity import PeopleSearchEntity
+    from entity.person_entity import PersonEntity
+    from entity.producer_entity import ProducerEntity
+    from entity.random_entity import RandomEntity
+    from entity.recommendation_entity import RecommendationEntity
+    from entity.review_entity import ReviewEntity
+    from entity.schedule_entity import ScheduleEntity
+    from entity.season_entity import SeasonEntity
+    from entity.top_entity import TopEntity
+    from entity.user_entity import UserEntity
+    from entity.user_about_entity import UserAboutEntity
+    from entity.user_club_entity import UserClubEntity
+    from entity.user_friend_entity import UserFriendEntity
+    from entity.user_history_entity import UserHistoryEntity
+    from entity.user_statistic_entity import UserStatisticEntity
+    from entity.user_update_entity import UserUpdateEntity
+    from entity.watch_episode_entity import WatchEpisodeEntity
+    from entity.watch_promo_entity import WatchPromoEntity

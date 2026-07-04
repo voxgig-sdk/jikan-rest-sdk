@@ -208,325 +208,175 @@ class JikanRestSDK
   end
 
 
-  # Idiomatic facade: client.anime.list / client.anime.load({ "id" => ... })
-  def anime
-    require_relative 'entity/anime_entity'
-    @anime ||= AnimeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.anime instead.
+  # Canonical facade: client.Anime.list / client.Anime.load({ "id" => ... })
   def Anime(data = nil)
     require_relative 'entity/anime_entity'
     AnimeEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.character.list / client.character.load({ "id" => ... })
-  def character
-    require_relative 'entity/character_entity'
-    @character ||= CharacterEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.character instead.
+  # Canonical facade: client.Character.list / client.Character.load({ "id" => ... })
   def Character(data = nil)
     require_relative 'entity/character_entity'
     CharacterEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.club.list / client.club.load({ "id" => ... })
-  def club
-    require_relative 'entity/club_entity'
-    @club ||= ClubEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.club instead.
+  # Canonical facade: client.Club.list / client.Club.load({ "id" => ... })
   def Club(data = nil)
     require_relative 'entity/club_entity'
     ClubEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.external.list / client.external.load({ "id" => ... })
-  def external
-    require_relative 'entity/external_entity'
-    @external ||= ExternalEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.external instead.
+  # Canonical facade: client.External.list / client.External.load({ "id" => ... })
   def External(data = nil)
     require_relative 'entity/external_entity'
     ExternalEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.genre.list / client.genre.load({ "id" => ... })
-  def genre
-    require_relative 'entity/genre_entity'
-    @genre ||= GenreEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.genre instead.
+  # Canonical facade: client.Genre.list / client.Genre.load({ "id" => ... })
   def Genre(data = nil)
     require_relative 'entity/genre_entity'
     GenreEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.magazine.list / client.magazine.load({ "id" => ... })
-  def magazine
-    require_relative 'entity/magazine_entity'
-    @magazine ||= MagazineEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.magazine instead.
+  # Canonical facade: client.Magazine.list / client.Magazine.load({ "id" => ... })
   def Magazine(data = nil)
     require_relative 'entity/magazine_entity'
     MagazineEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.manga.list / client.manga.load({ "id" => ... })
-  def manga
-    require_relative 'entity/manga_entity'
-    @manga ||= MangaEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.manga instead.
+  # Canonical facade: client.Manga.list / client.Manga.load({ "id" => ... })
   def Manga(data = nil)
     require_relative 'entity/manga_entity'
     MangaEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.people_search.list / client.people_search.load({ "id" => ... })
-  def people_search
-    require_relative 'entity/people_search_entity'
-    @people_search ||= PeopleSearchEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.people_search instead.
+  # Canonical facade: client.PeopleSearch.list / client.PeopleSearch.load({ "id" => ... })
   def PeopleSearch(data = nil)
     require_relative 'entity/people_search_entity'
     PeopleSearchEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.person.list / client.person.load({ "id" => ... })
-  def person
-    require_relative 'entity/person_entity'
-    @person ||= PersonEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.person instead.
+  # Canonical facade: client.Person.list / client.Person.load({ "id" => ... })
   def Person(data = nil)
     require_relative 'entity/person_entity'
     PersonEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.producer.list / client.producer.load({ "id" => ... })
-  def producer
-    require_relative 'entity/producer_entity'
-    @producer ||= ProducerEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.producer instead.
+  # Canonical facade: client.Producer.list / client.Producer.load({ "id" => ... })
   def Producer(data = nil)
     require_relative 'entity/producer_entity'
     ProducerEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.random.list / client.random.load({ "id" => ... })
-  def random
-    require_relative 'entity/random_entity'
-    @random ||= RandomEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.random instead.
+  # Canonical facade: client.Random.list / client.Random.load({ "id" => ... })
   def Random(data = nil)
     require_relative 'entity/random_entity'
     RandomEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.recommendation.list / client.recommendation.load({ "id" => ... })
-  def recommendation
-    require_relative 'entity/recommendation_entity'
-    @recommendation ||= RecommendationEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.recommendation instead.
+  # Canonical facade: client.Recommendation.list / client.Recommendation.load({ "id" => ... })
   def Recommendation(data = nil)
     require_relative 'entity/recommendation_entity'
     RecommendationEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.review.list / client.review.load({ "id" => ... })
-  def review
-    require_relative 'entity/review_entity'
-    @review ||= ReviewEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.review instead.
+  # Canonical facade: client.Review.list / client.Review.load({ "id" => ... })
   def Review(data = nil)
     require_relative 'entity/review_entity'
     ReviewEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.schedule.list / client.schedule.load({ "id" => ... })
-  def schedule
-    require_relative 'entity/schedule_entity'
-    @schedule ||= ScheduleEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.schedule instead.
+  # Canonical facade: client.Schedule.list / client.Schedule.load({ "id" => ... })
   def Schedule(data = nil)
     require_relative 'entity/schedule_entity'
     ScheduleEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.season.list / client.season.load({ "id" => ... })
-  def season
-    require_relative 'entity/season_entity'
-    @season ||= SeasonEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.season instead.
+  # Canonical facade: client.Season.list / client.Season.load({ "id" => ... })
   def Season(data = nil)
     require_relative 'entity/season_entity'
     SeasonEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.top.list / client.top.load({ "id" => ... })
-  def top
-    require_relative 'entity/top_entity'
-    @top ||= TopEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.top instead.
+  # Canonical facade: client.Top.list / client.Top.load({ "id" => ... })
   def Top(data = nil)
     require_relative 'entity/top_entity'
     TopEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user.list / client.user.load({ "id" => ... })
-  def user
-    require_relative 'entity/user_entity'
-    @user ||= UserEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user instead.
+  # Canonical facade: client.User.list / client.User.load({ "id" => ... })
   def User(data = nil)
     require_relative 'entity/user_entity'
     UserEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_about.list / client.user_about.load({ "id" => ... })
-  def user_about
-    require_relative 'entity/user_about_entity'
-    @user_about ||= UserAboutEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_about instead.
+  # Canonical facade: client.UserAbout.list / client.UserAbout.load({ "id" => ... })
   def UserAbout(data = nil)
     require_relative 'entity/user_about_entity'
     UserAboutEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_club.list / client.user_club.load({ "id" => ... })
-  def user_club
-    require_relative 'entity/user_club_entity'
-    @user_club ||= UserClubEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_club instead.
+  # Canonical facade: client.UserClub.list / client.UserClub.load({ "id" => ... })
   def UserClub(data = nil)
     require_relative 'entity/user_club_entity'
     UserClubEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_friend.list / client.user_friend.load({ "id" => ... })
-  def user_friend
-    require_relative 'entity/user_friend_entity'
-    @user_friend ||= UserFriendEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_friend instead.
+  # Canonical facade: client.UserFriend.list / client.UserFriend.load({ "id" => ... })
   def UserFriend(data = nil)
     require_relative 'entity/user_friend_entity'
     UserFriendEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_history.list / client.user_history.load({ "id" => ... })
-  def user_history
-    require_relative 'entity/user_history_entity'
-    @user_history ||= UserHistoryEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_history instead.
+  # Canonical facade: client.UserHistory.list / client.UserHistory.load({ "id" => ... })
   def UserHistory(data = nil)
     require_relative 'entity/user_history_entity'
     UserHistoryEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_statistic.list / client.user_statistic.load({ "id" => ... })
-  def user_statistic
-    require_relative 'entity/user_statistic_entity'
-    @user_statistic ||= UserStatisticEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_statistic instead.
+  # Canonical facade: client.UserStatistic.list / client.UserStatistic.load({ "id" => ... })
   def UserStatistic(data = nil)
     require_relative 'entity/user_statistic_entity'
     UserStatisticEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.user_update.list / client.user_update.load({ "id" => ... })
-  def user_update
-    require_relative 'entity/user_update_entity'
-    @user_update ||= UserUpdateEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.user_update instead.
+  # Canonical facade: client.UserUpdate.list / client.UserUpdate.load({ "id" => ... })
   def UserUpdate(data = nil)
     require_relative 'entity/user_update_entity'
     UserUpdateEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.watch_episode.list / client.watch_episode.load({ "id" => ... })
-  def watch_episode
-    require_relative 'entity/watch_episode_entity'
-    @watch_episode ||= WatchEpisodeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.watch_episode instead.
+  # Canonical facade: client.WatchEpisode.list / client.WatchEpisode.load({ "id" => ... })
   def WatchEpisode(data = nil)
     require_relative 'entity/watch_episode_entity'
     WatchEpisodeEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.watch_promo.list / client.watch_promo.load({ "id" => ... })
-  def watch_promo
-    require_relative 'entity/watch_promo_entity'
-    @watch_promo ||= WatchPromoEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.watch_promo instead.
+  # Canonical facade: client.WatchPromo.list / client.WatchPromo.load({ "id" => ... })
   def WatchPromo(data = nil)
     require_relative 'entity/watch_promo_entity'
     WatchPromoEntity.new(self, data)

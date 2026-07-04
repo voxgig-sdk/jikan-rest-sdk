@@ -176,7 +176,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## AnimeEntity
 
 ```python
-anime = client.anime
+anime = client.Anime()
 ```
 
 ### Fields
@@ -210,7 +210,9 @@ anime = client.anime
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.anime.list({})
+results = client.Anime().list({})
+for anime in results:
+    print(anime)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -218,7 +220,7 @@ results = client.anime.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.anime.load({"id": "anime_id"})
+result = client.Anime().load({"id": "anime_id"})
 ```
 
 ### Common Methods
@@ -253,7 +255,7 @@ Return the entity name.
 ## CharacterEntity
 
 ```python
-character = client.character
+character = client.Character()
 ```
 
 ### Fields
@@ -277,7 +279,9 @@ character = client.character
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.character.list({})
+results = client.Character().list({})
+for character in results:
+    print(character)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -285,7 +289,7 @@ results = client.character.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.character.load({"id": "character_id"})
+result = client.Character().load({"id": "character_id"})
 ```
 
 ### Common Methods
@@ -320,7 +324,7 @@ Return the entity name.
 ## ClubEntity
 
 ```python
-club = client.club
+club = client.Club()
 ```
 
 ### Fields
@@ -339,7 +343,9 @@ club = client.club
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.club.list({})
+results = client.Club().list({})
+for club in results:
+    print(club)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -347,7 +353,7 @@ results = client.club.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.club.load({"id": "club_id"})
+result = client.Club().load({"id": "club_id"})
 ```
 
 ### Common Methods
@@ -382,7 +388,7 @@ Return the entity name.
 ## ExternalEntity
 
 ```python
-external = client.external
+external = client.External()
 ```
 
 ### Fields
@@ -399,7 +405,9 @@ external = client.external
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.external.list({})
+results = client.External().list({})
+for external in results:
+    print(external)
 ```
 
 ### Common Methods
@@ -434,7 +442,7 @@ Return the entity name.
 ## GenreEntity
 
 ```python
-genre = client.genre
+genre = client.Genre()
 ```
 
 ### Fields
@@ -453,7 +461,9 @@ genre = client.genre
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.genre.list({})
+results = client.Genre().list({})
+for genre in results:
+    print(genre)
 ```
 
 ### Common Methods
@@ -488,7 +498,7 @@ Return the entity name.
 ## MagazineEntity
 
 ```python
-magazine = client.magazine
+magazine = client.Magazine()
 ```
 
 ### Fields
@@ -505,7 +515,9 @@ magazine = client.magazine
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.magazine.list({})
+results = client.Magazine().list({})
+for magazine in results:
+    print(magazine)
 ```
 
 ### Common Methods
@@ -540,7 +552,7 @@ Return the entity name.
 ## MangaEntity
 
 ```python
-manga = client.manga
+manga = client.Manga()
 ```
 
 ### Fields
@@ -572,7 +584,9 @@ manga = client.manga
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.manga.list({})
+results = client.Manga().list({})
+for manga in results:
+    print(manga)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -580,7 +594,7 @@ results = client.manga.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.manga.load({"id": "manga_id"})
+result = client.Manga().load({"id": "manga_id"})
 ```
 
 ### Common Methods
@@ -615,7 +629,7 @@ Return the entity name.
 ## PeopleSearchEntity
 
 ```python
-people_search = client.people_search
+people_search = client.PeopleSearch()
 ```
 
 ### Fields
@@ -632,7 +646,9 @@ people_search = client.people_search
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.people_search.list({})
+results = client.PeopleSearch().list({})
+for people_search in results:
+    print(people_search)
 ```
 
 ### Common Methods
@@ -667,7 +683,7 @@ Return the entity name.
 ## PersonEntity
 
 ```python
-person = client.person
+person = client.Person()
 ```
 
 ### Fields
@@ -690,7 +706,9 @@ person = client.person
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.person.list({})
+results = client.Person().list({})
+for person in results:
+    print(person)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -698,7 +716,7 @@ results = client.person.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.person.load({"id": "person_id"})
+result = client.Person().load({"id": "person_id"})
 ```
 
 ### Common Methods
@@ -733,7 +751,7 @@ Return the entity name.
 ## ProducerEntity
 
 ```python
-producer = client.producer
+producer = client.Producer()
 ```
 
 ### Fields
@@ -752,7 +770,9 @@ producer = client.producer
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.producer.list({})
+results = client.Producer().list({})
+for producer in results:
+    print(producer)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -760,7 +780,7 @@ results = client.producer.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.producer.load({"id": "producer_id"})
+result = client.Producer().load({"id": "producer_id"})
 ```
 
 ### Common Methods
@@ -795,7 +815,7 @@ Return the entity name.
 ## RandomEntity
 
 ```python
-random = client.random
+random = client.Random()
 ```
 
 ### Fields
@@ -811,7 +831,7 @@ random = client.random
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.random.load({"id": "random_id"})
+result = client.Random().load({"id": "random_id"})
 ```
 
 ### Common Methods
@@ -846,7 +866,7 @@ Return the entity name.
 ## RecommendationEntity
 
 ```python
-recommendation = client.recommendation
+recommendation = client.Recommendation()
 ```
 
 ### Fields
@@ -863,7 +883,9 @@ recommendation = client.recommendation
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.recommendation.list({})
+results = client.Recommendation().list({})
+for recommendation in results:
+    print(recommendation)
 ```
 
 ### Common Methods
@@ -898,7 +920,7 @@ Return the entity name.
 ## ReviewEntity
 
 ```python
-review = client.review
+review = client.Review()
 ```
 
 ### Operations
@@ -908,7 +930,7 @@ review = client.review
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.review.load({"id": "review_id"})
+result = client.Review().load({"id": "review_id"})
 ```
 
 ### Common Methods
@@ -943,7 +965,7 @@ Return the entity name.
 ## ScheduleEntity
 
 ```python
-schedule = client.schedule
+schedule = client.Schedule()
 ```
 
 ### Fields
@@ -960,7 +982,9 @@ schedule = client.schedule
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.schedule.list({})
+results = client.Schedule().list({})
+for schedule in results:
+    print(schedule)
 ```
 
 ### Common Methods
@@ -995,7 +1019,7 @@ Return the entity name.
 ## SeasonEntity
 
 ```python
-season = client.season
+season = client.Season()
 ```
 
 ### Fields
@@ -1014,7 +1038,9 @@ season = client.season
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.season.list({})
+results = client.Season().list({})
+for season in results:
+    print(season)
 ```
 
 ### Common Methods
@@ -1049,7 +1075,7 @@ Return the entity name.
 ## TopEntity
 
 ```python
-top = client.top
+top = client.Top()
 ```
 
 ### Fields
@@ -1065,7 +1091,7 @@ top = client.top
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.top.load({"id": "top_id"})
+result = client.Top().load({"id": "top_id"})
 ```
 
 ### Common Methods
@@ -1100,7 +1126,7 @@ Return the entity name.
 ## UserEntity
 
 ```python
-user = client.user
+user = client.User()
 ```
 
 ### Fields
@@ -1117,7 +1143,9 @@ user = client.user
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.user.list({})
+results = client.User().list({})
+for user in results:
+    print(user)
 ```
 
 #### `load(reqmatch, ctrl=None) -> dict`
@@ -1125,7 +1153,7 @@ results = client.user.list({})
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.user.load({"id": "user_id"})
+result = client.User().load({"id": "user_id"})
 ```
 
 ### Common Methods
@@ -1160,7 +1188,7 @@ Return the entity name.
 ## UserAboutEntity
 
 ```python
-user_about = client.user_about
+user_about = client.UserAbout()
 ```
 
 ### Fields
@@ -1176,7 +1204,9 @@ user_about = client.user_about
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.user_about.list({})
+results = client.UserAbout().list({})
+for user_about in results:
+    print(user_about)
 ```
 
 ### Common Methods
@@ -1211,7 +1241,7 @@ Return the entity name.
 ## UserClubEntity
 
 ```python
-user_club = client.user_club
+user_club = client.UserClub()
 ```
 
 ### Fields
@@ -1228,7 +1258,9 @@ user_club = client.user_club
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.user_club.list({})
+results = client.UserClub().list({})
+for user_club in results:
+    print(user_club)
 ```
 
 ### Common Methods
@@ -1263,7 +1295,7 @@ Return the entity name.
 ## UserFriendEntity
 
 ```python
-user_friend = client.user_friend
+user_friend = client.UserFriend()
 ```
 
 ### Fields
@@ -1280,7 +1312,9 @@ user_friend = client.user_friend
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.user_friend.list({})
+results = client.UserFriend().list({})
+for user_friend in results:
+    print(user_friend)
 ```
 
 ### Common Methods
@@ -1315,7 +1349,7 @@ Return the entity name.
 ## UserHistoryEntity
 
 ```python
-user_history = client.user_history
+user_history = client.UserHistory()
 ```
 
 ### Fields
@@ -1333,7 +1367,9 @@ user_history = client.user_history
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.user_history.list({})
+results = client.UserHistory().list({})
+for user_history in results:
+    print(user_history)
 ```
 
 ### Common Methods
@@ -1368,7 +1404,7 @@ Return the entity name.
 ## UserStatisticEntity
 
 ```python
-user_statistic = client.user_statistic
+user_statistic = client.UserStatistic()
 ```
 
 ### Fields
@@ -1384,7 +1420,7 @@ user_statistic = client.user_statistic
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.user_statistic.load({"id": "user_statistic_id"})
+result = client.UserStatistic().load({"id": "user_statistic_id"})
 ```
 
 ### Common Methods
@@ -1419,7 +1455,7 @@ Return the entity name.
 ## UserUpdateEntity
 
 ```python
-user_update = client.user_update
+user_update = client.UserUpdate()
 ```
 
 ### Fields
@@ -1435,7 +1471,7 @@ user_update = client.user_update
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.user_update.load({"id": "user_update_id"})
+result = client.UserUpdate().load({"id": "user_update_id"})
 ```
 
 ### Common Methods
@@ -1470,7 +1506,7 @@ Return the entity name.
 ## WatchEpisodeEntity
 
 ```python
-watch_episode = client.watch_episode
+watch_episode = client.WatchEpisode()
 ```
 
 ### Fields
@@ -1487,7 +1523,9 @@ watch_episode = client.watch_episode
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.watch_episode.list({})
+results = client.WatchEpisode().list({})
+for watch_episode in results:
+    print(watch_episode)
 ```
 
 ### Common Methods
@@ -1522,7 +1560,7 @@ Return the entity name.
 ## WatchPromoEntity
 
 ```python
-watch_promo = client.watch_promo
+watch_promo = client.WatchPromo()
 ```
 
 ### Fields
@@ -1539,7 +1577,9 @@ watch_promo = client.watch_promo
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.watch_promo.list({})
+results = client.WatchPromo().list({})
+for watch_promo in results:
+    print(watch_promo)
 ```
 
 ### Common Methods
