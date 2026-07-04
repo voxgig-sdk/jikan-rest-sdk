@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch MagazineListMatch
+---@param ctrl? table
+---@return Magazine[]
+---@return string? err
 function MagazineEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch MangaLoadMatch
+---@param ctrl? table
+---@return Manga
+---@return string? err
 function MangaEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch MangaListMatch
+---@param ctrl? table
+---@return Manga[]
+---@return string? err
 function MangaEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

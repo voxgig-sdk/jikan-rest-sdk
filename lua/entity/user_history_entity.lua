@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch UserHistoryListMatch
+---@param ctrl? table
+---@return UserHistory[]
+---@return string? err
 function UserHistoryEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

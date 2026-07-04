@@ -43,14 +43,12 @@ class UserEntityTest < Minitest::Test
     user_ref01_ent = client.User(nil)
     user_ref01_match = {}
 
-    user_ref01_list_result, err = user_ref01_ent.list(user_ref01_match, nil)
-    assert_nil err
+    user_ref01_list_result = user_ref01_ent.list(user_ref01_match, nil)
     assert user_ref01_list_result.is_a?(Array)
 
     # LOAD
     user_ref01_match_dt0 = {}
-    user_ref01_data_dt0_loaded, err = user_ref01_ent.load(user_ref01_match_dt0, nil)
-    assert_nil err
+    user_ref01_data_dt0_loaded = user_ref01_ent.load(user_ref01_match_dt0, nil)
     assert !user_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def user_basic_setup(extra)
     "JIKANREST_TEST_USER_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def user_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Season,
+  SeasonListMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class SeasonEntity extends JikanRestEntityBase {
+class SeasonEntity extends JikanRestEntityBase<Season> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class SeasonEntity extends JikanRestEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: SeasonListMatch, ctrl?: Control): Promise<Season[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class SeasonEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Season[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

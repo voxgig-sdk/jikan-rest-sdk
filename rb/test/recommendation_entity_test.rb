@@ -43,8 +43,7 @@ class RecommendationEntityTest < Minitest::Test
     recommendation_ref01_ent = client.Recommendation(nil)
     recommendation_ref01_match = {}
 
-    recommendation_ref01_list_result, err = recommendation_ref01_ent.list(recommendation_ref01_match, nil)
-    assert_nil err
+    recommendation_ref01_list_result = recommendation_ref01_ent.list(recommendation_ref01_match, nil)
     assert recommendation_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def recommendation_basic_setup(extra)
     "JIKANREST_TEST_RECOMMENDATION_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def recommendation_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

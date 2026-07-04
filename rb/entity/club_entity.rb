@@ -45,6 +45,7 @@ class ClubEntity
     end
   end
 
+  # @return [Club, Hash] the current Club data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class ClubEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Club fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Club.
+  #
+  # @param reqmatch [ClubLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Club, Hash] the loaded Club; raises JikanRestError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
@@ -86,6 +93,11 @@ class ClubEntity
 
 
   
+  # List Club items matching the given filter.
+  #
+  # @param reqmatch [ClubListMatch, Hash, nil] match filter (any subset of Club fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Club>, Array] the matching Club items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

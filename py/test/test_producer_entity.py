@@ -50,14 +50,12 @@ class TestProducerEntity:
         producer_ref01_ent = client.Producer(None)
         producer_ref01_match = {}
 
-        producer_ref01_list_result, err = producer_ref01_ent.list(producer_ref01_match, None)
-        assert err is None
+        producer_ref01_list_result = producer_ref01_ent.list(producer_ref01_match, None)
         assert isinstance(producer_ref01_list_result, list)
 
         # LOAD
         producer_ref01_match_dt0 = {}
-        producer_ref01_data_dt0_loaded, err = producer_ref01_ent.load(producer_ref01_match_dt0, None)
-        assert err is None
+        producer_ref01_data_dt0_loaded = producer_ref01_ent.load(producer_ref01_match_dt0, None)
         assert producer_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _producer_basic_setup(extra):
         "JIKANREST_TEST_PRODUCER_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _producer_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

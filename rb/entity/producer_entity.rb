@@ -45,6 +45,7 @@ class ProducerEntity
     end
   end
 
+  # @return [Producer, Hash] the current Producer data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class ProducerEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Producer fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Producer.
+  #
+  # @param reqmatch [ProducerLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Producer, Hash] the loaded Producer; raises JikanRestError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
@@ -86,6 +93,11 @@ class ProducerEntity
 
 
   
+  # List Producer items matching the given filter.
+  #
+  # @param reqmatch [ProducerListMatch, Hash, nil] match filter (any subset of Producer fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Producer>, Array] the matching Producer items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

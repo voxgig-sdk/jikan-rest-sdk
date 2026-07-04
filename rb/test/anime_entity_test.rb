@@ -43,14 +43,12 @@ class AnimeEntityTest < Minitest::Test
     anime_ref01_ent = client.Anime(nil)
     anime_ref01_match = {}
 
-    anime_ref01_list_result, err = anime_ref01_ent.list(anime_ref01_match, nil)
-    assert_nil err
+    anime_ref01_list_result = anime_ref01_ent.list(anime_ref01_match, nil)
     assert anime_ref01_list_result.is_a?(Array)
 
     # LOAD
     anime_ref01_match_dt0 = {}
-    anime_ref01_data_dt0_loaded, err = anime_ref01_ent.load(anime_ref01_match_dt0, nil)
-    assert_nil err
+    anime_ref01_data_dt0_loaded = anime_ref01_ent.load(anime_ref01_match_dt0, nil)
     assert !anime_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def anime_basic_setup(extra)
     "JIKANREST_TEST_ANIME_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def anime_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

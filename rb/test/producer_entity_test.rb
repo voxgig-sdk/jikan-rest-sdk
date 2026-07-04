@@ -43,14 +43,12 @@ class ProducerEntityTest < Minitest::Test
     producer_ref01_ent = client.Producer(nil)
     producer_ref01_match = {}
 
-    producer_ref01_list_result, err = producer_ref01_ent.list(producer_ref01_match, nil)
-    assert_nil err
+    producer_ref01_list_result = producer_ref01_ent.list(producer_ref01_match, nil)
     assert producer_ref01_list_result.is_a?(Array)
 
     # LOAD
     producer_ref01_match_dt0 = {}
-    producer_ref01_data_dt0_loaded, err = producer_ref01_ent.load(producer_ref01_match_dt0, nil)
-    assert_nil err
+    producer_ref01_data_dt0_loaded = producer_ref01_ent.load(producer_ref01_match_dt0, nil)
     assert !producer_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def producer_basic_setup(extra)
     "JIKANREST_TEST_PRODUCER_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def producer_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

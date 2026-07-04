@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch UserFriendListMatch
+---@param ctrl? table
+---@return UserFriend[]
+---@return string? err
 function UserFriendEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

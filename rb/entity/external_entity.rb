@@ -45,6 +45,7 @@ class ExternalEntity
     end
   end
 
+  # @return [External, Hash] the current External data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class ExternalEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of External fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class ExternalEntity
   
 
   
+  # List External items matching the given filter.
+  #
+  # @param reqmatch [ExternalListMatch, Hash, nil] match filter (any subset of External fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<External>, Array] the matching External items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

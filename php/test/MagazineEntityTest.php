@@ -50,8 +50,7 @@ class MagazineEntityTest extends TestCase
         $magazine_ref01_ent = $client->Magazine(null);
         $magazine_ref01_match = [];
 
-        [$magazine_ref01_list_result, $err] = $magazine_ref01_ent->list($magazine_ref01_match, null);
-        $this->assertNull($err);
+        $magazine_ref01_list_result = $magazine_ref01_ent->list($magazine_ref01_match, null);
         $this->assertIsArray($magazine_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function magazine_basic_setup($extra)
         "JIKANREST_TEST_MAGAZINE_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function magazine_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch GenreListMatch
+---@param ctrl? table
+---@return Genre[]
+---@return string? err
 function GenreEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

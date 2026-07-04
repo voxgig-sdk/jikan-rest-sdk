@@ -45,6 +45,7 @@ class MagazineEntity
     end
   end
 
+  # @return [Magazine, Hash] the current Magazine data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class MagazineEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Magazine fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class MagazineEntity
   
 
   
+  # List Magazine items matching the given filter.
+  #
+  # @param reqmatch [MagazineListMatch, Hash, nil] match filter (any subset of Magazine fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Magazine>, Array] the matching Magazine items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

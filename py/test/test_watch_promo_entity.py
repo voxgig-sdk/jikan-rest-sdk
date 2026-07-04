@@ -50,8 +50,7 @@ class TestWatchPromoEntity:
         watch_promo_ref01_ent = client.WatchPromo(None)
         watch_promo_ref01_match = {}
 
-        watch_promo_ref01_list_result, err = watch_promo_ref01_ent.list(watch_promo_ref01_match, None)
-        assert err is None
+        watch_promo_ref01_list_result = watch_promo_ref01_ent.list(watch_promo_ref01_match, None)
         assert isinstance(watch_promo_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _watch_promo_basic_setup(extra):
         "JIKANREST_TEST_WATCH_PROMO_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _watch_promo_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

@@ -50,14 +50,12 @@ class TestUserEntity:
         user_ref01_ent = client.User(None)
         user_ref01_match = {}
 
-        user_ref01_list_result, err = user_ref01_ent.list(user_ref01_match, None)
-        assert err is None
+        user_ref01_list_result = user_ref01_ent.list(user_ref01_match, None)
         assert isinstance(user_ref01_list_result, list)
 
         # LOAD
         user_ref01_match_dt0 = {}
-        user_ref01_data_dt0_loaded, err = user_ref01_ent.load(user_ref01_match_dt0, None)
-        assert err is None
+        user_ref01_data_dt0_loaded = user_ref01_ent.load(user_ref01_match_dt0, None)
         assert user_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _user_basic_setup(extra):
         "JIKANREST_TEST_USER_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _user_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

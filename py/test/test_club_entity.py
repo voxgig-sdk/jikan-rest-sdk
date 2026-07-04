@@ -50,14 +50,12 @@ class TestClubEntity:
         club_ref01_ent = client.Club(None)
         club_ref01_match = {}
 
-        club_ref01_list_result, err = club_ref01_ent.list(club_ref01_match, None)
-        assert err is None
+        club_ref01_list_result = club_ref01_ent.list(club_ref01_match, None)
         assert isinstance(club_ref01_list_result, list)
 
         # LOAD
         club_ref01_match_dt0 = {}
-        club_ref01_data_dt0_loaded, err = club_ref01_ent.load(club_ref01_match_dt0, None)
-        assert err is None
+        club_ref01_data_dt0_loaded = club_ref01_ent.load(club_ref01_match_dt0, None)
         assert club_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _club_basic_setup(extra):
         "JIKANREST_TEST_CLUB_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _club_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

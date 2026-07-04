@@ -50,8 +50,7 @@ class TestMagazineEntity:
         magazine_ref01_ent = client.Magazine(None)
         magazine_ref01_match = {}
 
-        magazine_ref01_list_result, err = magazine_ref01_ent.list(magazine_ref01_match, None)
-        assert err is None
+        magazine_ref01_list_result = magazine_ref01_ent.list(magazine_ref01_match, None)
         assert isinstance(magazine_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _magazine_basic_setup(extra):
         "JIKANREST_TEST_MAGAZINE_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _magazine_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

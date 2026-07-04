@@ -52,8 +52,7 @@ class TestExternalEntity:
             "username": setup["idmap"]["username01"],
         }
 
-        external_ref01_list_result, err = external_ref01_ent.list(external_ref01_match, None)
-        assert err is None
+        external_ref01_list_result = external_ref01_ent.list(external_ref01_match, None)
         assert isinstance(external_ref01_list_result, list)
 
 
@@ -94,7 +93,6 @@ def _external_basic_setup(extra):
         "JIKANREST_TEST_EXTERNAL_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -105,7 +103,6 @@ def _external_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

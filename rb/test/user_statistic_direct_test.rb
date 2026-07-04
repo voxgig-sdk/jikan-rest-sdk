@@ -25,7 +25,7 @@ class UserStatisticDirectTest < Minitest::Test
       params["username"] = "direct01"
     end
 
-    result, err = client.direct({
+    result = client.direct({
       "path" => "users/{username}/statistics",
       "method" => "GET",
       "params" => params,
@@ -35,8 +35,8 @@ class UserStatisticDirectTest < Minitest::Test
       # Live mode is lenient: synthetic IDs frequently 4xx. Skip rather
       # than fail when the load endpoint isn't reachable with the IDs
       # we can construct from setup.idmap.
-      if !err.nil?
-        skip("load call failed (likely synthetic IDs against live API): #{err}")
+      if !result["err"].nil?
+        skip("load call failed (likely synthetic IDs against live API): #{result["err"]}")
         return
       end
       unless result["ok"]
@@ -49,7 +49,7 @@ class UserStatisticDirectTest < Minitest::Test
         return
       end
     else
-      assert_nil err
+      assert_nil result["err"]
       assert result["ok"]
       assert_equal 200, Helpers.to_int(result["status"])
       assert !result["data"].nil?
@@ -71,14 +71,12 @@ def user_statistic_direct_setup(mockres)
   env = Runner.env_override({
     "JIKANREST_TEST_USER_STATISTIC_ENTID" => {},
     "JIKANREST_TEST_LIVE" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   live = env["JIKANREST_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["JIKANREST_APIKEY"],
     }
     client = JikanRestSDK.new(merged_opts)
     return {

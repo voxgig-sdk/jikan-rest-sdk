@@ -50,14 +50,12 @@ class ClubEntityTest extends TestCase
         $club_ref01_ent = $client->Club(null);
         $club_ref01_match = [];
 
-        [$club_ref01_list_result, $err] = $club_ref01_ent->list($club_ref01_match, null);
-        $this->assertNull($err);
+        $club_ref01_list_result = $club_ref01_ent->list($club_ref01_match, null);
         $this->assertIsArray($club_ref01_list_result);
 
         // LOAD
         $club_ref01_match_dt0 = [];
-        [$club_ref01_data_dt0_loaded, $err] = $club_ref01_ent->load($club_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $club_ref01_data_dt0_loaded = $club_ref01_ent->load($club_ref01_match_dt0, null);
         $this->assertNotNull($club_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function club_basic_setup($extra)
         "JIKANREST_TEST_CLUB_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function club_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -49,8 +49,7 @@ class TestReviewEntity:
         # LOAD
         review_ref01_ent = client.Review(None)
         review_ref01_match_dt0 = {}
-        review_ref01_data_dt0_loaded, err = review_ref01_ent.load(review_ref01_match_dt0, None)
-        assert err is None
+        review_ref01_data_dt0_loaded = review_ref01_ent.load(review_ref01_match_dt0, None)
         assert review_ref01_data_dt0_loaded is not None
 
 
@@ -91,7 +90,6 @@ def _review_basic_setup(extra):
         "JIKANREST_TEST_REVIEW_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,7 +100,6 @@ def _review_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

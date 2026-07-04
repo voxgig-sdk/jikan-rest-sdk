@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  UserClub,
+  UserClubListMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class UserClubEntity extends JikanRestEntityBase {
+class UserClubEntity extends JikanRestEntityBase<UserClub> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class UserClubEntity extends JikanRestEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: UserClubListMatch, ctrl?: Control): Promise<UserClub[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class UserClubEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<UserClub[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

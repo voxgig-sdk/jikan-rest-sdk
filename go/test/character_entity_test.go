@@ -129,7 +129,6 @@ func characterBasicSetup(extra map[string]any) *entityTestSetup {
 		"JIKANREST_TEST_CHARACTER_ENTID": idmap,
 		"JIKANREST_TEST_LIVE":      "FALSE",
 		"JIKANREST_TEST_EXPLAIN":   "FALSE",
-		"JIKANREST_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["JIKANREST_TEST_CHARACTER_ENTID"])
@@ -140,7 +139,6 @@ func characterBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["JIKANREST_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["JIKANREST_APIKEY"],
 			},
 			extra,
 		})

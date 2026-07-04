@@ -43,8 +43,7 @@ class MagazineEntityTest < Minitest::Test
     magazine_ref01_ent = client.Magazine(nil)
     magazine_ref01_match = {}
 
-    magazine_ref01_list_result, err = magazine_ref01_ent.list(magazine_ref01_match, nil)
-    assert_nil err
+    magazine_ref01_list_result = magazine_ref01_ent.list(magazine_ref01_match, nil)
     assert magazine_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def magazine_basic_setup(extra)
     "JIKANREST_TEST_MAGAZINE_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def magazine_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

@@ -50,14 +50,12 @@ class TestAnimeEntity:
         anime_ref01_ent = client.Anime(None)
         anime_ref01_match = {}
 
-        anime_ref01_list_result, err = anime_ref01_ent.list(anime_ref01_match, None)
-        assert err is None
+        anime_ref01_list_result = anime_ref01_ent.list(anime_ref01_match, None)
         assert isinstance(anime_ref01_list_result, list)
 
         # LOAD
         anime_ref01_match_dt0 = {}
-        anime_ref01_data_dt0_loaded, err = anime_ref01_ent.load(anime_ref01_match_dt0, None)
-        assert err is None
+        anime_ref01_data_dt0_loaded = anime_ref01_ent.load(anime_ref01_match_dt0, None)
         assert anime_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _anime_basic_setup(extra):
         "JIKANREST_TEST_ANIME_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _anime_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

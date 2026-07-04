@@ -50,8 +50,7 @@ class TestRecommendationEntity:
         recommendation_ref01_ent = client.Recommendation(None)
         recommendation_ref01_match = {}
 
-        recommendation_ref01_list_result, err = recommendation_ref01_ent.list(recommendation_ref01_match, None)
-        assert err is None
+        recommendation_ref01_list_result = recommendation_ref01_ent.list(recommendation_ref01_match, None)
         assert isinstance(recommendation_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _recommendation_basic_setup(extra):
         "JIKANREST_TEST_RECOMMENDATION_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _recommendation_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

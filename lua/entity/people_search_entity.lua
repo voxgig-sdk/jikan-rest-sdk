@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch PeopleSearchListMatch
+---@param ctrl? table
+---@return PeopleSearch[]
+---@return string? err
 function PeopleSearchEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

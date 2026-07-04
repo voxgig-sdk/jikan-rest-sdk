@@ -50,8 +50,7 @@ class WatchEpisodeEntityTest extends TestCase
         $watch_episode_ref01_ent = $client->WatchEpisode(null);
         $watch_episode_ref01_match = [];
 
-        [$watch_episode_ref01_list_result, $err] = $watch_episode_ref01_ent->list($watch_episode_ref01_match, null);
-        $this->assertNull($err);
+        $watch_episode_ref01_list_result = $watch_episode_ref01_ent->list($watch_episode_ref01_match, null);
         $this->assertIsArray($watch_episode_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function watch_episode_basic_setup($extra)
         "JIKANREST_TEST_WATCH_EPISODE_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function watch_episode_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

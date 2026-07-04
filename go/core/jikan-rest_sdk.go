@@ -245,126 +245,201 @@ func (sdk *JikanRestSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// Anime returns a Anime entity bound to this client.
+// Idiomatic usage: client.Anime(nil).List(nil, nil) or
+// client.Anime(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Anime(data map[string]any) JikanRestEntity {
 	return NewAnimeEntityFunc(sdk, data)
 }
 
 
+// Character returns a Character entity bound to this client.
+// Idiomatic usage: client.Character(nil).List(nil, nil) or
+// client.Character(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Character(data map[string]any) JikanRestEntity {
 	return NewCharacterEntityFunc(sdk, data)
 }
 
 
+// Club returns a Club entity bound to this client.
+// Idiomatic usage: client.Club(nil).List(nil, nil) or
+// client.Club(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Club(data map[string]any) JikanRestEntity {
 	return NewClubEntityFunc(sdk, data)
 }
 
 
+// External returns a External entity bound to this client.
+// Idiomatic usage: client.External(nil).List(nil, nil) or
+// client.External(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) External(data map[string]any) JikanRestEntity {
 	return NewExternalEntityFunc(sdk, data)
 }
 
 
+// Genre returns a Genre entity bound to this client.
+// Idiomatic usage: client.Genre(nil).List(nil, nil) or
+// client.Genre(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Genre(data map[string]any) JikanRestEntity {
 	return NewGenreEntityFunc(sdk, data)
 }
 
 
+// Magazine returns a Magazine entity bound to this client.
+// Idiomatic usage: client.Magazine(nil).List(nil, nil) or
+// client.Magazine(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Magazine(data map[string]any) JikanRestEntity {
 	return NewMagazineEntityFunc(sdk, data)
 }
 
 
+// Manga returns a Manga entity bound to this client.
+// Idiomatic usage: client.Manga(nil).List(nil, nil) or
+// client.Manga(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Manga(data map[string]any) JikanRestEntity {
 	return NewMangaEntityFunc(sdk, data)
 }
 
 
+// PeopleSearch returns a PeopleSearch entity bound to this client.
+// Idiomatic usage: client.PeopleSearch(nil).List(nil, nil) or
+// client.PeopleSearch(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) PeopleSearch(data map[string]any) JikanRestEntity {
 	return NewPeopleSearchEntityFunc(sdk, data)
 }
 
 
+// Person returns a Person entity bound to this client.
+// Idiomatic usage: client.Person(nil).List(nil, nil) or
+// client.Person(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Person(data map[string]any) JikanRestEntity {
 	return NewPersonEntityFunc(sdk, data)
 }
 
 
+// Producer returns a Producer entity bound to this client.
+// Idiomatic usage: client.Producer(nil).List(nil, nil) or
+// client.Producer(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Producer(data map[string]any) JikanRestEntity {
 	return NewProducerEntityFunc(sdk, data)
 }
 
 
+// Random returns a Random entity bound to this client.
+// Idiomatic usage: client.Random(nil).List(nil, nil) or
+// client.Random(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Random(data map[string]any) JikanRestEntity {
 	return NewRandomEntityFunc(sdk, data)
 }
 
 
+// Recommendation returns a Recommendation entity bound to this client.
+// Idiomatic usage: client.Recommendation(nil).List(nil, nil) or
+// client.Recommendation(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Recommendation(data map[string]any) JikanRestEntity {
 	return NewRecommendationEntityFunc(sdk, data)
 }
 
 
+// Review returns a Review entity bound to this client.
+// Idiomatic usage: client.Review(nil).List(nil, nil) or
+// client.Review(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Review(data map[string]any) JikanRestEntity {
 	return NewReviewEntityFunc(sdk, data)
 }
 
 
+// Schedule returns a Schedule entity bound to this client.
+// Idiomatic usage: client.Schedule(nil).List(nil, nil) or
+// client.Schedule(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Schedule(data map[string]any) JikanRestEntity {
 	return NewScheduleEntityFunc(sdk, data)
 }
 
 
+// Season returns a Season entity bound to this client.
+// Idiomatic usage: client.Season(nil).List(nil, nil) or
+// client.Season(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Season(data map[string]any) JikanRestEntity {
 	return NewSeasonEntityFunc(sdk, data)
 }
 
 
+// Top returns a Top entity bound to this client.
+// Idiomatic usage: client.Top(nil).List(nil, nil) or
+// client.Top(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) Top(data map[string]any) JikanRestEntity {
 	return NewTopEntityFunc(sdk, data)
 }
 
 
+// User returns a User entity bound to this client.
+// Idiomatic usage: client.User(nil).List(nil, nil) or
+// client.User(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) User(data map[string]any) JikanRestEntity {
 	return NewUserEntityFunc(sdk, data)
 }
 
 
+// UserAbout returns a UserAbout entity bound to this client.
+// Idiomatic usage: client.UserAbout(nil).List(nil, nil) or
+// client.UserAbout(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserAbout(data map[string]any) JikanRestEntity {
 	return NewUserAboutEntityFunc(sdk, data)
 }
 
 
+// UserClub returns a UserClub entity bound to this client.
+// Idiomatic usage: client.UserClub(nil).List(nil, nil) or
+// client.UserClub(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserClub(data map[string]any) JikanRestEntity {
 	return NewUserClubEntityFunc(sdk, data)
 }
 
 
+// UserFriend returns a UserFriend entity bound to this client.
+// Idiomatic usage: client.UserFriend(nil).List(nil, nil) or
+// client.UserFriend(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserFriend(data map[string]any) JikanRestEntity {
 	return NewUserFriendEntityFunc(sdk, data)
 }
 
 
+// UserHistory returns a UserHistory entity bound to this client.
+// Idiomatic usage: client.UserHistory(nil).List(nil, nil) or
+// client.UserHistory(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserHistory(data map[string]any) JikanRestEntity {
 	return NewUserHistoryEntityFunc(sdk, data)
 }
 
 
+// UserStatistic returns a UserStatistic entity bound to this client.
+// Idiomatic usage: client.UserStatistic(nil).List(nil, nil) or
+// client.UserStatistic(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserStatistic(data map[string]any) JikanRestEntity {
 	return NewUserStatisticEntityFunc(sdk, data)
 }
 
 
+// UserUpdate returns a UserUpdate entity bound to this client.
+// Idiomatic usage: client.UserUpdate(nil).List(nil, nil) or
+// client.UserUpdate(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) UserUpdate(data map[string]any) JikanRestEntity {
 	return NewUserUpdateEntityFunc(sdk, data)
 }
 
 
+// WatchEpisode returns a WatchEpisode entity bound to this client.
+// Idiomatic usage: client.WatchEpisode(nil).List(nil, nil) or
+// client.WatchEpisode(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) WatchEpisode(data map[string]any) JikanRestEntity {
 	return NewWatchEpisodeEntityFunc(sdk, data)
 }
 
 
+// WatchPromo returns a WatchPromo entity bound to this client.
+// Idiomatic usage: client.WatchPromo(nil).List(nil, nil) or
+// client.WatchPromo(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *JikanRestSDK) WatchPromo(data map[string]any) JikanRestEntity {
 	return NewWatchPromoEntityFunc(sdk, data)
 }

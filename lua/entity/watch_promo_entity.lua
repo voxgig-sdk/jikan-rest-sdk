@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch WatchPromoListMatch
+---@param ctrl? table
+---@return WatchPromo[]
+---@return string? err
 function WatchPromoEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

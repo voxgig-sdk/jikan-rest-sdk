@@ -26,6 +26,8 @@ import { UserUpdateEntity } from './entity/UserUpdateEntity'
 import { WatchEpisodeEntity } from './entity/WatchEpisodeEntity'
 import { WatchPromoEntity } from './entity/WatchPromoEntity'
 
+export type * from './JikanRestTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -226,150 +228,350 @@ class JikanRestSDK {
 
 
 
+  _anime?: AnimeEntity
+
+  // Idiomatic facade: `client.anime.list()` / `client.anime.load({ id })`.
+  get anime(): AnimeEntity {
+    return (this._anime ??= new AnimeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.anime` instead. */
   Anime(data?: any) {
     const self = this
     return new AnimeEntity(self,data)
   }
 
 
+  _character?: CharacterEntity
+
+  // Idiomatic facade: `client.character.list()` / `client.character.load({ id })`.
+  get character(): CharacterEntity {
+    return (this._character ??= new CharacterEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.character` instead. */
   Character(data?: any) {
     const self = this
     return new CharacterEntity(self,data)
   }
 
 
+  _club?: ClubEntity
+
+  // Idiomatic facade: `client.club.list()` / `client.club.load({ id })`.
+  get club(): ClubEntity {
+    return (this._club ??= new ClubEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.club` instead. */
   Club(data?: any) {
     const self = this
     return new ClubEntity(self,data)
   }
 
 
+  _external?: ExternalEntity
+
+  // Idiomatic facade: `client.external.list()` / `client.external.load({ id })`.
+  get external(): ExternalEntity {
+    return (this._external ??= new ExternalEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.external` instead. */
   External(data?: any) {
     const self = this
     return new ExternalEntity(self,data)
   }
 
 
+  _genre?: GenreEntity
+
+  // Idiomatic facade: `client.genre.list()` / `client.genre.load({ id })`.
+  get genre(): GenreEntity {
+    return (this._genre ??= new GenreEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.genre` instead. */
   Genre(data?: any) {
     const self = this
     return new GenreEntity(self,data)
   }
 
 
+  _magazine?: MagazineEntity
+
+  // Idiomatic facade: `client.magazine.list()` / `client.magazine.load({ id })`.
+  get magazine(): MagazineEntity {
+    return (this._magazine ??= new MagazineEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.magazine` instead. */
   Magazine(data?: any) {
     const self = this
     return new MagazineEntity(self,data)
   }
 
 
+  _manga?: MangaEntity
+
+  // Idiomatic facade: `client.manga.list()` / `client.manga.load({ id })`.
+  get manga(): MangaEntity {
+    return (this._manga ??= new MangaEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.manga` instead. */
   Manga(data?: any) {
     const self = this
     return new MangaEntity(self,data)
   }
 
 
+  _people_search?: PeopleSearchEntity
+
+  // Idiomatic facade: `client.people_search.list()` / `client.people_search.load({ id })`.
+  get people_search(): PeopleSearchEntity {
+    return (this._people_search ??= new PeopleSearchEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.people_search` instead. */
   PeopleSearch(data?: any) {
     const self = this
     return new PeopleSearchEntity(self,data)
   }
 
 
+  _person?: PersonEntity
+
+  // Idiomatic facade: `client.person.list()` / `client.person.load({ id })`.
+  get person(): PersonEntity {
+    return (this._person ??= new PersonEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.person` instead. */
   Person(data?: any) {
     const self = this
     return new PersonEntity(self,data)
   }
 
 
+  _producer?: ProducerEntity
+
+  // Idiomatic facade: `client.producer.list()` / `client.producer.load({ id })`.
+  get producer(): ProducerEntity {
+    return (this._producer ??= new ProducerEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.producer` instead. */
   Producer(data?: any) {
     const self = this
     return new ProducerEntity(self,data)
   }
 
 
+  _random?: RandomEntity
+
+  // Idiomatic facade: `client.random.list()` / `client.random.load({ id })`.
+  get random(): RandomEntity {
+    return (this._random ??= new RandomEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.random` instead. */
   Random(data?: any) {
     const self = this
     return new RandomEntity(self,data)
   }
 
 
+  _recommendation?: RecommendationEntity
+
+  // Idiomatic facade: `client.recommendation.list()` / `client.recommendation.load({ id })`.
+  get recommendation(): RecommendationEntity {
+    return (this._recommendation ??= new RecommendationEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.recommendation` instead. */
   Recommendation(data?: any) {
     const self = this
     return new RecommendationEntity(self,data)
   }
 
 
+  _review?: ReviewEntity
+
+  // Idiomatic facade: `client.review.list()` / `client.review.load({ id })`.
+  get review(): ReviewEntity {
+    return (this._review ??= new ReviewEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.review` instead. */
   Review(data?: any) {
     const self = this
     return new ReviewEntity(self,data)
   }
 
 
+  _schedule?: ScheduleEntity
+
+  // Idiomatic facade: `client.schedule.list()` / `client.schedule.load({ id })`.
+  get schedule(): ScheduleEntity {
+    return (this._schedule ??= new ScheduleEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.schedule` instead. */
   Schedule(data?: any) {
     const self = this
     return new ScheduleEntity(self,data)
   }
 
 
+  _season?: SeasonEntity
+
+  // Idiomatic facade: `client.season.list()` / `client.season.load({ id })`.
+  get season(): SeasonEntity {
+    return (this._season ??= new SeasonEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.season` instead. */
   Season(data?: any) {
     const self = this
     return new SeasonEntity(self,data)
   }
 
 
+  _top?: TopEntity
+
+  // Idiomatic facade: `client.top.list()` / `client.top.load({ id })`.
+  get top(): TopEntity {
+    return (this._top ??= new TopEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.top` instead. */
   Top(data?: any) {
     const self = this
     return new TopEntity(self,data)
   }
 
 
+  _user?: UserEntity
+
+  // Idiomatic facade: `client.user.list()` / `client.user.load({ id })`.
+  get user(): UserEntity {
+    return (this._user ??= new UserEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user` instead. */
   User(data?: any) {
     const self = this
     return new UserEntity(self,data)
   }
 
 
+  _user_about?: UserAboutEntity
+
+  // Idiomatic facade: `client.user_about.list()` / `client.user_about.load({ id })`.
+  get user_about(): UserAboutEntity {
+    return (this._user_about ??= new UserAboutEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_about` instead. */
   UserAbout(data?: any) {
     const self = this
     return new UserAboutEntity(self,data)
   }
 
 
+  _user_club?: UserClubEntity
+
+  // Idiomatic facade: `client.user_club.list()` / `client.user_club.load({ id })`.
+  get user_club(): UserClubEntity {
+    return (this._user_club ??= new UserClubEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_club` instead. */
   UserClub(data?: any) {
     const self = this
     return new UserClubEntity(self,data)
   }
 
 
+  _user_friend?: UserFriendEntity
+
+  // Idiomatic facade: `client.user_friend.list()` / `client.user_friend.load({ id })`.
+  get user_friend(): UserFriendEntity {
+    return (this._user_friend ??= new UserFriendEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_friend` instead. */
   UserFriend(data?: any) {
     const self = this
     return new UserFriendEntity(self,data)
   }
 
 
+  _user_history?: UserHistoryEntity
+
+  // Idiomatic facade: `client.user_history.list()` / `client.user_history.load({ id })`.
+  get user_history(): UserHistoryEntity {
+    return (this._user_history ??= new UserHistoryEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_history` instead. */
   UserHistory(data?: any) {
     const self = this
     return new UserHistoryEntity(self,data)
   }
 
 
+  _user_statistic?: UserStatisticEntity
+
+  // Idiomatic facade: `client.user_statistic.list()` / `client.user_statistic.load({ id })`.
+  get user_statistic(): UserStatisticEntity {
+    return (this._user_statistic ??= new UserStatisticEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_statistic` instead. */
   UserStatistic(data?: any) {
     const self = this
     return new UserStatisticEntity(self,data)
   }
 
 
+  _user_update?: UserUpdateEntity
+
+  // Idiomatic facade: `client.user_update.list()` / `client.user_update.load({ id })`.
+  get user_update(): UserUpdateEntity {
+    return (this._user_update ??= new UserUpdateEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.user_update` instead. */
   UserUpdate(data?: any) {
     const self = this
     return new UserUpdateEntity(self,data)
   }
 
 
+  _watch_episode?: WatchEpisodeEntity
+
+  // Idiomatic facade: `client.watch_episode.list()` / `client.watch_episode.load({ id })`.
+  get watch_episode(): WatchEpisodeEntity {
+    return (this._watch_episode ??= new WatchEpisodeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.watch_episode` instead. */
   WatchEpisode(data?: any) {
     const self = this
     return new WatchEpisodeEntity(self,data)
   }
 
 
+  _watch_promo?: WatchPromoEntity
+
+  // Idiomatic facade: `client.watch_promo.list()` / `client.watch_promo.load({ id })`.
+  get watch_promo(): WatchPromoEntity {
+    return (this._watch_promo ??= new WatchPromoEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.watch_promo` instead. */
   WatchPromo(data?: any) {
     const self = this
     return new WatchPromoEntity(self,data)

@@ -43,14 +43,12 @@ class MangaEntityTest < Minitest::Test
     manga_ref01_ent = client.Manga(nil)
     manga_ref01_match = {}
 
-    manga_ref01_list_result, err = manga_ref01_ent.list(manga_ref01_match, nil)
-    assert_nil err
+    manga_ref01_list_result = manga_ref01_ent.list(manga_ref01_match, nil)
     assert manga_ref01_list_result.is_a?(Array)
 
     # LOAD
     manga_ref01_match_dt0 = {}
-    manga_ref01_data_dt0_loaded, err = manga_ref01_ent.load(manga_ref01_match_dt0, nil)
-    assert_nil err
+    manga_ref01_data_dt0_loaded = manga_ref01_ent.load(manga_ref01_match_dt0, nil)
     assert !manga_ref01_data_dt0_loaded.nil?
 
   end
@@ -89,7 +87,6 @@ def manga_basic_setup(extra)
     "JIKANREST_TEST_MANGA_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -101,7 +98,6 @@ def manga_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

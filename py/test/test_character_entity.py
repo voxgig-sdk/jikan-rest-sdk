@@ -50,14 +50,12 @@ class TestCharacterEntity:
         character_ref01_ent = client.Character(None)
         character_ref01_match = {}
 
-        character_ref01_list_result, err = character_ref01_ent.list(character_ref01_match, None)
-        assert err is None
+        character_ref01_list_result = character_ref01_ent.list(character_ref01_match, None)
         assert isinstance(character_ref01_list_result, list)
 
         # LOAD
         character_ref01_match_dt0 = {}
-        character_ref01_data_dt0_loaded, err = character_ref01_ent.load(character_ref01_match_dt0, None)
-        assert err is None
+        character_ref01_data_dt0_loaded = character_ref01_ent.load(character_ref01_match_dt0, None)
         assert character_ref01_data_dt0_loaded is not None
 
 
@@ -98,7 +96,6 @@ def _character_basic_setup(extra):
         "JIKANREST_TEST_CHARACTER_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -109,7 +106,6 @@ def _character_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ReviewLoadMatch
+---@param ctrl? table
+---@return Review
+---@return string? err
 function ReviewEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -45,6 +45,7 @@ class WatchEpisodeEntity
     end
   end
 
+  # @return [WatchEpisode, Hash] the current WatchEpisode data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class WatchEpisodeEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of WatchEpisode fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class WatchEpisodeEntity
   
 
   
+  # List WatchEpisode items matching the given filter.
+  #
+  # @param reqmatch [WatchEpisodeListMatch, Hash, nil] match filter (any subset of WatchEpisode fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<WatchEpisode>, Array] the matching WatchEpisode items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

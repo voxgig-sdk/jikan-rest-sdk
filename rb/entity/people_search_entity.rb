@@ -45,6 +45,7 @@ class PeopleSearchEntity
     end
   end
 
+  # @return [PeopleSearch, Hash] the current PeopleSearch data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class PeopleSearchEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of PeopleSearch fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class PeopleSearchEntity
   
 
   
+  # List PeopleSearch items matching the given filter.
+  #
+  # @param reqmatch [PeopleSearchListMatch, Hash, nil] match filter (any subset of PeopleSearch fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<PeopleSearch>, Array] the matching PeopleSearch items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

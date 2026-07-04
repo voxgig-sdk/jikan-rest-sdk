@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ClubLoadMatch
+---@param ctrl? table
+---@return Club
+---@return string? err
 function ClubEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch ClubListMatch
+---@param ctrl? table
+---@return Club[]
+---@return string? err
 function ClubEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

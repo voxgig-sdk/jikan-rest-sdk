@@ -43,8 +43,7 @@ class PeopleSearchEntityTest < Minitest::Test
     people_search_ref01_ent = client.PeopleSearch(nil)
     people_search_ref01_match = {}
 
-    people_search_ref01_list_result, err = people_search_ref01_ent.list(people_search_ref01_match, nil)
-    assert_nil err
+    people_search_ref01_list_result = people_search_ref01_ent.list(people_search_ref01_match, nil)
     assert people_search_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def people_search_basic_setup(extra)
     "JIKANREST_TEST_PEOPLE_SEARCH_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def people_search_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

@@ -45,6 +45,7 @@ class ReviewEntity
     end
   end
 
+  # @return [Review, Hash] the current Review data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class ReviewEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Review fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Review.
+  #
+  # @param reqmatch [ReviewLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Review, Hash] the loaded Review; raises JikanRestError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch RecommendationListMatch
+---@param ctrl? table
+---@return Recommendation[]
+---@return string? err
 function RecommendationEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

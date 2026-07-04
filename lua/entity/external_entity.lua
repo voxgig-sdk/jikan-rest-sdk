@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch ExternalListMatch
+---@param ctrl? table
+---@return External[]
+---@return string? err
 function ExternalEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

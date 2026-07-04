@@ -50,14 +50,12 @@ class AnimeEntityTest extends TestCase
         $anime_ref01_ent = $client->Anime(null);
         $anime_ref01_match = [];
 
-        [$anime_ref01_list_result, $err] = $anime_ref01_ent->list($anime_ref01_match, null);
-        $this->assertNull($err);
+        $anime_ref01_list_result = $anime_ref01_ent->list($anime_ref01_match, null);
         $this->assertIsArray($anime_ref01_list_result);
 
         // LOAD
         $anime_ref01_match_dt0 = [];
-        [$anime_ref01_data_dt0_loaded, $err] = $anime_ref01_ent->load($anime_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $anime_ref01_data_dt0_loaded = $anime_ref01_ent->load($anime_ref01_match_dt0, null);
         $this->assertNotNull($anime_ref01_data_dt0_loaded);
 
     }
@@ -92,7 +90,6 @@ function anime_basic_setup($extra)
         "JIKANREST_TEST_ANIME_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -104,7 +101,6 @@ function anime_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch ProducerLoadMatch
+---@param ctrl? table
+---@return Producer
+---@return string? err
 function ProducerEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({
@@ -104,6 +108,10 @@ end
 
 
 
+---@param reqmatch ProducerListMatch
+---@param ctrl? table
+---@return Producer[]
+---@return string? err
 function ProducerEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

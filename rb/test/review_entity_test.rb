@@ -42,8 +42,7 @@ class ReviewEntityTest < Minitest::Test
     # LOAD
     review_ref01_ent = client.Review(nil)
     review_ref01_match_dt0 = {}
-    review_ref01_data_dt0_loaded, err = review_ref01_ent.load(review_ref01_match_dt0, nil)
-    assert_nil err
+    review_ref01_data_dt0_loaded = review_ref01_ent.load(review_ref01_match_dt0, nil)
     assert !review_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def review_basic_setup(extra)
     "JIKANREST_TEST_REVIEW_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def review_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

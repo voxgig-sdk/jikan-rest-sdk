@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Recommendation,
+  RecommendationListMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class RecommendationEntity extends JikanRestEntityBase {
+class RecommendationEntity extends JikanRestEntityBase<Recommendation> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class RecommendationEntity extends JikanRestEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: RecommendationListMatch, ctrl?: Control): Promise<Recommendation[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class RecommendationEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Recommendation[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

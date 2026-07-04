@@ -50,8 +50,7 @@ class TestGenreEntity:
         genre_ref01_ent = client.Genre(None)
         genre_ref01_match = {}
 
-        genre_ref01_list_result, err = genre_ref01_ent.list(genre_ref01_match, None)
-        assert err is None
+        genre_ref01_list_result = genre_ref01_ent.list(genre_ref01_match, None)
         assert isinstance(genre_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _genre_basic_setup(extra):
         "JIKANREST_TEST_GENRE_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _genre_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

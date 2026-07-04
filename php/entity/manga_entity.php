@@ -55,6 +55,9 @@ class MangaEntity
         return new MangaEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Manga|array $args Manga data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class MangaEntity
         }
     }
 
+    /**
+     * @return Manga|array The current Manga data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Manga fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class MangaEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Manga fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -84,7 +96,16 @@ class MangaEntity
     }
 
     
-    public function load($reqmatch, $ctrl = null): array
+    /**
+     * Load a single Manga.
+     *
+     * @param MangaLoadMatch|array|null $reqmatch Match criteria (id/query
+     *   fields) as an assoc-array; a typed MangaLoadMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Manga|array The loaded Manga as an assoc-array at the
+     *   SDK boundary; throws JikanRestError on failure (item-5 convention).
+     */
+    public function load(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -110,7 +131,16 @@ class MangaEntity
 
 
     
-    public function list($reqmatch, $ctrl = null): array
+    /**
+     * List Manga items matching the given filter.
+     *
+     * @param MangaListMatch|array|null $reqmatch Match filter (any subset
+     *   of Manga fields) as an assoc-array; MangaListMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Manga[]|array A list of Manga items as assoc-arrays at
+     *   the SDK boundary; throws JikanRestError on failure (item-5 convention).
+     */
+    public function list(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -138,7 +168,7 @@ class MangaEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

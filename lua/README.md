@@ -9,12 +9,9 @@ The Lua SDK for the JikanRest API — an entity-oriented client using Lua conven
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-jikan-rest
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/jikan-rest-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("jikan-rest_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("JIKAN-REST_APIKEY"),
-})
+local client = sdk.new()
 ```
 
 ### 2. List animes
 
 ```lua
-local result, err = client:Anime():list()
+local result, err = client:anime():list()
 if err then error(err) end
 
 if type(result) == "table" then
@@ -50,10 +45,10 @@ if type(result) == "table" then
 end
 ```
 
-### 3. Load a anime
+### 3. Load an anime
 
 ```lua
-local result, err = client:Anime():load({ id = "example_id" })
+local result, err = client:anime():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -101,7 +96,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:JikanRest():load({ id = "test01" })
+local result, err = client:anime():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -134,8 +129,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-JIKAN-REST_TEST_LIVE=TRUE
-JIKAN-REST_APIKEY=<your-key>
+JIKAN_REST_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -158,7 +152,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -571,7 +564,7 @@ API path: `/watch/promos`
 
 ### Anime
 
-Create an instance: `const anime = client.Anime()`
+Create an instance: `const anime = client.anime`
 
 #### Operations
 
@@ -607,19 +600,19 @@ Create an instance: `const anime = client.Anime()`
 #### Example: Load
 
 ```ts
-const anime = await client.Anime().load({ id: 'anime_id' })
+const anime = await client.anime.load({ id: 'anime_id' })
 ```
 
 #### Example: List
 
 ```ts
-const animes = await client.Anime().list()
+const animes = await client.anime.list()
 ```
 
 
 ### Character
 
-Create an instance: `const character = client.Character()`
+Create an instance: `const character = client.character`
 
 #### Operations
 
@@ -645,19 +638,19 @@ Create an instance: `const character = client.Character()`
 #### Example: Load
 
 ```ts
-const character = await client.Character().load({ id: 'character_id' })
+const character = await client.character.load({ id: 'character_id' })
 ```
 
 #### Example: List
 
 ```ts
-const characters = await client.Character().list()
+const characters = await client.character.list()
 ```
 
 
 ### Club
 
-Create an instance: `const club = client.Club()`
+Create an instance: `const club = client.club`
 
 #### Operations
 
@@ -678,19 +671,19 @@ Create an instance: `const club = client.Club()`
 #### Example: Load
 
 ```ts
-const club = await client.Club().load({ id: 'club_id' })
+const club = await client.club.load({ id: 'club_id' })
 ```
 
 #### Example: List
 
 ```ts
-const clubs = await client.Club().list()
+const clubs = await client.club.list()
 ```
 
 
 ### External
 
-Create an instance: `const external = client.External()`
+Create an instance: `const external = client.external`
 
 #### Operations
 
@@ -708,13 +701,13 @@ Create an instance: `const external = client.External()`
 #### Example: List
 
 ```ts
-const externals = await client.External().list()
+const externals = await client.external.list()
 ```
 
 
 ### Genre
 
-Create an instance: `const genre = client.Genre()`
+Create an instance: `const genre = client.genre`
 
 #### Operations
 
@@ -734,13 +727,13 @@ Create an instance: `const genre = client.Genre()`
 #### Example: List
 
 ```ts
-const genres = await client.Genre().list()
+const genres = await client.genre.list()
 ```
 
 
 ### Magazine
 
-Create an instance: `const magazine = client.Magazine()`
+Create an instance: `const magazine = client.magazine`
 
 #### Operations
 
@@ -758,13 +751,13 @@ Create an instance: `const magazine = client.Magazine()`
 #### Example: List
 
 ```ts
-const magazines = await client.Magazine().list()
+const magazines = await client.magazine.list()
 ```
 
 
 ### Manga
 
-Create an instance: `const manga = client.Manga()`
+Create an instance: `const manga = client.manga`
 
 #### Operations
 
@@ -798,19 +791,19 @@ Create an instance: `const manga = client.Manga()`
 #### Example: Load
 
 ```ts
-const manga = await client.Manga().load({ id: 'manga_id' })
+const manga = await client.manga.load({ id: 'manga_id' })
 ```
 
 #### Example: List
 
 ```ts
-const mangas = await client.Manga().list()
+const mangas = await client.manga.list()
 ```
 
 
 ### PeopleSearch
 
-Create an instance: `const people_search = client.PeopleSearch()`
+Create an instance: `const people_search = client.people_search`
 
 #### Operations
 
@@ -828,13 +821,13 @@ Create an instance: `const people_search = client.PeopleSearch()`
 #### Example: List
 
 ```ts
-const people_searchs = await client.PeopleSearch().list()
+const people_searchs = await client.people_search.list()
 ```
 
 
 ### Person
 
-Create an instance: `const person = client.Person()`
+Create an instance: `const person = client.person`
 
 #### Operations
 
@@ -859,19 +852,19 @@ Create an instance: `const person = client.Person()`
 #### Example: Load
 
 ```ts
-const person = await client.Person().load({ id: 'person_id' })
+const person = await client.person.load({ id: 'person_id' })
 ```
 
 #### Example: List
 
 ```ts
-const persons = await client.Person().list()
+const persons = await client.person.list()
 ```
 
 
 ### Producer
 
-Create an instance: `const producer = client.Producer()`
+Create an instance: `const producer = client.producer`
 
 #### Operations
 
@@ -892,19 +885,19 @@ Create an instance: `const producer = client.Producer()`
 #### Example: Load
 
 ```ts
-const producer = await client.Producer().load({ id: 'producer_id' })
+const producer = await client.producer.load({ id: 'producer_id' })
 ```
 
 #### Example: List
 
 ```ts
-const producers = await client.Producer().list()
+const producers = await client.producer.list()
 ```
 
 
 ### Random
 
-Create an instance: `const random = client.Random()`
+Create an instance: `const random = client.random`
 
 #### Operations
 
@@ -921,13 +914,13 @@ Create an instance: `const random = client.Random()`
 #### Example: Load
 
 ```ts
-const random = await client.Random().load({ id: 'random_id' })
+const random = await client.random.load({ id: 'random_id' })
 ```
 
 
 ### Recommendation
 
-Create an instance: `const recommendation = client.Recommendation()`
+Create an instance: `const recommendation = client.recommendation`
 
 #### Operations
 
@@ -945,13 +938,13 @@ Create an instance: `const recommendation = client.Recommendation()`
 #### Example: List
 
 ```ts
-const recommendations = await client.Recommendation().list()
+const recommendations = await client.recommendation.list()
 ```
 
 
 ### Review
 
-Create an instance: `const review = client.Review()`
+Create an instance: `const review = client.review`
 
 #### Operations
 
@@ -962,13 +955,13 @@ Create an instance: `const review = client.Review()`
 #### Example: Load
 
 ```ts
-const review = await client.Review().load({ id: 'review_id' })
+const review = await client.review.load({ id: 'review_id' })
 ```
 
 
 ### Schedule
 
-Create an instance: `const schedule = client.Schedule()`
+Create an instance: `const schedule = client.schedule`
 
 #### Operations
 
@@ -986,13 +979,13 @@ Create an instance: `const schedule = client.Schedule()`
 #### Example: List
 
 ```ts
-const schedules = await client.Schedule().list()
+const schedules = await client.schedule.list()
 ```
 
 
 ### Season
 
-Create an instance: `const season = client.Season()`
+Create an instance: `const season = client.season`
 
 #### Operations
 
@@ -1012,13 +1005,13 @@ Create an instance: `const season = client.Season()`
 #### Example: List
 
 ```ts
-const seasons = await client.Season().list()
+const seasons = await client.season.list()
 ```
 
 
 ### Top
 
-Create an instance: `const top = client.Top()`
+Create an instance: `const top = client.top`
 
 #### Operations
 
@@ -1035,13 +1028,13 @@ Create an instance: `const top = client.Top()`
 #### Example: Load
 
 ```ts
-const top = await client.Top().load({ id: 'top_id' })
+const top = await client.top.load({ id: 'top_id' })
 ```
 
 
 ### User
 
-Create an instance: `const user = client.User()`
+Create an instance: `const user = client.user`
 
 #### Operations
 
@@ -1060,19 +1053,19 @@ Create an instance: `const user = client.User()`
 #### Example: Load
 
 ```ts
-const user = await client.User().load({ id: 'user_id' })
+const user = await client.user.load({ id: 'user_id' })
 ```
 
 #### Example: List
 
 ```ts
-const users = await client.User().list()
+const users = await client.user.list()
 ```
 
 
 ### UserAbout
 
-Create an instance: `const user_about = client.UserAbout()`
+Create an instance: `const user_about = client.user_about`
 
 #### Operations
 
@@ -1089,13 +1082,13 @@ Create an instance: `const user_about = client.UserAbout()`
 #### Example: List
 
 ```ts
-const user_abouts = await client.UserAbout().list()
+const user_abouts = await client.user_about.list()
 ```
 
 
 ### UserClub
 
-Create an instance: `const user_club = client.UserClub()`
+Create an instance: `const user_club = client.user_club`
 
 #### Operations
 
@@ -1113,13 +1106,13 @@ Create an instance: `const user_club = client.UserClub()`
 #### Example: List
 
 ```ts
-const user_clubs = await client.UserClub().list()
+const user_clubs = await client.user_club.list()
 ```
 
 
 ### UserFriend
 
-Create an instance: `const user_friend = client.UserFriend()`
+Create an instance: `const user_friend = client.user_friend`
 
 #### Operations
 
@@ -1137,13 +1130,13 @@ Create an instance: `const user_friend = client.UserFriend()`
 #### Example: List
 
 ```ts
-const user_friends = await client.UserFriend().list()
+const user_friends = await client.user_friend.list()
 ```
 
 
 ### UserHistory
 
-Create an instance: `const user_history = client.UserHistory()`
+Create an instance: `const user_history = client.user_history`
 
 #### Operations
 
@@ -1162,13 +1155,13 @@ Create an instance: `const user_history = client.UserHistory()`
 #### Example: List
 
 ```ts
-const user_historys = await client.UserHistory().list()
+const user_historys = await client.user_history.list()
 ```
 
 
 ### UserStatistic
 
-Create an instance: `const user_statistic = client.UserStatistic()`
+Create an instance: `const user_statistic = client.user_statistic`
 
 #### Operations
 
@@ -1185,13 +1178,13 @@ Create an instance: `const user_statistic = client.UserStatistic()`
 #### Example: Load
 
 ```ts
-const user_statistic = await client.UserStatistic().load({ id: 'user_statistic_id' })
+const user_statistic = await client.user_statistic.load({ id: 'user_statistic_id' })
 ```
 
 
 ### UserUpdate
 
-Create an instance: `const user_update = client.UserUpdate()`
+Create an instance: `const user_update = client.user_update`
 
 #### Operations
 
@@ -1208,13 +1201,13 @@ Create an instance: `const user_update = client.UserUpdate()`
 #### Example: Load
 
 ```ts
-const user_update = await client.UserUpdate().load({ id: 'user_update_id' })
+const user_update = await client.user_update.load({ id: 'user_update_id' })
 ```
 
 
 ### WatchEpisode
 
-Create an instance: `const watch_episode = client.WatchEpisode()`
+Create an instance: `const watch_episode = client.watch_episode`
 
 #### Operations
 
@@ -1232,13 +1225,13 @@ Create an instance: `const watch_episode = client.WatchEpisode()`
 #### Example: List
 
 ```ts
-const watch_episodes = await client.WatchEpisode().list()
+const watch_episodes = await client.watch_episode.list()
 ```
 
 
 ### WatchPromo
 
-Create an instance: `const watch_promo = client.WatchPromo()`
+Create an instance: `const watch_promo = client.watch_promo`
 
 #### Operations
 
@@ -1256,7 +1249,7 @@ Create an instance: `const watch_promo = client.WatchPromo()`
 #### Example: List
 
 ```ts
-const watch_promos = await client.WatchPromo().list()
+const watch_promos = await client.watch_promo.list()
 ```
 
 
@@ -1331,11 +1324,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local anime = client:anime()
+anime:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- anime:data_get() now returns the loaded anime data
+-- anime:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

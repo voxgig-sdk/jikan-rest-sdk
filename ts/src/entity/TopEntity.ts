@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Top,
+  TopLoadMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class TopEntity extends JikanRestEntityBase {
+class TopEntity extends JikanRestEntityBase<Top> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class TopEntity extends JikanRestEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: TopLoadMatch, ctrl?: Control): Promise<Top> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class TopEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Top> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

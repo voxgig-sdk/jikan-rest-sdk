@@ -43,8 +43,7 @@ class WatchPromoEntityTest < Minitest::Test
     watch_promo_ref01_ent = client.WatchPromo(nil)
     watch_promo_ref01_match = {}
 
-    watch_promo_ref01_list_result, err = watch_promo_ref01_ent.list(watch_promo_ref01_match, nil)
-    assert_nil err
+    watch_promo_ref01_list_result = watch_promo_ref01_ent.list(watch_promo_ref01_match, nil)
     assert watch_promo_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def watch_promo_basic_setup(extra)
     "JIKANREST_TEST_WATCH_PROMO_ENTID" => idmap,
     "JIKANREST_TEST_LIVE" => "FALSE",
     "JIKANREST_TEST_EXPLAIN" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def watch_promo_basic_setup(extra)
   if env["JIKANREST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["JIKANREST_APIKEY"],
       },
       extra || {},
     ])

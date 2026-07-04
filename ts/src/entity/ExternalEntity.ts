@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  External,
+  ExternalListMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class ExternalEntity extends JikanRestEntityBase {
+class ExternalEntity extends JikanRestEntityBase<External> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class ExternalEntity extends JikanRestEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: ExternalListMatch, ctrl?: Control): Promise<External[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class ExternalEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<External[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

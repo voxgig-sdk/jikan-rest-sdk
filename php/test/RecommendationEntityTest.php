@@ -50,8 +50,7 @@ class RecommendationEntityTest extends TestCase
         $recommendation_ref01_ent = $client->Recommendation(null);
         $recommendation_ref01_match = [];
 
-        [$recommendation_ref01_list_result, $err] = $recommendation_ref01_ent->list($recommendation_ref01_match, null);
-        $this->assertNull($err);
+        $recommendation_ref01_list_result = $recommendation_ref01_ent->list($recommendation_ref01_match, null);
         $this->assertIsArray($recommendation_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function recommendation_basic_setup($extra)
         "JIKANREST_TEST_RECOMMENDATION_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function recommendation_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

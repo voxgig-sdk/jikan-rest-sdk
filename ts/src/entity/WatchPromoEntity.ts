@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  WatchPromo,
+  WatchPromoListMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class WatchPromoEntity extends JikanRestEntityBase {
+class WatchPromoEntity extends JikanRestEntityBase<WatchPromo> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class WatchPromoEntity extends JikanRestEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: WatchPromoListMatch, ctrl?: Control): Promise<WatchPromo[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class WatchPromoEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<WatchPromo[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

@@ -50,8 +50,7 @@ class TestPeopleSearchEntity:
         people_search_ref01_ent = client.PeopleSearch(None)
         people_search_ref01_match = {}
 
-        people_search_ref01_list_result, err = people_search_ref01_ent.list(people_search_ref01_match, None)
-        assert err is None
+        people_search_ref01_list_result = people_search_ref01_ent.list(people_search_ref01_match, None)
         assert isinstance(people_search_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _people_search_basic_setup(extra):
         "JIKANREST_TEST_PEOPLE_SEARCH_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _people_search_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

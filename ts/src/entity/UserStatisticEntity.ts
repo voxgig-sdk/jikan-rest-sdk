@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  UserStatistic,
+  UserStatisticLoadMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class UserStatisticEntity extends JikanRestEntityBase {
+class UserStatisticEntity extends JikanRestEntityBase<UserStatistic> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class UserStatisticEntity extends JikanRestEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: UserStatisticLoadMatch, ctrl?: Control): Promise<UserStatistic> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class UserStatisticEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<UserStatistic> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

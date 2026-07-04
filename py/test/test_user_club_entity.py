@@ -52,8 +52,7 @@ class TestUserClubEntity:
             "username": setup["idmap"]["username01"],
         }
 
-        user_club_ref01_list_result, err = user_club_ref01_ent.list(user_club_ref01_match, None)
-        assert err is None
+        user_club_ref01_list_result = user_club_ref01_ent.list(user_club_ref01_match, None)
         assert isinstance(user_club_ref01_list_result, list)
 
 
@@ -94,7 +93,6 @@ def _user_club_basic_setup(extra):
         "JIKANREST_TEST_USER_CLUB_ENTID": idmap,
         "JIKANREST_TEST_LIVE": "FALSE",
         "JIKANREST_TEST_EXPLAIN": "FALSE",
-        "JIKANREST_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -105,7 +103,6 @@ def _user_club_basic_setup(extra):
     if env.get("JIKANREST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("JIKANREST_APIKEY"),
             },
             extra or {},
         ])

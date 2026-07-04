@@ -49,8 +49,7 @@ class RandomEntityTest extends TestCase
         // LOAD
         $random_ref01_ent = $client->Random(null);
         $random_ref01_match_dt0 = [];
-        [$random_ref01_data_dt0_loaded, $err] = $random_ref01_ent->load($random_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $random_ref01_data_dt0_loaded = $random_ref01_ent->load($random_ref01_match_dt0, null);
         $this->assertNotNull($random_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function random_basic_setup($extra)
         "JIKANREST_TEST_RANDOM_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function random_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

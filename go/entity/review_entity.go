@@ -85,6 +85,27 @@ func (e *ReviewEntity) Match(args ...any) any {
 	return out
 }
 
+// DataTyped is the statically-typed accessor for this entity's data. With no
+// argument it returns the current data as an Review; with an argument it
+// sets the data and returns the stored value. It delegates to the untyped Data
+// (identical runtime) and converts at the typed boundary.
+func (e *ReviewEntity) DataTyped(data ...Review) Review {
+	if len(data) > 0 {
+		return typedFrom[Review](e.Data(asMap(data[0])))
+	}
+	return typedFrom[Review](e.Data())
+}
+
+// MatchTyped mirrors DataTyped for the entity's match filter. The match is a
+// partial of the entity, so it round-trips through Review (all fields
+// optional at the wire level).
+func (e *ReviewEntity) MatchTyped(match ...Review) Review {
+	if len(match) > 0 {
+		return typedFrom[Review](e.Match(asMap(match[0])))
+	}
+	return typedFrom[Review](e.Match())
+}
+
 
 func (e *ReviewEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, error) {
 	utility := e.utility
@@ -109,6 +130,17 @@ func (e *ReviewEntity) Load(reqmatch map[string]any, ctrl map[string]any) (any, 
 			}
 		}
 	})
+}
+
+// LoadTyped is the statically-typed variant of Load: it takes an
+// ReviewLoadMatch and returns an Review. It delegates to the untyped
+// Load (identical runtime) and converts at the typed boundary.
+func (e *ReviewEntity) LoadTyped(reqmatch ReviewLoadMatch, ctrl map[string]any) (Review, error) {
+	res, err := e.Load(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Review{}, err
+	}
+	return typedFrom[Review](res), nil
 }
 
 

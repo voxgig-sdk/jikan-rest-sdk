@@ -50,8 +50,7 @@ class WatchPromoEntityTest extends TestCase
         $watch_promo_ref01_ent = $client->WatchPromo(null);
         $watch_promo_ref01_match = [];
 
-        [$watch_promo_ref01_list_result, $err] = $watch_promo_ref01_ent->list($watch_promo_ref01_match, null);
-        $this->assertNull($err);
+        $watch_promo_ref01_list_result = $watch_promo_ref01_ent->list($watch_promo_ref01_match, null);
         $this->assertIsArray($watch_promo_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function watch_promo_basic_setup($extra)
         "JIKANREST_TEST_WATCH_PROMO_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function watch_promo_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

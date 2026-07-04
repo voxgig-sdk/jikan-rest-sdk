@@ -49,8 +49,7 @@ class TopEntityTest extends TestCase
         // LOAD
         $top_ref01_ent = $client->Top(null);
         $top_ref01_match_dt0 = [];
-        [$top_ref01_data_dt0_loaded, $err] = $top_ref01_ent->load($top_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $top_ref01_data_dt0_loaded = $top_ref01_ent->load($top_ref01_match_dt0, null);
         $this->assertNotNull($top_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function top_basic_setup($extra)
         "JIKANREST_TEST_TOP_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function top_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

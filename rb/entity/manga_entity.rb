@@ -45,6 +45,7 @@ class MangaEntity
     end
   end
 
+  # @return [Manga, Hash] the current Manga data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,12 +58,18 @@ class MangaEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Manga fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
   end
 
   
+  # Load a single Manga.
+  #
+  # @param reqmatch [MangaLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Manga, Hash] the loaded Manga; raises JikanRestError on failure
   def load(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
@@ -86,6 +93,11 @@ class MangaEntity
 
 
   
+  # List Manga items matching the given filter.
+  #
+  # @param reqmatch [MangaListMatch, Hash, nil] match filter (any subset of Manga fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Manga>, Array] the matching Manga items; raises JikanRestError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

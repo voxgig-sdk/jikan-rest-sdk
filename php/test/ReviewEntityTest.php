@@ -49,8 +49,7 @@ class ReviewEntityTest extends TestCase
         // LOAD
         $review_ref01_ent = $client->Review(null);
         $review_ref01_match_dt0 = [];
-        [$review_ref01_data_dt0_loaded, $err] = $review_ref01_ent->load($review_ref01_match_dt0, null);
-        $this->assertNull($err);
+        $review_ref01_data_dt0_loaded = $review_ref01_ent->load($review_ref01_match_dt0, null);
         $this->assertNotNull($review_ref01_data_dt0_loaded);
 
     }
@@ -85,7 +84,6 @@ function review_basic_setup($extra)
         "JIKANREST_TEST_REVIEW_ENTID" => $idmap,
         "JIKANREST_TEST_LIVE" => "FALSE",
         "JIKANREST_TEST_EXPLAIN" => "FALSE",
-        "JIKANREST_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +95,6 @@ function review_basic_setup($extra)
     if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["JIKANREST_APIKEY"],
             ],
             $extra ?? [],
         ]);

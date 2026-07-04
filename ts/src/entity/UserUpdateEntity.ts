@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  UserUpdate,
+  UserUpdateLoadMatch,
+} from '../JikanRestTypes'
 
 // TODO: needs Entity superclass
-class UserUpdateEntity extends JikanRestEntityBase {
+class UserUpdateEntity extends JikanRestEntityBase<UserUpdate> {
 
   constructor(client: JikanRestSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class UserUpdateEntity extends JikanRestEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: UserUpdateLoadMatch, ctrl?: Control): Promise<UserUpdate> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class UserUpdateEntity extends JikanRestEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<UserUpdate> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

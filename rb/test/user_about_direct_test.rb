@@ -33,7 +33,7 @@ class UserAboutDirectTest < Minitest::Test
       params["username"] = "direct01"
     end
 
-    result, err = client.direct({
+    result = client.direct({
       "path" => "users/{username}/about",
       "method" => "GET",
       "params" => params,
@@ -42,8 +42,8 @@ class UserAboutDirectTest < Minitest::Test
       # Live mode is lenient: synthetic IDs frequently 4xx and the list-
       # response shape varies wildly across public APIs. Skip rather than
       # fail when the call doesn't return a usable list.
-      if !err.nil?
-        skip("list call failed (likely synthetic IDs against live API): #{err}")
+      if !result["err"].nil?
+        skip("list call failed (likely synthetic IDs against live API): #{result["err"]}")
         return
       end
       unless result["ok"]
@@ -56,7 +56,7 @@ class UserAboutDirectTest < Minitest::Test
         return
       end
     else
-      assert_nil err
+      assert_nil result["err"]
       assert result["ok"]
       assert_equal 200, Helpers.to_int(result["status"])
       assert result["data"].is_a?(Array)
@@ -76,14 +76,12 @@ def user_about_direct_setup(mockres)
   env = Runner.env_override({
     "JIKANREST_TEST_USER_ABOUT_ENTID" => {},
     "JIKANREST_TEST_LIVE" => "FALSE",
-    "JIKANREST_APIKEY" => "NONE",
   })
 
   live = env["JIKANREST_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["JIKANREST_APIKEY"],
     }
     client = JikanRestSDK.new(merged_opts)
     return {
