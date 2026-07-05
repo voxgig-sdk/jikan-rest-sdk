@@ -186,25 +186,25 @@ local anime = client:Anime(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `position` | ``$ARRAY`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `voice_actor` | ``$ARRAY`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `table` | No |  |
+| `comment` | `number` | No |  |
+| `data` | `table` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `table` | No |  |
+| `image` | `table` | No |  |
+| `last_comment` | `table` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `table` | No |  |
+| `person` | `table` | No |  |
+| `position` | `table` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voice_actor` | `table` | No |  |
 
 ### Operations
 
@@ -264,15 +264,15 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `large_image_url` | ``$STRING`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `table` | No |  |
+| `data` | `table` | No |  |
+| `image_url` | `string` | No |  |
+| `language` | `string` | No |  |
+| `large_image_url` | `string` | No |  |
+| `manga` | `table` | No |  |
+| `pagination` | `table` | No |  |
+| `person` | `table` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -332,10 +332,10 @@ local club = client:Club(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -395,8 +395,8 @@ local external = client:External(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -448,10 +448,10 @@ local genre = client:Genre(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | ``$INTEGER`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `count` | `number` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -503,8 +503,8 @@ local magazine = client:Magazine(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -556,23 +556,23 @@ local manga = client:Manga(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `webp` | ``$OBJECT`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `table` | No |  |
+| `comment` | `number` | No |  |
+| `data` | `table` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `table` | No |  |
+| `jpg` | `table` | No |  |
+| `last_comment` | `table` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `table` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `webp` | `table` | No |  |
 
 ### Operations
 
@@ -632,8 +632,8 @@ local people_search = client:PeopleSearch(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -685,14 +685,14 @@ local person = client:Person(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `position` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `table` | No |  |
+| `character` | `table` | No |  |
+| `data` | `table` | No |  |
+| `jpg` | `table` | No |  |
+| `manga` | `table` | No |  |
+| `pagination` | `table` | No |  |
+| `position` | `string` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -752,10 +752,10 @@ local producer = client:Producer(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `data` | `table` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `table` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -815,7 +815,7 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
 
 ### Operations
 
@@ -824,7 +824,7 @@ local random = client:Random(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Random():load({ id = "random_id" })
+local result, err = client:Random():load()
 ```
 
 ### Common Methods
@@ -867,8 +867,8 @@ local recommendation = client:Recommendation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -923,7 +923,7 @@ local review = client:Review(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Review():load({ id = "review_id" })
+local result, err = client:Review():load()
 ```
 
 ### Common Methods
@@ -966,8 +966,8 @@ local schedule = client:Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1019,10 +1019,10 @@ local season = client:Season(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `season` | ``$ARRAY`` | No |  |
-| `year` | ``$INTEGER`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
+| `season` | `table` | No |  |
+| `year` | `number` | No |  |
 
 ### Operations
 
@@ -1074,7 +1074,7 @@ local top = client:Top(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
+| `data` | `any` | No |  |
 
 ### Operations
 
@@ -1083,7 +1083,7 @@ local top = client:Top(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Top():load({ id = "top_id" })
+local result, err = client:Top():load()
 ```
 
 ### Common Methods
@@ -1126,8 +1126,8 @@ local user = client:User(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1187,7 +1187,7 @@ local user_about = client:UserAbout(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | ``$STRING`` | No |  |
+| `about` | `string` | No |  |
 
 ### Operations
 
@@ -1239,8 +1239,8 @@ local user_club = client:UserClub(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1292,8 +1292,8 @@ local user_friend = client:UserFriend(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1345,9 +1345,9 @@ local user_history = client:UserHistory(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `increment` | ``$INTEGER`` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `table` | No |  |
+| `increment` | `number` | No |  |
 
 ### Operations
 
@@ -1399,7 +1399,7 @@ local user_statistic = client:UserStatistic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
 
 ### Operations
 
@@ -1408,7 +1408,7 @@ local user_statistic = client:UserStatistic(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:UserStatistic():load({ id = "user_statistic_id" })
+local result, err = client:UserStatistic():load()
 ```
 
 ### Common Methods
@@ -1451,7 +1451,7 @@ local user_update = client:UserUpdate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
 
 ### Operations
 
@@ -1460,7 +1460,7 @@ local user_update = client:UserUpdate(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:UserUpdate():load({ id = "user_update_id" })
+local result, err = client:UserUpdate():load()
 ```
 
 ### Common Methods
@@ -1503,8 +1503,8 @@ local watch_episode = client:WatchEpisode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1556,8 +1556,8 @@ local watch_promo = client:WatchPromo(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 

@@ -8,7 +8,7 @@ Complete API reference for the JikanRest Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'jikan-rest_sdk'
+require_relative 'JikanRest_sdk'
 
 client = JikanRestSDK.new(options)
 ```
@@ -189,34 +189,34 @@ anime = client.Anime
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `position` | ``$ARRAY`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `voice_actor` | ``$ARRAY`` | No |  |
+| `author_url` | `String` | No |  |
+| `author_username` | `String` | No |  |
+| `character` | `Hash` | No |  |
+| `comment` | `Integer` | No |  |
+| `data` | `Hash` | No |  |
+| `date` | `String` | No |  |
+| `entry` | `Hash` | No |  |
+| `image` | `Hash` | No |  |
+| `last_comment` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `pagination` | `Hash` | No |  |
+| `person` | `Hash` | No |  |
+| `position` | `Array` | No |  |
+| `relation` | `String` | No |  |
+| `role` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
+| `voice_actor` | `Array` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Anime.list(nil)
+results = client.Anime.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -267,24 +267,24 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `large_image_url` | ``$STRING`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `Hash` | No |  |
+| `data` | `Hash` | No |  |
+| `image_url` | `String` | No |  |
+| `language` | `String` | No |  |
+| `large_image_url` | `String` | No |  |
+| `manga` | `Hash` | No |  |
+| `pagination` | `Hash` | No |  |
+| `person` | `Hash` | No |  |
+| `role` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Character.list(nil)
+results = client.Character.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -335,19 +335,19 @@ club = client.Club
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `data` | `Hash` | No |  |
+| `pagination` | `Hash` | No |  |
+| `url` | `String` | No |  |
+| `username` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Club.list(nil)
+results = client.Club.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -398,17 +398,17 @@ external = client.External
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `name` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.External.list(nil)
+results = client.External.list
 ```
 
 ### Common Methods
@@ -451,19 +451,19 @@ genre = client.Genre
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | ``$INTEGER`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `count` | `Integer` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Genre.list(nil)
+results = client.Genre.list
 ```
 
 ### Common Methods
@@ -506,17 +506,17 @@ magazine = client.Magazine
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Magazine.list(nil)
+results = client.Magazine.list
 ```
 
 ### Common Methods
@@ -559,32 +559,32 @@ manga = client.Manga
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `webp` | ``$OBJECT`` | No |  |
+| `author_url` | `String` | No |  |
+| `author_username` | `String` | No |  |
+| `character` | `Hash` | No |  |
+| `comment` | `Integer` | No |  |
+| `data` | `Hash` | No |  |
+| `date` | `String` | No |  |
+| `entry` | `Hash` | No |  |
+| `jpg` | `Hash` | No |  |
+| `last_comment` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `pagination` | `Hash` | No |  |
+| `relation` | `String` | No |  |
+| `role` | `String` | No |  |
+| `title` | `String` | No |  |
+| `url` | `String` | No |  |
+| `webp` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Manga.list(nil)
+results = client.Manga.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -635,17 +635,17 @@ people_search = client.PeopleSearch
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.PeopleSearch.list(nil)
+results = client.PeopleSearch.list
 ```
 
 ### Common Methods
@@ -688,23 +688,23 @@ person = client.Person
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `position` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `Hash` | No |  |
+| `character` | `Hash` | No |  |
+| `data` | `Hash` | No |  |
+| `jpg` | `Hash` | No |  |
+| `manga` | `Hash` | No |  |
+| `pagination` | `Hash` | No |  |
+| `position` | `String` | No |  |
+| `role` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Person.list(nil)
+results = client.Person.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -755,19 +755,19 @@ producer = client.Producer
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `data` | `Hash` | No |  |
+| `name` | `String` | No |  |
+| `pagination` | `Hash` | No |  |
+| `url` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Producer.list(nil)
+results = client.Producer.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -818,7 +818,7 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Hash` | No |  |
 
 ### Operations
 
@@ -827,7 +827,7 @@ random = client.Random
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Random.load({ "id" => "random_id" })
+result = client.Random.load()
 ```
 
 ### Common Methods
@@ -870,17 +870,17 @@ recommendation = client.Recommendation
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Recommendation.list(nil)
+results = client.Recommendation.list
 ```
 
 ### Common Methods
@@ -926,7 +926,7 @@ review = client.Review
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Review.load({ "id" => "review_id" })
+result = client.Review.load()
 ```
 
 ### Common Methods
@@ -969,17 +969,17 @@ schedule = client.Schedule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Schedule.list(nil)
+results = client.Schedule.list
 ```
 
 ### Common Methods
@@ -1022,19 +1022,19 @@ season = client.Season
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `season` | ``$ARRAY`` | No |  |
-| `year` | ``$INTEGER`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
+| `season` | `Array` | No |  |
+| `year` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Season.list(nil)
+results = client.Season.list
 ```
 
 ### Common Methods
@@ -1077,7 +1077,7 @@ top = client.Top
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
+| `data` | `Object` | No |  |
 
 ### Operations
 
@@ -1086,7 +1086,7 @@ top = client.Top
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Top.load({ "id" => "top_id" })
+result = client.Top.load()
 ```
 
 ### Common Methods
@@ -1129,17 +1129,17 @@ user = client.User
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Object` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.User.list(nil)
+results = client.User.list
 ```
 
 #### `load(reqmatch, ctrl = nil) -> result`
@@ -1190,16 +1190,16 @@ user_about = client.UserAbout
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | ``$STRING`` | No |  |
+| `about` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.UserAbout.list(nil)
+results = client.UserAbout.list
 ```
 
 ### Common Methods
@@ -1242,17 +1242,17 @@ user_club = client.UserClub
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.UserClub.list(nil)
+results = client.UserClub.list
 ```
 
 ### Common Methods
@@ -1295,17 +1295,17 @@ user_friend = client.UserFriend
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.UserFriend.list(nil)
+results = client.UserFriend.list
 ```
 
 ### Common Methods
@@ -1348,18 +1348,18 @@ user_history = client.UserHistory
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `increment` | ``$INTEGER`` | No |  |
+| `date` | `String` | No |  |
+| `entry` | `Hash` | No |  |
+| `increment` | `Integer` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.UserHistory.list(nil)
+results = client.UserHistory.list
 ```
 
 ### Common Methods
@@ -1402,7 +1402,7 @@ user_statistic = client.UserStatistic
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Hash` | No |  |
 
 ### Operations
 
@@ -1411,7 +1411,7 @@ user_statistic = client.UserStatistic
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.UserStatistic.load({ "id" => "user_statistic_id" })
+result = client.UserStatistic.load()
 ```
 
 ### Common Methods
@@ -1454,7 +1454,7 @@ user_update = client.UserUpdate
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Hash` | No |  |
 
 ### Operations
 
@@ -1463,7 +1463,7 @@ user_update = client.UserUpdate
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.UserUpdate.load({ "id" => "user_update_id" })
+result = client.UserUpdate.load()
 ```
 
 ### Common Methods
@@ -1506,17 +1506,17 @@ watch_episode = client.WatchEpisode
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.WatchEpisode.list(nil)
+results = client.WatchEpisode.list
 ```
 
 ### Common Methods
@@ -1559,17 +1559,17 @@ watch_promo = client.WatchPromo
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.WatchPromo.list(nil)
+results = client.WatchPromo.list
 ```
 
 ### Common Methods

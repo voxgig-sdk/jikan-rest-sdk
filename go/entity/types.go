@@ -102,8 +102,7 @@ type Genre struct {
 	Url *string `json:"url,omitempty"`
 }
 
-// GenreListMatch mirrors the genre fields as an all-optional match
-// filter (Go analog of Partial<Genre>).
+// GenreListMatch is the typed request payload for Genre.ListTyped.
 type GenreListMatch struct {
 	Count *int `json:"count,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
@@ -117,8 +116,7 @@ type Magazine struct {
 	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
-// MagazineListMatch mirrors the magazine fields as an all-optional match
-// filter (Go analog of Partial<Magazine>).
+// MagazineListMatch is the typed request payload for Magazine.ListTyped.
 type MagazineListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
@@ -161,8 +159,7 @@ type PeopleSearch struct {
 	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
-// PeopleSearchListMatch mirrors the people_search fields as an all-optional match
-// filter (Go analog of Partial<PeopleSearch>).
+// PeopleSearchListMatch is the typed request payload for PeopleSearch.ListTyped.
 type PeopleSearchListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
@@ -213,8 +210,7 @@ type Random struct {
 	Data *map[string]any `json:"data,omitempty"`
 }
 
-// RandomLoadMatch mirrors the random fields as an all-optional match
-// filter (Go analog of Partial<Random>).
+// RandomLoadMatch is the typed request payload for Random.LoadTyped.
 type RandomLoadMatch struct {
 	Data *map[string]any `json:"data,omitempty"`
 }
@@ -234,8 +230,7 @@ type RecommendationListMatch struct {
 type Review struct {
 }
 
-// ReviewLoadMatch mirrors the review fields as an all-optional match
-// filter (Go analog of Partial<Review>).
+// ReviewLoadMatch is the typed request payload for Review.LoadTyped.
 type ReviewLoadMatch struct {
 }
 
@@ -245,8 +240,7 @@ type Schedule struct {
 	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
-// ScheduleListMatch mirrors the schedule fields as an all-optional match
-// filter (Go analog of Partial<Schedule>).
+// ScheduleListMatch is the typed request payload for Schedule.ListTyped.
 type ScheduleListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
@@ -271,8 +265,7 @@ type Top struct {
 	Data *any `json:"data,omitempty"`
 }
 
-// TopLoadMatch mirrors the top fields as an all-optional match
-// filter (Go analog of Partial<Top>).
+// TopLoadMatch is the typed request payload for Top.LoadTyped.
 type TopLoadMatch struct {
 	Data *any `json:"data,omitempty"`
 }
@@ -289,8 +282,7 @@ type UserLoadMatch struct {
 	Id int `json:"id"`
 }
 
-// UserListMatch mirrors the user fields as an all-optional match
-// filter (Go analog of Partial<User>).
+// UserListMatch is the typed request payload for User.ListTyped.
 type UserListMatch struct {
 	Data *any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
@@ -366,8 +358,7 @@ type WatchEpisode struct {
 	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
-// WatchEpisodeListMatch mirrors the watch_episode fields as an all-optional match
-// filter (Go analog of Partial<WatchEpisode>).
+// WatchEpisodeListMatch is the typed request payload for WatchEpisode.ListTyped.
 type WatchEpisodeListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
@@ -379,8 +370,7 @@ type WatchPromo struct {
 	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
-// WatchPromoListMatch mirrors the watch_promo fields as an all-optional match
-// filter (Go analog of Partial<WatchPromo>).
+// WatchPromoListMatch is the typed request payload for WatchPromo.ListTyped.
 type WatchPromoListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`

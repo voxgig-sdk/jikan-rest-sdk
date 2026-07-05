@@ -118,7 +118,7 @@ class Genre
     public ?string $url = null;
 }
 
-/** Match filter for Genre#list (any subset of Genre fields). */
+/** Request payload for Genre#list. */
 class GenreListMatch
 {
     public ?int $count = null;
@@ -134,7 +134,7 @@ class Magazine
     public ?array $pagination = null;
 }
 
-/** Match filter for Magazine#list (any subset of Magazine fields). */
+/** Request payload for Magazine#list. */
 class MagazineListMatch
 {
     public ?array $data = null;
@@ -182,7 +182,7 @@ class PeopleSearch
     public ?array $pagination = null;
 }
 
-/** Match filter for PeopleSearch#list (any subset of PeopleSearch fields). */
+/** Request payload for PeopleSearch#list. */
 class PeopleSearchListMatch
 {
     public ?array $data = null;
@@ -241,7 +241,7 @@ class Random
     public ?array $data = null;
 }
 
-/** Match filter for Random#load (any subset of Random fields). */
+/** Request payload for Random#load. */
 class RandomLoadMatch
 {
     public ?array $data = null;
@@ -265,7 +265,7 @@ class Review
 {
 }
 
-/** Match filter for Review#load (any subset of Review fields). */
+/** Request payload for Review#load. */
 class ReviewLoadMatch
 {
 }
@@ -277,7 +277,7 @@ class Schedule
     public ?array $pagination = null;
 }
 
-/** Match filter for Schedule#list (any subset of Schedule fields). */
+/** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
     public ?array $data = null;
@@ -306,7 +306,7 @@ class Top
     public mixed $data = null;
 }
 
-/** Match filter for Top#load (any subset of Top fields). */
+/** Request payload for Top#load. */
 class TopLoadMatch
 {
     public mixed $data = null;
@@ -326,7 +326,7 @@ class UserLoadMatch
     public int $id;
 }
 
-/** Match filter for User#list (any subset of User fields). */
+/** Request payload for User#list. */
 class UserListMatch
 {
     public mixed $data = null;
@@ -416,7 +416,7 @@ class WatchEpisode
     public ?array $pagination = null;
 }
 
-/** Match filter for WatchEpisode#list (any subset of WatchEpisode fields). */
+/** Request payload for WatchEpisode#list. */
 class WatchEpisodeListMatch
 {
     public ?array $data = null;
@@ -430,7 +430,7 @@ class WatchPromo
     public ?array $pagination = null;
 }
 
-/** Match filter for WatchPromo#list (any subset of WatchPromo fields). */
+/** Request payload for WatchPromo#list. */
 class WatchPromoListMatch
 {
     public ?array $data = null;

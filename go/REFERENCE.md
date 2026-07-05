@@ -193,25 +193,25 @@ anime := client.Anime(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `position` | ``$ARRAY`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `voice_actor` | ``$ARRAY`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `map[string]any` | No |  |
+| `comment` | `int` | No |  |
+| `data` | `map[string]any` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `map[string]any` | No |  |
+| `image` | `map[string]any` | No |  |
+| `last_comment` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `person` | `map[string]any` | No |  |
+| `position` | `[]any` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voice_actor` | `[]any` | No |  |
 
 ### Operations
 
@@ -265,15 +265,15 @@ character := client.Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `large_image_url` | ``$STRING`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `map[string]any` | No |  |
+| `data` | `map[string]any` | No |  |
+| `image_url` | `string` | No |  |
+| `language` | `string` | No |  |
+| `large_image_url` | `string` | No |  |
+| `manga` | `map[string]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `person` | `map[string]any` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -327,10 +327,10 @@ club := client.Club(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `data` | `map[string]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -384,8 +384,8 @@ external := client.External(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -431,10 +431,10 @@ genre := client.Genre(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | ``$INTEGER`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `count` | `int` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -480,8 +480,8 @@ magazine := client.Magazine(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -527,23 +527,23 @@ manga := client.Manga(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `webp` | ``$OBJECT`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `map[string]any` | No |  |
+| `comment` | `int` | No |  |
+| `data` | `map[string]any` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `map[string]any` | No |  |
+| `jpg` | `map[string]any` | No |  |
+| `last_comment` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `webp` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -597,8 +597,8 @@ people_search := client.PeopleSearch(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -644,14 +644,14 @@ person := client.Person(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `position` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `map[string]any` | No |  |
+| `character` | `map[string]any` | No |  |
+| `data` | `map[string]any` | No |  |
+| `jpg` | `map[string]any` | No |  |
+| `manga` | `map[string]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `position` | `string` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -705,10 +705,10 @@ producer := client.Producer(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `data` | `map[string]any` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -762,7 +762,7 @@ random := client.Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -771,7 +771,7 @@ random := client.Random(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Random(nil).Load(map[string]any{"id": "random_id"}, nil)
+result, err := client.Random(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -808,8 +808,8 @@ recommendation := client.Recommendation(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -858,7 +858,7 @@ review := client.Review(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Review(nil).Load(map[string]any{"id": "review_id"}, nil)
+result, err := client.Review(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -895,8 +895,8 @@ schedule := client.Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -942,10 +942,10 @@ season := client.Season(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `season` | ``$ARRAY`` | No |  |
-| `year` | ``$INTEGER`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
+| `season` | `[]any` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -991,7 +991,7 @@ top := client.Top(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
+| `data` | `any` | No |  |
 
 ### Operations
 
@@ -1000,7 +1000,7 @@ top := client.Top(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Top(nil).Load(map[string]any{"id": "top_id"}, nil)
+result, err := client.Top(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -1037,8 +1037,8 @@ user := client.User(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1092,7 +1092,7 @@ user_about := client.UserAbout(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | ``$STRING`` | No |  |
+| `about` | `string` | No |  |
 
 ### Operations
 
@@ -1138,8 +1138,8 @@ user_club := client.UserClub(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1185,8 +1185,8 @@ user_friend := client.UserFriend(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1232,9 +1232,9 @@ user_history := client.UserHistory(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `increment` | ``$INTEGER`` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `map[string]any` | No |  |
+| `increment` | `int` | No |  |
 
 ### Operations
 
@@ -1280,7 +1280,7 @@ user_statistic := client.UserStatistic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1289,7 +1289,7 @@ user_statistic := client.UserStatistic(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.UserStatistic(nil).Load(map[string]any{"id": "user_statistic_id"}, nil)
+result, err := client.UserStatistic(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -1326,7 +1326,7 @@ user_update := client.UserUpdate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1335,7 +1335,7 @@ user_update := client.UserUpdate(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.UserUpdate(nil).Load(map[string]any{"id": "user_update_id"}, nil)
+result, err := client.UserUpdate(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -1372,8 +1372,8 @@ watch_episode := client.WatchEpisode(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1419,8 +1419,8 @@ watch_promo := client.WatchPromo(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 

@@ -221,151 +221,151 @@ class JikanRestSDK:
 
 
     def Anime(self, data=None) -> "AnimeEntity":
-        """Entity factory: client.Anime().list({}) / client.Anime().load({"id": ...})."""
+        """Entity factory: client.Anime().list() / client.Anime().load({"id": ...})."""
         from entity.anime_entity import AnimeEntity
         return AnimeEntity(self, data)
 
 
     def Character(self, data=None) -> "CharacterEntity":
-        """Entity factory: client.Character().list({}) / client.Character().load({"id": ...})."""
+        """Entity factory: client.Character().list() / client.Character().load({"id": ...})."""
         from entity.character_entity import CharacterEntity
         return CharacterEntity(self, data)
 
 
     def Club(self, data=None) -> "ClubEntity":
-        """Entity factory: client.Club().list({}) / client.Club().load({"id": ...})."""
+        """Entity factory: client.Club().list() / client.Club().load({"id": ...})."""
         from entity.club_entity import ClubEntity
         return ClubEntity(self, data)
 
 
     def External(self, data=None) -> "ExternalEntity":
-        """Entity factory: client.External().list({}) / client.External().load({"id": ...})."""
+        """Entity factory: client.External().list() / client.External().load({"id": ...})."""
         from entity.external_entity import ExternalEntity
         return ExternalEntity(self, data)
 
 
     def Genre(self, data=None) -> "GenreEntity":
-        """Entity factory: client.Genre().list({}) / client.Genre().load({"id": ...})."""
+        """Entity factory: client.Genre().list() / client.Genre().load({"id": ...})."""
         from entity.genre_entity import GenreEntity
         return GenreEntity(self, data)
 
 
     def Magazine(self, data=None) -> "MagazineEntity":
-        """Entity factory: client.Magazine().list({}) / client.Magazine().load({"id": ...})."""
+        """Entity factory: client.Magazine().list() / client.Magazine().load({"id": ...})."""
         from entity.magazine_entity import MagazineEntity
         return MagazineEntity(self, data)
 
 
     def Manga(self, data=None) -> "MangaEntity":
-        """Entity factory: client.Manga().list({}) / client.Manga().load({"id": ...})."""
+        """Entity factory: client.Manga().list() / client.Manga().load({"id": ...})."""
         from entity.manga_entity import MangaEntity
         return MangaEntity(self, data)
 
 
     def PeopleSearch(self, data=None) -> "PeopleSearchEntity":
-        """Entity factory: client.PeopleSearch().list({}) / client.PeopleSearch().load({"id": ...})."""
+        """Entity factory: client.PeopleSearch().list() / client.PeopleSearch().load({"id": ...})."""
         from entity.people_search_entity import PeopleSearchEntity
         return PeopleSearchEntity(self, data)
 
 
     def Person(self, data=None) -> "PersonEntity":
-        """Entity factory: client.Person().list({}) / client.Person().load({"id": ...})."""
+        """Entity factory: client.Person().list() / client.Person().load({"id": ...})."""
         from entity.person_entity import PersonEntity
         return PersonEntity(self, data)
 
 
     def Producer(self, data=None) -> "ProducerEntity":
-        """Entity factory: client.Producer().list({}) / client.Producer().load({"id": ...})."""
+        """Entity factory: client.Producer().list() / client.Producer().load({"id": ...})."""
         from entity.producer_entity import ProducerEntity
         return ProducerEntity(self, data)
 
 
     def Random(self, data=None) -> "RandomEntity":
-        """Entity factory: client.Random().list({}) / client.Random().load({"id": ...})."""
+        """Entity factory: client.Random().list() / client.Random().load({"id": ...})."""
         from entity.random_entity import RandomEntity
         return RandomEntity(self, data)
 
 
     def Recommendation(self, data=None) -> "RecommendationEntity":
-        """Entity factory: client.Recommendation().list({}) / client.Recommendation().load({"id": ...})."""
+        """Entity factory: client.Recommendation().list() / client.Recommendation().load({"id": ...})."""
         from entity.recommendation_entity import RecommendationEntity
         return RecommendationEntity(self, data)
 
 
     def Review(self, data=None) -> "ReviewEntity":
-        """Entity factory: client.Review().list({}) / client.Review().load({"id": ...})."""
+        """Entity factory: client.Review().list() / client.Review().load({"id": ...})."""
         from entity.review_entity import ReviewEntity
         return ReviewEntity(self, data)
 
 
     def Schedule(self, data=None) -> "ScheduleEntity":
-        """Entity factory: client.Schedule().list({}) / client.Schedule().load({"id": ...})."""
+        """Entity factory: client.Schedule().list() / client.Schedule().load({"id": ...})."""
         from entity.schedule_entity import ScheduleEntity
         return ScheduleEntity(self, data)
 
 
     def Season(self, data=None) -> "SeasonEntity":
-        """Entity factory: client.Season().list({}) / client.Season().load({"id": ...})."""
+        """Entity factory: client.Season().list() / client.Season().load({"id": ...})."""
         from entity.season_entity import SeasonEntity
         return SeasonEntity(self, data)
 
 
     def Top(self, data=None) -> "TopEntity":
-        """Entity factory: client.Top().list({}) / client.Top().load({"id": ...})."""
+        """Entity factory: client.Top().list() / client.Top().load({"id": ...})."""
         from entity.top_entity import TopEntity
         return TopEntity(self, data)
 
 
     def User(self, data=None) -> "UserEntity":
-        """Entity factory: client.User().list({}) / client.User().load({"id": ...})."""
+        """Entity factory: client.User().list() / client.User().load({"id": ...})."""
         from entity.user_entity import UserEntity
         return UserEntity(self, data)
 
 
     def UserAbout(self, data=None) -> "UserAboutEntity":
-        """Entity factory: client.UserAbout().list({}) / client.UserAbout().load({"id": ...})."""
+        """Entity factory: client.UserAbout().list() / client.UserAbout().load({"id": ...})."""
         from entity.user_about_entity import UserAboutEntity
         return UserAboutEntity(self, data)
 
 
     def UserClub(self, data=None) -> "UserClubEntity":
-        """Entity factory: client.UserClub().list({}) / client.UserClub().load({"id": ...})."""
+        """Entity factory: client.UserClub().list() / client.UserClub().load({"id": ...})."""
         from entity.user_club_entity import UserClubEntity
         return UserClubEntity(self, data)
 
 
     def UserFriend(self, data=None) -> "UserFriendEntity":
-        """Entity factory: client.UserFriend().list({}) / client.UserFriend().load({"id": ...})."""
+        """Entity factory: client.UserFriend().list() / client.UserFriend().load({"id": ...})."""
         from entity.user_friend_entity import UserFriendEntity
         return UserFriendEntity(self, data)
 
 
     def UserHistory(self, data=None) -> "UserHistoryEntity":
-        """Entity factory: client.UserHistory().list({}) / client.UserHistory().load({"id": ...})."""
+        """Entity factory: client.UserHistory().list() / client.UserHistory().load({"id": ...})."""
         from entity.user_history_entity import UserHistoryEntity
         return UserHistoryEntity(self, data)
 
 
     def UserStatistic(self, data=None) -> "UserStatisticEntity":
-        """Entity factory: client.UserStatistic().list({}) / client.UserStatistic().load({"id": ...})."""
+        """Entity factory: client.UserStatistic().list() / client.UserStatistic().load({"id": ...})."""
         from entity.user_statistic_entity import UserStatisticEntity
         return UserStatisticEntity(self, data)
 
 
     def UserUpdate(self, data=None) -> "UserUpdateEntity":
-        """Entity factory: client.UserUpdate().list({}) / client.UserUpdate().load({"id": ...})."""
+        """Entity factory: client.UserUpdate().list() / client.UserUpdate().load({"id": ...})."""
         from entity.user_update_entity import UserUpdateEntity
         return UserUpdateEntity(self, data)
 
 
     def WatchEpisode(self, data=None) -> "WatchEpisodeEntity":
-        """Entity factory: client.WatchEpisode().list({}) / client.WatchEpisode().load({"id": ...})."""
+        """Entity factory: client.WatchEpisode().list() / client.WatchEpisode().load({"id": ...})."""
         from entity.watch_episode_entity import WatchEpisodeEntity
         return WatchEpisodeEntity(self, data)
 
 
     def WatchPromo(self, data=None) -> "WatchPromoEntity":
-        """Entity factory: client.WatchPromo().list({}) / client.WatchPromo().load({"id": ...})."""
+        """Entity factory: client.WatchPromo().list() / client.WatchPromo().load({"id": ...})."""
         from entity.watch_promo_entity import WatchPromoEntity
         return WatchPromoEntity(self, data)
 

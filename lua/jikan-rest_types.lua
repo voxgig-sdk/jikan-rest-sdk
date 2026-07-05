@@ -77,12 +77,18 @@
 ---@field url? string
 
 ---@class GenreListMatch
+---@field count? number
+---@field mal_id? number
+---@field name? string
+---@field url? string
 
 ---@class Magazine
 ---@field data? table
 ---@field pagination? table
 
 ---@class MagazineListMatch
+---@field data? table
+---@field pagination? table
 
 ---@class Manga
 ---@field author_url? string
@@ -114,6 +120,8 @@
 ---@field pagination? table
 
 ---@class PeopleSearchListMatch
+---@field data? table
+---@field pagination? table
 
 ---@class Person
 ---@field anime? table
@@ -147,6 +155,7 @@
 ---@field data? table
 
 ---@class RandomLoadMatch
+---@field data? table
 
 ---@class Recommendation
 ---@field data? table
@@ -164,6 +173,8 @@
 ---@field pagination? table
 
 ---@class ScheduleListMatch
+---@field data? table
+---@field pagination? table
 
 ---@class Season
 ---@field data? table
@@ -179,6 +190,7 @@
 ---@field data? any
 
 ---@class TopLoadMatch
+---@field data? any
 
 ---@class User
 ---@field data? any
@@ -189,6 +201,8 @@
 ---@field id number
 
 ---@class UserListMatch
+---@field data? any
+---@field pagination? table
 
 ---@class UserAbout
 ---@field about? string
@@ -235,12 +249,16 @@
 ---@field pagination? table
 
 ---@class WatchEpisodeListMatch
+---@field data? table
+---@field pagination? table
 
 ---@class WatchPromo
 ---@field data? table
 ---@field pagination? table
 
 ---@class WatchPromoListMatch
+---@field data? table
+---@field pagination? table
 
 local M = {}
 

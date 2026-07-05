@@ -252,7 +252,7 @@ Genre = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Genre#list (any subset of Genre fields).
+# Request payload for Genre#list.
 #
 # @!attribute [rw] count
 #   @return [Integer, nil]
@@ -286,7 +286,7 @@ Magazine = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Magazine#list (any subset of Magazine fields).
+# Request payload for Magazine#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -403,7 +403,7 @@ PeopleSearch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for PeopleSearch#list (any subset of PeopleSearch fields).
+# Request payload for PeopleSearch#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -519,7 +519,7 @@ Random = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Random#load (any subset of Random fields).
+# Request payload for Random#load.
 #
 # @!attribute [rw] data
 #   @return [Hash, nil]
@@ -554,7 +554,7 @@ RecommendationListMatch = Struct.new(
 class Review
 end
 
-# Match filter for Review#load (any subset of Review fields).
+# Request payload for Review#load.
 class ReviewLoadMatch
 end
 
@@ -571,7 +571,7 @@ Schedule = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Schedule#list (any subset of Schedule fields).
+# Request payload for Schedule#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -627,7 +627,7 @@ Top = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Top#load (any subset of Top fields).
+# Request payload for Top#load.
 #
 # @!attribute [rw] data
 #   @return [Object, nil]
@@ -662,7 +662,7 @@ UserLoadMatch = Struct.new(
   keyword_init: true
 )
 
-# Match filter for User#list (any subset of User fields).
+# Request payload for User#list.
 #
 # @!attribute [rw] data
 #   @return [Object, nil]
@@ -812,7 +812,7 @@ WatchEpisode = Struct.new(
   keyword_init: true
 )
 
-# Match filter for WatchEpisode#list (any subset of WatchEpisode fields).
+# Request payload for WatchEpisode#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]
@@ -838,7 +838,7 @@ WatchPromo = Struct.new(
   keyword_init: true
 )
 
-# Match filter for WatchPromo#list (any subset of WatchPromo fields).
+# Request payload for WatchPromo#list.
 #
 # @!attribute [rw] data
 #   @return [Array, nil]

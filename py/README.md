@@ -4,6 +4,11 @@
 
 The Python SDK for the JikanRest API — an entity-oriented client following Pythonic conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Anime()` — each
+carrying a small, uniform set of operations (`list`, `load`) instead of raw URL
+paths and query strings. You work with named resources and verbs, which
+keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -38,7 +43,7 @@ error — iterate it directly.
 
 ```python
 try:
-    animes = client.Anime().list({})
+    animes = client.Anime().list()
     for anime in animes:
         print(anime)
 except Exception as err:
@@ -55,6 +60,34 @@ try:
     print(anime)
 except Exception as err:
     print(f"load failed: {err}")
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so wrap them in `try` / `except`:
+
+```python
+try:
+    animes = client.Anime().list()
+    print(animes)
+except Exception as err:
+    print(f"list failed: {err}")
+```
+
+`direct()` does **not** raise — it returns the result envelope. Branch
+on `ok`; on failure `status` holds the HTTP status (for error responses)
+and `err` holds a transport error, so read both defensively:
+
+```python
+result = client.direct({
+    "path": "/api/resource/{id}",
+    "method": "GET",
+    "params": {"id": "example_id"},
+})
+
+if not result["ok"]:
+    print("request failed:", result.get("status"), result.get("err"))
 ```
 
 
@@ -75,7 +108,10 @@ if result["ok"]:
     print(result["status"])  # 200
     print(result["data"])    # response body
 else:
-    print(result["err"])     # error value
+    # A non-2xx response carries status + data (the error body); a
+    # transport-level failure carries err instead. Only one is present, so
+    # read both with .get() rather than indexing a key that may be absent.
+    print(result.get("status"), result.get("err"))
 ```
 
 ### Prepare a request without sending it
@@ -101,7 +137,7 @@ Create a mock client for unit testing — no server required:
 client = JikanRestSDK.test()
 
 # Entity ops return the bare record and raise on error.
-anime = client.Anime().load({"id": "test01"})
+anime = client.Anime().list()
 # anime contains the mock response record
 ```
 
@@ -212,9 +248,6 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
 | `list` | `(reqmatch, ctrl) -> list` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
 | `data_get` | `() -> dict` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> dict` | Get entity match criteria. |
@@ -577,32 +610,32 @@ Create an instance: `anime = client.Anime()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `str` |  |
+| `author_username` | `str` |  |
+| `character` | `dict` |  |
+| `comment` | `int` |  |
+| `data` | `dict` |  |
+| `date` | `str` |  |
+| `entry` | `dict` |  |
+| `image` | `dict` |  |
+| `last_comment` | `dict` |  |
+| `mal_id` | `int` |  |
+| `name` | `str` |  |
+| `pagination` | `dict` |  |
+| `person` | `dict` |  |
+| `position` | `list` |  |
+| `relation` | `str` |  |
+| `role` | `str` |  |
+| `title` | `str` |  |
+| `url` | `str` |  |
+| `voice_actor` | `list` |  |
 
 #### Example: Load
 
@@ -613,7 +646,7 @@ anime = client.Anime().load({"id": "anime_id"})
 #### Example: List
 
 ```python
-animes = client.Anime().list({})
+animes = client.Anime().list()
 ```
 
 
@@ -625,22 +658,22 @@ Create an instance: `character = client.Character()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `dict` |  |
+| `data` | `dict` |  |
+| `image_url` | `str` |  |
+| `language` | `str` |  |
+| `large_image_url` | `str` |  |
+| `manga` | `dict` |  |
+| `pagination` | `dict` |  |
+| `person` | `dict` |  |
+| `role` | `str` |  |
 
 #### Example: Load
 
@@ -651,7 +684,7 @@ character = client.Character().load({"id": "character_id"})
 #### Example: List
 
 ```python
-characters = client.Character().list({})
+characters = client.Character().list()
 ```
 
 
@@ -663,17 +696,17 @@ Create an instance: `club = client.Club()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `dict` |  |
+| `pagination` | `dict` |  |
+| `url` | `str` |  |
+| `username` | `str` |  |
 
 #### Example: Load
 
@@ -684,7 +717,7 @@ club = client.Club().load({"id": "club_id"})
 #### Example: List
 
 ```python
-clubs = client.Club().list({})
+clubs = client.Club().list()
 ```
 
 
@@ -696,19 +729,19 @@ Create an instance: `external = client.External()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `str` |  |
+| `url` | `str` |  |
 
 #### Example: List
 
 ```python
-externals = client.External().list({})
+externals = client.External().list()
 ```
 
 
@@ -720,21 +753,21 @@ Create an instance: `genre = client.Genre()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `int` |  |
+| `mal_id` | `int` |  |
+| `name` | `str` |  |
+| `url` | `str` |  |
 
 #### Example: List
 
 ```python
-genres = client.Genre().list({})
+genres = client.Genre().list()
 ```
 
 
@@ -746,19 +779,19 @@ Create an instance: `magazine = client.Magazine()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-magazines = client.Magazine().list({})
+magazines = client.Magazine().list()
 ```
 
 
@@ -770,30 +803,30 @@ Create an instance: `manga = client.Manga()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `str` |  |
+| `author_username` | `str` |  |
+| `character` | `dict` |  |
+| `comment` | `int` |  |
+| `data` | `dict` |  |
+| `date` | `str` |  |
+| `entry` | `dict` |  |
+| `jpg` | `dict` |  |
+| `last_comment` | `dict` |  |
+| `mal_id` | `int` |  |
+| `name` | `str` |  |
+| `pagination` | `dict` |  |
+| `relation` | `str` |  |
+| `role` | `str` |  |
+| `title` | `str` |  |
+| `url` | `str` |  |
+| `webp` | `dict` |  |
 
 #### Example: Load
 
@@ -804,7 +837,7 @@ manga = client.Manga().load({"id": "manga_id"})
 #### Example: List
 
 ```python
-mangas = client.Manga().list({})
+mangas = client.Manga().list()
 ```
 
 
@@ -816,19 +849,19 @@ Create an instance: `people_search = client.PeopleSearch()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-people_searchs = client.PeopleSearch().list({})
+people_searchs = client.PeopleSearch().list()
 ```
 
 
@@ -840,21 +873,21 @@ Create an instance: `person = client.Person()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `dict` |  |
+| `character` | `dict` |  |
+| `data` | `dict` |  |
+| `jpg` | `dict` |  |
+| `manga` | `dict` |  |
+| `pagination` | `dict` |  |
+| `position` | `str` |  |
+| `role` | `str` |  |
 
 #### Example: Load
 
@@ -865,7 +898,7 @@ person = client.Person().load({"id": "person_id"})
 #### Example: List
 
 ```python
-persons = client.Person().list({})
+persons = client.Person().list()
 ```
 
 
@@ -877,17 +910,17 @@ Create an instance: `producer = client.Producer()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `dict` |  |
+| `name` | `str` |  |
+| `pagination` | `dict` |  |
+| `url` | `str` |  |
 
 #### Example: Load
 
@@ -898,7 +931,7 @@ producer = client.Producer().load({"id": "producer_id"})
 #### Example: List
 
 ```python
-producers = client.Producer().list({})
+producers = client.Producer().list()
 ```
 
 
@@ -916,12 +949,12 @@ Create an instance: `random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `dict` |  |
 
 #### Example: Load
 
 ```python
-random = client.Random().load({"id": "random_id"})
+random = client.Random().load()
 ```
 
 
@@ -933,19 +966,19 @@ Create an instance: `recommendation = client.Recommendation()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-recommendations = client.Recommendation().list({})
+recommendations = client.Recommendation().list()
 ```
 
 
@@ -962,7 +995,7 @@ Create an instance: `review = client.Review()`
 #### Example: Load
 
 ```python
-review = client.Review().load({"id": "review_id"})
+review = client.Review().load()
 ```
 
 
@@ -974,19 +1007,19 @@ Create an instance: `schedule = client.Schedule()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-schedules = client.Schedule().list({})
+schedules = client.Schedule().list()
 ```
 
 
@@ -998,21 +1031,21 @@ Create an instance: `season = client.Season()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
+| `season` | `list` |  |
+| `year` | `int` |  |
 
 #### Example: List
 
 ```python
-seasons = client.Season().list({})
+seasons = client.Season().list()
 ```
 
 
@@ -1030,12 +1063,12 @@ Create an instance: `top = client.Top()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `Any` |  |
 
 #### Example: Load
 
 ```python
-top = client.Top().load({"id": "top_id"})
+top = client.Top().load()
 ```
 
 
@@ -1047,15 +1080,15 @@ Create an instance: `user = client.User()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 | `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Any` |  |
+| `pagination` | `dict` |  |
 
 #### Example: Load
 
@@ -1066,7 +1099,7 @@ user = client.User().load({"id": "user_id"})
 #### Example: List
 
 ```python
-users = client.User().list({})
+users = client.User().list()
 ```
 
 
@@ -1078,18 +1111,18 @@ Create an instance: `user_about = client.UserAbout()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `str` |  |
 
 #### Example: List
 
 ```python
-user_abouts = client.UserAbout().list({})
+user_abouts = client.UserAbout().list()
 ```
 
 
@@ -1101,19 +1134,19 @@ Create an instance: `user_club = client.UserClub()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-user_clubs = client.UserClub().list({})
+user_clubs = client.UserClub().list()
 ```
 
 
@@ -1125,19 +1158,19 @@ Create an instance: `user_friend = client.UserFriend()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-user_friends = client.UserFriend().list({})
+user_friends = client.UserFriend().list()
 ```
 
 
@@ -1149,20 +1182,20 @@ Create an instance: `user_history = client.UserHistory()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `str` |  |
+| `entry` | `dict` |  |
+| `increment` | `int` |  |
 
 #### Example: List
 
 ```python
-user_historys = client.UserHistory().list({})
+user_historys = client.UserHistory().list()
 ```
 
 
@@ -1180,12 +1213,12 @@ Create an instance: `user_statistic = client.UserStatistic()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `dict` |  |
 
 #### Example: Load
 
 ```python
-user_statistic = client.UserStatistic().load({"id": "user_statistic_id"})
+user_statistic = client.UserStatistic().load()
 ```
 
 
@@ -1203,12 +1236,12 @@ Create an instance: `user_update = client.UserUpdate()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `dict` |  |
 
 #### Example: Load
 
 ```python
-user_update = client.UserUpdate().load({"id": "user_update_id"})
+user_update = client.UserUpdate().load()
 ```
 
 
@@ -1220,19 +1253,19 @@ Create an instance: `watch_episode = client.WatchEpisode()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-watch_episodes = client.WatchEpisode().list({})
+watch_episodes = client.WatchEpisode().list()
 ```
 
 
@@ -1244,28 +1277,32 @@ Create an instance: `watch_promo = client.WatchPromo()`
 
 | Method | Description |
 | --- | --- |
-| `list(match)` | List entities matching the criteria. |
+| `list()` | List entities, optionally matching the given criteria. |
 
 #### Fields
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `list` |  |
+| `pagination` | `dict` |  |
 
 #### Example: List
 
 ```python
-watch_promos = client.WatchPromo().list({})
+watch_promos = client.WatchPromo().list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1282,8 +1319,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return tuple.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1326,14 +1364,14 @@ Import entity or utility modules directly only when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```python
 anime = client.Anime()
-anime.load({"id": "example_id"})
+anime.list()
 
-# anime.data_get() now returns the loaded anime data
+# anime.data_get() now returns the anime data from the last list
 # anime.match_get() returns the last match criteria
 ```
 

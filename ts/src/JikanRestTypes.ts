@@ -87,14 +87,22 @@ export interface Genre {
   url?: string
 }
 
-export type GenreListMatch = Partial<Genre>
+export interface GenreListMatch {
+  count?: number
+  mal_id?: number
+  name?: string
+  url?: string
+}
 
 export interface Magazine {
   data?: any[]
   pagination?: Record<string, any>
 }
 
-export type MagazineListMatch = Partial<Magazine>
+export interface MagazineListMatch {
+  data?: any[]
+  pagination?: Record<string, any>
+}
 
 export interface Manga {
   author_url?: string
@@ -129,7 +137,10 @@ export interface PeopleSearch {
   pagination?: Record<string, any>
 }
 
-export type PeopleSearchListMatch = Partial<PeopleSearch>
+export interface PeopleSearchListMatch {
+  data?: any[]
+  pagination?: Record<string, any>
+}
 
 export interface Person {
   anime?: Record<string, any>
@@ -169,7 +180,9 @@ export interface Random {
   data?: Record<string, any>
 }
 
-export type RandomLoadMatch = Partial<Random>
+export interface RandomLoadMatch {
+  data?: Record<string, any>
+}
 
 export interface Recommendation {
   data?: any[]
@@ -183,14 +196,18 @@ export interface RecommendationListMatch {
 export interface Review {
 }
 
-export type ReviewLoadMatch = Partial<Review>
+export interface ReviewLoadMatch {
+}
 
 export interface Schedule {
   data?: any[]
   pagination?: Record<string, any>
 }
 
-export type ScheduleListMatch = Partial<Schedule>
+export interface ScheduleListMatch {
+  data?: any[]
+  pagination?: Record<string, any>
+}
 
 export interface Season {
   data?: any[]
@@ -208,7 +225,9 @@ export interface Top {
   data?: any
 }
 
-export type TopLoadMatch = Partial<Top>
+export interface TopLoadMatch {
+  data?: any
+}
 
 export interface User {
   data?: any
@@ -220,7 +239,10 @@ export interface UserLoadMatch {
   id: number
 }
 
-export type UserListMatch = Partial<User>
+export interface UserListMatch {
+  data?: any
+  pagination?: Record<string, any>
+}
 
 export interface UserAbout {
   about?: string
@@ -279,12 +301,18 @@ export interface WatchEpisode {
   pagination?: Record<string, any>
 }
 
-export type WatchEpisodeListMatch = Partial<WatchEpisode>
+export interface WatchEpisodeListMatch {
+  data?: any[]
+  pagination?: Record<string, any>
+}
 
 export interface WatchPromo {
   data?: any[]
   pagination?: Record<string, any>
 }
 
-export type WatchPromoListMatch = Partial<WatchPromo>
+export interface WatchPromoListMatch {
+  data?: any[]
+  pagination?: Record<string, any>
+}
 

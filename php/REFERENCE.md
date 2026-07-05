@@ -8,7 +8,7 @@ Complete API reference for the JikanRest PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/jikan-rest_sdk.php';
+require_once __DIR__ . '/jikanrest_sdk.php';
 
 $client = new JikanRestSDK($options);
 ```
@@ -141,11 +141,11 @@ Create a new `WatchEpisodeEntity` instance. Pass `null` for no initial data.
 
 Create a new `WatchPromoEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): JikanRestUtility`
 
 Return a copy of the SDK utility object.
 
@@ -188,34 +188,34 @@ $anime = $client->Anime();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `position` | ``$ARRAY`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `voice_actor` | ``$ARRAY`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `array` | No |  |
+| `comment` | `int` | No |  |
+| `data` | `array` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `array` | No |  |
+| `image` | `array` | No |  |
+| `last_comment` | `array` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `array` | No |  |
+| `person` | `array` | No |  |
+| `position` | `array` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voice_actor` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Anime()->list([]);
+$results = $client->Anime()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -228,19 +228,19 @@ $result = $client->Anime()->load(["id" => "anime_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -249,7 +249,7 @@ Set the entity match criteria.
 Create a new `AnimeEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -266,24 +266,24 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `large_image_url` | ``$STRING`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `array` | No |  |
+| `data` | `array` | No |  |
+| `image_url` | `string` | No |  |
+| `language` | `string` | No |  |
+| `large_image_url` | `string` | No |  |
+| `manga` | `array` | No |  |
+| `pagination` | `array` | No |  |
+| `person` | `array` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Character()->list([]);
+$results = $client->Character()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -296,19 +296,19 @@ $result = $client->Character()->load(["id" => "character_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -317,7 +317,7 @@ Set the entity match criteria.
 Create a new `CharacterEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -334,19 +334,19 @@ $club = $client->Club();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Club()->list([]);
+$results = $client->Club()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -359,19 +359,19 @@ $result = $client->Club()->load(["id" => "club_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -380,7 +380,7 @@ Set the entity match criteria.
 Create a new `ClubEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -397,34 +397,34 @@ $external = $client->External();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->External()->list([]);
+$results = $client->External()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -433,7 +433,7 @@ Set the entity match criteria.
 Create a new `ExternalEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -450,36 +450,36 @@ $genre = $client->Genre();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | ``$INTEGER`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `count` | `int` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Genre()->list([]);
+$results = $client->Genre()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -488,7 +488,7 @@ Set the entity match criteria.
 Create a new `GenreEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -505,34 +505,34 @@ $magazine = $client->Magazine();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Magazine()->list([]);
+$results = $client->Magazine()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -541,7 +541,7 @@ Set the entity match criteria.
 Create a new `MagazineEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -558,32 +558,32 @@ $manga = $client->Manga();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `webp` | ``$OBJECT`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `array` | No |  |
+| `comment` | `int` | No |  |
+| `data` | `array` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `array` | No |  |
+| `jpg` | `array` | No |  |
+| `last_comment` | `array` | No |  |
+| `mal_id` | `int` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `array` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `webp` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Manga()->list([]);
+$results = $client->Manga()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -596,19 +596,19 @@ $result = $client->Manga()->load(["id" => "manga_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -617,7 +617,7 @@ Set the entity match criteria.
 Create a new `MangaEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -634,34 +634,34 @@ $people_search = $client->PeopleSearch();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->PeopleSearch()->list([]);
+$results = $client->PeopleSearch()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -670,7 +670,7 @@ Set the entity match criteria.
 Create a new `PeopleSearchEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -687,23 +687,23 @@ $person = $client->Person();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `position` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `array` | No |  |
+| `character` | `array` | No |  |
+| `data` | `array` | No |  |
+| `jpg` | `array` | No |  |
+| `manga` | `array` | No |  |
+| `pagination` | `array` | No |  |
+| `position` | `string` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Person()->list([]);
+$results = $client->Person()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -716,19 +716,19 @@ $result = $client->Person()->load(["id" => "person_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -737,7 +737,7 @@ Set the entity match criteria.
 Create a new `PersonEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -754,19 +754,19 @@ $producer = $client->Producer();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `data` | `array` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `array` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Producer()->list([]);
+$results = $client->Producer()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -779,19 +779,19 @@ $result = $client->Producer()->load(["id" => "producer_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -800,7 +800,7 @@ Set the entity match criteria.
 Create a new `ProducerEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -817,7 +817,7 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
 
 ### Operations
 
@@ -826,24 +826,24 @@ $random = $client->Random();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Random()->load(["id" => "random_id"]);
+$result = $client->Random()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -852,7 +852,7 @@ Set the entity match criteria.
 Create a new `RandomEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -869,34 +869,34 @@ $recommendation = $client->Recommendation();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Recommendation()->list([]);
+$results = $client->Recommendation()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -905,7 +905,7 @@ Set the entity match criteria.
 Create a new `RecommendationEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -925,24 +925,24 @@ $review = $client->Review();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Review()->load(["id" => "review_id"]);
+$result = $client->Review()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -951,7 +951,7 @@ Set the entity match criteria.
 Create a new `ReviewEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -968,34 +968,34 @@ $schedule = $client->Schedule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Schedule()->list([]);
+$results = $client->Schedule()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1004,7 +1004,7 @@ Set the entity match criteria.
 Create a new `ScheduleEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1021,36 +1021,36 @@ $season = $client->Season();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `season` | ``$ARRAY`` | No |  |
-| `year` | ``$INTEGER`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
+| `season` | `array` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Season()->list([]);
+$results = $client->Season()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1059,7 +1059,7 @@ Set the entity match criteria.
 Create a new `SeasonEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1076,7 +1076,7 @@ $top = $client->Top();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
+| `data` | `mixed` | No |  |
 
 ### Operations
 
@@ -1085,24 +1085,24 @@ $top = $client->Top();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Top()->load(["id" => "top_id"]);
+$result = $client->Top()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1111,7 +1111,7 @@ Set the entity match criteria.
 Create a new `TopEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1128,17 +1128,17 @@ $user = $client->User();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `mixed` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->User()->list([]);
+$results = $client->User()->list();
 ```
 
 #### `load(array $reqmatch, ?array $ctrl = null): mixed`
@@ -1151,19 +1151,19 @@ $result = $client->User()->load(["id" => "user_id"]);
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1172,7 +1172,7 @@ Set the entity match criteria.
 Create a new `UserEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1189,33 +1189,33 @@ $user_about = $client->UserAbout();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | ``$STRING`` | No |  |
+| `about` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->UserAbout()->list([]);
+$results = $client->UserAbout()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1224,7 +1224,7 @@ Set the entity match criteria.
 Create a new `UserAboutEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1241,34 +1241,34 @@ $user_club = $client->UserClub();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->UserClub()->list([]);
+$results = $client->UserClub()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1277,7 +1277,7 @@ Set the entity match criteria.
 Create a new `UserClubEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1294,34 +1294,34 @@ $user_friend = $client->UserFriend();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->UserFriend()->list([]);
+$results = $client->UserFriend()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1330,7 +1330,7 @@ Set the entity match criteria.
 Create a new `UserFriendEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1347,35 +1347,35 @@ $user_history = $client->UserHistory();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `increment` | ``$INTEGER`` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `array` | No |  |
+| `increment` | `int` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->UserHistory()->list([]);
+$results = $client->UserHistory()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1384,7 +1384,7 @@ Set the entity match criteria.
 Create a new `UserHistoryEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1401,7 +1401,7 @@ $user_statistic = $client->UserStatistic();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
 
 ### Operations
 
@@ -1410,24 +1410,24 @@ $user_statistic = $client->UserStatistic();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->UserStatistic()->load(["id" => "user_statistic_id"]);
+$result = $client->UserStatistic()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1436,7 +1436,7 @@ Set the entity match criteria.
 Create a new `UserStatisticEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1453,7 +1453,7 @@ $user_update = $client->UserUpdate();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
 
 ### Operations
 
@@ -1462,24 +1462,24 @@ $user_update = $client->UserUpdate();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->UserUpdate()->load(["id" => "user_update_id"]);
+$result = $client->UserUpdate()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1488,7 +1488,7 @@ Set the entity match criteria.
 Create a new `UserUpdateEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1505,34 +1505,34 @@ $watch_episode = $client->WatchEpisode();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->WatchEpisode()->list([]);
+$results = $client->WatchEpisode()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1541,7 +1541,7 @@ Set the entity match criteria.
 Create a new `WatchEpisodeEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -1558,34 +1558,34 @@ $watch_promo = $client->WatchPromo();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->WatchPromo()->list([]);
+$results = $client->WatchPromo()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -1594,7 +1594,7 @@ Set the entity match criteria.
 Create a new `WatchPromoEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

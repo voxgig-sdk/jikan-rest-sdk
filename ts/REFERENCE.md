@@ -404,25 +404,25 @@ const anime = client.Anime()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `position` | ``$ARRAY`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `voice_actor` | ``$ARRAY`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `Record<string, any>` | No |  |
+| `comment` | `number` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `Record<string, any>` | No |  |
+| `image` | `Record<string, any>` | No |  |
+| `last_comment` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `person` | `Record<string, any>` | No |  |
+| `position` | `any[]` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voice_actor` | `any[]` | No |  |
 
 ### Operations
 
@@ -439,7 +439,7 @@ const results = await client.Anime().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Anime().load({ id: 'anime_id' })
+const result = await client.Anime().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -480,15 +480,15 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `image_url` | ``$STRING`` | No |  |
-| `language` | ``$STRING`` | No |  |
-| `large_image_url` | ``$STRING`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `person` | ``$OBJECT`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `Record<string, any>` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `image_url` | `string` | No |  |
+| `language` | `string` | No |  |
+| `large_image_url` | `string` | No |  |
+| `manga` | `Record<string, any>` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `person` | `Record<string, any>` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -505,7 +505,7 @@ const results = await client.Character().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Character().load({ id: 'character_id' })
+const result = await client.Character().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -546,10 +546,10 @@ const club = client.Club()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `username` | ``$STRING`` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -566,7 +566,7 @@ const results = await client.Club().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Club().load({ id: 'club_id' })
+const result = await client.Club().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -607,8 +607,8 @@ const external = client.External()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -658,10 +658,10 @@ const genre = client.Genre()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | ``$INTEGER`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `count` | `number` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -711,8 +711,8 @@ const magazine = client.Magazine()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -762,23 +762,23 @@ const manga = client.Manga()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `author_url` | ``$STRING`` | No |  |
-| `author_username` | ``$STRING`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `comment` | ``$INTEGER`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `last_comment` | ``$OBJECT`` | No |  |
-| `mal_id` | ``$INTEGER`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `relation` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
-| `title` | ``$STRING`` | No |  |
-| `url` | ``$STRING`` | No |  |
-| `webp` | ``$OBJECT`` | No |  |
+| `author_url` | `string` | No |  |
+| `author_username` | `string` | No |  |
+| `character` | `Record<string, any>` | No |  |
+| `comment` | `number` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `Record<string, any>` | No |  |
+| `jpg` | `Record<string, any>` | No |  |
+| `last_comment` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `relation` | `string` | No |  |
+| `role` | `string` | No |  |
+| `title` | `string` | No |  |
+| `url` | `string` | No |  |
+| `webp` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -795,7 +795,7 @@ const results = await client.Manga().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Manga().load({ id: 'manga_id' })
+const result = await client.Manga().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -836,8 +836,8 @@ const people_search = client.PeopleSearch()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -887,14 +887,14 @@ const person = client.Person()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | ``$OBJECT`` | No |  |
-| `character` | ``$OBJECT`` | No |  |
-| `data` | ``$OBJECT`` | No |  |
-| `jpg` | ``$OBJECT`` | No |  |
-| `manga` | ``$OBJECT`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `position` | ``$STRING`` | No |  |
-| `role` | ``$STRING`` | No |  |
+| `anime` | `Record<string, any>` | No |  |
+| `character` | `Record<string, any>` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `jpg` | `Record<string, any>` | No |  |
+| `manga` | `Record<string, any>` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `position` | `string` | No |  |
+| `role` | `string` | No |  |
 
 ### Operations
 
@@ -911,7 +911,7 @@ const results = await client.Person().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Person().load({ id: 'person_id' })
+const result = await client.Person().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -952,10 +952,10 @@ const producer = client.Producer()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `url` | ``$STRING`` | No |  |
+| `data` | `Record<string, any>` | No |  |
+| `name` | `string` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `url` | `string` | No |  |
 
 ### Operations
 
@@ -972,7 +972,7 @@ const results = await client.Producer().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Producer().load({ id: 'producer_id' })
+const result = await client.Producer().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -1013,7 +1013,7 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1022,7 +1022,7 @@ const random = client.Random()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Random().load({ id: 'random_id' })
+const result = await client.Random().load()
 ```
 
 ### Common Methods
@@ -1063,8 +1063,8 @@ const recommendation = client.Recommendation()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1117,7 +1117,7 @@ const review = client.Review()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Review().load({ id: 'review_id' })
+const result = await client.Review().load()
 ```
 
 ### Common Methods
@@ -1158,8 +1158,8 @@ const schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1209,10 +1209,10 @@ const season = client.Season()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
-| `season` | ``$ARRAY`` | No |  |
-| `year` | ``$INTEGER`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+| `season` | `any[]` | No |  |
+| `year` | `number` | No |  |
 
 ### Operations
 
@@ -1262,7 +1262,7 @@ const top = client.Top()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
+| `data` | `any` | No |  |
 
 ### Operations
 
@@ -1271,7 +1271,7 @@ const top = client.Top()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Top().load({ id: 'top_id' })
+const result = await client.Top().load()
 ```
 
 ### Common Methods
@@ -1312,8 +1312,8 @@ const user = client.User()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ANY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1330,7 +1330,7 @@ const results = await client.User().list()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.User().load({ id: 'user_id' })
+const result = await client.User().load({ id: 1 })
 ```
 
 ### Common Methods
@@ -1371,7 +1371,7 @@ const user_about = client.UserAbout()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | ``$STRING`` | No |  |
+| `about` | `string` | No |  |
 
 ### Operations
 
@@ -1421,8 +1421,8 @@ const user_club = client.UserClub()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1472,8 +1472,8 @@ const user_friend = client.UserFriend()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1523,9 +1523,9 @@ const user_history = client.UserHistory()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | ``$STRING`` | No |  |
-| `entry` | ``$OBJECT`` | No |  |
-| `increment` | ``$INTEGER`` | No |  |
+| `date` | `string` | No |  |
+| `entry` | `Record<string, any>` | No |  |
+| `increment` | `number` | No |  |
 
 ### Operations
 
@@ -1575,7 +1575,7 @@ const user_statistic = client.UserStatistic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1584,7 +1584,7 @@ const user_statistic = client.UserStatistic()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.UserStatistic().load({ id: 'user_statistic_id' })
+const result = await client.UserStatistic().load()
 ```
 
 ### Common Methods
@@ -1625,7 +1625,7 @@ const user_update = client.UserUpdate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$OBJECT`` | No |  |
+| `data` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1634,7 +1634,7 @@ const user_update = client.UserUpdate()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.UserUpdate().load({ id: 'user_update_id' })
+const result = await client.UserUpdate().load()
 ```
 
 ### Common Methods
@@ -1675,8 +1675,8 @@ const watch_episode = client.WatchEpisode()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1726,8 +1726,8 @@ const watch_promo = client.WatchPromo()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | ``$ARRAY`` | No |  |
-| `pagination` | ``$OBJECT`` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
 
 ### Operations
 

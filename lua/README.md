@@ -4,6 +4,8 @@
 
 The Lua SDK for the JikanRest API — an entity-oriented client using Lua conventions.
 
+It exposes the API as capitalised, semantic **Entities** — e.g. `client:Anime()` — each with the same small set of operations (`list`, `load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -41,7 +43,7 @@ local animes, err = client:Anime():list()
 if err then error(err) end
 
 for _, item in ipairs(animes) do
-  print(item["id"], item["name"])
+  print(item["author_url"])
 end
 ```
 
@@ -51,6 +53,28 @@ end
 local anime, err = client:Anime():load({ id = "example_id" })
 if err then error(err) end
 print(anime)
+```
+
+
+## Error handling
+
+Entity operations return `(value, err)`. Check `err` before using
+the value:
+
+```lua
+local animes, err = client:Anime():list()
+if err then error(err) end
+```
+
+`direct` follows the same `(value, err)` convention:
+
+```lua
+local result, err = client:direct({
+  path = "/api/resource/{id}",
+  method = "GET",
+  params = { id = "example_id" },
+})
+if err then error(err) end
 ```
 
 
@@ -96,8 +120,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Anime():load({ id = "test01" })
--- result is the loaded data; err is set on failure
+local result, err = client:Anime():list()
+-- result is the returned data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -209,9 +233,6 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any, err` | Load a single entity by match criteria. |
 | `list` | `(reqmatch, ctrl) -> any, err` | List entities matching the criteria. |
-| `create` | `(reqdata, ctrl) -> any, err` | Create a new entity. |
-| `update` | `(reqdata, ctrl) -> any, err` | Update an existing entity. |
-| `remove` | `(reqmatch, ctrl) -> any, err` | Remove an entity. |
 | `data_get` | `() -> table` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> table` | Get entity match criteria. |
@@ -226,7 +247,7 @@ data **directly** — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `load` | the entity record (a `table`) |
 | `list` | an array (`table`) of entity records |
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
@@ -582,25 +603,25 @@ Create an instance: `local anime = client:Anime(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `table` |  |
+| `comment` | `number` |  |
+| `data` | `table` |  |
+| `date` | `string` |  |
+| `entry` | `table` |  |
+| `image` | `table` |  |
+| `last_comment` | `table` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `pagination` | `table` |  |
+| `person` | `table` |  |
+| `position` | `table` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `voice_actor` | `table` |  |
 
 #### Example: Load
 
@@ -630,15 +651,15 @@ Create an instance: `local character = client:Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `table` |  |
+| `data` | `table` |  |
+| `image_url` | `string` |  |
+| `language` | `string` |  |
+| `large_image_url` | `string` |  |
+| `manga` | `table` |  |
+| `pagination` | `table` |  |
+| `person` | `table` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -668,10 +689,10 @@ Create an instance: `local club = client:Club(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -700,8 +721,8 @@ Create an instance: `local external = client:External(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -724,10 +745,10 @@ Create an instance: `local genre = client:Genre(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `number` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -750,8 +771,8 @@ Create an instance: `local magazine = client:Magazine(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -775,23 +796,23 @@ Create an instance: `local manga = client:Manga(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `table` |  |
+| `comment` | `number` |  |
+| `data` | `table` |  |
+| `date` | `string` |  |
+| `entry` | `table` |  |
+| `jpg` | `table` |  |
+| `last_comment` | `table` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `pagination` | `table` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `webp` | `table` |  |
 
 #### Example: Load
 
@@ -820,8 +841,8 @@ Create an instance: `local people_search = client:PeopleSearch(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -845,14 +866,14 @@ Create an instance: `local person = client:Person(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `table` |  |
+| `character` | `table` |  |
+| `data` | `table` |  |
+| `jpg` | `table` |  |
+| `manga` | `table` |  |
+| `pagination` | `table` |  |
+| `position` | `string` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -882,10 +903,10 @@ Create an instance: `local producer = client:Producer(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `table` |  |
+| `name` | `string` |  |
+| `pagination` | `table` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
@@ -914,12 +935,12 @@ Create an instance: `local random = client:Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `table` |  |
 
 #### Example: Load
 
 ```lua
-local random, err = client:Random():load({ id = "random_id" })
+local random, err = client:Random():load()
 ```
 
 
@@ -937,8 +958,8 @@ Create an instance: `local recommendation = client:Recommendation(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -960,7 +981,7 @@ Create an instance: `local review = client:Review(nil)`
 #### Example: Load
 
 ```lua
-local review, err = client:Review():load({ id = "review_id" })
+local review, err = client:Review():load()
 ```
 
 
@@ -978,8 +999,8 @@ Create an instance: `local schedule = client:Schedule(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -1002,10 +1023,10 @@ Create an instance: `local season = client:Season(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
+| `season` | `table` |  |
+| `year` | `number` |  |
 
 #### Example: List
 
@@ -1028,12 +1049,12 @@ Create an instance: `local top = client:Top(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `any` |  |
 
 #### Example: Load
 
 ```lua
-local top, err = client:Top():load({ id = "top_id" })
+local top, err = client:Top():load()
 ```
 
 
@@ -1052,8 +1073,8 @@ Create an instance: `local user = client:User(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any` |  |
+| `pagination` | `table` |  |
 
 #### Example: Load
 
@@ -1082,7 +1103,7 @@ Create an instance: `local user_about = client:UserAbout(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `string` |  |
 
 #### Example: List
 
@@ -1105,8 +1126,8 @@ Create an instance: `local user_club = client:UserClub(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -1129,8 +1150,8 @@ Create an instance: `local user_friend = client:UserFriend(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -1153,9 +1174,9 @@ Create an instance: `local user_history = client:UserHistory(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `string` |  |
+| `entry` | `table` |  |
+| `increment` | `number` |  |
 
 #### Example: List
 
@@ -1178,12 +1199,12 @@ Create an instance: `local user_statistic = client:UserStatistic(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `table` |  |
 
 #### Example: Load
 
 ```lua
-local user_statistic, err = client:UserStatistic():load({ id = "user_statistic_id" })
+local user_statistic, err = client:UserStatistic():load()
 ```
 
 
@@ -1201,12 +1222,12 @@ Create an instance: `local user_update = client:UserUpdate(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `table` |  |
 
 #### Example: Load
 
 ```lua
-local user_update, err = client:UserUpdate():load({ id = "user_update_id" })
+local user_update, err = client:UserUpdate():load()
 ```
 
 
@@ -1224,8 +1245,8 @@ Create an instance: `local watch_episode = client:WatchEpisode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -1248,8 +1269,8 @@ Create an instance: `local watch_promo = client:WatchPromo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: List
 
@@ -1258,12 +1279,16 @@ local watch_promos, err = client:WatchPromo():list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1280,8 +1305,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1325,14 +1351,14 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
 local anime = client:Anime()
-anime:load({ id = "example_id" })
+anime:list()
 
--- anime:data_get() now returns the loaded anime data
+-- anime:data_get() now returns the anime data from the last list
 -- anime:match_get() returns the last match criteria
 ```
 

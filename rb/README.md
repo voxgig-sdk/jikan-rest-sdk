@@ -4,6 +4,8 @@
 
 The Ruby SDK for the JikanRest API — an entity-oriented client using idiomatic Ruby conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `client.Anime` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -35,7 +37,7 @@ begin
   # list returns an Array of Anime records — iterate directly.
   animes = client.Anime.list
   animes.each do |item|
-    puts "#{item["id"]} #{item["name"]}"
+    puts "#{item["author_url"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -52,6 +54,33 @@ begin
 rescue => err
   warn "load failed: #{err}"
 end
+```
+
+
+## Error handling
+
+Entity operations raise on failure, so rescue them:
+
+```ruby
+begin
+  animes = client.Anime.list()
+rescue => err
+  warn "list failed: #{err}"
+end
+```
+
+`direct` does **not** raise — it returns the result hash. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```ruby
+result = client.direct({
+  "path" => "/api/resource/{id}",
+  "method" => "GET",
+  "params" => { "id" => "example_id" },
+})
+
+warn "request failed: #{result["err"] || "HTTP #{result["status"]}"}" unless result["ok"]
 ```
 
 
@@ -72,7 +101,9 @@ if result["ok"]
   puts result["status"]  # 200
   puts result["data"]    # response body
 else
-  warn result["err"]
+  # On an HTTP error status there is no err (only a transport failure sets
+  # it), so fall back to the status code.
+  warn(result["err"] || "HTTP #{result["status"]}")
 end
 ```
 
@@ -103,8 +134,8 @@ client = JikanRestSDK.test({
   "entity" => { "anime" => { "test01" => { "id" => "test01" } } },
 })
 
-# load returns the bare mock record (raises on error).
-anime = client.Anime.load({ "id" => "test01" })
+# Entity ops return the bare mock record (raises on error).
+anime = client.Anime.list()
 puts anime
 ```
 
@@ -214,10 +245,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `(reqmatch, ctrl) -> any` | Load a single entity by match criteria. Raises on error. |
-| `list` | `(reqmatch, ctrl) -> Array` | List entities matching the criteria. Raises on error. |
-| `create` | `(reqdata, ctrl) -> any` | Create a new entity. Raises on error. |
-| `update` | `(reqdata, ctrl) -> any` | Update an existing entity. Raises on error. |
-| `remove` | `(reqmatch, ctrl) -> any` | Remove an entity. Raises on error. |
+| `list` | `(reqmatch = nil, ctrl) -> Array` | List entities matching the criteria (call with no argument to list all). Raises on error. |
 | `data_get` | `() -> Hash` | Get entity data. |
 | `data_set` | `(data)` | Set entity data. |
 | `match_get` | `() -> Hash` | Get entity match criteria. |
@@ -586,25 +614,25 @@ Create an instance: `anime = client.Anime`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `String` |  |
+| `author_username` | `String` |  |
+| `character` | `Hash` |  |
+| `comment` | `Integer` |  |
+| `data` | `Hash` |  |
+| `date` | `String` |  |
+| `entry` | `Hash` |  |
+| `image` | `Hash` |  |
+| `last_comment` | `Hash` |  |
+| `mal_id` | `Integer` |  |
+| `name` | `String` |  |
+| `pagination` | `Hash` |  |
+| `person` | `Hash` |  |
+| `position` | `Array` |  |
+| `relation` | `String` |  |
+| `role` | `String` |  |
+| `title` | `String` |  |
+| `url` | `String` |  |
+| `voice_actor` | `Array` |  |
 
 #### Example: Load
 
@@ -636,15 +664,15 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `Hash` |  |
+| `data` | `Hash` |  |
+| `image_url` | `String` |  |
+| `language` | `String` |  |
+| `large_image_url` | `String` |  |
+| `manga` | `Hash` |  |
+| `pagination` | `Hash` |  |
+| `person` | `Hash` |  |
+| `role` | `String` |  |
 
 #### Example: Load
 
@@ -676,10 +704,10 @@ Create an instance: `club = client.Club`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `Hash` |  |
+| `pagination` | `Hash` |  |
+| `url` | `String` |  |
+| `username` | `String` |  |
 
 #### Example: Load
 
@@ -710,8 +738,8 @@ Create an instance: `external = client.External`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `String` |  |
+| `url` | `String` |  |
 
 #### Example: List
 
@@ -735,10 +763,10 @@ Create an instance: `genre = client.Genre`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `Integer` |  |
+| `mal_id` | `Integer` |  |
+| `name` | `String` |  |
+| `url` | `String` |  |
 
 #### Example: List
 
@@ -762,8 +790,8 @@ Create an instance: `magazine = client.Magazine`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -788,23 +816,23 @@ Create an instance: `manga = client.Manga`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `String` |  |
+| `author_username` | `String` |  |
+| `character` | `Hash` |  |
+| `comment` | `Integer` |  |
+| `data` | `Hash` |  |
+| `date` | `String` |  |
+| `entry` | `Hash` |  |
+| `jpg` | `Hash` |  |
+| `last_comment` | `Hash` |  |
+| `mal_id` | `Integer` |  |
+| `name` | `String` |  |
+| `pagination` | `Hash` |  |
+| `relation` | `String` |  |
+| `role` | `String` |  |
+| `title` | `String` |  |
+| `url` | `String` |  |
+| `webp` | `Hash` |  |
 
 #### Example: Load
 
@@ -835,8 +863,8 @@ Create an instance: `people_search = client.PeopleSearch`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -861,14 +889,14 @@ Create an instance: `person = client.Person`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `Hash` |  |
+| `character` | `Hash` |  |
+| `data` | `Hash` |  |
+| `jpg` | `Hash` |  |
+| `manga` | `Hash` |  |
+| `pagination` | `Hash` |  |
+| `position` | `String` |  |
+| `role` | `String` |  |
 
 #### Example: Load
 
@@ -900,10 +928,10 @@ Create an instance: `producer = client.Producer`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `Hash` |  |
+| `name` | `String` |  |
+| `pagination` | `Hash` |  |
+| `url` | `String` |  |
 
 #### Example: Load
 
@@ -934,13 +962,13 @@ Create an instance: `random = client.Random`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Random record (raises on error).
-random = client.Random.load({ "id" => "random_id" })
+random = client.Random.load()
 ```
 
 
@@ -958,8 +986,8 @@ Create an instance: `recommendation = client.Recommendation`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -983,7 +1011,7 @@ Create an instance: `review = client.Review`
 
 ```ruby
 # load returns the bare Review record (raises on error).
-review = client.Review.load({ "id" => "review_id" })
+review = client.Review.load()
 ```
 
 
@@ -1001,8 +1029,8 @@ Create an instance: `schedule = client.Schedule`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -1026,10 +1054,10 @@ Create an instance: `season = client.Season`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
+| `season` | `Array` |  |
+| `year` | `Integer` |  |
 
 #### Example: List
 
@@ -1053,13 +1081,13 @@ Create an instance: `top = client.Top`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `Object` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare Top record (raises on error).
-top = client.Top.load({ "id" => "top_id" })
+top = client.Top.load()
 ```
 
 
@@ -1078,8 +1106,8 @@ Create an instance: `user = client.User`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Object` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: Load
 
@@ -1110,7 +1138,7 @@ Create an instance: `user_about = client.UserAbout`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `String` |  |
 
 #### Example: List
 
@@ -1134,8 +1162,8 @@ Create an instance: `user_club = client.UserClub`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -1159,8 +1187,8 @@ Create an instance: `user_friend = client.UserFriend`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -1184,9 +1212,9 @@ Create an instance: `user_history = client.UserHistory`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `String` |  |
+| `entry` | `Hash` |  |
+| `increment` | `Integer` |  |
 
 #### Example: List
 
@@ -1210,13 +1238,13 @@ Create an instance: `user_statistic = client.UserStatistic`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare UserStatistic record (raises on error).
-user_statistic = client.UserStatistic.load({ "id" => "user_statistic_id" })
+user_statistic = client.UserStatistic.load()
 ```
 
 
@@ -1234,13 +1262,13 @@ Create an instance: `user_update = client.UserUpdate`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
 # load returns the bare UserUpdate record (raises on error).
-user_update = client.UserUpdate.load({ "id" => "user_update_id" })
+user_update = client.UserUpdate.load()
 ```
 
 
@@ -1258,8 +1286,8 @@ Create an instance: `watch_episode = client.WatchEpisode`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -1283,8 +1311,8 @@ Create an instance: `watch_promo = client.WatchPromo`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: List
 
@@ -1294,12 +1322,16 @@ watch_promos = client.WatchPromo.list
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1316,8 +1348,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as a second return value.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1361,14 +1394,14 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
 anime = client.Anime
-anime.load({ "id" => "example_id" })
+anime.list()
 
-# anime.data_get now returns the loaded anime data
+# anime.data_get now returns the anime data from the last list
 # anime.match_get returns the last match criteria
 ```
 

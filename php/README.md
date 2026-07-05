@@ -4,6 +4,8 @@
 
 The PHP SDK for the JikanRest API — an entity-oriented client using PHP conventions.
 
+The SDK exposes the API as capitalised, semantic **Entities** — for example `$client->Anime()` — with named operations (`list`/`load`) instead of raw URL paths and query strings. Working with resources and verbs keeps call sites self-describing and reduces cognitive load.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -36,7 +38,7 @@ try {
     // list() returns an array of Anime records — iterate directly.
     $animes = $client->Anime()->list();
     foreach ($animes as $item) {
-        echo $item["id"] . " " . $item["name"] . "\n";
+        echo $item["author_url"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -52,6 +54,37 @@ try {
     print_r($anime);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
+}
+```
+
+
+## Error handling
+
+Entity operations throw a `\Throwable` on failure, so wrap them in
+`try` / `catch`:
+
+```php
+try {
+    $animes = $client->Anime()->list();
+} catch (\Throwable $err) {
+    echo "Error: " . $err->getMessage();
+}
+```
+
+`direct()` does **not** throw — it returns the result array. Branch on
+`ok`; on failure `status` holds the HTTP status (for error responses) and
+`err` holds a transport error, so read both defensively:
+
+```php
+$result = $client->direct([
+    "path" => "/api/resource/{id}",
+    "method" => "GET",
+    "params" => ["id" => "example_id"],
+]);
+
+if (! $result["ok"]) {
+    $err = $result["err"] ?? null;
+    echo "request failed: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -75,7 +108,10 @@ if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
 } else {
-    echo "Error: " . $result["err"]->getMessage();
+    // On an HTTP error status there is no err (only a transport failure sets
+    // it), so fall back to the status code.
+    $err = $result["err"] ?? null;
+    echo "Error: " . ($err ? $err->getMessage() : "HTTP " . $result["status"]);
 }
 ```
 
@@ -104,8 +140,8 @@ $client = JikanRestSDK::test([
     "entity" => ["anime" => ["test01" => ["id" => "test01"]]],
 ]);
 
-// load() returns the bare mock record (throws on error).
-$anime = $client->Anime()->load(["id" => "test01"]);
+// Entity ops return the bare mock record (throws on error).
+$anime = $client->Anime()->list();
 print_r($anime);
 ```
 
@@ -218,10 +254,7 @@ All entities share the same interface.
 | Method | Signature | Description |
 | --- | --- | --- |
 | `load` | `($reqmatch, $ctrl): array` | Load a single entity by match criteria. |
-| `list` | `($reqmatch, $ctrl): array` | List entities matching the criteria. |
-| `create` | `($reqdata, $ctrl): array` | Create a new entity. |
-| `update` | `($reqdata, $ctrl): array` | Update an existing entity. |
-| `remove` | `($reqmatch, $ctrl): array` | Remove an entity. |
+| `list` | `(?array $reqmatch = null, $ctrl): array` | List entities matching the criteria (call with no argument to list all). |
 | `data_get` | `(): array` | Get entity data. |
 | `data_set` | `($data): void` | Set entity data. |
 | `match_get` | `(): array` | Get entity match criteria. |
@@ -591,25 +624,25 @@ Create an instance: `$anime = $client->Anime();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `array` |  |
+| `comment` | `int` |  |
+| `data` | `array` |  |
+| `date` | `string` |  |
+| `entry` | `array` |  |
+| `image` | `array` |  |
+| `last_comment` | `array` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `pagination` | `array` |  |
+| `person` | `array` |  |
+| `position` | `array` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `voice_actor` | `array` |  |
 
 #### Example: Load
 
@@ -641,15 +674,15 @@ Create an instance: `$character = $client->Character();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `array` |  |
+| `data` | `array` |  |
+| `image_url` | `string` |  |
+| `language` | `string` |  |
+| `large_image_url` | `string` |  |
+| `manga` | `array` |  |
+| `pagination` | `array` |  |
+| `person` | `array` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -681,10 +714,10 @@ Create an instance: `$club = $client->Club();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -715,8 +748,8 @@ Create an instance: `$external = $client->External();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -740,10 +773,10 @@ Create an instance: `$genre = $client->Genre();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `int` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -767,8 +800,8 @@ Create an instance: `$magazine = $client->Magazine();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -793,23 +826,23 @@ Create an instance: `$manga = $client->Manga();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `array` |  |
+| `comment` | `int` |  |
+| `data` | `array` |  |
+| `date` | `string` |  |
+| `entry` | `array` |  |
+| `jpg` | `array` |  |
+| `last_comment` | `array` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `pagination` | `array` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `webp` | `array` |  |
 
 #### Example: Load
 
@@ -840,8 +873,8 @@ Create an instance: `$people_search = $client->PeopleSearch();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -866,14 +899,14 @@ Create an instance: `$person = $client->Person();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `array` |  |
+| `character` | `array` |  |
+| `data` | `array` |  |
+| `jpg` | `array` |  |
+| `manga` | `array` |  |
+| `pagination` | `array` |  |
+| `position` | `string` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -905,10 +938,10 @@ Create an instance: `$producer = $client->Producer();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `array` |  |
+| `name` | `string` |  |
+| `pagination` | `array` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
@@ -939,13 +972,13 @@ Create an instance: `$random = $client->Random();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `array` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Random record (throws on error).
-$random = $client->Random()->load(["id" => "random_id"]);
+$random = $client->Random()->load();
 ```
 
 
@@ -963,8 +996,8 @@ Create an instance: `$recommendation = $client->Recommendation();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -988,7 +1021,7 @@ Create an instance: `$review = $client->Review();`
 
 ```php
 // load() returns the bare Review record (throws on error).
-$review = $client->Review()->load(["id" => "review_id"]);
+$review = $client->Review()->load();
 ```
 
 
@@ -1006,8 +1039,8 @@ Create an instance: `$schedule = $client->Schedule();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -1031,10 +1064,10 @@ Create an instance: `$season = $client->Season();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
+| `season` | `array` |  |
+| `year` | `int` |  |
 
 #### Example: List
 
@@ -1058,13 +1091,13 @@ Create an instance: `$top = $client->Top();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `mixed` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare Top record (throws on error).
-$top = $client->Top()->load(["id" => "top_id"]);
+$top = $client->Top()->load();
 ```
 
 
@@ -1083,8 +1116,8 @@ Create an instance: `$user = $client->User();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `mixed` |  |
+| `pagination` | `array` |  |
 
 #### Example: Load
 
@@ -1115,7 +1148,7 @@ Create an instance: `$user_about = $client->UserAbout();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `string` |  |
 
 #### Example: List
 
@@ -1139,8 +1172,8 @@ Create an instance: `$user_club = $client->UserClub();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -1164,8 +1197,8 @@ Create an instance: `$user_friend = $client->UserFriend();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -1189,9 +1222,9 @@ Create an instance: `$user_history = $client->UserHistory();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `string` |  |
+| `entry` | `array` |  |
+| `increment` | `int` |  |
 
 #### Example: List
 
@@ -1215,13 +1248,13 @@ Create an instance: `$user_statistic = $client->UserStatistic();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `array` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare UserStatistic record (throws on error).
-$user_statistic = $client->UserStatistic()->load(["id" => "user_statistic_id"]);
+$user_statistic = $client->UserStatistic()->load();
 ```
 
 
@@ -1239,13 +1272,13 @@ Create an instance: `$user_update = $client->UserUpdate();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `array` |  |
 
 #### Example: Load
 
 ```php
 // load() returns the bare UserUpdate record (throws on error).
-$user_update = $client->UserUpdate()->load(["id" => "user_update_id"]);
+$user_update = $client->UserUpdate()->load();
 ```
 
 
@@ -1263,8 +1296,8 @@ Create an instance: `$watch_episode = $client->WatchEpisode();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -1288,8 +1321,8 @@ Create an instance: `$watch_promo = $client->WatchPromo();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `array` |  |
+| `pagination` | `array` |  |
 
 #### Example: List
 
@@ -1299,12 +1332,16 @@ $watch_promos = $client->WatchPromo()->list();
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1321,8 +1358,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller as the second element in the return array.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1366,15 +1404,15 @@ when needed.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```php
 $anime = $client->Anime();
-$anime->load(["id" => "example_id"]);
+$anime->list();
 
-// $anime->dataGet() now returns the loaded anime data
-// $anime->matchGet() returns the last match criteria
+// $anime->data_get() now returns the anime data from the last list
+// $anime->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

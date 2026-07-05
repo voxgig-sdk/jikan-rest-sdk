@@ -4,6 +4,8 @@
 
 The Golang SDK for the JikanRest API — an entity-oriented client using standard Go conventions. No generics required; data flows as `map[string]any`.
 
+It exposes the API as capitalised, semantic **Entities** — e.g. `client.Anime(nil)` — each with the same small set of operations (`List`, `Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -58,12 +60,41 @@ func main() {
     }
 
     // Load a single anime — the value is the loaded record.
-    anime, err := client.Anime(nil).Load(map[string]any{"id": "example_id"}, nil)
+    anime, err := client.Anime(nil).Load(map[string]any{"id": 1}, nil)
     if err != nil {
         panic(err)
     }
     fmt.Println(anime)
 }
+```
+
+
+## Error handling
+
+Every entity operation returns `(value, error)`. Check `err` before
+using the value — there is no exception to catch:
+
+```go
+animes, err := client.Anime(nil).List(nil, nil)
+if err != nil {
+    // handle err
+    return
+}
+_ = animes
+```
+
+`Direct` follows the same `(value, error)` convention:
+
+```go
+result, err := client.Direct(map[string]any{
+    "path":   "/api/resource/{id}",
+    "method": "GET",
+    "params": map[string]any{"id": "example_id"},
+})
+if err != nil {
+    // handle err
+}
+_ = result
 ```
 
 
@@ -113,13 +144,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-anime, err := client.Anime(nil).Load(
-    map[string]any{"id": "test01"}, nil,
+anime, err := client.Anime(nil).List(
+    nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(anime) // the loaded mock data
+fmt.Println(anime) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -230,9 +261,6 @@ All entities implement the `JikanRestEntity` interface.
 | --- | --- | --- |
 | `Load` | `(reqmatch, ctrl map[string]any) (any, error)` | Load a single entity by match criteria. |
 | `List` | `(reqmatch, ctrl map[string]any) (any, error)` | List entities matching the criteria. |
-| `Create` | `(reqdata, ctrl map[string]any) (any, error)` | Create a new entity. |
-| `Update` | `(reqdata, ctrl map[string]any) (any, error)` | Update an existing entity. |
-| `Remove` | `(reqmatch, ctrl map[string]any) (any, error)` | Remove an entity. |
 | `Data` | `(args ...any) any` | Get or set entity data. |
 | `Match` | `(args ...any) any` | Get or set entity match criteria. |
 | `Make` | `() Entity` | Create a new instance with the same options. |
@@ -245,16 +273,16 @@ operation's data **directly** — there is no wrapper:
 
 | Operation | `value` |
 | --- | --- |
-| `Load` / `Create` / `Update` / `Remove` | the entity record (`map[string]any`) |
+| `Load` | the entity record (`map[string]any`) |
 | `List` | a `[]any` of entity records |
 
 Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    anime, err := client.Anime(nil).Load(map[string]any{"id": "example_id"}, nil)
+    anime, err := client.Anime(nil).List(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // anime is the loaded record
+    // anime is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -603,25 +631,25 @@ Create an instance: `anime := client.Anime(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `map[string]any` |  |
+| `comment` | `int` |  |
+| `data` | `map[string]any` |  |
+| `date` | `string` |  |
+| `entry` | `map[string]any` |  |
+| `image` | `map[string]any` |  |
+| `last_comment` | `map[string]any` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `pagination` | `map[string]any` |  |
+| `person` | `map[string]any` |  |
+| `position` | `[]any` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `voice_actor` | `[]any` |  |
 
 #### Example: Load
 
@@ -659,15 +687,15 @@ Create an instance: `character := client.Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `map[string]any` |  |
+| `data` | `map[string]any` |  |
+| `image_url` | `string` |  |
+| `language` | `string` |  |
+| `large_image_url` | `string` |  |
+| `manga` | `map[string]any` |  |
+| `pagination` | `map[string]any` |  |
+| `person` | `map[string]any` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -705,10 +733,10 @@ Create an instance: `club := client.Club(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `map[string]any` |  |
+| `pagination` | `map[string]any` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -745,8 +773,8 @@ Create an instance: `external := client.External(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -773,10 +801,10 @@ Create an instance: `genre := client.Genre(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `int` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -803,8 +831,8 @@ Create an instance: `magazine := client.Magazine(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -832,23 +860,23 @@ Create an instance: `manga := client.Manga(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `map[string]any` |  |
+| `comment` | `int` |  |
+| `data` | `map[string]any` |  |
+| `date` | `string` |  |
+| `entry` | `map[string]any` |  |
+| `jpg` | `map[string]any` |  |
+| `last_comment` | `map[string]any` |  |
+| `mal_id` | `int` |  |
+| `name` | `string` |  |
+| `pagination` | `map[string]any` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `webp` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -885,8 +913,8 @@ Create an instance: `people_search := client.PeopleSearch(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -914,14 +942,14 @@ Create an instance: `person := client.Person(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `map[string]any` |  |
+| `character` | `map[string]any` |  |
+| `data` | `map[string]any` |  |
+| `jpg` | `map[string]any` |  |
+| `manga` | `map[string]any` |  |
+| `pagination` | `map[string]any` |  |
+| `position` | `string` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
@@ -959,10 +987,10 @@ Create an instance: `producer := client.Producer(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `map[string]any` |  |
+| `name` | `string` |  |
+| `pagination` | `map[string]any` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
@@ -999,12 +1027,12 @@ Create an instance: `random := client.Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `map[string]any` |  |
 
 #### Example: Load
 
 ```go
-random, err := client.Random(nil).Load(map[string]any{"id": "random_id"}, nil)
+random, err := client.Random(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -1026,8 +1054,8 @@ Create an instance: `recommendation := client.Recommendation(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1053,7 +1081,7 @@ Create an instance: `review := client.Review(nil)`
 #### Example: Load
 
 ```go
-review, err := client.Review(nil).Load(map[string]any{"id": "review_id"}, nil)
+review, err := client.Review(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -1075,8 +1103,8 @@ Create an instance: `schedule := client.Schedule(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1103,10 +1131,10 @@ Create an instance: `season := client.Season(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
+| `season` | `[]any` |  |
+| `year` | `int` |  |
 
 #### Example: List
 
@@ -1133,12 +1161,12 @@ Create an instance: `top := client.Top(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `any` |  |
 
 #### Example: Load
 
 ```go
-top, err := client.Top(nil).Load(map[string]any{"id": "top_id"}, nil)
+top, err := client.Top(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -1161,8 +1189,8 @@ Create an instance: `user := client.User(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -1199,7 +1227,7 @@ Create an instance: `user_about := client.UserAbout(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `string` |  |
 
 #### Example: List
 
@@ -1226,8 +1254,8 @@ Create an instance: `user_club := client.UserClub(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1254,8 +1282,8 @@ Create an instance: `user_friend := client.UserFriend(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1282,9 +1310,9 @@ Create an instance: `user_history := client.UserHistory(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `string` |  |
+| `entry` | `map[string]any` |  |
+| `increment` | `int` |  |
 
 #### Example: List
 
@@ -1311,12 +1339,12 @@ Create an instance: `user_statistic := client.UserStatistic(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `map[string]any` |  |
 
 #### Example: Load
 
 ```go
-user_statistic, err := client.UserStatistic(nil).Load(map[string]any{"id": "user_statistic_id"}, nil)
+user_statistic, err := client.UserStatistic(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -1338,12 +1366,12 @@ Create an instance: `user_update := client.UserUpdate(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `map[string]any` |  |
 
 #### Example: Load
 
 ```go
-user_update, err := client.UserUpdate(nil).Load(map[string]any{"id": "user_update_id"}, nil)
+user_update, err := client.UserUpdate(nil).Load(nil, nil)
 if err != nil {
     panic(err)
 }
@@ -1365,8 +1393,8 @@ Create an instance: `watch_episode := client.WatchEpisode(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1393,8 +1421,8 @@ Create an instance: `watch_promo := client.WatchPromo(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: List
 
@@ -1407,12 +1435,16 @@ fmt.Println(watch_promos) // the array of records
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1429,9 +1461,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller. An unexpected panic triggers the
-`PreUnexpected` hook.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1472,14 +1504,14 @@ like `core.ToMapAny`.
 
 ### Entity state
 
-Entity instances are stateful. After a successful `Load`, the entity
+Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
 anime := client.Anime(nil)
-anime.Load(map[string]any{"id": "example_id"}, nil)
+anime.List(nil, nil)
 
-// anime.Data() now returns the loaded anime data
+// anime.Data() now returns the anime data from the last list
 // anime.Match() returns the last match criteria
 ```
 

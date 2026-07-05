@@ -4,6 +4,11 @@
 
 The TypeScript SDK for the JikanRest API — a type-safe, entity-oriented client with full async/await support.
 
+The API is exposed as capitalised, semantic **Entities** — e.g.
+`client.Anime()` — each with a small set of operations (`list`, `load`)
+instead of raw URL paths and query parameters. This keeps the surface
+predictable and low-friction for both humans and AI agents.
+
 > Other languages, the CLI, and MCP server live alongside this one — see
 > the [top-level README](../README.md).
 
@@ -46,10 +51,39 @@ for (const anime of animes) {
 
 ```ts
 try {
-  const anime = await client.Anime().load({ id: 'example_id' })
+  const anime = await client.Anime().load({ id: 1 })
   console.log(anime)
 } catch (err) {
   console.error('load failed:', err)
+}
+```
+
+
+## Error handling
+
+Entity operations reject on failure, so wrap them in `try` / `catch`:
+
+```ts
+try {
+  const animes = await client.Anime().list()
+  console.log(animes)
+} catch (err) {
+  console.error('list failed:', err)
+}
+```
+
+The low-level `direct()` method does **not** throw — it returns the
+value or an `Error`, so check the result before using it:
+
+```ts
+const result = await client.direct({
+  path: '/api/resource/{id}',
+  method: 'GET',
+  params: { id: 'example_id' },
+})
+
+if (result instanceof Error) {
+  throw result
 }
 ```
 
@@ -98,7 +132,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = JikanRestSDK.test()
 
-const anime = await client.Anime().load({ id: 'test01' })
+const anime = await client.Anime().list()
 // anime is a bare entity populated with mock response data
 console.log(anime)
 ```
@@ -117,12 +151,12 @@ Entity instances remember their last match and data:
 ```ts
 const entity = client.Anime()
 
-// First call sets internal match
-await entity.load({ id: 'example' })
+// First call runs the operation and stores its result
+await entity.list()
 
-// Subsequent calls reuse the stored match
+// Subsequent calls reuse the stored state
 const data = entity.data()
-console.log(data.id) // 'example'
+console.log(data)
 ```
 
 ### Add custom middleware
@@ -236,11 +270,8 @@ All entities share the same interface.
 | --- | --- | --- |
 | `load` | `load(reqmatch?, ctrl?): Promise<Entity>` | Load a single entity by match criteria. |
 | `list` | `list(reqmatch?, ctrl?): Promise<Entity[]>` | List entities matching the criteria. |
-| `create` | `create(reqdata?, ctrl?): Promise<Entity>` | Create a new entity. |
-| `update` | `update(reqdata?, ctrl?): Promise<Entity>` | Update an existing entity. |
-| `remove` | `remove(reqmatch?, ctrl?): Promise<void>` | Remove an entity. |
-| `data` | `data(data?): any` | Get or set entity data. |
-| `match` | `match(match?): any` | Get or set entity match criteria. |
+| `data` | `data(data?: Partial<Entity>): Entity` | Get or set entity data. |
+| `match` | `match(match?: Partial<Entity>): Partial<Entity>` | Get or set entity match criteria. |
 | `make` | `make(): Entity` | Create a new instance with the same options. |
 | `client` | `client(): JikanRestSDK` | Return the parent SDK client. |
 | `entopts` | `entopts(): object` | Return a copy of the entity options. |
@@ -250,10 +281,9 @@ All entities share the same interface.
 Entity operations resolve to the entity data directly — there is no
 result envelope:
 
-- `load`, `create` and `update` resolve to a single entity object.
+- `load` resolves to a single entity object.
 - `list` resolves to an **array** of entity objects (iterate it directly;
   there is no `.data` and no `.ok`).
-- `remove` resolves to `void`.
 
 On a failed request these methods **throw**, so wrap calls in
 `try`/`catch` to handle errors. Only `direct()` returns the result
@@ -631,30 +661,30 @@ Create an instance: `const anime = client.Anime()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `image` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `position` | ``$ARRAY`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `voice_actor` | ``$ARRAY`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `Record<string, any>` |  |
+| `comment` | `number` |  |
+| `data` | `Record<string, any>` |  |
+| `date` | `string` |  |
+| `entry` | `Record<string, any>` |  |
+| `image` | `Record<string, any>` |  |
+| `last_comment` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `pagination` | `Record<string, any>` |  |
+| `person` | `Record<string, any>` |  |
+| `position` | `any[]` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `voice_actor` | `any[]` |  |
 
 #### Example: Load
 
 ```ts
-const anime = await client.Anime().load({ id: 'anime_id' })
+const anime = await client.Anime().load({ id: 1 })
 ```
 
 #### Example: List
@@ -679,20 +709,20 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `image_url` | ``$STRING`` |  |
-| `language` | ``$STRING`` |  |
-| `large_image_url` | ``$STRING`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `person` | ``$OBJECT`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `Record<string, any>` |  |
+| `data` | `Record<string, any>` |  |
+| `image_url` | `string` |  |
+| `language` | `string` |  |
+| `large_image_url` | `string` |  |
+| `manga` | `Record<string, any>` |  |
+| `pagination` | `Record<string, any>` |  |
+| `person` | `Record<string, any>` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
 ```ts
-const character = await client.Character().load({ id: 'character_id' })
+const character = await client.Character().load({ id: 1 })
 ```
 
 #### Example: List
@@ -717,15 +747,15 @@ Create an instance: `const club = client.Club()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
-| `username` | ``$STRING`` |  |
+| `data` | `Record<string, any>` |  |
+| `pagination` | `Record<string, any>` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
 ```ts
-const club = await client.Club().load({ id: 'club_id' })
+const club = await client.Club().load({ id: 1 })
 ```
 
 #### Example: List
@@ -749,8 +779,8 @@ Create an instance: `const external = client.External()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -773,10 +803,10 @@ Create an instance: `const genre = client.Genre()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `count` | ``$INTEGER`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
+| `count` | `number` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `url` | `string` |  |
 
 #### Example: List
 
@@ -799,8 +829,8 @@ Create an instance: `const magazine = client.Magazine()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -824,28 +854,28 @@ Create an instance: `const manga = client.Manga()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `author_url` | ``$STRING`` |  |
-| `author_username` | ``$STRING`` |  |
-| `character` | ``$OBJECT`` |  |
-| `comment` | ``$INTEGER`` |  |
-| `data` | ``$OBJECT`` |  |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `last_comment` | ``$OBJECT`` |  |
-| `mal_id` | ``$INTEGER`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `relation` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
-| `title` | ``$STRING`` |  |
-| `url` | ``$STRING`` |  |
-| `webp` | ``$OBJECT`` |  |
+| `author_url` | `string` |  |
+| `author_username` | `string` |  |
+| `character` | `Record<string, any>` |  |
+| `comment` | `number` |  |
+| `data` | `Record<string, any>` |  |
+| `date` | `string` |  |
+| `entry` | `Record<string, any>` |  |
+| `jpg` | `Record<string, any>` |  |
+| `last_comment` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
+| `name` | `string` |  |
+| `pagination` | `Record<string, any>` |  |
+| `relation` | `string` |  |
+| `role` | `string` |  |
+| `title` | `string` |  |
+| `url` | `string` |  |
+| `webp` | `Record<string, any>` |  |
 
 #### Example: Load
 
 ```ts
-const manga = await client.Manga().load({ id: 'manga_id' })
+const manga = await client.Manga().load({ id: 1 })
 ```
 
 #### Example: List
@@ -869,8 +899,8 @@ Create an instance: `const people_search = client.PeopleSearch()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -894,19 +924,19 @@ Create an instance: `const person = client.Person()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | ``$OBJECT`` |  |
-| `character` | ``$OBJECT`` |  |
-| `data` | ``$OBJECT`` |  |
-| `jpg` | ``$OBJECT`` |  |
-| `manga` | ``$OBJECT`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `position` | ``$STRING`` |  |
-| `role` | ``$STRING`` |  |
+| `anime` | `Record<string, any>` |  |
+| `character` | `Record<string, any>` |  |
+| `data` | `Record<string, any>` |  |
+| `jpg` | `Record<string, any>` |  |
+| `manga` | `Record<string, any>` |  |
+| `pagination` | `Record<string, any>` |  |
+| `position` | `string` |  |
+| `role` | `string` |  |
 
 #### Example: Load
 
 ```ts
-const person = await client.Person().load({ id: 'person_id' })
+const person = await client.Person().load({ id: 1 })
 ```
 
 #### Example: List
@@ -931,15 +961,15 @@ Create an instance: `const producer = client.Producer()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
-| `name` | ``$STRING`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `url` | ``$STRING`` |  |
+| `data` | `Record<string, any>` |  |
+| `name` | `string` |  |
+| `pagination` | `Record<string, any>` |  |
+| `url` | `string` |  |
 
 #### Example: Load
 
 ```ts
-const producer = await client.Producer().load({ id: 'producer_id' })
+const producer = await client.Producer().load({ id: 1 })
 ```
 
 #### Example: List
@@ -963,12 +993,12 @@ Create an instance: `const random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Record<string, any>` |  |
 
 #### Example: Load
 
 ```ts
-const random = await client.Random().load({ id: 'random_id' })
+const random = await client.Random().load()
 ```
 
 
@@ -986,8 +1016,8 @@ Create an instance: `const recommendation = client.Recommendation()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1009,7 +1039,7 @@ Create an instance: `const review = client.Review()`
 #### Example: Load
 
 ```ts
-const review = await client.Review().load({ id: 'review_id' })
+const review = await client.Review().load()
 ```
 
 
@@ -1027,8 +1057,8 @@ Create an instance: `const schedule = client.Schedule()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1051,10 +1081,10 @@ Create an instance: `const season = client.Season()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
-| `season` | ``$ARRAY`` |  |
-| `year` | ``$INTEGER`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
+| `season` | `any[]` |  |
+| `year` | `number` |  |
 
 #### Example: List
 
@@ -1077,12 +1107,12 @@ Create an instance: `const top = client.Top()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
+| `data` | `any` |  |
 
 #### Example: Load
 
 ```ts
-const top = await client.Top().load({ id: 'top_id' })
+const top = await client.Top().load()
 ```
 
 
@@ -1101,13 +1131,13 @@ Create an instance: `const user = client.User()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ANY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: Load
 
 ```ts
-const user = await client.User().load({ id: 'user_id' })
+const user = await client.User().load({ id: 1 })
 ```
 
 #### Example: List
@@ -1131,7 +1161,7 @@ Create an instance: `const user_about = client.UserAbout()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `about` | ``$STRING`` |  |
+| `about` | `string` |  |
 
 #### Example: List
 
@@ -1154,8 +1184,8 @@ Create an instance: `const user_club = client.UserClub()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1178,8 +1208,8 @@ Create an instance: `const user_friend = client.UserFriend()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1202,9 +1232,9 @@ Create an instance: `const user_history = client.UserHistory()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `date` | ``$STRING`` |  |
-| `entry` | ``$OBJECT`` |  |
-| `increment` | ``$INTEGER`` |  |
+| `date` | `string` |  |
+| `entry` | `Record<string, any>` |  |
+| `increment` | `number` |  |
 
 #### Example: List
 
@@ -1227,12 +1257,12 @@ Create an instance: `const user_statistic = client.UserStatistic()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Record<string, any>` |  |
 
 #### Example: Load
 
 ```ts
-const user_statistic = await client.UserStatistic().load({ id: 'user_statistic_id' })
+const user_statistic = await client.UserStatistic().load()
 ```
 
 
@@ -1250,12 +1280,12 @@ Create an instance: `const user_update = client.UserUpdate()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$OBJECT`` |  |
+| `data` | `Record<string, any>` |  |
 
 #### Example: Load
 
 ```ts
-const user_update = await client.UserUpdate().load({ id: 'user_update_id' })
+const user_update = await client.UserUpdate().load()
 ```
 
 
@@ -1273,8 +1303,8 @@ Create an instance: `const watch_episode = client.WatchEpisode()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1297,8 +1327,8 @@ Create an instance: `const watch_promo = client.WatchPromo()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | ``$ARRAY`` |  |
-| `pagination` | ``$OBJECT`` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: List
 
@@ -1307,12 +1337,16 @@ const watch_promos = await client.WatchPromo().list()
 ```
 
 
-## Explanation
+## Advanced
+
+> The sections above cover everyday use. The material below explains the
+> SDK's internals — useful when extending it with custom features, but not
+> needed for normal use.
 
 ### The operation pipeline
 
-Every entity operation (load, list, create, update, remove) follows a
-six-stage pipeline. Each stage fires a feature hook before executing:
+Every entity operation follows a six-stage pipeline. Each stage fires a
+feature hook before executing:
 
 ```
 PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
@@ -1329,11 +1363,9 @@ PrePoint → PreSpec → PreRequest → PreResponse → PreResult → PreDone
 - **PreDone**: Final stage before returning to the caller. Entity
   state (match, data) is updated here.
 
-If any stage returns an error, the pipeline short-circuits and the
-error is returned to the caller.
-
-An unexpected exception triggers the `PreUnexpected` hook before
-propagating.
+If any stage errors, the pipeline short-circuits and the error surfaces
+to the caller — see [Error handling](#error-handling) for how that looks
+in this language.
 
 ### Features and hooks
 
@@ -1369,16 +1401,16 @@ import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
 
 ### Entity state
 
-Entity instances are stateful. After a successful `load`, the entity
+Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
 const anime = client.Anime()
-await anime.load({ id: "example_id" })
+await anime.list()
 
-// anime.data() now returns the loaded anime data
-// anime.match() returns { id: "example_id" }
+// anime.data() now returns the anime data from the last `list`
+// anime.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

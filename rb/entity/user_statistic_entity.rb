@@ -67,10 +67,12 @@ class UserStatisticEntity
   
   # Load a single UserStatistic.
   #
-  # @param reqmatch [UserStatisticLoadMatch, Hash, nil] match criteria (id/query fields)
+  # @param reqmatch [UserStatisticLoadMatch, Hash, nil] match criteria (id/query fields);
+  #   optional — an entity with no id-like key loads with no match (nil is treated
+  #   as an empty match, so client.UserStatistic.load works with no args).
   # @param ctrl [Object, nil] optional per-call control
   # @return [UserStatistic, Hash] the loaded UserStatistic; raises JikanRestError on failure
-  def load(reqmatch, ctrl = nil)
+  def load(reqmatch = nil, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({
       "opname" => "load",
