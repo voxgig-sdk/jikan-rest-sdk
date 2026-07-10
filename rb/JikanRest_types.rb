@@ -92,7 +92,7 @@ Anime = Struct.new(
 # Request payload for Anime#load.
 #
 # @!attribute [rw] episode
-#   @return [Integer]
+#   @return [Integer, nil]
 #
 # @!attribute [rw] id
 #   @return [Integer]
@@ -104,10 +104,82 @@ AnimeLoadMatch = Struct.new(
 
 # Request payload for Anime#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] author_url
+#   @return [String, nil]
+#
+# @!attribute [rw] author_username
+#   @return [String, nil]
+#
+# @!attribute [rw] character
+#   @return [Hash, nil]
+#
+# @!attribute [rw] comment
+#   @return [Integer, nil]
+#
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] date
+#   @return [String, nil]
+#
+# @!attribute [rw] entry
+#   @return [Hash, nil]
+#
+# @!attribute [rw] image
+#   @return [Hash, nil]
+#
+# @!attribute [rw] last_comment
+#   @return [Hash, nil]
+#
+# @!attribute [rw] mal_id
+#   @return [Integer, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] person
+#   @return [Hash, nil]
+#
+# @!attribute [rw] position
+#   @return [Array, nil]
+#
+# @!attribute [rw] relation
+#   @return [String, nil]
+#
+# @!attribute [rw] role
+#   @return [String, nil]
+#
+# @!attribute [rw] title
+#   @return [String, nil]
+#
+# @!attribute [rw] url
+#   @return [String, nil]
+#
+# @!attribute [rw] voice_actor
+#   @return [Array, nil]
 AnimeListMatch = Struct.new(
-  :id,
+  :author_url,
+  :author_username,
+  :character,
+  :comment,
+  :data,
+  :date,
+  :entry,
+  :image,
+  :last_comment,
+  :mal_id,
+  :name,
+  :pagination,
+  :person,
+  :position,
+  :relation,
+  :role,
+  :title,
+  :url,
+  :voice_actor,
   keyword_init: true
 )
 
@@ -163,10 +235,42 @@ CharacterLoadMatch = Struct.new(
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] anime
+#   @return [Hash, nil]
+#
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] image_url
+#   @return [String, nil]
+#
+# @!attribute [rw] language
+#   @return [String, nil]
+#
+# @!attribute [rw] large_image_url
+#   @return [String, nil]
+#
+# @!attribute [rw] manga
+#   @return [Hash, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] person
+#   @return [Hash, nil]
+#
+# @!attribute [rw] role
+#   @return [String, nil]
 CharacterListMatch = Struct.new(
-  :id,
+  :anime,
+  :data,
+  :image_url,
+  :language,
+  :large_image_url,
+  :manga,
+  :pagination,
+  :person,
+  :role,
   keyword_init: true
 )
 
@@ -202,10 +306,22 @@ ClubLoadMatch = Struct.new(
 
 # Request payload for Club#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] url
+#   @return [String, nil]
+#
+# @!attribute [rw] username
+#   @return [String, nil]
 ClubListMatch = Struct.new(
-  :id,
+  :data,
+  :pagination,
+  :url,
+  :username,
   keyword_init: true
 )
 
@@ -383,10 +499,74 @@ MangaLoadMatch = Struct.new(
 
 # Request payload for Manga#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] author_url
+#   @return [String, nil]
+#
+# @!attribute [rw] author_username
+#   @return [String, nil]
+#
+# @!attribute [rw] character
+#   @return [Hash, nil]
+#
+# @!attribute [rw] comment
+#   @return [Integer, nil]
+#
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] date
+#   @return [String, nil]
+#
+# @!attribute [rw] entry
+#   @return [Hash, nil]
+#
+# @!attribute [rw] jpg
+#   @return [Hash, nil]
+#
+# @!attribute [rw] last_comment
+#   @return [Hash, nil]
+#
+# @!attribute [rw] mal_id
+#   @return [Integer, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] relation
+#   @return [String, nil]
+#
+# @!attribute [rw] role
+#   @return [String, nil]
+#
+# @!attribute [rw] title
+#   @return [String, nil]
+#
+# @!attribute [rw] url
+#   @return [String, nil]
+#
+# @!attribute [rw] webp
+#   @return [Hash, nil]
 MangaListMatch = Struct.new(
-  :id,
+  :author_url,
+  :author_username,
+  :character,
+  :comment,
+  :data,
+  :date,
+  :entry,
+  :jpg,
+  :last_comment,
+  :mal_id,
+  :name,
+  :pagination,
+  :relation,
+  :role,
+  :title,
+  :url,
+  :webp,
   keyword_init: true
 )
 
@@ -464,10 +644,38 @@ PersonLoadMatch = Struct.new(
 
 # Request payload for Person#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] anime
+#   @return [Hash, nil]
+#
+# @!attribute [rw] character
+#   @return [Hash, nil]
+#
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] jpg
+#   @return [Hash, nil]
+#
+# @!attribute [rw] manga
+#   @return [Hash, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] position
+#   @return [String, nil]
+#
+# @!attribute [rw] role
+#   @return [String, nil]
 PersonListMatch = Struct.new(
-  :id,
+  :anime,
+  :character,
+  :data,
+  :jpg,
+  :manga,
+  :pagination,
+  :position,
+  :role,
   keyword_init: true
 )
 
@@ -503,10 +711,22 @@ ProducerLoadMatch = Struct.new(
 
 # Request payload for Producer#list.
 #
-# @!attribute [rw] id
-#   @return [Integer]
+# @!attribute [rw] data
+#   @return [Hash, nil]
+#
+# @!attribute [rw] name
+#   @return [String, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] url
+#   @return [String, nil]
 ProducerListMatch = Struct.new(
-  :id,
+  :data,
+  :name,
+  :pagination,
+  :url,
   keyword_init: true
 )
 
@@ -608,10 +828,10 @@ Season = Struct.new(
 # Request payload for Season#list.
 #
 # @!attribute [rw] season
-#   @return [String]
+#   @return [String, nil]
 #
 # @!attribute [rw] year
-#   @return [Integer]
+#   @return [Integer, nil]
 SeasonListMatch = Struct.new(
   :season,
   :year,
@@ -651,13 +871,9 @@ User = Struct.new(
 
 # Request payload for User#load.
 #
-# @!attribute [rw] username
-#   @return [String]
-#
 # @!attribute [rw] id
 #   @return [Integer]
 UserLoadMatch = Struct.new(
-  :username,
   :id,
   keyword_init: true
 )

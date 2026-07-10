@@ -28,12 +28,30 @@ export interface Anime {
 }
 
 export interface AnimeLoadMatch {
-  episode: number
+  episode?: number
   id: number
 }
 
 export interface AnimeListMatch {
-  id: number
+  author_url?: string
+  author_username?: string
+  character?: Record<string, any>
+  comment?: number
+  data?: Record<string, any>
+  date?: string
+  entry?: Record<string, any>
+  image?: Record<string, any>
+  last_comment?: Record<string, any>
+  mal_id?: number
+  name?: string
+  pagination?: Record<string, any>
+  person?: Record<string, any>
+  position?: any[]
+  relation?: string
+  role?: string
+  title?: string
+  url?: string
+  voice_actor?: any[]
 }
 
 export interface Character {
@@ -53,7 +71,15 @@ export interface CharacterLoadMatch {
 }
 
 export interface CharacterListMatch {
-  id: number
+  anime?: Record<string, any>
+  data?: Record<string, any>
+  image_url?: string
+  language?: string
+  large_image_url?: string
+  manga?: Record<string, any>
+  pagination?: Record<string, any>
+  person?: Record<string, any>
+  role?: string
 }
 
 export interface Club {
@@ -68,7 +94,10 @@ export interface ClubLoadMatch {
 }
 
 export interface ClubListMatch {
-  id: number
+  data?: Record<string, any>
+  pagination?: Record<string, any>
+  url?: string
+  username?: string
 }
 
 export interface External {
@@ -129,7 +158,23 @@ export interface MangaLoadMatch {
 }
 
 export interface MangaListMatch {
-  id: number
+  author_url?: string
+  author_username?: string
+  character?: Record<string, any>
+  comment?: number
+  data?: Record<string, any>
+  date?: string
+  entry?: Record<string, any>
+  jpg?: Record<string, any>
+  last_comment?: Record<string, any>
+  mal_id?: number
+  name?: string
+  pagination?: Record<string, any>
+  relation?: string
+  role?: string
+  title?: string
+  url?: string
+  webp?: Record<string, any>
 }
 
 export interface PeopleSearch {
@@ -158,7 +203,14 @@ export interface PersonLoadMatch {
 }
 
 export interface PersonListMatch {
-  id: number
+  anime?: Record<string, any>
+  character?: Record<string, any>
+  data?: Record<string, any>
+  jpg?: Record<string, any>
+  manga?: Record<string, any>
+  pagination?: Record<string, any>
+  position?: string
+  role?: string
 }
 
 export interface Producer {
@@ -173,7 +225,10 @@ export interface ProducerLoadMatch {
 }
 
 export interface ProducerListMatch {
-  id: number
+  data?: Record<string, any>
+  name?: string
+  pagination?: Record<string, any>
+  url?: string
 }
 
 export interface Random {
@@ -217,8 +272,8 @@ export interface Season {
 }
 
 export interface SeasonListMatch {
-  season: string
-  year: number
+  season?: string
+  year?: number
 }
 
 export interface Top {
@@ -235,7 +290,6 @@ export interface User {
 }
 
 export interface UserLoadMatch {
-  username: string
   id: number
 }
 

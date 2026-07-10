@@ -1584,7 +1584,7 @@ const user_statistic = client.UserStatistic()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.UserStatistic().load()
+const result = await client.UserStatistic().load({ username: 'username' })
 ```
 
 ### Common Methods
@@ -1634,7 +1634,7 @@ const user_update = client.UserUpdate()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.UserUpdate().load()
+const result = await client.UserUpdate().load({ username: 'username' })
 ```
 
 ### Common Methods

@@ -39,14 +39,32 @@ class Anime
 /** Request payload for Anime#load. */
 class AnimeLoadMatch
 {
-    public int $episode;
+    public ?int $episode = null;
     public int $id;
 }
 
 /** Request payload for Anime#list. */
 class AnimeListMatch
 {
-    public int $id;
+    public ?string $author_url = null;
+    public ?string $author_username = null;
+    public ?array $character = null;
+    public ?int $comment = null;
+    public ?array $data = null;
+    public ?string $date = null;
+    public ?array $entry = null;
+    public ?array $image = null;
+    public ?array $last_comment = null;
+    public ?int $mal_id = null;
+    public ?string $name = null;
+    public ?array $pagination = null;
+    public ?array $person = null;
+    public ?array $position = null;
+    public ?string $relation = null;
+    public ?string $role = null;
+    public ?string $title = null;
+    public ?string $url = null;
+    public ?array $voice_actor = null;
 }
 
 /** Character entity data model. */
@@ -72,7 +90,15 @@ class CharacterLoadMatch
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public int $id;
+    public ?array $anime = null;
+    public ?array $data = null;
+    public ?string $image_url = null;
+    public ?string $language = null;
+    public ?string $large_image_url = null;
+    public ?array $manga = null;
+    public ?array $pagination = null;
+    public ?array $person = null;
+    public ?string $role = null;
 }
 
 /** Club entity data model. */
@@ -93,7 +119,10 @@ class ClubLoadMatch
 /** Request payload for Club#list. */
 class ClubListMatch
 {
-    public int $id;
+    public ?array $data = null;
+    public ?array $pagination = null;
+    public ?string $url = null;
+    public ?string $username = null;
 }
 
 /** External entity data model. */
@@ -172,7 +201,23 @@ class MangaLoadMatch
 /** Request payload for Manga#list. */
 class MangaListMatch
 {
-    public int $id;
+    public ?string $author_url = null;
+    public ?string $author_username = null;
+    public ?array $character = null;
+    public ?int $comment = null;
+    public ?array $data = null;
+    public ?string $date = null;
+    public ?array $entry = null;
+    public ?array $jpg = null;
+    public ?array $last_comment = null;
+    public ?int $mal_id = null;
+    public ?string $name = null;
+    public ?array $pagination = null;
+    public ?string $relation = null;
+    public ?string $role = null;
+    public ?string $title = null;
+    public ?string $url = null;
+    public ?array $webp = null;
 }
 
 /** PeopleSearch entity data model. */
@@ -211,7 +256,14 @@ class PersonLoadMatch
 /** Request payload for Person#list. */
 class PersonListMatch
 {
-    public int $id;
+    public ?array $anime = null;
+    public ?array $character = null;
+    public ?array $data = null;
+    public ?array $jpg = null;
+    public ?array $manga = null;
+    public ?array $pagination = null;
+    public ?string $position = null;
+    public ?string $role = null;
 }
 
 /** Producer entity data model. */
@@ -232,7 +284,10 @@ class ProducerLoadMatch
 /** Request payload for Producer#list. */
 class ProducerListMatch
 {
-    public int $id;
+    public ?array $data = null;
+    public ?string $name = null;
+    public ?array $pagination = null;
+    public ?string $url = null;
 }
 
 /** Random entity data model. */
@@ -296,8 +351,8 @@ class Season
 /** Request payload for Season#list. */
 class SeasonListMatch
 {
-    public string $season;
-    public int $year;
+    public ?string $season = null;
+    public ?int $year = null;
 }
 
 /** Top entity data model. */
@@ -322,7 +377,6 @@ class User
 /** Request payload for User#load. */
 class UserLoadMatch
 {
-    public string $username;
     public int $id;
 }
 

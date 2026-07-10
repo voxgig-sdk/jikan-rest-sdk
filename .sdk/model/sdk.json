@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -6336,15 +6333,18 @@
           "name": "MIT",
           "url": "https://github.com/jikan-me/jikan-rest/blob/master/LICENSE"
         },
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Jikan REST API",
             "url": "https://api.jikan.moe/v4"
           }
         ],
+        "summary": "[Jikan](https://jikan.moe) is an **Unofficial** MyAnimeList API.",
         "termsOfService": "https://jikan.moe/terms",
         "title": "Jikan API",
-        "version": "4.0.0"
+        "version": "4.0.0",
+        "website": "https://jikan.moe"
       },
       "option": {},
       "target": {
@@ -6397,6 +6397,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -6447,6 +6450,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

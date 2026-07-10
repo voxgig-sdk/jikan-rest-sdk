@@ -654,7 +654,7 @@ Create an instance: `anime := client.Anime(nil)`
 #### Example: Load
 
 ```go
-anime, err := client.Anime(nil).Load(map[string]any{"id": "anime_id"}, nil)
+anime, err := client.Anime(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -700,7 +700,7 @@ Create an instance: `character := client.Character(nil)`
 #### Example: Load
 
 ```go
-character, err := client.Character(nil).Load(map[string]any{"id": "character_id"}, nil)
+character, err := client.Character(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -741,7 +741,7 @@ Create an instance: `club := client.Club(nil)`
 #### Example: Load
 
 ```go
-club, err := client.Club(nil).Load(map[string]any{"id": "club_id"}, nil)
+club, err := client.Club(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -881,7 +881,7 @@ Create an instance: `manga := client.Manga(nil)`
 #### Example: Load
 
 ```go
-manga, err := client.Manga(nil).Load(map[string]any{"id": "manga_id"}, nil)
+manga, err := client.Manga(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -901,7 +901,7 @@ fmt.Println(mangas) // the array of records
 
 ### PeopleSearch
 
-Create an instance: `people_search := client.PeopleSearch(nil)`
+Create an instance: `peopleSearch := client.PeopleSearch(nil)`
 
 #### Operations
 
@@ -919,11 +919,11 @@ Create an instance: `people_search := client.PeopleSearch(nil)`
 #### Example: List
 
 ```go
-people_searchs, err := client.PeopleSearch(nil).List(nil, nil)
+peopleSearchs, err := client.PeopleSearch(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(people_searchs) // the array of records
+fmt.Println(peopleSearchs) // the array of records
 ```
 
 
@@ -954,7 +954,7 @@ Create an instance: `person := client.Person(nil)`
 #### Example: Load
 
 ```go
-person, err := client.Person(nil).Load(map[string]any{"id": "person_id"}, nil)
+person, err := client.Person(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -995,7 +995,7 @@ Create an instance: `producer := client.Producer(nil)`
 #### Example: Load
 
 ```go
-producer, err := client.Producer(nil).Load(map[string]any{"id": "producer_id"}, nil)
+producer, err := client.Producer(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -1195,7 +1195,7 @@ Create an instance: `user := client.User(nil)`
 #### Example: Load
 
 ```go
-user, err := client.User(nil).Load(map[string]any{"id": "user_id"}, nil)
+user, err := client.User(nil).Load(map[string]any{"id": 1}, nil)
 if err != nil {
     panic(err)
 }
@@ -1215,7 +1215,7 @@ fmt.Println(users) // the array of records
 
 ### UserAbout
 
-Create an instance: `user_about := client.UserAbout(nil)`
+Create an instance: `userAbout := client.UserAbout(nil)`
 
 #### Operations
 
@@ -1232,17 +1232,17 @@ Create an instance: `user_about := client.UserAbout(nil)`
 #### Example: List
 
 ```go
-user_abouts, err := client.UserAbout(nil).List(nil, nil)
+userAbouts, err := client.UserAbout(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_abouts) // the array of records
+fmt.Println(userAbouts) // the array of records
 ```
 
 
 ### UserClub
 
-Create an instance: `user_club := client.UserClub(nil)`
+Create an instance: `userClub := client.UserClub(nil)`
 
 #### Operations
 
@@ -1260,17 +1260,17 @@ Create an instance: `user_club := client.UserClub(nil)`
 #### Example: List
 
 ```go
-user_clubs, err := client.UserClub(nil).List(nil, nil)
+userClubs, err := client.UserClub(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_clubs) // the array of records
+fmt.Println(userClubs) // the array of records
 ```
 
 
 ### UserFriend
 
-Create an instance: `user_friend := client.UserFriend(nil)`
+Create an instance: `userFriend := client.UserFriend(nil)`
 
 #### Operations
 
@@ -1288,17 +1288,17 @@ Create an instance: `user_friend := client.UserFriend(nil)`
 #### Example: List
 
 ```go
-user_friends, err := client.UserFriend(nil).List(nil, nil)
+userFriends, err := client.UserFriend(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_friends) // the array of records
+fmt.Println(userFriends) // the array of records
 ```
 
 
 ### UserHistory
 
-Create an instance: `user_history := client.UserHistory(nil)`
+Create an instance: `userHistory := client.UserHistory(nil)`
 
 #### Operations
 
@@ -1317,17 +1317,17 @@ Create an instance: `user_history := client.UserHistory(nil)`
 #### Example: List
 
 ```go
-user_historys, err := client.UserHistory(nil).List(nil, nil)
+userHistorys, err := client.UserHistory(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_historys) // the array of records
+fmt.Println(userHistorys) // the array of records
 ```
 
 
 ### UserStatistic
 
-Create an instance: `user_statistic := client.UserStatistic(nil)`
+Create an instance: `userStatistic := client.UserStatistic(nil)`
 
 #### Operations
 
@@ -1344,17 +1344,17 @@ Create an instance: `user_statistic := client.UserStatistic(nil)`
 #### Example: Load
 
 ```go
-user_statistic, err := client.UserStatistic(nil).Load(nil, nil)
+userStatistic, err := client.UserStatistic(nil).Load(map[string]any{"username": "username"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_statistic) // the loaded record
+fmt.Println(userStatistic) // the loaded record
 ```
 
 
 ### UserUpdate
 
-Create an instance: `user_update := client.UserUpdate(nil)`
+Create an instance: `userUpdate := client.UserUpdate(nil)`
 
 #### Operations
 
@@ -1371,17 +1371,17 @@ Create an instance: `user_update := client.UserUpdate(nil)`
 #### Example: Load
 
 ```go
-user_update, err := client.UserUpdate(nil).Load(nil, nil)
+userUpdate, err := client.UserUpdate(nil).Load(map[string]any{"username": "username"}, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(user_update) // the loaded record
+fmt.Println(userUpdate) // the loaded record
 ```
 
 
 ### WatchEpisode
 
-Create an instance: `watch_episode := client.WatchEpisode(nil)`
+Create an instance: `watchEpisode := client.WatchEpisode(nil)`
 
 #### Operations
 
@@ -1399,17 +1399,17 @@ Create an instance: `watch_episode := client.WatchEpisode(nil)`
 #### Example: List
 
 ```go
-watch_episodes, err := client.WatchEpisode(nil).List(nil, nil)
+watchEpisodes, err := client.WatchEpisode(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(watch_episodes) // the array of records
+fmt.Println(watchEpisodes) // the array of records
 ```
 
 
 ### WatchPromo
 
-Create an instance: `watch_promo := client.WatchPromo(nil)`
+Create an instance: `watchPromo := client.WatchPromo(nil)`
 
 #### Operations
 
@@ -1427,11 +1427,11 @@ Create an instance: `watch_promo := client.WatchPromo(nil)`
 #### Example: List
 
 ```go
-watch_promos, err := client.WatchPromo(nil).List(nil, nil)
+watchPromos, err := client.WatchPromo(nil).List(nil, nil)
 if err != nil {
     panic(err)
 }
-fmt.Println(watch_promos) // the array of records
+fmt.Println(watchPromos) // the array of records
 ```
 
 

@@ -28,11 +28,29 @@
 ---@field voice_actor? table
 
 ---@class AnimeLoadMatch
----@field episode number
+---@field episode? number
 ---@field id number
 
 ---@class AnimeListMatch
----@field id number
+---@field author_url? string
+---@field author_username? string
+---@field character? table
+---@field comment? number
+---@field data? table
+---@field date? string
+---@field entry? table
+---@field image? table
+---@field last_comment? table
+---@field mal_id? number
+---@field name? string
+---@field pagination? table
+---@field person? table
+---@field position? table
+---@field relation? string
+---@field role? string
+---@field title? string
+---@field url? string
+---@field voice_actor? table
 
 ---@class Character
 ---@field anime? table
@@ -49,7 +67,15 @@
 ---@field id number
 
 ---@class CharacterListMatch
----@field id number
+---@field anime? table
+---@field data? table
+---@field image_url? string
+---@field language? string
+---@field large_image_url? string
+---@field manga? table
+---@field pagination? table
+---@field person? table
+---@field role? string
 
 ---@class Club
 ---@field data? table
@@ -61,7 +87,10 @@
 ---@field id number
 
 ---@class ClubListMatch
----@field id number
+---@field data? table
+---@field pagination? table
+---@field url? string
+---@field username? string
 
 ---@class External
 ---@field name? string
@@ -113,7 +142,23 @@
 ---@field id number
 
 ---@class MangaListMatch
----@field id number
+---@field author_url? string
+---@field author_username? string
+---@field character? table
+---@field comment? number
+---@field data? table
+---@field date? string
+---@field entry? table
+---@field jpg? table
+---@field last_comment? table
+---@field mal_id? number
+---@field name? string
+---@field pagination? table
+---@field relation? string
+---@field role? string
+---@field title? string
+---@field url? string
+---@field webp? table
 
 ---@class PeopleSearch
 ---@field data? table
@@ -137,7 +182,14 @@
 ---@field id number
 
 ---@class PersonListMatch
----@field id number
+---@field anime? table
+---@field character? table
+---@field data? table
+---@field jpg? table
+---@field manga? table
+---@field pagination? table
+---@field position? string
+---@field role? string
 
 ---@class Producer
 ---@field data? table
@@ -149,7 +201,10 @@
 ---@field id number
 
 ---@class ProducerListMatch
----@field id number
+---@field data? table
+---@field name? string
+---@field pagination? table
+---@field url? string
 
 ---@class Random
 ---@field data? table
@@ -183,8 +238,8 @@
 ---@field year? number
 
 ---@class SeasonListMatch
----@field season string
----@field year number
+---@field season? string
+---@field year? number
 
 ---@class Top
 ---@field data? any
@@ -197,7 +252,6 @@
 ---@field pagination? table
 
 ---@class UserLoadMatch
----@field username string
 ---@field id number
 
 ---@class UserListMatch

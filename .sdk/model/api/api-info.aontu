@@ -120,10 +120,10 @@ By using the API, you are agreeing to Jikan's [terms of use](https://jikan.moe/t
           url: "https://api.jikan.moe/v4"
         }
       ]
+      summary: "[Jikan](https://jikan.moe) is an **Unofficial** MyAnimeList API."
       termsOfService: "https://jikan.moe/terms"
       title: "Jikan API"
       version: "4.0.0"
+      website: "https://jikan.moe"
     }
   }
-}
-

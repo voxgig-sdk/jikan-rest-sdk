@@ -47,12 +47,14 @@ for _, item in ipairs(animes) do
 end
 ```
 
-### 3. Load an anime
+### 3. Load an userstatistic
+
+UserStatistic is nested under username, so provide the `username`.
 
 ```lua
-local anime, err = client:Anime():load({ id = "example_id" })
+local userstatistic, err = client:UserStatistic():load({ username = "example_username" })
 if err then error(err) end
-print(anime)
+print(userstatistic)
 ```
 
 
@@ -626,7 +628,7 @@ Create an instance: `local anime = client:Anime(nil)`
 #### Example: Load
 
 ```lua
-local anime, err = client:Anime():load({ id = "anime_id" })
+local anime, err = client:Anime():load({ id = 1 })
 ```
 
 #### Example: List
@@ -664,7 +666,7 @@ Create an instance: `local character = client:Character(nil)`
 #### Example: Load
 
 ```lua
-local character, err = client:Character():load({ id = "character_id" })
+local character, err = client:Character():load({ id = 1 })
 ```
 
 #### Example: List
@@ -697,7 +699,7 @@ Create an instance: `local club = client:Club(nil)`
 #### Example: Load
 
 ```lua
-local club, err = client:Club():load({ id = "club_id" })
+local club, err = client:Club():load({ id = 1 })
 ```
 
 #### Example: List
@@ -817,7 +819,7 @@ Create an instance: `local manga = client:Manga(nil)`
 #### Example: Load
 
 ```lua
-local manga, err = client:Manga():load({ id = "manga_id" })
+local manga, err = client:Manga():load({ id = 1 })
 ```
 
 #### Example: List
@@ -878,7 +880,7 @@ Create an instance: `local person = client:Person(nil)`
 #### Example: Load
 
 ```lua
-local person, err = client:Person():load({ id = "person_id" })
+local person, err = client:Person():load({ id = 1 })
 ```
 
 #### Example: List
@@ -911,7 +913,7 @@ Create an instance: `local producer = client:Producer(nil)`
 #### Example: Load
 
 ```lua
-local producer, err = client:Producer():load({ id = "producer_id" })
+local producer, err = client:Producer():load({ id = 1 })
 ```
 
 #### Example: List
@@ -1079,7 +1081,7 @@ Create an instance: `local user = client:User(nil)`
 #### Example: Load
 
 ```lua
-local user, err = client:User():load({ id = "user_id" })
+local user, err = client:User():load({ id = 1 })
 ```
 
 #### Example: List
@@ -1204,7 +1206,7 @@ Create an instance: `local user_statistic = client:UserStatistic(nil)`
 #### Example: Load
 
 ```lua
-local user_statistic, err = client:UserStatistic():load()
+local user_statistic, err = client:UserStatistic():load({ username = "username" })
 ```
 
 
@@ -1227,7 +1229,7 @@ Create an instance: `local user_update = client:UserUpdate(nil)`
 #### Example: Load
 
 ```lua
-local user_update, err = client:UserUpdate():load()
+local user_update, err = client:UserUpdate():load({ username = "username" })
 ```
 
 

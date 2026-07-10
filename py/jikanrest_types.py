@@ -38,13 +38,34 @@ class Anime(TypedDict, total=False):
     voice_actor: list
 
 
-class AnimeLoadMatch(TypedDict):
+class AnimeLoadMatchRequired(TypedDict):
+    id: int
+
+
+class AnimeLoadMatch(AnimeLoadMatchRequired, total=False):
     episode: int
-    id: int
 
 
-class AnimeListMatch(TypedDict):
-    id: int
+class AnimeListMatch(TypedDict, total=False):
+    author_url: str
+    author_username: str
+    character: dict
+    comment: int
+    data: dict
+    date: str
+    entry: dict
+    image: dict
+    last_comment: dict
+    mal_id: int
+    name: str
+    pagination: dict
+    person: dict
+    position: list
+    relation: str
+    role: str
+    title: str
+    url: str
+    voice_actor: list
 
 
 class Character(TypedDict, total=False):
@@ -63,8 +84,16 @@ class CharacterLoadMatch(TypedDict):
     id: int
 
 
-class CharacterListMatch(TypedDict):
-    id: int
+class CharacterListMatch(TypedDict, total=False):
+    anime: dict
+    data: dict
+    image_url: str
+    language: str
+    large_image_url: str
+    manga: dict
+    pagination: dict
+    person: dict
+    role: str
 
 
 class Club(TypedDict, total=False):
@@ -78,8 +107,11 @@ class ClubLoadMatch(TypedDict):
     id: int
 
 
-class ClubListMatch(TypedDict):
-    id: int
+class ClubListMatch(TypedDict, total=False):
+    data: dict
+    pagination: dict
+    url: str
+    username: str
 
 
 class External(TypedDict, total=False):
@@ -139,8 +171,24 @@ class MangaLoadMatch(TypedDict):
     id: int
 
 
-class MangaListMatch(TypedDict):
-    id: int
+class MangaListMatch(TypedDict, total=False):
+    author_url: str
+    author_username: str
+    character: dict
+    comment: int
+    data: dict
+    date: str
+    entry: dict
+    jpg: dict
+    last_comment: dict
+    mal_id: int
+    name: str
+    pagination: dict
+    relation: str
+    role: str
+    title: str
+    url: str
+    webp: dict
 
 
 class PeopleSearch(TypedDict, total=False):
@@ -168,8 +216,15 @@ class PersonLoadMatch(TypedDict):
     id: int
 
 
-class PersonListMatch(TypedDict):
-    id: int
+class PersonListMatch(TypedDict, total=False):
+    anime: dict
+    character: dict
+    data: dict
+    jpg: dict
+    manga: dict
+    pagination: dict
+    position: str
+    role: str
 
 
 class Producer(TypedDict, total=False):
@@ -183,8 +238,11 @@ class ProducerLoadMatch(TypedDict):
     id: int
 
 
-class ProducerListMatch(TypedDict):
-    id: int
+class ProducerListMatch(TypedDict, total=False):
+    data: dict
+    name: str
+    pagination: dict
+    url: str
 
 
 class Random(TypedDict, total=False):
@@ -229,7 +287,7 @@ class Season(TypedDict, total=False):
     year: int
 
 
-class SeasonListMatch(TypedDict):
+class SeasonListMatch(TypedDict, total=False):
     season: str
     year: int
 
@@ -248,7 +306,6 @@ class User(TypedDict, total=False):
 
 
 class UserLoadMatch(TypedDict):
-    username: str
     id: int
 
 

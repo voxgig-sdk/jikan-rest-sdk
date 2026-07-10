@@ -224,7 +224,7 @@ results = client.Anime.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Anime.load({ "id" => "anime_id" })
+result = client.Anime.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -292,7 +292,7 @@ results = client.Character.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Character.load({ "id" => "character_id" })
+result = client.Character.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -355,7 +355,7 @@ results = client.Club.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Club.load({ "id" => "club_id" })
+result = client.Club.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -592,7 +592,7 @@ results = client.Manga.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Manga.load({ "id" => "manga_id" })
+result = client.Manga.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -712,7 +712,7 @@ results = client.Person.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Person.load({ "id" => "person_id" })
+result = client.Person.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -775,7 +775,7 @@ results = client.Producer.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Producer.load({ "id" => "producer_id" })
+result = client.Producer.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -1147,7 +1147,7 @@ results = client.User.list
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.User.load({ "id" => "user_id" })
+result = client.User.load({ "id" => 1 })
 ```
 
 ### Common Methods
@@ -1411,7 +1411,7 @@ user_statistic = client.UserStatistic
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.UserStatistic.load()
+result = client.UserStatistic.load({ "username" => "username" })
 ```
 
 ### Common Methods
@@ -1463,7 +1463,7 @@ user_update = client.UserUpdate
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.UserUpdate.load()
+result = client.UserUpdate.load({ "username" => "username" })
 ```
 
 ### Common Methods

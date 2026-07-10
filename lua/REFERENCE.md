@@ -221,7 +221,7 @@ local results, err = client:Anime():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Anime():load({ id = "anime_id" })
+local result, err = client:Anime():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ local results, err = client:Character():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Character():load({ id = "character_id" })
+local result, err = client:Character():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -352,7 +352,7 @@ local results, err = client:Club():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Club():load({ id = "club_id" })
+local result, err = client:Club():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -589,7 +589,7 @@ local results, err = client:Manga():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Manga():load({ id = "manga_id" })
+local result, err = client:Manga():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -709,7 +709,7 @@ local results, err = client:Person():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Person():load({ id = "person_id" })
+local result, err = client:Person():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -772,7 +772,7 @@ local results, err = client:Producer():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Producer():load({ id = "producer_id" })
+local result, err = client:Producer():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -1144,7 +1144,7 @@ local results, err = client:User():list()
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:User():load({ id = "user_id" })
+local result, err = client:User():load({ id = 1 })
 ```
 
 ### Common Methods
@@ -1408,7 +1408,7 @@ local user_statistic = client:UserStatistic(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:UserStatistic():load()
+local result, err = client:UserStatistic():load({ username = "username" })
 ```
 
 ### Common Methods
@@ -1460,7 +1460,7 @@ local user_update = client:UserUpdate(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:UserUpdate():load()
+local result, err = client:UserUpdate():load({ username = "username" })
 ```
 
 ### Common Methods

@@ -45,13 +45,15 @@ try {
 }
 ```
 
-### 3. Load an anime
+### 3. Load an userstatistic
+
+UserStatistic is nested under username, so provide the `username`.
 
 ```php
 try {
-    // load() returns the bare Anime record (throws on error).
-    $anime = $client->Anime()->load(["id" => "example_id"]);
-    print_r($anime);
+    // load() returns the bare UserStatistic record (throws on error).
+    $userstatistic = $client->UserStatistic()->load(["username" => "example_username"]);
+    print_r($userstatistic);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -648,7 +650,7 @@ Create an instance: `$anime = $client->Anime();`
 
 ```php
 // load() returns the bare Anime record (throws on error).
-$anime = $client->Anime()->load(["id" => "anime_id"]);
+$anime = $client->Anime()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -688,7 +690,7 @@ Create an instance: `$character = $client->Character();`
 
 ```php
 // load() returns the bare Character record (throws on error).
-$character = $client->Character()->load(["id" => "character_id"]);
+$character = $client->Character()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -723,7 +725,7 @@ Create an instance: `$club = $client->Club();`
 
 ```php
 // load() returns the bare Club record (throws on error).
-$club = $client->Club()->load(["id" => "club_id"]);
+$club = $client->Club()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -848,7 +850,7 @@ Create an instance: `$manga = $client->Manga();`
 
 ```php
 // load() returns the bare Manga record (throws on error).
-$manga = $client->Manga()->load(["id" => "manga_id"]);
+$manga = $client->Manga()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -912,7 +914,7 @@ Create an instance: `$person = $client->Person();`
 
 ```php
 // load() returns the bare Person record (throws on error).
-$person = $client->Person()->load(["id" => "person_id"]);
+$person = $client->Person()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -947,7 +949,7 @@ Create an instance: `$producer = $client->Producer();`
 
 ```php
 // load() returns the bare Producer record (throws on error).
-$producer = $client->Producer()->load(["id" => "producer_id"]);
+$producer = $client->Producer()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -1123,7 +1125,7 @@ Create an instance: `$user = $client->User();`
 
 ```php
 // load() returns the bare User record (throws on error).
-$user = $client->User()->load(["id" => "user_id"]);
+$user = $client->User()->load(["id" => 1]);
 ```
 
 #### Example: List
@@ -1254,7 +1256,7 @@ Create an instance: `$user_statistic = $client->UserStatistic();`
 
 ```php
 // load() returns the bare UserStatistic record (throws on error).
-$user_statistic = $client->UserStatistic()->load();
+$user_statistic = $client->UserStatistic()->load(["username" => "username"]);
 ```
 
 
@@ -1278,7 +1280,7 @@ Create an instance: `$user_update = $client->UserUpdate();`
 
 ```php
 // load() returns the bare UserUpdate record (throws on error).
-$user_update = $client->UserUpdate()->load();
+$user_update = $client->UserUpdate()->load(["username" => "username"]);
 ```
 
 

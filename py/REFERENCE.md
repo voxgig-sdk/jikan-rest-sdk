@@ -220,7 +220,7 @@ for anime in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Anime().load({"id": "anime_id"})
+result = client.Anime().load({"id": 1})
 ```
 
 ### Common Methods
@@ -289,7 +289,7 @@ for character in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Character().load({"id": "character_id"})
+result = client.Character().load({"id": 1})
 ```
 
 ### Common Methods
@@ -353,7 +353,7 @@ for club in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Club().load({"id": "club_id"})
+result = client.Club().load({"id": 1})
 ```
 
 ### Common Methods
@@ -594,7 +594,7 @@ for manga in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Manga().load({"id": "manga_id"})
+result = client.Manga().load({"id": 1})
 ```
 
 ### Common Methods
@@ -716,7 +716,7 @@ for person in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Person().load({"id": "person_id"})
+result = client.Person().load({"id": 1})
 ```
 
 ### Common Methods
@@ -780,7 +780,7 @@ for producer in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Producer().load({"id": "producer_id"})
+result = client.Producer().load({"id": 1})
 ```
 
 ### Common Methods
@@ -1153,7 +1153,7 @@ for user in results:
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.User().load({"id": "user_id"})
+result = client.User().load({"id": 1})
 ```
 
 ### Common Methods
@@ -1420,7 +1420,7 @@ user_statistic = client.UserStatistic()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.UserStatistic().load()
+result = client.UserStatistic().load({"username": "username"})
 ```
 
 ### Common Methods
@@ -1471,7 +1471,7 @@ user_update = client.UserUpdate()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.UserUpdate().load()
+result = client.UserUpdate().load({"username": "username"})
 ```
 
 ### Common Methods

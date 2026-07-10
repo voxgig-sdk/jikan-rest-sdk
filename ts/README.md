@@ -45,14 +45,17 @@ for (const anime of animes) {
 }
 ```
 
-### 3. Load an anime
+### 3. Load an userstatistic
 
+UserStatistic is nested under username, so provide the `username`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const anime = await client.Anime().load({ id: 1 })
-  console.log(anime)
+  const userstatistic = await client.UserStatistic().load({
+    username: 'example_username',
+  })
+  console.log(userstatistic)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -1262,7 +1265,7 @@ Create an instance: `const user_statistic = client.UserStatistic()`
 #### Example: Load
 
 ```ts
-const user_statistic = await client.UserStatistic().load()
+const user_statistic = await client.UserStatistic().load({ username: 'username' })
 ```
 
 
@@ -1285,7 +1288,7 @@ Create an instance: `const user_update = client.UserUpdate()`
 #### Example: Load
 
 ```ts
-const user_update = await client.UserUpdate().load()
+const user_update = await client.UserUpdate().load({ username: 'username' })
 ```
 
 

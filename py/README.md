@@ -50,14 +50,15 @@ except Exception as err:
     print(f"list failed: {err}")
 ```
 
-### 3. Load an anime
+### 3. Load an userstatistic
 
+UserStatistic is nested under username, so provide the `username`.
 `load()` returns the bare record (a `dict`) and raises on error.
 
 ```python
 try:
-    anime = client.Anime().load({"id": "example_id"})
-    print(anime)
+    userstatistic = client.UserStatistic().load({"username": "example_username"})
+    print(userstatistic)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -640,7 +641,7 @@ Create an instance: `anime = client.Anime()`
 #### Example: Load
 
 ```python
-anime = client.Anime().load({"id": "anime_id"})
+anime = client.Anime().load({"id": 1})
 ```
 
 #### Example: List
@@ -678,7 +679,7 @@ Create an instance: `character = client.Character()`
 #### Example: Load
 
 ```python
-character = client.Character().load({"id": "character_id"})
+character = client.Character().load({"id": 1})
 ```
 
 #### Example: List
@@ -711,7 +712,7 @@ Create an instance: `club = client.Club()`
 #### Example: Load
 
 ```python
-club = client.Club().load({"id": "club_id"})
+club = client.Club().load({"id": 1})
 ```
 
 #### Example: List
@@ -831,7 +832,7 @@ Create an instance: `manga = client.Manga()`
 #### Example: Load
 
 ```python
-manga = client.Manga().load({"id": "manga_id"})
+manga = client.Manga().load({"id": 1})
 ```
 
 #### Example: List
@@ -892,7 +893,7 @@ Create an instance: `person = client.Person()`
 #### Example: Load
 
 ```python
-person = client.Person().load({"id": "person_id"})
+person = client.Person().load({"id": 1})
 ```
 
 #### Example: List
@@ -925,7 +926,7 @@ Create an instance: `producer = client.Producer()`
 #### Example: Load
 
 ```python
-producer = client.Producer().load({"id": "producer_id"})
+producer = client.Producer().load({"id": 1})
 ```
 
 #### Example: List
@@ -1093,7 +1094,7 @@ Create an instance: `user = client.User()`
 #### Example: Load
 
 ```python
-user = client.User().load({"id": "user_id"})
+user = client.User().load({"id": 1})
 ```
 
 #### Example: List
@@ -1218,7 +1219,7 @@ Create an instance: `user_statistic = client.UserStatistic()`
 #### Example: Load
 
 ```python
-user_statistic = client.UserStatistic().load()
+user_statistic = client.UserStatistic().load({"username": "username"})
 ```
 
 
@@ -1241,7 +1242,7 @@ Create an instance: `user_update = client.UserUpdate()`
 #### Example: Load
 
 ```python
-user_update = client.UserUpdate().load()
+user_update = client.UserUpdate().load({"username": "username"})
 ```
 
 

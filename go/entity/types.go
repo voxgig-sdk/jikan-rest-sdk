@@ -33,13 +33,31 @@ type Anime struct {
 
 // AnimeLoadMatch is the typed request payload for Anime.LoadTyped.
 type AnimeLoadMatch struct {
-	Episode int `json:"episode"`
+	Episode *int `json:"episode,omitempty"`
 	Id int `json:"id"`
 }
 
 // AnimeListMatch is the typed request payload for Anime.ListTyped.
 type AnimeListMatch struct {
-	Id int `json:"id"`
+	AuthorUrl *string `json:"author_url,omitempty"`
+	AuthorUsername *string `json:"author_username,omitempty"`
+	Character *map[string]any `json:"character,omitempty"`
+	Comment *int `json:"comment,omitempty"`
+	Data *map[string]any `json:"data,omitempty"`
+	Date *string `json:"date,omitempty"`
+	Entry *map[string]any `json:"entry,omitempty"`
+	Image *map[string]any `json:"image,omitempty"`
+	LastComment *map[string]any `json:"last_comment,omitempty"`
+	MalId *int `json:"mal_id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Person *map[string]any `json:"person,omitempty"`
+	Position *[]any `json:"position,omitempty"`
+	Relation *string `json:"relation,omitempty"`
+	Role *string `json:"role,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+	VoiceActor *[]any `json:"voice_actor,omitempty"`
 }
 
 // Character is the typed data model for the character entity.
@@ -62,7 +80,15 @@ type CharacterLoadMatch struct {
 
 // CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
-	Id int `json:"id"`
+	Anime *map[string]any `json:"anime,omitempty"`
+	Data *map[string]any `json:"data,omitempty"`
+	ImageUrl *string `json:"image_url,omitempty"`
+	Language *string `json:"language,omitempty"`
+	LargeImageUrl *string `json:"large_image_url,omitempty"`
+	Manga *map[string]any `json:"manga,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Person *map[string]any `json:"person,omitempty"`
+	Role *string `json:"role,omitempty"`
 }
 
 // Club is the typed data model for the club entity.
@@ -80,7 +106,10 @@ type ClubLoadMatch struct {
 
 // ClubListMatch is the typed request payload for Club.ListTyped.
 type ClubListMatch struct {
-	Id int `json:"id"`
+	Data *map[string]any `json:"data,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Url *string `json:"url,omitempty"`
+	Username *string `json:"username,omitempty"`
 }
 
 // External is the typed data model for the external entity.
@@ -150,7 +179,23 @@ type MangaLoadMatch struct {
 
 // MangaListMatch is the typed request payload for Manga.ListTyped.
 type MangaListMatch struct {
-	Id int `json:"id"`
+	AuthorUrl *string `json:"author_url,omitempty"`
+	AuthorUsername *string `json:"author_username,omitempty"`
+	Character *map[string]any `json:"character,omitempty"`
+	Comment *int `json:"comment,omitempty"`
+	Data *map[string]any `json:"data,omitempty"`
+	Date *string `json:"date,omitempty"`
+	Entry *map[string]any `json:"entry,omitempty"`
+	Jpg *map[string]any `json:"jpg,omitempty"`
+	LastComment *map[string]any `json:"last_comment,omitempty"`
+	MalId *int `json:"mal_id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Relation *string `json:"relation,omitempty"`
+	Role *string `json:"role,omitempty"`
+	Title *string `json:"title,omitempty"`
+	Url *string `json:"url,omitempty"`
+	Webp *map[string]any `json:"webp,omitempty"`
 }
 
 // PeopleSearch is the typed data model for the people_search entity.
@@ -184,7 +229,14 @@ type PersonLoadMatch struct {
 
 // PersonListMatch is the typed request payload for Person.ListTyped.
 type PersonListMatch struct {
-	Id int `json:"id"`
+	Anime *map[string]any `json:"anime,omitempty"`
+	Character *map[string]any `json:"character,omitempty"`
+	Data *map[string]any `json:"data,omitempty"`
+	Jpg *map[string]any `json:"jpg,omitempty"`
+	Manga *map[string]any `json:"manga,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Position *string `json:"position,omitempty"`
+	Role *string `json:"role,omitempty"`
 }
 
 // Producer is the typed data model for the producer entity.
@@ -202,7 +254,10 @@ type ProducerLoadMatch struct {
 
 // ProducerListMatch is the typed request payload for Producer.ListTyped.
 type ProducerListMatch struct {
-	Id int `json:"id"`
+	Data *map[string]any `json:"data,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 // Random is the typed data model for the random entity.
@@ -256,8 +311,8 @@ type Season struct {
 
 // SeasonListMatch is the typed request payload for Season.ListTyped.
 type SeasonListMatch struct {
-	Season string `json:"season"`
-	Year int `json:"year"`
+	Season *string `json:"season,omitempty"`
+	Year *int `json:"year,omitempty"`
 }
 
 // Top is the typed data model for the top entity.
@@ -278,7 +333,6 @@ type User struct {
 
 // UserLoadMatch is the typed request payload for User.LoadTyped.
 type UserLoadMatch struct {
-	Username string `json:"username"`
 	Id int `json:"id"`
 }
 
