@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- JikanRest SDK exists test
 
 local sdk = require("jikan-rest_sdk")
 
