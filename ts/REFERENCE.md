@@ -404,25 +404,113 @@ const anime = client.Anime()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `string` | No |  |
+| `airing` | `boolean` | No |  |
+| `approved` | `boolean` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `background` | `string` | No |  |
+| `broadcast` | `Record<string, any>` | No |  |
 | `character` | `Record<string, any>` | No |  |
-| `comment` | `number` | No |  |
-| `data` | `Record<string, any>` | No |  |
+| `comments` | `number` | No |  |
+| `completed` | `number` | No |  |
+| `data` | `any[]` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `any[]` | No |  |
+| `dropped` | `number` | No |  |
+| `duration` | `number` | No |  |
+| `endings` | `any[]` | No |  |
 | `entry` | `Record<string, any>` | No |  |
-| `image` | `Record<string, any>` | No |  |
+| `episodes` | `number` | No |  |
+| `explicit_genres` | `any[]` | No |  |
+| `external` | `any[]` | No |  |
+| `favorites` | `number` | No |  |
+| `filler` | `boolean` | No |  |
+| `genres` | `any[]` | No |  |
+| `images` | `Record<string, any>` | No |  |
 | `last_comment` | `Record<string, any>` | No |  |
+| `licensors` | `any[]` | No |  |
 | `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `moreinfo` | `string` | No |  |
+| `music_videos` | `any[]` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `number` | No |  |
+| `openings` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `person` | `Record<string, any>` | No |  |
-| `position` | `any[]` | No |  |
+| `plan_to_watch` | `number` | No |  |
+| `popularity` | `number` | No |  |
+| `positions` | `any[]` | No |  |
+| `producers` | `any[]` | No |  |
+| `promo` | `any[]` | No |  |
+| `rank` | `number` | No |  |
+| `rating` | `string` | No |  |
+| `recap` | `boolean` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `any[]` | No |  |
 | `role` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `scores` | `any[]` | No |  |
+| `season` | `string` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `streaming` | `any[]` | No |  |
+| `studios` | `any[]` | No |  |
+| `synopsis` | `string` | No |  |
+| `theme` | `Record<string, any>` | No |  |
+| `themes` | `any[]` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_romanji` | `string` | No |  |
+| `title_synonyms` | `any[]` | No |  |
+| `titles` | `any[]` | No |  |
+| `total` | `number` | No |  |
+| `trailer` | `Record<string, any>` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
-| `voice_actor` | `any[]` | No |  |
+| `voice_actors` | `any[]` | No |  |
+| `watching` | `number` | No |  |
+| `year` | `number` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `character` | `/anime/{id}/characters` | `client.Anime().list({ $action: 'character', ... })` |
+| `episode` | `/anime/{id}/episodes` | `client.Anime().list({ $action: 'episode', ... })` |
+| `external` | `/anime/{id}/external` | `client.Anime().list({ $action: 'external', ... })` |
+| `forum` | `/anime/{id}/forum` | `client.Anime().list({ $action: 'forum', ... })` |
+| `new` | `/anime/{id}/news` | `client.Anime().list({ $action: 'new', ... })` |
+| `picture` | `/anime/{id}/pictures` | `client.Anime().list({ $action: 'picture', ... })` |
+| `recommendation` | `/anime/{id}/recommendations` | `client.Anime().list({ $action: 'recommendation', ... })` |
+| `relation` | `/anime/{id}/relations` | `client.Anime().list({ $action: 'relation', ... })` |
+| `review` | `/anime/{id}/reviews` | `client.Anime().list({ $action: 'review', ... })` |
+| `staff` | `/anime/{id}/staff` | `client.Anime().list({ $action: 'staff', ... })` |
+| `streaming` | `/anime/{id}/streaming` | `client.Anime().list({ $action: 'streaming', ... })` |
+| `userupdate` | `/anime/{id}/userupdates` | `client.Anime().list({ $action: 'userupdate', ... })` |
+| `video_episode` | `/anime/{id}/videos/episodes` | `client.Anime().list({ $action: 'video_episode', ... })` |
+| `full` | `/anime/{id}/full` | `client.Anime().load({ $action: 'full', ... })` |
+| `moreinfo` | `/anime/{id}/moreinfo` | `client.Anime().load({ $action: 'moreinfo', ... })` |
+| `statistic` | `/anime/{id}/statistics` | `client.Anime().load({ $action: 'statistic', ... })` |
+| `theme` | `/anime/{id}/themes` | `client.Anime().load({ $action: 'theme', ... })` |
+| `video` | `/anime/{id}/videos` | `client.Anime().load({ $action: 'video', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Anime record — check the API definition for its shape.
+
+```ts
+const result = await client.Anime().list({
+  $action: 'character',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -480,15 +568,48 @@ const character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `Record<string, any>` | No |  |
-| `data` | `Record<string, any>` | No |  |
+| `about` | `string` | No |  |
+| `anime` | `any[]` | No |  |
+| `data` | `any[]` | No |  |
+| `favorites` | `number` | No |  |
 | `image_url` | `string` | No |  |
+| `images` | `Record<string, any>` | No |  |
 | `language` | `string` | No |  |
 | `large_image_url` | `string` | No |  |
-| `manga` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `any[]` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `person` | `Record<string, any>` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `any[]` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/characters/{id}/anime` | `client.Character().list({ $action: 'anime', ... })` |
+| `manga` | `/characters/{id}/manga` | `client.Character().list({ $action: 'manga', ... })` |
+| `picture` | `/characters/{id}/pictures` | `client.Character().list({ $action: 'picture', ... })` |
+| `voice` | `/characters/{id}/voices` | `client.Character().list({ $action: 'voice', ... })` |
+| `full` | `/characters/{id}/full` | `client.Character().load({ $action: 'full', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Character record — check the API definition for its shape.
+
+```ts
+const result = await client.Character().list({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -546,10 +667,42 @@ const club = client.Club()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
+| `access` | `string` | No |  |
+| `anime` | `any[]` | No |  |
+| `category` | `string` | No |  |
+| `characters` | `any[]` | No |  |
+| `created` | `string` | No |  |
+| `data` | `any[]` | No |  |
+| `images` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `any[]` | No |  |
+| `members` | `number` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `member` | `/clubs/{id}/members` | `client.Club().list({ $action: 'member', ... })` |
+| `staff` | `/clubs/{id}/staff` | `client.Club().list({ $action: 'staff', ... })` |
+| `relation` | `/clubs/{id}/relations` | `client.Club().load({ $action: 'relation', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Club record — check the API definition for its shape.
+
+```ts
+const result = await client.Club().list({
+  $action: 'member',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -617,7 +770,7 @@ const external = client.External()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.External().list()
+const results = await client.External().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -662,6 +815,27 @@ const genre = client.Genre()
 | `mal_id` | `number` | No |  |
 | `name` | `string` | No |  |
 | `url` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/genres/anime` | `client.Genre().list({ $action: 'anime', ... })` |
+| `manga` | `/genres/manga` | `client.Genre().list({ $action: 'manga', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Genre record — check the API definition for its shape.
+
+```ts
+const result = await client.Genre().list({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -762,23 +936,90 @@ const manga = client.Manga()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `boolean` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `authors` | `any[]` | No |  |
+| `background` | `string` | No |  |
+| `chapters` | `number` | No |  |
 | `character` | `Record<string, any>` | No |  |
-| `comment` | `number` | No |  |
-| `data` | `Record<string, any>` | No |  |
+| `comments` | `number` | No |  |
+| `completed` | `number` | No |  |
+| `data` | `any[]` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `any[]` | No |  |
+| `dropped` | `number` | No |  |
 | `entry` | `Record<string, any>` | No |  |
+| `explicit_genres` | `any[]` | No |  |
+| `external` | `any[]` | No |  |
+| `favorites` | `number` | No |  |
+| `genres` | `any[]` | No |  |
+| `images` | `Record<string, any>` | No |  |
 | `jpg` | `Record<string, any>` | No |  |
 | `last_comment` | `Record<string, any>` | No |  |
 | `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `moreinfo` | `string` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `number` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
+| `plan_to_read` | `number` | No |  |
+| `popularity` | `number` | No |  |
+| `published` | `Record<string, any>` | No |  |
+| `publishing` | `boolean` | No |  |
+| `rank` | `number` | No |  |
+| `reading` | `number` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `any[]` | No |  |
 | `role` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `scores` | `any[]` | No |  |
+| `serializations` | `any[]` | No |  |
+| `status` | `string` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `any[]` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `any[]` | No |  |
+| `titles` | `any[]` | No |  |
+| `total` | `number` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
+| `volumes` | `number` | No |  |
 | `webp` | `Record<string, any>` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `character` | `/manga/{id}/characters` | `client.Manga().list({ $action: 'character', ... })` |
+| `external` | `/manga/{id}/external` | `client.Manga().list({ $action: 'external', ... })` |
+| `forum` | `/manga/{id}/forum` | `client.Manga().list({ $action: 'forum', ... })` |
+| `new` | `/manga/{id}/news` | `client.Manga().list({ $action: 'new', ... })` |
+| `picture` | `/manga/{id}/pictures` | `client.Manga().list({ $action: 'picture', ... })` |
+| `recommendation` | `/manga/{id}/recommendations` | `client.Manga().list({ $action: 'recommendation', ... })` |
+| `relation` | `/manga/{id}/relations` | `client.Manga().list({ $action: 'relation', ... })` |
+| `review` | `/manga/{id}/reviews` | `client.Manga().list({ $action: 'review', ... })` |
+| `userupdate` | `/manga/{id}/userupdates` | `client.Manga().list({ $action: 'userupdate', ... })` |
+| `full` | `/manga/{id}/full` | `client.Manga().load({ $action: 'full', ... })` |
+| `moreinfo` | `/manga/{id}/moreinfo` | `client.Manga().load({ $action: 'moreinfo', ... })` |
+| `statistic` | `/manga/{id}/statistics` | `client.Manga().load({ $action: 'statistic', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Manga record — check the API definition for its shape.
+
+```ts
+const result = await client.Manga().list({
+  $action: 'character',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -887,14 +1128,50 @@ const person = client.Person()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `Record<string, any>` | No |  |
+| `about` | `string` | No |  |
+| `alternate_names` | `any[]` | No |  |
+| `anime` | `any[]` | No |  |
+| `birthday` | `string` | No |  |
 | `character` | `Record<string, any>` | No |  |
-| `data` | `Record<string, any>` | No |  |
+| `data` | `any[]` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `number` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `Record<string, any>` | No |  |
 | `jpg` | `Record<string, any>` | No |  |
-| `manga` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `any[]` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `position` | `string` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `any[]` | No |  |
+| `website_url` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/people/{id}/anime` | `client.Person().list({ $action: 'anime', ... })` |
+| `manga` | `/people/{id}/manga` | `client.Person().list({ $action: 'manga', ... })` |
+| `picture` | `/people/{id}/pictures` | `client.Person().list({ $action: 'picture', ... })` |
+| `voice` | `/people/{id}/voices` | `client.Person().list({ $action: 'voice', ... })` |
+| `full` | `/people/{id}/full` | `client.Person().load({ $action: 'full', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Person record — check the API definition for its shape.
+
+```ts
+const result = await client.Person().list({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -952,10 +1229,39 @@ const producer = client.Producer()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
+| `about` | `string` | No |  |
+| `count` | `number` | No |  |
+| `data` | `any[]` | No |  |
+| `established` | `string` | No |  |
+| `external` | `any[]` | No |  |
+| `favorites` | `number` | No |  |
+| `images` | `Record<string, any>` | No |  |
+| `mal_id` | `number` | No |  |
 | `name` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
+| `titles` | `any[]` | No |  |
 | `url` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `external` | `/producers/{id}/external` | `client.Producer().list({ $action: 'external', ... })` |
+| `full` | `/producers/{id}/full` | `client.Producer().load({ $action: 'full', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Producer record — check the API definition for its shape.
+
+```ts
+const result = await client.Producer().list({
+  $action: 'external',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -1013,7 +1319,86 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
+| `about` | `string` | No |  |
+| `aired` | `Record<string, any>` | No |  |
+| `airing` | `boolean` | No |  |
+| `alternate_names` | `any[]` | No |  |
+| `approved` | `boolean` | No |  |
+| `authors` | `any[]` | No |  |
+| `background` | `string` | No |  |
+| `birthday` | `string` | No |  |
+| `broadcast` | `Record<string, any>` | No |  |
+| `chapters` | `number` | No |  |
+| `demographics` | `any[]` | No |  |
+| `duration` | `string` | No |  |
+| `episodes` | `number` | No |  |
+| `explicit_genres` | `any[]` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `number` | No |  |
+| `gender` | `string` | No |  |
+| `genres` | `any[]` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `Record<string, any>` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `licensors` | `any[]` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `any[]` | No |  |
+| `popularity` | `number` | No |  |
+| `producers` | `any[]` | No |  |
+| `published` | `Record<string, any>` | No |  |
+| `publishing` | `boolean` | No |  |
+| `rank` | `number` | No |  |
+| `rating` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `season` | `string` | No |  |
+| `serializations` | `any[]` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `studios` | `any[]` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `any[]` | No |  |
+| `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `any[]` | No |  |
+| `titles` | `any[]` | No |  |
+| `trailer` | `Record<string, any>` | No |  |
+| `type` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
+| `volumes` | `number` | No |  |
+| `website_url` | `string` | No |  |
+| `year` | `number` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/random/anime` | `client.Random().load({ $action: 'anime', ... })` |
+| `character` | `/random/characters` | `client.Random().load({ $action: 'character', ... })` |
+| `manga` | `/random/manga` | `client.Random().load({ $action: 'manga', ... })` |
+| `person` | `/random/people` | `client.Random().load({ $action: 'person', ... })` |
+| `user` | `/random/users` | `client.Random().load({ $action: 'user', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Random record — check the API definition for its shape.
+
+```ts
+const result = await client.Random().load({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -1066,6 +1451,27 @@ const recommendation = client.Recommendation()
 | `data` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/recommendations/anime` | `client.Recommendation().list({ $action: 'anime', ... })` |
+| `manga` | `/recommendations/manga` | `client.Recommendation().list({ $action: 'manga', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Recommendation record — check the API definition for its shape.
+
+```ts
+const result = await client.Recommendation().list({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
+```
+
 ### Operations
 
 #### `list(match: object, ctrl?: object)`
@@ -1073,7 +1479,7 @@ const recommendation = client.Recommendation()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Recommendation().list()
+const results = await client.Recommendation().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -1108,6 +1514,27 @@ Return a copy of the entity options.
 
 ```ts
 const review = client.Review()
+```
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `anime` | `/reviews/anime` | `client.Review().load({ $action: 'anime', ... })` |
+| `manga` | `/reviews/manga` | `client.Review().load({ $action: 'manga', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Review record — check the API definition for its shape.
+
+```ts
+const result = await client.Review().load({
+  $action: 'anime',
+  /* ...the action's own arguments */
+})
 ```
 
 ### Operations
@@ -1211,8 +1638,29 @@ const season = client.Season()
 | --- | --- | --- | --- |
 | `data` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
-| `season` | `any[]` | No |  |
+| `seasons` | `any[]` | No |  |
 | `year` | `number` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `now` | `/seasons/now` | `client.Season().list({ $action: 'now', ... })` |
+| `upcoming` | `/seasons/upcoming` | `client.Season().list({ $action: 'upcoming', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Season record — check the API definition for its shape.
+
+```ts
+const result = await client.Season().list({
+  $action: 'now',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -1262,7 +1710,28 @@ const top = client.Top()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `data` | `any[]` | No |  |
+| `pagination` | `Record<string, any>` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `review` | `/top/reviews` | `client.Top().load({ $action: 'review', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Top record — check the API definition for its shape.
+
+```ts
+const result = await client.Top().load({
+  $action: 'review',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -1312,8 +1781,47 @@ const user = client.User()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `anime` | `any[]` | No |  |
+| `birthday` | `string` | No |  |
+| `characters` | `any[]` | No |  |
+| `data` | `any[]` | No |  |
+| `external` | `any[]` | No |  |
+| `gender` | `string` | No |  |
+| `images` | `Record<string, any>` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `any[]` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
+| `people` | `any[]` | No |  |
+| `statistics` | `Record<string, any>` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `animelist` | `/users/{username}/animelist` | `client.User().load({ $action: 'animelist', ... })` |
+| `favorite` | `/users/{username}/favorites` | `client.User().load({ $action: 'favorite', ... })` |
+| `full` | `/users/{username}/full` | `client.User().load({ $action: 'full', ... })` |
+| `mangalist` | `/users/{username}/mangalist` | `client.User().load({ $action: 'mangalist', ... })` |
+| `review` | `/users/{username}/reviews` | `client.User().load({ $action: 'review', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+User record — check the API definition for its shape.
+
+```ts
+const result = await client.User().load({
+  $action: 'animelist',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 
@@ -1380,7 +1888,7 @@ const user_about = client.UserAbout()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.UserAbout().list()
+const results = await client.UserAbout().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -1431,7 +1939,7 @@ const user_club = client.UserClub()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.UserClub().list()
+const results = await client.UserClub().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -1482,7 +1990,7 @@ const user_friend = client.UserFriend()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.UserFriend().list()
+const results = await client.UserFriend().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -1534,7 +2042,7 @@ const user_history = client.UserHistory()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.UserHistory().list()
+const results = await client.UserHistory().list({ username: "example" })
 ```
 
 ### Common Methods
@@ -1575,7 +2083,8 @@ const user_statistic = client.UserStatistic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
+| `anime` | `Record<string, any>` | No |  |
+| `manga` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -1625,7 +2134,8 @@ const user_update = client.UserUpdate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Record<string, any>` | No |  |
+| `anime` | `any[]` | No |  |
+| `manga` | `any[]` | No |  |
 
 ### Operations
 

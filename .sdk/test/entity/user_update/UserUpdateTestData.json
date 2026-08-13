@@ -2,17 +2,20 @@
   "existing": {
     "user_update": {
       "USER_UPDATE00": {
-        "data": {},
+        "anime": [],
+        "manga": [],
         "username": "USERNAME01",
         "id": "USER_UPDATE00"
       },
       "USER_UPDATE01": {
-        "data": {},
+        "anime": [],
+        "manga": [],
         "username": "USERNAME01",
         "id": "USER_UPDATE01"
       },
       "USER_UPDATE02": {
-        "data": {},
+        "anime": [],
+        "manga": [],
         "username": "USERNAME01",
         "id": "USER_UPDATE02"
       }
@@ -21,7 +24,8 @@
   "new": {
     "user_update": {
       "user_update_ref01": {
-        "data": {}
+        "anime": [],
+        "manga": []
       }
     }
   }

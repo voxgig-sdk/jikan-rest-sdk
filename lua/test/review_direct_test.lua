@@ -60,11 +60,11 @@ function review_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["JIKANREST_TEST_REVIEW_ENTID"] = {},
-    ["JIKANREST_TEST_LIVE"] = "FALSE",
+    ["JIKAN_REST_TEST_REVIEW_ENTID"] = {},
+    ["JIKAN_REST_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["JIKANREST_TEST_LIVE"] == "TRUE"
+  local live = env["JIKAN_REST_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

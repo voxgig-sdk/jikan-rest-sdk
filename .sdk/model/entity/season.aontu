@@ -16,7 +16,7 @@ main: kit: entity: season: {
       type: "`$OBJECT`"
     }
     {
-      name: "season"
+      name: "seasons"
       req: false
       type: "`$ARRAY`"
     }
@@ -265,7 +265,7 @@ main: kit: entity: season: {
           ]
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

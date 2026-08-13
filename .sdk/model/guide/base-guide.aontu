@@ -11,10 +11,12 @@ guide: {
     }
     path: "/anime/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/characters": {
       action: "character": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/episodes": {
       action: "episode": {}
@@ -22,22 +24,27 @@ guide: {
     }
     path: "/anime/{id}/episodes/{episode}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/external": {
       action: "external": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/forum": {
       action: "forum": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/moreinfo": {
       action: "moreinfo": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/news": {
       action: "new": {}
@@ -46,14 +53,17 @@ guide: {
     path: "/anime/{id}/pictures": {
       action: "picture": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/recommendations": {
       action: "recommendation": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/relations": {
       action: "relation": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/reviews": {
       action: "review": {}
@@ -62,18 +72,22 @@ guide: {
     path: "/anime/{id}/staff": {
       action: "staff": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/statistics": {
       action: "statistic": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/streaming": {
       action: "streaming": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/themes": {
       action: "theme": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/userupdates": {
       action: "userupdate": {}
@@ -82,6 +96,7 @@ guide: {
     path: "/anime/{id}/videos": {
       action: "video": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/anime/{id}/videos/episodes": {
       action: "video_episode": {}
@@ -98,26 +113,32 @@ guide: {
     }
     path: "/characters/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/characters/{id}/anime": {
       action: "anime": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/characters/{id}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/characters/{id}/manga": {
       action: "manga": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/characters/{id}/pictures": {
       action: "picture": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/characters/{id}/voices": {
       action: "voice": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/top/characters": {
       op: list: method: *GET
@@ -130,6 +151,7 @@ guide: {
     }
     path: "/clubs/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/clubs/{id}/members": {
       action: "member": {}
@@ -138,16 +160,19 @@ guide: {
     path: "/clubs/{id}/relations": {
       action: "relation": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/clubs/{id}/staff": {
       action: "staff": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
   entity: external: {
     path: "/users/{username}/external": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
@@ -155,10 +180,12 @@ guide: {
     path: "/genres/anime": {
       action: "anime": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/genres/manga": {
       action: "manga": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
@@ -174,26 +201,32 @@ guide: {
     }
     path: "/manga/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/characters": {
       action: "character": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/external": {
       action: "external": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/forum": {
       action: "forum": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/moreinfo": {
       action: "moreinfo": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/news": {
       action: "new": {}
@@ -202,14 +235,17 @@ guide: {
     path: "/manga/{id}/pictures": {
       action: "picture": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/recommendations": {
       action: "recommendation": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/relations": {
       action: "relation": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/reviews": {
       action: "review": {}
@@ -218,6 +254,7 @@ guide: {
     path: "/manga/{id}/statistics": {
       action: "statistic": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/manga/{id}/userupdates": {
       action: "userupdate": {}
@@ -240,26 +277,32 @@ guide: {
     }
     path: "/people/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/people/{id}/anime": {
       action: "anime": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/people/{id}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/people/{id}/manga": {
       action: "manga": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/people/{id}/pictures": {
       action: "picture": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/people/{id}/voices": {
       action: "voice": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
@@ -269,14 +312,17 @@ guide: {
     }
     path: "/producers/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/producers/{id}/external": {
       action: "external": {}
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/producers/{id}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 
@@ -284,22 +330,27 @@ guide: {
     path: "/random/anime": {
       action: "anime": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/random/characters": {
       action: "character": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/random/manga": {
       action: "manga": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/random/people": {
       action: "person": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/random/users": {
       action: "user": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 
@@ -337,6 +388,7 @@ guide: {
   entity: season: {
     path: "/seasons": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
     path: "/seasons/now": {
       action: "now": {}
@@ -355,6 +407,7 @@ guide: {
     path: "/top/reviews": {
       action: "review": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 
@@ -364,10 +417,12 @@ guide: {
     }
     path: "/users/userbyid/{id}": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/users/{username}": {
       rename: param: "username": *"id"
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/users/{username}/animelist": {
       action: "animelist": {}
@@ -376,10 +431,12 @@ guide: {
     path: "/users/{username}/favorites": {
       action: "favorite": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/users/{username}/full": {
       action: "full": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
     path: "/users/{username}/mangalist": {
       action: "mangalist": {}
@@ -388,12 +445,14 @@ guide: {
     path: "/users/{username}/reviews": {
       action: "review": {}
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 
   entity: user_about: {
     path: "/users/{username}/about": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
@@ -412,18 +471,21 @@ guide: {
   entity: user_history: {
     path: "/users/{username}/history": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 
   entity: user_statistic: {
     path: "/users/{username}/statistics": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 
   entity: user_update: {
     path: "/users/{username}/userupdates": {
       op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
     }
   }
 

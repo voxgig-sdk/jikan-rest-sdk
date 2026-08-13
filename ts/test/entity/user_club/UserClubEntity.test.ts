@@ -26,8 +26,8 @@ import {
 describe('UserClubEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JIKANREST_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JIKANREST_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JIKAN_REST_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JIKAN_REST_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JikanRestSDK.test()
@@ -64,7 +64,7 @@ describe('UserClubEntity', async () => {
     const user_club_ref01_match: any = {}
     user_club_ref01_match['username'] = setup.idmap['username01']
 
-    const user_club_ref01_list = await user_club_ref01_ent.list(user_club_ref01_match)
+    const user_club_ref01_list = (await user_club_ref01_ent.list(user_club_ref01_match)).map((e: any) => e.data())
 
 
   })

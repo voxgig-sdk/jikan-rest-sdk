@@ -189,25 +189,76 @@ anime = client.Anime
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `String` | No |  |
+| `airing` | `Boolean` | No |  |
+| `approved` | `Boolean` | No |  |
 | `author_url` | `String` | No |  |
 | `author_username` | `String` | No |  |
+| `background` | `String` | No |  |
+| `broadcast` | `Hash` | No |  |
 | `character` | `Hash` | No |  |
-| `comment` | `Integer` | No |  |
-| `data` | `Hash` | No |  |
+| `comments` | `Integer` | No |  |
+| `completed` | `Integer` | No |  |
+| `data` | `Array` | No |  |
 | `date` | `String` | No |  |
+| `demographics` | `Array` | No |  |
+| `dropped` | `Integer` | No |  |
+| `duration` | `Integer` | No |  |
+| `endings` | `Array` | No |  |
 | `entry` | `Hash` | No |  |
-| `image` | `Hash` | No |  |
+| `episodes` | `Integer` | No |  |
+| `explicit_genres` | `Array` | No |  |
+| `external` | `Array` | No |  |
+| `favorites` | `Integer` | No |  |
+| `filler` | `Boolean` | No |  |
+| `genres` | `Array` | No |  |
+| `images` | `Hash` | No |  |
 | `last_comment` | `Hash` | No |  |
+| `licensors` | `Array` | No |  |
 | `mal_id` | `Integer` | No |  |
+| `members` | `Integer` | No |  |
+| `moreinfo` | `String` | No |  |
+| `music_videos` | `Array` | No |  |
 | `name` | `String` | No |  |
+| `on_hold` | `Integer` | No |  |
+| `openings` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
 | `person` | `Hash` | No |  |
-| `position` | `Array` | No |  |
+| `plan_to_watch` | `Integer` | No |  |
+| `popularity` | `Integer` | No |  |
+| `positions` | `Array` | No |  |
+| `producers` | `Array` | No |  |
+| `promo` | `Array` | No |  |
+| `rank` | `Integer` | No |  |
+| `rating` | `String` | No |  |
+| `recap` | `Boolean` | No |  |
 | `relation` | `String` | No |  |
+| `relations` | `Array` | No |  |
 | `role` | `String` | No |  |
+| `score` | `Float` | No |  |
+| `scored_by` | `Integer` | No |  |
+| `scores` | `Array` | No |  |
+| `season` | `String` | No |  |
+| `source` | `String` | No |  |
+| `status` | `String` | No |  |
+| `streaming` | `Array` | No |  |
+| `studios` | `Array` | No |  |
+| `synopsis` | `String` | No |  |
+| `theme` | `Hash` | No |  |
+| `themes` | `Array` | No |  |
 | `title` | `String` | No |  |
+| `title_english` | `String` | No |  |
+| `title_japanese` | `String` | No |  |
+| `title_romanji` | `String` | No |  |
+| `title_synonyms` | `Array` | No |  |
+| `titles` | `Array` | No |  |
+| `total` | `Integer` | No |  |
+| `trailer` | `Hash` | No |  |
+| `type` | `String` | No |  |
 | `url` | `String` | No |  |
-| `voice_actor` | `Array` | No |  |
+| `voice_actors` | `Array` | No |  |
+| `watching` | `Integer` | No |  |
+| `year` | `Integer` | No |  |
 
 ### Operations
 
@@ -267,15 +318,24 @@ character = client.Character
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `Hash` | No |  |
-| `data` | `Hash` | No |  |
+| `about` | `String` | No |  |
+| `anime` | `Array` | No |  |
+| `data` | `Array` | No |  |
+| `favorites` | `Integer` | No |  |
 | `image_url` | `String` | No |  |
+| `images` | `Hash` | No |  |
 | `language` | `String` | No |  |
 | `large_image_url` | `String` | No |  |
-| `manga` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `manga` | `Array` | No |  |
+| `name` | `String` | No |  |
+| `name_kanji` | `String` | No |  |
+| `nicknames` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
 | `person` | `Hash` | No |  |
 | `role` | `String` | No |  |
+| `url` | `String` | No |  |
+| `voices` | `Array` | No |  |
 
 ### Operations
 
@@ -335,7 +395,17 @@ club = client.Club
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
+| `access` | `String` | No |  |
+| `anime` | `Array` | No |  |
+| `category` | `String` | No |  |
+| `characters` | `Array` | No |  |
+| `created` | `String` | No |  |
+| `data` | `Array` | No |  |
+| `images` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `manga` | `Array` | No |  |
+| `members` | `Integer` | No |  |
+| `name` | `String` | No |  |
 | `pagination` | `Hash` | No |  |
 | `url` | `String` | No |  |
 | `username` | `String` | No |  |
@@ -559,22 +629,58 @@ manga = client.Manga
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `Boolean` | No |  |
 | `author_url` | `String` | No |  |
 | `author_username` | `String` | No |  |
+| `authors` | `Array` | No |  |
+| `background` | `String` | No |  |
+| `chapters` | `Integer` | No |  |
 | `character` | `Hash` | No |  |
-| `comment` | `Integer` | No |  |
-| `data` | `Hash` | No |  |
+| `comments` | `Integer` | No |  |
+| `completed` | `Integer` | No |  |
+| `data` | `Array` | No |  |
 | `date` | `String` | No |  |
+| `demographics` | `Array` | No |  |
+| `dropped` | `Integer` | No |  |
 | `entry` | `Hash` | No |  |
+| `explicit_genres` | `Array` | No |  |
+| `external` | `Array` | No |  |
+| `favorites` | `Integer` | No |  |
+| `genres` | `Array` | No |  |
+| `images` | `Hash` | No |  |
 | `jpg` | `Hash` | No |  |
 | `last_comment` | `Hash` | No |  |
 | `mal_id` | `Integer` | No |  |
+| `members` | `Integer` | No |  |
+| `moreinfo` | `String` | No |  |
 | `name` | `String` | No |  |
+| `on_hold` | `Integer` | No |  |
 | `pagination` | `Hash` | No |  |
+| `plan_to_read` | `Integer` | No |  |
+| `popularity` | `Integer` | No |  |
+| `published` | `Hash` | No |  |
+| `publishing` | `Boolean` | No |  |
+| `rank` | `Integer` | No |  |
+| `reading` | `Integer` | No |  |
 | `relation` | `String` | No |  |
+| `relations` | `Array` | No |  |
 | `role` | `String` | No |  |
+| `score` | `Float` | No |  |
+| `scored_by` | `Integer` | No |  |
+| `scores` | `Array` | No |  |
+| `serializations` | `Array` | No |  |
+| `status` | `String` | No |  |
+| `synopsis` | `String` | No |  |
+| `themes` | `Array` | No |  |
 | `title` | `String` | No |  |
+| `title_english` | `String` | No |  |
+| `title_japanese` | `String` | No |  |
+| `title_synonyms` | `Array` | No |  |
+| `titles` | `Array` | No |  |
+| `total` | `Integer` | No |  |
+| `type` | `String` | No |  |
 | `url` | `String` | No |  |
+| `volumes` | `Integer` | No |  |
 | `webp` | `Hash` | No |  |
 
 ### Operations
@@ -688,14 +794,26 @@ person = client.Person
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `Hash` | No |  |
+| `about` | `String` | No |  |
+| `alternate_names` | `Array` | No |  |
+| `anime` | `Array` | No |  |
+| `birthday` | `String` | No |  |
 | `character` | `Hash` | No |  |
-| `data` | `Hash` | No |  |
+| `data` | `Array` | No |  |
+| `family_name` | `String` | No |  |
+| `favorites` | `Integer` | No |  |
+| `given_name` | `String` | No |  |
+| `images` | `Hash` | No |  |
 | `jpg` | `Hash` | No |  |
-| `manga` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `manga` | `Array` | No |  |
+| `name` | `String` | No |  |
 | `pagination` | `Hash` | No |  |
 | `position` | `String` | No |  |
 | `role` | `String` | No |  |
+| `url` | `String` | No |  |
+| `voices` | `Array` | No |  |
+| `website_url` | `String` | No |  |
 
 ### Operations
 
@@ -755,9 +873,17 @@ producer = client.Producer
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
+| `about` | `String` | No |  |
+| `count` | `Integer` | No |  |
+| `data` | `Array` | No |  |
+| `established` | `String` | No |  |
+| `external` | `Array` | No |  |
+| `favorites` | `Integer` | No |  |
+| `images` | `Hash` | No |  |
+| `mal_id` | `Integer` | No |  |
 | `name` | `String` | No |  |
 | `pagination` | `Hash` | No |  |
+| `titles` | `Array` | No |  |
 | `url` | `String` | No |  |
 
 ### Operations
@@ -818,7 +944,62 @@ random = client.Random
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
+| `about` | `String` | No |  |
+| `aired` | `Hash` | No |  |
+| `airing` | `Boolean` | No |  |
+| `alternate_names` | `Array` | No |  |
+| `approved` | `Boolean` | No |  |
+| `authors` | `Array` | No |  |
+| `background` | `String` | No |  |
+| `birthday` | `String` | No |  |
+| `broadcast` | `Hash` | No |  |
+| `chapters` | `Integer` | No |  |
+| `demographics` | `Array` | No |  |
+| `duration` | `String` | No |  |
+| `episodes` | `Integer` | No |  |
+| `explicit_genres` | `Array` | No |  |
+| `family_name` | `String` | No |  |
+| `favorites` | `Integer` | No |  |
+| `gender` | `String` | No |  |
+| `genres` | `Array` | No |  |
+| `given_name` | `String` | No |  |
+| `images` | `Hash` | No |  |
+| `joined` | `String` | No |  |
+| `last_online` | `String` | No |  |
+| `licensors` | `Array` | No |  |
+| `location` | `String` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `members` | `Integer` | No |  |
+| `name` | `String` | No |  |
+| `name_kanji` | `String` | No |  |
+| `nicknames` | `Array` | No |  |
+| `popularity` | `Integer` | No |  |
+| `producers` | `Array` | No |  |
+| `published` | `Hash` | No |  |
+| `publishing` | `Boolean` | No |  |
+| `rank` | `Integer` | No |  |
+| `rating` | `String` | No |  |
+| `score` | `Float` | No |  |
+| `scored_by` | `Integer` | No |  |
+| `season` | `String` | No |  |
+| `serializations` | `Array` | No |  |
+| `source` | `String` | No |  |
+| `status` | `String` | No |  |
+| `studios` | `Array` | No |  |
+| `synopsis` | `String` | No |  |
+| `themes` | `Array` | No |  |
+| `title` | `String` | No |  |
+| `title_english` | `String` | No |  |
+| `title_japanese` | `String` | No |  |
+| `title_synonyms` | `Array` | No |  |
+| `titles` | `Array` | No |  |
+| `trailer` | `Hash` | No |  |
+| `type` | `String` | No |  |
+| `url` | `String` | No |  |
+| `username` | `String` | No |  |
+| `volumes` | `Integer` | No |  |
+| `website_url` | `String` | No |  |
+| `year` | `Integer` | No |  |
 
 ### Operations
 
@@ -1024,7 +1205,7 @@ season = client.Season
 | --- | --- | --- | --- |
 | `data` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
-| `season` | `Array` | No |  |
+| `seasons` | `Array` | No |  |
 | `year` | `Integer` | No |  |
 
 ### Operations
@@ -1077,7 +1258,8 @@ top = client.Top
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Object` | No |  |
+| `data` | `Array` | No |  |
+| `pagination` | `Hash` | No |  |
 
 ### Operations
 
@@ -1129,8 +1311,23 @@ user = client.User
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Object` | No |  |
+| `anime` | `Array` | No |  |
+| `birthday` | `String` | No |  |
+| `characters` | `Array` | No |  |
+| `data` | `Array` | No |  |
+| `external` | `Array` | No |  |
+| `gender` | `String` | No |  |
+| `images` | `Hash` | No |  |
+| `joined` | `String` | No |  |
+| `last_online` | `String` | No |  |
+| `location` | `String` | No |  |
+| `mal_id` | `Integer` | No |  |
+| `manga` | `Array` | No |  |
 | `pagination` | `Hash` | No |  |
+| `people` | `Array` | No |  |
+| `statistics` | `Hash` | No |  |
+| `url` | `String` | No |  |
+| `username` | `String` | No |  |
 
 ### Operations
 
@@ -1402,7 +1599,8 @@ user_statistic = client.UserStatistic
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
+| `anime` | `Hash` | No |  |
+| `manga` | `Hash` | No |  |
 
 ### Operations
 
@@ -1454,7 +1652,8 @@ user_update = client.UserUpdate
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Hash` | No |  |
+| `anime` | `Array` | No |  |
+| `manga` | `Array` | No |  |
 
 ### Operations
 

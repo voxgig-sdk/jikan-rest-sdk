@@ -186,25 +186,76 @@ local anime = client:Anime(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `string` | No |  |
+| `airing` | `boolean` | No |  |
+| `approved` | `boolean` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `background` | `string` | No |  |
+| `broadcast` | `table` | No |  |
 | `character` | `table` | No |  |
-| `comment` | `number` | No |  |
+| `comments` | `number` | No |  |
+| `completed` | `number` | No |  |
 | `data` | `table` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `table` | No |  |
+| `dropped` | `number` | No |  |
+| `duration` | `number` | No |  |
+| `endings` | `table` | No |  |
 | `entry` | `table` | No |  |
-| `image` | `table` | No |  |
+| `episodes` | `number` | No |  |
+| `explicit_genres` | `table` | No |  |
+| `external` | `table` | No |  |
+| `favorites` | `number` | No |  |
+| `filler` | `boolean` | No |  |
+| `genres` | `table` | No |  |
+| `images` | `table` | No |  |
 | `last_comment` | `table` | No |  |
+| `licensors` | `table` | No |  |
 | `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `moreinfo` | `string` | No |  |
+| `music_videos` | `table` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `number` | No |  |
+| `openings` | `table` | No |  |
 | `pagination` | `table` | No |  |
 | `person` | `table` | No |  |
-| `position` | `table` | No |  |
+| `plan_to_watch` | `number` | No |  |
+| `popularity` | `number` | No |  |
+| `positions` | `table` | No |  |
+| `producers` | `table` | No |  |
+| `promo` | `table` | No |  |
+| `rank` | `number` | No |  |
+| `rating` | `string` | No |  |
+| `recap` | `boolean` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `table` | No |  |
 | `role` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `scores` | `table` | No |  |
+| `season` | `string` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `streaming` | `table` | No |  |
+| `studios` | `table` | No |  |
+| `synopsis` | `string` | No |  |
+| `theme` | `table` | No |  |
+| `themes` | `table` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_romanji` | `string` | No |  |
+| `title_synonyms` | `table` | No |  |
+| `titles` | `table` | No |  |
+| `total` | `number` | No |  |
+| `trailer` | `table` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
-| `voice_actor` | `table` | No |  |
+| `voice_actors` | `table` | No |  |
+| `watching` | `number` | No |  |
+| `year` | `number` | No |  |
 
 ### Operations
 
@@ -264,15 +315,24 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
 | `anime` | `table` | No |  |
 | `data` | `table` | No |  |
+| `favorites` | `number` | No |  |
 | `image_url` | `string` | No |  |
+| `images` | `table` | No |  |
 | `language` | `string` | No |  |
 | `large_image_url` | `string` | No |  |
+| `mal_id` | `number` | No |  |
 | `manga` | `table` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `table` | No |  |
 | `pagination` | `table` | No |  |
 | `person` | `table` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `table` | No |  |
 
 ### Operations
 
@@ -332,7 +392,17 @@ local club = client:Club(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `access` | `string` | No |  |
+| `anime` | `table` | No |  |
+| `category` | `string` | No |  |
+| `characters` | `table` | No |  |
+| `created` | `string` | No |  |
 | `data` | `table` | No |  |
+| `images` | `table` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `table` | No |  |
+| `members` | `number` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `table` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |
@@ -556,22 +626,58 @@ local manga = client:Manga(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `boolean` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `authors` | `table` | No |  |
+| `background` | `string` | No |  |
+| `chapters` | `number` | No |  |
 | `character` | `table` | No |  |
-| `comment` | `number` | No |  |
+| `comments` | `number` | No |  |
+| `completed` | `number` | No |  |
 | `data` | `table` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `table` | No |  |
+| `dropped` | `number` | No |  |
 | `entry` | `table` | No |  |
+| `explicit_genres` | `table` | No |  |
+| `external` | `table` | No |  |
+| `favorites` | `number` | No |  |
+| `genres` | `table` | No |  |
+| `images` | `table` | No |  |
 | `jpg` | `table` | No |  |
 | `last_comment` | `table` | No |  |
 | `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `moreinfo` | `string` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `number` | No |  |
 | `pagination` | `table` | No |  |
+| `plan_to_read` | `number` | No |  |
+| `popularity` | `number` | No |  |
+| `published` | `table` | No |  |
+| `publishing` | `boolean` | No |  |
+| `rank` | `number` | No |  |
+| `reading` | `number` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `table` | No |  |
 | `role` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `scores` | `table` | No |  |
+| `serializations` | `table` | No |  |
+| `status` | `string` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `table` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `table` | No |  |
+| `titles` | `table` | No |  |
+| `total` | `number` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
+| `volumes` | `number` | No |  |
 | `webp` | `table` | No |  |
 
 ### Operations
@@ -685,14 +791,26 @@ local person = client:Person(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
+| `alternate_names` | `table` | No |  |
 | `anime` | `table` | No |  |
+| `birthday` | `string` | No |  |
 | `character` | `table` | No |  |
 | `data` | `table` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `number` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `table` | No |  |
 | `jpg` | `table` | No |  |
+| `mal_id` | `number` | No |  |
 | `manga` | `table` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `table` | No |  |
 | `position` | `string` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `table` | No |  |
+| `website_url` | `string` | No |  |
 
 ### Operations
 
@@ -752,9 +870,17 @@ local producer = client:Producer(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
+| `count` | `number` | No |  |
 | `data` | `table` | No |  |
+| `established` | `string` | No |  |
+| `external` | `table` | No |  |
+| `favorites` | `number` | No |  |
+| `images` | `table` | No |  |
+| `mal_id` | `number` | No |  |
 | `name` | `string` | No |  |
 | `pagination` | `table` | No |  |
+| `titles` | `table` | No |  |
 | `url` | `string` | No |  |
 
 ### Operations
@@ -815,7 +941,62 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
+| `about` | `string` | No |  |
+| `aired` | `table` | No |  |
+| `airing` | `boolean` | No |  |
+| `alternate_names` | `table` | No |  |
+| `approved` | `boolean` | No |  |
+| `authors` | `table` | No |  |
+| `background` | `string` | No |  |
+| `birthday` | `string` | No |  |
+| `broadcast` | `table` | No |  |
+| `chapters` | `number` | No |  |
+| `demographics` | `table` | No |  |
+| `duration` | `string` | No |  |
+| `episodes` | `number` | No |  |
+| `explicit_genres` | `table` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `number` | No |  |
+| `gender` | `string` | No |  |
+| `genres` | `table` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `table` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `licensors` | `table` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `number` | No |  |
+| `members` | `number` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `table` | No |  |
+| `popularity` | `number` | No |  |
+| `producers` | `table` | No |  |
+| `published` | `table` | No |  |
+| `publishing` | `boolean` | No |  |
+| `rank` | `number` | No |  |
+| `rating` | `string` | No |  |
+| `score` | `number` | No |  |
+| `scored_by` | `number` | No |  |
+| `season` | `string` | No |  |
+| `serializations` | `table` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `studios` | `table` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `table` | No |  |
+| `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `table` | No |  |
+| `titles` | `table` | No |  |
+| `trailer` | `table` | No |  |
+| `type` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
+| `volumes` | `number` | No |  |
+| `website_url` | `string` | No |  |
+| `year` | `number` | No |  |
 
 ### Operations
 
@@ -1021,7 +1202,7 @@ local season = client:Season(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `season` | `table` | No |  |
+| `seasons` | `table` | No |  |
 | `year` | `number` | No |  |
 
 ### Operations
@@ -1074,7 +1255,8 @@ local top = client:Top(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `data` | `table` | No |  |
+| `pagination` | `table` | No |  |
 
 ### Operations
 
@@ -1126,8 +1308,23 @@ local user = client:User(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `anime` | `table` | No |  |
+| `birthday` | `string` | No |  |
+| `characters` | `table` | No |  |
+| `data` | `table` | No |  |
+| `external` | `table` | No |  |
+| `gender` | `string` | No |  |
+| `images` | `table` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `number` | No |  |
+| `manga` | `table` | No |  |
 | `pagination` | `table` | No |  |
+| `people` | `table` | No |  |
+| `statistics` | `table` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -1399,7 +1596,8 @@ local user_statistic = client:UserStatistic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
+| `anime` | `table` | No |  |
+| `manga` | `table` | No |  |
 
 ### Operations
 
@@ -1451,7 +1649,8 @@ local user_update = client:UserUpdate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `table` | No |  |
+| `anime` | `table` | No |  |
+| `manga` | `table` | No |  |
 
 ### Operations
 

@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'JikanRest',
   }
 
 
@@ -128,136 +128,493 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "author_url",
+          "name": "aired",
           "req": false,
           "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "author_username",
+          "name": "airing",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$BOOLEAN`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "character",
+          "name": "approved",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$BOOLEAN`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "comment",
+          "name": "author_url",
           "req": false,
-          "type": "`$INTEGER`",
+          "type": "`$STRING`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "data",
+          "name": "author_username",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "date",
+          "name": "background",
           "req": false,
           "type": "`$STRING`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "entry",
+          "name": "broadcast",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "image",
+          "name": "character",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "last_comment",
+          "name": "comments",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$INTEGER`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "mal_id",
+          "name": "completed",
           "req": false,
           "type": "`$INTEGER`",
           "index$": 9
         },
         {
           "active": true,
+          "name": "data",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "date",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "demographics",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 12
+        },
+        {
+          "active": true,
+          "name": "dropped",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "duration",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 14
+        },
+        {
+          "active": true,
+          "name": "endings",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "entry",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 16
+        },
+        {
+          "active": true,
+          "name": "episodes",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 17
+        },
+        {
+          "active": true,
+          "name": "explicit_genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 18
+        },
+        {
+          "active": true,
+          "name": "external",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 19
+        },
+        {
+          "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 20
+        },
+        {
+          "active": true,
+          "name": "filler",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 21
+        },
+        {
+          "active": true,
+          "name": "genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 22
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 23
+        },
+        {
+          "active": true,
+          "name": "last_comment",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 24
+        },
+        {
+          "active": true,
+          "name": "licensors",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 25
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 26
+        },
+        {
+          "active": true,
+          "name": "members",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 27
+        },
+        {
+          "active": true,
+          "name": "moreinfo",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 28
+        },
+        {
+          "active": true,
+          "name": "music_videos",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 29
+        },
+        {
+          "active": true,
           "name": "name",
           "req": false,
           "type": "`$STRING`",
-          "index$": 10
+          "index$": 30
+        },
+        {
+          "active": true,
+          "name": "on_hold",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 31
+        },
+        {
+          "active": true,
+          "name": "openings",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 32
         },
         {
           "active": true,
           "name": "pagination",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 11
+          "index$": 33
         },
         {
           "active": true,
           "name": "person",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 12
+          "index$": 34
         },
         {
           "active": true,
-          "name": "position",
+          "name": "plan_to_watch",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 35
+        },
+        {
+          "active": true,
+          "name": "popularity",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 36
+        },
+        {
+          "active": true,
+          "name": "positions",
           "req": false,
           "type": "`$ARRAY`",
-          "index$": 13
+          "index$": 37
+        },
+        {
+          "active": true,
+          "name": "producers",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 38
+        },
+        {
+          "active": true,
+          "name": "promo",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 39
+        },
+        {
+          "active": true,
+          "name": "rank",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 40
+        },
+        {
+          "active": true,
+          "name": "rating",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 41
+        },
+        {
+          "active": true,
+          "name": "recap",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 42
         },
         {
           "active": true,
           "name": "relation",
           "req": false,
           "type": "`$STRING`",
-          "index$": 14
+          "index$": 43
+        },
+        {
+          "active": true,
+          "name": "relations",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 44
         },
         {
           "active": true,
           "name": "role",
           "req": false,
           "type": "`$STRING`",
-          "index$": 15
+          "index$": 45
+        },
+        {
+          "active": true,
+          "name": "score",
+          "req": false,
+          "type": "`$NUMBER`",
+          "index$": 46
+        },
+        {
+          "active": true,
+          "name": "scored_by",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 47
+        },
+        {
+          "active": true,
+          "name": "scores",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 48
+        },
+        {
+          "active": true,
+          "name": "season",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 49
+        },
+        {
+          "active": true,
+          "name": "source",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 50
+        },
+        {
+          "active": true,
+          "name": "status",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 51
+        },
+        {
+          "active": true,
+          "name": "streaming",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 52
+        },
+        {
+          "active": true,
+          "name": "studios",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 53
+        },
+        {
+          "active": true,
+          "name": "synopsis",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 54
+        },
+        {
+          "active": true,
+          "name": "theme",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 55
+        },
+        {
+          "active": true,
+          "name": "themes",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 56
         },
         {
           "active": true,
           "name": "title",
           "req": false,
           "type": "`$STRING`",
-          "index$": 16
+          "index$": 57
+        },
+        {
+          "active": true,
+          "name": "title_english",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 58
+        },
+        {
+          "active": true,
+          "name": "title_japanese",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 59
+        },
+        {
+          "active": true,
+          "name": "title_romanji",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 60
+        },
+        {
+          "active": true,
+          "name": "title_synonyms",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 61
+        },
+        {
+          "active": true,
+          "name": "titles",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 62
+        },
+        {
+          "active": true,
+          "name": "total",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 63
+        },
+        {
+          "active": true,
+          "name": "trailer",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 64
+        },
+        {
+          "active": true,
+          "name": "type",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 65
         },
         {
           "active": true,
           "name": "url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 17
+          "index$": 66
         },
         {
           "active": true,
-          "name": "voice_actor",
+          "name": "voice_actors",
           "req": false,
           "type": "`$ARRAY`",
-          "index$": 18
+          "index$": 67
+        },
+        {
+          "active": true,
+          "name": "watching",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 68
+        },
+        {
+          "active": true,
+          "name": "year",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 69
         }
       ],
       "name": "anime",
@@ -424,6 +781,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime",
               "parts": [
@@ -512,6 +870,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/top/anime",
               "parts": [
@@ -574,6 +933,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/reviews",
               "parts": [
@@ -620,6 +980,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/episodes",
               "parts": [
@@ -664,6 +1025,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/forum",
               "parts": [
@@ -680,7 +1042,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             },
@@ -708,6 +1070,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/news",
               "parts": [
@@ -752,6 +1115,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/userupdates",
               "parts": [
@@ -796,6 +1160,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/videos/episodes",
               "parts": [
@@ -831,6 +1196,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/characters",
               "parts": [
@@ -846,7 +1212,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 8
             },
@@ -864,6 +1230,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/external",
               "parts": [
@@ -879,7 +1246,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 9
             },
@@ -897,6 +1264,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/pictures",
               "parts": [
@@ -912,7 +1280,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 10
             },
@@ -930,6 +1298,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/recommendations",
               "parts": [
@@ -945,7 +1314,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 11
             },
@@ -963,6 +1332,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/relations",
               "parts": [
@@ -978,7 +1348,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 12
             },
@@ -996,6 +1366,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/staff",
               "parts": [
@@ -1011,7 +1382,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 13
             },
@@ -1029,6 +1400,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/streaming",
               "parts": [
@@ -1044,7 +1416,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 14
             }
@@ -1079,6 +1451,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/episodes/{episode}",
               "parts": [
@@ -1095,7 +1468,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -1114,6 +1487,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}",
               "parts": [
@@ -1127,7 +1501,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             },
@@ -1145,6 +1519,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/full",
               "parts": [
@@ -1160,7 +1535,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
@@ -1178,6 +1553,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/moreinfo",
               "parts": [
@@ -1193,7 +1569,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
@@ -1211,6 +1587,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/statistics",
               "parts": [
@@ -1226,7 +1603,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             },
@@ -1244,6 +1621,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/themes",
               "parts": [
@@ -1259,7 +1637,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 5
             },
@@ -1277,6 +1655,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/anime/{id}/videos",
               "parts": [
@@ -1292,7 +1671,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 6
             }
@@ -1312,66 +1691,129 @@ class Config {
       "fields": [
         {
           "active": true,
+          "name": "about",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 0
+        },
+        {
+          "active": true,
           "name": "anime",
           "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$ARRAY`",
+          "index$": 1
         },
         {
           "active": true,
           "name": "data",
           "req": false,
-          "type": "`$OBJECT`",
-          "index$": 1
+          "type": "`$ARRAY`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 3
         },
         {
           "active": true,
           "name": "image_url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 2
-        },
-        {
-          "active": true,
-          "name": "language",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
-        },
-        {
-          "active": true,
-          "name": "large_image_url",
-          "req": false,
-          "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "manga",
+          "name": "images",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 5
         },
         {
           "active": true,
+          "name": "language",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "large_image_url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "name_kanji",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "nicknames",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 12
+        },
+        {
+          "active": true,
           "name": "pagination",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 6
+          "index$": 13
         },
         {
           "active": true,
           "name": "person",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 7
+          "index$": 14
         },
         {
           "active": true,
           "name": "role",
           "req": false,
           "type": "`$STRING`",
-          "index$": 8
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 16
+        },
+        {
+          "active": true,
+          "name": "voices",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 17
         }
       ],
       "name": "character",
@@ -1434,6 +1876,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters",
               "parts": [
@@ -1477,6 +1920,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/top/characters",
               "parts": [
@@ -1509,6 +1953,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}/anime",
               "parts": [
@@ -1524,7 +1969,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
@@ -1542,6 +1987,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}/manga",
               "parts": [
@@ -1557,7 +2003,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
@@ -1575,6 +2021,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}/pictures",
               "parts": [
@@ -1590,7 +2037,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             },
@@ -1608,6 +2055,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}/voices",
               "parts": [
@@ -1623,7 +2071,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 5
             }
@@ -1649,6 +2097,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}",
               "parts": [
@@ -1662,7 +2111,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -1680,6 +2129,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/characters/{id}/full",
               "parts": [
@@ -1695,7 +2145,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -1711,31 +2161,101 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "data",
+          "name": "access",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "pagination",
+          "name": "anime",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$ARRAY`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "url",
+          "name": "category",
           "req": false,
           "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
+          "name": "characters",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "created",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "data",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "members",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "pagination",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 12
+        },
+        {
+          "active": true,
           "name": "username",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 13
         }
       ],
       "name": "club",
@@ -1814,6 +2334,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/clubs",
               "parts": [
@@ -1861,6 +2382,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/clubs/{id}/members",
               "parts": [
@@ -1895,6 +2417,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/clubs/{id}/staff",
               "parts": [
@@ -1910,7 +2433,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             }
@@ -1936,6 +2459,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/clubs/{id}",
               "parts": [
@@ -1949,7 +2473,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -1967,6 +2491,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/clubs/{id}/relations",
               "parts": [
@@ -1982,7 +2507,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -2032,6 +2557,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/external",
               "parts": [
@@ -2046,7 +2572,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -2113,6 +2639,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/genres/anime",
               "parts": [
@@ -2127,7 +2654,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -2145,6 +2672,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/genres/manga",
               "parts": [
@@ -2159,7 +2687,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -2248,6 +2776,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/magazines",
               "parts": [
@@ -2281,122 +2810,374 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "author_url",
+          "name": "approved",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$BOOLEAN`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "author_username",
+          "name": "author_url",
           "req": false,
           "type": "`$STRING`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "character",
+          "name": "author_username",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "comment",
+          "name": "authors",
           "req": false,
-          "type": "`$INTEGER`",
+          "type": "`$ARRAY`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "data",
+          "name": "background",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$STRING`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "date",
+          "name": "chapters",
           "req": false,
-          "type": "`$STRING`",
+          "type": "`$INTEGER`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "entry",
+          "name": "character",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "jpg",
+          "name": "comments",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$INTEGER`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "last_comment",
+          "name": "completed",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$INTEGER`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "mal_id",
+          "name": "data",
           "req": false,
-          "type": "`$INTEGER`",
+          "type": "`$ARRAY`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "name",
+          "name": "date",
           "req": false,
           "type": "`$STRING`",
           "index$": 10
         },
         {
           "active": true,
+          "name": "demographics",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "dropped",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 12
+        },
+        {
+          "active": true,
+          "name": "entry",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "explicit_genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 14
+        },
+        {
+          "active": true,
+          "name": "external",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 16
+        },
+        {
+          "active": true,
+          "name": "genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 17
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 18
+        },
+        {
+          "active": true,
+          "name": "jpg",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 19
+        },
+        {
+          "active": true,
+          "name": "last_comment",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 20
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 21
+        },
+        {
+          "active": true,
+          "name": "members",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 22
+        },
+        {
+          "active": true,
+          "name": "moreinfo",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 23
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 24
+        },
+        {
+          "active": true,
+          "name": "on_hold",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 25
+        },
+        {
+          "active": true,
           "name": "pagination",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 11
+          "index$": 26
+        },
+        {
+          "active": true,
+          "name": "plan_to_read",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 27
+        },
+        {
+          "active": true,
+          "name": "popularity",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 28
+        },
+        {
+          "active": true,
+          "name": "published",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 29
+        },
+        {
+          "active": true,
+          "name": "publishing",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 30
+        },
+        {
+          "active": true,
+          "name": "rank",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 31
+        },
+        {
+          "active": true,
+          "name": "reading",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 32
         },
         {
           "active": true,
           "name": "relation",
           "req": false,
           "type": "`$STRING`",
-          "index$": 12
+          "index$": 33
+        },
+        {
+          "active": true,
+          "name": "relations",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 34
         },
         {
           "active": true,
           "name": "role",
           "req": false,
           "type": "`$STRING`",
-          "index$": 13
+          "index$": 35
+        },
+        {
+          "active": true,
+          "name": "score",
+          "req": false,
+          "type": "`$NUMBER`",
+          "index$": 36
+        },
+        {
+          "active": true,
+          "name": "scored_by",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 37
+        },
+        {
+          "active": true,
+          "name": "scores",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 38
+        },
+        {
+          "active": true,
+          "name": "serializations",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 39
+        },
+        {
+          "active": true,
+          "name": "status",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 40
+        },
+        {
+          "active": true,
+          "name": "synopsis",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 41
+        },
+        {
+          "active": true,
+          "name": "themes",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 42
         },
         {
           "active": true,
           "name": "title",
           "req": false,
           "type": "`$STRING`",
-          "index$": 14
+          "index$": 43
+        },
+        {
+          "active": true,
+          "name": "title_english",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 44
+        },
+        {
+          "active": true,
+          "name": "title_japanese",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 45
+        },
+        {
+          "active": true,
+          "name": "title_synonyms",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 46
+        },
+        {
+          "active": true,
+          "name": "titles",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 47
+        },
+        {
+          "active": true,
+          "name": "total",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 48
+        },
+        {
+          "active": true,
+          "name": "type",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 49
         },
         {
           "active": true,
           "name": "url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 15
+          "index$": 50
+        },
+        {
+          "active": true,
+          "name": "volumes",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 51
         },
         {
           "active": true,
           "name": "webp",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 16
+          "index$": 52
         }
       ],
       "name": "manga",
@@ -2555,6 +3336,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga",
               "parts": [
@@ -2626,6 +3408,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/top/manga",
               "parts": [
@@ -2686,6 +3469,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/reviews",
               "parts": [
@@ -2732,6 +3516,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/forum",
               "parts": [
@@ -2748,7 +3533,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
@@ -2776,6 +3561,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/news",
               "parts": [
@@ -2820,6 +3606,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/userupdates",
               "parts": [
@@ -2854,6 +3641,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/characters",
               "parts": [
@@ -2869,7 +3657,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 6
             },
@@ -2887,6 +3675,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/external",
               "parts": [
@@ -2902,7 +3691,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 7
             },
@@ -2920,6 +3709,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/pictures",
               "parts": [
@@ -2935,7 +3725,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 8
             },
@@ -2953,6 +3743,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/recommendations",
               "parts": [
@@ -2968,7 +3759,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 9
             },
@@ -2986,6 +3777,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/relations",
               "parts": [
@@ -3001,7 +3793,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 10
             }
@@ -3027,6 +3819,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}",
               "parts": [
@@ -3040,7 +3833,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -3058,6 +3851,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/full",
               "parts": [
@@ -3073,7 +3867,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             },
@@ -3091,6 +3885,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/moreinfo",
               "parts": [
@@ -3106,7 +3901,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
@@ -3124,6 +3919,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/manga/{id}/statistics",
               "parts": [
@@ -3139,7 +3935,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             }
@@ -3196,6 +3992,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/top/people",
               "parts": [
@@ -3226,59 +4023,143 @@ class Config {
       "fields": [
         {
           "active": true,
+          "name": "about",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 0
+        },
+        {
+          "active": true,
+          "name": "alternate_names",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 1
+        },
+        {
+          "active": true,
           "name": "anime",
           "req": false,
-          "type": "`$OBJECT`",
-          "index$": 0
+          "type": "`$ARRAY`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "birthday",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 3
         },
         {
           "active": true,
           "name": "character",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 1
+          "index$": 4
         },
         {
           "active": true,
           "name": "data",
           "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
-        },
-        {
-          "active": true,
-          "name": "jpg",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 3
-        },
-        {
-          "active": true,
-          "name": "manga",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 4
-        },
-        {
-          "active": true,
-          "name": "pagination",
-          "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$ARRAY`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "position",
+          "name": "family_name",
           "req": false,
           "type": "`$STRING`",
           "index$": 6
         },
         {
           "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "given_name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "jpg",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 12
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "pagination",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 14
+        },
+        {
+          "active": true,
+          "name": "position",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 15
+        },
+        {
+          "active": true,
           "name": "role",
           "req": false,
           "type": "`$STRING`",
-          "index$": 7
+          "index$": 16
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 17
+        },
+        {
+          "active": true,
+          "name": "voices",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 18
+        },
+        {
+          "active": true,
+          "name": "website_url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 19
         }
       ],
       "name": "person",
@@ -3341,6 +4222,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people",
               "parts": [
@@ -3376,6 +4258,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}/anime",
               "parts": [
@@ -3391,7 +4274,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             },
@@ -3409,6 +4292,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}/manga",
               "parts": [
@@ -3424,7 +4308,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
@@ -3442,6 +4326,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}/pictures",
               "parts": [
@@ -3457,7 +4342,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
@@ -3475,6 +4360,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}/voices",
               "parts": [
@@ -3490,7 +4376,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             }
@@ -3516,6 +4402,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}",
               "parts": [
@@ -3529,7 +4416,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -3547,6 +4434,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/people/{id}/full",
               "parts": [
@@ -3562,7 +4450,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -3578,31 +4466,87 @@ class Config {
       "fields": [
         {
           "active": true,
+          "name": "about",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 0
+        },
+        {
+          "active": true,
+          "name": "count",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 1
+        },
+        {
+          "active": true,
           "name": "data",
           "req": false,
+          "type": "`$ARRAY`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "established",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "external",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
           "type": "`$OBJECT`",
-          "index$": 0
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 7
         },
         {
           "active": true,
           "name": "name",
           "req": false,
           "type": "`$STRING`",
-          "index$": 1
+          "index$": 8
         },
         {
           "active": true,
           "name": "pagination",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 2
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "titles",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 10
         },
         {
           "active": true,
           "name": "url",
           "req": false,
           "type": "`$STRING`",
-          "index$": 3
+          "index$": 11
         }
       ],
       "name": "producer",
@@ -3665,6 +4609,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/producers",
               "parts": [
@@ -3700,6 +4645,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/producers/{id}/external",
               "parts": [
@@ -3715,7 +4661,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -3741,6 +4687,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/producers/{id}",
               "parts": [
@@ -3754,7 +4701,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
@@ -3772,6 +4719,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/producers/{id}/full",
               "parts": [
@@ -3787,7 +4735,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             }
@@ -3803,10 +4751,395 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "data",
+          "name": "about",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 0
+        },
+        {
+          "active": true,
+          "name": "aired",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 0
+          "index$": 1
+        },
+        {
+          "active": true,
+          "name": "airing",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 2
+        },
+        {
+          "active": true,
+          "name": "alternate_names",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "approved",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "authors",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "background",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "birthday",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "broadcast",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "chapters",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "demographics",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "duration",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 11
+        },
+        {
+          "active": true,
+          "name": "episodes",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 12
+        },
+        {
+          "active": true,
+          "name": "explicit_genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "family_name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 14
+        },
+        {
+          "active": true,
+          "name": "favorites",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "gender",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 16
+        },
+        {
+          "active": true,
+          "name": "genres",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 17
+        },
+        {
+          "active": true,
+          "name": "given_name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 18
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 19
+        },
+        {
+          "active": true,
+          "name": "joined",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 20
+        },
+        {
+          "active": true,
+          "name": "last_online",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 21
+        },
+        {
+          "active": true,
+          "name": "licensors",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 22
+        },
+        {
+          "active": true,
+          "name": "location",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 23
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 24
+        },
+        {
+          "active": true,
+          "name": "members",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 25
+        },
+        {
+          "active": true,
+          "name": "name",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 26
+        },
+        {
+          "active": true,
+          "name": "name_kanji",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 27
+        },
+        {
+          "active": true,
+          "name": "nicknames",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 28
+        },
+        {
+          "active": true,
+          "name": "popularity",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 29
+        },
+        {
+          "active": true,
+          "name": "producers",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 30
+        },
+        {
+          "active": true,
+          "name": "published",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 31
+        },
+        {
+          "active": true,
+          "name": "publishing",
+          "req": false,
+          "type": "`$BOOLEAN`",
+          "index$": 32
+        },
+        {
+          "active": true,
+          "name": "rank",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 33
+        },
+        {
+          "active": true,
+          "name": "rating",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 34
+        },
+        {
+          "active": true,
+          "name": "score",
+          "req": false,
+          "type": "`$NUMBER`",
+          "index$": 35
+        },
+        {
+          "active": true,
+          "name": "scored_by",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 36
+        },
+        {
+          "active": true,
+          "name": "season",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 37
+        },
+        {
+          "active": true,
+          "name": "serializations",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 38
+        },
+        {
+          "active": true,
+          "name": "source",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 39
+        },
+        {
+          "active": true,
+          "name": "status",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 40
+        },
+        {
+          "active": true,
+          "name": "studios",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 41
+        },
+        {
+          "active": true,
+          "name": "synopsis",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 42
+        },
+        {
+          "active": true,
+          "name": "themes",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 43
+        },
+        {
+          "active": true,
+          "name": "title",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 44
+        },
+        {
+          "active": true,
+          "name": "title_english",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 45
+        },
+        {
+          "active": true,
+          "name": "title_japanese",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 46
+        },
+        {
+          "active": true,
+          "name": "title_synonyms",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 47
+        },
+        {
+          "active": true,
+          "name": "titles",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 48
+        },
+        {
+          "active": true,
+          "name": "trailer",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 49
+        },
+        {
+          "active": true,
+          "name": "type",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 50
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 51
+        },
+        {
+          "active": true,
+          "name": "username",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 52
+        },
+        {
+          "active": true,
+          "name": "volumes",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 53
+        },
+        {
+          "active": true,
+          "name": "website_url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 54
+        },
+        {
+          "active": true,
+          "name": "year",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 55
         }
       ],
       "name": "random",
@@ -3818,6 +5151,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random/anime",
               "parts": [
@@ -3829,13 +5163,14 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             },
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random/characters",
               "parts": [
@@ -3847,13 +5182,14 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 1
             },
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random/manga",
               "parts": [
@@ -3865,13 +5201,14 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random/people",
               "parts": [
@@ -3883,13 +5220,14 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/random/users",
               "parts": [
@@ -3901,7 +5239,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             }
@@ -3961,6 +5299,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/recommendations",
               "parts": [
@@ -3994,6 +5333,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/recommendations/anime",
               "parts": [
@@ -4026,6 +5366,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/recommendations/manga",
               "parts": [
@@ -4094,6 +5435,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/reviews/anime",
               "parts": [
@@ -4144,6 +5486,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/reviews/manga",
               "parts": [
@@ -4249,6 +5592,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/schedules",
               "parts": [
@@ -4296,7 +5640,7 @@ class Config {
         },
         {
           "active": true,
-          "name": "season",
+          "name": "seasons",
           "req": false,
           "type": "`$ARRAY`",
           "index$": 2
@@ -4389,6 +5733,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/seasons/{year}/{season}",
               "parts": [
@@ -4468,6 +5813,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/seasons/now",
               "parts": [
@@ -4545,6 +5891,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/seasons/upcoming",
               "parts": [
@@ -4571,6 +5918,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/seasons",
               "parts": [
@@ -4579,7 +5927,7 @@ class Config {
               "select": {},
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             }
@@ -4601,8 +5949,15 @@ class Config {
           "active": true,
           "name": "data",
           "req": false,
-          "type": "`$ANY`",
+          "type": "`$ARRAY`",
           "index$": 0
+        },
+        {
+          "active": true,
+          "name": "pagination",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 1
         }
       ],
       "name": "top",
@@ -4649,6 +6004,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/top/reviews",
               "parts": [
@@ -4666,7 +6022,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -4682,17 +6038,122 @@ class Config {
       "fields": [
         {
           "active": true,
+          "name": "anime",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 0
+        },
+        {
+          "active": true,
+          "name": "birthday",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 1
+        },
+        {
+          "active": true,
+          "name": "characters",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 2
+        },
+        {
+          "active": true,
           "name": "data",
           "req": false,
-          "type": "`$ANY`",
-          "index$": 0
+          "type": "`$ARRAY`",
+          "index$": 3
+        },
+        {
+          "active": true,
+          "name": "external",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 4
+        },
+        {
+          "active": true,
+          "name": "gender",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 5
+        },
+        {
+          "active": true,
+          "name": "images",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 6
+        },
+        {
+          "active": true,
+          "name": "joined",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 7
+        },
+        {
+          "active": true,
+          "name": "last_online",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 8
+        },
+        {
+          "active": true,
+          "name": "location",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 9
+        },
+        {
+          "active": true,
+          "name": "mal_id",
+          "req": false,
+          "type": "`$INTEGER`",
+          "index$": 10
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 11
         },
         {
           "active": true,
           "name": "pagination",
           "req": false,
           "type": "`$OBJECT`",
-          "index$": 1
+          "index$": 12
+        },
+        {
+          "active": true,
+          "name": "people",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 13
+        },
+        {
+          "active": true,
+          "name": "statistics",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 14
+        },
+        {
+          "active": true,
+          "name": "url",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 15
+        },
+        {
+          "active": true,
+          "name": "username",
+          "req": false,
+          "type": "`$STRING`",
+          "index$": 16
         }
       ],
       "name": "user",
@@ -4763,6 +6224,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users",
               "parts": [
@@ -4817,6 +6279,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/animelist",
               "parts": [
@@ -4862,6 +6325,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/mangalist",
               "parts": [
@@ -4907,6 +6371,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/reviews",
               "parts": [
@@ -4923,7 +6388,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 2
             },
@@ -4942,6 +6407,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/userbyid/{id}",
               "parts": [
@@ -4956,7 +6422,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 3
             },
@@ -4975,6 +6441,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}",
               "parts": [
@@ -4993,7 +6460,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 4
             },
@@ -5011,6 +6478,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/favorites",
               "parts": [
@@ -5026,7 +6494,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 5
             },
@@ -5044,6 +6512,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/full",
               "parts": [
@@ -5059,7 +6528,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 6
             }
@@ -5106,6 +6575,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/about",
               "parts": [
@@ -5120,7 +6590,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -5184,6 +6654,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/clubs",
               "parts": [
@@ -5263,6 +6734,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/friends",
               "parts": [
@@ -5349,6 +6821,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/history",
               "parts": [
@@ -5364,7 +6837,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -5384,10 +6857,17 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "data",
+          "name": "anime",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$OBJECT`",
+          "index$": 1
         }
       ],
       "name": "user_statistic",
@@ -5411,6 +6891,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/statistics",
               "parts": [
@@ -5425,7 +6906,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -5445,10 +6926,17 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "data",
+          "name": "anime",
           "req": false,
-          "type": "`$OBJECT`",
+          "type": "`$ARRAY`",
           "index$": 0
+        },
+        {
+          "active": true,
+          "name": "manga",
+          "req": false,
+          "type": "`$ARRAY`",
+          "index$": 1
         }
       ],
       "name": "user_update",
@@ -5472,6 +6960,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/users/{username}/userupdates",
               "parts": [
@@ -5486,7 +6975,7 @@ class Config {
               },
               "transform": {
                 "req": "`reqdata`",
-                "res": "`body`"
+                "res": "`body.data`"
               },
               "index$": 0
             }
@@ -5528,6 +7017,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/watch/episodes",
               "parts": [
@@ -5544,6 +7034,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/watch/episodes/popular",
               "parts": [
@@ -5603,6 +7094,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/watch/promos",
               "parts": [
@@ -5623,6 +7115,7 @@ class Config {
             {
               "active": true,
               "args": {},
+              "kind": "http",
               "method": "GET",
               "orig": "/watch/promos/popular",
               "parts": [

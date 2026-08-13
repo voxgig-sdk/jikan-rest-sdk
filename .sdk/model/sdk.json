@@ -5,6 +5,10 @@
       "desc": ""
     },
     "kit": {
+      "author": {
+        "name": "",
+        "url": ""
+      },
       "config": {
         "docs_order": [
           "ts",
@@ -18,6 +22,7 @@
           "content-type": "application/json"
         }
       },
+      "contributor": {},
       "entity": {
         "anime": {
           "active": true,
@@ -25,6 +30,24 @@
             "field": {}
           },
           "fields": [
+            {
+              "active": true,
+              "name": "aired",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "airing",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "approved",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
             {
               "active": true,
               "name": "author_url",
@@ -39,13 +62,31 @@
             },
             {
               "active": true,
+              "name": "background",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "broadcast",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
               "name": "character",
               "req": false,
               "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "comment",
+              "name": "comments",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "completed",
               "req": false,
               "type": "`$INTEGER`"
             },
@@ -53,7 +94,7 @@
               "active": true,
               "name": "data",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -63,13 +104,73 @@
             },
             {
               "active": true,
+              "name": "demographics",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "dropped",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "duration",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "endings",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "entry",
               "req": false,
               "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "image",
+              "name": "episodes",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "explicit_genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "external",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "filler",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "images",
               "req": false,
               "type": "`$OBJECT`"
             },
@@ -81,15 +182,51 @@
             },
             {
               "active": true,
+              "name": "licensors",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "mal_id",
               "req": false,
               "type": "`$INTEGER`"
             },
             {
               "active": true,
+              "name": "members",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "moreinfo",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "music_videos",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "name",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "on_hold",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "openings",
+              "req": false,
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -105,9 +242,51 @@
             },
             {
               "active": true,
-              "name": "position",
+              "name": "plan_to_watch",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "popularity",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "positions",
               "req": false,
               "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "producers",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "promo",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "rank",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "rating",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "recap",
+              "req": false,
+              "type": "`$BOOLEAN`"
             },
             {
               "active": true,
@@ -117,13 +296,133 @@
             },
             {
               "active": true,
+              "name": "relations",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "role",
               "req": false,
               "type": "`$STRING`"
             },
             {
               "active": true,
+              "name": "score",
+              "req": false,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "scored_by",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "scores",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "season",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "source",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "streaming",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "studios",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "synopsis",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "theme",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "themes",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "title",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_english",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_japanese",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_romanji",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_synonyms",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "titles",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "total",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "trailer",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "type",
               "req": false,
               "type": "`$STRING`"
             },
@@ -135,9 +434,21 @@
             },
             {
               "active": true,
-              "name": "voice_actor",
+              "name": "voice_actors",
               "req": false,
               "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "watching",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "year",
+              "req": false,
+              "type": "`$INTEGER`"
             }
           ],
           "name": "anime",
@@ -304,6 +615,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime",
                   "parts": [
@@ -391,6 +703,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/top/anime",
                   "parts": [
@@ -452,6 +765,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/reviews",
                   "parts": [
@@ -497,6 +811,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/episodes",
                   "parts": [
@@ -540,6 +855,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/forum",
                   "parts": [
@@ -556,7 +872,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -583,6 +899,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/news",
                   "parts": [
@@ -626,6 +943,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/userupdates",
                   "parts": [
@@ -669,6 +987,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/videos/episodes",
                   "parts": [
@@ -703,6 +1022,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/characters",
                   "parts": [
@@ -718,7 +1038,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -735,6 +1055,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/external",
                   "parts": [
@@ -750,7 +1071,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -767,6 +1088,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/pictures",
                   "parts": [
@@ -782,7 +1104,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -799,6 +1121,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/recommendations",
                   "parts": [
@@ -814,7 +1137,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -831,6 +1154,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/relations",
                   "parts": [
@@ -846,7 +1170,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -863,6 +1187,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/staff",
                   "parts": [
@@ -878,7 +1203,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -895,6 +1220,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/streaming",
                   "parts": [
@@ -910,7 +1236,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -941,6 +1267,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/episodes/{episode}",
                   "parts": [
@@ -957,7 +1284,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -974,6 +1301,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}",
                   "parts": [
@@ -987,7 +1315,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1004,6 +1332,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/full",
                   "parts": [
@@ -1019,7 +1348,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1036,6 +1365,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/moreinfo",
                   "parts": [
@@ -1051,7 +1381,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1068,6 +1398,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/statistics",
                   "parts": [
@@ -1083,7 +1414,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1100,6 +1431,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/themes",
                   "parts": [
@@ -1115,7 +1447,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1132,6 +1464,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/anime/{id}/videos",
                   "parts": [
@@ -1147,7 +1480,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1169,21 +1502,39 @@
           "fields": [
             {
               "active": true,
+              "name": "about",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "anime",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "data",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "image_url",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
+              "type": "`$OBJECT`"
             },
             {
               "active": true,
@@ -1199,9 +1550,33 @@
             },
             {
               "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "manga",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_kanji",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "nicknames",
+              "req": false,
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -1220,6 +1595,18 @@
               "name": "role",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "voices",
+              "req": false,
+              "type": "`$ARRAY`"
             }
           ],
           "name": "character",
@@ -1282,6 +1669,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters",
                   "parts": [
@@ -1324,6 +1712,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/top/characters",
                   "parts": [
@@ -1355,6 +1744,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}/anime",
                   "parts": [
@@ -1370,7 +1760,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1387,6 +1777,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}/manga",
                   "parts": [
@@ -1402,7 +1793,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1419,6 +1810,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}/pictures",
                   "parts": [
@@ -1434,7 +1826,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1451,6 +1843,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}/voices",
                   "parts": [
@@ -1466,7 +1859,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1489,6 +1882,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}",
                   "parts": [
@@ -1502,7 +1896,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1519,6 +1913,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/characters/{id}/full",
                   "parts": [
@@ -1534,7 +1929,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1552,9 +1947,69 @@
           "fields": [
             {
               "active": true,
+              "name": "access",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "anime",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "category",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "characters",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "created",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "data",
               "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
               "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "manga",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "members",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -1651,6 +2106,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/clubs",
                   "parts": [
@@ -1697,6 +2153,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/clubs/{id}/members",
                   "parts": [
@@ -1730,6 +2187,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/clubs/{id}/staff",
                   "parts": [
@@ -1745,7 +2203,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1768,6 +2226,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/clubs/{id}",
                   "parts": [
@@ -1781,7 +2240,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1798,6 +2257,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/clubs/{id}/relations",
                   "parts": [
@@ -1813,7 +2273,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1862,6 +2322,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/external",
                   "parts": [
@@ -1876,7 +2337,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -1941,6 +2402,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/genres/anime",
                   "parts": [
@@ -1955,7 +2417,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -1972,6 +2434,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/genres/manga",
                   "parts": [
@@ -1986,7 +2449,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -2075,6 +2538,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/magazines",
                   "parts": [
@@ -2110,6 +2574,12 @@
           "fields": [
             {
               "active": true,
+              "name": "approved",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
               "name": "author_url",
               "req": false,
               "type": "`$STRING`"
@@ -2122,13 +2592,37 @@
             },
             {
               "active": true,
+              "name": "authors",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "background",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "chapters",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "character",
               "req": false,
               "type": "`$OBJECT`"
             },
             {
               "active": true,
-              "name": "comment",
+              "name": "comments",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "completed",
               "req": false,
               "type": "`$INTEGER`"
             },
@@ -2136,7 +2630,7 @@
               "active": true,
               "name": "data",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -2146,7 +2640,49 @@
             },
             {
               "active": true,
+              "name": "demographics",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "dropped",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "entry",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "explicit_genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "external",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "images",
               "req": false,
               "type": "`$OBJECT`"
             },
@@ -2170,9 +2706,27 @@
             },
             {
               "active": true,
+              "name": "members",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "moreinfo",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
               "name": "name",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "on_hold",
+              "req": false,
+              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -2182,9 +2736,51 @@
             },
             {
               "active": true,
+              "name": "plan_to_read",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "popularity",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "published",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "publishing",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "rank",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "reading",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "relation",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "relations",
+              "req": false,
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -2194,7 +2790,85 @@
             },
             {
               "active": true,
+              "name": "score",
+              "req": false,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "scored_by",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "scores",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "serializations",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "synopsis",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "themes",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "title",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_english",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_japanese",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_synonyms",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "titles",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "total",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "type",
               "req": false,
               "type": "`$STRING`"
             },
@@ -2203,6 +2877,12 @@
               "name": "url",
               "req": false,
               "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "volumes",
+              "req": false,
+              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -2367,6 +3047,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga",
                   "parts": [
@@ -2437,6 +3118,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/top/manga",
                   "parts": [
@@ -2496,6 +3178,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/reviews",
                   "parts": [
@@ -2541,6 +3224,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/forum",
                   "parts": [
@@ -2557,7 +3241,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2584,6 +3268,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/news",
                   "parts": [
@@ -2627,6 +3312,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/userupdates",
                   "parts": [
@@ -2660,6 +3346,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/characters",
                   "parts": [
@@ -2675,7 +3362,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2692,6 +3379,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/external",
                   "parts": [
@@ -2707,7 +3395,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2724,6 +3412,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/pictures",
                   "parts": [
@@ -2739,7 +3428,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2756,6 +3445,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/recommendations",
                   "parts": [
@@ -2771,7 +3461,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2788,6 +3478,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/relations",
                   "parts": [
@@ -2803,7 +3494,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -2826,6 +3517,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}",
                   "parts": [
@@ -2839,7 +3531,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2856,6 +3548,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/full",
                   "parts": [
@@ -2871,7 +3564,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2888,6 +3581,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/moreinfo",
                   "parts": [
@@ -2903,7 +3597,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -2920,6 +3614,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/manga/{id}/statistics",
                   "parts": [
@@ -2935,7 +3630,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -2992,6 +3687,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/top/people",
                   "parts": [
@@ -3024,9 +3720,27 @@
           "fields": [
             {
               "active": true,
+              "name": "about",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "alternate_names",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "anime",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "birthday",
+              "req": false,
+              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -3038,6 +3752,30 @@
               "active": true,
               "name": "data",
               "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "family_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "given_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
               "type": "`$OBJECT`"
             },
             {
@@ -3048,9 +3786,21 @@
             },
             {
               "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "manga",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -3067,6 +3817,24 @@
             {
               "active": true,
               "name": "role",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "voices",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "website_url",
               "req": false,
               "type": "`$STRING`"
             }
@@ -3131,6 +3899,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people",
                   "parts": [
@@ -3165,6 +3934,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}/anime",
                   "parts": [
@@ -3180,7 +3950,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -3197,6 +3967,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}/manga",
                   "parts": [
@@ -3212,7 +3983,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -3229,6 +4000,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}/pictures",
                   "parts": [
@@ -3244,7 +4016,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -3261,6 +4033,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}/voices",
                   "parts": [
@@ -3276,7 +4049,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -3299,6 +4072,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}",
                   "parts": [
@@ -3312,7 +4086,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -3329,6 +4103,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/people/{id}/full",
                   "parts": [
@@ -3344,7 +4119,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -3362,9 +4137,51 @@
           "fields": [
             {
               "active": true,
+              "name": "about",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "count",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
               "name": "data",
               "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "established",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "external",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
               "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -3377,6 +4194,12 @@
               "name": "pagination",
               "req": false,
               "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "titles",
+              "req": false,
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -3445,6 +4268,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/producers",
                   "parts": [
@@ -3479,6 +4303,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/producers/{id}/external",
                   "parts": [
@@ -3494,7 +4319,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -3517,6 +4342,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/producers/{id}",
                   "parts": [
@@ -3530,7 +4356,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -3547,6 +4373,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/producers/{id}/full",
                   "parts": [
@@ -3562,7 +4389,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -3580,9 +4407,339 @@
           "fields": [
             {
               "active": true,
-              "name": "data",
+              "name": "about",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "aired",
               "req": false,
               "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "airing",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "alternate_names",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "approved",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "authors",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "background",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "birthday",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "broadcast",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "chapters",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "demographics",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "duration",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "episodes",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "explicit_genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "family_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "favorites",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "gender",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "genres",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "given_name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "joined",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_online",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "licensors",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "location",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "members",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "name",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "name_kanji",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "nicknames",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "popularity",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "producers",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "published",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "publishing",
+              "req": false,
+              "type": "`$BOOLEAN`"
+            },
+            {
+              "active": true,
+              "name": "rank",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "rating",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "score",
+              "req": false,
+              "type": "`$NUMBER`"
+            },
+            {
+              "active": true,
+              "name": "scored_by",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "season",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "serializations",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "source",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "status",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "studios",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "synopsis",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "themes",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "title",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_english",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_japanese",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "title_synonyms",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "titles",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "trailer",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "type",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "username",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "volumes",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "website_url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "year",
+              "req": false,
+              "type": "`$INTEGER`"
             }
           ],
           "name": "random",
@@ -3594,6 +4751,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random/anime",
                   "parts": [
@@ -3605,12 +4763,13 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random/characters",
                   "parts": [
@@ -3622,12 +4781,13 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random/manga",
                   "parts": [
@@ -3639,12 +4799,13 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random/people",
                   "parts": [
@@ -3656,12 +4817,13 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/random/users",
                   "parts": [
@@ -3673,7 +4835,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -3732,6 +4894,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/recommendations",
                   "parts": [
@@ -3764,6 +4927,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/recommendations/anime",
                   "parts": [
@@ -3795,6 +4959,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/recommendations/manga",
                   "parts": [
@@ -3865,6 +5030,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/reviews/anime",
                   "parts": [
@@ -3914,6 +5080,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/reviews/manga",
                   "parts": [
@@ -4019,6 +5186,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/schedules",
                   "parts": [
@@ -4066,7 +5234,7 @@
             },
             {
               "active": true,
-              "name": "season",
+              "name": "seasons",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -4155,6 +5323,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/seasons/{year}/{season}",
                   "parts": [
@@ -4233,6 +5402,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/seasons/now",
                   "parts": [
@@ -4309,6 +5479,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/seasons/upcoming",
                   "parts": [
@@ -4334,6 +5505,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/seasons",
                   "parts": [
@@ -4342,7 +5514,7 @@
                   "select": {},
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -4366,7 +5538,13 @@
               "active": true,
               "name": "data",
               "req": false,
-              "type": "`$ANY`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "pagination",
+              "req": false,
+              "type": "`$OBJECT`"
             }
           ],
           "name": "top",
@@ -4413,6 +5591,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/top/reviews",
                   "parts": [
@@ -4430,7 +5609,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -4448,15 +5627,105 @@
           "fields": [
             {
               "active": true,
+              "name": "anime",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "birthday",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "characters",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
               "name": "data",
               "req": false,
-              "type": "`$ANY`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "external",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "gender",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "images",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "joined",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "last_online",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "location",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "mal_id",
+              "req": false,
+              "type": "`$INTEGER`"
+            },
+            {
+              "active": true,
+              "name": "manga",
+              "req": false,
+              "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "pagination",
               "req": false,
               "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "people",
+              "req": false,
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "statistics",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "url",
+              "req": false,
+              "type": "`$STRING`"
+            },
+            {
+              "active": true,
+              "name": "username",
+              "req": false,
+              "type": "`$STRING`"
             }
           ],
           "name": "user",
@@ -4527,6 +5796,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users",
                   "parts": [
@@ -4578,6 +5848,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/animelist",
                   "parts": [
@@ -4621,6 +5892,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/mangalist",
                   "parts": [
@@ -4664,6 +5936,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/reviews",
                   "parts": [
@@ -4680,7 +5953,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -4697,6 +5970,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/userbyid/{id}",
                   "parts": [
@@ -4711,7 +5985,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -4728,6 +6002,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}",
                   "parts": [
@@ -4746,7 +6021,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -4763,6 +6038,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/favorites",
                   "parts": [
@@ -4778,7 +6054,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 },
                 {
@@ -4795,6 +6071,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/full",
                   "parts": [
@@ -4810,7 +6087,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -4857,6 +6134,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/about",
                   "parts": [
@@ -4871,7 +6149,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -4934,6 +6212,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/clubs",
                   "parts": [
@@ -5012,6 +6291,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/friends",
                   "parts": [
@@ -5096,6 +6376,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/history",
                   "parts": [
@@ -5111,7 +6392,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -5133,7 +6414,13 @@
           "fields": [
             {
               "active": true,
-              "name": "data",
+              "name": "anime",
+              "req": false,
+              "type": "`$OBJECT`"
+            },
+            {
+              "active": true,
+              "name": "manga",
               "req": false,
               "type": "`$OBJECT`"
             }
@@ -5158,6 +6445,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/statistics",
                   "parts": [
@@ -5172,7 +6460,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -5194,9 +6482,15 @@
           "fields": [
             {
               "active": true,
-              "name": "data",
+              "name": "anime",
               "req": false,
-              "type": "`$OBJECT`"
+              "type": "`$ARRAY`"
+            },
+            {
+              "active": true,
+              "name": "manga",
+              "req": false,
+              "type": "`$ARRAY`"
             }
           ],
           "name": "user_update",
@@ -5219,6 +6513,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/users/{username}/userupdates",
                   "parts": [
@@ -5233,7 +6528,7 @@
                   },
                   "transform": {
                     "req": "`reqdata`",
-                    "res": "`body`"
+                    "res": "`body.data`"
                   }
                 }
               ]
@@ -5275,6 +6570,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/watch/episodes",
                   "parts": [
@@ -5290,6 +6586,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/watch/episodes/popular",
                   "parts": [
@@ -5349,6 +6646,7 @@
                       }
                     ]
                   },
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/watch/promos",
                   "parts": [
@@ -5368,6 +6666,7 @@
                 {
                   "active": true,
                   "args": {},
+                  "kind": "http",
                   "method": "GET",
                   "orig": "/watch/promos/popular",
                   "parts": [
@@ -6347,18 +7646,41 @@
         "website": "https://jikan.moe"
       },
       "option": {},
+      "repo": {
+        "host": "github.com",
+        "path": ""
+      },
       "target": {
         "go": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [
+              "test/feature_test.go"
+            ],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "go",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6380,22 +7702,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Golang"
         },
         "go-cli": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "go-cli",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -6434,21 +7774,39 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go CLI"
         },
         "go-mcp": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "go",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "go-mcp",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "phase": {
             "agentguide": {
               "active": false
@@ -6487,12 +7845,17 @@
                 "recipe": "github"
               },
               "via": "root"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "Go MCP server"
         },
         "lua": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "--"
           },
@@ -6504,10 +7867,23 @@
             }
           },
           "ext": "lua",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "lua",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6529,22 +7905,40 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Lua"
         },
         "php": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "//"
           },
           "deps": {},
           "ext": "php",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "php",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6566,13 +7960,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "PHP"
         },
         "py": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -6584,10 +7983,23 @@
             }
           },
           "ext": "py",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "py",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6609,13 +8021,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Python"
         },
         "rb": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "comment": {
             "line": "#"
           },
@@ -6632,10 +8049,23 @@
             }
           },
           "ext": "rb",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "rb",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6657,13 +8087,18 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "srcfeature": false,
           "title": "Ruby"
         },
         "ts": {
           "active": true,
+          "author": {
+            "name": "",
+            "url": ""
+          },
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "comment": {
             "line": "//"
@@ -6686,10 +8121,23 @@
             }
           },
           "ext": "ts",
+          "feature": {
+            "fullset": [],
+            "trim": true
+          },
           "module": {
-            "name": "jikan-rest"
+            "goversion": "",
+            "name": "jikan-rest",
+            "package": "",
+            "path": ""
           },
           "name": "ts",
+          "output": {
+            "adopt": false,
+            "path": "",
+            "repo": "",
+            "sdkrel": ""
+          },
           "publish": {
             "registry": {
               "active": false,
@@ -6711,9 +8159,17 @@
                 "recipe": "github"
               },
               "via": "port"
-            }
+            },
+            "version": "0.0.1"
           },
           "title": "TypeScript"
+        }
+      },
+      "test": {
+        "live": {
+          "app": false,
+          "base": "",
+          "strict": false
         }
       }
     }

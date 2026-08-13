@@ -121,11 +121,11 @@ function character_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "JIKANREST_TEST_CHARACTER_ENTID" => [],
-        "JIKANREST_TEST_LIVE" => "FALSE",
+        "JIKAN_REST_TEST_CHARACTER_ENTID" => [],
+        "JIKAN_REST_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["JIKANREST_TEST_LIVE"] === "TRUE";
+    $live = $env["JIKAN_REST_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

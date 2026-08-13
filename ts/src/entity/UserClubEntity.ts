@@ -37,7 +37,7 @@ class UserClubEntity extends JikanRestEntityBase<UserClub> {
 
 
 
-  async list(this: any, reqmatch?: UserClubListMatch, ctrl?: Control): Promise<UserClub[]> {
+  async list(this: any, reqmatch?: UserClubListMatch, ctrl?: Control): Promise<UserClubEntity[]> {
 
     const utility = this._utility
 

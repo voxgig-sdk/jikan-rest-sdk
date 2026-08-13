@@ -37,7 +37,7 @@ class UserHistoryEntity extends JikanRestEntityBase<UserHistory> {
 
 
 
-  async list(this: any, reqmatch?: UserHistoryListMatch, ctrl?: Control): Promise<UserHistory[]> {
+  async list(this: any, reqmatch?: UserHistoryListMatch, ctrl?: Control): Promise<UserHistoryEntity[]> {
 
     const utility = this._utility
 

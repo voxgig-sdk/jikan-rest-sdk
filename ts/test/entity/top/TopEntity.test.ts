@@ -26,8 +26,8 @@ import {
 describe('TopEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JIKANREST_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JIKANREST_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JIKAN_REST_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JIKAN_REST_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JikanRestSDK.test()
@@ -62,7 +62,7 @@ describe('TopEntity', async () => {
     // LOAD
     const top_ref01_ent = client.Top()
     const top_ref01_match_dt0: any = {}
-    const top_ref01_data_dt0 = await top_ref01_ent.load(top_ref01_match_dt0)
+    const top_ref01_data_dt0 = (await top_ref01_ent.load(top_ref01_match_dt0)).data()
     assert(null != top_ref01_data_dt0)
 
 

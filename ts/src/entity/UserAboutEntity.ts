@@ -37,7 +37,7 @@ class UserAboutEntity extends JikanRestEntityBase<UserAbout> {
 
 
 
-  async list(this: any, reqmatch?: UserAboutListMatch, ctrl?: Control): Promise<UserAbout[]> {
+  async list(this: any, reqmatch?: UserAboutListMatch, ctrl?: Control): Promise<UserAboutEntity[]> {
 
     const utility = this._utility
 

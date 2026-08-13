@@ -23,8 +23,8 @@ module JikanRestTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("JIKANREST_TEST_LIVE")
-    override = getenv("JIKANREST_TEST_OVERRIDE")
+    live = getenv("JIKAN_REST_TEST_LIVE")
+    override = getenv("JIKAN_REST_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module JikanRestTestRunner
       end
     end
 
-    explain = getenv("JIKANREST_TEST_EXPLAIN")
-    m["JIKANREST_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("JIKAN_REST_TEST_EXPLAIN")
+    m["JIKAN_REST_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

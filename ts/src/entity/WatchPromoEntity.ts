@@ -37,7 +37,7 @@ class WatchPromoEntity extends JikanRestEntityBase<WatchPromo> {
 
 
 
-  async list(this: any, reqmatch?: WatchPromoListMatch, ctrl?: Control): Promise<WatchPromo[]> {
+  async list(this: any, reqmatch?: WatchPromoListMatch, ctrl?: Control): Promise<WatchPromoEntity[]> {
 
     const utility = this._utility
 

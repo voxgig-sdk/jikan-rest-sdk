@@ -188,25 +188,76 @@ $anime = $client->Anime();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `string` | No |  |
+| `airing` | `bool` | No |  |
+| `approved` | `bool` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `background` | `string` | No |  |
+| `broadcast` | `array` | No |  |
 | `character` | `array` | No |  |
-| `comment` | `int` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
 | `data` | `array` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `array` | No |  |
+| `dropped` | `int` | No |  |
+| `duration` | `int` | No |  |
+| `endings` | `array` | No |  |
 | `entry` | `array` | No |  |
-| `image` | `array` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `array` | No |  |
+| `external` | `array` | No |  |
+| `favorites` | `int` | No |  |
+| `filler` | `bool` | No |  |
+| `genres` | `array` | No |  |
+| `images` | `array` | No |  |
 | `last_comment` | `array` | No |  |
+| `licensors` | `array` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `string` | No |  |
+| `music_videos` | `array` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `int` | No |  |
+| `openings` | `array` | No |  |
 | `pagination` | `array` | No |  |
 | `person` | `array` | No |  |
-| `position` | `array` | No |  |
+| `plan_to_watch` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `positions` | `array` | No |  |
+| `producers` | `array` | No |  |
+| `promo` | `array` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `string` | No |  |
+| `recap` | `bool` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `array` | No |  |
 | `role` | `string` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `array` | No |  |
+| `season` | `string` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `streaming` | `array` | No |  |
+| `studios` | `array` | No |  |
+| `synopsis` | `string` | No |  |
+| `theme` | `array` | No |  |
+| `themes` | `array` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_romanji` | `string` | No |  |
+| `title_synonyms` | `array` | No |  |
+| `titles` | `array` | No |  |
+| `total` | `int` | No |  |
+| `trailer` | `array` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
-| `voice_actor` | `array` | No |  |
+| `voice_actors` | `array` | No |  |
+| `watching` | `int` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -266,15 +317,24 @@ $character = $client->Character();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
 | `anime` | `array` | No |  |
 | `data` | `array` | No |  |
+| `favorites` | `int` | No |  |
 | `image_url` | `string` | No |  |
+| `images` | `array` | No |  |
 | `language` | `string` | No |  |
 | `large_image_url` | `string` | No |  |
+| `mal_id` | `int` | No |  |
 | `manga` | `array` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `array` | No |  |
 | `pagination` | `array` | No |  |
 | `person` | `array` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `array` | No |  |
 
 ### Operations
 
@@ -334,7 +394,17 @@ $club = $client->Club();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `access` | `string` | No |  |
+| `anime` | `array` | No |  |
+| `category` | `string` | No |  |
+| `characters` | `array` | No |  |
+| `created` | `string` | No |  |
 | `data` | `array` | No |  |
+| `images` | `array` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `array` | No |  |
+| `members` | `int` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `array` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |
@@ -558,22 +628,58 @@ $manga = $client->Manga();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `bool` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `authors` | `array` | No |  |
+| `background` | `string` | No |  |
+| `chapters` | `int` | No |  |
 | `character` | `array` | No |  |
-| `comment` | `int` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
 | `data` | `array` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `array` | No |  |
+| `dropped` | `int` | No |  |
 | `entry` | `array` | No |  |
+| `explicit_genres` | `array` | No |  |
+| `external` | `array` | No |  |
+| `favorites` | `int` | No |  |
+| `genres` | `array` | No |  |
+| `images` | `array` | No |  |
 | `jpg` | `array` | No |  |
 | `last_comment` | `array` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `string` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `int` | No |  |
 | `pagination` | `array` | No |  |
+| `plan_to_read` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `published` | `array` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `reading` | `int` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `array` | No |  |
 | `role` | `string` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `array` | No |  |
+| `serializations` | `array` | No |  |
+| `status` | `string` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `array` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `array` | No |  |
+| `titles` | `array` | No |  |
+| `total` | `int` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
+| `volumes` | `int` | No |  |
 | `webp` | `array` | No |  |
 
 ### Operations
@@ -687,14 +793,26 @@ $person = $client->Person();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
+| `alternate_names` | `array` | No |  |
 | `anime` | `array` | No |  |
+| `birthday` | `string` | No |  |
 | `character` | `array` | No |  |
 | `data` | `array` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `int` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `array` | No |  |
 | `jpg` | `array` | No |  |
+| `mal_id` | `int` | No |  |
 | `manga` | `array` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `array` | No |  |
 | `position` | `string` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `array` | No |  |
+| `website_url` | `string` | No |  |
 
 ### Operations
 
@@ -754,9 +872,17 @@ $producer = $client->Producer();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `about` | `string` | No |  |
+| `count` | `int` | No |  |
 | `data` | `array` | No |  |
+| `established` | `string` | No |  |
+| `external` | `array` | No |  |
+| `favorites` | `int` | No |  |
+| `images` | `array` | No |  |
+| `mal_id` | `int` | No |  |
 | `name` | `string` | No |  |
 | `pagination` | `array` | No |  |
+| `titles` | `array` | No |  |
 | `url` | `string` | No |  |
 
 ### Operations
@@ -817,7 +943,62 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
+| `about` | `string` | No |  |
+| `aired` | `array` | No |  |
+| `airing` | `bool` | No |  |
+| `alternate_names` | `array` | No |  |
+| `approved` | `bool` | No |  |
+| `authors` | `array` | No |  |
+| `background` | `string` | No |  |
+| `birthday` | `string` | No |  |
+| `broadcast` | `array` | No |  |
+| `chapters` | `int` | No |  |
+| `demographics` | `array` | No |  |
+| `duration` | `string` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `array` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `int` | No |  |
+| `gender` | `string` | No |  |
+| `genres` | `array` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `array` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `licensors` | `array` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `array` | No |  |
+| `popularity` | `int` | No |  |
+| `producers` | `array` | No |  |
+| `published` | `array` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `string` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `season` | `string` | No |  |
+| `serializations` | `array` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `studios` | `array` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `array` | No |  |
+| `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `array` | No |  |
+| `titles` | `array` | No |  |
+| `trailer` | `array` | No |  |
+| `type` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
+| `volumes` | `int` | No |  |
+| `website_url` | `string` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -1023,7 +1204,7 @@ $season = $client->Season();
 | --- | --- | --- | --- |
 | `data` | `array` | No |  |
 | `pagination` | `array` | No |  |
-| `season` | `array` | No |  |
+| `seasons` | `array` | No |  |
 | `year` | `int` | No |  |
 
 ### Operations
@@ -1076,7 +1257,8 @@ $top = $client->Top();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `mixed` | No |  |
+| `data` | `array` | No |  |
+| `pagination` | `array` | No |  |
 
 ### Operations
 
@@ -1128,8 +1310,23 @@ $user = $client->User();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `mixed` | No |  |
+| `anime` | `array` | No |  |
+| `birthday` | `string` | No |  |
+| `characters` | `array` | No |  |
+| `data` | `array` | No |  |
+| `external` | `array` | No |  |
+| `gender` | `string` | No |  |
+| `images` | `array` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `array` | No |  |
 | `pagination` | `array` | No |  |
+| `people` | `array` | No |  |
+| `statistics` | `array` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -1401,7 +1598,8 @@ $user_statistic = $client->UserStatistic();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
+| `anime` | `array` | No |  |
+| `manga` | `array` | No |  |
 
 ### Operations
 
@@ -1453,7 +1651,8 @@ $user_update = $client->UserUpdate();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `array` | No |  |
+| `anime` | `array` | No |  |
+| `manga` | `array` | No |  |
 
 ### Operations
 

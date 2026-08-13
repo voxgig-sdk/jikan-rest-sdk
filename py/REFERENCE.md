@@ -183,25 +183,76 @@ anime = client.Anime()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `str` | No |  |
+| `airing` | `bool` | No |  |
+| `approved` | `bool` | No |  |
 | `author_url` | `str` | No |  |
 | `author_username` | `str` | No |  |
+| `background` | `str` | No |  |
+| `broadcast` | `dict` | No |  |
 | `character` | `dict` | No |  |
-| `comment` | `int` | No |  |
-| `data` | `dict` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
+| `data` | `list` | No |  |
 | `date` | `str` | No |  |
+| `demographics` | `list` | No |  |
+| `dropped` | `int` | No |  |
+| `duration` | `int` | No |  |
+| `endings` | `list` | No |  |
 | `entry` | `dict` | No |  |
-| `image` | `dict` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `list` | No |  |
+| `external` | `list` | No |  |
+| `favorites` | `int` | No |  |
+| `filler` | `bool` | No |  |
+| `genres` | `list` | No |  |
+| `images` | `dict` | No |  |
 | `last_comment` | `dict` | No |  |
+| `licensors` | `list` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `str` | No |  |
+| `music_videos` | `list` | No |  |
 | `name` | `str` | No |  |
+| `on_hold` | `int` | No |  |
+| `openings` | `list` | No |  |
 | `pagination` | `dict` | No |  |
 | `person` | `dict` | No |  |
-| `position` | `list` | No |  |
+| `plan_to_watch` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `positions` | `list` | No |  |
+| `producers` | `list` | No |  |
+| `promo` | `list` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `str` | No |  |
+| `recap` | `bool` | No |  |
 | `relation` | `str` | No |  |
+| `relations` | `list` | No |  |
 | `role` | `str` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `list` | No |  |
+| `season` | `str` | No |  |
+| `source` | `str` | No |  |
+| `status` | `str` | No |  |
+| `streaming` | `list` | No |  |
+| `studios` | `list` | No |  |
+| `synopsis` | `str` | No |  |
+| `theme` | `dict` | No |  |
+| `themes` | `list` | No |  |
 | `title` | `str` | No |  |
+| `title_english` | `str` | No |  |
+| `title_japanese` | `str` | No |  |
+| `title_romanji` | `str` | No |  |
+| `title_synonyms` | `list` | No |  |
+| `titles` | `list` | No |  |
+| `total` | `int` | No |  |
+| `trailer` | `dict` | No |  |
+| `type` | `str` | No |  |
 | `url` | `str` | No |  |
-| `voice_actor` | `list` | No |  |
+| `voice_actors` | `list` | No |  |
+| `watching` | `int` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -262,15 +313,24 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `dict` | No |  |
-| `data` | `dict` | No |  |
+| `about` | `str` | No |  |
+| `anime` | `list` | No |  |
+| `data` | `list` | No |  |
+| `favorites` | `int` | No |  |
 | `image_url` | `str` | No |  |
+| `images` | `dict` | No |  |
 | `language` | `str` | No |  |
 | `large_image_url` | `str` | No |  |
-| `manga` | `dict` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `list` | No |  |
+| `name` | `str` | No |  |
+| `name_kanji` | `str` | No |  |
+| `nicknames` | `list` | No |  |
 | `pagination` | `dict` | No |  |
 | `person` | `dict` | No |  |
 | `role` | `str` | No |  |
+| `url` | `str` | No |  |
+| `voices` | `list` | No |  |
 
 ### Operations
 
@@ -331,7 +391,17 @@ club = client.Club()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
+| `access` | `str` | No |  |
+| `anime` | `list` | No |  |
+| `category` | `str` | No |  |
+| `characters` | `list` | No |  |
+| `created` | `str` | No |  |
+| `data` | `list` | No |  |
+| `images` | `dict` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `list` | No |  |
+| `members` | `int` | No |  |
+| `name` | `str` | No |  |
 | `pagination` | `dict` | No |  |
 | `url` | `str` | No |  |
 | `username` | `str` | No |  |
@@ -405,7 +475,7 @@ external = client.External()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.External().list()
+results = client.External().list({"username": "example"})
 for external in results:
     print(external)
 ```
@@ -559,22 +629,58 @@ manga = client.Manga()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `bool` | No |  |
 | `author_url` | `str` | No |  |
 | `author_username` | `str` | No |  |
+| `authors` | `list` | No |  |
+| `background` | `str` | No |  |
+| `chapters` | `int` | No |  |
 | `character` | `dict` | No |  |
-| `comment` | `int` | No |  |
-| `data` | `dict` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
+| `data` | `list` | No |  |
 | `date` | `str` | No |  |
+| `demographics` | `list` | No |  |
+| `dropped` | `int` | No |  |
 | `entry` | `dict` | No |  |
+| `explicit_genres` | `list` | No |  |
+| `external` | `list` | No |  |
+| `favorites` | `int` | No |  |
+| `genres` | `list` | No |  |
+| `images` | `dict` | No |  |
 | `jpg` | `dict` | No |  |
 | `last_comment` | `dict` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `str` | No |  |
 | `name` | `str` | No |  |
+| `on_hold` | `int` | No |  |
 | `pagination` | `dict` | No |  |
+| `plan_to_read` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `published` | `dict` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `reading` | `int` | No |  |
 | `relation` | `str` | No |  |
+| `relations` | `list` | No |  |
 | `role` | `str` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `list` | No |  |
+| `serializations` | `list` | No |  |
+| `status` | `str` | No |  |
+| `synopsis` | `str` | No |  |
+| `themes` | `list` | No |  |
 | `title` | `str` | No |  |
+| `title_english` | `str` | No |  |
+| `title_japanese` | `str` | No |  |
+| `title_synonyms` | `list` | No |  |
+| `titles` | `list` | No |  |
+| `total` | `int` | No |  |
+| `type` | `str` | No |  |
 | `url` | `str` | No |  |
+| `volumes` | `int` | No |  |
 | `webp` | `dict` | No |  |
 
 ### Operations
@@ -690,14 +796,26 @@ person = client.Person()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `dict` | No |  |
+| `about` | `str` | No |  |
+| `alternate_names` | `list` | No |  |
+| `anime` | `list` | No |  |
+| `birthday` | `str` | No |  |
 | `character` | `dict` | No |  |
-| `data` | `dict` | No |  |
+| `data` | `list` | No |  |
+| `family_name` | `str` | No |  |
+| `favorites` | `int` | No |  |
+| `given_name` | `str` | No |  |
+| `images` | `dict` | No |  |
 | `jpg` | `dict` | No |  |
-| `manga` | `dict` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `list` | No |  |
+| `name` | `str` | No |  |
 | `pagination` | `dict` | No |  |
 | `position` | `str` | No |  |
 | `role` | `str` | No |  |
+| `url` | `str` | No |  |
+| `voices` | `list` | No |  |
+| `website_url` | `str` | No |  |
 
 ### Operations
 
@@ -758,9 +876,17 @@ producer = client.Producer()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
+| `about` | `str` | No |  |
+| `count` | `int` | No |  |
+| `data` | `list` | No |  |
+| `established` | `str` | No |  |
+| `external` | `list` | No |  |
+| `favorites` | `int` | No |  |
+| `images` | `dict` | No |  |
+| `mal_id` | `int` | No |  |
 | `name` | `str` | No |  |
 | `pagination` | `dict` | No |  |
+| `titles` | `list` | No |  |
 | `url` | `str` | No |  |
 
 ### Operations
@@ -822,7 +948,62 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
+| `about` | `str` | No |  |
+| `aired` | `dict` | No |  |
+| `airing` | `bool` | No |  |
+| `alternate_names` | `list` | No |  |
+| `approved` | `bool` | No |  |
+| `authors` | `list` | No |  |
+| `background` | `str` | No |  |
+| `birthday` | `str` | No |  |
+| `broadcast` | `dict` | No |  |
+| `chapters` | `int` | No |  |
+| `demographics` | `list` | No |  |
+| `duration` | `str` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `list` | No |  |
+| `family_name` | `str` | No |  |
+| `favorites` | `int` | No |  |
+| `gender` | `str` | No |  |
+| `genres` | `list` | No |  |
+| `given_name` | `str` | No |  |
+| `images` | `dict` | No |  |
+| `joined` | `str` | No |  |
+| `last_online` | `str` | No |  |
+| `licensors` | `list` | No |  |
+| `location` | `str` | No |  |
+| `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `name` | `str` | No |  |
+| `name_kanji` | `str` | No |  |
+| `nicknames` | `list` | No |  |
+| `popularity` | `int` | No |  |
+| `producers` | `list` | No |  |
+| `published` | `dict` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `str` | No |  |
+| `score` | `float` | No |  |
+| `scored_by` | `int` | No |  |
+| `season` | `str` | No |  |
+| `serializations` | `list` | No |  |
+| `source` | `str` | No |  |
+| `status` | `str` | No |  |
+| `studios` | `list` | No |  |
+| `synopsis` | `str` | No |  |
+| `themes` | `list` | No |  |
+| `title` | `str` | No |  |
+| `title_english` | `str` | No |  |
+| `title_japanese` | `str` | No |  |
+| `title_synonyms` | `list` | No |  |
+| `titles` | `list` | No |  |
+| `trailer` | `dict` | No |  |
+| `type` | `str` | No |  |
+| `url` | `str` | No |  |
+| `username` | `str` | No |  |
+| `volumes` | `int` | No |  |
+| `website_url` | `str` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -883,7 +1064,7 @@ recommendation = client.Recommendation()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Recommendation().list()
+results = client.Recommendation().list({"username": "example"})
 for recommendation in results:
     print(recommendation)
 ```
@@ -1028,7 +1209,7 @@ season = client.Season()
 | --- | --- | --- | --- |
 | `data` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `season` | `list` | No |  |
+| `seasons` | `list` | No |  |
 | `year` | `int` | No |  |
 
 ### Operations
@@ -1082,7 +1263,8 @@ top = client.Top()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Any` | No |  |
+| `data` | `list` | No |  |
+| `pagination` | `dict` | No |  |
 
 ### Operations
 
@@ -1133,8 +1315,23 @@ user = client.User()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `Any` | No |  |
+| `anime` | `list` | No |  |
+| `birthday` | `str` | No |  |
+| `characters` | `list` | No |  |
+| `data` | `list` | No |  |
+| `external` | `list` | No |  |
+| `gender` | `str` | No |  |
+| `images` | `dict` | No |  |
+| `joined` | `str` | No |  |
+| `last_online` | `str` | No |  |
+| `location` | `str` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `list` | No |  |
 | `pagination` | `dict` | No |  |
+| `people` | `list` | No |  |
+| `statistics` | `dict` | No |  |
+| `url` | `str` | No |  |
+| `username` | `str` | No |  |
 
 ### Operations
 
@@ -1204,7 +1401,7 @@ user_about = client.UserAbout()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.UserAbout().list()
+results = client.UserAbout().list({"username": "example"})
 for user_about in results:
     print(user_about)
 ```
@@ -1258,7 +1455,7 @@ user_club = client.UserClub()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.UserClub().list()
+results = client.UserClub().list({"username": "example"})
 for user_club in results:
     print(user_club)
 ```
@@ -1312,7 +1509,7 @@ user_friend = client.UserFriend()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.UserFriend().list()
+results = client.UserFriend().list({"username": "example"})
 for user_friend in results:
     print(user_friend)
 ```
@@ -1367,7 +1564,7 @@ user_history = client.UserHistory()
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.UserHistory().list()
+results = client.UserHistory().list({"username": "example"})
 for user_history in results:
     print(user_history)
 ```
@@ -1411,7 +1608,8 @@ user_statistic = client.UserStatistic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
+| `anime` | `dict` | No |  |
+| `manga` | `dict` | No |  |
 
 ### Operations
 
@@ -1462,7 +1660,8 @@ user_update = client.UserUpdate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `dict` | No |  |
+| `anime` | `list` | No |  |
+| `manga` | `list` | No |  |
 
 ### Operations
 

@@ -26,8 +26,8 @@ import {
 describe('AnimeEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JIKANREST_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JIKANREST_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JIKAN_REST_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JIKAN_REST_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JikanRestSDK.test()
@@ -63,7 +63,7 @@ describe('AnimeEntity', async () => {
     const anime_ref01_ent = client.Anime()
     const anime_ref01_match: any = {}
 
-    const anime_ref01_list = await anime_ref01_ent.list(anime_ref01_match)
+    const anime_ref01_list = (await anime_ref01_ent.list(anime_ref01_match)).map((e: any) => e.data())
 
 
 

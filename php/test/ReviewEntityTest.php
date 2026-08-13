@@ -33,7 +33,7 @@ class ReviewEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set JIKANREST_TEST_REVIEW_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set JIKAN_REST_TEST_REVIEW_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -77,22 +77,22 @@ function review_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("JIKANREST_TEST_REVIEW_ENTID");
+    $entid_env_raw = getenv("JIKAN_REST_TEST_REVIEW_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "JIKANREST_TEST_REVIEW_ENTID" => $idmap,
-        "JIKANREST_TEST_LIVE" => "FALSE",
-        "JIKANREST_TEST_EXPLAIN" => "FALSE",
+        "JIKAN_REST_TEST_REVIEW_ENTID" => $idmap,
+        "JIKAN_REST_TEST_LIVE" => "FALSE",
+        "JIKAN_REST_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["JIKANREST_TEST_REVIEW_ENTID"]);
+        $env["JIKAN_REST_TEST_REVIEW_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["JIKANREST_TEST_LIVE"] === "TRUE") {
+    if ($env["JIKAN_REST_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -101,13 +101,13 @@ function review_basic_setup($extra)
         $client = new JikanRestSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["JIKANREST_TEST_LIVE"] === "TRUE";
+    $live = $env["JIKAN_REST_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["JIKANREST_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["JIKAN_REST_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

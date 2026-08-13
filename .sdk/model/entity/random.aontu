@@ -6,9 +6,284 @@ main: kit: entity: random: {
 
   fields: [
     {
-      name: "data"
+      name: "about"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "aired"
       req: false
       type: "`$OBJECT`"
+    }
+    {
+      name: "airing"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "alternate_names"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "approved"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "authors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "background"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "birthday"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "broadcast"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "chapters"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "demographics"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "duration"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "episodes"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "explicit_genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "family_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "favorites"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "gender"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "given_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "images"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "joined"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "last_online"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "licensors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "location"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "members"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name_kanji"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "nicknames"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "popularity"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "producers"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "published"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "publishing"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "rank"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rating"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "score"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "scored_by"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "season"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "serializations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "studios"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "themes"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "title"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_english"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_japanese"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_synonyms"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "titles"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "trailer"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "username"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "volumes"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "website_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "year"
+      req: false
+      type: "`$INTEGER`"
     }
   ]
 
@@ -29,7 +304,7 @@ main: kit: entity: random: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -44,7 +319,7 @@ main: kit: entity: random: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -59,7 +334,7 @@ main: kit: entity: random: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -74,7 +349,7 @@ main: kit: entity: random: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -89,7 +364,7 @@ main: kit: entity: random: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

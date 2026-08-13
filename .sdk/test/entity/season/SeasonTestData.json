@@ -4,20 +4,23 @@
       "SEASON00": {
         "data": [],
         "pagination": {},
-        "season": [],
-        "year": "s2b"
+        "seasons": [],
+        "year": "s2b",
+        "season": "SEASON01"
       },
       "SEASON01": {
         "data": [],
         "pagination": {},
-        "season": [],
-        "year": "s53"
+        "seasons": [],
+        "year": "s53",
+        "season": "SEASON01"
       },
       "SEASON02": {
         "data": [],
         "pagination": {},
-        "season": [],
-        "year": "s7b"
+        "seasons": [],
+        "year": "s7b",
+        "season": "SEASON01"
       }
     }
   },
@@ -26,7 +29,7 @@
       "season_ref01": {
         "data": [],
         "pagination": {},
-        "season": [],
+        "seasons": [],
         "year": "sa3"
       }
     }

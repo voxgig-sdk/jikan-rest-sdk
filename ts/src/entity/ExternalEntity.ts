@@ -37,7 +37,7 @@ class ExternalEntity extends JikanRestEntityBase<External> {
 
 
 
-  async list(this: any, reqmatch?: ExternalListMatch, ctrl?: Control): Promise<External[]> {
+  async list(this: any, reqmatch?: ExternalListMatch, ctrl?: Control): Promise<ExternalEntity[]> {
 
     const utility = this._utility
 

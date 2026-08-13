@@ -6,9 +6,59 @@ main: kit: entity: club: {
 
   fields: [
     {
+      name: "access"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "anime"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "category"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "characters"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "created"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "data"
       req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "images"
+      req: false
       type: "`$OBJECT`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "manga"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "members"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
     }
     {
       name: "pagination"
@@ -182,7 +232,7 @@ main: kit: entity: club: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
@@ -215,7 +265,7 @@ main: kit: entity: club: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -245,7 +295,7 @@ main: kit: entity: club: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

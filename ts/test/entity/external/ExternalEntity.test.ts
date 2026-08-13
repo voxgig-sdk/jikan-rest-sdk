@@ -26,8 +26,8 @@ import {
 describe('ExternalEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JIKANREST_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JIKANREST_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JIKAN_REST_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JIKAN_REST_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JikanRestSDK.test()
@@ -64,7 +64,7 @@ describe('ExternalEntity', async () => {
     const external_ref01_match: any = {}
     external_ref01_match['username'] = setup.idmap['username01']
 
-    const external_ref01_list = await external_ref01_ent.list(external_ref01_match)
+    const external_ref01_list = (await external_ref01_ent.list(external_ref01_match)).map((e: any) => e.data())
 
 
   })

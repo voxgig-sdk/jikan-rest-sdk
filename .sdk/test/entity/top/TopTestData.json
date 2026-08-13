@@ -2,15 +2,18 @@
   "existing": {
     "top": {
       "TOP00": {
-        "data": "sa",
+        "data": [],
+        "pagination": {},
         "id": "TOP00"
       },
       "TOP01": {
-        "data": "s14",
+        "data": [],
+        "pagination": {},
         "id": "TOP01"
       },
       "TOP02": {
-        "data": "s1e",
+        "data": [],
+        "pagination": {},
         "id": "TOP02"
       }
     }
@@ -18,7 +21,8 @@
   "new": {
     "top": {
       "top_ref01": {
-        "data": "s28"
+        "data": [],
+        "pagination": {}
       }
     }
   }

@@ -194,25 +194,76 @@ fmt.Println(anime.GetName()) // "anime"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `aired` | `string` | No |  |
+| `airing` | `bool` | No |  |
+| `approved` | `bool` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `background` | `string` | No |  |
+| `broadcast` | `map[string]any` | No |  |
 | `character` | `map[string]any` | No |  |
-| `comment` | `int` | No |  |
-| `data` | `map[string]any` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
+| `data` | `[]any` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `[]any` | No |  |
+| `dropped` | `int` | No |  |
+| `duration` | `int` | No |  |
+| `endings` | `[]any` | No |  |
 | `entry` | `map[string]any` | No |  |
-| `image` | `map[string]any` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `[]any` | No |  |
+| `external` | `[]any` | No |  |
+| `favorites` | `int` | No |  |
+| `filler` | `bool` | No |  |
+| `genres` | `[]any` | No |  |
+| `images` | `map[string]any` | No |  |
 | `last_comment` | `map[string]any` | No |  |
+| `licensors` | `[]any` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `string` | No |  |
+| `music_videos` | `[]any` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `int` | No |  |
+| `openings` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
 | `person` | `map[string]any` | No |  |
-| `position` | `[]any` | No |  |
+| `plan_to_watch` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `positions` | `[]any` | No |  |
+| `producers` | `[]any` | No |  |
+| `promo` | `[]any` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `string` | No |  |
+| `recap` | `bool` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `[]any` | No |  |
 | `role` | `string` | No |  |
+| `score` | `float64` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `[]any` | No |  |
+| `season` | `string` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `streaming` | `[]any` | No |  |
+| `studios` | `[]any` | No |  |
+| `synopsis` | `string` | No |  |
+| `theme` | `map[string]any` | No |  |
+| `themes` | `[]any` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_romanji` | `string` | No |  |
+| `title_synonyms` | `[]any` | No |  |
+| `titles` | `[]any` | No |  |
+| `total` | `int` | No |  |
+| `trailer` | `map[string]any` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
-| `voice_actor` | `[]any` | No |  |
+| `voice_actors` | `[]any` | No |  |
+| `watching` | `int` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -275,15 +326,24 @@ fmt.Println(character.GetName()) // "character"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `map[string]any` | No |  |
-| `data` | `map[string]any` | No |  |
+| `about` | `string` | No |  |
+| `anime` | `[]any` | No |  |
+| `data` | `[]any` | No |  |
+| `favorites` | `int` | No |  |
 | `image_url` | `string` | No |  |
+| `images` | `map[string]any` | No |  |
 | `language` | `string` | No |  |
 | `large_image_url` | `string` | No |  |
-| `manga` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `[]any` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
 | `person` | `map[string]any` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `[]any` | No |  |
 
 ### Operations
 
@@ -346,7 +406,17 @@ fmt.Println(club.GetName()) // "club"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
+| `access` | `string` | No |  |
+| `anime` | `[]any` | No |  |
+| `category` | `string` | No |  |
+| `characters` | `[]any` | No |  |
+| `created` | `string` | No |  |
+| `data` | `[]any` | No |  |
+| `images` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `[]any` | No |  |
+| `members` | `int` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
 | `url` | `string` | No |  |
 | `username` | `string` | No |  |
@@ -570,22 +640,58 @@ fmt.Println(manga.GetName()) // "manga"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `approved` | `bool` | No |  |
 | `author_url` | `string` | No |  |
 | `author_username` | `string` | No |  |
+| `authors` | `[]any` | No |  |
+| `background` | `string` | No |  |
+| `chapters` | `int` | No |  |
 | `character` | `map[string]any` | No |  |
-| `comment` | `int` | No |  |
-| `data` | `map[string]any` | No |  |
+| `comments` | `int` | No |  |
+| `completed` | `int` | No |  |
+| `data` | `[]any` | No |  |
 | `date` | `string` | No |  |
+| `demographics` | `[]any` | No |  |
+| `dropped` | `int` | No |  |
 | `entry` | `map[string]any` | No |  |
+| `explicit_genres` | `[]any` | No |  |
+| `external` | `[]any` | No |  |
+| `favorites` | `int` | No |  |
+| `genres` | `[]any` | No |  |
+| `images` | `map[string]any` | No |  |
 | `jpg` | `map[string]any` | No |  |
 | `last_comment` | `map[string]any` | No |  |
 | `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `moreinfo` | `string` | No |  |
 | `name` | `string` | No |  |
+| `on_hold` | `int` | No |  |
 | `pagination` | `map[string]any` | No |  |
+| `plan_to_read` | `int` | No |  |
+| `popularity` | `int` | No |  |
+| `published` | `map[string]any` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `reading` | `int` | No |  |
 | `relation` | `string` | No |  |
+| `relations` | `[]any` | No |  |
 | `role` | `string` | No |  |
+| `score` | `float64` | No |  |
+| `scored_by` | `int` | No |  |
+| `scores` | `[]any` | No |  |
+| `serializations` | `[]any` | No |  |
+| `status` | `string` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `[]any` | No |  |
 | `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `[]any` | No |  |
+| `titles` | `[]any` | No |  |
+| `total` | `int` | No |  |
+| `type` | `string` | No |  |
 | `url` | `string` | No |  |
+| `volumes` | `int` | No |  |
 | `webp` | `map[string]any` | No |  |
 
 ### Operations
@@ -701,14 +807,26 @@ fmt.Println(person.GetName()) // "person"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `map[string]any` | No |  |
+| `about` | `string` | No |  |
+| `alternate_names` | `[]any` | No |  |
+| `anime` | `[]any` | No |  |
+| `birthday` | `string` | No |  |
 | `character` | `map[string]any` | No |  |
-| `data` | `map[string]any` | No |  |
+| `data` | `[]any` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `int` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `map[string]any` | No |  |
 | `jpg` | `map[string]any` | No |  |
-| `manga` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `[]any` | No |  |
+| `name` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
 | `position` | `string` | No |  |
 | `role` | `string` | No |  |
+| `url` | `string` | No |  |
+| `voices` | `[]any` | No |  |
+| `website_url` | `string` | No |  |
 
 ### Operations
 
@@ -771,9 +889,17 @@ fmt.Println(producer.GetName()) // "producer"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
+| `about` | `string` | No |  |
+| `count` | `int` | No |  |
+| `data` | `[]any` | No |  |
+| `established` | `string` | No |  |
+| `external` | `[]any` | No |  |
+| `favorites` | `int` | No |  |
+| `images` | `map[string]any` | No |  |
+| `mal_id` | `int` | No |  |
 | `name` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
+| `titles` | `[]any` | No |  |
 | `url` | `string` | No |  |
 
 ### Operations
@@ -837,7 +963,62 @@ fmt.Println(random.GetName()) // "random"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
+| `about` | `string` | No |  |
+| `aired` | `map[string]any` | No |  |
+| `airing` | `bool` | No |  |
+| `alternate_names` | `[]any` | No |  |
+| `approved` | `bool` | No |  |
+| `authors` | `[]any` | No |  |
+| `background` | `string` | No |  |
+| `birthday` | `string` | No |  |
+| `broadcast` | `map[string]any` | No |  |
+| `chapters` | `int` | No |  |
+| `demographics` | `[]any` | No |  |
+| `duration` | `string` | No |  |
+| `episodes` | `int` | No |  |
+| `explicit_genres` | `[]any` | No |  |
+| `family_name` | `string` | No |  |
+| `favorites` | `int` | No |  |
+| `gender` | `string` | No |  |
+| `genres` | `[]any` | No |  |
+| `given_name` | `string` | No |  |
+| `images` | `map[string]any` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `licensors` | `[]any` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `int` | No |  |
+| `members` | `int` | No |  |
+| `name` | `string` | No |  |
+| `name_kanji` | `string` | No |  |
+| `nicknames` | `[]any` | No |  |
+| `popularity` | `int` | No |  |
+| `producers` | `[]any` | No |  |
+| `published` | `map[string]any` | No |  |
+| `publishing` | `bool` | No |  |
+| `rank` | `int` | No |  |
+| `rating` | `string` | No |  |
+| `score` | `float64` | No |  |
+| `scored_by` | `int` | No |  |
+| `season` | `string` | No |  |
+| `serializations` | `[]any` | No |  |
+| `source` | `string` | No |  |
+| `status` | `string` | No |  |
+| `studios` | `[]any` | No |  |
+| `synopsis` | `string` | No |  |
+| `themes` | `[]any` | No |  |
+| `title` | `string` | No |  |
+| `title_english` | `string` | No |  |
+| `title_japanese` | `string` | No |  |
+| `title_synonyms` | `[]any` | No |  |
+| `titles` | `[]any` | No |  |
+| `trailer` | `map[string]any` | No |  |
+| `type` | `string` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
+| `volumes` | `int` | No |  |
+| `website_url` | `string` | No |  |
+| `year` | `int` | No |  |
 
 ### Operations
 
@@ -1039,7 +1220,7 @@ fmt.Println(season.GetName()) // "season"
 | --- | --- | --- | --- |
 | `data` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `season` | `[]any` | No |  |
+| `seasons` | `[]any` | No |  |
 | `year` | `int` | No |  |
 
 ### Operations
@@ -1091,7 +1272,8 @@ fmt.Println(top.GetName()) // "top"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `data` | `[]any` | No |  |
+| `pagination` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1142,8 +1324,23 @@ fmt.Println(user.GetName()) // "user"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `any` | No |  |
+| `anime` | `[]any` | No |  |
+| `birthday` | `string` | No |  |
+| `characters` | `[]any` | No |  |
+| `data` | `[]any` | No |  |
+| `external` | `[]any` | No |  |
+| `gender` | `string` | No |  |
+| `images` | `map[string]any` | No |  |
+| `joined` | `string` | No |  |
+| `last_online` | `string` | No |  |
+| `location` | `string` | No |  |
+| `mal_id` | `int` | No |  |
+| `manga` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
+| `people` | `[]any` | No |  |
+| `statistics` | `map[string]any` | No |  |
+| `url` | `string` | No |  |
+| `username` | `string` | No |  |
 
 ### Operations
 
@@ -1414,7 +1611,8 @@ fmt.Println(userStatistic.GetName()) // "user_statistic"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
+| `anime` | `map[string]any` | No |  |
+| `manga` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -1465,7 +1663,8 @@ fmt.Println(userUpdate.GetName()) // "user_update"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `data` | `map[string]any` | No |  |
+| `anime` | `[]any` | No |  |
+| `manga` | `[]any` | No |  |
 
 ### Operations
 

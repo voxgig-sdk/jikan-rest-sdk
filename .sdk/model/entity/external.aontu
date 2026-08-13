@@ -48,7 +48,7 @@ main: kit: entity: external: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

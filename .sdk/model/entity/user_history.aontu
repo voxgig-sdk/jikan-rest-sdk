@@ -63,7 +63,7 @@ main: kit: entity: user_history: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

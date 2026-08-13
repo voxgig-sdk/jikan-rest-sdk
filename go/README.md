@@ -75,12 +75,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-animes, err := client.Anime(nil).List(nil, nil)
+externals, err := client.External(nil).List(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = animes
+_ = externals
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -144,13 +144,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-anime, err := client.Anime(nil).List(
+external, err := client.External(nil).List(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(anime) // the returned mock data
+fmt.Println(external) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -293,25 +293,76 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
+| `"aired"` |  |
+| `"airing"` |  |
+| `"approved"` |  |
 | `"author_url"` |  |
 | `"author_username"` |  |
+| `"background"` |  |
+| `"broadcast"` |  |
 | `"character"` |  |
-| `"comment"` |  |
+| `"comments"` |  |
+| `"completed"` |  |
 | `"data"` |  |
 | `"date"` |  |
+| `"demographics"` |  |
+| `"dropped"` |  |
+| `"duration"` |  |
+| `"endings"` |  |
 | `"entry"` |  |
-| `"image"` |  |
+| `"episodes"` |  |
+| `"explicit_genres"` |  |
+| `"external"` |  |
+| `"favorites"` |  |
+| `"filler"` |  |
+| `"genres"` |  |
+| `"images"` |  |
 | `"last_comment"` |  |
+| `"licensors"` |  |
 | `"mal_id"` |  |
+| `"members"` |  |
+| `"moreinfo"` |  |
+| `"music_videos"` |  |
 | `"name"` |  |
+| `"on_hold"` |  |
+| `"openings"` |  |
 | `"pagination"` |  |
 | `"person"` |  |
-| `"position"` |  |
+| `"plan_to_watch"` |  |
+| `"popularity"` |  |
+| `"positions"` |  |
+| `"producers"` |  |
+| `"promo"` |  |
+| `"rank"` |  |
+| `"rating"` |  |
+| `"recap"` |  |
 | `"relation"` |  |
+| `"relations"` |  |
 | `"role"` |  |
+| `"score"` |  |
+| `"scored_by"` |  |
+| `"scores"` |  |
+| `"season"` |  |
+| `"source"` |  |
+| `"status"` |  |
+| `"streaming"` |  |
+| `"studios"` |  |
+| `"synopsis"` |  |
+| `"theme"` |  |
+| `"themes"` |  |
 | `"title"` |  |
+| `"title_english"` |  |
+| `"title_japanese"` |  |
+| `"title_romanji"` |  |
+| `"title_synonyms"` |  |
+| `"titles"` |  |
+| `"total"` |  |
+| `"trailer"` |  |
+| `"type"` |  |
 | `"url"` |  |
-| `"voice_actor"` |  |
+| `"voice_actors"` |  |
+| `"watching"` |  |
+| `"year"` |  |
 
 Operations: List, Load.
 
@@ -321,15 +372,24 @@ API path: `/anime`
 
 | Field | Description |
 | --- | --- |
+| `"about"` |  |
 | `"anime"` |  |
 | `"data"` |  |
+| `"favorites"` |  |
 | `"image_url"` |  |
+| `"images"` |  |
 | `"language"` |  |
 | `"large_image_url"` |  |
+| `"mal_id"` |  |
 | `"manga"` |  |
+| `"name"` |  |
+| `"name_kanji"` |  |
+| `"nicknames"` |  |
 | `"pagination"` |  |
 | `"person"` |  |
 | `"role"` |  |
+| `"url"` |  |
+| `"voices"` |  |
 
 Operations: List, Load.
 
@@ -339,7 +399,17 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
+| `"access"` |  |
+| `"anime"` |  |
+| `"category"` |  |
+| `"characters"` |  |
+| `"created"` |  |
 | `"data"` |  |
+| `"images"` |  |
+| `"mal_id"` |  |
+| `"manga"` |  |
+| `"members"` |  |
+| `"name"` |  |
 | `"pagination"` |  |
 | `"url"` |  |
 | `"username"` |  |
@@ -387,22 +457,58 @@ API path: `/magazines`
 
 | Field | Description |
 | --- | --- |
+| `"approved"` |  |
 | `"author_url"` |  |
 | `"author_username"` |  |
+| `"authors"` |  |
+| `"background"` |  |
+| `"chapters"` |  |
 | `"character"` |  |
-| `"comment"` |  |
+| `"comments"` |  |
+| `"completed"` |  |
 | `"data"` |  |
 | `"date"` |  |
+| `"demographics"` |  |
+| `"dropped"` |  |
 | `"entry"` |  |
+| `"explicit_genres"` |  |
+| `"external"` |  |
+| `"favorites"` |  |
+| `"genres"` |  |
+| `"images"` |  |
 | `"jpg"` |  |
 | `"last_comment"` |  |
 | `"mal_id"` |  |
+| `"members"` |  |
+| `"moreinfo"` |  |
 | `"name"` |  |
+| `"on_hold"` |  |
 | `"pagination"` |  |
+| `"plan_to_read"` |  |
+| `"popularity"` |  |
+| `"published"` |  |
+| `"publishing"` |  |
+| `"rank"` |  |
+| `"reading"` |  |
 | `"relation"` |  |
+| `"relations"` |  |
 | `"role"` |  |
+| `"score"` |  |
+| `"scored_by"` |  |
+| `"scores"` |  |
+| `"serializations"` |  |
+| `"status"` |  |
+| `"synopsis"` |  |
+| `"themes"` |  |
 | `"title"` |  |
+| `"title_english"` |  |
+| `"title_japanese"` |  |
+| `"title_synonyms"` |  |
+| `"titles"` |  |
+| `"total"` |  |
+| `"type"` |  |
 | `"url"` |  |
+| `"volumes"` |  |
 | `"webp"` |  |
 
 Operations: List, Load.
@@ -424,14 +530,26 @@ API path: `/top/people`
 
 | Field | Description |
 | --- | --- |
+| `"about"` |  |
+| `"alternate_names"` |  |
 | `"anime"` |  |
+| `"birthday"` |  |
 | `"character"` |  |
 | `"data"` |  |
+| `"family_name"` |  |
+| `"favorites"` |  |
+| `"given_name"` |  |
+| `"images"` |  |
 | `"jpg"` |  |
+| `"mal_id"` |  |
 | `"manga"` |  |
+| `"name"` |  |
 | `"pagination"` |  |
 | `"position"` |  |
 | `"role"` |  |
+| `"url"` |  |
+| `"voices"` |  |
+| `"website_url"` |  |
 
 Operations: List, Load.
 
@@ -441,9 +559,17 @@ API path: `/people`
 
 | Field | Description |
 | --- | --- |
+| `"about"` |  |
+| `"count"` |  |
 | `"data"` |  |
+| `"established"` |  |
+| `"external"` |  |
+| `"favorites"` |  |
+| `"images"` |  |
+| `"mal_id"` |  |
 | `"name"` |  |
 | `"pagination"` |  |
+| `"titles"` |  |
 | `"url"` |  |
 
 Operations: List, Load.
@@ -454,7 +580,62 @@ API path: `/producers`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
+| `"about"` |  |
+| `"aired"` |  |
+| `"airing"` |  |
+| `"alternate_names"` |  |
+| `"approved"` |  |
+| `"authors"` |  |
+| `"background"` |  |
+| `"birthday"` |  |
+| `"broadcast"` |  |
+| `"chapters"` |  |
+| `"demographics"` |  |
+| `"duration"` |  |
+| `"episodes"` |  |
+| `"explicit_genres"` |  |
+| `"family_name"` |  |
+| `"favorites"` |  |
+| `"gender"` |  |
+| `"genres"` |  |
+| `"given_name"` |  |
+| `"images"` |  |
+| `"joined"` |  |
+| `"last_online"` |  |
+| `"licensors"` |  |
+| `"location"` |  |
+| `"mal_id"` |  |
+| `"members"` |  |
+| `"name"` |  |
+| `"name_kanji"` |  |
+| `"nicknames"` |  |
+| `"popularity"` |  |
+| `"producers"` |  |
+| `"published"` |  |
+| `"publishing"` |  |
+| `"rank"` |  |
+| `"rating"` |  |
+| `"score"` |  |
+| `"scored_by"` |  |
+| `"season"` |  |
+| `"serializations"` |  |
+| `"source"` |  |
+| `"status"` |  |
+| `"studios"` |  |
+| `"synopsis"` |  |
+| `"themes"` |  |
+| `"title"` |  |
+| `"title_english"` |  |
+| `"title_japanese"` |  |
+| `"title_synonyms"` |  |
+| `"titles"` |  |
+| `"trailer"` |  |
+| `"type"` |  |
+| `"url"` |  |
+| `"username"` |  |
+| `"volumes"` |  |
+| `"website_url"` |  |
+| `"year"` |  |
 
 Operations: Load.
 
@@ -497,7 +678,7 @@ API path: `/schedules`
 | --- | --- |
 | `"data"` |  |
 | `"pagination"` |  |
-| `"season"` |  |
+| `"seasons"` |  |
 | `"year"` |  |
 
 Operations: List.
@@ -509,6 +690,7 @@ API path: `/seasons/{year}/{season}`
 | Field | Description |
 | --- | --- |
 | `"data"` |  |
+| `"pagination"` |  |
 
 Operations: Load.
 
@@ -518,8 +700,23 @@ API path: `/top/reviews`
 
 | Field | Description |
 | --- | --- |
+| `"anime"` |  |
+| `"birthday"` |  |
+| `"characters"` |  |
 | `"data"` |  |
+| `"external"` |  |
+| `"gender"` |  |
+| `"images"` |  |
+| `"joined"` |  |
+| `"last_online"` |  |
+| `"location"` |  |
+| `"mal_id"` |  |
+| `"manga"` |  |
 | `"pagination"` |  |
+| `"people"` |  |
+| `"statistics"` |  |
+| `"url"` |  |
+| `"username"` |  |
 
 Operations: List, Load.
 
@@ -573,7 +770,8 @@ API path: `/users/{username}/history`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
+| `"anime"` |  |
+| `"manga"` |  |
 
 Operations: Load.
 
@@ -583,7 +781,8 @@ API path: `/users/{username}/statistics`
 
 | Field | Description |
 | --- | --- |
-| `"data"` |  |
+| `"anime"` |  |
+| `"manga"` |  |
 
 Operations: Load.
 
@@ -631,25 +830,76 @@ Create an instance: `anime := client.Anime(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `aired` | `string` |  |
+| `airing` | `bool` |  |
+| `approved` | `bool` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `background` | `string` |  |
+| `broadcast` | `map[string]any` |  |
 | `character` | `map[string]any` |  |
-| `comment` | `int` |  |
-| `data` | `map[string]any` |  |
+| `comments` | `int` |  |
+| `completed` | `int` |  |
+| `data` | `[]any` |  |
 | `date` | `string` |  |
+| `demographics` | `[]any` |  |
+| `dropped` | `int` |  |
+| `duration` | `int` |  |
+| `endings` | `[]any` |  |
 | `entry` | `map[string]any` |  |
-| `image` | `map[string]any` |  |
+| `episodes` | `int` |  |
+| `explicit_genres` | `[]any` |  |
+| `external` | `[]any` |  |
+| `favorites` | `int` |  |
+| `filler` | `bool` |  |
+| `genres` | `[]any` |  |
+| `images` | `map[string]any` |  |
 | `last_comment` | `map[string]any` |  |
+| `licensors` | `[]any` |  |
 | `mal_id` | `int` |  |
+| `members` | `int` |  |
+| `moreinfo` | `string` |  |
+| `music_videos` | `[]any` |  |
 | `name` | `string` |  |
+| `on_hold` | `int` |  |
+| `openings` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
 | `person` | `map[string]any` |  |
-| `position` | `[]any` |  |
+| `plan_to_watch` | `int` |  |
+| `popularity` | `int` |  |
+| `positions` | `[]any` |  |
+| `producers` | `[]any` |  |
+| `promo` | `[]any` |  |
+| `rank` | `int` |  |
+| `rating` | `string` |  |
+| `recap` | `bool` |  |
 | `relation` | `string` |  |
+| `relations` | `[]any` |  |
 | `role` | `string` |  |
+| `score` | `float64` |  |
+| `scored_by` | `int` |  |
+| `scores` | `[]any` |  |
+| `season` | `string` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `streaming` | `[]any` |  |
+| `studios` | `[]any` |  |
+| `synopsis` | `string` |  |
+| `theme` | `map[string]any` |  |
+| `themes` | `[]any` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_romanji` | `string` |  |
+| `title_synonyms` | `[]any` |  |
+| `titles` | `[]any` |  |
+| `total` | `int` |  |
+| `trailer` | `map[string]any` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
-| `voice_actor` | `[]any` |  |
+| `voice_actors` | `[]any` |  |
+| `watching` | `int` |  |
+| `year` | `int` |  |
 
 #### Example: Load
 
@@ -687,15 +937,24 @@ Create an instance: `character := client.Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `map[string]any` |  |
-| `data` | `map[string]any` |  |
+| `about` | `string` |  |
+| `anime` | `[]any` |  |
+| `data` | `[]any` |  |
+| `favorites` | `int` |  |
 | `image_url` | `string` |  |
+| `images` | `map[string]any` |  |
 | `language` | `string` |  |
 | `large_image_url` | `string` |  |
-| `manga` | `map[string]any` |  |
+| `mal_id` | `int` |  |
+| `manga` | `[]any` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
 | `person` | `map[string]any` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `[]any` |  |
 
 #### Example: Load
 
@@ -733,7 +992,17 @@ Create an instance: `club := client.Club(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
+| `access` | `string` |  |
+| `anime` | `[]any` |  |
+| `category` | `string` |  |
+| `characters` | `[]any` |  |
+| `created` | `string` |  |
+| `data` | `[]any` |  |
+| `images` | `map[string]any` |  |
+| `mal_id` | `int` |  |
+| `manga` | `[]any` |  |
+| `members` | `int` |  |
+| `name` | `string` |  |
 | `pagination` | `map[string]any` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |
@@ -860,22 +1129,58 @@ Create an instance: `manga := client.Manga(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `approved` | `bool` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `authors` | `[]any` |  |
+| `background` | `string` |  |
+| `chapters` | `int` |  |
 | `character` | `map[string]any` |  |
-| `comment` | `int` |  |
-| `data` | `map[string]any` |  |
+| `comments` | `int` |  |
+| `completed` | `int` |  |
+| `data` | `[]any` |  |
 | `date` | `string` |  |
+| `demographics` | `[]any` |  |
+| `dropped` | `int` |  |
 | `entry` | `map[string]any` |  |
+| `explicit_genres` | `[]any` |  |
+| `external` | `[]any` |  |
+| `favorites` | `int` |  |
+| `genres` | `[]any` |  |
+| `images` | `map[string]any` |  |
 | `jpg` | `map[string]any` |  |
 | `last_comment` | `map[string]any` |  |
 | `mal_id` | `int` |  |
+| `members` | `int` |  |
+| `moreinfo` | `string` |  |
 | `name` | `string` |  |
+| `on_hold` | `int` |  |
 | `pagination` | `map[string]any` |  |
+| `plan_to_read` | `int` |  |
+| `popularity` | `int` |  |
+| `published` | `map[string]any` |  |
+| `publishing` | `bool` |  |
+| `rank` | `int` |  |
+| `reading` | `int` |  |
 | `relation` | `string` |  |
+| `relations` | `[]any` |  |
 | `role` | `string` |  |
+| `score` | `float64` |  |
+| `scored_by` | `int` |  |
+| `scores` | `[]any` |  |
+| `serializations` | `[]any` |  |
+| `status` | `string` |  |
+| `synopsis` | `string` |  |
+| `themes` | `[]any` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `[]any` |  |
+| `titles` | `[]any` |  |
+| `total` | `int` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
+| `volumes` | `int` |  |
 | `webp` | `map[string]any` |  |
 
 #### Example: Load
@@ -942,14 +1247,26 @@ Create an instance: `person := client.Person(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `map[string]any` |  |
+| `about` | `string` |  |
+| `alternate_names` | `[]any` |  |
+| `anime` | `[]any` |  |
+| `birthday` | `string` |  |
 | `character` | `map[string]any` |  |
-| `data` | `map[string]any` |  |
+| `data` | `[]any` |  |
+| `family_name` | `string` |  |
+| `favorites` | `int` |  |
+| `given_name` | `string` |  |
+| `images` | `map[string]any` |  |
 | `jpg` | `map[string]any` |  |
-| `manga` | `map[string]any` |  |
+| `mal_id` | `int` |  |
+| `manga` | `[]any` |  |
+| `name` | `string` |  |
 | `pagination` | `map[string]any` |  |
 | `position` | `string` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `[]any` |  |
+| `website_url` | `string` |  |
 
 #### Example: Load
 
@@ -987,9 +1304,17 @@ Create an instance: `producer := client.Producer(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
+| `about` | `string` |  |
+| `count` | `int` |  |
+| `data` | `[]any` |  |
+| `established` | `string` |  |
+| `external` | `[]any` |  |
+| `favorites` | `int` |  |
+| `images` | `map[string]any` |  |
+| `mal_id` | `int` |  |
 | `name` | `string` |  |
 | `pagination` | `map[string]any` |  |
+| `titles` | `[]any` |  |
 | `url` | `string` |  |
 
 #### Example: Load
@@ -1027,7 +1352,62 @@ Create an instance: `random := client.Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
+| `about` | `string` |  |
+| `aired` | `map[string]any` |  |
+| `airing` | `bool` |  |
+| `alternate_names` | `[]any` |  |
+| `approved` | `bool` |  |
+| `authors` | `[]any` |  |
+| `background` | `string` |  |
+| `birthday` | `string` |  |
+| `broadcast` | `map[string]any` |  |
+| `chapters` | `int` |  |
+| `demographics` | `[]any` |  |
+| `duration` | `string` |  |
+| `episodes` | `int` |  |
+| `explicit_genres` | `[]any` |  |
+| `family_name` | `string` |  |
+| `favorites` | `int` |  |
+| `gender` | `string` |  |
+| `genres` | `[]any` |  |
+| `given_name` | `string` |  |
+| `images` | `map[string]any` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `licensors` | `[]any` |  |
+| `location` | `string` |  |
+| `mal_id` | `int` |  |
+| `members` | `int` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `[]any` |  |
+| `popularity` | `int` |  |
+| `producers` | `[]any` |  |
+| `published` | `map[string]any` |  |
+| `publishing` | `bool` |  |
+| `rank` | `int` |  |
+| `rating` | `string` |  |
+| `score` | `float64` |  |
+| `scored_by` | `int` |  |
+| `season` | `string` |  |
+| `serializations` | `[]any` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `studios` | `[]any` |  |
+| `synopsis` | `string` |  |
+| `themes` | `[]any` |  |
+| `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `[]any` |  |
+| `titles` | `[]any` |  |
+| `trailer` | `map[string]any` |  |
+| `type` | `string` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
+| `volumes` | `int` |  |
+| `website_url` | `string` |  |
+| `year` | `int` |  |
 
 #### Example: Load
 
@@ -1133,7 +1513,7 @@ Create an instance: `season := client.Season(nil)`
 | --- | --- | --- |
 | `data` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
-| `season` | `[]any` |  |
+| `seasons` | `[]any` |  |
 | `year` | `int` |  |
 
 #### Example: List
@@ -1161,7 +1541,8 @@ Create an instance: `top := client.Top(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `data` | `[]any` |  |
+| `pagination` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -1189,8 +1570,23 @@ Create an instance: `user := client.User(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `anime` | `[]any` |  |
+| `birthday` | `string` |  |
+| `characters` | `[]any` |  |
+| `data` | `[]any` |  |
+| `external` | `[]any` |  |
+| `gender` | `string` |  |
+| `images` | `map[string]any` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `location` | `string` |  |
+| `mal_id` | `int` |  |
+| `manga` | `[]any` |  |
 | `pagination` | `map[string]any` |  |
+| `people` | `[]any` |  |
+| `statistics` | `map[string]any` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -1339,7 +1735,8 @@ Create an instance: `userStatistic := client.UserStatistic(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
+| `anime` | `map[string]any` |  |
+| `manga` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -1366,7 +1763,8 @@ Create an instance: `userUpdate := client.UserUpdate(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `map[string]any` |  |
+| `anime` | `[]any` |  |
+| `manga` | `[]any` |  |
 
 #### Example: Load
 
@@ -1508,11 +1906,11 @@ Entity instances are stateful. After a successful `List`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-anime := client.Anime(nil)
-anime.List(nil, nil)
+external := client.External(nil)
+external.List(nil, nil)
 
-// anime.Data() now returns the anime data from the last list
-// anime.Match() returns the last match criteria
+// external.Data() now returns the external data from the last list
+// external.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

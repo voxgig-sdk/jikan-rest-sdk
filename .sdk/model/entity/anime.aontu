@@ -6,6 +6,21 @@ main: kit: entity: anime: {
 
   fields: [
     {
+      name: "aired"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "airing"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "approved"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
       name: "author_url"
       req: false
       type: "`$STRING`"
@@ -16,19 +31,34 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      name: "background"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "broadcast"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
       name: "character"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "comment"
+      name: "comments"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "completed"
       req: false
       type: "`$INTEGER`"
     }
     {
       name: "data"
       req: false
-      type: "`$OBJECT`"
+      type: "`$ARRAY`"
     }
     {
       name: "date"
@@ -36,12 +66,62 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      name: "demographics"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "dropped"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "duration"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "endings"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "entry"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "image"
+      name: "episodes"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "explicit_genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "external"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "favorites"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "filler"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "images"
       req: false
       type: "`$OBJECT`"
     }
@@ -51,14 +131,44 @@ main: kit: entity: anime: {
       type: "`$OBJECT`"
     }
     {
+      name: "licensors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "mal_id"
       req: false
       type: "`$INTEGER`"
     }
     {
+      name: "members"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "moreinfo"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "music_videos"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "name"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "on_hold"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "openings"
+      req: false
+      type: "`$ARRAY`"
     }
     {
       name: "pagination"
@@ -71,9 +181,44 @@ main: kit: entity: anime: {
       type: "`$OBJECT`"
     }
     {
-      name: "position"
+      name: "plan_to_watch"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "popularity"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "positions"
       req: false
       type: "`$ARRAY`"
+    }
+    {
+      name: "producers"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "promo"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "rank"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rating"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "recap"
+      req: false
+      type: "`$BOOLEAN`"
     }
     {
       name: "relation"
@@ -81,12 +226,112 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      name: "relations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "role"
       req: false
       type: "`$STRING`"
     }
     {
+      name: "score"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "scored_by"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "scores"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "season"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "source"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "streaming"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "studios"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "theme"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "themes"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "title"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_english"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_japanese"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_romanji"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_synonyms"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "titles"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "total"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "trailer"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "type"
       req: false
       type: "`$STRING`"
     }
@@ -96,9 +341,19 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
-      name: "voice_actor"
+      name: "voice_actors"
       req: false
       type: "`$ARRAY`"
+    }
+    {
+      name: "watching"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "year"
+      req: false
+      type: "`$INTEGER`"
     }
   ]
 
@@ -479,7 +734,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -630,7 +885,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -660,7 +915,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -690,7 +945,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -720,7 +975,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -750,7 +1005,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -780,7 +1035,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -810,7 +1065,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
@@ -853,7 +1108,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -881,7 +1136,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -911,7 +1166,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -941,7 +1196,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -971,7 +1226,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -1001,7 +1256,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -1031,7 +1286,7 @@ main: kit: entity: anime: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

@@ -35,7 +35,9 @@ const client = new JikanRestSDK()
 
 ### 2. List anime records
 
-`list()` resolves to an array of Anime objects — iterate it directly:
+`list()` resolves to an array of Anime ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const animes = await client.Anime().list()
@@ -68,8 +70,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const animes = await client.Anime().list()
-  console.log(animes)
+  const externals = await client.External().list()
+  console.log(externals)
 } catch (err) {
   console.error('list failed:', err)
 }
@@ -135,9 +137,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = JikanRestSDK.test()
 
-const anime = await client.Anime().list()
-// anime is a bare entity populated with mock response data
-console.log(anime)
+const external = await client.External().list()
+// external is the entity, populated with mock response data
+// — call external.data() for the record itself
+console.log(external)
 ```
 
 You can also use the instance method:
@@ -152,7 +155,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Anime()
+const entity = client.External()
 
 // First call runs the operation and stores its result
 await entity.list()
@@ -326,25 +329,76 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
+| `aired` |  |
+| `airing` |  |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `background` |  |
+| `broadcast` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
+| `duration` |  |
+| `endings` |  |
 | `entry` |  |
-| `image` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `filler` |  |
+| `genres` |  |
+| `images` |  |
 | `last_comment` |  |
+| `licensors` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
+| `music_videos` |  |
 | `name` |  |
+| `on_hold` |  |
+| `openings` |  |
 | `pagination` |  |
 | `person` |  |
-| `position` |  |
+| `plan_to_watch` |  |
+| `popularity` |  |
+| `positions` |  |
+| `producers` |  |
+| `promo` |  |
+| `rank` |  |
+| `rating` |  |
+| `recap` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `season` |  |
+| `source` |  |
+| `status` |  |
+| `streaming` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `theme` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_romanji` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `trailer` |  |
+| `type` |  |
 | `url` |  |
-| `voice_actor` |  |
+| `voice_actors` |  |
+| `watching` |  |
+| `year` |  |
 
 Operations: list, load.
 
@@ -354,15 +408,24 @@ API path: `/anime`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
 | `anime` |  |
 | `data` |  |
+| `favorites` |  |
 | `image_url` |  |
+| `images` |  |
 | `language` |  |
 | `large_image_url` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
 | `pagination` |  |
 | `person` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
 
 Operations: list, load.
 
@@ -372,7 +435,17 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
+| `access` |  |
+| `anime` |  |
+| `category` |  |
+| `characters` |  |
+| `created` |  |
 | `data` |  |
+| `images` |  |
+| `mal_id` |  |
+| `manga` |  |
+| `members` |  |
+| `name` |  |
 | `pagination` |  |
 | `url` |  |
 | `username` |  |
@@ -420,22 +493,58 @@ API path: `/magazines`
 
 | Field | Description |
 | --- | --- |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `authors` |  |
+| `background` |  |
+| `chapters` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
 | `entry` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `genres` |  |
+| `images` |  |
 | `jpg` |  |
 | `last_comment` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
 | `name` |  |
+| `on_hold` |  |
 | `pagination` |  |
+| `plan_to_read` |  |
+| `popularity` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `reading` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `serializations` |  |
+| `status` |  |
+| `synopsis` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `type` |  |
 | `url` |  |
+| `volumes` |  |
 | `webp` |  |
 
 Operations: list, load.
@@ -457,14 +566,26 @@ API path: `/top/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `alternate_names` |  |
 | `anime` |  |
+| `birthday` |  |
 | `character` |  |
 | `data` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `given_name` |  |
+| `images` |  |
 | `jpg` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
 | `pagination` |  |
 | `position` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
+| `website_url` |  |
 
 Operations: list, load.
 
@@ -474,9 +595,17 @@ API path: `/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `count` |  |
 | `data` |  |
+| `established` |  |
+| `external` |  |
+| `favorites` |  |
+| `images` |  |
+| `mal_id` |  |
 | `name` |  |
 | `pagination` |  |
+| `titles` |  |
 | `url` |  |
 
 Operations: list, load.
@@ -487,7 +616,62 @@ API path: `/producers`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `about` |  |
+| `aired` |  |
+| `airing` |  |
+| `alternate_names` |  |
+| `approved` |  |
+| `authors` |  |
+| `background` |  |
+| `birthday` |  |
+| `broadcast` |  |
+| `chapters` |  |
+| `demographics` |  |
+| `duration` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `gender` |  |
+| `genres` |  |
+| `given_name` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `licensors` |  |
+| `location` |  |
+| `mal_id` |  |
+| `members` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
+| `popularity` |  |
+| `producers` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `rating` |  |
+| `score` |  |
+| `scored_by` |  |
+| `season` |  |
+| `serializations` |  |
+| `source` |  |
+| `status` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `themes` |  |
+| `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `trailer` |  |
+| `type` |  |
+| `url` |  |
+| `username` |  |
+| `volumes` |  |
+| `website_url` |  |
+| `year` |  |
 
 Operations: load.
 
@@ -530,7 +714,7 @@ API path: `/schedules`
 | --- | --- |
 | `data` |  |
 | `pagination` |  |
-| `season` |  |
+| `seasons` |  |
 | `year` |  |
 
 Operations: list.
@@ -542,6 +726,7 @@ API path: `/seasons/{year}/{season}`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `pagination` |  |
 
 Operations: load.
 
@@ -551,8 +736,23 @@ API path: `/top/reviews`
 
 | Field | Description |
 | --- | --- |
+| `anime` |  |
+| `birthday` |  |
+| `characters` |  |
 | `data` |  |
+| `external` |  |
+| `gender` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `location` |  |
+| `mal_id` |  |
+| `manga` |  |
 | `pagination` |  |
+| `people` |  |
+| `statistics` |  |
+| `url` |  |
+| `username` |  |
 
 Operations: list, load.
 
@@ -606,7 +806,8 @@ API path: `/users/{username}/history`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: load.
 
@@ -616,7 +817,8 @@ API path: `/users/{username}/statistics`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: load.
 
@@ -664,25 +866,76 @@ Create an instance: `const anime = client.Anime()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `aired` | `string` |  |
+| `airing` | `boolean` |  |
+| `approved` | `boolean` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `background` | `string` |  |
+| `broadcast` | `Record<string, any>` |  |
 | `character` | `Record<string, any>` |  |
-| `comment` | `number` |  |
-| `data` | `Record<string, any>` |  |
+| `comments` | `number` |  |
+| `completed` | `number` |  |
+| `data` | `any[]` |  |
 | `date` | `string` |  |
+| `demographics` | `any[]` |  |
+| `dropped` | `number` |  |
+| `duration` | `number` |  |
+| `endings` | `any[]` |  |
 | `entry` | `Record<string, any>` |  |
-| `image` | `Record<string, any>` |  |
+| `episodes` | `number` |  |
+| `explicit_genres` | `any[]` |  |
+| `external` | `any[]` |  |
+| `favorites` | `number` |  |
+| `filler` | `boolean` |  |
+| `genres` | `any[]` |  |
+| `images` | `Record<string, any>` |  |
 | `last_comment` | `Record<string, any>` |  |
+| `licensors` | `any[]` |  |
 | `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `moreinfo` | `string` |  |
+| `music_videos` | `any[]` |  |
 | `name` | `string` |  |
+| `on_hold` | `number` |  |
+| `openings` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
 | `person` | `Record<string, any>` |  |
-| `position` | `any[]` |  |
+| `plan_to_watch` | `number` |  |
+| `popularity` | `number` |  |
+| `positions` | `any[]` |  |
+| `producers` | `any[]` |  |
+| `promo` | `any[]` |  |
+| `rank` | `number` |  |
+| `rating` | `string` |  |
+| `recap` | `boolean` |  |
 | `relation` | `string` |  |
+| `relations` | `any[]` |  |
 | `role` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `scores` | `any[]` |  |
+| `season` | `string` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `streaming` | `any[]` |  |
+| `studios` | `any[]` |  |
+| `synopsis` | `string` |  |
+| `theme` | `Record<string, any>` |  |
+| `themes` | `any[]` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_romanji` | `string` |  |
+| `title_synonyms` | `any[]` |  |
+| `titles` | `any[]` |  |
+| `total` | `number` |  |
+| `trailer` | `Record<string, any>` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
-| `voice_actor` | `any[]` |  |
+| `voice_actors` | `any[]` |  |
+| `watching` | `number` |  |
+| `year` | `number` |  |
 
 #### Example: Load
 
@@ -712,15 +965,24 @@ Create an instance: `const character = client.Character()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `Record<string, any>` |  |
-| `data` | `Record<string, any>` |  |
+| `about` | `string` |  |
+| `anime` | `any[]` |  |
+| `data` | `any[]` |  |
+| `favorites` | `number` |  |
 | `image_url` | `string` |  |
+| `images` | `Record<string, any>` |  |
 | `language` | `string` |  |
 | `large_image_url` | `string` |  |
-| `manga` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
+| `manga` | `any[]` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
 | `person` | `Record<string, any>` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `any[]` |  |
 
 #### Example: Load
 
@@ -750,7 +1012,17 @@ Create an instance: `const club = client.Club()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
+| `access` | `string` |  |
+| `anime` | `any[]` |  |
+| `category` | `string` |  |
+| `characters` | `any[]` |  |
+| `created` | `string` |  |
+| `data` | `any[]` |  |
+| `images` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
+| `manga` | `any[]` |  |
+| `members` | `number` |  |
+| `name` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |
@@ -788,7 +1060,7 @@ Create an instance: `const external = client.External()`
 #### Example: List
 
 ```ts
-const externals = await client.External().list()
+const externals = await client.External().list({ username: "example" })
 ```
 
 
@@ -857,22 +1129,58 @@ Create an instance: `const manga = client.Manga()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `approved` | `boolean` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `authors` | `any[]` |  |
+| `background` | `string` |  |
+| `chapters` | `number` |  |
 | `character` | `Record<string, any>` |  |
-| `comment` | `number` |  |
-| `data` | `Record<string, any>` |  |
+| `comments` | `number` |  |
+| `completed` | `number` |  |
+| `data` | `any[]` |  |
 | `date` | `string` |  |
+| `demographics` | `any[]` |  |
+| `dropped` | `number` |  |
 | `entry` | `Record<string, any>` |  |
+| `explicit_genres` | `any[]` |  |
+| `external` | `any[]` |  |
+| `favorites` | `number` |  |
+| `genres` | `any[]` |  |
+| `images` | `Record<string, any>` |  |
 | `jpg` | `Record<string, any>` |  |
 | `last_comment` | `Record<string, any>` |  |
 | `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `moreinfo` | `string` |  |
 | `name` | `string` |  |
+| `on_hold` | `number` |  |
 | `pagination` | `Record<string, any>` |  |
+| `plan_to_read` | `number` |  |
+| `popularity` | `number` |  |
+| `published` | `Record<string, any>` |  |
+| `publishing` | `boolean` |  |
+| `rank` | `number` |  |
+| `reading` | `number` |  |
 | `relation` | `string` |  |
+| `relations` | `any[]` |  |
 | `role` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `scores` | `any[]` |  |
+| `serializations` | `any[]` |  |
+| `status` | `string` |  |
+| `synopsis` | `string` |  |
+| `themes` | `any[]` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `any[]` |  |
+| `titles` | `any[]` |  |
+| `total` | `number` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
+| `volumes` | `number` |  |
 | `webp` | `Record<string, any>` |  |
 
 #### Example: Load
@@ -927,14 +1235,26 @@ Create an instance: `const person = client.Person()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `Record<string, any>` |  |
+| `about` | `string` |  |
+| `alternate_names` | `any[]` |  |
+| `anime` | `any[]` |  |
+| `birthday` | `string` |  |
 | `character` | `Record<string, any>` |  |
-| `data` | `Record<string, any>` |  |
+| `data` | `any[]` |  |
+| `family_name` | `string` |  |
+| `favorites` | `number` |  |
+| `given_name` | `string` |  |
+| `images` | `Record<string, any>` |  |
 | `jpg` | `Record<string, any>` |  |
-| `manga` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
+| `manga` | `any[]` |  |
+| `name` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
 | `position` | `string` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `any[]` |  |
+| `website_url` | `string` |  |
 
 #### Example: Load
 
@@ -964,9 +1284,17 @@ Create an instance: `const producer = client.Producer()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
+| `about` | `string` |  |
+| `count` | `number` |  |
+| `data` | `any[]` |  |
+| `established` | `string` |  |
+| `external` | `any[]` |  |
+| `favorites` | `number` |  |
+| `images` | `Record<string, any>` |  |
+| `mal_id` | `number` |  |
 | `name` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
+| `titles` | `any[]` |  |
 | `url` | `string` |  |
 
 #### Example: Load
@@ -996,7 +1324,62 @@ Create an instance: `const random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
+| `about` | `string` |  |
+| `aired` | `Record<string, any>` |  |
+| `airing` | `boolean` |  |
+| `alternate_names` | `any[]` |  |
+| `approved` | `boolean` |  |
+| `authors` | `any[]` |  |
+| `background` | `string` |  |
+| `birthday` | `string` |  |
+| `broadcast` | `Record<string, any>` |  |
+| `chapters` | `number` |  |
+| `demographics` | `any[]` |  |
+| `duration` | `string` |  |
+| `episodes` | `number` |  |
+| `explicit_genres` | `any[]` |  |
+| `family_name` | `string` |  |
+| `favorites` | `number` |  |
+| `gender` | `string` |  |
+| `genres` | `any[]` |  |
+| `given_name` | `string` |  |
+| `images` | `Record<string, any>` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `licensors` | `any[]` |  |
+| `location` | `string` |  |
+| `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `any[]` |  |
+| `popularity` | `number` |  |
+| `producers` | `any[]` |  |
+| `published` | `Record<string, any>` |  |
+| `publishing` | `boolean` |  |
+| `rank` | `number` |  |
+| `rating` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `season` | `string` |  |
+| `serializations` | `any[]` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `studios` | `any[]` |  |
+| `synopsis` | `string` |  |
+| `themes` | `any[]` |  |
+| `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `any[]` |  |
+| `titles` | `any[]` |  |
+| `trailer` | `Record<string, any>` |  |
+| `type` | `string` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
+| `volumes` | `number` |  |
+| `website_url` | `string` |  |
+| `year` | `number` |  |
 
 #### Example: Load
 
@@ -1025,7 +1408,7 @@ Create an instance: `const recommendation = client.Recommendation()`
 #### Example: List
 
 ```ts
-const recommendations = await client.Recommendation().list()
+const recommendations = await client.Recommendation().list({ username: "example" })
 ```
 
 
@@ -1086,7 +1469,7 @@ Create an instance: `const season = client.Season()`
 | --- | --- | --- |
 | `data` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
-| `season` | `any[]` |  |
+| `seasons` | `any[]` |  |
 | `year` | `number` |  |
 
 #### Example: List
@@ -1110,7 +1493,8 @@ Create an instance: `const top = client.Top()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `data` | `any[]` |  |
+| `pagination` | `Record<string, any>` |  |
 
 #### Example: Load
 
@@ -1134,8 +1518,23 @@ Create an instance: `const user = client.User()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `anime` | `any[]` |  |
+| `birthday` | `string` |  |
+| `characters` | `any[]` |  |
+| `data` | `any[]` |  |
+| `external` | `any[]` |  |
+| `gender` | `string` |  |
+| `images` | `Record<string, any>` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `location` | `string` |  |
+| `mal_id` | `number` |  |
+| `manga` | `any[]` |  |
 | `pagination` | `Record<string, any>` |  |
+| `people` | `any[]` |  |
+| `statistics` | `Record<string, any>` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -1169,7 +1568,7 @@ Create an instance: `const user_about = client.UserAbout()`
 #### Example: List
 
 ```ts
-const user_abouts = await client.UserAbout().list()
+const user_abouts = await client.UserAbout().list({ username: "example" })
 ```
 
 
@@ -1193,7 +1592,7 @@ Create an instance: `const user_club = client.UserClub()`
 #### Example: List
 
 ```ts
-const user_clubs = await client.UserClub().list()
+const user_clubs = await client.UserClub().list({ username: "example" })
 ```
 
 
@@ -1217,7 +1616,7 @@ Create an instance: `const user_friend = client.UserFriend()`
 #### Example: List
 
 ```ts
-const user_friends = await client.UserFriend().list()
+const user_friends = await client.UserFriend().list({ username: "example" })
 ```
 
 
@@ -1242,7 +1641,7 @@ Create an instance: `const user_history = client.UserHistory()`
 #### Example: List
 
 ```ts
-const user_historys = await client.UserHistory().list()
+const user_historys = await client.UserHistory().list({ username: "example" })
 ```
 
 
@@ -1260,7 +1659,8 @@ Create an instance: `const user_statistic = client.UserStatistic()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
+| `anime` | `Record<string, any>` |  |
+| `manga` | `Record<string, any>` |  |
 
 #### Example: Load
 
@@ -1283,7 +1683,8 @@ Create an instance: `const user_update = client.UserUpdate()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Record<string, any>` |  |
+| `anime` | `any[]` |  |
+| `manga` | `any[]` |  |
 
 #### Example: Load
 
@@ -1409,11 +1810,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const anime = client.Anime()
-await anime.list()
+const external = client.External()
+await external.list()
 
-// anime.data() now returns the anime data from the last `list`
-// anime.match() returns the last match criteria
+// external.data() now returns the external data from the last `list`
+// external.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

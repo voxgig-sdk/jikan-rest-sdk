@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import JikanRestControl
-from core.error import JikanRestError
-from core.result import JikanRestResult
-from core.spec import JikanRestSpec
+from jikanrest_sdk.config import make_config
+from jikanrest_sdk.features import _make_feature
+from jikanrest_sdk.core.control import JikanRestControl
+from jikanrest_sdk.core.error import JikanRestError
+from jikanrest_sdk.core.result import JikanRestResult
+from jikanrest_sdk.core.spec import JikanRestSpec
 
 
 # True when this SDK was generated with the named feature.

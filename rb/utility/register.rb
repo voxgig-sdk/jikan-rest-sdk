@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ JikanRestUtility.registrar = ->(u) {
   u.prepare_params = JikanRestUtilities::PrepareParams
   u.prepare_path = JikanRestUtilities::PreparePath
   u.prepare_query = JikanRestUtilities::PrepareQuery
+  u.graphql_body = JikanRestUtilities::GraphqlBody
+  u.graphql_errors = JikanRestUtilities::GraphqlErrors
   u.result_basic = JikanRestUtilities::ResultBasic
   u.result_body = JikanRestUtilities::ResultBody
   u.result_headers = JikanRestUtilities::ResultHeaders

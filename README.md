@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = JikanRestSDK.test()
-const animes = await client.Anime().list()
-// animes is an array of bare Anime records populated with mock data
-console.log(animes)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = JikanRestSDK.test({
+  entity: {
+    external: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const externals = await client.External().list()
+// externals is an array of External entities, populated with mock data
+// — call externals[0].data() for the record itself
+console.log(externals)
 ```
 
 ### Python
 
 ```python
 client = JikanRestSDK.test()
-animes = client.Anime().list()
-print(animes)
+externals = client.External().list()
+print(externals)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(animes)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = JikanRestSDK::test([
-    "entity" => ["anime" => ["test01" => ["id" => "test01"]]],
+    "entity" => ["external" => ["test01" => []]],
 ]);
-$animes = $client->Anime()->list();
+$externals = $client->External()->list();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.Anime(nil).List(
+result, err := client.External(nil).List(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.Anime(nil).List(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = JikanRestSDK.test({
-  "entity" => { "anime" => { "test01" => { "id" => "test01" } } },
+  "entity" => { "external" => { "test01" => {} } },
 })
-animes = client.Anime.list()
+externals = client.External.list()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local results, err = client:Anime():list()
+local results, err = client:External():list()
 ```
 
 ## Packages
@@ -110,7 +119,7 @@ import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
 
 const client = new JikanRestSDK()
 
-// List all animes (returns Anime[])
+// List all animes (returns AnimeEntity[] — .data() for the record)
 const animes = await client.Anime().list()
 for (const anime of animes) {
   console.log(anime)
@@ -221,7 +230,7 @@ $client = new JikanRestSDK();
 $animes = $client->Anime()->list();
 print_r($animes);
 
-// Load a specific anime (returns the bare record; throws on error)
+// Load a specific anime (returns the ENTITY; call data_get() for the record; throws on error)
 $anime = $client->Anime()->load(["id" => 1]);
 print_r($anime);
 ```
@@ -261,7 +270,7 @@ client = JikanRestSDK.new
 animes = client.Anime.list
 puts animes
 
-# Load a specific anime (returns the bare record; raises on error)
+# Load a specific anime (returns the ENTITY; call data_get for the record)
 anime = client.Anime.load({ "id" => 1 })
 puts anime
 ```
@@ -398,6 +407,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [http://discord.jikan.moe](http://discord.jikan.moe)
 

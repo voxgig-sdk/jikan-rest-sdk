@@ -37,7 +37,7 @@ class WatchEpisodeEntity extends JikanRestEntityBase<WatchEpisode> {
 
 
 
-  async list(this: any, reqmatch?: WatchEpisodeListMatch, ctrl?: Control): Promise<WatchEpisode[]> {
+  async list(this: any, reqmatch?: WatchEpisodeListMatch, ctrl?: Control): Promise<WatchEpisodeEntity[]> {
 
     const utility = this._utility
 

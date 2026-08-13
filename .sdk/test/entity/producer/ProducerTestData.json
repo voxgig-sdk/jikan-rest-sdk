@@ -2,24 +2,48 @@
   "existing": {
     "producer": {
       "PRODUCER00": {
-        "data": {},
-        "name": "s29",
+        "about": "s78",
+        "count": "s79",
+        "data": [],
+        "established": "s7b",
+        "external": [],
+        "favorites": "s7d",
+        "images": {},
+        "mal_id": "MAL01",
+        "name": "s80",
         "pagination": {},
-        "url": "s2b",
+        "titles": [],
+        "url": "s83",
         "id": "PRODUCER00"
       },
       "PRODUCER01": {
-        "data": {},
-        "name": "s51",
+        "about": "sf0",
+        "count": "sf1",
+        "data": [],
+        "established": "sf3",
+        "external": [],
+        "favorites": "sf5",
+        "images": {},
+        "mal_id": "MAL01",
+        "name": "sf8",
         "pagination": {},
-        "url": "s53",
+        "titles": [],
+        "url": "sfb",
         "id": "PRODUCER01"
       },
       "PRODUCER02": {
-        "data": {},
-        "name": "s79",
+        "about": "s168",
+        "count": "s169",
+        "data": [],
+        "established": "s16b",
+        "external": [],
+        "favorites": "s16d",
+        "images": {},
+        "mal_id": "MAL01",
+        "name": "s170",
         "pagination": {},
-        "url": "s7b",
+        "titles": [],
+        "url": "s173",
         "id": "PRODUCER02"
       }
     }
@@ -27,10 +51,18 @@
   "new": {
     "producer": {
       "producer_ref01": {
-        "data": {},
-        "name": "sa1",
+        "about": "s1e0",
+        "count": "s1e1",
+        "data": [],
+        "established": "s1e3",
+        "external": [],
+        "favorites": "s1e5",
+        "images": {},
+        "mal_id": "MAL01",
+        "name": "s1e8",
         "pagination": {},
-        "url": "sa3"
+        "titles": [],
+        "url": "s1eb"
       }
     }
   }

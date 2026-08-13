@@ -26,8 +26,8 @@ import {
 describe('ReviewEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when JIKANREST_TEST_LIVE=TRUE.
-  afterEach(liveDelay('JIKANREST_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when JIKAN_REST_TEST_LIVE=TRUE.
+  afterEach(liveDelay('JIKAN_REST_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = JikanRestSDK.test()
@@ -62,7 +62,7 @@ describe('ReviewEntity', async () => {
     // LOAD
     const review_ref01_ent = client.Review()
     const review_ref01_match_dt0: any = {}
-    const review_ref01_data_dt0 = await review_ref01_ent.load(review_ref01_match_dt0)
+    const review_ref01_data_dt0 = (await review_ref01_ent.load(review_ref01_match_dt0)).data()
     assert(null != review_ref01_data_dt0)
 
 

@@ -43,8 +43,8 @@ class JikanRestTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('JIKANREST_TEST_LIVE');
-        $override = self::getenv('JIKANREST_TEST_OVERRIDE');
+        $live = self::getenv('JIKAN_REST_TEST_LIVE');
+        $override = self::getenv('JIKAN_REST_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class JikanRestTestRunner
             }
         }
 
-        $explain = self::getenv('JIKANREST_TEST_EXPLAIN');
+        $explain = self::getenv('JIKAN_REST_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['JIKANREST_TEST_EXPLAIN'] = $explain;
+            $m['JIKAN_REST_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

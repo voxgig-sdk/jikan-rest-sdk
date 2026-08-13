@@ -6,7 +6,12 @@ main: kit: entity: user_statistic: {
 
   fields: [
     {
-      name: "data"
+      name: "anime"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "manga"
       req: false
       type: "`$OBJECT`"
     }
@@ -43,7 +48,7 @@ main: kit: entity: user_statistic: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

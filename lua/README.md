@@ -43,7 +43,7 @@ local animes, err = client:Anime():list()
 if err then error(err) end
 
 for _, item in ipairs(animes) do
-  print(item["author_url"])
+  print(item["aired"])
 end
 ```
 
@@ -64,7 +64,7 @@ Entity operations return `(value, err)`. Check `err` before using
 the value:
 
 ```lua
-local animes, err = client:Anime():list()
+local externals, err = client:External():list()
 if err then error(err) end
 ```
 
@@ -122,7 +122,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:Anime():list()
+local result, err = client:External():list()
 -- result is the returned data; err is set on failure
 ```
 
@@ -267,25 +267,76 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
+| `aired` |  |
+| `airing` |  |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `background` |  |
+| `broadcast` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
+| `duration` |  |
+| `endings` |  |
 | `entry` |  |
-| `image` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `filler` |  |
+| `genres` |  |
+| `images` |  |
 | `last_comment` |  |
+| `licensors` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
+| `music_videos` |  |
 | `name` |  |
+| `on_hold` |  |
+| `openings` |  |
 | `pagination` |  |
 | `person` |  |
-| `position` |  |
+| `plan_to_watch` |  |
+| `popularity` |  |
+| `positions` |  |
+| `producers` |  |
+| `promo` |  |
+| `rank` |  |
+| `rating` |  |
+| `recap` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `season` |  |
+| `source` |  |
+| `status` |  |
+| `streaming` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `theme` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_romanji` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `trailer` |  |
+| `type` |  |
 | `url` |  |
-| `voice_actor` |  |
+| `voice_actors` |  |
+| `watching` |  |
+| `year` |  |
 
 Operations: List, Load.
 
@@ -295,15 +346,24 @@ API path: `/anime`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
 | `anime` |  |
 | `data` |  |
+| `favorites` |  |
 | `image_url` |  |
+| `images` |  |
 | `language` |  |
 | `large_image_url` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
 | `pagination` |  |
 | `person` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
 
 Operations: List, Load.
 
@@ -313,7 +373,17 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
+| `access` |  |
+| `anime` |  |
+| `category` |  |
+| `characters` |  |
+| `created` |  |
 | `data` |  |
+| `images` |  |
+| `mal_id` |  |
+| `manga` |  |
+| `members` |  |
+| `name` |  |
 | `pagination` |  |
 | `url` |  |
 | `username` |  |
@@ -361,22 +431,58 @@ API path: `/magazines`
 
 | Field | Description |
 | --- | --- |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `authors` |  |
+| `background` |  |
+| `chapters` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
 | `entry` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `genres` |  |
+| `images` |  |
 | `jpg` |  |
 | `last_comment` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
 | `name` |  |
+| `on_hold` |  |
 | `pagination` |  |
+| `plan_to_read` |  |
+| `popularity` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `reading` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `serializations` |  |
+| `status` |  |
+| `synopsis` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `type` |  |
 | `url` |  |
+| `volumes` |  |
 | `webp` |  |
 
 Operations: List, Load.
@@ -398,14 +504,26 @@ API path: `/top/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `alternate_names` |  |
 | `anime` |  |
+| `birthday` |  |
 | `character` |  |
 | `data` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `given_name` |  |
+| `images` |  |
 | `jpg` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
 | `pagination` |  |
 | `position` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
+| `website_url` |  |
 
 Operations: List, Load.
 
@@ -415,9 +533,17 @@ API path: `/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `count` |  |
 | `data` |  |
+| `established` |  |
+| `external` |  |
+| `favorites` |  |
+| `images` |  |
+| `mal_id` |  |
 | `name` |  |
 | `pagination` |  |
+| `titles` |  |
 | `url` |  |
 
 Operations: List, Load.
@@ -428,7 +554,62 @@ API path: `/producers`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `about` |  |
+| `aired` |  |
+| `airing` |  |
+| `alternate_names` |  |
+| `approved` |  |
+| `authors` |  |
+| `background` |  |
+| `birthday` |  |
+| `broadcast` |  |
+| `chapters` |  |
+| `demographics` |  |
+| `duration` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `gender` |  |
+| `genres` |  |
+| `given_name` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `licensors` |  |
+| `location` |  |
+| `mal_id` |  |
+| `members` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
+| `popularity` |  |
+| `producers` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `rating` |  |
+| `score` |  |
+| `scored_by` |  |
+| `season` |  |
+| `serializations` |  |
+| `source` |  |
+| `status` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `themes` |  |
+| `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `trailer` |  |
+| `type` |  |
+| `url` |  |
+| `username` |  |
+| `volumes` |  |
+| `website_url` |  |
+| `year` |  |
 
 Operations: Load.
 
@@ -471,7 +652,7 @@ API path: `/schedules`
 | --- | --- |
 | `data` |  |
 | `pagination` |  |
-| `season` |  |
+| `seasons` |  |
 | `year` |  |
 
 Operations: List.
@@ -483,6 +664,7 @@ API path: `/seasons/{year}/{season}`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `pagination` |  |
 
 Operations: Load.
 
@@ -492,8 +674,23 @@ API path: `/top/reviews`
 
 | Field | Description |
 | --- | --- |
+| `anime` |  |
+| `birthday` |  |
+| `characters` |  |
 | `data` |  |
+| `external` |  |
+| `gender` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `location` |  |
+| `mal_id` |  |
+| `manga` |  |
 | `pagination` |  |
+| `people` |  |
+| `statistics` |  |
+| `url` |  |
+| `username` |  |
 
 Operations: List, Load.
 
@@ -547,7 +744,8 @@ API path: `/users/{username}/history`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: Load.
 
@@ -557,7 +755,8 @@ API path: `/users/{username}/statistics`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: Load.
 
@@ -605,25 +804,76 @@ Create an instance: `local anime = client:Anime(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `aired` | `string` |  |
+| `airing` | `boolean` |  |
+| `approved` | `boolean` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `background` | `string` |  |
+| `broadcast` | `table` |  |
 | `character` | `table` |  |
-| `comment` | `number` |  |
+| `comments` | `number` |  |
+| `completed` | `number` |  |
 | `data` | `table` |  |
 | `date` | `string` |  |
+| `demographics` | `table` |  |
+| `dropped` | `number` |  |
+| `duration` | `number` |  |
+| `endings` | `table` |  |
 | `entry` | `table` |  |
-| `image` | `table` |  |
+| `episodes` | `number` |  |
+| `explicit_genres` | `table` |  |
+| `external` | `table` |  |
+| `favorites` | `number` |  |
+| `filler` | `boolean` |  |
+| `genres` | `table` |  |
+| `images` | `table` |  |
 | `last_comment` | `table` |  |
+| `licensors` | `table` |  |
 | `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `moreinfo` | `string` |  |
+| `music_videos` | `table` |  |
 | `name` | `string` |  |
+| `on_hold` | `number` |  |
+| `openings` | `table` |  |
 | `pagination` | `table` |  |
 | `person` | `table` |  |
-| `position` | `table` |  |
+| `plan_to_watch` | `number` |  |
+| `popularity` | `number` |  |
+| `positions` | `table` |  |
+| `producers` | `table` |  |
+| `promo` | `table` |  |
+| `rank` | `number` |  |
+| `rating` | `string` |  |
+| `recap` | `boolean` |  |
 | `relation` | `string` |  |
+| `relations` | `table` |  |
 | `role` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `scores` | `table` |  |
+| `season` | `string` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `streaming` | `table` |  |
+| `studios` | `table` |  |
+| `synopsis` | `string` |  |
+| `theme` | `table` |  |
+| `themes` | `table` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_romanji` | `string` |  |
+| `title_synonyms` | `table` |  |
+| `titles` | `table` |  |
+| `total` | `number` |  |
+| `trailer` | `table` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
-| `voice_actor` | `table` |  |
+| `voice_actors` | `table` |  |
+| `watching` | `number` |  |
+| `year` | `number` |  |
 
 #### Example: Load
 
@@ -653,15 +903,24 @@ Create an instance: `local character = client:Character(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `about` | `string` |  |
 | `anime` | `table` |  |
 | `data` | `table` |  |
+| `favorites` | `number` |  |
 | `image_url` | `string` |  |
+| `images` | `table` |  |
 | `language` | `string` |  |
 | `large_image_url` | `string` |  |
+| `mal_id` | `number` |  |
 | `manga` | `table` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `table` |  |
 | `pagination` | `table` |  |
 | `person` | `table` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `table` |  |
 
 #### Example: Load
 
@@ -691,7 +950,17 @@ Create an instance: `local club = client:Club(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `access` | `string` |  |
+| `anime` | `table` |  |
+| `category` | `string` |  |
+| `characters` | `table` |  |
+| `created` | `string` |  |
 | `data` | `table` |  |
+| `images` | `table` |  |
+| `mal_id` | `number` |  |
+| `manga` | `table` |  |
+| `members` | `number` |  |
+| `name` | `string` |  |
 | `pagination` | `table` |  |
 | `url` | `string` |  |
 | `username` | `string` |  |
@@ -798,22 +1067,58 @@ Create an instance: `local manga = client:Manga(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `approved` | `boolean` |  |
 | `author_url` | `string` |  |
 | `author_username` | `string` |  |
+| `authors` | `table` |  |
+| `background` | `string` |  |
+| `chapters` | `number` |  |
 | `character` | `table` |  |
-| `comment` | `number` |  |
+| `comments` | `number` |  |
+| `completed` | `number` |  |
 | `data` | `table` |  |
 | `date` | `string` |  |
+| `demographics` | `table` |  |
+| `dropped` | `number` |  |
 | `entry` | `table` |  |
+| `explicit_genres` | `table` |  |
+| `external` | `table` |  |
+| `favorites` | `number` |  |
+| `genres` | `table` |  |
+| `images` | `table` |  |
 | `jpg` | `table` |  |
 | `last_comment` | `table` |  |
 | `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `moreinfo` | `string` |  |
 | `name` | `string` |  |
+| `on_hold` | `number` |  |
 | `pagination` | `table` |  |
+| `plan_to_read` | `number` |  |
+| `popularity` | `number` |  |
+| `published` | `table` |  |
+| `publishing` | `boolean` |  |
+| `rank` | `number` |  |
+| `reading` | `number` |  |
 | `relation` | `string` |  |
+| `relations` | `table` |  |
 | `role` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `scores` | `table` |  |
+| `serializations` | `table` |  |
+| `status` | `string` |  |
+| `synopsis` | `string` |  |
+| `themes` | `table` |  |
 | `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `table` |  |
+| `titles` | `table` |  |
+| `total` | `number` |  |
+| `type` | `string` |  |
 | `url` | `string` |  |
+| `volumes` | `number` |  |
 | `webp` | `table` |  |
 
 #### Example: Load
@@ -868,14 +1173,26 @@ Create an instance: `local person = client:Person(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `about` | `string` |  |
+| `alternate_names` | `table` |  |
 | `anime` | `table` |  |
+| `birthday` | `string` |  |
 | `character` | `table` |  |
 | `data` | `table` |  |
+| `family_name` | `string` |  |
+| `favorites` | `number` |  |
+| `given_name` | `string` |  |
+| `images` | `table` |  |
 | `jpg` | `table` |  |
+| `mal_id` | `number` |  |
 | `manga` | `table` |  |
+| `name` | `string` |  |
 | `pagination` | `table` |  |
 | `position` | `string` |  |
 | `role` | `string` |  |
+| `url` | `string` |  |
+| `voices` | `table` |  |
+| `website_url` | `string` |  |
 
 #### Example: Load
 
@@ -905,9 +1222,17 @@ Create an instance: `local producer = client:Producer(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `about` | `string` |  |
+| `count` | `number` |  |
 | `data` | `table` |  |
+| `established` | `string` |  |
+| `external` | `table` |  |
+| `favorites` | `number` |  |
+| `images` | `table` |  |
+| `mal_id` | `number` |  |
 | `name` | `string` |  |
 | `pagination` | `table` |  |
+| `titles` | `table` |  |
 | `url` | `string` |  |
 
 #### Example: Load
@@ -937,7 +1262,62 @@ Create an instance: `local random = client:Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
+| `about` | `string` |  |
+| `aired` | `table` |  |
+| `airing` | `boolean` |  |
+| `alternate_names` | `table` |  |
+| `approved` | `boolean` |  |
+| `authors` | `table` |  |
+| `background` | `string` |  |
+| `birthday` | `string` |  |
+| `broadcast` | `table` |  |
+| `chapters` | `number` |  |
+| `demographics` | `table` |  |
+| `duration` | `string` |  |
+| `episodes` | `number` |  |
+| `explicit_genres` | `table` |  |
+| `family_name` | `string` |  |
+| `favorites` | `number` |  |
+| `gender` | `string` |  |
+| `genres` | `table` |  |
+| `given_name` | `string` |  |
+| `images` | `table` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `licensors` | `table` |  |
+| `location` | `string` |  |
+| `mal_id` | `number` |  |
+| `members` | `number` |  |
+| `name` | `string` |  |
+| `name_kanji` | `string` |  |
+| `nicknames` | `table` |  |
+| `popularity` | `number` |  |
+| `producers` | `table` |  |
+| `published` | `table` |  |
+| `publishing` | `boolean` |  |
+| `rank` | `number` |  |
+| `rating` | `string` |  |
+| `score` | `number` |  |
+| `scored_by` | `number` |  |
+| `season` | `string` |  |
+| `serializations` | `table` |  |
+| `source` | `string` |  |
+| `status` | `string` |  |
+| `studios` | `table` |  |
+| `synopsis` | `string` |  |
+| `themes` | `table` |  |
+| `title` | `string` |  |
+| `title_english` | `string` |  |
+| `title_japanese` | `string` |  |
+| `title_synonyms` | `table` |  |
+| `titles` | `table` |  |
+| `trailer` | `table` |  |
+| `type` | `string` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
+| `volumes` | `number` |  |
+| `website_url` | `string` |  |
+| `year` | `number` |  |
 
 #### Example: Load
 
@@ -1027,7 +1407,7 @@ Create an instance: `local season = client:Season(nil)`
 | --- | --- | --- |
 | `data` | `table` |  |
 | `pagination` | `table` |  |
-| `season` | `table` |  |
+| `seasons` | `table` |  |
 | `year` | `number` |  |
 
 #### Example: List
@@ -1051,7 +1431,8 @@ Create an instance: `local top = client:Top(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `data` | `table` |  |
+| `pagination` | `table` |  |
 
 #### Example: Load
 
@@ -1075,8 +1456,23 @@ Create an instance: `local user = client:User(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `any` |  |
+| `anime` | `table` |  |
+| `birthday` | `string` |  |
+| `characters` | `table` |  |
+| `data` | `table` |  |
+| `external` | `table` |  |
+| `gender` | `string` |  |
+| `images` | `table` |  |
+| `joined` | `string` |  |
+| `last_online` | `string` |  |
+| `location` | `string` |  |
+| `mal_id` | `number` |  |
+| `manga` | `table` |  |
 | `pagination` | `table` |  |
+| `people` | `table` |  |
+| `statistics` | `table` |  |
+| `url` | `string` |  |
+| `username` | `string` |  |
 
 #### Example: Load
 
@@ -1201,7 +1597,8 @@ Create an instance: `local user_statistic = client:UserStatistic(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
+| `anime` | `table` |  |
+| `manga` | `table` |  |
 
 #### Example: Load
 
@@ -1224,7 +1621,8 @@ Create an instance: `local user_update = client:UserUpdate(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `table` |  |
+| `anime` | `table` |  |
+| `manga` | `table` |  |
 
 #### Example: Load
 
@@ -1357,11 +1755,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local anime = client:Anime()
-anime:list()
+local external = client:External()
+external:list()
 
--- anime:data_get() now returns the anime data from the last list
--- anime:match_get() returns the last match criteria
+-- external:data_get() now returns the external data from the last list
+-- external:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

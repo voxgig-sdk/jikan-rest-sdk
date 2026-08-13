@@ -6,6 +6,11 @@ main: kit: entity: manga: {
 
   fields: [
     {
+      name: "approved"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
       name: "author_url"
       req: false
       type: "`$STRING`"
@@ -16,19 +21,39 @@ main: kit: entity: manga: {
       type: "`$STRING`"
     }
     {
+      name: "authors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "background"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "chapters"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
       name: "character"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "comment"
+      name: "comments"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "completed"
       req: false
       type: "`$INTEGER`"
     }
     {
       name: "data"
       req: false
-      type: "`$OBJECT`"
+      type: "`$ARRAY`"
     }
     {
       name: "date"
@@ -36,7 +61,42 @@ main: kit: entity: manga: {
       type: "`$STRING`"
     }
     {
+      name: "demographics"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "dropped"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
       name: "entry"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "explicit_genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "external"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "favorites"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "images"
       req: false
       type: "`$OBJECT`"
     }
@@ -56,9 +116,24 @@ main: kit: entity: manga: {
       type: "`$INTEGER`"
     }
     {
+      name: "members"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "moreinfo"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "name"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "on_hold"
+      req: false
+      type: "`$INTEGER`"
     }
     {
       name: "pagination"
@@ -66,9 +141,44 @@ main: kit: entity: manga: {
       type: "`$OBJECT`"
     }
     {
+      name: "plan_to_read"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "popularity"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "published"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "publishing"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "rank"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "reading"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
       name: "relation"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "relations"
+      req: false
+      type: "`$ARRAY`"
     }
     {
       name: "role"
@@ -76,7 +186,72 @@ main: kit: entity: manga: {
       type: "`$STRING`"
     }
     {
+      name: "score"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "scored_by"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "scores"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "serializations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "themes"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "title"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_english"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_japanese"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "title_synonyms"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "titles"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "total"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "type"
       req: false
       type: "`$STRING`"
     }
@@ -84,6 +259,11 @@ main: kit: entity: manga: {
       name: "url"
       req: false
       type: "`$STRING`"
+    }
+    {
+      name: "volumes"
+      req: false
+      type: "`$INTEGER`"
     }
     {
       name: "webp"
@@ -405,7 +585,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -515,7 +695,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -545,7 +725,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -575,7 +755,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -605,7 +785,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -635,7 +815,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
@@ -668,7 +848,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -698,7 +878,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -728,7 +908,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -758,7 +938,7 @@ main: kit: entity: manga: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

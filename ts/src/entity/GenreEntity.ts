@@ -37,7 +37,7 @@ class GenreEntity extends JikanRestEntityBase<Genre> {
 
 
 
-  async list(this: any, reqmatch?: GenreListMatch, ctrl?: Control): Promise<Genre[]> {
+  async list(this: any, reqmatch?: GenreListMatch, ctrl?: Control): Promise<GenreEntity[]> {
 
     const utility = this._utility
 

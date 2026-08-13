@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import JikanRestSDK
-from core.error import JikanRestError
-from core.result import JikanRestResult
-from core.response import JikanRestResponse
-from core.spec import JikanRestSpec
-from feature.base_feature import JikanRestBaseFeature
+from projectname_sdk.core.error import JikanRestError
+from projectname_sdk.core.result import JikanRestResult
+from projectname_sdk.core.response import JikanRestResponse
+from projectname_sdk.core.spec import JikanRestSpec
+from projectname_sdk.feature.base_feature import JikanRestBaseFeature
 
 
 def _client():

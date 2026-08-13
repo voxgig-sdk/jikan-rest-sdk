@@ -6,9 +6,24 @@ main: kit: entity: person: {
 
   fields: [
     {
+      name: "about"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "alternate_names"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
       name: "anime"
       req: false
-      type: "`$OBJECT`"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "birthday"
+      req: false
+      type: "`$STRING`"
     }
     {
       name: "character"
@@ -18,6 +33,26 @@ main: kit: entity: person: {
     {
       name: "data"
       req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "family_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "favorites"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "given_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "images"
+      req: false
       type: "`$OBJECT`"
     }
     {
@@ -26,9 +61,19 @@ main: kit: entity: person: {
       type: "`$OBJECT`"
     }
     {
+      name: "mal_id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
       name: "manga"
       req: false
-      type: "`$OBJECT`"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
     }
     {
       name: "pagination"
@@ -42,6 +87,21 @@ main: kit: entity: person: {
     }
     {
       name: "role"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "voices"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "website_url"
       req: false
       type: "`$STRING`"
     }
@@ -146,7 +206,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -176,7 +236,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -206,7 +266,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -236,7 +296,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
@@ -269,7 +329,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -299,7 +359,7 @@ main: kit: entity: person: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

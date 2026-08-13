@@ -7,78 +7,208 @@
 -- edit by hand.
 
 ---@class Anime
+---@field aired? string
+---@field airing? boolean
+---@field approved? boolean
 ---@field author_url? string
 ---@field author_username? string
+---@field background? string
+---@field broadcast? table
 ---@field character? table
----@field comment? number
+---@field comments? number
+---@field completed? number
 ---@field data? table
 ---@field date? string
+---@field demographics? table
+---@field dropped? number
+---@field duration? number
+---@field endings? table
 ---@field entry? table
----@field image? table
+---@field episodes? number
+---@field explicit_genres? table
+---@field external? table
+---@field favorites? number
+---@field filler? boolean
+---@field genres? table
+---@field images? table
 ---@field last_comment? table
+---@field licensors? table
 ---@field mal_id? number
+---@field members? number
+---@field moreinfo? string
+---@field music_videos? table
 ---@field name? string
+---@field on_hold? number
+---@field openings? table
 ---@field pagination? table
 ---@field person? table
----@field position? table
+---@field plan_to_watch? number
+---@field popularity? number
+---@field positions? table
+---@field producers? table
+---@field promo? table
+---@field rank? number
+---@field rating? string
+---@field recap? boolean
 ---@field relation? string
+---@field relations? table
 ---@field role? string
+---@field score? number
+---@field scored_by? number
+---@field scores? table
+---@field season? string
+---@field source? string
+---@field status? string
+---@field streaming? table
+---@field studios? table
+---@field synopsis? string
+---@field theme? table
+---@field themes? table
 ---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_romanji? string
+---@field title_synonyms? table
+---@field titles? table
+---@field total? number
+---@field trailer? table
+---@field type? string
 ---@field url? string
----@field voice_actor? table
+---@field voice_actors? table
+---@field watching? number
+---@field year? number
 
 ---@class AnimeLoadMatch
 ---@field episode? number
 ---@field id number
 
 ---@class AnimeListMatch
+---@field aired? string
+---@field airing? boolean
+---@field approved? boolean
 ---@field author_url? string
 ---@field author_username? string
+---@field background? string
+---@field broadcast? table
 ---@field character? table
----@field comment? number
+---@field comments? number
+---@field completed? number
 ---@field data? table
 ---@field date? string
+---@field demographics? table
+---@field dropped? number
+---@field duration? number
+---@field endings? table
 ---@field entry? table
----@field image? table
+---@field episodes? number
+---@field explicit_genres? table
+---@field external? table
+---@field favorites? number
+---@field filler? boolean
+---@field genres? table
+---@field images? table
 ---@field last_comment? table
+---@field licensors? table
 ---@field mal_id? number
+---@field members? number
+---@field moreinfo? string
+---@field music_videos? table
 ---@field name? string
+---@field on_hold? number
+---@field openings? table
 ---@field pagination? table
 ---@field person? table
----@field position? table
+---@field plan_to_watch? number
+---@field popularity? number
+---@field positions? table
+---@field producers? table
+---@field promo? table
+---@field rank? number
+---@field rating? string
+---@field recap? boolean
 ---@field relation? string
+---@field relations? table
 ---@field role? string
+---@field score? number
+---@field scored_by? number
+---@field scores? table
+---@field season? string
+---@field source? string
+---@field status? string
+---@field streaming? table
+---@field studios? table
+---@field synopsis? string
+---@field theme? table
+---@field themes? table
 ---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_romanji? string
+---@field title_synonyms? table
+---@field titles? table
+---@field total? number
+---@field trailer? table
+---@field type? string
 ---@field url? string
----@field voice_actor? table
+---@field voice_actors? table
+---@field watching? number
+---@field year? number
 
 ---@class Character
+---@field about? string
 ---@field anime? table
 ---@field data? table
+---@field favorites? number
 ---@field image_url? string
+---@field images? table
 ---@field language? string
 ---@field large_image_url? string
+---@field mal_id? number
 ---@field manga? table
+---@field name? string
+---@field name_kanji? string
+---@field nicknames? table
 ---@field pagination? table
 ---@field person? table
 ---@field role? string
+---@field url? string
+---@field voices? table
 
 ---@class CharacterLoadMatch
 ---@field id number
 
 ---@class CharacterListMatch
+---@field about? string
 ---@field anime? table
 ---@field data? table
+---@field favorites? number
 ---@field image_url? string
+---@field images? table
 ---@field language? string
 ---@field large_image_url? string
+---@field mal_id? number
 ---@field manga? table
+---@field name? string
+---@field name_kanji? string
+---@field nicknames? table
 ---@field pagination? table
 ---@field person? table
 ---@field role? string
+---@field url? string
+---@field voices? table
 
 ---@class Club
+---@field access? string
+---@field anime? table
+---@field category? string
+---@field characters? table
+---@field created? string
 ---@field data? table
+---@field images? table
+---@field mal_id? number
+---@field manga? table
+---@field members? number
+---@field name? string
 ---@field pagination? table
 ---@field url? string
 ---@field username? string
@@ -87,7 +217,17 @@
 ---@field id number
 
 ---@class ClubListMatch
+---@field access? string
+---@field anime? table
+---@field category? string
+---@field characters? table
+---@field created? string
 ---@field data? table
+---@field images? table
+---@field mal_id? number
+---@field manga? table
+---@field members? number
+---@field name? string
 ---@field pagination? table
 ---@field url? string
 ---@field username? string
@@ -120,44 +260,116 @@
 ---@field pagination? table
 
 ---@class Manga
+---@field approved? boolean
 ---@field author_url? string
 ---@field author_username? string
+---@field authors? table
+---@field background? string
+---@field chapters? number
 ---@field character? table
----@field comment? number
+---@field comments? number
+---@field completed? number
 ---@field data? table
 ---@field date? string
+---@field demographics? table
+---@field dropped? number
 ---@field entry? table
+---@field explicit_genres? table
+---@field external? table
+---@field favorites? number
+---@field genres? table
+---@field images? table
 ---@field jpg? table
 ---@field last_comment? table
 ---@field mal_id? number
+---@field members? number
+---@field moreinfo? string
 ---@field name? string
+---@field on_hold? number
 ---@field pagination? table
+---@field plan_to_read? number
+---@field popularity? number
+---@field published? table
+---@field publishing? boolean
+---@field rank? number
+---@field reading? number
 ---@field relation? string
+---@field relations? table
 ---@field role? string
+---@field score? number
+---@field scored_by? number
+---@field scores? table
+---@field serializations? table
+---@field status? string
+---@field synopsis? string
+---@field themes? table
 ---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_synonyms? table
+---@field titles? table
+---@field total? number
+---@field type? string
 ---@field url? string
+---@field volumes? number
 ---@field webp? table
 
 ---@class MangaLoadMatch
 ---@field id number
 
 ---@class MangaListMatch
+---@field approved? boolean
 ---@field author_url? string
 ---@field author_username? string
+---@field authors? table
+---@field background? string
+---@field chapters? number
 ---@field character? table
----@field comment? number
+---@field comments? number
+---@field completed? number
 ---@field data? table
 ---@field date? string
+---@field demographics? table
+---@field dropped? number
 ---@field entry? table
+---@field explicit_genres? table
+---@field external? table
+---@field favorites? number
+---@field genres? table
+---@field images? table
 ---@field jpg? table
 ---@field last_comment? table
 ---@field mal_id? number
+---@field members? number
+---@field moreinfo? string
 ---@field name? string
+---@field on_hold? number
 ---@field pagination? table
+---@field plan_to_read? number
+---@field popularity? number
+---@field published? table
+---@field publishing? boolean
+---@field rank? number
+---@field reading? number
 ---@field relation? string
+---@field relations? table
 ---@field role? string
+---@field score? number
+---@field scored_by? number
+---@field scores? table
+---@field serializations? table
+---@field status? string
+---@field synopsis? string
+---@field themes? table
 ---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_synonyms? table
+---@field titles? table
+---@field total? number
+---@field type? string
 ---@field url? string
+---@field volumes? number
 ---@field webp? table
 
 ---@class PeopleSearch
@@ -169,48 +381,198 @@
 ---@field pagination? table
 
 ---@class Person
+---@field about? string
+---@field alternate_names? table
 ---@field anime? table
+---@field birthday? string
 ---@field character? table
 ---@field data? table
+---@field family_name? string
+---@field favorites? number
+---@field given_name? string
+---@field images? table
 ---@field jpg? table
+---@field mal_id? number
 ---@field manga? table
+---@field name? string
 ---@field pagination? table
 ---@field position? string
 ---@field role? string
+---@field url? string
+---@field voices? table
+---@field website_url? string
 
 ---@class PersonLoadMatch
 ---@field id number
 
 ---@class PersonListMatch
+---@field about? string
+---@field alternate_names? table
 ---@field anime? table
+---@field birthday? string
 ---@field character? table
 ---@field data? table
+---@field family_name? string
+---@field favorites? number
+---@field given_name? string
+---@field images? table
 ---@field jpg? table
+---@field mal_id? number
 ---@field manga? table
+---@field name? string
 ---@field pagination? table
 ---@field position? string
 ---@field role? string
+---@field url? string
+---@field voices? table
+---@field website_url? string
 
 ---@class Producer
+---@field about? string
+---@field count? number
 ---@field data? table
+---@field established? string
+---@field external? table
+---@field favorites? number
+---@field images? table
+---@field mal_id? number
 ---@field name? string
 ---@field pagination? table
+---@field titles? table
 ---@field url? string
 
 ---@class ProducerLoadMatch
 ---@field id number
 
 ---@class ProducerListMatch
+---@field about? string
+---@field count? number
 ---@field data? table
+---@field established? string
+---@field external? table
+---@field favorites? number
+---@field images? table
+---@field mal_id? number
 ---@field name? string
 ---@field pagination? table
+---@field titles? table
 ---@field url? string
 
 ---@class Random
----@field data? table
+---@field about? string
+---@field aired? table
+---@field airing? boolean
+---@field alternate_names? table
+---@field approved? boolean
+---@field authors? table
+---@field background? string
+---@field birthday? string
+---@field broadcast? table
+---@field chapters? number
+---@field demographics? table
+---@field duration? string
+---@field episodes? number
+---@field explicit_genres? table
+---@field family_name? string
+---@field favorites? number
+---@field gender? string
+---@field genres? table
+---@field given_name? string
+---@field images? table
+---@field joined? string
+---@field last_online? string
+---@field licensors? table
+---@field location? string
+---@field mal_id? number
+---@field members? number
+---@field name? string
+---@field name_kanji? string
+---@field nicknames? table
+---@field popularity? number
+---@field producers? table
+---@field published? table
+---@field publishing? boolean
+---@field rank? number
+---@field rating? string
+---@field score? number
+---@field scored_by? number
+---@field season? string
+---@field serializations? table
+---@field source? string
+---@field status? string
+---@field studios? table
+---@field synopsis? string
+---@field themes? table
+---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_synonyms? table
+---@field titles? table
+---@field trailer? table
+---@field type? string
+---@field url? string
+---@field username? string
+---@field volumes? number
+---@field website_url? string
+---@field year? number
 
 ---@class RandomLoadMatch
----@field data? table
+---@field about? string
+---@field aired? table
+---@field airing? boolean
+---@field alternate_names? table
+---@field approved? boolean
+---@field authors? table
+---@field background? string
+---@field birthday? string
+---@field broadcast? table
+---@field chapters? number
+---@field demographics? table
+---@field duration? string
+---@field episodes? number
+---@field explicit_genres? table
+---@field family_name? string
+---@field favorites? number
+---@field gender? string
+---@field genres? table
+---@field given_name? string
+---@field images? table
+---@field joined? string
+---@field last_online? string
+---@field licensors? table
+---@field location? string
+---@field mal_id? number
+---@field members? number
+---@field name? string
+---@field name_kanji? string
+---@field nicknames? table
+---@field popularity? number
+---@field producers? table
+---@field published? table
+---@field publishing? boolean
+---@field rank? number
+---@field rating? string
+---@field score? number
+---@field scored_by? number
+---@field season? string
+---@field serializations? table
+---@field source? string
+---@field status? string
+---@field studios? table
+---@field synopsis? string
+---@field themes? table
+---@field title? string
+---@field title_english? string
+---@field title_japanese? string
+---@field title_synonyms? table
+---@field titles? table
+---@field trailer? table
+---@field type? string
+---@field url? string
+---@field username? string
+---@field volumes? number
+---@field website_url? string
+---@field year? number
 
 ---@class Recommendation
 ---@field data? table
@@ -234,7 +596,7 @@
 ---@class Season
 ---@field data? table
 ---@field pagination? table
----@field season? table
+---@field seasons? table
 ---@field year? number
 
 ---@class SeasonListMatch
@@ -242,21 +604,53 @@
 ---@field year? number
 
 ---@class Top
----@field data? any
+---@field data? table
+---@field pagination? table
 
 ---@class TopLoadMatch
----@field data? any
+---@field data? table
+---@field pagination? table
 
 ---@class User
----@field data? any
+---@field anime? table
+---@field birthday? string
+---@field characters? table
+---@field data? table
+---@field external? table
+---@field gender? string
+---@field images? table
+---@field joined? string
+---@field last_online? string
+---@field location? string
+---@field mal_id? number
+---@field manga? table
 ---@field pagination? table
+---@field people? table
+---@field statistics? table
+---@field url? string
+---@field username? string
 
 ---@class UserLoadMatch
 ---@field id number
 
 ---@class UserListMatch
----@field data? any
+---@field anime? table
+---@field birthday? string
+---@field characters? table
+---@field data? table
+---@field external? table
+---@field gender? string
+---@field images? table
+---@field joined? string
+---@field last_online? string
+---@field location? string
+---@field mal_id? number
+---@field manga? table
 ---@field pagination? table
+---@field people? table
+---@field statistics? table
+---@field url? string
+---@field username? string
 
 ---@class UserAbout
 ---@field about? string
@@ -287,13 +681,15 @@
 ---@field username string
 
 ---@class UserStatistic
----@field data? table
+---@field anime? table
+---@field manga? table
 
 ---@class UserStatisticLoadMatch
 ---@field username string
 
 ---@class UserUpdate
----@field data? table
+---@field anime? table
+---@field manga? table
 
 ---@class UserUpdateLoadMatch
 ---@field username string

@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# JikanRest SDK exists test
 
 import pytest
 from jikanrest_sdk import JikanRestSDK

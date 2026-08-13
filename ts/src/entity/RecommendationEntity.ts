@@ -37,7 +37,7 @@ class RecommendationEntity extends JikanRestEntityBase<Recommendation> {
 
 
 
-  async list(this: any, reqmatch?: RecommendationListMatch, ctrl?: Control): Promise<Recommendation[]> {
+  async list(this: any, reqmatch?: RecommendationListMatch, ctrl?: Control): Promise<RecommendationEntity[]> {
 
     const utility = this._utility
 

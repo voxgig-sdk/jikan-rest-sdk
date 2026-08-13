@@ -37,7 +37,7 @@ begin
   # list returns an Array of Anime records — iterate directly.
   animes = client.Anime.list
   animes.each do |item|
-    puts "#{item["author_url"]}"
+    puts "#{item["aired"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -50,7 +50,7 @@ UserStatistic is nested under username, so provide the `username`.
 
 ```ruby
 begin
-  # load returns the bare UserStatistic record (raises on error).
+  # load returns the ENTITY — call data_get for the UserStatistic record (raises on error).
   userstatistic = client.UserStatistic.load({ "username" => "example_username" })
   puts userstatistic
 rescue => err
@@ -65,7 +65,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  animes = client.Anime.list()
+  externals = client.External.list()
 rescue => err
   warn "list failed: #{err}"
 end
@@ -128,17 +128,15 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required. Seed fixture
-data via the `entity` option so offline calls resolve without a live server:
+Create a mock client for unit testing — no server required:
 
 ```ruby
-client = JikanRestSDK.test({
-  "entity" => { "anime" => { "test01" => { "id" => "test01" } } },
-})
+client = JikanRestSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-anime = client.Anime.list()
-puts anime
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+external = client.External.list()
+puts external
 ```
 
 ### Use a custom fetch function
@@ -278,25 +276,76 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
+| `aired` |  |
+| `airing` |  |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `background` |  |
+| `broadcast` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
+| `duration` |  |
+| `endings` |  |
 | `entry` |  |
-| `image` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `filler` |  |
+| `genres` |  |
+| `images` |  |
 | `last_comment` |  |
+| `licensors` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
+| `music_videos` |  |
 | `name` |  |
+| `on_hold` |  |
+| `openings` |  |
 | `pagination` |  |
 | `person` |  |
-| `position` |  |
+| `plan_to_watch` |  |
+| `popularity` |  |
+| `positions` |  |
+| `producers` |  |
+| `promo` |  |
+| `rank` |  |
+| `rating` |  |
+| `recap` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `season` |  |
+| `source` |  |
+| `status` |  |
+| `streaming` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `theme` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_romanji` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `trailer` |  |
+| `type` |  |
 | `url` |  |
-| `voice_actor` |  |
+| `voice_actors` |  |
+| `watching` |  |
+| `year` |  |
 
 Operations: List, Load.
 
@@ -306,15 +355,24 @@ API path: `/anime`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
 | `anime` |  |
 | `data` |  |
+| `favorites` |  |
 | `image_url` |  |
+| `images` |  |
 | `language` |  |
 | `large_image_url` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
 | `pagination` |  |
 | `person` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
 
 Operations: List, Load.
 
@@ -324,7 +382,17 @@ API path: `/characters`
 
 | Field | Description |
 | --- | --- |
+| `access` |  |
+| `anime` |  |
+| `category` |  |
+| `characters` |  |
+| `created` |  |
 | `data` |  |
+| `images` |  |
+| `mal_id` |  |
+| `manga` |  |
+| `members` |  |
+| `name` |  |
 | `pagination` |  |
 | `url` |  |
 | `username` |  |
@@ -372,22 +440,58 @@ API path: `/magazines`
 
 | Field | Description |
 | --- | --- |
+| `approved` |  |
 | `author_url` |  |
 | `author_username` |  |
+| `authors` |  |
+| `background` |  |
+| `chapters` |  |
 | `character` |  |
-| `comment` |  |
+| `comments` |  |
+| `completed` |  |
 | `data` |  |
 | `date` |  |
+| `demographics` |  |
+| `dropped` |  |
 | `entry` |  |
+| `explicit_genres` |  |
+| `external` |  |
+| `favorites` |  |
+| `genres` |  |
+| `images` |  |
 | `jpg` |  |
 | `last_comment` |  |
 | `mal_id` |  |
+| `members` |  |
+| `moreinfo` |  |
 | `name` |  |
+| `on_hold` |  |
 | `pagination` |  |
+| `plan_to_read` |  |
+| `popularity` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `reading` |  |
 | `relation` |  |
+| `relations` |  |
 | `role` |  |
+| `score` |  |
+| `scored_by` |  |
+| `scores` |  |
+| `serializations` |  |
+| `status` |  |
+| `synopsis` |  |
+| `themes` |  |
 | `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `total` |  |
+| `type` |  |
 | `url` |  |
+| `volumes` |  |
 | `webp` |  |
 
 Operations: List, Load.
@@ -409,14 +513,26 @@ API path: `/top/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `alternate_names` |  |
 | `anime` |  |
+| `birthday` |  |
 | `character` |  |
 | `data` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `given_name` |  |
+| `images` |  |
 | `jpg` |  |
+| `mal_id` |  |
 | `manga` |  |
+| `name` |  |
 | `pagination` |  |
 | `position` |  |
 | `role` |  |
+| `url` |  |
+| `voices` |  |
+| `website_url` |  |
 
 Operations: List, Load.
 
@@ -426,9 +542,17 @@ API path: `/people`
 
 | Field | Description |
 | --- | --- |
+| `about` |  |
+| `count` |  |
 | `data` |  |
+| `established` |  |
+| `external` |  |
+| `favorites` |  |
+| `images` |  |
+| `mal_id` |  |
 | `name` |  |
 | `pagination` |  |
+| `titles` |  |
 | `url` |  |
 
 Operations: List, Load.
@@ -439,7 +563,62 @@ API path: `/producers`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `about` |  |
+| `aired` |  |
+| `airing` |  |
+| `alternate_names` |  |
+| `approved` |  |
+| `authors` |  |
+| `background` |  |
+| `birthday` |  |
+| `broadcast` |  |
+| `chapters` |  |
+| `demographics` |  |
+| `duration` |  |
+| `episodes` |  |
+| `explicit_genres` |  |
+| `family_name` |  |
+| `favorites` |  |
+| `gender` |  |
+| `genres` |  |
+| `given_name` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `licensors` |  |
+| `location` |  |
+| `mal_id` |  |
+| `members` |  |
+| `name` |  |
+| `name_kanji` |  |
+| `nicknames` |  |
+| `popularity` |  |
+| `producers` |  |
+| `published` |  |
+| `publishing` |  |
+| `rank` |  |
+| `rating` |  |
+| `score` |  |
+| `scored_by` |  |
+| `season` |  |
+| `serializations` |  |
+| `source` |  |
+| `status` |  |
+| `studios` |  |
+| `synopsis` |  |
+| `themes` |  |
+| `title` |  |
+| `title_english` |  |
+| `title_japanese` |  |
+| `title_synonyms` |  |
+| `titles` |  |
+| `trailer` |  |
+| `type` |  |
+| `url` |  |
+| `username` |  |
+| `volumes` |  |
+| `website_url` |  |
+| `year` |  |
 
 Operations: Load.
 
@@ -482,7 +661,7 @@ API path: `/schedules`
 | --- | --- |
 | `data` |  |
 | `pagination` |  |
-| `season` |  |
+| `seasons` |  |
 | `year` |  |
 
 Operations: List.
@@ -494,6 +673,7 @@ API path: `/seasons/{year}/{season}`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `pagination` |  |
 
 Operations: Load.
 
@@ -503,8 +683,23 @@ API path: `/top/reviews`
 
 | Field | Description |
 | --- | --- |
+| `anime` |  |
+| `birthday` |  |
+| `characters` |  |
 | `data` |  |
+| `external` |  |
+| `gender` |  |
+| `images` |  |
+| `joined` |  |
+| `last_online` |  |
+| `location` |  |
+| `mal_id` |  |
+| `manga` |  |
 | `pagination` |  |
+| `people` |  |
+| `statistics` |  |
+| `url` |  |
+| `username` |  |
 
 Operations: List, Load.
 
@@ -558,7 +753,8 @@ API path: `/users/{username}/history`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: Load.
 
@@ -568,7 +764,8 @@ API path: `/users/{username}/statistics`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
+| `anime` |  |
+| `manga` |  |
 
 Operations: Load.
 
@@ -616,30 +813,81 @@ Create an instance: `anime = client.Anime`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `aired` | `String` |  |
+| `airing` | `Boolean` |  |
+| `approved` | `Boolean` |  |
 | `author_url` | `String` |  |
 | `author_username` | `String` |  |
+| `background` | `String` |  |
+| `broadcast` | `Hash` |  |
 | `character` | `Hash` |  |
-| `comment` | `Integer` |  |
-| `data` | `Hash` |  |
+| `comments` | `Integer` |  |
+| `completed` | `Integer` |  |
+| `data` | `Array` |  |
 | `date` | `String` |  |
+| `demographics` | `Array` |  |
+| `dropped` | `Integer` |  |
+| `duration` | `Integer` |  |
+| `endings` | `Array` |  |
 | `entry` | `Hash` |  |
-| `image` | `Hash` |  |
+| `episodes` | `Integer` |  |
+| `explicit_genres` | `Array` |  |
+| `external` | `Array` |  |
+| `favorites` | `Integer` |  |
+| `filler` | `Boolean` |  |
+| `genres` | `Array` |  |
+| `images` | `Hash` |  |
 | `last_comment` | `Hash` |  |
+| `licensors` | `Array` |  |
 | `mal_id` | `Integer` |  |
+| `members` | `Integer` |  |
+| `moreinfo` | `String` |  |
+| `music_videos` | `Array` |  |
 | `name` | `String` |  |
+| `on_hold` | `Integer` |  |
+| `openings` | `Array` |  |
 | `pagination` | `Hash` |  |
 | `person` | `Hash` |  |
-| `position` | `Array` |  |
+| `plan_to_watch` | `Integer` |  |
+| `popularity` | `Integer` |  |
+| `positions` | `Array` |  |
+| `producers` | `Array` |  |
+| `promo` | `Array` |  |
+| `rank` | `Integer` |  |
+| `rating` | `String` |  |
+| `recap` | `Boolean` |  |
 | `relation` | `String` |  |
+| `relations` | `Array` |  |
 | `role` | `String` |  |
+| `score` | `Float` |  |
+| `scored_by` | `Integer` |  |
+| `scores` | `Array` |  |
+| `season` | `String` |  |
+| `source` | `String` |  |
+| `status` | `String` |  |
+| `streaming` | `Array` |  |
+| `studios` | `Array` |  |
+| `synopsis` | `String` |  |
+| `theme` | `Hash` |  |
+| `themes` | `Array` |  |
 | `title` | `String` |  |
+| `title_english` | `String` |  |
+| `title_japanese` | `String` |  |
+| `title_romanji` | `String` |  |
+| `title_synonyms` | `Array` |  |
+| `titles` | `Array` |  |
+| `total` | `Integer` |  |
+| `trailer` | `Hash` |  |
+| `type` | `String` |  |
 | `url` | `String` |  |
-| `voice_actor` | `Array` |  |
+| `voice_actors` | `Array` |  |
+| `watching` | `Integer` |  |
+| `year` | `Integer` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Anime record (raises on error).
+# load returns the ENTITY — call data_get for the Anime record (raises on error).
 anime = client.Anime.load({ "id" => 1 })
 ```
 
@@ -666,20 +914,29 @@ Create an instance: `character = client.Character`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `Hash` |  |
-| `data` | `Hash` |  |
+| `about` | `String` |  |
+| `anime` | `Array` |  |
+| `data` | `Array` |  |
+| `favorites` | `Integer` |  |
 | `image_url` | `String` |  |
+| `images` | `Hash` |  |
 | `language` | `String` |  |
 | `large_image_url` | `String` |  |
-| `manga` | `Hash` |  |
+| `mal_id` | `Integer` |  |
+| `manga` | `Array` |  |
+| `name` | `String` |  |
+| `name_kanji` | `String` |  |
+| `nicknames` | `Array` |  |
 | `pagination` | `Hash` |  |
 | `person` | `Hash` |  |
 | `role` | `String` |  |
+| `url` | `String` |  |
+| `voices` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Character record (raises on error).
+# load returns the ENTITY — call data_get for the Character record (raises on error).
 character = client.Character.load({ "id" => 1 })
 ```
 
@@ -706,7 +963,17 @@ Create an instance: `club = client.Club`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
+| `access` | `String` |  |
+| `anime` | `Array` |  |
+| `category` | `String` |  |
+| `characters` | `Array` |  |
+| `created` | `String` |  |
+| `data` | `Array` |  |
+| `images` | `Hash` |  |
+| `mal_id` | `Integer` |  |
+| `manga` | `Array` |  |
+| `members` | `Integer` |  |
+| `name` | `String` |  |
 | `pagination` | `Hash` |  |
 | `url` | `String` |  |
 | `username` | `String` |  |
@@ -714,7 +981,7 @@ Create an instance: `club = client.Club`
 #### Example: Load
 
 ```ruby
-# load returns the bare Club record (raises on error).
+# load returns the ENTITY — call data_get for the Club record (raises on error).
 club = client.Club.load({ "id" => 1 })
 ```
 
@@ -818,28 +1085,64 @@ Create an instance: `manga = client.Manga`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `approved` | `Boolean` |  |
 | `author_url` | `String` |  |
 | `author_username` | `String` |  |
+| `authors` | `Array` |  |
+| `background` | `String` |  |
+| `chapters` | `Integer` |  |
 | `character` | `Hash` |  |
-| `comment` | `Integer` |  |
-| `data` | `Hash` |  |
+| `comments` | `Integer` |  |
+| `completed` | `Integer` |  |
+| `data` | `Array` |  |
 | `date` | `String` |  |
+| `demographics` | `Array` |  |
+| `dropped` | `Integer` |  |
 | `entry` | `Hash` |  |
+| `explicit_genres` | `Array` |  |
+| `external` | `Array` |  |
+| `favorites` | `Integer` |  |
+| `genres` | `Array` |  |
+| `images` | `Hash` |  |
 | `jpg` | `Hash` |  |
 | `last_comment` | `Hash` |  |
 | `mal_id` | `Integer` |  |
+| `members` | `Integer` |  |
+| `moreinfo` | `String` |  |
 | `name` | `String` |  |
+| `on_hold` | `Integer` |  |
 | `pagination` | `Hash` |  |
+| `plan_to_read` | `Integer` |  |
+| `popularity` | `Integer` |  |
+| `published` | `Hash` |  |
+| `publishing` | `Boolean` |  |
+| `rank` | `Integer` |  |
+| `reading` | `Integer` |  |
 | `relation` | `String` |  |
+| `relations` | `Array` |  |
 | `role` | `String` |  |
+| `score` | `Float` |  |
+| `scored_by` | `Integer` |  |
+| `scores` | `Array` |  |
+| `serializations` | `Array` |  |
+| `status` | `String` |  |
+| `synopsis` | `String` |  |
+| `themes` | `Array` |  |
 | `title` | `String` |  |
+| `title_english` | `String` |  |
+| `title_japanese` | `String` |  |
+| `title_synonyms` | `Array` |  |
+| `titles` | `Array` |  |
+| `total` | `Integer` |  |
+| `type` | `String` |  |
 | `url` | `String` |  |
+| `volumes` | `Integer` |  |
 | `webp` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Manga record (raises on error).
+# load returns the ENTITY — call data_get for the Manga record (raises on error).
 manga = client.Manga.load({ "id" => 1 })
 ```
 
@@ -891,19 +1194,31 @@ Create an instance: `person = client.Person`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `Hash` |  |
+| `about` | `String` |  |
+| `alternate_names` | `Array` |  |
+| `anime` | `Array` |  |
+| `birthday` | `String` |  |
 | `character` | `Hash` |  |
-| `data` | `Hash` |  |
+| `data` | `Array` |  |
+| `family_name` | `String` |  |
+| `favorites` | `Integer` |  |
+| `given_name` | `String` |  |
+| `images` | `Hash` |  |
 | `jpg` | `Hash` |  |
-| `manga` | `Hash` |  |
+| `mal_id` | `Integer` |  |
+| `manga` | `Array` |  |
+| `name` | `String` |  |
 | `pagination` | `Hash` |  |
 | `position` | `String` |  |
 | `role` | `String` |  |
+| `url` | `String` |  |
+| `voices` | `Array` |  |
+| `website_url` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Person record (raises on error).
+# load returns the ENTITY — call data_get for the Person record (raises on error).
 person = client.Person.load({ "id" => 1 })
 ```
 
@@ -930,15 +1245,23 @@ Create an instance: `producer = client.Producer`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
+| `about` | `String` |  |
+| `count` | `Integer` |  |
+| `data` | `Array` |  |
+| `established` | `String` |  |
+| `external` | `Array` |  |
+| `favorites` | `Integer` |  |
+| `images` | `Hash` |  |
+| `mal_id` | `Integer` |  |
 | `name` | `String` |  |
 | `pagination` | `Hash` |  |
+| `titles` | `Array` |  |
 | `url` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Producer record (raises on error).
+# load returns the ENTITY — call data_get for the Producer record (raises on error).
 producer = client.Producer.load({ "id" => 1 })
 ```
 
@@ -964,12 +1287,67 @@ Create an instance: `random = client.Random`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
+| `about` | `String` |  |
+| `aired` | `Hash` |  |
+| `airing` | `Boolean` |  |
+| `alternate_names` | `Array` |  |
+| `approved` | `Boolean` |  |
+| `authors` | `Array` |  |
+| `background` | `String` |  |
+| `birthday` | `String` |  |
+| `broadcast` | `Hash` |  |
+| `chapters` | `Integer` |  |
+| `demographics` | `Array` |  |
+| `duration` | `String` |  |
+| `episodes` | `Integer` |  |
+| `explicit_genres` | `Array` |  |
+| `family_name` | `String` |  |
+| `favorites` | `Integer` |  |
+| `gender` | `String` |  |
+| `genres` | `Array` |  |
+| `given_name` | `String` |  |
+| `images` | `Hash` |  |
+| `joined` | `String` |  |
+| `last_online` | `String` |  |
+| `licensors` | `Array` |  |
+| `location` | `String` |  |
+| `mal_id` | `Integer` |  |
+| `members` | `Integer` |  |
+| `name` | `String` |  |
+| `name_kanji` | `String` |  |
+| `nicknames` | `Array` |  |
+| `popularity` | `Integer` |  |
+| `producers` | `Array` |  |
+| `published` | `Hash` |  |
+| `publishing` | `Boolean` |  |
+| `rank` | `Integer` |  |
+| `rating` | `String` |  |
+| `score` | `Float` |  |
+| `scored_by` | `Integer` |  |
+| `season` | `String` |  |
+| `serializations` | `Array` |  |
+| `source` | `String` |  |
+| `status` | `String` |  |
+| `studios` | `Array` |  |
+| `synopsis` | `String` |  |
+| `themes` | `Array` |  |
+| `title` | `String` |  |
+| `title_english` | `String` |  |
+| `title_japanese` | `String` |  |
+| `title_synonyms` | `Array` |  |
+| `titles` | `Array` |  |
+| `trailer` | `Hash` |  |
+| `type` | `String` |  |
+| `url` | `String` |  |
+| `username` | `String` |  |
+| `volumes` | `Integer` |  |
+| `website_url` | `String` |  |
+| `year` | `Integer` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Random record (raises on error).
+# load returns the ENTITY — call data_get for the Random record (raises on error).
 random = client.Random.load()
 ```
 
@@ -1012,7 +1390,7 @@ Create an instance: `review = client.Review`
 #### Example: Load
 
 ```ruby
-# load returns the bare Review record (raises on error).
+# load returns the ENTITY — call data_get for the Review record (raises on error).
 review = client.Review.load()
 ```
 
@@ -1058,7 +1436,7 @@ Create an instance: `season = client.Season`
 | --- | --- | --- |
 | `data` | `Array` |  |
 | `pagination` | `Hash` |  |
-| `season` | `Array` |  |
+| `seasons` | `Array` |  |
 | `year` | `Integer` |  |
 
 #### Example: List
@@ -1083,12 +1461,13 @@ Create an instance: `top = client.Top`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Object` |  |
+| `data` | `Array` |  |
+| `pagination` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Top record (raises on error).
+# load returns the ENTITY — call data_get for the Top record (raises on error).
 top = client.Top.load()
 ```
 
@@ -1108,13 +1487,28 @@ Create an instance: `user = client.User`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Object` |  |
+| `anime` | `Array` |  |
+| `birthday` | `String` |  |
+| `characters` | `Array` |  |
+| `data` | `Array` |  |
+| `external` | `Array` |  |
+| `gender` | `String` |  |
+| `images` | `Hash` |  |
+| `joined` | `String` |  |
+| `last_online` | `String` |  |
+| `location` | `String` |  |
+| `mal_id` | `Integer` |  |
+| `manga` | `Array` |  |
 | `pagination` | `Hash` |  |
+| `people` | `Array` |  |
+| `statistics` | `Hash` |  |
+| `url` | `String` |  |
+| `username` | `String` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare User record (raises on error).
+# load returns the ENTITY — call data_get for the User record (raises on error).
 user = client.User.load({ "id" => 1 })
 ```
 
@@ -1240,12 +1634,13 @@ Create an instance: `user_statistic = client.UserStatistic`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
+| `anime` | `Hash` |  |
+| `manga` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare UserStatistic record (raises on error).
+# load returns the ENTITY — call data_get for the UserStatistic record (raises on error).
 user_statistic = client.UserStatistic.load({ "username" => "username" })
 ```
 
@@ -1264,12 +1659,13 @@ Create an instance: `user_update = client.UserUpdate`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `data` | `Hash` |  |
+| `anime` | `Array` |  |
+| `manga` | `Array` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare UserUpdate record (raises on error).
+# load returns the ENTITY — call data_get for the UserUpdate record (raises on error).
 user_update = client.UserUpdate.load({ "username" => "username" })
 ```
 
@@ -1400,11 +1796,11 @@ Entity instances are stateful. After a successful `list`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-anime = client.Anime
-anime.list()
+external = client.External
+external.list()
 
-# anime.data_get now returns the anime data from the last list
-# anime.match_get returns the last match criteria
+# external.data_get now returns the external data from the last list
+# external.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

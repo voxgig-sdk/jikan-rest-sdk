@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from jikanrest_sdk.utility.voxgig_struct import voxgig_struct as vs
 from jikanrest_sdk import JikanRestSDK
-from core import helpers
+from jikanrest_sdk.core import helpers
 from test import runner
 
 
@@ -74,11 +74,11 @@ def _season_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "JIKANREST_TEST_SEASON_ENTID": {},
-        "JIKANREST_TEST_LIVE": "FALSE",
+        "JIKAN_REST_TEST_SEASON_ENTID": {},
+        "JIKAN_REST_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("JIKANREST_TEST_LIVE") == "TRUE"
+    live = env.get("JIKAN_REST_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

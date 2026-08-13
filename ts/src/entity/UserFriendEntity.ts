@@ -37,7 +37,7 @@ class UserFriendEntity extends JikanRestEntityBase<UserFriend> {
 
 
 
-  async list(this: any, reqmatch?: UserFriendListMatch, ctrl?: Control): Promise<UserFriend[]> {
+  async list(this: any, reqmatch?: UserFriendListMatch, ctrl?: Control): Promise<UserFriendEntity[]> {
 
     const utility = this._utility
 

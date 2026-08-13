@@ -6,9 +6,44 @@ main: kit: entity: producer: {
 
   fields: [
     {
+      name: "about"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "count"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
       name: "data"
       req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "established"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "external"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "favorites"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "images"
+      req: false
       type: "`$OBJECT`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      type: "`$INTEGER`"
     }
     {
       name: "name"
@@ -19,6 +54,11 @@ main: kit: entity: producer: {
       name: "pagination"
       req: false
       type: "`$OBJECT`"
+    }
+    {
+      name: "titles"
+      req: false
+      type: "`$ARRAY`"
     }
     {
       name: "url"
@@ -126,7 +166,7 @@ main: kit: entity: producer: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]
@@ -159,7 +199,7 @@ main: kit: entity: producer: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
         {
@@ -189,7 +229,7 @@ main: kit: entity: producer: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

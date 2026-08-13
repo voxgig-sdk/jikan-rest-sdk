@@ -37,7 +37,7 @@ class PeopleSearchEntity extends JikanRestEntityBase<PeopleSearch> {
 
 
 
-  async list(this: any, reqmatch?: PeopleSearchListMatch, ctrl?: Control): Promise<PeopleSearch[]> {
+  async list(this: any, reqmatch?: PeopleSearchListMatch, ctrl?: Control): Promise<PeopleSearchEntity[]> {
 
     const utility = this._utility
 

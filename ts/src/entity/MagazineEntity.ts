@@ -37,7 +37,7 @@ class MagazineEntity extends JikanRestEntityBase<Magazine> {
 
 
 
-  async list(this: any, reqmatch?: MagazineListMatch, ctrl?: Control): Promise<Magazine[]> {
+  async list(this: any, reqmatch?: MagazineListMatch, ctrl?: Control): Promise<MagazineEntity[]> {
 
     const utility = this._utility
 
