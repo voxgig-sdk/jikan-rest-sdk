@@ -28,7 +28,7 @@ class JikanRestSDK
     utility = JikanRestUtility.new
     @_utility = utility
 
-    config = JikanRestConfig.make_config
+    config = JikanRestConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

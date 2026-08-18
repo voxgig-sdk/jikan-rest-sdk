@@ -681,9 +681,9 @@ API path: `/schedules`
 | `"seasons"` |  |
 | `"year"` |  |
 
-Operations: List.
+Operations: List, Load.
 
-API path: `/seasons/{year}/{season}`
+API path: `/seasons/now`
 
 #### Top
 
@@ -1506,6 +1506,7 @@ Create an instance: `season := client.Season(nil)`
 | Method | Description |
 | --- | --- |
 | `List(match, ctrl)` | List entities matching the criteria. |
+| `Load(match, ctrl)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1515,6 +1516,16 @@ Create an instance: `season := client.Season(nil)`
 | `pagination` | `map[string]any` |  |
 | `seasons` | `[]any` |  |
 | `year` | `int` |  |
+
+#### Example: Load
+
+```go
+season, err := client.Season(nil).Load(map[string]any{"season": "season", "year": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(season) // the loaded record
+```
 
 #### Example: List
 

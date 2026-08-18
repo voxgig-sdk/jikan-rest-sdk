@@ -39,7 +39,7 @@ describe("SeasonEntity", function()
     assert.are.equal(3, #seen)
 
     -- Inbound: streaming active -> yields each item from the feature.
-    local config = require("config")()
+    local config = require("config_shared")()
     if type(config.feature) == "table" and config.feature.streaming ~= nil then
       local streamsdk = sdk.test(seed, { feature = { streaming = { active = true } } })
       local got = {}
@@ -60,7 +60,7 @@ describe("SeasonEntity", function()
     local setup = season_basic_setup(nil)
     -- Per-op sdk-test-control.json skip.
     local _live = setup.live or false
-    for _, _op in ipairs({"list"}) do
+    for _, _op in ipairs({"list", "load"}) do
       local _should_skip, _reason = runner.is_control_skipped("entityOp", "season." .. _op, _live and "live" or "unit")
       if _should_skip then
         pending(_reason or "skipped via sdk-test-control.json")
@@ -91,6 +91,12 @@ describe("SeasonEntity", function()
     assert.is_nil(err)
     assert.is_table(season_ref01_list_result)
 
+    -- LOAD
+    local season_ref01_match_dt0 = {}
+    local season_ref01_data_dt0_loaded, err = season_ref01_ent:load(season_ref01_match_dt0, nil)
+    assert.is_nil(err)
+    assert.is_not_nil(season_ref01_data_dt0_loaded)
+
   end)
 end)
 
@@ -114,7 +120,7 @@ function season_basic_setup(extra)
 
   -- Generate idmap via transform.
   local idmap = vs.transform(
-    { "season01", "season02", "season03" },
+    { "season01", "season02", "season03", "year01" },
     {
       ["`$PACK`"] = { "", {
         ["`$KEY`"] = "`$COPY`",

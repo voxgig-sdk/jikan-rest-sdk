@@ -675,9 +675,17 @@ type Season struct {
 	Year *int `json:"year,omitempty"`
 }
 
+// SeasonLoadMatch is the typed request payload for Season.LoadTyped.
+type SeasonLoadMatch struct {
+	Season string `json:"season"`
+	Year int `json:"year"`
+}
+
 // SeasonListMatch is the typed request payload for Season.ListTyped.
 type SeasonListMatch struct {
-	Season *string `json:"season,omitempty"`
+	Data *[]any `json:"data,omitempty"`
+	Pagination *map[string]any `json:"pagination,omitempty"`
+	Seasons *[]any `json:"seasons,omitempty"`
 	Year *int `json:"year,omitempty"`
 }
 

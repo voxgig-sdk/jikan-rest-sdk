@@ -1672,6 +1672,14 @@ List entities matching the given criteria. Returns an array.
 const results = await client.Season().list()
 ```
 
+#### `load(match: object, ctrl?: object)`
+
+Load a single entity matching the given criteria.
+
+```ts
+const result = await client.Season().load({ season: 'season', year: 1 })
+```
+
 ### Common Methods
 
 #### `data(data?: object)`

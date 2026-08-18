@@ -47,14 +47,14 @@ for _, item in ipairs(animes) do
 end
 ```
 
-### 3. Load an userstatistic
+### 3. Load a season
 
-UserStatistic is nested under username, so provide the `username`.
+Season is nested under season, so provide the `season`.
 
 ```lua
-local userstatistic, err = client:UserStatistic():load({ username = "example_username" })
+local season, err = client:Season():load({ season = "example_season", year = 1 })
 if err then error(err) end
-print(userstatistic)
+print(season)
 ```
 
 
@@ -655,9 +655,9 @@ API path: `/schedules`
 | `seasons` |  |
 | `year` |  |
 
-Operations: List.
+Operations: List, Load.
 
-API path: `/seasons/{year}/{season}`
+API path: `/seasons/now`
 
 #### Top
 
@@ -1400,6 +1400,7 @@ Create an instance: `local season = client:Season(nil)`
 | Method | Description |
 | --- | --- |
 | `list(match)` | List entities matching the criteria. |
+| `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1409,6 +1410,12 @@ Create an instance: `local season = client:Season(nil)`
 | `pagination` | `table` |  |
 | `seasons` | `table` |  |
 | `year` | `number` |  |
+
+#### Example: Load
+
+```lua
+local season, err = client:Season():load({ season = "season", year = 1 })
+```
 
 #### Example: List
 

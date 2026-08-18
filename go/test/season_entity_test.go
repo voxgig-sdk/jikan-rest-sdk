@@ -51,7 +51,7 @@ func TestSeasonEntity(t *testing.T) {
 
 		// Inbound: streaming active -> yields each item from the feature iterator.
 		hasStreaming := false
-		if fm, ok := core.MakeConfig()["feature"].(map[string]any); ok {
+		if fm, ok := core.SharedConfig()["feature"].(map[string]any); ok {
 			_, hasStreaming = fm["streaming"]
 		}
 		if hasStreaming {
@@ -80,7 +80,7 @@ func TestSeasonEntity(t *testing.T) {
 		if setup.live {
 			_mode = "live"
 		}
-		for _, _op := range []string{"list"} {
+		for _, _op := range []string{"list", "load"} {
 			if _shouldSkip, _reason := isControlSkipped("entityOp", "season." + _op, _mode); _shouldSkip {
 				if _reason == "" {
 					_reason = "skipped via sdk-test-control.json"
@@ -120,6 +120,16 @@ func TestSeasonEntity(t *testing.T) {
 			t.Fatalf("expected list result to be an array, got %T", seasonRef01ListResult)
 		}
 
+		// LOAD
+		seasonRef01MatchDt0 := map[string]any{}
+		seasonRef01DataDt0Loaded, err := seasonRef01Ent.Load(seasonRef01MatchDt0, nil)
+		if err != nil {
+			t.Fatalf("load failed: %v", err)
+		}
+		if seasonRef01DataDt0Loaded == nil {
+			t.Fatal("expected load result to be non-nil")
+		}
+
 	})
 }
 
@@ -148,7 +158,7 @@ func seasonBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap := vs.Transform(
-		[]any{"season01", "season02", "season03"},
+		[]any{"season01", "season02", "season03", "year01"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",

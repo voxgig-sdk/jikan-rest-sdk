@@ -15,7 +15,7 @@ require_relative "../JikanRest_sdk"
 module JikanRestFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = JikanRestConfig.make_config["feature"]
+    f = JikanRestConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

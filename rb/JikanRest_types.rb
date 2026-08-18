@@ -2273,15 +2273,36 @@ Season = Struct.new(
   keyword_init: true
 )
 
-# Request payload for Season#list.
+# Request payload for Season#load.
 #
 # @!attribute [rw] season
-#   @return [String, nil]
+#   @return [String]
+#
+# @!attribute [rw] year
+#   @return [Integer]
+SeasonLoadMatch = Struct.new(
+  :season,
+  :year,
+  keyword_init: true
+)
+
+# Request payload for Season#list.
+#
+# @!attribute [rw] data
+#   @return [Array, nil]
+#
+# @!attribute [rw] pagination
+#   @return [Hash, nil]
+#
+# @!attribute [rw] seasons
+#   @return [Array, nil]
 #
 # @!attribute [rw] year
 #   @return [Integer, nil]
 SeasonListMatch = Struct.new(
-  :season,
+  :data,
+  :pagination,
+  :seasons,
   :year,
   keyword_init: true
 )

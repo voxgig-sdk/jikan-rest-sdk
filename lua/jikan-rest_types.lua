@@ -599,8 +599,14 @@
 ---@field seasons? table
 ---@field year? number
 
+---@class SeasonLoadMatch
+---@field season string
+---@field year number
+
 ---@class SeasonListMatch
----@field season? string
+---@field data? table
+---@field pagination? table
+---@field seasons? table
 ---@field year? number
 
 ---@class Top

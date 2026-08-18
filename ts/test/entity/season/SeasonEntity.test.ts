@@ -39,7 +39,7 @@ describe('SeasonEntity', async () => {
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.JIKAN_REST_TEST_LIVE
-    for (const op of ['list']) {
+    for (const op of ['list', 'load']) {
       if (maybeSkipControl(t, 'entityOp', 'season.' + op, live)) return
     }
 
@@ -64,6 +64,7 @@ describe('SeasonEntity', async () => {
     const season_ref01_match: any = {}
 
     const season_ref01_list = (await season_ref01_ent.list(season_ref01_match)).map((e: any) => e.data())
+
 
 
   })

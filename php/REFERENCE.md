@@ -1217,6 +1217,14 @@ List entities matching the given criteria (call with no argument to list all). R
 $results = $client->Season()->list();
 ```
 
+#### `load(array $reqmatch, ?array $ctrl = null): mixed`
+
+Load a single entity matching the given criteria. Throws on error.
+
+```php
+$result = $client->Season()->load(["season" => "season", "year" => 1]);
+```
+
 ### Common Methods
 
 #### `data_get(): array`

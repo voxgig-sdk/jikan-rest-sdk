@@ -125,11 +125,12 @@ for (const anime of animes) {
   console.log(anime)
 }
 
-// Load a specific userstatistic (returns a UserStatistic)
-const userstatistic = await client.UserStatistic().load({
-  username: 'example_username',
+// Load a specific season (returns a Season)
+const season = await client.Season().load({
+  season: 'example_season',
+  year: 1,
 })
-console.log(userstatistic)
+console.log(season)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -184,7 +185,7 @@ The API exposes 25 entities:
 | **Recommendation** | The Recommendation entity (list). | `/users/{username}/recommendations` |
 | **Review** | The Review entity (load). | `/reviews/anime` |
 | **Schedule** | The Schedule entity (list). | `/schedules` |
-| **Season** | The Season entity (list). | `/seasons/{year}/{season}` |
+| **Season** | The Season entity (list, load). | `/seasons` |
 | **Top** | The Top entity (load). | `/top/reviews` |
 | **User** | The User entity (list, load). | `/users` |
 | **UserAbout** | The UserAbout entity (list). | `/users/{username}/about` |
@@ -249,14 +250,14 @@ if err != nil {
 }
 fmt.Println(animes)
 
-// Load a specific userstatistic
-userStatistic, err := client.UserStatistic(nil).Load(
-    map[string]any{"username": "example_username"}, nil,
+// Load a specific season
+season, err := client.Season(nil).Load(
+    map[string]any{"season": "example_season", "year": 1}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(userStatistic)
+fmt.Println(season)
 ```
 
 ### Ruby

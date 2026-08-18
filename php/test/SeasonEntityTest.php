@@ -40,7 +40,7 @@ class SeasonEntityTest extends TestCase
         $this->assertCount(3, $seen);
 
         // Inbound: streaming active -> yields each item from the feature.
-        $cfg = JikanRestConfig::make_config();
+        $cfg = JikanRestConfig::shared_config();
         if (isset($cfg["feature"]) && is_array($cfg["feature"]) && isset($cfg["feature"]["streaming"])) {
             $sdk = JikanRestSDK::test($seed, ["feature" => ["streaming" => ["active" => true]]]);
             $got = [];
@@ -62,7 +62,7 @@ class SeasonEntityTest extends TestCase
         $setup = season_basic_setup(null);
         // Per-op sdk-test-control.json skip.
         $_live = !empty($setup["live"]);
-        foreach (["list"] as $_op) {
+        foreach (["list", "load"] as $_op) {
             [$_shouldSkip, $_reason] = Runner::is_control_skipped("entityOp", "season." . $_op, $_live ? "live" : "unit");
             if ($_shouldSkip) {
                 $this->markTestSkipped($_reason ?? "skipped via sdk-test-control.json");
@@ -92,6 +92,11 @@ class SeasonEntityTest extends TestCase
         $season_ref01_list_result = $season_ref01_ent->list($season_ref01_match, null);
         $this->assertIsArray($season_ref01_list_result);
 
+        // LOAD
+        $season_ref01_match_dt0 = [];
+        $season_ref01_data_dt0_loaded = $season_ref01_ent->load($season_ref01_match_dt0, null);
+        $this->assertNotNull($season_ref01_data_dt0_loaded);
+
     }
 }
 
@@ -110,7 +115,7 @@ function season_basic_setup($extra)
 
     // Generate idmap.
     $idmap = [];
-    foreach (["season01", "season02", "season03"] as $k) {
+    foreach (["season01", "season02", "season03", "year01"] as $k) {
         $idmap[$k] = strtoupper($k);
     }
 

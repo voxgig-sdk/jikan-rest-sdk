@@ -649,8 +649,15 @@ class Season(TypedDict, total=False):
     year: int
 
 
-class SeasonListMatch(TypedDict, total=False):
+class SeasonLoadMatch(TypedDict):
     season: str
+    year: int
+
+
+class SeasonListMatch(TypedDict, total=False):
+    data: list
+    pagination: dict
+    seasons: list
     year: int
 
 

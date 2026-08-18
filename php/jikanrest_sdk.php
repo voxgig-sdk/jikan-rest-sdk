@@ -40,7 +40,7 @@ class JikanRestSDK
         $utility = new JikanRestUtility();
         $this->_utility = $utility;
 
-        $config = JikanRestConfig::make_config();
+        $config = JikanRestConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

@@ -6,21 +6,24 @@
         "pagination": {},
         "seasons": [],
         "year": "s2b",
-        "season": "SEASON01"
+        "season": "SEASON01",
+        "id": "SEASON00"
       },
       "SEASON01": {
         "data": [],
         "pagination": {},
         "seasons": [],
         "year": "s53",
-        "season": "SEASON01"
+        "season": "SEASON01",
+        "id": "SEASON01"
       },
       "SEASON02": {
         "data": [],
         "pagination": {},
         "seasons": [],
         "year": "s7b",
-        "season": "SEASON01"
+        "season": "SEASON01",
+        "id": "SEASON02"
       }
     }
   },

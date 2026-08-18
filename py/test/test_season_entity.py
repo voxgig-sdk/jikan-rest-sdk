@@ -42,8 +42,8 @@ class TestSeasonEntity:
         assert len(seen) == 3
 
         # Inbound: streaming active -> yields each item from the feature.
-        from jikanrest_sdk.config import make_config
-        cfg = make_config()
+        from jikanrest_sdk.config import shared_config
+        cfg = shared_config()
         if isinstance(cfg.get("feature"), dict) and "streaming" in cfg["feature"]:
             sdk = JikanRestSDK.test(
                 seed, {"feature": {"streaming": {"active": True}}})
@@ -61,7 +61,7 @@ class TestSeasonEntity:
         # multiple ops; skipping any one skips the whole flow (steps depend
         # on each other).
         _live = setup.get("live", False)
-        for _op in ["list"]:
+        for _op in ["list", "load"]:
             _skip, _reason = runner.is_control_skipped("entityOp", "season." + _op, "live" if _live else "unit")
             if _skip:
                 pytest.skip(_reason or "skipped via sdk-test-control.json")
@@ -87,6 +87,11 @@ class TestSeasonEntity:
         season_ref01_list_result = season_ref01_ent.list(season_ref01_match, None)
         assert isinstance(season_ref01_list_result, list)
 
+        # LOAD
+        season_ref01_match_dt0 = {}
+        season_ref01_data_dt0_loaded = season_ref01_ent.load(season_ref01_match_dt0, None)
+        assert season_ref01_data_dt0_loaded is not None
+
 
 
 def _season_basic_setup(extra):
@@ -105,7 +110,7 @@ def _season_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["season01", "season02", "season03"],
+        ["season01", "season02", "season03", "year01"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",

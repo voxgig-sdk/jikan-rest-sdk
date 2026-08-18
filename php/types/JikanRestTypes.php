@@ -710,10 +710,19 @@ class Season
     public ?int $year = null;
 }
 
+/** Request payload for Season#load. */
+class SeasonLoadMatch
+{
+    public string $season;
+    public int $year;
+}
+
 /** Request payload for Season#list. */
 class SeasonListMatch
 {
-    public ?string $season = null;
+    public ?array $data = null;
+    public ?array $pagination = null;
+    public ?array $seasons = null;
     public ?int $year = null;
 }
 

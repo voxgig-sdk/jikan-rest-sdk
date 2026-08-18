@@ -45,15 +45,15 @@ try {
 }
 ```
 
-### 3. Load an userstatistic
+### 3. Load a season
 
-UserStatistic is nested under username, so provide the `username`.
+Season is nested under season, so provide the `season`.
 
 ```php
 try {
-    // load() returns the ENTITY — call data_get() for the UserStatistic record (throws on error).
-    $userstatistic = $client->UserStatistic()->load(["username" => "example_username"]);
-    print_r($userstatistic);
+    // load() returns the ENTITY — call data_get() for the Season record (throws on error).
+    $season = $client->Season()->load(["season" => "example_season", "year" => 1]);
+    print_r($season);
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -674,9 +674,9 @@ API path: `/schedules`
 | `seasons` |  |
 | `year` |  |
 
-Operations: List.
+Operations: List, Load.
 
-API path: `/seasons/{year}/{season}`
+API path: `/seasons/now`
 
 #### Top
 
@@ -1439,6 +1439,7 @@ Create an instance: `$season = $client->Season();`
 | Method | Description |
 | --- | --- |
 | `list(match)` | List entities matching the criteria. |
+| `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1448,6 +1449,13 @@ Create an instance: `$season = $client->Season();`
 | `pagination` | `array` |  |
 | `seasons` | `array` |  |
 | `year` | `int` |  |
+
+#### Example: Load
+
+```php
+// load() returns the ENTITY — call data_get() for the Season record (throws on error).
+$season = $client->Season()->load(["season" => "season", "year" => 1]);
+```
 
 #### Example: List
 

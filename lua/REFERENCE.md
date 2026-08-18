@@ -1215,6 +1215,14 @@ List entities matching the given criteria. Returns an array.
 local results, err = client:Season():list()
 ```
 
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Season():load({ season = "season", year = 1 })
+```
+
 ### Common Methods
 
 #### `data_get() -> table`

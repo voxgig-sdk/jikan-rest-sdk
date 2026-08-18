@@ -17,6 +17,29 @@ main: kit: flow: BasicSeasonFlow:
         }
       ]
     }
+
+    {
+      input: {
+        ref: "season_ref01",
+        srcdatavar: "season_ref01_data",
+        suffix: "_dt0"
+      }
+
+      match: {
+        id: "season01",
+        year: "year01"
+      }
+
+      op: "load",
+      valid: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-season_ref01"
+          }
+        }
+      ]
+    }
   ],
   "key$": "BasicSeasonFlow"
 }

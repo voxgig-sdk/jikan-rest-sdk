@@ -1218,6 +1218,14 @@ List entities matching the given criteria (call with no argument to list all). R
 results = client.Season.list
 ```
 
+#### `load(reqmatch, ctrl = nil) -> result`
+
+Load a single entity matching the given criteria. Raises on error.
+
+```ruby
+result = client.Season.load({ "season" => "season", "year" => 1 })
+```
+
 ### Common Methods
 
 #### `data_get -> Hash`

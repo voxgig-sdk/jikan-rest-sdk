@@ -399,7 +399,7 @@ guide: {
       op: list: method: *GET
     }
     path: "/seasons/{year}/{season}": {
-      op: list: method: *GET
+      op: load: method: *GET
     }
   }
 

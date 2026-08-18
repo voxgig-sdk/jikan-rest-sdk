@@ -1224,6 +1224,14 @@ for season in results:
     print(season)
 ```
 
+#### `load(reqmatch, ctrl=None) -> dict`
+
+Load a single entity matching the given criteria. Returns the entity data and raises on error.
+
+```python
+result = client.Season().load({"season": "season", "year": 1})
+```
+
 ### Common Methods
 
 #### `data_get() -> dict`

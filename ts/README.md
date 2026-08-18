@@ -47,17 +47,18 @@ for (const anime of animes) {
 }
 ```
 
-### 3. Load an userstatistic
+### 3. Load a season
 
-UserStatistic is nested under username, so provide the `username`.
+Season is nested under season, so provide the `season`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const userstatistic = await client.UserStatistic().load({
-    username: 'example_username',
+  const season = await client.Season().load({
+    season: 'example_season',
+    year: 1,
   })
-  console.log(userstatistic)
+  console.log(season)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -717,9 +718,9 @@ API path: `/schedules`
 | `seasons` |  |
 | `year` |  |
 
-Operations: list.
+Operations: list, load.
 
-API path: `/seasons/{year}/{season}`
+API path: `/seasons/now`
 
 #### Top
 
@@ -1462,6 +1463,7 @@ Create an instance: `const season = client.Season()`
 | Method | Description |
 | --- | --- |
 | `list(match)` | List entities matching the criteria. |
+| `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1471,6 +1473,12 @@ Create an instance: `const season = client.Season()`
 | `pagination` | `Record<string, any>` |  |
 | `seasons` | `any[]` |  |
 | `year` | `number` |  |
+
+#### Example: Load
+
+```ts
+const season = await client.Season().load({ season: 'season', year: 1 })
+```
 
 #### Example: List
 

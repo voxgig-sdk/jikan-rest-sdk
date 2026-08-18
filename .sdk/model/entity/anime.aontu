@@ -89,6 +89,11 @@ main: kit: entity: anime: {
       name: "entry"
       req: false
       type: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
     }
     {
       name: "episodes"

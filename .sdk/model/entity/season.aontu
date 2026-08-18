@@ -34,93 +34,6 @@ main: kit: entity: season: {
       points: [
         {
           args: {
-            params: [
-              {
-                kind: "param"
-                name: "season"
-                orig: "season"
-                reqd: true
-                type: "`$STRING`"
-              }
-              {
-                kind: "param"
-                name: "year"
-                orig: "year"
-                reqd: true
-                type: "`$INTEGER`"
-              }
-            ]
-            query: [
-              {
-                kind: "query"
-                name: "continuing"
-                orig: "continuing"
-                reqd: false
-                type: "`$BOOLEAN`"
-              }
-              {
-                kind: "query"
-                name: "filter"
-                orig: "filter"
-                reqd: false
-                type: "`$STRING`"
-              }
-              {
-                kind: "query"
-                name: "limit"
-                orig: "limit"
-                reqd: false
-                type: "`$INTEGER`"
-              }
-              {
-                kind: "query"
-                name: "page"
-                orig: "page"
-                reqd: false
-                type: "`$INTEGER`"
-              }
-              {
-                kind: "query"
-                name: "sfw"
-                orig: "sfw"
-                reqd: false
-                type: "`$BOOLEAN`"
-              }
-              {
-                kind: "query"
-                name: "unapproved"
-                orig: "unapproved"
-                reqd: false
-                type: "`$BOOLEAN`"
-              }
-            ]
-          }
-          method: "GET"
-          orig: "/seasons/{year}/{season}"
-          parts: [
-            "seasons"
-            "{year}"
-            "{season}"
-          ]
-          select: {
-            exist: [
-              "continuing"
-              "filter"
-              "limit"
-              "page"
-              "season"
-              "sfw"
-              "unapproved"
-              "year"
-            ]
-          }
-          transform: {
-            req: "`reqdata`"
-            res: "`body`"
-          }
-        }
-        {
-          args: {
             query: [
               {
                 kind: "query"
@@ -266,6 +179,98 @@ main: kit: entity: season: {
           transform: {
             req: "`reqdata`"
             res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "season"
+                orig: "season"
+                reqd: true
+                type: "`$STRING`"
+              }
+              {
+                kind: "param"
+                name: "year"
+                orig: "year"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "continuing"
+                orig: "continuing"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "sfw"
+                orig: "sfw"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "unapproved"
+                orig: "unapproved"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/seasons/{year}/{season}"
+          parts: [
+            "seasons"
+            "{year}"
+            "{season}"
+          ]
+          select: {
+            exist: [
+              "continuing"
+              "filter"
+              "limit"
+              "page"
+              "season"
+              "sfw"
+              "unapproved"
+              "year"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
           }
         }
       ]

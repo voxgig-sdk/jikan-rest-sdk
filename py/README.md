@@ -50,15 +50,15 @@ except Exception as err:
     print(f"list failed: {err}")
 ```
 
-### 3. Load an userstatistic
+### 3. Load a season
 
-UserStatistic is nested under username, so provide the `username`.
+Season is nested under season, so provide the `season`.
 `load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
-    userstatistic = client.UserStatistic().load({"username": "example_username"})
-    print(userstatistic)
+    season = client.Season().load({"season": "example_season", "year": 1})
+    print(season)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -669,9 +669,9 @@ API path: `/schedules`
 | `seasons` |  |
 | `year` |  |
 
-Operations: List.
+Operations: List, Load.
 
-API path: `/seasons/{year}/{season}`
+API path: `/seasons/now`
 
 #### Top
 
@@ -1414,6 +1414,7 @@ Create an instance: `season = client.Season()`
 | Method | Description |
 | --- | --- |
 | `list()` | List entities, optionally matching the given criteria. |
+| `load(match)` | Load a single entity by match criteria. |
 
 #### Fields
 
@@ -1423,6 +1424,12 @@ Create an instance: `season = client.Season()`
 | `pagination` | `dict` |  |
 | `seasons` | `list` |  |
 | `year` | `int` |  |
+
+#### Example: Load
+
+```python
+season = client.Season().load({"season": "season", "year": 1})
+```
 
 #### Example: List
 

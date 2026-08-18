@@ -729,8 +729,15 @@ export interface Season {
   year?: number
 }
 
+export interface SeasonLoadMatch {
+  season: string
+  year: number
+}
+
 export interface SeasonListMatch {
-  season?: string
+  data?: any[]
+  pagination?: Record<string, any>
+  seasons?: any[]
   year?: number
 
   // Selects a custom action instead of the plain list:

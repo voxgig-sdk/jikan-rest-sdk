@@ -1237,6 +1237,18 @@ if err != nil {
 fmt.Println(results)
 ```
 
+#### `Load(reqmatch, ctrl map[string]any) (any, error)`
+
+Load a single entity matching the given criteria.
+
+```go
+result, err := client.Season(nil).Load(map[string]any{"season": "season", "year": 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
+```
+
 ### Common Methods
 
 #### `Data(args ...any) any`
