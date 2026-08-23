@@ -186,76 +186,76 @@ local anime = client:Anime(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired` | `string` | No |  |
-| `airing` | `boolean` | No |  |
-| `approved` | `boolean` | No |  |
-| `author_url` | `string` | No |  |
-| `author_username` | `string` | No |  |
-| `background` | `string` | No |  |
-| `broadcast` | `table` | No |  |
-| `character` | `table` | No |  |
-| `comments` | `number` | No |  |
-| `completed` | `number` | No |  |
+| `aired` | `string` | No | Aired Date ISO8601 |
+| `airing` | `boolean` | No | Airing boolean |
+| `approved` | `boolean` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `string` | No | Author Profile URL |
+| `author_username` | `string` | No | Author MyAnimeList Username |
+| `background` | `string` | No | Background |
+| `broadcast` | `table` | No | Broadcast Details |
+| `character` | `table` | No | Character details |
+| `comments` | `number` | No | Comment count |
+| `completed` | `number` | No | Number of users who have completed the resource |
 | `data` | `table` | No |  |
-| `date` | `string` | No |  |
+| `date` | `string` | No | Post Date ISO8601 |
 | `demographics` | `table` | No |  |
-| `dropped` | `number` | No |  |
-| `duration` | `number` | No |  |
+| `dropped` | `number` | No | Number of users who have dropped the resource |
+| `duration` | `number` | No | Episode duration in seconds |
 | `endings` | `table` | No |  |
-| `entry` | `table` | No |  |
-| `episodes` | `number` | No |  |
+| `entry` | `table` | No | Related entries |
+| `episodes` | `number` | No | Episode count |
 | `explicit_genres` | `table` | No |  |
 | `external` | `table` | No |  |
-| `favorites` | `number` | No |  |
-| `filler` | `boolean` | No |  |
+| `favorites` | `number` | No | Number of users who have favorited this entry |
+| `filler` | `boolean` | No | Filler episode |
 | `genres` | `table` | No |  |
 | `images` | `table` | No |  |
-| `last_comment` | `table` | No |  |
+| `last_comment` | `table` | No | Last comment details |
 | `licensors` | `table` | No |  |
-| `mal_id` | `number` | No |  |
-| `members` | `number` | No |  |
-| `moreinfo` | `string` | No |  |
+| `mal_id` | `number` | No | MyAnimeList ID |
+| `members` | `number` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `string` | No | Additional information on the entry |
 | `music_videos` | `table` | No |  |
 | `name` | `string` | No |  |
-| `on_hold` | `number` | No |  |
+| `on_hold` | `number` | No | Number of users who have put the resource on hold |
 | `openings` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `person` | `table` | No |  |
-| `plan_to_watch` | `number` | No |  |
-| `popularity` | `number` | No |  |
-| `positions` | `table` | No |  |
+| `person` | `table` | No | Person details |
+| `plan_to_watch` | `number` | No | Number of users who have planned to watch the resource |
+| `popularity` | `number` | No | Popularity |
+| `positions` | `table` | No | Staff Positions |
 | `producers` | `table` | No |  |
 | `promo` | `table` | No |  |
-| `rank` | `number` | No |  |
-| `rating` | `string` | No |  |
-| `recap` | `boolean` | No |  |
-| `relation` | `string` | No |  |
+| `rank` | `number` | No | Ranking |
+| `rating` | `string` | No | Anime audience rating |
+| `recap` | `boolean` | No | Recap episode |
+| `relation` | `string` | No | Relation type |
 | `relations` | `table` | No |  |
-| `role` | `string` | No |  |
-| `score` | `number` | No |  |
-| `scored_by` | `number` | No |  |
+| `role` | `string` | No | Character's Role |
+| `score` | `number` | No | Score |
+| `scored_by` | `number` | No | Number of users |
 | `scores` | `table` | No |  |
-| `season` | `string` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
+| `season` | `string` | No | Season |
+| `source` | `string` | No | Original Material/Source adapted from |
+| `status` | `string` | No | Airing status |
 | `streaming` | `table` | No |  |
 | `studios` | `table` | No |  |
-| `synopsis` | `string` | No |  |
+| `synopsis` | `string` | No | Episode Synopsis |
 | `theme` | `table` | No |  |
 | `themes` | `table` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_romanji` | `string` | No |  |
-| `title_synonyms` | `table` | No |  |
-| `titles` | `table` | No |  |
-| `total` | `number` | No |  |
-| `trailer` | `table` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Title Japanese |
+| `title_romanji` | `string` | No | title_romanji |
+| `title_synonyms` | `table` | No | Other Titles |
+| `titles` | `table` | No | All titles |
+| `total` | `number` | No | Total number of users who have the resource added to their lists |
+| `trailer` | `table` | No | Youtube Details |
+| `type` | `string` | No | Anime Type |
+| `url` | `string` | No | MyAnimeList URL |
 | `voice_actors` | `table` | No |  |
-| `watching` | `number` | No |  |
-| `year` | `number` | No |  |
+| `watching` | `number` | No | Number of users watching the resource |
+| `year` | `number` | No | Year |
 
 ### Operations
 
@@ -315,23 +315,23 @@ local character = client:Character(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
+| `about` | `string` | No | Biography |
 | `anime` | `table` | No |  |
 | `data` | `table` | No |  |
-| `favorites` | `number` | No |  |
-| `image_url` | `string` | No |  |
+| `favorites` | `number` | No | Number of users who have favorited this entry |
+| `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `table` | No |  |
-| `language` | `string` | No |  |
-| `large_image_url` | `string` | No |  |
-| `mal_id` | `number` | No |  |
+| `language` | `string` | No | Character's Role |
+| `large_image_url` | `string` | No | Large JPG Image Size URL |
+| `mal_id` | `number` | No | MyAnimeList ID |
 | `manga` | `table` | No |  |
-| `name` | `string` | No |  |
-| `name_kanji` | `string` | No |  |
-| `nicknames` | `table` | No |  |
+| `name` | `string` | No | Name |
+| `name_kanji` | `string` | No | Name |
+| `nicknames` | `table` | No | Other Names |
 | `pagination` | `table` | No |  |
 | `person` | `table` | No |  |
-| `role` | `string` | No |  |
-| `url` | `string` | No |  |
+| `role` | `string` | No | Character's Role |
+| `url` | `string` | No | MyAnimeList URL |
 | `voices` | `table` | No |  |
 
 ### Operations
@@ -392,20 +392,20 @@ local club = client:Club(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `access` | `string` | No |  |
+| `access` | `string` | No | Club access |
 | `anime` | `table` | No |  |
-| `category` | `string` | No |  |
+| `category` | `string` | No | Club Category |
 | `characters` | `table` | No |  |
-| `created` | `string` | No |  |
+| `created` | `string` | No | Date Created ISO8601 |
 | `data` | `table` | No |  |
 | `images` | `table` | No |  |
-| `mal_id` | `number` | No |  |
+| `mal_id` | `number` | No | MyAnimeList ID |
 | `manga` | `table` | No |  |
-| `members` | `number` | No |  |
-| `name` | `string` | No |  |
+| `members` | `number` | No | Number of club members |
+| `name` | `string` | No | Club name |
 | `pagination` | `table` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
+| `url` | `string` | No | Club URL |
+| `username` | `string` | No | User's username |
 
 ### Operations
 
@@ -518,10 +518,10 @@ local genre = client:Genre(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | `number` | No |  |
-| `mal_id` | `number` | No |  |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
+| `count` | `number` | No | Genre's entry count |
+| `mal_id` | `number` | No | MyAnimeList ID |
+| `name` | `string` | No | Genre Name |
+| `url` | `string` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -626,59 +626,59 @@ local manga = client:Manga(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `approved` | `boolean` | No |  |
-| `author_url` | `string` | No |  |
-| `author_username` | `string` | No |  |
+| `approved` | `boolean` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `string` | No | Author Profile URL |
+| `author_username` | `string` | No | Author MyAnimeList Username |
 | `authors` | `table` | No |  |
-| `background` | `string` | No |  |
-| `chapters` | `number` | No |  |
+| `background` | `string` | No | Background |
+| `chapters` | `number` | No | Chapter count |
 | `character` | `table` | No |  |
-| `comments` | `number` | No |  |
-| `completed` | `number` | No |  |
+| `comments` | `number` | No | Comment count |
+| `completed` | `number` | No | Number of users who have completed the resource |
 | `data` | `table` | No |  |
-| `date` | `string` | No |  |
+| `date` | `string` | No | Post Date ISO8601 |
 | `demographics` | `table` | No |  |
-| `dropped` | `number` | No |  |
-| `entry` | `table` | No |  |
+| `dropped` | `number` | No | Number of users who have dropped the resource |
+| `entry` | `table` | No | Related entries |
 | `explicit_genres` | `table` | No |  |
 | `external` | `table` | No |  |
-| `favorites` | `number` | No |  |
+| `favorites` | `number` | No | Number of users who have favorited this entry |
 | `genres` | `table` | No |  |
 | `images` | `table` | No |  |
-| `jpg` | `table` | No |  |
-| `last_comment` | `table` | No |  |
-| `mal_id` | `number` | No |  |
-| `members` | `number` | No |  |
-| `moreinfo` | `string` | No |  |
+| `jpg` | `table` | No | Available images in JPG |
+| `last_comment` | `table` | No | Last comment details |
+| `mal_id` | `number` | No | MyAnimeList ID |
+| `members` | `number` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `string` | No | Additional information on the entry |
 | `name` | `string` | No |  |
-| `on_hold` | `number` | No |  |
+| `on_hold` | `number` | No | Number of users who have put the resource on hold |
 | `pagination` | `table` | No |  |
-| `plan_to_read` | `number` | No |  |
-| `popularity` | `number` | No |  |
-| `published` | `table` | No |  |
-| `publishing` | `boolean` | No |  |
-| `rank` | `number` | No |  |
-| `reading` | `number` | No |  |
-| `relation` | `string` | No |  |
+| `plan_to_read` | `number` | No | Number of users who have planned to read the resource |
+| `popularity` | `number` | No | Popularity |
+| `published` | `table` | No | Date range |
+| `publishing` | `boolean` | No | Publishing boolean |
+| `rank` | `number` | No | Ranking |
+| `reading` | `number` | No | Number of users reading the resource |
+| `relation` | `string` | No | Relation type |
 | `relations` | `table` | No |  |
-| `role` | `string` | No |  |
-| `score` | `number` | No |  |
-| `scored_by` | `number` | No |  |
+| `role` | `string` | No | Character's Role |
+| `score` | `number` | No | Score |
+| `scored_by` | `number` | No | Number of users |
 | `scores` | `table` | No |  |
 | `serializations` | `table` | No |  |
-| `status` | `string` | No |  |
-| `synopsis` | `string` | No |  |
+| `status` | `string` | No | Publishing status |
+| `synopsis` | `string` | No | Synopsis |
 | `themes` | `table` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_synonyms` | `table` | No |  |
-| `titles` | `table` | No |  |
-| `total` | `number` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
-| `volumes` | `number` | No |  |
-| `webp` | `table` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Japanese Title |
+| `title_synonyms` | `table` | No | Other Titles |
+| `titles` | `table` | No | All Titles |
+| `total` | `number` | No | Total number of users who have the resource added to their lists |
+| `type` | `string` | No | Manga Type |
+| `url` | `string` | No | MyAnimeList URL |
+| `volumes` | `number` | No | Volume count |
+| `webp` | `table` | No | Available images in WEBP |
 
 ### Operations
 
@@ -791,26 +791,26 @@ local person = client:Person(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `alternate_names` | `table` | No |  |
+| `about` | `string` | No | Biography |
+| `alternate_names` | `table` | No | Other Names |
 | `anime` | `table` | No |  |
-| `birthday` | `string` | No |  |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
 | `character` | `table` | No |  |
 | `data` | `table` | No |  |
-| `family_name` | `string` | No |  |
-| `favorites` | `number` | No |  |
-| `given_name` | `string` | No |  |
+| `family_name` | `string` | No | Family Name |
+| `favorites` | `number` | No | Number of users who have favorited this entry |
+| `given_name` | `string` | No | Given Name |
 | `images` | `table` | No |  |
-| `jpg` | `table` | No |  |
-| `mal_id` | `number` | No |  |
+| `jpg` | `table` | No | Available images in JPG |
+| `mal_id` | `number` | No | MyAnimeList ID |
 | `manga` | `table` | No |  |
-| `name` | `string` | No |  |
+| `name` | `string` | No | Name |
 | `pagination` | `table` | No |  |
-| `position` | `string` | No |  |
-| `role` | `string` | No |  |
-| `url` | `string` | No |  |
+| `position` | `string` | No | Person's position |
+| `role` | `string` | No | Person's Character's role in the anime |
+| `url` | `string` | No | MyAnimeList URL |
 | `voices` | `table` | No |  |
-| `website_url` | `string` | No |  |
+| `website_url` | `string` | No | Person's website URL |
 
 ### Operations
 
@@ -870,18 +870,18 @@ local producer = client:Producer(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `count` | `number` | No |  |
+| `about` | `string` | No | About the Producer |
+| `count` | `number` | No | Producers's anime count |
 | `data` | `table` | No |  |
-| `established` | `string` | No |  |
+| `established` | `string` | No | Established Date ISO8601 |
 | `external` | `table` | No |  |
-| `favorites` | `number` | No |  |
+| `favorites` | `number` | No | Producers's member favorites count |
 | `images` | `table` | No |  |
-| `mal_id` | `number` | No |  |
+| `mal_id` | `number` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
 | `pagination` | `table` | No |  |
-| `titles` | `table` | No |  |
-| `url` | `string` | No |  |
+| `titles` | `table` | No | All titles |
+| `url` | `string` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -941,62 +941,62 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `aired` | `table` | No |  |
-| `airing` | `boolean` | No |  |
-| `alternate_names` | `table` | No |  |
-| `approved` | `boolean` | No |  |
+| `about` | `string` | No | Biography |
+| `aired` | `table` | No | Date range |
+| `airing` | `boolean` | No | Airing boolean |
+| `alternate_names` | `table` | No | Other Names |
+| `approved` | `boolean` | No | Whether the entry is pending approval on MAL or not |
 | `authors` | `table` | No |  |
-| `background` | `string` | No |  |
-| `birthday` | `string` | No |  |
-| `broadcast` | `table` | No |  |
-| `chapters` | `number` | No |  |
+| `background` | `string` | No | Background |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
+| `broadcast` | `table` | No | Broadcast Details |
+| `chapters` | `number` | No | Chapter count |
 | `demographics` | `table` | No |  |
-| `duration` | `string` | No |  |
-| `episodes` | `number` | No |  |
+| `duration` | `string` | No | Parsed raw duration |
+| `episodes` | `number` | No | Episode count |
 | `explicit_genres` | `table` | No |  |
-| `family_name` | `string` | No |  |
-| `favorites` | `number` | No |  |
-| `gender` | `string` | No |  |
+| `family_name` | `string` | No | Family Name |
+| `favorites` | `number` | No | Number of users who have favorited this entry |
+| `gender` | `string` | No | User Gender |
 | `genres` | `table` | No |  |
-| `given_name` | `string` | No |  |
+| `given_name` | `string` | No | Given Name |
 | `images` | `table` | No |  |
-| `joined` | `string` | No |  |
-| `last_online` | `string` | No |  |
+| `joined` | `string` | No | Joined Date ISO8601 |
+| `last_online` | `string` | No | Last Online Date ISO8601 |
 | `licensors` | `table` | No |  |
-| `location` | `string` | No |  |
-| `mal_id` | `number` | No |  |
-| `members` | `number` | No |  |
-| `name` | `string` | No |  |
-| `name_kanji` | `string` | No |  |
-| `nicknames` | `table` | No |  |
-| `popularity` | `number` | No |  |
+| `location` | `string` | No | Location |
+| `mal_id` | `number` | No | MyAnimeList ID |
+| `members` | `number` | No | Number of users who have added this entry to their list |
+| `name` | `string` | No | Name |
+| `name_kanji` | `string` | No | Name |
+| `nicknames` | `table` | No | Other Names |
+| `popularity` | `number` | No | Popularity |
 | `producers` | `table` | No |  |
-| `published` | `table` | No |  |
-| `publishing` | `boolean` | No |  |
-| `rank` | `number` | No |  |
-| `rating` | `string` | No |  |
-| `score` | `number` | No |  |
-| `scored_by` | `number` | No |  |
-| `season` | `string` | No |  |
+| `published` | `table` | No | Date range |
+| `publishing` | `boolean` | No | Publishing boolean |
+| `rank` | `number` | No | Ranking |
+| `rating` | `string` | No | Anime audience rating |
+| `score` | `number` | No | Score |
+| `scored_by` | `number` | No | Number of users |
+| `season` | `string` | No | Season |
 | `serializations` | `table` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
+| `source` | `string` | No | Original Material/Source adapted from |
+| `status` | `string` | No | Airing status |
 | `studios` | `table` | No |  |
-| `synopsis` | `string` | No |  |
+| `synopsis` | `string` | No | Synopsis |
 | `themes` | `table` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_synonyms` | `table` | No |  |
-| `titles` | `table` | No |  |
-| `trailer` | `table` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
-| `volumes` | `number` | No |  |
-| `website_url` | `string` | No |  |
-| `year` | `number` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Japanese Title |
+| `title_synonyms` | `table` | No | Other Titles |
+| `titles` | `table` | No | All titles |
+| `trailer` | `table` | No | Youtube Details |
+| `type` | `string` | No | Anime Type |
+| `url` | `string` | No | MyAnimeList URL |
+| `username` | `string` | No | MyAnimeList Username |
+| `volumes` | `number` | No | Volume count |
+| `website_url` | `string` | No | Person's website URL |
+| `year` | `number` | No | Year |
 
 ### Operations
 
@@ -1202,8 +1202,8 @@ local season = client:Season(nil)
 | --- | --- | --- | --- |
 | `data` | `table` | No |  |
 | `pagination` | `table` | No |  |
-| `seasons` | `table` | No |  |
-| `year` | `number` | No |  |
+| `seasons` | `table` | No | List of available seasons |
+| `year` | `number` | No | Year |
 
 ### Operations
 
@@ -1316,23 +1316,23 @@ local user = client:User(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `table` | No |  |
-| `birthday` | `string` | No |  |
-| `characters` | `table` | No |  |
+| `anime` | `table` | No | Favorite Anime |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
+| `characters` | `table` | No | Favorite Characters |
 | `data` | `table` | No |  |
 | `external` | `table` | No |  |
-| `gender` | `string` | No |  |
+| `gender` | `string` | No | User Gender |
 | `images` | `table` | No |  |
-| `joined` | `string` | No |  |
-| `last_online` | `string` | No |  |
-| `location` | `string` | No |  |
-| `mal_id` | `number` | No |  |
-| `manga` | `table` | No |  |
+| `joined` | `string` | No | Joined Date ISO8601 |
+| `last_online` | `string` | No | Last Online Date ISO8601 |
+| `location` | `string` | No | Location |
+| `mal_id` | `number` | No | MyAnimeList ID |
+| `manga` | `table` | No | Favorite Manga |
 | `pagination` | `table` | No |  |
-| `people` | `table` | No |  |
+| `people` | `table` | No | Favorite People |
 | `statistics` | `table` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
+| `url` | `string` | No | MyAnimeList URL |
+| `username` | `string` | No | MyAnimeList Username |
 
 ### Operations
 
@@ -1392,7 +1392,7 @@ local user_about = client:UserAbout(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
+| `about` | `string` | No | User About. |
 
 ### Operations
 
@@ -1550,9 +1550,9 @@ local user_history = client:UserHistory(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | `string` | No |  |
-| `entry` | `table` | No |  |
-| `increment` | `number` | No |  |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `table` | No | Parsed URL Data |
+| `increment` | `number` | No | Number of episodes/chapters watched/read |
 
 ### Operations
 
@@ -1604,8 +1604,8 @@ local user_statistic = client:UserStatistic(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `table` | No |  |
-| `manga` | `table` | No |  |
+| `anime` | `table` | No | Anime Statistics |
+| `manga` | `table` | No | Manga Statistics |
 
 ### Operations
 
@@ -1657,8 +1657,8 @@ local user_update = client:UserUpdate(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `table` | No |  |
-| `manga` | `table` | No |  |
+| `anime` | `table` | No | Last updated Anime |
+| `manga` | `table` | No | Last updated Manga |
 
 ### Operations
 

@@ -1,0 +1,70 @@
+# Entity: user_update
+
+main: kit: entity: user_update: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "anime"
+      req: false
+      short: "Last updated Anime"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "manga"
+      req: false
+      short: "Last updated Manga"
+      type: "`$ARRAY`"
+    }
+  ]
+
+  name: "user_update"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "username"
+                orig: "username"
+                reqd: true
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/users/{username}/userupdates"
+          parts: [
+            "users"
+            "{username}"
+            "userupdates"
+          ]
+          select: {
+            exist: [
+              "username"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "user"
+      ]
+    ]
+  }
+
+
+
+}

@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'JikanRest',
+        slug: "jikan-rest",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -128,42 +139,52 @@ class Config {
       "fields": [
         {
           "name": "aired",
+          "short": "Aired Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "airing",
+          "short": "Airing boolean",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "approved",
+          "short": "Whether the entry is pending approval on MAL or not",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "author_url",
+          "short": "Author Profile URL",
           "type": "`$STRING`"
         },
         {
           "name": "author_username",
+          "short": "Author MyAnimeList Username",
           "type": "`$STRING`"
         },
         {
           "name": "background",
+          "short": "Background",
           "type": "`$STRING`"
         },
         {
           "name": "broadcast",
+          "short": "Broadcast Details",
           "type": "`$OBJECT`"
         },
         {
           "name": "character",
+          "short": "Character details",
           "type": "`$OBJECT`"
         },
         {
           "name": "comments",
+          "short": "Comment count",
           "type": "`$INTEGER`"
         },
         {
           "name": "completed",
+          "short": "Number of users who have completed the resource",
           "type": "`$INTEGER`"
         },
         {
@@ -172,6 +193,7 @@ class Config {
         },
         {
           "name": "date",
+          "short": "Post Date ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -180,10 +202,12 @@ class Config {
         },
         {
           "name": "dropped",
+          "short": "Number of users who have dropped the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "duration",
+          "short": "Episode duration in seconds",
           "type": "`$INTEGER`"
         },
         {
@@ -192,6 +216,7 @@ class Config {
         },
         {
           "name": "entry",
+          "short": "Related entries",
           "type": "`$OBJECT`",
           "union": {
             "branches": 2,
@@ -201,6 +226,7 @@ class Config {
         },
         {
           "name": "episodes",
+          "short": "Episode count",
           "type": "`$INTEGER`"
         },
         {
@@ -213,10 +239,12 @@ class Config {
         },
         {
           "name": "favorites",
+          "short": "Number of users who have favorited this entry",
           "type": "`$INTEGER`"
         },
         {
           "name": "filler",
+          "short": "Filler episode",
           "type": "`$BOOLEAN`"
         },
         {
@@ -229,6 +257,7 @@ class Config {
         },
         {
           "name": "last_comment",
+          "short": "Last comment details",
           "type": "`$OBJECT`"
         },
         {
@@ -237,14 +266,17 @@ class Config {
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
           "name": "members",
+          "short": "Number of users who have added this entry to their list",
           "type": "`$INTEGER`"
         },
         {
           "name": "moreinfo",
+          "short": "Additional information on the entry",
           "type": "`$STRING`"
         },
         {
@@ -257,6 +289,7 @@ class Config {
         },
         {
           "name": "on_hold",
+          "short": "Number of users who have put the resource on hold",
           "type": "`$INTEGER`"
         },
         {
@@ -269,18 +302,22 @@ class Config {
         },
         {
           "name": "person",
+          "short": "Person details",
           "type": "`$OBJECT`"
         },
         {
           "name": "plan_to_watch",
+          "short": "Number of users who have planned to watch the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "popularity",
+          "short": "Popularity",
           "type": "`$INTEGER`"
         },
         {
           "name": "positions",
+          "short": "Staff Positions",
           "type": "`$ARRAY`"
         },
         {
@@ -293,18 +330,22 @@ class Config {
         },
         {
           "name": "rank",
+          "short": "Ranking",
           "type": "`$INTEGER`"
         },
         {
           "name": "rating",
+          "short": "Anime audience rating",
           "type": "`$STRING`"
         },
         {
           "name": "recap",
+          "short": "Recap episode",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "relation",
+          "short": "Relation type",
           "type": "`$STRING`"
         },
         {
@@ -313,14 +354,17 @@ class Config {
         },
         {
           "name": "role",
+          "short": "Character's Role",
           "type": "`$STRING`"
         },
         {
           "name": "score",
+          "short": "Score",
           "type": "`$NUMBER`"
         },
         {
           "name": "scored_by",
+          "short": "Number of users",
           "type": "`$INTEGER`"
         },
         {
@@ -329,14 +373,17 @@ class Config {
         },
         {
           "name": "season",
+          "short": "Season",
           "type": "`$STRING`"
         },
         {
           "name": "source",
+          "short": "Original Material/Source adapted from",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Airing status",
           "type": "`$STRING`"
         },
         {
@@ -349,6 +396,7 @@ class Config {
         },
         {
           "name": "synopsis",
+          "short": "Episode Synopsis",
           "type": "`$STRING`"
         },
         {
@@ -361,42 +409,52 @@ class Config {
         },
         {
           "name": "title",
+          "short": "Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_english",
+          "short": "English Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_japanese",
+          "short": "Title Japanese",
           "type": "`$STRING`"
         },
         {
           "name": "title_romanji",
+          "short": "title_romanji",
           "type": "`$STRING`"
         },
         {
           "name": "title_synonyms",
+          "short": "Other Titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "titles",
+          "short": "All titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "total",
+          "short": "Total number of users who have the resource added to their lists",
           "type": "`$INTEGER`"
         },
         {
           "name": "trailer",
+          "short": "Youtube Details",
           "type": "`$OBJECT`"
         },
         {
           "name": "type",
+          "short": "Anime Type",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
@@ -405,10 +463,12 @@ class Config {
         },
         {
           "name": "watching",
+          "short": "Number of users watching the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "year",
+          "short": "Year",
           "type": "`$INTEGER`"
         }
       ],
@@ -1350,6 +1410,7 @@ class Config {
       "fields": [
         {
           "name": "about",
+          "short": "Biography",
           "type": "`$STRING`"
         },
         {
@@ -1362,10 +1423,12 @@ class Config {
         },
         {
           "name": "favorites",
+          "short": "Number of users who have favorited this entry",
           "type": "`$INTEGER`"
         },
         {
           "name": "image_url",
+          "short": "Default JPG Image Size URL",
           "type": "`$STRING`"
         },
         {
@@ -1374,14 +1437,17 @@ class Config {
         },
         {
           "name": "language",
+          "short": "Character's Role",
           "type": "`$STRING`"
         },
         {
           "name": "large_image_url",
+          "short": "Large JPG Image Size URL",
           "type": "`$STRING`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
@@ -1390,14 +1456,17 @@ class Config {
         },
         {
           "name": "name",
+          "short": "Name",
           "type": "`$STRING`"
         },
         {
           "name": "name_kanji",
+          "short": "Name",
           "type": "`$STRING`"
         },
         {
           "name": "nicknames",
+          "short": "Other Names",
           "type": "`$ARRAY`"
         },
         {
@@ -1410,10 +1479,12 @@ class Config {
         },
         {
           "name": "role",
+          "short": "Character's Role",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
@@ -1725,6 +1796,7 @@ class Config {
       "fields": [
         {
           "name": "access",
+          "short": "Club access",
           "type": "`$STRING`"
         },
         {
@@ -1733,6 +1805,7 @@ class Config {
         },
         {
           "name": "category",
+          "short": "Club Category",
           "type": "`$STRING`"
         },
         {
@@ -1741,6 +1814,7 @@ class Config {
         },
         {
           "name": "created",
+          "short": "Date Created ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -1753,6 +1827,7 @@ class Config {
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
@@ -1761,10 +1836,12 @@ class Config {
         },
         {
           "name": "members",
+          "short": "Number of club members",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
+          "short": "Club name",
           "type": "`$STRING`"
         },
         {
@@ -1773,10 +1850,12 @@ class Config {
         },
         {
           "name": "url",
+          "short": "Club URL",
           "type": "`$STRING`"
         },
         {
           "name": "username",
+          "short": "User's username",
           "type": "`$STRING`"
         }
       ],
@@ -2068,18 +2147,22 @@ class Config {
       "fields": [
         {
           "name": "count",
+          "short": "Genre's entry count",
           "type": "`$INTEGER`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
+          "short": "Genre Name",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         }
       ],
@@ -2244,14 +2327,17 @@ class Config {
       "fields": [
         {
           "name": "approved",
+          "short": "Whether the entry is pending approval on MAL or not",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "author_url",
+          "short": "Author Profile URL",
           "type": "`$STRING`"
         },
         {
           "name": "author_username",
+          "short": "Author MyAnimeList Username",
           "type": "`$STRING`"
         },
         {
@@ -2260,10 +2346,12 @@ class Config {
         },
         {
           "name": "background",
+          "short": "Background",
           "type": "`$STRING`"
         },
         {
           "name": "chapters",
+          "short": "Chapter count",
           "type": "`$INTEGER`"
         },
         {
@@ -2272,10 +2360,12 @@ class Config {
         },
         {
           "name": "comments",
+          "short": "Comment count",
           "type": "`$INTEGER`"
         },
         {
           "name": "completed",
+          "short": "Number of users who have completed the resource",
           "type": "`$INTEGER`"
         },
         {
@@ -2284,6 +2374,7 @@ class Config {
         },
         {
           "name": "date",
+          "short": "Post Date ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -2292,10 +2383,12 @@ class Config {
         },
         {
           "name": "dropped",
+          "short": "Number of users who have dropped the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "entry",
+          "short": "Related entries",
           "type": "`$OBJECT`",
           "union": {
             "branches": 2,
@@ -2313,6 +2406,7 @@ class Config {
         },
         {
           "name": "favorites",
+          "short": "Number of users who have favorited this entry",
           "type": "`$INTEGER`"
         },
         {
@@ -2325,22 +2419,27 @@ class Config {
         },
         {
           "name": "jpg",
+          "short": "Available images in JPG",
           "type": "`$OBJECT`"
         },
         {
           "name": "last_comment",
+          "short": "Last comment details",
           "type": "`$OBJECT`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
           "name": "members",
+          "short": "Number of users who have added this entry to their list",
           "type": "`$INTEGER`"
         },
         {
           "name": "moreinfo",
+          "short": "Additional information on the entry",
           "type": "`$STRING`"
         },
         {
@@ -2349,6 +2448,7 @@ class Config {
         },
         {
           "name": "on_hold",
+          "short": "Number of users who have put the resource on hold",
           "type": "`$INTEGER`"
         },
         {
@@ -2357,30 +2457,37 @@ class Config {
         },
         {
           "name": "plan_to_read",
+          "short": "Number of users who have planned to read the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "popularity",
+          "short": "Popularity",
           "type": "`$INTEGER`"
         },
         {
           "name": "published",
+          "short": "Date range",
           "type": "`$OBJECT`"
         },
         {
           "name": "publishing",
+          "short": "Publishing boolean",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "rank",
+          "short": "Ranking",
           "type": "`$INTEGER`"
         },
         {
           "name": "reading",
+          "short": "Number of users reading the resource",
           "type": "`$INTEGER`"
         },
         {
           "name": "relation",
+          "short": "Relation type",
           "type": "`$STRING`"
         },
         {
@@ -2389,14 +2496,17 @@ class Config {
         },
         {
           "name": "role",
+          "short": "Character's Role",
           "type": "`$STRING`"
         },
         {
           "name": "score",
+          "short": "Score",
           "type": "`$NUMBER`"
         },
         {
           "name": "scored_by",
+          "short": "Number of users",
           "type": "`$INTEGER`"
         },
         {
@@ -2409,10 +2519,12 @@ class Config {
         },
         {
           "name": "status",
+          "short": "Publishing status",
           "type": "`$STRING`"
         },
         {
           "name": "synopsis",
+          "short": "Synopsis",
           "type": "`$STRING`"
         },
         {
@@ -2421,42 +2533,52 @@ class Config {
         },
         {
           "name": "title",
+          "short": "Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_english",
+          "short": "English Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_japanese",
+          "short": "Japanese Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_synonyms",
+          "short": "Other Titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "titles",
+          "short": "All Titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "total",
+          "short": "Total number of users who have the resource added to their lists",
           "type": "`$INTEGER`"
         },
         {
           "name": "type",
+          "short": "Manga Type",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
           "name": "volumes",
+          "short": "Volume count",
           "type": "`$INTEGER`"
         },
         {
           "name": "webp",
+          "short": "Available images in WEBP",
           "type": "`$OBJECT`"
         }
       ],
@@ -3188,10 +3310,12 @@ class Config {
       "fields": [
         {
           "name": "about",
+          "short": "Biography",
           "type": "`$STRING`"
         },
         {
           "name": "alternate_names",
+          "short": "Other Names",
           "type": "`$ARRAY`"
         },
         {
@@ -3200,6 +3324,7 @@ class Config {
         },
         {
           "name": "birthday",
+          "short": "Birthday Date ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -3212,14 +3337,17 @@ class Config {
         },
         {
           "name": "family_name",
+          "short": "Family Name",
           "type": "`$STRING`"
         },
         {
           "name": "favorites",
+          "short": "Number of users who have favorited this entry",
           "type": "`$INTEGER`"
         },
         {
           "name": "given_name",
+          "short": "Given Name",
           "type": "`$STRING`"
         },
         {
@@ -3228,10 +3356,12 @@ class Config {
         },
         {
           "name": "jpg",
+          "short": "Available images in JPG",
           "type": "`$OBJECT`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
@@ -3240,6 +3370,7 @@ class Config {
         },
         {
           "name": "name",
+          "short": "Name",
           "type": "`$STRING`"
         },
         {
@@ -3248,14 +3379,17 @@ class Config {
         },
         {
           "name": "position",
+          "short": "Person's position",
           "type": "`$STRING`"
         },
         {
           "name": "role",
+          "short": "Person's Character's role in the anime",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
@@ -3264,6 +3398,7 @@ class Config {
         },
         {
           "name": "website_url",
+          "short": "Person's website URL",
           "type": "`$STRING`"
         }
       ],
@@ -3536,10 +3671,12 @@ class Config {
       "fields": [
         {
           "name": "about",
+          "short": "About the Producer",
           "type": "`$STRING`"
         },
         {
           "name": "count",
+          "short": "Producers's anime count",
           "type": "`$INTEGER`"
         },
         {
@@ -3548,6 +3685,7 @@ class Config {
         },
         {
           "name": "established",
+          "short": "Established Date ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -3556,6 +3694,7 @@ class Config {
         },
         {
           "name": "favorites",
+          "short": "Producers's member favorites count",
           "type": "`$INTEGER`"
         },
         {
@@ -3564,6 +3703,7 @@ class Config {
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
@@ -3576,10 +3716,12 @@ class Config {
         },
         {
           "name": "titles",
+          "short": "All titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         }
       ],
@@ -3759,22 +3901,27 @@ class Config {
       "fields": [
         {
           "name": "about",
+          "short": "Biography",
           "type": "`$STRING`"
         },
         {
           "name": "aired",
+          "short": "Date range",
           "type": "`$OBJECT`"
         },
         {
           "name": "airing",
+          "short": "Airing boolean",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "alternate_names",
+          "short": "Other Names",
           "type": "`$ARRAY`"
         },
         {
           "name": "approved",
+          "short": "Whether the entry is pending approval on MAL or not",
           "type": "`$BOOLEAN`"
         },
         {
@@ -3783,18 +3930,22 @@ class Config {
         },
         {
           "name": "background",
+          "short": "Background",
           "type": "`$STRING`"
         },
         {
           "name": "birthday",
+          "short": "Birthday Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "broadcast",
+          "short": "Broadcast Details",
           "type": "`$OBJECT`"
         },
         {
           "name": "chapters",
+          "short": "Chapter count",
           "type": "`$INTEGER`"
         },
         {
@@ -3803,10 +3954,12 @@ class Config {
         },
         {
           "name": "duration",
+          "short": "Parsed raw duration",
           "type": "`$STRING`"
         },
         {
           "name": "episodes",
+          "short": "Episode count",
           "type": "`$INTEGER`"
         },
         {
@@ -3815,14 +3968,17 @@ class Config {
         },
         {
           "name": "family_name",
+          "short": "Family Name",
           "type": "`$STRING`"
         },
         {
           "name": "favorites",
+          "short": "Number of users who have favorited this entry",
           "type": "`$INTEGER`"
         },
         {
           "name": "gender",
+          "short": "User Gender",
           "type": "`$STRING`"
         },
         {
@@ -3831,6 +3987,7 @@ class Config {
         },
         {
           "name": "given_name",
+          "short": "Given Name",
           "type": "`$STRING`"
         },
         {
@@ -3839,10 +3996,12 @@ class Config {
         },
         {
           "name": "joined",
+          "short": "Joined Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "last_online",
+          "short": "Last Online Date ISO8601",
           "type": "`$STRING`"
         },
         {
@@ -3851,30 +4010,37 @@ class Config {
         },
         {
           "name": "location",
+          "short": "Location",
           "type": "`$STRING`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
           "name": "members",
+          "short": "Number of users who have added this entry to their list",
           "type": "`$INTEGER`"
         },
         {
           "name": "name",
+          "short": "Name",
           "type": "`$STRING`"
         },
         {
           "name": "name_kanji",
+          "short": "Name",
           "type": "`$STRING`"
         },
         {
           "name": "nicknames",
+          "short": "Other Names",
           "type": "`$ARRAY`"
         },
         {
           "name": "popularity",
+          "short": "Popularity",
           "type": "`$INTEGER`"
         },
         {
@@ -3883,30 +4049,37 @@ class Config {
         },
         {
           "name": "published",
+          "short": "Date range",
           "type": "`$OBJECT`"
         },
         {
           "name": "publishing",
+          "short": "Publishing boolean",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "rank",
+          "short": "Ranking",
           "type": "`$INTEGER`"
         },
         {
           "name": "rating",
+          "short": "Anime audience rating",
           "type": "`$STRING`"
         },
         {
           "name": "score",
+          "short": "Score",
           "type": "`$NUMBER`"
         },
         {
           "name": "scored_by",
+          "short": "Number of users",
           "type": "`$INTEGER`"
         },
         {
           "name": "season",
+          "short": "Season",
           "type": "`$STRING`"
         },
         {
@@ -3915,10 +4088,12 @@ class Config {
         },
         {
           "name": "source",
+          "short": "Original Material/Source adapted from",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Airing status",
           "type": "`$STRING`"
         },
         {
@@ -3927,6 +4102,7 @@ class Config {
         },
         {
           "name": "synopsis",
+          "short": "Synopsis",
           "type": "`$STRING`"
         },
         {
@@ -3935,50 +4111,62 @@ class Config {
         },
         {
           "name": "title",
+          "short": "Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_english",
+          "short": "English Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_japanese",
+          "short": "Japanese Title",
           "type": "`$STRING`"
         },
         {
           "name": "title_synonyms",
+          "short": "Other Titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "titles",
+          "short": "All titles",
           "type": "`$ARRAY`"
         },
         {
           "name": "trailer",
+          "short": "Youtube Details",
           "type": "`$OBJECT`"
         },
         {
           "name": "type",
+          "short": "Anime Type",
           "type": "`$STRING`"
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
           "name": "username",
+          "short": "MyAnimeList Username",
           "type": "`$STRING`"
         },
         {
           "name": "volumes",
+          "short": "Volume count",
           "type": "`$INTEGER`"
         },
         {
           "name": "website_url",
+          "short": "Person's website URL",
           "type": "`$STRING`"
         },
         {
           "name": "year",
+          "short": "Year",
           "type": "`$INTEGER`"
         }
       ],
@@ -4409,10 +4597,12 @@ class Config {
         },
         {
           "name": "seasons",
+          "short": "List of available seasons",
           "type": "`$ARRAY`"
         },
         {
           "name": "year",
+          "short": "Year",
           "type": "`$INTEGER`"
         }
       ],
@@ -4746,14 +4936,17 @@ class Config {
       "fields": [
         {
           "name": "anime",
+          "short": "Favorite Anime",
           "type": "`$ARRAY`"
         },
         {
           "name": "birthday",
+          "short": "Birthday Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "characters",
+          "short": "Favorite Characters",
           "type": "`$ARRAY`"
         },
         {
@@ -4771,6 +4964,7 @@ class Config {
         },
         {
           "name": "gender",
+          "short": "User Gender",
           "type": "`$STRING`"
         },
         {
@@ -4779,22 +4973,27 @@ class Config {
         },
         {
           "name": "joined",
+          "short": "Joined Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "last_online",
+          "short": "Last Online Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "location",
+          "short": "Location",
           "type": "`$STRING`"
         },
         {
           "name": "mal_id",
+          "short": "MyAnimeList ID",
           "type": "`$INTEGER`"
         },
         {
           "name": "manga",
+          "short": "Favorite Manga",
           "type": "`$ARRAY`"
         },
         {
@@ -4803,6 +5002,7 @@ class Config {
         },
         {
           "name": "people",
+          "short": "Favorite People",
           "type": "`$ARRAY`"
         },
         {
@@ -4811,10 +5011,12 @@ class Config {
         },
         {
           "name": "url",
+          "short": "MyAnimeList URL",
           "type": "`$STRING`"
         },
         {
           "name": "username",
+          "short": "MyAnimeList Username",
           "type": "`$STRING`"
         }
       ],
@@ -5160,6 +5362,7 @@ class Config {
       "fields": [
         {
           "name": "about",
+          "short": "User About.",
           "type": "`$STRING`"
         }
       ],
@@ -5348,14 +5551,17 @@ class Config {
       "fields": [
         {
           "name": "date",
+          "short": "Date ISO8601",
           "type": "`$STRING`"
         },
         {
           "name": "entry",
+          "short": "Parsed URL Data",
           "type": "`$OBJECT`"
         },
         {
           "name": "increment",
+          "short": "Number of episodes/chapters watched/read",
           "type": "`$INTEGER`"
         }
       ],
@@ -5419,10 +5625,12 @@ class Config {
       "fields": [
         {
           "name": "anime",
+          "short": "Anime Statistics",
           "type": "`$OBJECT`"
         },
         {
           "name": "manga",
+          "short": "Manga Statistics",
           "type": "`$OBJECT`"
         }
       ],
@@ -5477,10 +5685,12 @@ class Config {
       "fields": [
         {
           "name": "anime",
+          "short": "Last updated Anime",
           "type": "`$ARRAY`"
         },
         {
           "name": "manga",
+          "short": "Last updated Manga",
           "type": "`$ARRAY`"
         }
       ],

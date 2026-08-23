@@ -194,76 +194,76 @@ fmt.Println(anime.GetName()) // "anime"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired` | `string` | No |  |
-| `airing` | `bool` | No |  |
-| `approved` | `bool` | No |  |
-| `author_url` | `string` | No |  |
-| `author_username` | `string` | No |  |
-| `background` | `string` | No |  |
-| `broadcast` | `map[string]any` | No |  |
-| `character` | `map[string]any` | No |  |
-| `comments` | `int` | No |  |
-| `completed` | `int` | No |  |
+| `aired` | `string` | No | Aired Date ISO8601 |
+| `airing` | `bool` | No | Airing boolean |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `string` | No | Author Profile URL |
+| `author_username` | `string` | No | Author MyAnimeList Username |
+| `background` | `string` | No | Background |
+| `broadcast` | `map[string]any` | No | Broadcast Details |
+| `character` | `map[string]any` | No | Character details |
+| `comments` | `int` | No | Comment count |
+| `completed` | `int` | No | Number of users who have completed the resource |
 | `data` | `[]any` | No |  |
-| `date` | `string` | No |  |
+| `date` | `string` | No | Post Date ISO8601 |
 | `demographics` | `[]any` | No |  |
-| `dropped` | `int` | No |  |
-| `duration` | `int` | No |  |
+| `dropped` | `int` | No | Number of users who have dropped the resource |
+| `duration` | `int` | No | Episode duration in seconds |
 | `endings` | `[]any` | No |  |
-| `entry` | `map[string]any` | No |  |
-| `episodes` | `int` | No |  |
+| `entry` | `map[string]any` | No | Related entries |
+| `episodes` | `int` | No | Episode count |
 | `explicit_genres` | `[]any` | No |  |
 | `external` | `[]any` | No |  |
-| `favorites` | `int` | No |  |
-| `filler` | `bool` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `filler` | `bool` | No | Filler episode |
 | `genres` | `[]any` | No |  |
 | `images` | `map[string]any` | No |  |
-| `last_comment` | `map[string]any` | No |  |
+| `last_comment` | `map[string]any` | No | Last comment details |
 | `licensors` | `[]any` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `moreinfo` | `string` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `string` | No | Additional information on the entry |
 | `music_videos` | `[]any` | No |  |
 | `name` | `string` | No |  |
-| `on_hold` | `int` | No |  |
+| `on_hold` | `int` | No | Number of users who have put the resource on hold |
 | `openings` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `person` | `map[string]any` | No |  |
-| `plan_to_watch` | `int` | No |  |
-| `popularity` | `int` | No |  |
-| `positions` | `[]any` | No |  |
+| `person` | `map[string]any` | No | Person details |
+| `plan_to_watch` | `int` | No | Number of users who have planned to watch the resource |
+| `popularity` | `int` | No | Popularity |
+| `positions` | `[]any` | No | Staff Positions |
 | `producers` | `[]any` | No |  |
 | `promo` | `[]any` | No |  |
-| `rank` | `int` | No |  |
-| `rating` | `string` | No |  |
-| `recap` | `bool` | No |  |
-| `relation` | `string` | No |  |
+| `rank` | `int` | No | Ranking |
+| `rating` | `string` | No | Anime audience rating |
+| `recap` | `bool` | No | Recap episode |
+| `relation` | `string` | No | Relation type |
 | `relations` | `[]any` | No |  |
-| `role` | `string` | No |  |
-| `score` | `float64` | No |  |
-| `scored_by` | `int` | No |  |
+| `role` | `string` | No | Character's Role |
+| `score` | `float64` | No | Score |
+| `scored_by` | `int` | No | Number of users |
 | `scores` | `[]any` | No |  |
-| `season` | `string` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
+| `season` | `string` | No | Season |
+| `source` | `string` | No | Original Material/Source adapted from |
+| `status` | `string` | No | Airing status |
 | `streaming` | `[]any` | No |  |
 | `studios` | `[]any` | No |  |
-| `synopsis` | `string` | No |  |
+| `synopsis` | `string` | No | Episode Synopsis |
 | `theme` | `map[string]any` | No |  |
 | `themes` | `[]any` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_romanji` | `string` | No |  |
-| `title_synonyms` | `[]any` | No |  |
-| `titles` | `[]any` | No |  |
-| `total` | `int` | No |  |
-| `trailer` | `map[string]any` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Title Japanese |
+| `title_romanji` | `string` | No | title_romanji |
+| `title_synonyms` | `[]any` | No | Other Titles |
+| `titles` | `[]any` | No | All titles |
+| `total` | `int` | No | Total number of users who have the resource added to their lists |
+| `trailer` | `map[string]any` | No | Youtube Details |
+| `type` | `string` | No | Anime Type |
+| `url` | `string` | No | MyAnimeList URL |
 | `voice_actors` | `[]any` | No |  |
-| `watching` | `int` | No |  |
-| `year` | `int` | No |  |
+| `watching` | `int` | No | Number of users watching the resource |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -326,23 +326,23 @@ fmt.Println(character.GetName()) // "character"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
+| `about` | `string` | No | Biography |
 | `anime` | `[]any` | No |  |
 | `data` | `[]any` | No |  |
-| `favorites` | `int` | No |  |
-| `image_url` | `string` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `map[string]any` | No |  |
-| `language` | `string` | No |  |
-| `large_image_url` | `string` | No |  |
-| `mal_id` | `int` | No |  |
+| `language` | `string` | No | Character's Role |
+| `large_image_url` | `string` | No | Large JPG Image Size URL |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `[]any` | No |  |
-| `name` | `string` | No |  |
-| `name_kanji` | `string` | No |  |
-| `nicknames` | `[]any` | No |  |
+| `name` | `string` | No | Name |
+| `name_kanji` | `string` | No | Name |
+| `nicknames` | `[]any` | No | Other Names |
 | `pagination` | `map[string]any` | No |  |
 | `person` | `map[string]any` | No |  |
-| `role` | `string` | No |  |
-| `url` | `string` | No |  |
+| `role` | `string` | No | Character's Role |
+| `url` | `string` | No | MyAnimeList URL |
 | `voices` | `[]any` | No |  |
 
 ### Operations
@@ -406,20 +406,20 @@ fmt.Println(club.GetName()) // "club"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `access` | `string` | No |  |
+| `access` | `string` | No | Club access |
 | `anime` | `[]any` | No |  |
-| `category` | `string` | No |  |
+| `category` | `string` | No | Club Category |
 | `characters` | `[]any` | No |  |
-| `created` | `string` | No |  |
+| `created` | `string` | No | Date Created ISO8601 |
 | `data` | `[]any` | No |  |
 | `images` | `map[string]any` | No |  |
-| `mal_id` | `int` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `[]any` | No |  |
-| `members` | `int` | No |  |
-| `name` | `string` | No |  |
+| `members` | `int` | No | Number of club members |
+| `name` | `string` | No | Club name |
 | `pagination` | `map[string]any` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
+| `url` | `string` | No | Club URL |
+| `username` | `string` | No | User's username |
 
 ### Operations
 
@@ -534,10 +534,10 @@ fmt.Println(genre.GetName()) // "genre"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | `int` | No |  |
-| `mal_id` | `int` | No |  |
-| `name` | `string` | No |  |
-| `url` | `string` | No |  |
+| `count` | `int` | No | Genre's entry count |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `name` | `string` | No | Genre Name |
+| `url` | `string` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -640,59 +640,59 @@ fmt.Println(manga.GetName()) // "manga"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `approved` | `bool` | No |  |
-| `author_url` | `string` | No |  |
-| `author_username` | `string` | No |  |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `string` | No | Author Profile URL |
+| `author_username` | `string` | No | Author MyAnimeList Username |
 | `authors` | `[]any` | No |  |
-| `background` | `string` | No |  |
-| `chapters` | `int` | No |  |
+| `background` | `string` | No | Background |
+| `chapters` | `int` | No | Chapter count |
 | `character` | `map[string]any` | No |  |
-| `comments` | `int` | No |  |
-| `completed` | `int` | No |  |
+| `comments` | `int` | No | Comment count |
+| `completed` | `int` | No | Number of users who have completed the resource |
 | `data` | `[]any` | No |  |
-| `date` | `string` | No |  |
+| `date` | `string` | No | Post Date ISO8601 |
 | `demographics` | `[]any` | No |  |
-| `dropped` | `int` | No |  |
-| `entry` | `map[string]any` | No |  |
+| `dropped` | `int` | No | Number of users who have dropped the resource |
+| `entry` | `map[string]any` | No | Related entries |
 | `explicit_genres` | `[]any` | No |  |
 | `external` | `[]any` | No |  |
-| `favorites` | `int` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
 | `genres` | `[]any` | No |  |
 | `images` | `map[string]any` | No |  |
-| `jpg` | `map[string]any` | No |  |
-| `last_comment` | `map[string]any` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `moreinfo` | `string` | No |  |
+| `jpg` | `map[string]any` | No | Available images in JPG |
+| `last_comment` | `map[string]any` | No | Last comment details |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `string` | No | Additional information on the entry |
 | `name` | `string` | No |  |
-| `on_hold` | `int` | No |  |
+| `on_hold` | `int` | No | Number of users who have put the resource on hold |
 | `pagination` | `map[string]any` | No |  |
-| `plan_to_read` | `int` | No |  |
-| `popularity` | `int` | No |  |
-| `published` | `map[string]any` | No |  |
-| `publishing` | `bool` | No |  |
-| `rank` | `int` | No |  |
-| `reading` | `int` | No |  |
-| `relation` | `string` | No |  |
+| `plan_to_read` | `int` | No | Number of users who have planned to read the resource |
+| `popularity` | `int` | No | Popularity |
+| `published` | `map[string]any` | No | Date range |
+| `publishing` | `bool` | No | Publishing boolean |
+| `rank` | `int` | No | Ranking |
+| `reading` | `int` | No | Number of users reading the resource |
+| `relation` | `string` | No | Relation type |
 | `relations` | `[]any` | No |  |
-| `role` | `string` | No |  |
-| `score` | `float64` | No |  |
-| `scored_by` | `int` | No |  |
+| `role` | `string` | No | Character's Role |
+| `score` | `float64` | No | Score |
+| `scored_by` | `int` | No | Number of users |
 | `scores` | `[]any` | No |  |
 | `serializations` | `[]any` | No |  |
-| `status` | `string` | No |  |
-| `synopsis` | `string` | No |  |
+| `status` | `string` | No | Publishing status |
+| `synopsis` | `string` | No | Synopsis |
 | `themes` | `[]any` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_synonyms` | `[]any` | No |  |
-| `titles` | `[]any` | No |  |
-| `total` | `int` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
-| `volumes` | `int` | No |  |
-| `webp` | `map[string]any` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Japanese Title |
+| `title_synonyms` | `[]any` | No | Other Titles |
+| `titles` | `[]any` | No | All Titles |
+| `total` | `int` | No | Total number of users who have the resource added to their lists |
+| `type` | `string` | No | Manga Type |
+| `url` | `string` | No | MyAnimeList URL |
+| `volumes` | `int` | No | Volume count |
+| `webp` | `map[string]any` | No | Available images in WEBP |
 
 ### Operations
 
@@ -807,26 +807,26 @@ fmt.Println(person.GetName()) // "person"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `alternate_names` | `[]any` | No |  |
+| `about` | `string` | No | Biography |
+| `alternate_names` | `[]any` | No | Other Names |
 | `anime` | `[]any` | No |  |
-| `birthday` | `string` | No |  |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
 | `character` | `map[string]any` | No |  |
 | `data` | `[]any` | No |  |
-| `family_name` | `string` | No |  |
-| `favorites` | `int` | No |  |
-| `given_name` | `string` | No |  |
+| `family_name` | `string` | No | Family Name |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `given_name` | `string` | No | Given Name |
 | `images` | `map[string]any` | No |  |
-| `jpg` | `map[string]any` | No |  |
-| `mal_id` | `int` | No |  |
+| `jpg` | `map[string]any` | No | Available images in JPG |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `[]any` | No |  |
-| `name` | `string` | No |  |
+| `name` | `string` | No | Name |
 | `pagination` | `map[string]any` | No |  |
-| `position` | `string` | No |  |
-| `role` | `string` | No |  |
-| `url` | `string` | No |  |
+| `position` | `string` | No | Person's position |
+| `role` | `string` | No | Person's Character's role in the anime |
+| `url` | `string` | No | MyAnimeList URL |
 | `voices` | `[]any` | No |  |
-| `website_url` | `string` | No |  |
+| `website_url` | `string` | No | Person's website URL |
 
 ### Operations
 
@@ -889,18 +889,18 @@ fmt.Println(producer.GetName()) // "producer"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `count` | `int` | No |  |
+| `about` | `string` | No | About the Producer |
+| `count` | `int` | No | Producers's anime count |
 | `data` | `[]any` | No |  |
-| `established` | `string` | No |  |
+| `established` | `string` | No | Established Date ISO8601 |
 | `external` | `[]any` | No |  |
-| `favorites` | `int` | No |  |
+| `favorites` | `int` | No | Producers's member favorites count |
 | `images` | `map[string]any` | No |  |
-| `mal_id` | `int` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `titles` | `[]any` | No |  |
-| `url` | `string` | No |  |
+| `titles` | `[]any` | No | All titles |
+| `url` | `string` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -963,62 +963,62 @@ fmt.Println(random.GetName()) // "random"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
-| `aired` | `map[string]any` | No |  |
-| `airing` | `bool` | No |  |
-| `alternate_names` | `[]any` | No |  |
-| `approved` | `bool` | No |  |
+| `about` | `string` | No | Biography |
+| `aired` | `map[string]any` | No | Date range |
+| `airing` | `bool` | No | Airing boolean |
+| `alternate_names` | `[]any` | No | Other Names |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
 | `authors` | `[]any` | No |  |
-| `background` | `string` | No |  |
-| `birthday` | `string` | No |  |
-| `broadcast` | `map[string]any` | No |  |
-| `chapters` | `int` | No |  |
+| `background` | `string` | No | Background |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
+| `broadcast` | `map[string]any` | No | Broadcast Details |
+| `chapters` | `int` | No | Chapter count |
 | `demographics` | `[]any` | No |  |
-| `duration` | `string` | No |  |
-| `episodes` | `int` | No |  |
+| `duration` | `string` | No | Parsed raw duration |
+| `episodes` | `int` | No | Episode count |
 | `explicit_genres` | `[]any` | No |  |
-| `family_name` | `string` | No |  |
-| `favorites` | `int` | No |  |
-| `gender` | `string` | No |  |
+| `family_name` | `string` | No | Family Name |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `gender` | `string` | No | User Gender |
 | `genres` | `[]any` | No |  |
-| `given_name` | `string` | No |  |
+| `given_name` | `string` | No | Given Name |
 | `images` | `map[string]any` | No |  |
-| `joined` | `string` | No |  |
-| `last_online` | `string` | No |  |
+| `joined` | `string` | No | Joined Date ISO8601 |
+| `last_online` | `string` | No | Last Online Date ISO8601 |
 | `licensors` | `[]any` | No |  |
-| `location` | `string` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `name` | `string` | No |  |
-| `name_kanji` | `string` | No |  |
-| `nicknames` | `[]any` | No |  |
-| `popularity` | `int` | No |  |
+| `location` | `string` | No | Location |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `name` | `string` | No | Name |
+| `name_kanji` | `string` | No | Name |
+| `nicknames` | `[]any` | No | Other Names |
+| `popularity` | `int` | No | Popularity |
 | `producers` | `[]any` | No |  |
-| `published` | `map[string]any` | No |  |
-| `publishing` | `bool` | No |  |
-| `rank` | `int` | No |  |
-| `rating` | `string` | No |  |
-| `score` | `float64` | No |  |
-| `scored_by` | `int` | No |  |
-| `season` | `string` | No |  |
+| `published` | `map[string]any` | No | Date range |
+| `publishing` | `bool` | No | Publishing boolean |
+| `rank` | `int` | No | Ranking |
+| `rating` | `string` | No | Anime audience rating |
+| `score` | `float64` | No | Score |
+| `scored_by` | `int` | No | Number of users |
+| `season` | `string` | No | Season |
 | `serializations` | `[]any` | No |  |
-| `source` | `string` | No |  |
-| `status` | `string` | No |  |
+| `source` | `string` | No | Original Material/Source adapted from |
+| `status` | `string` | No | Airing status |
 | `studios` | `[]any` | No |  |
-| `synopsis` | `string` | No |  |
+| `synopsis` | `string` | No | Synopsis |
 | `themes` | `[]any` | No |  |
-| `title` | `string` | No |  |
-| `title_english` | `string` | No |  |
-| `title_japanese` | `string` | No |  |
-| `title_synonyms` | `[]any` | No |  |
-| `titles` | `[]any` | No |  |
-| `trailer` | `map[string]any` | No |  |
-| `type` | `string` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
-| `volumes` | `int` | No |  |
-| `website_url` | `string` | No |  |
-| `year` | `int` | No |  |
+| `title` | `string` | No | Title |
+| `title_english` | `string` | No | English Title |
+| `title_japanese` | `string` | No | Japanese Title |
+| `title_synonyms` | `[]any` | No | Other Titles |
+| `titles` | `[]any` | No | All titles |
+| `trailer` | `map[string]any` | No | Youtube Details |
+| `type` | `string` | No | Anime Type |
+| `url` | `string` | No | MyAnimeList URL |
+| `username` | `string` | No | MyAnimeList Username |
+| `volumes` | `int` | No | Volume count |
+| `website_url` | `string` | No | Person's website URL |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -1220,8 +1220,8 @@ fmt.Println(season.GetName()) // "season"
 | --- | --- | --- | --- |
 | `data` | `[]any` | No |  |
 | `pagination` | `map[string]any` | No |  |
-| `seasons` | `[]any` | No |  |
-| `year` | `int` | No |  |
+| `seasons` | `[]any` | No | List of available seasons |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -1336,23 +1336,23 @@ fmt.Println(user.GetName()) // "user"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `[]any` | No |  |
-| `birthday` | `string` | No |  |
-| `characters` | `[]any` | No |  |
+| `anime` | `[]any` | No | Favorite Anime |
+| `birthday` | `string` | No | Birthday Date ISO8601 |
+| `characters` | `[]any` | No | Favorite Characters |
 | `data` | `[]any` | No |  |
 | `external` | `[]any` | No |  |
-| `gender` | `string` | No |  |
+| `gender` | `string` | No | User Gender |
 | `images` | `map[string]any` | No |  |
-| `joined` | `string` | No |  |
-| `last_online` | `string` | No |  |
-| `location` | `string` | No |  |
-| `mal_id` | `int` | No |  |
-| `manga` | `[]any` | No |  |
+| `joined` | `string` | No | Joined Date ISO8601 |
+| `last_online` | `string` | No | Last Online Date ISO8601 |
+| `location` | `string` | No | Location |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `manga` | `[]any` | No | Favorite Manga |
 | `pagination` | `map[string]any` | No |  |
-| `people` | `[]any` | No |  |
+| `people` | `[]any` | No | Favorite People |
 | `statistics` | `map[string]any` | No |  |
-| `url` | `string` | No |  |
-| `username` | `string` | No |  |
+| `url` | `string` | No | MyAnimeList URL |
+| `username` | `string` | No | MyAnimeList Username |
 
 ### Operations
 
@@ -1415,7 +1415,7 @@ fmt.Println(userAbout.GetName()) // "user_about"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `string` | No |  |
+| `about` | `string` | No | User About. |
 
 ### Operations
 
@@ -1570,9 +1570,9 @@ fmt.Println(userHistory.GetName()) // "user_history"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | `string` | No |  |
-| `entry` | `map[string]any` | No |  |
-| `increment` | `int` | No |  |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `map[string]any` | No | Parsed URL Data |
+| `increment` | `int` | No | Number of episodes/chapters watched/read |
 
 ### Operations
 
@@ -1623,8 +1623,8 @@ fmt.Println(userStatistic.GetName()) // "user_statistic"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `map[string]any` | No |  |
-| `manga` | `map[string]any` | No |  |
+| `anime` | `map[string]any` | No | Anime Statistics |
+| `manga` | `map[string]any` | No | Manga Statistics |
 
 ### Operations
 
@@ -1675,8 +1675,8 @@ fmt.Println(userUpdate.GetName()) // "user_update"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `[]any` | No |  |
-| `manga` | `[]any` | No |  |
+| `anime` | `[]any` | No | Last updated Anime |
+| `manga` | `[]any` | No | Last updated Manga |
 
 ### Operations
 

@@ -1,0 +1,422 @@
+# Entity: random
+
+main: kit: entity: random: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "about"
+      req: false
+      short: "Biography"
+      type: "`$STRING`"
+    }
+    {
+      name: "aired"
+      req: false
+      short: "Date range"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "airing"
+      req: false
+      short: "Airing boolean"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "alternate_names"
+      req: false
+      short: "Other Names"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "approved"
+      req: false
+      short: "Whether the entry is pending approval on MAL or not"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "authors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "background"
+      req: false
+      short: "Background"
+      type: "`$STRING`"
+    }
+    {
+      name: "birthday"
+      req: false
+      short: "Birthday Date ISO8601"
+      type: "`$STRING`"
+    }
+    {
+      name: "broadcast"
+      req: false
+      short: "Broadcast Details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "chapters"
+      req: false
+      short: "Chapter count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "demographics"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "duration"
+      req: false
+      short: "Parsed raw duration"
+      type: "`$STRING`"
+    }
+    {
+      name: "episodes"
+      req: false
+      short: "Episode count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "explicit_genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "family_name"
+      req: false
+      short: "Family Name"
+      type: "`$STRING`"
+    }
+    {
+      name: "favorites"
+      req: false
+      short: "Number of users who have favorited this entry"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "gender"
+      req: false
+      short: "User Gender"
+      type: "`$STRING`"
+    }
+    {
+      name: "genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "given_name"
+      req: false
+      short: "Given Name"
+      type: "`$STRING`"
+    }
+    {
+      name: "images"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "joined"
+      req: false
+      short: "Joined Date ISO8601"
+      type: "`$STRING`"
+    }
+    {
+      name: "last_online"
+      req: false
+      short: "Last Online Date ISO8601"
+      type: "`$STRING`"
+    }
+    {
+      name: "licensors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "location"
+      req: false
+      short: "Location"
+      type: "`$STRING`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      short: "MyAnimeList ID"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "members"
+      req: false
+      short: "Number of users who have added this entry to their list"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Name"
+      type: "`$STRING`"
+    }
+    {
+      name: "name_kanji"
+      req: false
+      short: "Name"
+      type: "`$STRING`"
+    }
+    {
+      name: "nicknames"
+      req: false
+      short: "Other Names"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "popularity"
+      req: false
+      short: "Popularity"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "producers"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "published"
+      req: false
+      short: "Date range"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "publishing"
+      req: false
+      short: "Publishing boolean"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "rank"
+      req: false
+      short: "Ranking"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rating"
+      req: false
+      short: "Anime audience rating"
+      type: "`$STRING`"
+    }
+    {
+      name: "score"
+      req: false
+      short: "Score"
+      type: "`$NUMBER`"
+    }
+    {
+      name: "scored_by"
+      req: false
+      short: "Number of users"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "season"
+      req: false
+      short: "Season"
+      type: "`$STRING`"
+    }
+    {
+      name: "serializations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "source"
+      req: false
+      short: "Original Material/Source adapted from"
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      short: "Airing status"
+      type: "`$STRING`"
+    }
+    {
+      name: "studios"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      short: "Synopsis"
+      type: "`$STRING`"
+    }
+    {
+      name: "themes"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "title"
+      req: false
+      short: "Title"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_english"
+      req: false
+      short: "English Title"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_japanese"
+      req: false
+      short: "Japanese Title"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_synonyms"
+      req: false
+      short: "Other Titles"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "titles"
+      req: false
+      short: "All titles"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "trailer"
+      req: false
+      short: "Youtube Details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Anime Type"
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      short: "MyAnimeList URL"
+      type: "`$STRING`"
+    }
+    {
+      name: "username"
+      req: false
+      short: "MyAnimeList Username"
+      type: "`$STRING`"
+    }
+    {
+      name: "volumes"
+      req: false
+      short: "Volume count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "website_url"
+      req: false
+      short: "Person's website URL"
+      type: "`$STRING`"
+    }
+    {
+      name: "year"
+      req: false
+      short: "Year"
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "random"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/random/anime"
+          parts: [
+            "random"
+            "anime"
+          ]
+          select: {
+            "$action": "anime"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/random/characters"
+          parts: [
+            "random"
+            "characters"
+          ]
+          select: {
+            "$action": "character"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/random/manga"
+          parts: [
+            "random"
+            "manga"
+          ]
+          select: {
+            "$action": "manga"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/random/people"
+          parts: [
+            "random"
+            "people"
+          ]
+          select: {
+            "$action": "person"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          method: "GET"
+          orig: "/random/users"
+          parts: [
+            "random"
+            "users"
+          ]
+          select: {
+            "$action": "user"
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

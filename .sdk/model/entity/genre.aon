@@ -1,0 +1,103 @@
+# Entity: genre
+
+main: kit: entity: genre: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "count"
+      req: false
+      short: "Genre's entry count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      short: "MyAnimeList ID"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "name"
+      req: false
+      short: "Genre Name"
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      short: "MyAnimeList URL"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "genre"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/genres/anime"
+          parts: [
+            "genres"
+            "anime"
+          ]
+          select: {
+            "$action": "anime"
+            exist: [
+              "filter"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/genres/manga"
+          parts: [
+            "genres"
+            "manga"
+          ]
+          select: {
+            "$action": "manga"
+            exist: [
+              "filter"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

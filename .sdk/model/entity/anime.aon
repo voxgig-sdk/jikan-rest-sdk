@@ -1,0 +1,1360 @@
+# Entity: anime
+
+main: kit: entity: anime: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "aired"
+      req: false
+      short: "Aired Date ISO8601"
+      type: "`$STRING`"
+    }
+    {
+      name: "airing"
+      req: false
+      short: "Airing boolean"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "approved"
+      req: false
+      short: "Whether the entry is pending approval on MAL or not"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "author_url"
+      req: false
+      short: "Author Profile URL"
+      type: "`$STRING`"
+    }
+    {
+      name: "author_username"
+      req: false
+      short: "Author MyAnimeList Username"
+      type: "`$STRING`"
+    }
+    {
+      name: "background"
+      req: false
+      short: "Background"
+      type: "`$STRING`"
+    }
+    {
+      name: "broadcast"
+      req: false
+      short: "Broadcast Details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "character"
+      req: false
+      short: "Character details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "comments"
+      req: false
+      short: "Comment count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "completed"
+      req: false
+      short: "Number of users who have completed the resource"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "data"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "date"
+      req: false
+      short: "Post Date ISO8601"
+      type: "`$STRING`"
+    }
+    {
+      name: "demographics"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "dropped"
+      req: false
+      short: "Number of users who have dropped the resource"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "duration"
+      req: false
+      short: "Episode duration in seconds"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "endings"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "entry"
+      req: false
+      short: "Related entries"
+      type: "`$OBJECT`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    {
+      name: "episodes"
+      req: false
+      short: "Episode count"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "explicit_genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "external"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "favorites"
+      req: false
+      short: "Number of users who have favorited this entry"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "filler"
+      req: false
+      short: "Filler episode"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "genres"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "images"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "last_comment"
+      req: false
+      short: "Last comment details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "licensors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "mal_id"
+      req: false
+      short: "MyAnimeList ID"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "members"
+      req: false
+      short: "Number of users who have added this entry to their list"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "moreinfo"
+      req: false
+      short: "Additional information on the entry"
+      type: "`$STRING`"
+    }
+    {
+      name: "music_videos"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "on_hold"
+      req: false
+      short: "Number of users who have put the resource on hold"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "openings"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "pagination"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "person"
+      req: false
+      short: "Person details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "plan_to_watch"
+      req: false
+      short: "Number of users who have planned to watch the resource"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "popularity"
+      req: false
+      short: "Popularity"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "positions"
+      req: false
+      short: "Staff Positions"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "producers"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "promo"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "rank"
+      req: false
+      short: "Ranking"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "rating"
+      req: false
+      short: "Anime audience rating"
+      type: "`$STRING`"
+    }
+    {
+      name: "recap"
+      req: false
+      short: "Recap episode"
+      type: "`$BOOLEAN`"
+    }
+    {
+      name: "relation"
+      req: false
+      short: "Relation type"
+      type: "`$STRING`"
+    }
+    {
+      name: "relations"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "role"
+      req: false
+      short: "Character's Role"
+      type: "`$STRING`"
+    }
+    {
+      name: "score"
+      req: false
+      short: "Score"
+      type: "`$NUMBER`"
+    }
+    {
+      name: "scored_by"
+      req: false
+      short: "Number of users"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "scores"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "season"
+      req: false
+      short: "Season"
+      type: "`$STRING`"
+    }
+    {
+      name: "source"
+      req: false
+      short: "Original Material/Source adapted from"
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      short: "Airing status"
+      type: "`$STRING`"
+    }
+    {
+      name: "streaming"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "studios"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "synopsis"
+      req: false
+      short: "Episode Synopsis"
+      type: "`$STRING`"
+    }
+    {
+      name: "theme"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "themes"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "title"
+      req: false
+      short: "Title"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_english"
+      req: false
+      short: "English Title"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_japanese"
+      req: false
+      short: "Title Japanese"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_romanji"
+      req: false
+      short: "title_romanji"
+      type: "`$STRING`"
+    }
+    {
+      name: "title_synonyms"
+      req: false
+      short: "Other Titles"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "titles"
+      req: false
+      short: "All titles"
+      type: "`$ARRAY`"
+    }
+    {
+      name: "total"
+      req: false
+      short: "Total number of users who have the resource added to their lists"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "trailer"
+      req: false
+      short: "Youtube Details"
+      type: "`$OBJECT`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Anime Type"
+      type: "`$STRING`"
+    }
+    {
+      name: "url"
+      req: false
+      short: "MyAnimeList URL"
+      type: "`$STRING`"
+    }
+    {
+      name: "voice_actors"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "watching"
+      req: false
+      short: "Number of users watching the resource"
+      type: "`$INTEGER`"
+    }
+    {
+      name: "year"
+      req: false
+      short: "Year"
+      type: "`$INTEGER`"
+    }
+  ]
+
+  name: "anime"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "end_date"
+                orig: "end_date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "genre"
+                orig: "genre"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "genres_exclude"
+                orig: "genres_exclude"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "letter"
+                orig: "letter"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "max_score"
+                orig: "max_score"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "min_score"
+                orig: "min_score"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "order_by"
+                orig: "order_by"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "producer"
+                orig: "producer"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "q"
+                orig: "q"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "rating"
+                orig: "rating"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "score"
+                orig: "score"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                kind: "query"
+                name: "sfw"
+                orig: "sfw"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "sort"
+                orig: "sort"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "start_date"
+                orig: "start_date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "status"
+                orig: "status"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "unapproved"
+                orig: "unapproved"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime"
+          parts: [
+            "anime"
+          ]
+          select: {
+            exist: [
+              "end_date"
+              "genre"
+              "genres_exclude"
+              "letter"
+              "limit"
+              "max_score"
+              "min_score"
+              "order_by"
+              "page"
+              "producer"
+              "q"
+              "rating"
+              "score"
+              "sfw"
+              "sort"
+              "start_date"
+              "status"
+              "type"
+              "unapproved"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "limit"
+                orig: "limit"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "rating"
+                orig: "rating"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sfw"
+                orig: "sfw"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "type"
+                orig: "type"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/top/anime"
+          parts: [
+            "top"
+            "anime"
+          ]
+          select: {
+            exist: [
+              "filter"
+              "limit"
+              "page"
+              "rating"
+              "sfw"
+              "type"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "query"
+                name: "preliminary"
+                orig: "preliminary"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+              {
+                kind: "query"
+                name: "spoiler"
+                orig: "spoiler"
+                reqd: false
+                type: "`$BOOLEAN`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/reviews"
+          parts: [
+            "anime"
+            "{id}"
+            "reviews"
+          ]
+          select: {
+            "$action": "review"
+            exist: [
+              "id"
+              "page"
+              "preliminary"
+              "spoiler"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/episodes"
+          parts: [
+            "anime"
+            "{id}"
+            "episodes"
+          ]
+          select: {
+            "$action": "episode"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "filter"
+                orig: "filter"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/forum"
+          parts: [
+            "anime"
+            "{id}"
+            "forum"
+          ]
+          select: {
+            "$action": "forum"
+            exist: [
+              "filter"
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/news"
+          parts: [
+            "anime"
+            "{id}"
+            "news"
+          ]
+          select: {
+            "$action": "new"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/userupdates"
+          parts: [
+            "anime"
+            "{id}"
+            "userupdates"
+          ]
+          select: {
+            "$action": "userupdate"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                kind: "query"
+                name: "page"
+                orig: "page"
+                reqd: false
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/videos/episodes"
+          parts: [
+            "anime"
+            "{id}"
+            "videos"
+            "episodes"
+          ]
+          select: {
+            "$action": "video_episode"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/characters"
+          parts: [
+            "anime"
+            "{id}"
+            "characters"
+          ]
+          select: {
+            "$action": "character"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/external"
+          parts: [
+            "anime"
+            "{id}"
+            "external"
+          ]
+          select: {
+            "$action": "external"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/pictures"
+          parts: [
+            "anime"
+            "{id}"
+            "pictures"
+          ]
+          select: {
+            "$action": "picture"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/recommendations"
+          parts: [
+            "anime"
+            "{id}"
+            "recommendations"
+          ]
+          select: {
+            "$action": "recommendation"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/relations"
+          parts: [
+            "anime"
+            "{id}"
+            "relations"
+          ]
+          select: {
+            "$action": "relation"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/staff"
+          parts: [
+            "anime"
+            "{id}"
+            "staff"
+          ]
+          select: {
+            "$action": "staff"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/streaming"
+          parts: [
+            "anime"
+            "{id}"
+            "streaming"
+          ]
+          select: {
+            "$action": "streaming"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "episode"
+                orig: "episode"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/episodes/{episode}"
+          parts: [
+            "anime"
+            "{id}"
+            "episodes"
+            "{episode}"
+          ]
+          select: {
+            exist: [
+              "episode"
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}"
+          parts: [
+            "anime"
+            "{id}"
+          ]
+          select: {
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/full"
+          parts: [
+            "anime"
+            "{id}"
+            "full"
+          ]
+          select: {
+            "$action": "full"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/moreinfo"
+          parts: [
+            "anime"
+            "{id}"
+            "moreinfo"
+          ]
+          select: {
+            "$action": "moreinfo"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/statistics"
+          parts: [
+            "anime"
+            "{id}"
+            "statistics"
+          ]
+          select: {
+            "$action": "statistic"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/themes"
+          parts: [
+            "anime"
+            "{id}"
+            "themes"
+          ]
+          select: {
+            "$action": "theme"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/anime/{id}/videos"
+          parts: [
+            "anime"
+            "{id}"
+            "videos"
+          ]
+          select: {
+            "$action": "video"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "episode"
+      ]
+    ]
+  }
+
+
+
+}

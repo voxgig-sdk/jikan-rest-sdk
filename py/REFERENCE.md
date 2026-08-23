@@ -183,76 +183,76 @@ anime = client.Anime()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `aired` | `str` | No |  |
-| `airing` | `bool` | No |  |
-| `approved` | `bool` | No |  |
-| `author_url` | `str` | No |  |
-| `author_username` | `str` | No |  |
-| `background` | `str` | No |  |
-| `broadcast` | `dict` | No |  |
-| `character` | `dict` | No |  |
-| `comments` | `int` | No |  |
-| `completed` | `int` | No |  |
+| `aired` | `str` | No | Aired Date ISO8601 |
+| `airing` | `bool` | No | Airing boolean |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `str` | No | Author Profile URL |
+| `author_username` | `str` | No | Author MyAnimeList Username |
+| `background` | `str` | No | Background |
+| `broadcast` | `dict` | No | Broadcast Details |
+| `character` | `dict` | No | Character details |
+| `comments` | `int` | No | Comment count |
+| `completed` | `int` | No | Number of users who have completed the resource |
 | `data` | `list` | No |  |
-| `date` | `str` | No |  |
+| `date` | `str` | No | Post Date ISO8601 |
 | `demographics` | `list` | No |  |
-| `dropped` | `int` | No |  |
-| `duration` | `int` | No |  |
+| `dropped` | `int` | No | Number of users who have dropped the resource |
+| `duration` | `int` | No | Episode duration in seconds |
 | `endings` | `list` | No |  |
-| `entry` | `dict` | No |  |
-| `episodes` | `int` | No |  |
+| `entry` | `dict` | No | Related entries |
+| `episodes` | `int` | No | Episode count |
 | `explicit_genres` | `list` | No |  |
 | `external` | `list` | No |  |
-| `favorites` | `int` | No |  |
-| `filler` | `bool` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `filler` | `bool` | No | Filler episode |
 | `genres` | `list` | No |  |
 | `images` | `dict` | No |  |
-| `last_comment` | `dict` | No |  |
+| `last_comment` | `dict` | No | Last comment details |
 | `licensors` | `list` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `moreinfo` | `str` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `str` | No | Additional information on the entry |
 | `music_videos` | `list` | No |  |
 | `name` | `str` | No |  |
-| `on_hold` | `int` | No |  |
+| `on_hold` | `int` | No | Number of users who have put the resource on hold |
 | `openings` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `person` | `dict` | No |  |
-| `plan_to_watch` | `int` | No |  |
-| `popularity` | `int` | No |  |
-| `positions` | `list` | No |  |
+| `person` | `dict` | No | Person details |
+| `plan_to_watch` | `int` | No | Number of users who have planned to watch the resource |
+| `popularity` | `int` | No | Popularity |
+| `positions` | `list` | No | Staff Positions |
 | `producers` | `list` | No |  |
 | `promo` | `list` | No |  |
-| `rank` | `int` | No |  |
-| `rating` | `str` | No |  |
-| `recap` | `bool` | No |  |
-| `relation` | `str` | No |  |
+| `rank` | `int` | No | Ranking |
+| `rating` | `str` | No | Anime audience rating |
+| `recap` | `bool` | No | Recap episode |
+| `relation` | `str` | No | Relation type |
 | `relations` | `list` | No |  |
-| `role` | `str` | No |  |
-| `score` | `float` | No |  |
-| `scored_by` | `int` | No |  |
+| `role` | `str` | No | Character's Role |
+| `score` | `float` | No | Score |
+| `scored_by` | `int` | No | Number of users |
 | `scores` | `list` | No |  |
-| `season` | `str` | No |  |
-| `source` | `str` | No |  |
-| `status` | `str` | No |  |
+| `season` | `str` | No | Season |
+| `source` | `str` | No | Original Material/Source adapted from |
+| `status` | `str` | No | Airing status |
 | `streaming` | `list` | No |  |
 | `studios` | `list` | No |  |
-| `synopsis` | `str` | No |  |
+| `synopsis` | `str` | No | Episode Synopsis |
 | `theme` | `dict` | No |  |
 | `themes` | `list` | No |  |
-| `title` | `str` | No |  |
-| `title_english` | `str` | No |  |
-| `title_japanese` | `str` | No |  |
-| `title_romanji` | `str` | No |  |
-| `title_synonyms` | `list` | No |  |
-| `titles` | `list` | No |  |
-| `total` | `int` | No |  |
-| `trailer` | `dict` | No |  |
-| `type` | `str` | No |  |
-| `url` | `str` | No |  |
+| `title` | `str` | No | Title |
+| `title_english` | `str` | No | English Title |
+| `title_japanese` | `str` | No | Title Japanese |
+| `title_romanji` | `str` | No | title_romanji |
+| `title_synonyms` | `list` | No | Other Titles |
+| `titles` | `list` | No | All titles |
+| `total` | `int` | No | Total number of users who have the resource added to their lists |
+| `trailer` | `dict` | No | Youtube Details |
+| `type` | `str` | No | Anime Type |
+| `url` | `str` | No | MyAnimeList URL |
 | `voice_actors` | `list` | No |  |
-| `watching` | `int` | No |  |
-| `year` | `int` | No |  |
+| `watching` | `int` | No | Number of users watching the resource |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -313,23 +313,23 @@ character = client.Character()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `str` | No |  |
+| `about` | `str` | No | Biography |
 | `anime` | `list` | No |  |
 | `data` | `list` | No |  |
-| `favorites` | `int` | No |  |
-| `image_url` | `str` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `image_url` | `str` | No | Default JPG Image Size URL |
 | `images` | `dict` | No |  |
-| `language` | `str` | No |  |
-| `large_image_url` | `str` | No |  |
-| `mal_id` | `int` | No |  |
+| `language` | `str` | No | Character's Role |
+| `large_image_url` | `str` | No | Large JPG Image Size URL |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `list` | No |  |
-| `name` | `str` | No |  |
-| `name_kanji` | `str` | No |  |
-| `nicknames` | `list` | No |  |
+| `name` | `str` | No | Name |
+| `name_kanji` | `str` | No | Name |
+| `nicknames` | `list` | No | Other Names |
 | `pagination` | `dict` | No |  |
 | `person` | `dict` | No |  |
-| `role` | `str` | No |  |
-| `url` | `str` | No |  |
+| `role` | `str` | No | Character's Role |
+| `url` | `str` | No | MyAnimeList URL |
 | `voices` | `list` | No |  |
 
 ### Operations
@@ -391,20 +391,20 @@ club = client.Club()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `access` | `str` | No |  |
+| `access` | `str` | No | Club access |
 | `anime` | `list` | No |  |
-| `category` | `str` | No |  |
+| `category` | `str` | No | Club Category |
 | `characters` | `list` | No |  |
-| `created` | `str` | No |  |
+| `created` | `str` | No | Date Created ISO8601 |
 | `data` | `list` | No |  |
 | `images` | `dict` | No |  |
-| `mal_id` | `int` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `list` | No |  |
-| `members` | `int` | No |  |
-| `name` | `str` | No |  |
+| `members` | `int` | No | Number of club members |
+| `name` | `str` | No | Club name |
 | `pagination` | `dict` | No |  |
-| `url` | `str` | No |  |
-| `username` | `str` | No |  |
+| `url` | `str` | No | Club URL |
+| `username` | `str` | No | User's username |
 
 ### Operations
 
@@ -519,10 +519,10 @@ genre = client.Genre()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `count` | `int` | No |  |
-| `mal_id` | `int` | No |  |
-| `name` | `str` | No |  |
-| `url` | `str` | No |  |
+| `count` | `int` | No | Genre's entry count |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `name` | `str` | No | Genre Name |
+| `url` | `str` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -629,59 +629,59 @@ manga = client.Manga()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `approved` | `bool` | No |  |
-| `author_url` | `str` | No |  |
-| `author_username` | `str` | No |  |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
+| `author_url` | `str` | No | Author Profile URL |
+| `author_username` | `str` | No | Author MyAnimeList Username |
 | `authors` | `list` | No |  |
-| `background` | `str` | No |  |
-| `chapters` | `int` | No |  |
+| `background` | `str` | No | Background |
+| `chapters` | `int` | No | Chapter count |
 | `character` | `dict` | No |  |
-| `comments` | `int` | No |  |
-| `completed` | `int` | No |  |
+| `comments` | `int` | No | Comment count |
+| `completed` | `int` | No | Number of users who have completed the resource |
 | `data` | `list` | No |  |
-| `date` | `str` | No |  |
+| `date` | `str` | No | Post Date ISO8601 |
 | `demographics` | `list` | No |  |
-| `dropped` | `int` | No |  |
-| `entry` | `dict` | No |  |
+| `dropped` | `int` | No | Number of users who have dropped the resource |
+| `entry` | `dict` | No | Related entries |
 | `explicit_genres` | `list` | No |  |
 | `external` | `list` | No |  |
-| `favorites` | `int` | No |  |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
 | `genres` | `list` | No |  |
 | `images` | `dict` | No |  |
-| `jpg` | `dict` | No |  |
-| `last_comment` | `dict` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `moreinfo` | `str` | No |  |
+| `jpg` | `dict` | No | Available images in JPG |
+| `last_comment` | `dict` | No | Last comment details |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `moreinfo` | `str` | No | Additional information on the entry |
 | `name` | `str` | No |  |
-| `on_hold` | `int` | No |  |
+| `on_hold` | `int` | No | Number of users who have put the resource on hold |
 | `pagination` | `dict` | No |  |
-| `plan_to_read` | `int` | No |  |
-| `popularity` | `int` | No |  |
-| `published` | `dict` | No |  |
-| `publishing` | `bool` | No |  |
-| `rank` | `int` | No |  |
-| `reading` | `int` | No |  |
-| `relation` | `str` | No |  |
+| `plan_to_read` | `int` | No | Number of users who have planned to read the resource |
+| `popularity` | `int` | No | Popularity |
+| `published` | `dict` | No | Date range |
+| `publishing` | `bool` | No | Publishing boolean |
+| `rank` | `int` | No | Ranking |
+| `reading` | `int` | No | Number of users reading the resource |
+| `relation` | `str` | No | Relation type |
 | `relations` | `list` | No |  |
-| `role` | `str` | No |  |
-| `score` | `float` | No |  |
-| `scored_by` | `int` | No |  |
+| `role` | `str` | No | Character's Role |
+| `score` | `float` | No | Score |
+| `scored_by` | `int` | No | Number of users |
 | `scores` | `list` | No |  |
 | `serializations` | `list` | No |  |
-| `status` | `str` | No |  |
-| `synopsis` | `str` | No |  |
+| `status` | `str` | No | Publishing status |
+| `synopsis` | `str` | No | Synopsis |
 | `themes` | `list` | No |  |
-| `title` | `str` | No |  |
-| `title_english` | `str` | No |  |
-| `title_japanese` | `str` | No |  |
-| `title_synonyms` | `list` | No |  |
-| `titles` | `list` | No |  |
-| `total` | `int` | No |  |
-| `type` | `str` | No |  |
-| `url` | `str` | No |  |
-| `volumes` | `int` | No |  |
-| `webp` | `dict` | No |  |
+| `title` | `str` | No | Title |
+| `title_english` | `str` | No | English Title |
+| `title_japanese` | `str` | No | Japanese Title |
+| `title_synonyms` | `list` | No | Other Titles |
+| `titles` | `list` | No | All Titles |
+| `total` | `int` | No | Total number of users who have the resource added to their lists |
+| `type` | `str` | No | Manga Type |
+| `url` | `str` | No | MyAnimeList URL |
+| `volumes` | `int` | No | Volume count |
+| `webp` | `dict` | No | Available images in WEBP |
 
 ### Operations
 
@@ -796,26 +796,26 @@ person = client.Person()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `str` | No |  |
-| `alternate_names` | `list` | No |  |
+| `about` | `str` | No | Biography |
+| `alternate_names` | `list` | No | Other Names |
 | `anime` | `list` | No |  |
-| `birthday` | `str` | No |  |
+| `birthday` | `str` | No | Birthday Date ISO8601 |
 | `character` | `dict` | No |  |
 | `data` | `list` | No |  |
-| `family_name` | `str` | No |  |
-| `favorites` | `int` | No |  |
-| `given_name` | `str` | No |  |
+| `family_name` | `str` | No | Family Name |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `given_name` | `str` | No | Given Name |
 | `images` | `dict` | No |  |
-| `jpg` | `dict` | No |  |
-| `mal_id` | `int` | No |  |
+| `jpg` | `dict` | No | Available images in JPG |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `list` | No |  |
-| `name` | `str` | No |  |
+| `name` | `str` | No | Name |
 | `pagination` | `dict` | No |  |
-| `position` | `str` | No |  |
-| `role` | `str` | No |  |
-| `url` | `str` | No |  |
+| `position` | `str` | No | Person's position |
+| `role` | `str` | No | Person's Character's role in the anime |
+| `url` | `str` | No | MyAnimeList URL |
 | `voices` | `list` | No |  |
-| `website_url` | `str` | No |  |
+| `website_url` | `str` | No | Person's website URL |
 
 ### Operations
 
@@ -876,18 +876,18 @@ producer = client.Producer()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `str` | No |  |
-| `count` | `int` | No |  |
+| `about` | `str` | No | About the Producer |
+| `count` | `int` | No | Producers's anime count |
 | `data` | `list` | No |  |
-| `established` | `str` | No |  |
+| `established` | `str` | No | Established Date ISO8601 |
 | `external` | `list` | No |  |
-| `favorites` | `int` | No |  |
+| `favorites` | `int` | No | Producers's member favorites count |
 | `images` | `dict` | No |  |
-| `mal_id` | `int` | No |  |
+| `mal_id` | `int` | No | MyAnimeList ID |
 | `name` | `str` | No |  |
 | `pagination` | `dict` | No |  |
-| `titles` | `list` | No |  |
-| `url` | `str` | No |  |
+| `titles` | `list` | No | All titles |
+| `url` | `str` | No | MyAnimeList URL |
 
 ### Operations
 
@@ -948,62 +948,62 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `str` | No |  |
-| `aired` | `dict` | No |  |
-| `airing` | `bool` | No |  |
-| `alternate_names` | `list` | No |  |
-| `approved` | `bool` | No |  |
+| `about` | `str` | No | Biography |
+| `aired` | `dict` | No | Date range |
+| `airing` | `bool` | No | Airing boolean |
+| `alternate_names` | `list` | No | Other Names |
+| `approved` | `bool` | No | Whether the entry is pending approval on MAL or not |
 | `authors` | `list` | No |  |
-| `background` | `str` | No |  |
-| `birthday` | `str` | No |  |
-| `broadcast` | `dict` | No |  |
-| `chapters` | `int` | No |  |
+| `background` | `str` | No | Background |
+| `birthday` | `str` | No | Birthday Date ISO8601 |
+| `broadcast` | `dict` | No | Broadcast Details |
+| `chapters` | `int` | No | Chapter count |
 | `demographics` | `list` | No |  |
-| `duration` | `str` | No |  |
-| `episodes` | `int` | No |  |
+| `duration` | `str` | No | Parsed raw duration |
+| `episodes` | `int` | No | Episode count |
 | `explicit_genres` | `list` | No |  |
-| `family_name` | `str` | No |  |
-| `favorites` | `int` | No |  |
-| `gender` | `str` | No |  |
+| `family_name` | `str` | No | Family Name |
+| `favorites` | `int` | No | Number of users who have favorited this entry |
+| `gender` | `str` | No | User Gender |
 | `genres` | `list` | No |  |
-| `given_name` | `str` | No |  |
+| `given_name` | `str` | No | Given Name |
 | `images` | `dict` | No |  |
-| `joined` | `str` | No |  |
-| `last_online` | `str` | No |  |
+| `joined` | `str` | No | Joined Date ISO8601 |
+| `last_online` | `str` | No | Last Online Date ISO8601 |
 | `licensors` | `list` | No |  |
-| `location` | `str` | No |  |
-| `mal_id` | `int` | No |  |
-| `members` | `int` | No |  |
-| `name` | `str` | No |  |
-| `name_kanji` | `str` | No |  |
-| `nicknames` | `list` | No |  |
-| `popularity` | `int` | No |  |
+| `location` | `str` | No | Location |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `members` | `int` | No | Number of users who have added this entry to their list |
+| `name` | `str` | No | Name |
+| `name_kanji` | `str` | No | Name |
+| `nicknames` | `list` | No | Other Names |
+| `popularity` | `int` | No | Popularity |
 | `producers` | `list` | No |  |
-| `published` | `dict` | No |  |
-| `publishing` | `bool` | No |  |
-| `rank` | `int` | No |  |
-| `rating` | `str` | No |  |
-| `score` | `float` | No |  |
-| `scored_by` | `int` | No |  |
-| `season` | `str` | No |  |
+| `published` | `dict` | No | Date range |
+| `publishing` | `bool` | No | Publishing boolean |
+| `rank` | `int` | No | Ranking |
+| `rating` | `str` | No | Anime audience rating |
+| `score` | `float` | No | Score |
+| `scored_by` | `int` | No | Number of users |
+| `season` | `str` | No | Season |
 | `serializations` | `list` | No |  |
-| `source` | `str` | No |  |
-| `status` | `str` | No |  |
+| `source` | `str` | No | Original Material/Source adapted from |
+| `status` | `str` | No | Airing status |
 | `studios` | `list` | No |  |
-| `synopsis` | `str` | No |  |
+| `synopsis` | `str` | No | Synopsis |
 | `themes` | `list` | No |  |
-| `title` | `str` | No |  |
-| `title_english` | `str` | No |  |
-| `title_japanese` | `str` | No |  |
-| `title_synonyms` | `list` | No |  |
-| `titles` | `list` | No |  |
-| `trailer` | `dict` | No |  |
-| `type` | `str` | No |  |
-| `url` | `str` | No |  |
-| `username` | `str` | No |  |
-| `volumes` | `int` | No |  |
-| `website_url` | `str` | No |  |
-| `year` | `int` | No |  |
+| `title` | `str` | No | Title |
+| `title_english` | `str` | No | English Title |
+| `title_japanese` | `str` | No | Japanese Title |
+| `title_synonyms` | `list` | No | Other Titles |
+| `titles` | `list` | No | All titles |
+| `trailer` | `dict` | No | Youtube Details |
+| `type` | `str` | No | Anime Type |
+| `url` | `str` | No | MyAnimeList URL |
+| `username` | `str` | No | MyAnimeList Username |
+| `volumes` | `int` | No | Volume count |
+| `website_url` | `str` | No | Person's website URL |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -1209,8 +1209,8 @@ season = client.Season()
 | --- | --- | --- | --- |
 | `data` | `list` | No |  |
 | `pagination` | `dict` | No |  |
-| `seasons` | `list` | No |  |
-| `year` | `int` | No |  |
+| `seasons` | `list` | No | List of available seasons |
+| `year` | `int` | No | Year |
 
 ### Operations
 
@@ -1323,23 +1323,23 @@ user = client.User()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `list` | No |  |
-| `birthday` | `str` | No |  |
-| `characters` | `list` | No |  |
+| `anime` | `list` | No | Favorite Anime |
+| `birthday` | `str` | No | Birthday Date ISO8601 |
+| `characters` | `list` | No | Favorite Characters |
 | `data` | `list` | No |  |
 | `external` | `list` | No |  |
-| `gender` | `str` | No |  |
+| `gender` | `str` | No | User Gender |
 | `images` | `dict` | No |  |
-| `joined` | `str` | No |  |
-| `last_online` | `str` | No |  |
-| `location` | `str` | No |  |
-| `mal_id` | `int` | No |  |
-| `manga` | `list` | No |  |
+| `joined` | `str` | No | Joined Date ISO8601 |
+| `last_online` | `str` | No | Last Online Date ISO8601 |
+| `location` | `str` | No | Location |
+| `mal_id` | `int` | No | MyAnimeList ID |
+| `manga` | `list` | No | Favorite Manga |
 | `pagination` | `dict` | No |  |
-| `people` | `list` | No |  |
+| `people` | `list` | No | Favorite People |
 | `statistics` | `dict` | No |  |
-| `url` | `str` | No |  |
-| `username` | `str` | No |  |
+| `url` | `str` | No | MyAnimeList URL |
+| `username` | `str` | No | MyAnimeList Username |
 
 ### Operations
 
@@ -1400,7 +1400,7 @@ user_about = client.UserAbout()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `about` | `str` | No |  |
+| `about` | `str` | No | User About. |
 
 ### Operations
 
@@ -1561,9 +1561,9 @@ user_history = client.UserHistory()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `date` | `str` | No |  |
-| `entry` | `dict` | No |  |
-| `increment` | `int` | No |  |
+| `date` | `str` | No | Date ISO8601 |
+| `entry` | `dict` | No | Parsed URL Data |
+| `increment` | `int` | No | Number of episodes/chapters watched/read |
 
 ### Operations
 
@@ -1616,8 +1616,8 @@ user_statistic = client.UserStatistic()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `dict` | No |  |
-| `manga` | `dict` | No |  |
+| `anime` | `dict` | No | Anime Statistics |
+| `manga` | `dict` | No | Manga Statistics |
 
 ### Operations
 
@@ -1668,8 +1668,8 @@ user_update = client.UserUpdate()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `anime` | `list` | No |  |
-| `manga` | `list` | No |  |
+| `anime` | `list` | No | Last updated Anime |
+| `manga` | `list` | No | Last updated Manga |
 
 ### Operations
 
