@@ -206,6 +206,7 @@ anime = client.Anime()
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `filler` | `bool` | No | Filler episode |
 | `genres` | `list` | No |  |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `last_comment` | `dict` | No | Last comment details |
 | `licensors` | `list` | No |  |
@@ -317,6 +318,7 @@ character = client.Character()
 | `anime` | `list` | No |  |
 | `data` | `list` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
+| `id` | `str` | No |  |
 | `image_url` | `str` | No | Default JPG Image Size URL |
 | `images` | `dict` | No |  |
 | `language` | `str` | No | Character's Role |
@@ -397,6 +399,7 @@ club = client.Club()
 | `characters` | `list` | No |  |
 | `created` | `str` | No | Date Created ISO8601 |
 | `data` | `list` | No |  |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `list` | No |  |
@@ -647,6 +650,7 @@ manga = client.Manga()
 | `external` | `list` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `genres` | `list` | No |  |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `jpg` | `dict` | No | Available images in JPG |
 | `last_comment` | `dict` | No | Last comment details |
@@ -805,6 +809,7 @@ person = client.Person()
 | `family_name` | `str` | No | Family Name |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `given_name` | `str` | No | Given Name |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `jpg` | `dict` | No | Available images in JPG |
 | `mal_id` | `int` | No | MyAnimeList ID |
@@ -882,6 +887,7 @@ producer = client.Producer()
 | `established` | `str` | No | Established Date ISO8601 |
 | `external` | `list` | No |  |
 | `favorites` | `int` | No | Producers's member favorites count |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `name` | `str` | No |  |
@@ -1329,6 +1335,7 @@ user = client.User()
 | `data` | `list` | No |  |
 | `external` | `list` | No |  |
 | `gender` | `str` | No | User Gender |
+| `id` | `str` | No |  |
 | `images` | `dict` | No |  |
 | `joined` | `str` | No | Joined Date ISO8601 |
 | `last_online` | `str` | No | Last Online Date ISO8601 |

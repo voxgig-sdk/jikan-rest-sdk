@@ -93,9 +93,13 @@ class MangaEntityTest extends TestCase
         $this->assertIsArray($manga_ref01_list_result);
 
         // LOAD
-        $manga_ref01_match_dt0 = [];
+        $manga_ref01_match_dt0 = [
+            "id" => $manga_ref01_data["id"],
+        ];
         $manga_ref01_data_dt0_loaded = $manga_ref01_ent->load($manga_ref01_match_dt0, null);
-        $this->assertNotNull($manga_ref01_data_dt0_loaded);
+        $manga_ref01_data_dt0_load_result = Helpers::to_map(is_object($manga_ref01_data_dt0_loaded) && method_exists($manga_ref01_data_dt0_loaded, 'data_get') ? $manga_ref01_data_dt0_loaded->data_get() : $manga_ref01_data_dt0_loaded);
+        $this->assertNotNull($manga_ref01_data_dt0_load_result);
+        $this->assertEquals($manga_ref01_data_dt0_load_result["id"], $manga_ref01_data["id"]);
 
     }
 }

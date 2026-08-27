@@ -66,6 +66,12 @@ describe('AnimeEntity', async () => {
     const anime_ref01_list = (await anime_ref01_ent.list(anime_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const anime_ref01_match_dt0: any = {}
+    anime_ref01_match_dt0.id = anime_ref01_data.id
+    const anime_ref01_data_dt0 = (await anime_ref01_ent.load(anime_ref01_match_dt0)).data()
+    assert(anime_ref01_data_dt0.id === anime_ref01_data.id)
+
 
   })
 })

@@ -121,13 +121,19 @@ func TestMangaEntity(t *testing.T) {
 		}
 
 		// LOAD
-		mangaRef01MatchDt0 := map[string]any{}
+		mangaRef01MatchDt0 := map[string]any{
+			"id": mangaRef01Data["id"],
+		}
 		mangaRef01DataDt0Loaded, err := mangaRef01Ent.Load(mangaRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if mangaRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		mangaRef01DataDt0LoadResult := core.ToMapAny(entityData(mangaRef01DataDt0Loaded))
+		if mangaRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if mangaRef01DataDt0LoadResult["id"] != mangaRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

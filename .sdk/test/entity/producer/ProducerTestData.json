@@ -2,67 +2,67 @@
   "existing": {
     "producer": {
       "PRODUCER00": {
-        "about": "s78",
-        "count": "s79",
+        "about": "s82",
+        "count": "s83",
         "data": [],
-        "established": "s7b",
+        "established": "s85",
         "external": [],
-        "favorites": "s7d",
+        "favorites": "s87",
+        "id": "PRODUCER00",
         "images": {},
         "mal_id": "MAL01",
-        "name": "s80",
+        "name": "s8b",
         "pagination": {},
         "titles": [],
-        "url": "s83",
-        "id": "PRODUCER00"
+        "url": "s8e"
       },
       "PRODUCER01": {
-        "about": "sf0",
-        "count": "sf1",
+        "about": "s104",
+        "count": "s105",
         "data": [],
-        "established": "sf3",
+        "established": "s107",
         "external": [],
-        "favorites": "sf5",
+        "favorites": "s109",
+        "id": "PRODUCER01",
         "images": {},
         "mal_id": "MAL01",
-        "name": "sf8",
+        "name": "s10d",
         "pagination": {},
         "titles": [],
-        "url": "sfb",
-        "id": "PRODUCER01"
+        "url": "s110"
       },
       "PRODUCER02": {
-        "about": "s168",
-        "count": "s169",
+        "about": "s186",
+        "count": "s187",
         "data": [],
-        "established": "s16b",
+        "established": "s189",
         "external": [],
-        "favorites": "s16d",
+        "favorites": "s18b",
+        "id": "PRODUCER02",
         "images": {},
         "mal_id": "MAL01",
-        "name": "s170",
+        "name": "s18f",
         "pagination": {},
         "titles": [],
-        "url": "s173",
-        "id": "PRODUCER02"
+        "url": "s192"
       }
     }
   },
   "new": {
     "producer": {
       "producer_ref01": {
-        "about": "s1e0",
-        "count": "s1e1",
+        "about": "s208",
+        "count": "s209",
         "data": [],
-        "established": "s1e3",
+        "established": "s20b",
         "external": [],
-        "favorites": "s1e5",
+        "favorites": "s20d",
         "images": {},
         "mal_id": "MAL01",
-        "name": "s1e8",
+        "name": "s211",
         "pagination": {},
         "titles": [],
-        "url": "s1eb"
+        "url": "s214"
       }
     }
   }

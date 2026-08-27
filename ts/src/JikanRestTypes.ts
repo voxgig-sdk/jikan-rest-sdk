@@ -29,6 +29,7 @@ export interface Anime {
   favorites?: number
   filler?: boolean
   genres?: any[]
+  id?: string
   images?: Record<string, any>
   last_comment?: Record<string, any>
   licensors?: any[]
@@ -113,6 +114,7 @@ export interface AnimeListMatch {
   favorites?: number
   filler?: boolean
   genres?: any[]
+  id?: string
   images?: Record<string, any>
   last_comment?: Record<string, any>
   licensors?: any[]
@@ -173,6 +175,7 @@ export interface Character {
   anime?: any[]
   data?: any[]
   favorites?: number
+  id?: string
   image_url?: string
   images?: Record<string, any>
   language?: string
@@ -204,6 +207,7 @@ export interface CharacterListMatch {
   anime?: any[]
   data?: any[]
   favorites?: number
+  id?: string
   image_url?: string
   images?: Record<string, any>
   language?: string
@@ -233,6 +237,7 @@ export interface Club {
   characters?: any[]
   created?: string
   data?: any[]
+  id?: string
   images?: Record<string, any>
   mal_id?: number
   manga?: any[]
@@ -260,6 +265,7 @@ export interface ClubListMatch {
   characters?: any[]
   created?: string
   data?: any[]
+  id?: string
   images?: Record<string, any>
   mal_id?: number
   manga?: any[]
@@ -334,6 +340,7 @@ export interface Manga {
   external?: any[]
   favorites?: number
   genres?: any[]
+  id?: string
   images?: Record<string, any>
   jpg?: Record<string, any>
   last_comment?: Record<string, any>
@@ -400,6 +407,7 @@ export interface MangaListMatch {
   external?: any[]
   favorites?: number
   genres?: any[]
+  id?: string
   images?: Record<string, any>
   jpg?: Record<string, any>
   last_comment?: Record<string, any>
@@ -463,6 +471,7 @@ export interface Person {
   family_name?: string
   favorites?: number
   given_name?: string
+  id?: string
   images?: Record<string, any>
   jpg?: Record<string, any>
   mal_id?: number
@@ -496,6 +505,7 @@ export interface PersonListMatch {
   family_name?: string
   favorites?: number
   given_name?: string
+  id?: string
   images?: Record<string, any>
   jpg?: Record<string, any>
   mal_id?: number
@@ -522,6 +532,7 @@ export interface Producer {
   established?: string
   external?: any[]
   favorites?: number
+  id?: string
   images?: Record<string, any>
   mal_id?: number
   name?: string
@@ -547,6 +558,7 @@ export interface ProducerListMatch {
   established?: string
   external?: any[]
   favorites?: number
+  id?: string
   images?: Record<string, any>
   mal_id?: number
   name?: string
@@ -770,6 +782,7 @@ export interface User {
   data?: any[]
   external?: any[]
   gender?: string
+  id?: string
   images?: Record<string, any>
   joined?: string
   last_online?: string
@@ -800,6 +813,7 @@ export interface UserListMatch {
   data?: any[]
   external?: any[]
   gender?: string
+  id?: string
   images?: Record<string, any>
   joined?: string
   last_online?: string

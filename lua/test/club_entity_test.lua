@@ -92,10 +92,14 @@ describe("ClubEntity", function()
     assert.is_table(club_ref01_list_result)
 
     -- LOAD
-    local club_ref01_match_dt0 = {}
+    local club_ref01_match_dt0 = {
+      id = club_ref01_data["id"],
+    }
     local club_ref01_data_dt0_loaded, err = club_ref01_ent:load(club_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(club_ref01_data_dt0_loaded)
+    local club_ref01_data_dt0_load_result = helpers.to_map(type(club_ref01_data_dt0_loaded) == 'table' and club_ref01_data_dt0_loaded.data_get and club_ref01_data_dt0_loaded:data_get() or club_ref01_data_dt0_loaded)
+    assert.is_not_nil(club_ref01_data_dt0_load_result)
+    assert.are.equal(club_ref01_data_dt0_load_result["id"], club_ref01_data["id"])
 
   end)
 end)

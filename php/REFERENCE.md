@@ -211,6 +211,7 @@ $anime = $client->Anime();
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `filler` | `bool` | No | Filler episode |
 | `genres` | `array` | No |  |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `last_comment` | `array` | No | Last comment details |
 | `licensors` | `array` | No |  |
@@ -321,6 +322,7 @@ $character = $client->Character();
 | `anime` | `array` | No |  |
 | `data` | `array` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
+| `id` | `string` | No |  |
 | `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `array` | No |  |
 | `language` | `string` | No | Character's Role |
@@ -400,6 +402,7 @@ $club = $client->Club();
 | `characters` | `array` | No |  |
 | `created` | `string` | No | Date Created ISO8601 |
 | `data` | `array` | No |  |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `array` | No |  |
@@ -646,6 +649,7 @@ $manga = $client->Manga();
 | `external` | `array` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `genres` | `array` | No |  |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `jpg` | `array` | No | Available images in JPG |
 | `last_comment` | `array` | No | Last comment details |
@@ -802,6 +806,7 @@ $person = $client->Person();
 | `family_name` | `string` | No | Family Name |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `given_name` | `string` | No | Given Name |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `jpg` | `array` | No | Available images in JPG |
 | `mal_id` | `int` | No | MyAnimeList ID |
@@ -878,6 +883,7 @@ $producer = $client->Producer();
 | `established` | `string` | No | Established Date ISO8601 |
 | `external` | `array` | No |  |
 | `favorites` | `int` | No | Producers's member favorites count |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
@@ -1324,6 +1330,7 @@ $user = $client->User();
 | `data` | `array` | No |  |
 | `external` | `array` | No |  |
 | `gender` | `string` | No | User Gender |
+| `id` | `string` | No |  |
 | `images` | `array` | No |  |
 | `joined` | `string` | No | Joined Date ISO8601 |
 | `last_online` | `string` | No | Last Online Date ISO8601 |

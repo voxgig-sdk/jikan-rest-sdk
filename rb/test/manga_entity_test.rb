@@ -83,9 +83,13 @@ class MangaEntityTest < Minitest::Test
     assert manga_ref01_list_result.is_a?(Array)
 
     # LOAD
-    manga_ref01_match_dt0 = {}
+    manga_ref01_match_dt0 = {
+      "id" => manga_ref01_data["id"],
+    }
     manga_ref01_data_dt0_loaded = manga_ref01_ent.load(manga_ref01_match_dt0, nil)
-    assert !manga_ref01_data_dt0_loaded.nil?
+    manga_ref01_data_dt0_load_result = Helpers.to_map(manga_ref01_data_dt0_loaded.respond_to?(:data_get) ? manga_ref01_data_dt0_loaded.data_get : manga_ref01_data_dt0_loaded)
+    assert !manga_ref01_data_dt0_load_result.nil?
+    assert_equal manga_ref01_data_dt0_load_result["id"], manga_ref01_data["id"]
 
   end
 end

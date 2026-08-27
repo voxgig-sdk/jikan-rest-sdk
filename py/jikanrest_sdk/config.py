@@ -37,6 +37,7 @@ def make_config():
         "options": {
           "active": False,
         },
+        "transport": "base",
       },
         },
         "options": {
@@ -188,6 +189,10 @@ def make_config():
           {
             "name": "genres",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "images",
@@ -1365,6 +1370,10 @@ def make_config():
             "type": "`$INTEGER`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "image_url",
             "short": "Default JPG Image Size URL",
             "type": "`$STRING`",
@@ -1758,6 +1767,10 @@ def make_config():
           {
             "name": "data",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "images",
@@ -2350,6 +2363,10 @@ def make_config():
           {
             "name": "genres",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "images",
@@ -3289,6 +3306,10 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "name": "id",
+            "type": "`$STRING`",
+          },
+          {
             "name": "images",
             "type": "`$OBJECT`",
           },
@@ -3634,6 +3655,10 @@ def make_config():
             "name": "favorites",
             "short": "Producers's member favorites count",
             "type": "`$INTEGER`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "images",
@@ -4903,6 +4928,10 @@ def make_config():
           {
             "name": "gender",
             "short": "User Gender",
+            "type": "`$STRING`",
+          },
+          {
+            "name": "id",
             "type": "`$STRING`",
           },
           {

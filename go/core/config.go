@@ -20,6 +20,7 @@ func MakeConfig() map[string]any {
 				"options": map[string]any{
 					"active": false,
 				},
+				"transport": "base",
 			},
 		},
 		"options": map[string]any{
@@ -171,6 +172,10 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "genres",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "images",
@@ -1348,6 +1353,10 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
+					},
+					map[string]any{
 						"name": "image_url",
 						"short": "Default JPG Image Size URL",
 						"type": "`$STRING`",
@@ -1741,6 +1750,10 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "data",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "images",
@@ -2333,6 +2346,10 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "genres",
 						"type": "`$ARRAY`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "images",
@@ -3272,6 +3289,10 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
+					},
+					map[string]any{
 						"name": "images",
 						"type": "`$OBJECT`",
 					},
@@ -3617,6 +3638,10 @@ func MakeConfig() map[string]any {
 						"name": "favorites",
 						"short": "Producers's member favorites count",
 						"type": "`$INTEGER`",
+					},
+					map[string]any{
+						"name": "id",
+						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "images",
@@ -4886,6 +4911,10 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "gender",
 						"short": "User Gender",
+						"type": "`$STRING`",
+					},
+					map[string]any{
+						"name": "id",
 						"type": "`$STRING`",
 					},
 					map[string]any{

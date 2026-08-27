@@ -28,6 +28,7 @@ module JikanRestConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
@@ -179,6 +180,10 @@ module JikanRestConfig
             {
               "name" => "genres",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "images",
@@ -1356,6 +1361,10 @@ module JikanRestConfig
               "type" => "`$INTEGER`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "image_url",
               "short" => "Default JPG Image Size URL",
               "type" => "`$STRING`",
@@ -1749,6 +1758,10 @@ module JikanRestConfig
             {
               "name" => "data",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "images",
@@ -2341,6 +2354,10 @@ module JikanRestConfig
             {
               "name" => "genres",
               "type" => "`$ARRAY`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "images",
@@ -3280,6 +3297,10 @@ module JikanRestConfig
               "type" => "`$STRING`",
             },
             {
+              "name" => "id",
+              "type" => "`$STRING`",
+            },
+            {
               "name" => "images",
               "type" => "`$OBJECT`",
             },
@@ -3625,6 +3646,10 @@ module JikanRestConfig
               "name" => "favorites",
               "short" => "Producers's member favorites count",
               "type" => "`$INTEGER`",
+            },
+            {
+              "name" => "id",
+              "type" => "`$STRING`",
             },
             {
               "name" => "images",
@@ -4894,6 +4919,10 @@ module JikanRestConfig
             {
               "name" => "gender",
               "short" => "User Gender",
+              "type" => "`$STRING`",
+            },
+            {
+              "name" => "id",
               "type" => "`$STRING`",
             },
             {

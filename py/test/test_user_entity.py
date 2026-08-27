@@ -88,9 +88,13 @@ class TestUserEntity:
         assert isinstance(user_ref01_list_result, list)
 
         # LOAD
-        user_ref01_match_dt0 = {}
+        user_ref01_match_dt0 = {
+            "id": user_ref01_data["id"],
+        }
         user_ref01_data_dt0_loaded = user_ref01_ent.load(user_ref01_match_dt0, None)
-        assert user_ref01_data_dt0_loaded is not None
+        user_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(user_ref01_data_dt0_loaded))
+        assert user_ref01_data_dt0_load_result is not None
+        assert user_ref01_data_dt0_load_result["id"] == user_ref01_data["id"]
 
 
 

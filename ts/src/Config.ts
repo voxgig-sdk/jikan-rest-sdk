@@ -40,7 +40,8 @@ class Config {
      test:     {
       "options": {
         "active": false
-      }
+      },
+      "transport": "base"
     },
 
   }
@@ -250,6 +251,10 @@ class Config {
         {
           "name": "genres",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "images",
@@ -1427,6 +1432,10 @@ class Config {
           "type": "`$INTEGER`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "image_url",
           "short": "Default JPG Image Size URL",
           "type": "`$STRING`"
@@ -1820,6 +1829,10 @@ class Config {
         {
           "name": "data",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "images",
@@ -2412,6 +2425,10 @@ class Config {
         {
           "name": "genres",
           "type": "`$ARRAY`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "images",
@@ -3351,6 +3368,10 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "name": "id",
+          "type": "`$STRING`"
+        },
+        {
           "name": "images",
           "type": "`$OBJECT`"
         },
@@ -3696,6 +3717,10 @@ class Config {
           "name": "favorites",
           "short": "Producers's member favorites count",
           "type": "`$INTEGER`"
+        },
+        {
+          "name": "id",
+          "type": "`$STRING`"
         },
         {
           "name": "images",
@@ -4965,6 +4990,10 @@ class Config {
         {
           "name": "gender",
           "short": "User Gender",
+          "type": "`$STRING`"
+        },
+        {
+          "name": "id",
           "type": "`$STRING`"
         },
         {

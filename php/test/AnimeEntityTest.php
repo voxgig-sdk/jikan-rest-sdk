@@ -93,9 +93,13 @@ class AnimeEntityTest extends TestCase
         $this->assertIsArray($anime_ref01_list_result);
 
         // LOAD
-        $anime_ref01_match_dt0 = [];
+        $anime_ref01_match_dt0 = [
+            "id" => $anime_ref01_data["id"],
+        ];
         $anime_ref01_data_dt0_loaded = $anime_ref01_ent->load($anime_ref01_match_dt0, null);
-        $this->assertNotNull($anime_ref01_data_dt0_loaded);
+        $anime_ref01_data_dt0_load_result = Helpers::to_map(is_object($anime_ref01_data_dt0_loaded) && method_exists($anime_ref01_data_dt0_loaded, 'data_get') ? $anime_ref01_data_dt0_loaded->data_get() : $anime_ref01_data_dt0_loaded);
+        $this->assertNotNull($anime_ref01_data_dt0_load_result);
+        $this->assertEquals($anime_ref01_data_dt0_load_result["id"], $anime_ref01_data["id"]);
 
     }
 }

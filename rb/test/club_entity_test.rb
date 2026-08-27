@@ -83,9 +83,13 @@ class ClubEntityTest < Minitest::Test
     assert club_ref01_list_result.is_a?(Array)
 
     # LOAD
-    club_ref01_match_dt0 = {}
+    club_ref01_match_dt0 = {
+      "id" => club_ref01_data["id"],
+    }
     club_ref01_data_dt0_loaded = club_ref01_ent.load(club_ref01_match_dt0, nil)
-    assert !club_ref01_data_dt0_loaded.nil?
+    club_ref01_data_dt0_load_result = Helpers.to_map(club_ref01_data_dt0_loaded.respond_to?(:data_get) ? club_ref01_data_dt0_loaded.data_get : club_ref01_data_dt0_loaded)
+    assert !club_ref01_data_dt0_load_result.nil?
+    assert_equal club_ref01_data_dt0_load_result["id"], club_ref01_data["id"]
 
   end
 end

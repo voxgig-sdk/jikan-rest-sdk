@@ -42,6 +42,7 @@ class JikanRestConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
@@ -193,6 +194,10 @@ class JikanRestConfig
             [
               'name' => 'genres',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
@@ -1370,6 +1375,10 @@ class JikanRestConfig
               'type' => '`$INTEGER`',
             ],
             [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
+            [
               'name' => 'image_url',
               'short' => 'Default JPG Image Size URL',
               'type' => '`$STRING`',
@@ -1763,6 +1772,10 @@ class JikanRestConfig
             [
               'name' => 'data',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
@@ -2355,6 +2368,10 @@ class JikanRestConfig
             [
               'name' => 'genres',
               'type' => '`$ARRAY`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
@@ -3294,6 +3311,10 @@ class JikanRestConfig
               'type' => '`$STRING`',
             ],
             [
+              'name' => 'id',
+              'type' => '`$STRING`',
+            ],
+            [
               'name' => 'images',
               'type' => '`$OBJECT`',
             ],
@@ -3639,6 +3660,10 @@ class JikanRestConfig
               'name' => 'favorites',
               'short' => 'Producers\'s member favorites count',
               'type' => '`$INTEGER`',
+            ],
+            [
+              'name' => 'id',
+              'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
@@ -4908,6 +4933,10 @@ class JikanRestConfig
             [
               'name' => 'gender',
               'short' => 'User Gender',
+              'type' => '`$STRING`',
+            ],
+            [
+              'name' => 'id',
               'type' => '`$STRING`',
             ],
             [

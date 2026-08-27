@@ -43,7 +43,7 @@ local animes, err = client:Anime():list()
 if err then error(err) end
 
 for _, item in ipairs(animes) do
-  print(item["aired"])
+  print(item["id"], item["aired"])
 end
 ```
 
@@ -290,6 +290,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `favorites` | Number of users who have favorited this entry |
 | `filler` | Filler episode |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `last_comment` | Last comment details |
 | `licensors` |  |
@@ -350,6 +351,7 @@ API path: `/anime`
 | `anime` |  |
 | `data` |  |
 | `favorites` | Number of users who have favorited this entry |
+| `id` |  |
 | `image_url` | Default JPG Image Size URL |
 | `images` |  |
 | `language` | Character's Role |
@@ -379,6 +381,7 @@ API path: `/characters`
 | `characters` |  |
 | `created` | Date Created ISO8601 |
 | `data` |  |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `manga` |  |
@@ -449,6 +452,7 @@ API path: `/magazines`
 | `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `last_comment` | Last comment details |
@@ -513,6 +517,7 @@ API path: `/top/people`
 | `family_name` | Family Name |
 | `favorites` | Number of users who have favorited this entry |
 | `given_name` | Given Name |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `mal_id` | MyAnimeList ID |
@@ -539,6 +544,7 @@ API path: `/people`
 | `established` | Established Date ISO8601 |
 | `external` |  |
 | `favorites` | Producers's member favorites count |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `name` |  |
@@ -680,6 +686,7 @@ API path: `/top/reviews`
 | `data` |  |
 | `external` |  |
 | `gender` | User Gender |
+| `id` |  |
 | `images` |  |
 | `joined` | Joined Date ISO8601 |
 | `last_online` | Last Online Date ISO8601 |
@@ -827,6 +834,7 @@ Create an instance: `local anime = client:Anime(nil)`
 | `favorites` | `number` | Number of users who have favorited this entry |
 | `filler` | `boolean` | Filler episode |
 | `genres` | `table` |  |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `last_comment` | `table` | Last comment details |
 | `licensors` | `table` |  |
@@ -907,6 +915,7 @@ Create an instance: `local character = client:Character(nil)`
 | `anime` | `table` |  |
 | `data` | `table` |  |
 | `favorites` | `number` | Number of users who have favorited this entry |
+| `id` | `string` |  |
 | `image_url` | `string` | Default JPG Image Size URL |
 | `images` | `table` |  |
 | `language` | `string` | Character's Role |
@@ -956,6 +965,7 @@ Create an instance: `local club = client:Club(nil)`
 | `characters` | `table` |  |
 | `created` | `string` | Date Created ISO8601 |
 | `data` | `table` |  |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `mal_id` | `number` | MyAnimeList ID |
 | `manga` | `table` |  |
@@ -1085,6 +1095,7 @@ Create an instance: `local manga = client:Manga(nil)`
 | `external` | `table` |  |
 | `favorites` | `number` | Number of users who have favorited this entry |
 | `genres` | `table` |  |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `jpg` | `table` | Available images in JPG |
 | `last_comment` | `table` | Last comment details |
@@ -1182,6 +1193,7 @@ Create an instance: `local person = client:Person(nil)`
 | `family_name` | `string` | Family Name |
 | `favorites` | `number` | Number of users who have favorited this entry |
 | `given_name` | `string` | Given Name |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `jpg` | `table` | Available images in JPG |
 | `mal_id` | `number` | MyAnimeList ID |
@@ -1228,6 +1240,7 @@ Create an instance: `local producer = client:Producer(nil)`
 | `established` | `string` | Established Date ISO8601 |
 | `external` | `table` |  |
 | `favorites` | `number` | Producers's member favorites count |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `mal_id` | `number` | MyAnimeList ID |
 | `name` | `string` |  |
@@ -1469,6 +1482,7 @@ Create an instance: `local user = client:User(nil)`
 | `data` | `table` |  |
 | `external` | `table` |  |
 | `gender` | `string` | User Gender |
+| `id` | `string` |  |
 | `images` | `table` |  |
 | `joined` | `string` | Joined Date ISO8601 |
 | `last_online` | `string` | Last Online Date ISO8601 |

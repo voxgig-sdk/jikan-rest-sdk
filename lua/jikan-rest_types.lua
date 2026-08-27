@@ -30,6 +30,7 @@
 ---@field favorites? number
 ---@field filler? boolean
 ---@field genres? table
+---@field id? string
 ---@field images? table
 ---@field last_comment? table
 ---@field licensors? table
@@ -106,6 +107,7 @@
 ---@field favorites? number
 ---@field filler? boolean
 ---@field genres? table
+---@field id? string
 ---@field images? table
 ---@field last_comment? table
 ---@field licensors? table
@@ -159,6 +161,7 @@
 ---@field anime? table
 ---@field data? table
 ---@field favorites? number
+---@field id? string
 ---@field image_url? string
 ---@field images? table
 ---@field language? string
@@ -182,6 +185,7 @@
 ---@field anime? table
 ---@field data? table
 ---@field favorites? number
+---@field id? string
 ---@field image_url? string
 ---@field images? table
 ---@field language? string
@@ -204,6 +208,7 @@
 ---@field characters? table
 ---@field created? string
 ---@field data? table
+---@field id? string
 ---@field images? table
 ---@field mal_id? number
 ---@field manga? table
@@ -223,6 +228,7 @@
 ---@field characters? table
 ---@field created? string
 ---@field data? table
+---@field id? string
 ---@field images? table
 ---@field mal_id? number
 ---@field manga? table
@@ -278,6 +284,7 @@
 ---@field external? table
 ---@field favorites? number
 ---@field genres? table
+---@field id? string
 ---@field images? table
 ---@field jpg? table
 ---@field last_comment? table
@@ -336,6 +343,7 @@
 ---@field external? table
 ---@field favorites? number
 ---@field genres? table
+---@field id? string
 ---@field images? table
 ---@field jpg? table
 ---@field last_comment? table
@@ -390,6 +398,7 @@
 ---@field family_name? string
 ---@field favorites? number
 ---@field given_name? string
+---@field id? string
 ---@field images? table
 ---@field jpg? table
 ---@field mal_id? number
@@ -415,6 +424,7 @@
 ---@field family_name? string
 ---@field favorites? number
 ---@field given_name? string
+---@field id? string
 ---@field images? table
 ---@field jpg? table
 ---@field mal_id? number
@@ -434,6 +444,7 @@
 ---@field established? string
 ---@field external? table
 ---@field favorites? number
+---@field id? string
 ---@field images? table
 ---@field mal_id? number
 ---@field name? string
@@ -451,6 +462,7 @@
 ---@field established? string
 ---@field external? table
 ---@field favorites? number
+---@field id? string
 ---@field images? table
 ---@field mal_id? number
 ---@field name? string
@@ -624,6 +636,7 @@
 ---@field data? table
 ---@field external? table
 ---@field gender? string
+---@field id? string
 ---@field images? table
 ---@field joined? string
 ---@field last_online? string
@@ -646,6 +659,7 @@
 ---@field data? table
 ---@field external? table
 ---@field gender? string
+---@field id? string
 ---@field images? table
 ---@field joined? string
 ---@field last_online? string

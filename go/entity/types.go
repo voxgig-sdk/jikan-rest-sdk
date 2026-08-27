@@ -37,6 +37,7 @@ type Anime struct {
 	Favorites *int `json:"favorites,omitempty"`
 	Filler *bool `json:"filler,omitempty"`
 	Genres *[]any `json:"genres,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	LastComment *map[string]any `json:"last_comment,omitempty"`
 	Licensors *[]any `json:"licensors,omitempty"`
@@ -117,6 +118,7 @@ type AnimeListMatch struct {
 	Favorites *int `json:"favorites,omitempty"`
 	Filler *bool `json:"filler,omitempty"`
 	Genres *[]any `json:"genres,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	LastComment *map[string]any `json:"last_comment,omitempty"`
 	Licensors *[]any `json:"licensors,omitempty"`
@@ -172,6 +174,7 @@ type Character struct {
 	Anime *[]any `json:"anime,omitempty"`
 	Data *[]any `json:"data,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
+	Id *string `json:"id,omitempty"`
 	ImageUrl *string `json:"image_url,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Language *string `json:"language,omitempty"`
@@ -199,6 +202,7 @@ type CharacterListMatch struct {
 	Anime *[]any `json:"anime,omitempty"`
 	Data *[]any `json:"data,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
+	Id *string `json:"id,omitempty"`
 	ImageUrl *string `json:"image_url,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Language *string `json:"language,omitempty"`
@@ -223,6 +227,7 @@ type Club struct {
 	Characters *[]any `json:"characters,omitempty"`
 	Created *string `json:"created,omitempty"`
 	Data *[]any `json:"data,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
 	Manga *[]any `json:"manga,omitempty"`
@@ -246,6 +251,7 @@ type ClubListMatch struct {
 	Characters *[]any `json:"characters,omitempty"`
 	Created *string `json:"created,omitempty"`
 	Data *[]any `json:"data,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
 	Manga *[]any `json:"manga,omitempty"`
@@ -315,6 +321,7 @@ type Manga struct {
 	External *[]any `json:"external,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
 	Genres *[]any `json:"genres,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Jpg *map[string]any `json:"jpg,omitempty"`
 	LastComment *map[string]any `json:"last_comment,omitempty"`
@@ -377,6 +384,7 @@ type MangaListMatch struct {
 	External *[]any `json:"external,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
 	Genres *[]any `json:"genres,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Jpg *map[string]any `json:"jpg,omitempty"`
 	LastComment *map[string]any `json:"last_comment,omitempty"`
@@ -437,6 +445,7 @@ type Person struct {
 	FamilyName *string `json:"family_name,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
 	GivenName *string `json:"given_name,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Jpg *map[string]any `json:"jpg,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
@@ -466,6 +475,7 @@ type PersonListMatch struct {
 	FamilyName *string `json:"family_name,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
 	GivenName *string `json:"given_name,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Jpg *map[string]any `json:"jpg,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
@@ -487,6 +497,7 @@ type Producer struct {
 	Established *string `json:"established,omitempty"`
 	External *[]any `json:"external,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -508,6 +519,7 @@ type ProducerListMatch struct {
 	Established *string `json:"established,omitempty"`
 	External *[]any `json:"external,omitempty"`
 	Favorites *int `json:"favorites,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	MalId *int `json:"mal_id,omitempty"`
 	Name *string `json:"name,omitempty"`
@@ -709,6 +721,7 @@ type User struct {
 	Data *[]any `json:"data,omitempty"`
 	External *[]any `json:"external,omitempty"`
 	Gender *string `json:"gender,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Joined *string `json:"joined,omitempty"`
 	LastOnline *string `json:"last_online,omitempty"`
@@ -735,6 +748,7 @@ type UserListMatch struct {
 	Data *[]any `json:"data,omitempty"`
 	External *[]any `json:"external,omitempty"`
 	Gender *string `json:"gender,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Images *map[string]any `json:"images,omitempty"`
 	Joined *string `json:"joined,omitempty"`
 	LastOnline *string `json:"last_online,omitempty"`

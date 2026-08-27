@@ -66,6 +66,12 @@ describe('ClubEntity', async () => {
     const club_ref01_list = (await club_ref01_ent.list(club_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const club_ref01_match_dt0: any = {}
+    club_ref01_match_dt0.id = club_ref01_data.id
+    const club_ref01_data_dt0 = (await club_ref01_ent.load(club_ref01_match_dt0)).data()
+    assert(club_ref01_data_dt0.id === club_ref01_data.id)
+
 
   })
 })

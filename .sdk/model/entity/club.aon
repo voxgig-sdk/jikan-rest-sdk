@@ -39,6 +39,11 @@ main: kit: entity: club: {
       type: "`$ARRAY`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "images"
       req: false
       type: "`$OBJECT`"
@@ -84,6 +89,11 @@ main: kit: entity: club: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "club"
   op: {

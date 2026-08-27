@@ -212,6 +212,7 @@ anime = client.Anime
 | `favorites` | `Integer` | No | Number of users who have favorited this entry |
 | `filler` | `Boolean` | No | Filler episode |
 | `genres` | `Array` | No |  |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `last_comment` | `Hash` | No | Last comment details |
 | `licensors` | `Array` | No |  |
@@ -322,6 +323,7 @@ character = client.Character
 | `anime` | `Array` | No |  |
 | `data` | `Array` | No |  |
 | `favorites` | `Integer` | No | Number of users who have favorited this entry |
+| `id` | `String` | No |  |
 | `image_url` | `String` | No | Default JPG Image Size URL |
 | `images` | `Hash` | No |  |
 | `language` | `String` | No | Character's Role |
@@ -401,6 +403,7 @@ club = client.Club
 | `characters` | `Array` | No |  |
 | `created` | `String` | No | Date Created ISO8601 |
 | `data` | `Array` | No |  |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `mal_id` | `Integer` | No | MyAnimeList ID |
 | `manga` | `Array` | No |  |
@@ -647,6 +650,7 @@ manga = client.Manga
 | `external` | `Array` | No |  |
 | `favorites` | `Integer` | No | Number of users who have favorited this entry |
 | `genres` | `Array` | No |  |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `jpg` | `Hash` | No | Available images in JPG |
 | `last_comment` | `Hash` | No | Last comment details |
@@ -803,6 +807,7 @@ person = client.Person
 | `family_name` | `String` | No | Family Name |
 | `favorites` | `Integer` | No | Number of users who have favorited this entry |
 | `given_name` | `String` | No | Given Name |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `jpg` | `Hash` | No | Available images in JPG |
 | `mal_id` | `Integer` | No | MyAnimeList ID |
@@ -879,6 +884,7 @@ producer = client.Producer
 | `established` | `String` | No | Established Date ISO8601 |
 | `external` | `Array` | No |  |
 | `favorites` | `Integer` | No | Producers's member favorites count |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `mal_id` | `Integer` | No | MyAnimeList ID |
 | `name` | `String` | No |  |
@@ -1325,6 +1331,7 @@ user = client.User
 | `data` | `Array` | No |  |
 | `external` | `Array` | No |  |
 | `gender` | `String` | No | User Gender |
+| `id` | `String` | No |  |
 | `images` | `Hash` | No |  |
 | `joined` | `String` | No | Joined Date ISO8601 |
 | `last_online` | `String` | No | Last Online Date ISO8601 |

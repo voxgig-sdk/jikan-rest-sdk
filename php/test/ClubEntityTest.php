@@ -93,9 +93,13 @@ class ClubEntityTest extends TestCase
         $this->assertIsArray($club_ref01_list_result);
 
         // LOAD
-        $club_ref01_match_dt0 = [];
+        $club_ref01_match_dt0 = [
+            "id" => $club_ref01_data["id"],
+        ];
         $club_ref01_data_dt0_loaded = $club_ref01_ent->load($club_ref01_match_dt0, null);
-        $this->assertNotNull($club_ref01_data_dt0_loaded);
+        $club_ref01_data_dt0_load_result = Helpers::to_map(is_object($club_ref01_data_dt0_loaded) && method_exists($club_ref01_data_dt0_loaded, 'data_get') ? $club_ref01_data_dt0_loaded->data_get() : $club_ref01_data_dt0_loaded);
+        $this->assertNotNull($club_ref01_data_dt0_load_result);
+        $this->assertEquals($club_ref01_data_dt0_load_result["id"], $club_ref01_data["id"]);
 
     }
 }

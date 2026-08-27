@@ -40,6 +40,7 @@ class Anime(TypedDict, total=False):
     favorites: int
     filler: bool
     genres: list
+    id: str
     images: dict
     last_comment: dict
     licensors: list
@@ -121,6 +122,7 @@ class AnimeListMatch(TypedDict, total=False):
     favorites: int
     filler: bool
     genres: list
+    id: str
     images: dict
     last_comment: dict
     licensors: list
@@ -175,6 +177,7 @@ class Character(TypedDict, total=False):
     anime: list
     data: list
     favorites: int
+    id: str
     image_url: str
     images: dict
     language: str
@@ -200,6 +203,7 @@ class CharacterListMatch(TypedDict, total=False):
     anime: list
     data: list
     favorites: int
+    id: str
     image_url: str
     images: dict
     language: str
@@ -223,6 +227,7 @@ class Club(TypedDict, total=False):
     characters: list
     created: str
     data: list
+    id: str
     images: dict
     mal_id: int
     manga: list
@@ -244,6 +249,7 @@ class ClubListMatch(TypedDict, total=False):
     characters: list
     created: str
     data: list
+    id: str
     images: dict
     mal_id: int
     manga: list
@@ -306,6 +312,7 @@ class Manga(TypedDict, total=False):
     external: list
     favorites: int
     genres: list
+    id: str
     images: dict
     jpg: dict
     last_comment: dict
@@ -366,6 +373,7 @@ class MangaListMatch(TypedDict, total=False):
     external: list
     favorites: int
     genres: list
+    id: str
     images: dict
     jpg: dict
     last_comment: dict
@@ -423,6 +431,7 @@ class Person(TypedDict, total=False):
     family_name: str
     favorites: int
     given_name: str
+    id: str
     images: dict
     jpg: dict
     mal_id: int
@@ -450,6 +459,7 @@ class PersonListMatch(TypedDict, total=False):
     family_name: str
     favorites: int
     given_name: str
+    id: str
     images: dict
     jpg: dict
     mal_id: int
@@ -470,6 +480,7 @@ class Producer(TypedDict, total=False):
     established: str
     external: list
     favorites: int
+    id: str
     images: dict
     mal_id: int
     name: str
@@ -489,6 +500,7 @@ class ProducerListMatch(TypedDict, total=False):
     established: str
     external: list
     favorites: int
+    id: str
     images: dict
     mal_id: int
     name: str
@@ -678,6 +690,7 @@ class User(TypedDict, total=False):
     data: list
     external: list
     gender: str
+    id: str
     images: dict
     joined: str
     last_online: str
@@ -702,6 +715,7 @@ class UserListMatch(TypedDict, total=False):
     data: list
     external: list
     gender: str
+    id: str
     images: dict
     joined: str
     last_online: str

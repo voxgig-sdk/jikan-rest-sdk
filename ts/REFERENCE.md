@@ -427,6 +427,7 @@ const anime = client.Anime()
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `filler` | `boolean` | No | Filler episode |
 | `genres` | `any[]` | No |  |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `last_comment` | `Record<string, any>` | No | Last comment details |
 | `licensors` | `any[]` | No |  |
@@ -572,6 +573,7 @@ const character = client.Character()
 | `anime` | `any[]` | No |  |
 | `data` | `any[]` | No |  |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
+| `id` | `string` | No |  |
 | `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `Record<string, any>` | No |  |
 | `language` | `string` | No | Character's Role |
@@ -673,6 +675,7 @@ const club = client.Club()
 | `characters` | `any[]` | No |  |
 | `created` | `string` | No | Date Created ISO8601 |
 | `data` | `any[]` | No |  |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `mal_id` | `number` | No | MyAnimeList ID |
 | `manga` | `any[]` | No |  |
@@ -954,6 +957,7 @@ const manga = client.Manga()
 | `external` | `any[]` | No |  |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `genres` | `any[]` | No |  |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `jpg` | `Record<string, any>` | No | Available images in JPG |
 | `last_comment` | `Record<string, any>` | No | Last comment details |
@@ -1137,6 +1141,7 @@ const person = client.Person()
 | `family_name` | `string` | No | Family Name |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `given_name` | `string` | No | Given Name |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `jpg` | `Record<string, any>` | No | Available images in JPG |
 | `mal_id` | `number` | No | MyAnimeList ID |
@@ -1235,6 +1240,7 @@ const producer = client.Producer()
 | `established` | `string` | No | Established Date ISO8601 |
 | `external` | `any[]` | No |  |
 | `favorites` | `number` | No | Producers's member favorites count |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `mal_id` | `number` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
@@ -1795,6 +1801,7 @@ const user = client.User()
 | `data` | `any[]` | No |  |
 | `external` | `any[]` | No |  |
 | `gender` | `string` | No | User Gender |
+| `id` | `string` | No |  |
 | `images` | `Record<string, any>` | No |  |
 | `joined` | `string` | No | Joined Date ISO8601 |
 | `last_online` | `string` | No | Last Online Date ISO8601 |

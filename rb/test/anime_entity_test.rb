@@ -83,9 +83,13 @@ class AnimeEntityTest < Minitest::Test
     assert anime_ref01_list_result.is_a?(Array)
 
     # LOAD
-    anime_ref01_match_dt0 = {}
+    anime_ref01_match_dt0 = {
+      "id" => anime_ref01_data["id"],
+    }
     anime_ref01_data_dt0_loaded = anime_ref01_ent.load(anime_ref01_match_dt0, nil)
-    assert !anime_ref01_data_dt0_loaded.nil?
+    anime_ref01_data_dt0_load_result = Helpers.to_map(anime_ref01_data_dt0_loaded.respond_to?(:data_get) ? anime_ref01_data_dt0_loaded.data_get : anime_ref01_data_dt0_loaded)
+    assert !anime_ref01_data_dt0_load_result.nil?
+    assert_equal anime_ref01_data_dt0_load_result["id"], anime_ref01_data["id"]
 
   end
 end

@@ -217,6 +217,7 @@ fmt.Println(anime.GetName()) // "anime"
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `filler` | `bool` | No | Filler episode |
 | `genres` | `[]any` | No |  |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `last_comment` | `map[string]any` | No | Last comment details |
 | `licensors` | `[]any` | No |  |
@@ -330,6 +331,7 @@ fmt.Println(character.GetName()) // "character"
 | `anime` | `[]any` | No |  |
 | `data` | `[]any` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
+| `id` | `string` | No |  |
 | `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `map[string]any` | No |  |
 | `language` | `string` | No | Character's Role |
@@ -412,6 +414,7 @@ fmt.Println(club.GetName()) // "club"
 | `characters` | `[]any` | No |  |
 | `created` | `string` | No | Date Created ISO8601 |
 | `data` | `[]any` | No |  |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `manga` | `[]any` | No |  |
@@ -658,6 +661,7 @@ fmt.Println(manga.GetName()) // "manga"
 | `external` | `[]any` | No |  |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `genres` | `[]any` | No |  |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `jpg` | `map[string]any` | No | Available images in JPG |
 | `last_comment` | `map[string]any` | No | Last comment details |
@@ -816,6 +820,7 @@ fmt.Println(person.GetName()) // "person"
 | `family_name` | `string` | No | Family Name |
 | `favorites` | `int` | No | Number of users who have favorited this entry |
 | `given_name` | `string` | No | Given Name |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `jpg` | `map[string]any` | No | Available images in JPG |
 | `mal_id` | `int` | No | MyAnimeList ID |
@@ -895,6 +900,7 @@ fmt.Println(producer.GetName()) // "producer"
 | `established` | `string` | No | Established Date ISO8601 |
 | `external` | `[]any` | No |  |
 | `favorites` | `int` | No | Producers's member favorites count |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `mal_id` | `int` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
@@ -1342,6 +1348,7 @@ fmt.Println(user.GetName()) // "user"
 | `data` | `[]any` | No |  |
 | `external` | `[]any` | No |  |
 | `gender` | `string` | No | User Gender |
+| `id` | `string` | No |  |
 | `images` | `map[string]any` | No |  |
 | `joined` | `string` | No | Joined Date ISO8601 |
 | `last_online` | `string` | No | Last Online Date ISO8601 |

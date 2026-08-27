@@ -121,13 +121,19 @@ func TestAnimeEntity(t *testing.T) {
 		}
 
 		// LOAD
-		animeRef01MatchDt0 := map[string]any{}
+		animeRef01MatchDt0 := map[string]any{
+			"id": animeRef01Data["id"],
+		}
 		animeRef01DataDt0Loaded, err := animeRef01Ent.Load(animeRef01MatchDt0, nil)
 		if err != nil {
 			t.Fatalf("load failed: %v", err)
 		}
-		if animeRef01DataDt0Loaded == nil {
-			t.Fatal("expected load result to be non-nil")
+		animeRef01DataDt0LoadResult := core.ToMapAny(entityData(animeRef01DataDt0Loaded))
+		if animeRef01DataDt0LoadResult == nil {
+			t.Fatal("expected load result to be a map")
+		}
+		if animeRef01DataDt0LoadResult["id"] != animeRef01Data["id"] {
+			t.Fatal("expected load result id to match")
 		}
 
 	})

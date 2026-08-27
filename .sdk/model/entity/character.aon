@@ -28,6 +28,11 @@ main: kit: entity: character: {
       type: "`$INTEGER`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "image_url"
       req: false
       short: "Default JPG Image Size URL"
@@ -107,6 +112,11 @@ main: kit: entity: character: {
       type: "`$ARRAY`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "character"
   op: {

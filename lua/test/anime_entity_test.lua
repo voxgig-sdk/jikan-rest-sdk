@@ -92,10 +92,14 @@ describe("AnimeEntity", function()
     assert.is_table(anime_ref01_list_result)
 
     -- LOAD
-    local anime_ref01_match_dt0 = {}
+    local anime_ref01_match_dt0 = {
+      id = anime_ref01_data["id"],
+    }
     local anime_ref01_data_dt0_loaded, err = anime_ref01_ent:load(anime_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(anime_ref01_data_dt0_loaded)
+    local anime_ref01_data_dt0_load_result = helpers.to_map(type(anime_ref01_data_dt0_loaded) == 'table' and anime_ref01_data_dt0_loaded.data_get and anime_ref01_data_dt0_loaded:data_get() or anime_ref01_data_dt0_loaded)
+    assert.is_not_nil(anime_ref01_data_dt0_load_result)
+    assert.are.equal(anime_ref01_data_dt0_load_result["id"], anime_ref01_data["id"])
 
   end)
 end)

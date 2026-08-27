@@ -37,7 +37,7 @@ begin
   # list returns an Array of Anime records — iterate directly.
   animes = client.Anime.list
   animes.each do |item|
-    puts "#{item["aired"]}"
+    puts "#{item["id"]} #{item["aired"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -299,6 +299,7 @@ returns a result `Hash` with these keys:
 | `favorites` | Number of users who have favorited this entry |
 | `filler` | Filler episode |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `last_comment` | Last comment details |
 | `licensors` |  |
@@ -359,6 +360,7 @@ API path: `/anime`
 | `anime` |  |
 | `data` |  |
 | `favorites` | Number of users who have favorited this entry |
+| `id` |  |
 | `image_url` | Default JPG Image Size URL |
 | `images` |  |
 | `language` | Character's Role |
@@ -388,6 +390,7 @@ API path: `/characters`
 | `characters` |  |
 | `created` | Date Created ISO8601 |
 | `data` |  |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `manga` |  |
@@ -458,6 +461,7 @@ API path: `/magazines`
 | `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `last_comment` | Last comment details |
@@ -522,6 +526,7 @@ API path: `/top/people`
 | `family_name` | Family Name |
 | `favorites` | Number of users who have favorited this entry |
 | `given_name` | Given Name |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `mal_id` | MyAnimeList ID |
@@ -548,6 +553,7 @@ API path: `/people`
 | `established` | Established Date ISO8601 |
 | `external` |  |
 | `favorites` | Producers's member favorites count |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `name` |  |
@@ -689,6 +695,7 @@ API path: `/top/reviews`
 | `data` |  |
 | `external` |  |
 | `gender` | User Gender |
+| `id` |  |
 | `images` |  |
 | `joined` | Joined Date ISO8601 |
 | `last_online` | Last Online Date ISO8601 |
@@ -836,6 +843,7 @@ Create an instance: `anime = client.Anime`
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `filler` | `Boolean` | Filler episode |
 | `genres` | `Array` |  |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `last_comment` | `Hash` | Last comment details |
 | `licensors` | `Array` |  |
@@ -918,6 +926,7 @@ Create an instance: `character = client.Character`
 | `anime` | `Array` |  |
 | `data` | `Array` |  |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
+| `id` | `String` |  |
 | `image_url` | `String` | Default JPG Image Size URL |
 | `images` | `Hash` |  |
 | `language` | `String` | Character's Role |
@@ -969,6 +978,7 @@ Create an instance: `club = client.Club`
 | `characters` | `Array` |  |
 | `created` | `String` | Date Created ISO8601 |
 | `data` | `Array` |  |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `mal_id` | `Integer` | MyAnimeList ID |
 | `manga` | `Array` |  |
@@ -1103,6 +1113,7 @@ Create an instance: `manga = client.Manga`
 | `external` | `Array` |  |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `genres` | `Array` |  |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `jpg` | `Hash` | Available images in JPG |
 | `last_comment` | `Hash` | Last comment details |
@@ -1203,6 +1214,7 @@ Create an instance: `person = client.Person`
 | `family_name` | `String` | Family Name |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `given_name` | `String` | Given Name |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `jpg` | `Hash` | Available images in JPG |
 | `mal_id` | `Integer` | MyAnimeList ID |
@@ -1251,6 +1263,7 @@ Create an instance: `producer = client.Producer`
 | `established` | `String` | Established Date ISO8601 |
 | `external` | `Array` |  |
 | `favorites` | `Integer` | Producers's member favorites count |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `mal_id` | `Integer` | MyAnimeList ID |
 | `name` | `String` |  |
@@ -1501,6 +1514,7 @@ Create an instance: `user = client.User`
 | `data` | `Array` |  |
 | `external` | `Array` |  |
 | `gender` | `String` | User Gender |
+| `id` | `String` |  |
 | `images` | `Hash` |  |
 | `joined` | `String` | Joined Date ISO8601 |
 | `last_online` | `String` | Last Online Date ISO8601 |

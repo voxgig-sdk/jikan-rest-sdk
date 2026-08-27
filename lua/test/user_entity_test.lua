@@ -92,10 +92,14 @@ describe("UserEntity", function()
     assert.is_table(user_ref01_list_result)
 
     -- LOAD
-    local user_ref01_match_dt0 = {}
+    local user_ref01_match_dt0 = {
+      id = user_ref01_data["id"],
+    }
     local user_ref01_data_dt0_loaded, err = user_ref01_ent:load(user_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(user_ref01_data_dt0_loaded)
+    local user_ref01_data_dt0_load_result = helpers.to_map(type(user_ref01_data_dt0_loaded) == 'table' and user_ref01_data_dt0_loaded.data_get and user_ref01_data_dt0_loaded:data_get() or user_ref01_data_dt0_loaded)
+    assert.is_not_nil(user_ref01_data_dt0_load_result)
+    assert.are.equal(user_ref01_data_dt0_load_result["id"], user_ref01_data["id"])
 
   end)
 end)

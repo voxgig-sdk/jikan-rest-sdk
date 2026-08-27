@@ -88,9 +88,13 @@ class TestProducerEntity:
         assert isinstance(producer_ref01_list_result, list)
 
         # LOAD
-        producer_ref01_match_dt0 = {}
+        producer_ref01_match_dt0 = {
+            "id": producer_ref01_data["id"],
+        }
         producer_ref01_data_dt0_loaded = producer_ref01_ent.load(producer_ref01_match_dt0, None)
-        assert producer_ref01_data_dt0_loaded is not None
+        producer_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(producer_ref01_data_dt0_loaded))
+        assert producer_ref01_data_dt0_load_result is not None
+        assert producer_ref01_data_dt0_load_result["id"] == producer_ref01_data["id"]
 
 
 

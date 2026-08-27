@@ -79,6 +79,9 @@
 # @!attribute [rw] genres
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -243,6 +246,7 @@ Anime = Struct.new(
   :favorites,
   :filler,
   :genres,
+  :id,
   :images,
   :last_comment,
   :licensors,
@@ -376,6 +380,9 @@ AnimeLoadMatch = Struct.new(
 #
 # @!attribute [rw] genres
 #   @return [Array, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
 #
 # @!attribute [rw] images
 #   @return [Hash, nil]
@@ -541,6 +548,7 @@ AnimeListMatch = Struct.new(
   :favorites,
   :filler,
   :genres,
+  :id,
   :images,
   :last_comment,
   :licensors,
@@ -605,6 +613,9 @@ AnimeListMatch = Struct.new(
 # @!attribute [rw] favorites
 #   @return [Integer, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] image_url
 #   @return [String, nil]
 #
@@ -651,6 +662,7 @@ Character = Struct.new(
   :anime,
   :data,
   :favorites,
+  :id,
   :image_url,
   :images,
   :language,
@@ -690,6 +702,9 @@ CharacterLoadMatch = Struct.new(
 #
 # @!attribute [rw] favorites
 #   @return [Integer, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
 #
 # @!attribute [rw] image_url
 #   @return [String, nil]
@@ -737,6 +752,7 @@ CharacterListMatch = Struct.new(
   :anime,
   :data,
   :favorites,
+  :id,
   :image_url,
   :images,
   :language,
@@ -774,6 +790,9 @@ CharacterListMatch = Struct.new(
 # @!attribute [rw] data
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -804,6 +823,7 @@ Club = Struct.new(
   :characters,
   :created,
   :data,
+  :id,
   :images,
   :mal_id,
   :manga,
@@ -844,6 +864,9 @@ ClubLoadMatch = Struct.new(
 # @!attribute [rw] data
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -874,6 +897,7 @@ ClubListMatch = Struct.new(
   :characters,
   :created,
   :data,
+  :id,
   :images,
   :mal_id,
   :manga,
@@ -1031,6 +1055,9 @@ MagazineListMatch = Struct.new(
 # @!attribute [rw] genres
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -1154,6 +1181,7 @@ Manga = Struct.new(
   :external,
   :favorites,
   :genres,
+  :id,
   :images,
   :jpg,
   :last_comment,
@@ -1256,6 +1284,9 @@ MangaLoadMatch = Struct.new(
 #
 # @!attribute [rw] genres
 #   @return [Array, nil]
+#
+# @!attribute [rw] id
+#   @return [String, nil]
 #
 # @!attribute [rw] images
 #   @return [Hash, nil]
@@ -1380,6 +1411,7 @@ MangaListMatch = Struct.new(
   :external,
   :favorites,
   :genres,
+  :id,
   :images,
   :jpg,
   :last_comment,
@@ -1473,6 +1505,9 @@ PeopleSearchListMatch = Struct.new(
 # @!attribute [rw] given_name
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -1515,6 +1550,7 @@ Person = Struct.new(
   :family_name,
   :favorites,
   :given_name,
+  :id,
   :images,
   :jpg,
   :mal_id,
@@ -1567,6 +1603,9 @@ PersonLoadMatch = Struct.new(
 # @!attribute [rw] given_name
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -1609,6 +1648,7 @@ PersonListMatch = Struct.new(
   :family_name,
   :favorites,
   :given_name,
+  :id,
   :images,
   :jpg,
   :mal_id,
@@ -1643,6 +1683,9 @@ PersonListMatch = Struct.new(
 # @!attribute [rw] favorites
 #   @return [Integer, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -1667,6 +1710,7 @@ Producer = Struct.new(
   :established,
   :external,
   :favorites,
+  :id,
   :images,
   :mal_id,
   :name,
@@ -1705,6 +1749,9 @@ ProducerLoadMatch = Struct.new(
 # @!attribute [rw] favorites
 #   @return [Integer, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -1729,6 +1776,7 @@ ProducerListMatch = Struct.new(
   :established,
   :external,
   :favorites,
+  :id,
   :images,
   :mal_id,
   :name,
@@ -2353,6 +2401,9 @@ TopLoadMatch = Struct.new(
 # @!attribute [rw] gender
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -2392,6 +2443,7 @@ User = Struct.new(
   :data,
   :external,
   :gender,
+  :id,
   :images,
   :joined,
   :last_online,
@@ -2435,6 +2487,9 @@ UserLoadMatch = Struct.new(
 # @!attribute [rw] gender
 #   @return [String, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] images
 #   @return [Hash, nil]
 #
@@ -2474,6 +2529,7 @@ UserListMatch = Struct.new(
   :data,
   :external,
   :gender,
+  :id,
   :images,
   :joined,
   :last_online,

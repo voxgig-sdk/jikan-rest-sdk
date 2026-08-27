@@ -45,6 +45,11 @@ main: kit: entity: user: {
       type: "`$STRING`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "images"
       req: false
       type: "`$OBJECT`"
@@ -108,6 +113,11 @@ main: kit: entity: user: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "user"
   op: {

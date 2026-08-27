@@ -92,10 +92,14 @@ describe("ProducerEntity", function()
     assert.is_table(producer_ref01_list_result)
 
     -- LOAD
-    local producer_ref01_match_dt0 = {}
+    local producer_ref01_match_dt0 = {
+      id = producer_ref01_data["id"],
+    }
     local producer_ref01_data_dt0_loaded, err = producer_ref01_ent:load(producer_ref01_match_dt0, nil)
     assert.is_nil(err)
-    assert.is_not_nil(producer_ref01_data_dt0_loaded)
+    local producer_ref01_data_dt0_load_result = helpers.to_map(type(producer_ref01_data_dt0_loaded) == 'table' and producer_ref01_data_dt0_loaded.data_get and producer_ref01_data_dt0_loaded:data_get() or producer_ref01_data_dt0_loaded)
+    assert.is_not_nil(producer_ref01_data_dt0_load_result)
+    assert.are.equal(producer_ref01_data_dt0_load_result["id"], producer_ref01_data["id"])
 
   end)
 end)

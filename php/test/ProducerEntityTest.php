@@ -93,9 +93,13 @@ class ProducerEntityTest extends TestCase
         $this->assertIsArray($producer_ref01_list_result);
 
         // LOAD
-        $producer_ref01_match_dt0 = [];
+        $producer_ref01_match_dt0 = [
+            "id" => $producer_ref01_data["id"],
+        ];
         $producer_ref01_data_dt0_loaded = $producer_ref01_ent->load($producer_ref01_match_dt0, null);
-        $this->assertNotNull($producer_ref01_data_dt0_loaded);
+        $producer_ref01_data_dt0_load_result = Helpers::to_map(is_object($producer_ref01_data_dt0_loaded) && method_exists($producer_ref01_data_dt0_loaded, 'data_get') ? $producer_ref01_data_dt0_loaded->data_get() : $producer_ref01_data_dt0_loaded);
+        $this->assertNotNull($producer_ref01_data_dt0_load_result);
+        $this->assertEquals($producer_ref01_data_dt0_load_result["id"], $producer_ref01_data["id"]);
 
     }
 }

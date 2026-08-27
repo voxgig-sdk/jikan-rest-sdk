@@ -209,6 +209,7 @@ local anime = client:Anime(nil)
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `filler` | `boolean` | No | Filler episode |
 | `genres` | `table` | No |  |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `last_comment` | `table` | No | Last comment details |
 | `licensors` | `table` | No |  |
@@ -319,6 +320,7 @@ local character = client:Character(nil)
 | `anime` | `table` | No |  |
 | `data` | `table` | No |  |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
+| `id` | `string` | No |  |
 | `image_url` | `string` | No | Default JPG Image Size URL |
 | `images` | `table` | No |  |
 | `language` | `string` | No | Character's Role |
@@ -398,6 +400,7 @@ local club = client:Club(nil)
 | `characters` | `table` | No |  |
 | `created` | `string` | No | Date Created ISO8601 |
 | `data` | `table` | No |  |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `mal_id` | `number` | No | MyAnimeList ID |
 | `manga` | `table` | No |  |
@@ -644,6 +647,7 @@ local manga = client:Manga(nil)
 | `external` | `table` | No |  |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `genres` | `table` | No |  |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `jpg` | `table` | No | Available images in JPG |
 | `last_comment` | `table` | No | Last comment details |
@@ -800,6 +804,7 @@ local person = client:Person(nil)
 | `family_name` | `string` | No | Family Name |
 | `favorites` | `number` | No | Number of users who have favorited this entry |
 | `given_name` | `string` | No | Given Name |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `jpg` | `table` | No | Available images in JPG |
 | `mal_id` | `number` | No | MyAnimeList ID |
@@ -876,6 +881,7 @@ local producer = client:Producer(nil)
 | `established` | `string` | No | Established Date ISO8601 |
 | `external` | `table` | No |  |
 | `favorites` | `number` | No | Producers's member favorites count |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `mal_id` | `number` | No | MyAnimeList ID |
 | `name` | `string` | No |  |
@@ -1322,6 +1328,7 @@ local user = client:User(nil)
 | `data` | `table` | No |  |
 | `external` | `table` | No |  |
 | `gender` | `string` | No | User Gender |
+| `id` | `string` | No |  |
 | `images` | `table` | No |  |
 | `joined` | `string` | No | Joined Date ISO8601 |
 | `last_online` | `string` | No | Last Online Date ISO8601 |

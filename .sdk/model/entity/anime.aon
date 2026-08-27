@@ -143,6 +143,11 @@ main: kit: entity: anime: {
       type: "`$ARRAY`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "images"
       req: false
       type: "`$OBJECT`"
@@ -410,6 +415,11 @@ main: kit: entity: anime: {
       type: "`$INTEGER`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "anime"
   op: {

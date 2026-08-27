@@ -66,6 +66,12 @@ describe('ProducerEntity', async () => {
     const producer_ref01_list = (await producer_ref01_ent.list(producer_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const producer_ref01_match_dt0: any = {}
+    producer_ref01_match_dt0.id = producer_ref01_data.id
+    const producer_ref01_data_dt0 = (await producer_ref01_ent.load(producer_ref01_match_dt0)).data()
+    assert(producer_ref01_data_dt0.id === producer_ref01_data.id)
+
 
   })
 })

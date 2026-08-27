@@ -83,9 +83,13 @@ class ProducerEntityTest < Minitest::Test
     assert producer_ref01_list_result.is_a?(Array)
 
     # LOAD
-    producer_ref01_match_dt0 = {}
+    producer_ref01_match_dt0 = {
+      "id" => producer_ref01_data["id"],
+    }
     producer_ref01_data_dt0_loaded = producer_ref01_ent.load(producer_ref01_match_dt0, nil)
-    assert !producer_ref01_data_dt0_loaded.nil?
+    producer_ref01_data_dt0_load_result = Helpers.to_map(producer_ref01_data_dt0_loaded.respond_to?(:data_get) ? producer_ref01_data_dt0_loaded.data_get : producer_ref01_data_dt0_loaded)
+    assert !producer_ref01_data_dt0_load_result.nil?
+    assert_equal producer_ref01_data_dt0_load_result["id"], producer_ref01_data["id"]
 
   end
 end

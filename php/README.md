@@ -38,7 +38,7 @@ try {
     // list() returns an array of Anime records — iterate directly.
     $animes = $client->Anime()->list();
     foreach ($animes as $item) {
-        echo $item["aired"] . "\n";
+        echo $item["id"] . " " . $item["aired"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -309,6 +309,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `favorites` | Number of users who have favorited this entry |
 | `filler` | Filler episode |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `last_comment` | Last comment details |
 | `licensors` |  |
@@ -369,6 +370,7 @@ API path: `/anime`
 | `anime` |  |
 | `data` |  |
 | `favorites` | Number of users who have favorited this entry |
+| `id` |  |
 | `image_url` | Default JPG Image Size URL |
 | `images` |  |
 | `language` | Character's Role |
@@ -398,6 +400,7 @@ API path: `/characters`
 | `characters` |  |
 | `created` | Date Created ISO8601 |
 | `data` |  |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `manga` |  |
@@ -468,6 +471,7 @@ API path: `/magazines`
 | `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `last_comment` | Last comment details |
@@ -532,6 +536,7 @@ API path: `/top/people`
 | `family_name` | Family Name |
 | `favorites` | Number of users who have favorited this entry |
 | `given_name` | Given Name |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `mal_id` | MyAnimeList ID |
@@ -558,6 +563,7 @@ API path: `/people`
 | `established` | Established Date ISO8601 |
 | `external` |  |
 | `favorites` | Producers's member favorites count |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `name` |  |
@@ -699,6 +705,7 @@ API path: `/top/reviews`
 | `data` |  |
 | `external` |  |
 | `gender` | User Gender |
+| `id` |  |
 | `images` |  |
 | `joined` | Joined Date ISO8601 |
 | `last_online` | Last Online Date ISO8601 |
@@ -846,6 +853,7 @@ Create an instance: `$anime = $client->Anime();`
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `filler` | `bool` | Filler episode |
 | `genres` | `array` |  |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `last_comment` | `array` | Last comment details |
 | `licensors` | `array` |  |
@@ -928,6 +936,7 @@ Create an instance: `$character = $client->Character();`
 | `anime` | `array` |  |
 | `data` | `array` |  |
 | `favorites` | `int` | Number of users who have favorited this entry |
+| `id` | `string` |  |
 | `image_url` | `string` | Default JPG Image Size URL |
 | `images` | `array` |  |
 | `language` | `string` | Character's Role |
@@ -979,6 +988,7 @@ Create an instance: `$club = $client->Club();`
 | `characters` | `array` |  |
 | `created` | `string` | Date Created ISO8601 |
 | `data` | `array` |  |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `mal_id` | `int` | MyAnimeList ID |
 | `manga` | `array` |  |
@@ -1113,6 +1123,7 @@ Create an instance: `$manga = $client->Manga();`
 | `external` | `array` |  |
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `genres` | `array` |  |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `jpg` | `array` | Available images in JPG |
 | `last_comment` | `array` | Last comment details |
@@ -1213,6 +1224,7 @@ Create an instance: `$person = $client->Person();`
 | `family_name` | `string` | Family Name |
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `given_name` | `string` | Given Name |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `jpg` | `array` | Available images in JPG |
 | `mal_id` | `int` | MyAnimeList ID |
@@ -1261,6 +1273,7 @@ Create an instance: `$producer = $client->Producer();`
 | `established` | `string` | Established Date ISO8601 |
 | `external` | `array` |  |
 | `favorites` | `int` | Producers's member favorites count |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `mal_id` | `int` | MyAnimeList ID |
 | `name` | `string` |  |
@@ -1511,6 +1524,7 @@ Create an instance: `$user = $client->User();`
 | `data` | `array` |  |
 | `external` | `array` |  |
 | `gender` | `string` | User Gender |
+| `id` | `string` |  |
 | `images` | `array` |  |
 | `joined` | `string` | Joined Date ISO8601 |
 | `last_online` | `string` | Last Online Date ISO8601 |

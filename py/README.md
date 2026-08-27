@@ -304,6 +304,7 @@ On error, `ok` is `False` and `err` contains the error value.
 | `favorites` | Number of users who have favorited this entry |
 | `filler` | Filler episode |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `last_comment` | Last comment details |
 | `licensors` |  |
@@ -364,6 +365,7 @@ API path: `/anime`
 | `anime` |  |
 | `data` |  |
 | `favorites` | Number of users who have favorited this entry |
+| `id` |  |
 | `image_url` | Default JPG Image Size URL |
 | `images` |  |
 | `language` | Character's Role |
@@ -393,6 +395,7 @@ API path: `/characters`
 | `characters` |  |
 | `created` | Date Created ISO8601 |
 | `data` |  |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `manga` |  |
@@ -463,6 +466,7 @@ API path: `/magazines`
 | `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `genres` |  |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `last_comment` | Last comment details |
@@ -527,6 +531,7 @@ API path: `/top/people`
 | `family_name` | Family Name |
 | `favorites` | Number of users who have favorited this entry |
 | `given_name` | Given Name |
+| `id` |  |
 | `images` |  |
 | `jpg` | Available images in JPG |
 | `mal_id` | MyAnimeList ID |
@@ -553,6 +558,7 @@ API path: `/people`
 | `established` | Established Date ISO8601 |
 | `external` |  |
 | `favorites` | Producers's member favorites count |
+| `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
 | `name` |  |
@@ -694,6 +700,7 @@ API path: `/top/reviews`
 | `data` |  |
 | `external` |  |
 | `gender` | User Gender |
+| `id` |  |
 | `images` |  |
 | `joined` | Joined Date ISO8601 |
 | `last_online` | Last Online Date ISO8601 |
@@ -841,6 +848,7 @@ Create an instance: `anime = client.Anime()`
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `filler` | `bool` | Filler episode |
 | `genres` | `list` |  |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `last_comment` | `dict` | Last comment details |
 | `licensors` | `list` |  |
@@ -921,6 +929,7 @@ Create an instance: `character = client.Character()`
 | `anime` | `list` |  |
 | `data` | `list` |  |
 | `favorites` | `int` | Number of users who have favorited this entry |
+| `id` | `str` |  |
 | `image_url` | `str` | Default JPG Image Size URL |
 | `images` | `dict` |  |
 | `language` | `str` | Character's Role |
@@ -970,6 +979,7 @@ Create an instance: `club = client.Club()`
 | `characters` | `list` |  |
 | `created` | `str` | Date Created ISO8601 |
 | `data` | `list` |  |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `mal_id` | `int` | MyAnimeList ID |
 | `manga` | `list` |  |
@@ -1099,6 +1109,7 @@ Create an instance: `manga = client.Manga()`
 | `external` | `list` |  |
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `genres` | `list` |  |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `jpg` | `dict` | Available images in JPG |
 | `last_comment` | `dict` | Last comment details |
@@ -1196,6 +1207,7 @@ Create an instance: `person = client.Person()`
 | `family_name` | `str` | Family Name |
 | `favorites` | `int` | Number of users who have favorited this entry |
 | `given_name` | `str` | Given Name |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `jpg` | `dict` | Available images in JPG |
 | `mal_id` | `int` | MyAnimeList ID |
@@ -1242,6 +1254,7 @@ Create an instance: `producer = client.Producer()`
 | `established` | `str` | Established Date ISO8601 |
 | `external` | `list` |  |
 | `favorites` | `int` | Producers's member favorites count |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `mal_id` | `int` | MyAnimeList ID |
 | `name` | `str` |  |
@@ -1483,6 +1496,7 @@ Create an instance: `user = client.User()`
 | `data` | `list` |  |
 | `external` | `list` |  |
 | `gender` | `str` | User Gender |
+| `id` | `str` |  |
 | `images` | `dict` |  |
 | `joined` | `str` | Joined Date ISO8601 |
 | `last_online` | `str` | Last Online Date ISO8601 |

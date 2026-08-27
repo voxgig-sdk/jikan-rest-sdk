@@ -83,9 +83,13 @@ class UserEntityTest < Minitest::Test
     assert user_ref01_list_result.is_a?(Array)
 
     # LOAD
-    user_ref01_match_dt0 = {}
+    user_ref01_match_dt0 = {
+      "id" => user_ref01_data["id"],
+    }
     user_ref01_data_dt0_loaded = user_ref01_ent.load(user_ref01_match_dt0, nil)
-    assert !user_ref01_data_dt0_loaded.nil?
+    user_ref01_data_dt0_load_result = Helpers.to_map(user_ref01_data_dt0_loaded.respond_to?(:data_get) ? user_ref01_data_dt0_loaded.data_get : user_ref01_data_dt0_loaded)
+    assert !user_ref01_data_dt0_load_result.nil?
+    assert_equal user_ref01_data_dt0_load_result["id"], user_ref01_data["id"]
 
   end
 end

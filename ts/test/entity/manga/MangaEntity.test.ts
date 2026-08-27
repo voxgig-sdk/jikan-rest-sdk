@@ -66,6 +66,12 @@ describe('MangaEntity', async () => {
     const manga_ref01_list = (await manga_ref01_ent.list(manga_ref01_match)).map((e: any) => e.data())
 
 
+    // LOAD
+    const manga_ref01_match_dt0: any = {}
+    manga_ref01_match_dt0.id = manga_ref01_data.id
+    const manga_ref01_data_dt0 = (await manga_ref01_ent.load(manga_ref01_match_dt0)).data()
+    assert(manga_ref01_data_dt0.id === manga_ref01_data.id)
+
 
   })
 })

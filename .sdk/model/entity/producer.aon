@@ -40,6 +40,11 @@ main: kit: entity: producer: {
       type: "`$INTEGER`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "images"
       req: false
       type: "`$OBJECT`"
@@ -73,6 +78,11 @@ main: kit: entity: producer: {
       type: "`$STRING`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "producer"
   op: {

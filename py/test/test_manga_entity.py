@@ -88,9 +88,13 @@ class TestMangaEntity:
         assert isinstance(manga_ref01_list_result, list)
 
         # LOAD
-        manga_ref01_match_dt0 = {}
+        manga_ref01_match_dt0 = {
+            "id": manga_ref01_data["id"],
+        }
         manga_ref01_data_dt0_loaded = manga_ref01_ent.load(manga_ref01_match_dt0, None)
-        assert manga_ref01_data_dt0_loaded is not None
+        manga_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(manga_ref01_data_dt0_loaded))
+        assert manga_ref01_data_dt0_load_result is not None
+        assert manga_ref01_data_dt0_load_result["id"] == manga_ref01_data["id"]
 
 
 

@@ -112,6 +112,11 @@ main: kit: entity: manga: {
       type: "`$ARRAY`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "images"
       req: false
       type: "`$OBJECT`"
@@ -315,6 +320,11 @@ main: kit: entity: manga: {
       type: "`$OBJECT`"
     }
   ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
 
   name: "manga"
   op: {

@@ -38,6 +38,7 @@ class Anime
     public ?int $favorites = null;
     public ?bool $filler = null;
     public ?array $genres = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $last_comment = null;
     public ?array $licensors = null;
@@ -120,6 +121,7 @@ class AnimeListMatch
     public ?int $favorites = null;
     public ?bool $filler = null;
     public ?array $genres = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $last_comment = null;
     public ?array $licensors = null;
@@ -176,6 +178,7 @@ class Character
     public ?array $anime = null;
     public ?array $data = null;
     public ?int $favorites = null;
+    public ?string $id = null;
     public ?string $image_url = null;
     public ?array $images = null;
     public ?string $language = null;
@@ -205,6 +208,7 @@ class CharacterListMatch
     public ?array $anime = null;
     public ?array $data = null;
     public ?int $favorites = null;
+    public ?string $id = null;
     public ?string $image_url = null;
     public ?array $images = null;
     public ?string $language = null;
@@ -230,6 +234,7 @@ class Club
     public ?array $characters = null;
     public ?string $created = null;
     public ?array $data = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
     public ?array $manga = null;
@@ -255,6 +260,7 @@ class ClubListMatch
     public ?array $characters = null;
     public ?string $created = null;
     public ?array $data = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
     public ?array $manga = null;
@@ -331,6 +337,7 @@ class Manga
     public ?array $external = null;
     public ?int $favorites = null;
     public ?array $genres = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $jpg = null;
     public ?array $last_comment = null;
@@ -395,6 +402,7 @@ class MangaListMatch
     public ?array $external = null;
     public ?int $favorites = null;
     public ?array $genres = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $jpg = null;
     public ?array $last_comment = null;
@@ -458,6 +466,7 @@ class Person
     public ?string $family_name = null;
     public ?int $favorites = null;
     public ?string $given_name = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $jpg = null;
     public ?int $mal_id = null;
@@ -489,6 +498,7 @@ class PersonListMatch
     public ?string $family_name = null;
     public ?int $favorites = null;
     public ?string $given_name = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?array $jpg = null;
     public ?int $mal_id = null;
@@ -511,6 +521,7 @@ class Producer
     public ?string $established = null;
     public ?array $external = null;
     public ?int $favorites = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
     public ?string $name = null;
@@ -534,6 +545,7 @@ class ProducerListMatch
     public ?string $established = null;
     public ?array $external = null;
     public ?int $favorites = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
     public ?string $name = null;
@@ -749,6 +761,7 @@ class User
     public ?array $data = null;
     public ?array $external = null;
     public ?string $gender = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?string $joined = null;
     public ?string $last_online = null;
@@ -777,6 +790,7 @@ class UserListMatch
     public ?array $data = null;
     public ?array $external = null;
     public ?string $gender = null;
+    public ?string $id = null;
     public ?array $images = null;
     public ?string $joined = null;
     public ?string $last_online = null;

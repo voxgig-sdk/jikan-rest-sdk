@@ -2,75 +2,75 @@
   "existing": {
     "club": {
       "CLUB00": {
-        "access": "s8c",
+        "access": "s96",
         "anime": [],
-        "category": "s8e",
+        "category": "s98",
         "characters": [],
-        "created": "s90",
+        "created": "s9a",
         "data": [],
+        "id": "CLUB00",
         "images": {},
         "mal_id": "MAL01",
         "manga": [],
-        "members": "s95",
-        "name": "s96",
+        "members": "sa0",
+        "name": "sa1",
         "pagination": {},
-        "url": "s98",
-        "username": "s99",
-        "id": "CLUB00"
+        "url": "sa3",
+        "username": "sa4"
       },
       "CLUB01": {
-        "access": "s118",
+        "access": "s12c",
         "anime": [],
-        "category": "s11a",
+        "category": "s12e",
         "characters": [],
-        "created": "s11c",
+        "created": "s130",
         "data": [],
+        "id": "CLUB01",
         "images": {},
         "mal_id": "MAL01",
         "manga": [],
-        "members": "s121",
-        "name": "s122",
+        "members": "s136",
+        "name": "s137",
         "pagination": {},
-        "url": "s124",
-        "username": "s125",
-        "id": "CLUB01"
+        "url": "s139",
+        "username": "s13a"
       },
       "CLUB02": {
-        "access": "s1a4",
+        "access": "s1c2",
         "anime": [],
-        "category": "s1a6",
+        "category": "s1c4",
         "characters": [],
-        "created": "s1a8",
+        "created": "s1c6",
         "data": [],
+        "id": "CLUB02",
         "images": {},
         "mal_id": "MAL01",
         "manga": [],
-        "members": "s1ad",
-        "name": "s1ae",
+        "members": "s1cc",
+        "name": "s1cd",
         "pagination": {},
-        "url": "s1b0",
-        "username": "s1b1",
-        "id": "CLUB02"
+        "url": "s1cf",
+        "username": "s1d0"
       }
     }
   },
   "new": {
     "club": {
       "club_ref01": {
-        "access": "s230",
+        "access": "s258",
         "anime": [],
-        "category": "s232",
+        "category": "s25a",
         "characters": [],
-        "created": "s234",
+        "created": "s25c",
         "data": [],
         "images": {},
         "mal_id": "MAL01",
         "manga": [],
-        "members": "s239",
-        "name": "s23a",
+        "members": "s262",
+        "name": "s263",
         "pagination": {},
-        "url": "s23c",
-        "username": "s23d"
+        "url": "s265",
+        "username": "s266"
       }
     }
   }
