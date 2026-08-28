@@ -91,77 +91,25 @@ export interface AnimeLoadMatch {
 }
 
 export interface AnimeListMatch {
-  aired?: string
-  airing?: boolean
-  approved?: boolean
-  author_url?: string
-  author_username?: string
-  background?: string
-  broadcast?: Record<string, any>
-  character?: Record<string, any>
-  comments?: number
-  completed?: number
-  data?: any[]
-  date?: string
-  demographics?: any[]
-  dropped?: number
-  duration?: number
-  endings?: any[]
-  entry?: Record<string, any>
-  episodes?: number
-  explicit_genres?: any[]
-  external?: any[]
-  favorites?: number
-  filler?: boolean
-  genres?: any[]
-  id?: string
-  images?: Record<string, any>
-  last_comment?: Record<string, any>
-  licensors?: any[]
-  mal_id?: number
-  members?: number
-  moreinfo?: string
-  music_videos?: any[]
-  name?: string
-  on_hold?: number
-  openings?: any[]
-  pagination?: Record<string, any>
-  person?: Record<string, any>
-  plan_to_watch?: number
-  popularity?: number
-  positions?: any[]
-  producers?: any[]
-  promo?: any[]
-  rank?: number
+  end_date?: string
+  genre?: string
+  genres_exclude?: string
+  letter?: string
+  limit?: number
+  max_score?: number
+  min_score?: number
+  order_by?: string
+  page?: number
+  producer?: string
+  q?: string
   rating?: string
-  recap?: boolean
-  relation?: string
-  relations?: any[]
-  role?: string
   score?: number
-  scored_by?: number
-  scores?: any[]
-  season?: string
-  source?: string
+  sfw?: boolean
+  sort?: string
+  start_date?: string
   status?: string
-  streaming?: any[]
-  studios?: any[]
-  synopsis?: string
-  theme?: Record<string, any>
-  themes?: any[]
-  title?: string
-  title_english?: string
-  title_japanese?: string
-  title_romanji?: string
-  title_synonyms?: any[]
-  titles?: any[]
-  total?: number
-  trailer?: Record<string, any>
   type?: string
-  url?: string
-  voice_actors?: any[]
-  watching?: number
-  year?: number
+  unapproved?: boolean
 
   // Selects a custom action instead of the plain list:
   //   'character' | 'episode' | 'external' | 'forum' | 'new' | 'picture' | 'recommendation' | 'relation' | 'review' | 'staff' | 'streaming' | 'userupdate' | 'video_episode'
@@ -203,25 +151,12 @@ export interface CharacterLoadMatch {
 }
 
 export interface CharacterListMatch {
-  about?: string
-  anime?: any[]
-  data?: any[]
-  favorites?: number
-  id?: string
-  image_url?: string
-  images?: Record<string, any>
-  language?: string
-  large_image_url?: string
-  mal_id?: number
-  manga?: any[]
-  name?: string
-  name_kanji?: string
-  nicknames?: any[]
-  pagination?: Record<string, any>
-  person?: Record<string, any>
-  role?: string
-  url?: string
-  voices?: any[]
+  letter?: string
+  limit?: number
+  order_by?: string
+  page?: number
+  q?: string
+  sort?: string
 
   // Selects a custom action instead of the plain list:
   //   'anime' | 'manga' | 'picture' | 'voice'
@@ -259,21 +194,14 @@ export interface ClubLoadMatch {
 }
 
 export interface ClubListMatch {
-  access?: string
-  anime?: any[]
   category?: string
-  characters?: any[]
-  created?: string
-  data?: any[]
-  id?: string
-  images?: Record<string, any>
-  mal_id?: number
-  manga?: any[]
-  members?: number
-  name?: string
-  pagination?: Record<string, any>
-  url?: string
-  username?: string
+  letter?: string
+  limit?: number
+  order_by?: string
+  page?: number
+  q?: string
+  sort?: string
+  type?: string
 
   // Selects a custom action instead of the plain list:
   //   'member' | 'staff'
@@ -299,10 +227,7 @@ export interface Genre {
 }
 
 export interface GenreListMatch {
-  count?: number
-  mal_id?: number
-  name?: string
-  url?: string
+  filter?: string
 
   // Selects a custom action instead of the plain list:
   //   'anime' | 'manga'
@@ -317,8 +242,12 @@ export interface Magazine {
 }
 
 export interface MagazineListMatch {
-  data?: any[]
-  pagination?: Record<string, any>
+  letter?: string
+  limit?: number
+  order_by?: string
+  page?: number
+  q?: string
+  sort?: string
 }
 
 export interface Manga {
@@ -389,60 +318,24 @@ export interface MangaLoadMatch {
 }
 
 export interface MangaListMatch {
-  approved?: boolean
-  author_url?: string
-  author_username?: string
-  authors?: any[]
-  background?: string
-  chapters?: number
-  character?: Record<string, any>
-  comments?: number
-  completed?: number
-  data?: any[]
-  date?: string
-  demographics?: any[]
-  dropped?: number
-  entry?: Record<string, any>
-  explicit_genres?: any[]
-  external?: any[]
-  favorites?: number
-  genres?: any[]
-  id?: string
-  images?: Record<string, any>
-  jpg?: Record<string, any>
-  last_comment?: Record<string, any>
-  mal_id?: number
-  members?: number
-  moreinfo?: string
-  name?: string
-  on_hold?: number
-  pagination?: Record<string, any>
-  plan_to_read?: number
-  popularity?: number
-  published?: Record<string, any>
-  publishing?: boolean
-  rank?: number
-  reading?: number
-  relation?: string
-  relations?: any[]
-  role?: string
+  end_date?: string
+  genre?: string
+  genres_exclude?: string
+  letter?: string
+  limit?: number
+  magazine?: string
+  max_score?: number
+  min_score?: number
+  order_by?: string
+  page?: number
+  q?: string
   score?: number
-  scored_by?: number
-  scores?: any[]
-  serializations?: any[]
+  sfw?: boolean
+  sort?: string
+  start_date?: string
   status?: string
-  synopsis?: string
-  themes?: any[]
-  title?: string
-  title_english?: string
-  title_japanese?: string
-  title_synonyms?: any[]
-  titles?: any[]
-  total?: number
   type?: string
-  url?: string
-  volumes?: number
-  webp?: Record<string, any>
+  unapproved?: boolean
 
   // Selects a custom action instead of the plain list:
   //   'character' | 'external' | 'forum' | 'new' | 'picture' | 'recommendation' | 'relation' | 'review' | 'userupdate'
@@ -457,8 +350,8 @@ export interface PeopleSearch {
 }
 
 export interface PeopleSearchListMatch {
-  data?: any[]
-  pagination?: Record<string, any>
+  limit?: number
+  page?: number
 }
 
 export interface Person {
@@ -496,27 +389,12 @@ export interface PersonLoadMatch {
 }
 
 export interface PersonListMatch {
-  about?: string
-  alternate_names?: any[]
-  anime?: any[]
-  birthday?: string
-  character?: Record<string, any>
-  data?: any[]
-  family_name?: string
-  favorites?: number
-  given_name?: string
-  id?: string
-  images?: Record<string, any>
-  jpg?: Record<string, any>
-  mal_id?: number
-  manga?: any[]
-  name?: string
-  pagination?: Record<string, any>
-  position?: string
-  role?: string
-  url?: string
-  voices?: any[]
-  website_url?: string
+  letter?: string
+  limit?: number
+  order_by?: string
+  page?: number
+  q?: string
+  sort?: string
 
   // Selects a custom action instead of the plain list:
   //   'anime' | 'manga' | 'picture' | 'voice'
@@ -552,19 +430,12 @@ export interface ProducerLoadMatch {
 }
 
 export interface ProducerListMatch {
-  about?: string
-  count?: number
-  data?: any[]
-  established?: string
-  external?: any[]
-  favorites?: number
-  id?: string
-  images?: Record<string, any>
-  mal_id?: number
-  name?: string
-  pagination?: Record<string, any>
-  titles?: any[]
-  url?: string
+  letter?: string
+  limit?: number
+  order_by?: string
+  page?: number
+  q?: string
+  sort?: string
 
   // Selects a custom action instead of the plain list:
   //   'external'
@@ -704,6 +575,7 @@ export interface Recommendation {
 
 export interface RecommendationListMatch {
   username: string
+  page?: number
 
   // Selects a custom action instead of the plain list:
   //   'anime' | 'manga'
@@ -716,6 +588,9 @@ export interface Review {
 }
 
 export interface ReviewLoadMatch {
+  page?: number
+  preliminary?: boolean
+  spoiler?: boolean
 
   // Selects a custom action instead of the plain load:
   //   'anime' | 'manga'
@@ -730,8 +605,12 @@ export interface Schedule {
 }
 
 export interface ScheduleListMatch {
-  data?: any[]
-  pagination?: Record<string, any>
+  filter?: string
+  kid?: string
+  limit?: number
+  page?: number
+  sfw?: string
+  unapproved?: boolean
 }
 
 export interface Season {
@@ -744,6 +623,12 @@ export interface Season {
 export interface SeasonLoadMatch {
   season: string
   year: number
+  continuing?: boolean
+  filter?: string
+  limit?: number
+  page?: number
+  sfw?: boolean
+  unapproved?: boolean
 }
 
 export interface SeasonListMatch {
@@ -765,8 +650,10 @@ export interface Top {
 }
 
 export interface TopLoadMatch {
-  data?: any[]
-  pagination?: Record<string, any>
+  page?: number
+  preliminary?: boolean
+  spoiler?: boolean
+  type?: string
 
   // Selects a custom action instead of the plain load:
   //   'review'
@@ -807,24 +694,13 @@ export interface UserLoadMatch {
 }
 
 export interface UserListMatch {
-  anime?: any[]
-  birthday?: string
-  characters?: any[]
-  data?: any[]
-  external?: any[]
   gender?: string
-  id?: string
-  images?: Record<string, any>
-  joined?: string
-  last_online?: string
+  limit?: number
   location?: string
-  mal_id?: number
-  manga?: any[]
-  pagination?: Record<string, any>
-  people?: any[]
-  statistics?: Record<string, any>
-  url?: string
-  username?: string
+  max_age?: number
+  min_age?: number
+  page?: number
+  q?: string
 }
 
 export interface UserAbout {
@@ -842,6 +718,7 @@ export interface UserClub {
 
 export interface UserClubListMatch {
   username: string
+  page?: number
 }
 
 export interface UserFriend {
@@ -851,6 +728,7 @@ export interface UserFriend {
 
 export interface UserFriendListMatch {
   username: string
+  page?: number
 }
 
 export interface UserHistory {
@@ -861,6 +739,7 @@ export interface UserHistory {
 
 export interface UserHistoryListMatch {
   username: string
+  type?: string
 }
 
 export interface UserStatistic {
@@ -897,7 +776,6 @@ export interface WatchPromo {
 }
 
 export interface WatchPromoListMatch {
-  data?: any[]
-  pagination?: Record<string, any>
+  page?: number
 }
 

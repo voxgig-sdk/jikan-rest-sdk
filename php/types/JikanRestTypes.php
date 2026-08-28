@@ -98,77 +98,25 @@ class AnimeLoadMatch
 /** Request payload for Anime#list. */
 class AnimeListMatch
 {
-    public ?string $aired = null;
-    public ?bool $airing = null;
-    public ?bool $approved = null;
-    public ?string $author_url = null;
-    public ?string $author_username = null;
-    public ?string $background = null;
-    public ?array $broadcast = null;
-    public ?array $character = null;
-    public ?int $comments = null;
-    public ?int $completed = null;
-    public ?array $data = null;
-    public ?string $date = null;
-    public ?array $demographics = null;
-    public ?int $dropped = null;
-    public ?int $duration = null;
-    public ?array $endings = null;
-    public ?array $entry = null;
-    public ?int $episodes = null;
-    public ?array $explicit_genres = null;
-    public ?array $external = null;
-    public ?int $favorites = null;
-    public ?bool $filler = null;
-    public ?array $genres = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?array $last_comment = null;
-    public ?array $licensors = null;
-    public ?int $mal_id = null;
-    public ?int $members = null;
-    public ?string $moreinfo = null;
-    public ?array $music_videos = null;
-    public ?string $name = null;
-    public ?int $on_hold = null;
-    public ?array $openings = null;
-    public ?array $pagination = null;
-    public ?array $person = null;
-    public ?int $plan_to_watch = null;
-    public ?int $popularity = null;
-    public ?array $positions = null;
-    public ?array $producers = null;
-    public ?array $promo = null;
-    public ?int $rank = null;
+    public ?string $end_date = null;
+    public ?string $genre = null;
+    public ?string $genres_exclude = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?float $max_score = null;
+    public ?float $min_score = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $producer = null;
+    public ?string $q = null;
     public ?string $rating = null;
-    public ?bool $recap = null;
-    public ?string $relation = null;
-    public ?array $relations = null;
-    public ?string $role = null;
     public ?float $score = null;
-    public ?int $scored_by = null;
-    public ?array $scores = null;
-    public ?string $season = null;
-    public ?string $source = null;
+    public ?bool $sfw = null;
+    public ?string $sort = null;
+    public ?string $start_date = null;
     public ?string $status = null;
-    public ?array $streaming = null;
-    public ?array $studios = null;
-    public ?string $synopsis = null;
-    public ?array $theme = null;
-    public ?array $themes = null;
-    public ?string $title = null;
-    public ?string $title_english = null;
-    public ?string $title_japanese = null;
-    public ?string $title_romanji = null;
-    public ?array $title_synonyms = null;
-    public ?array $titles = null;
-    public ?int $total = null;
-    public ?array $trailer = null;
     public ?string $type = null;
-    public ?string $url = null;
-    public ?array $voice_actors = null;
-    public ?int $watching = null;
-    public ?int $year = null;
+    public ?bool $unapproved = null;
 }
 
 /** Character entity data model. */
@@ -204,25 +152,12 @@ class CharacterLoadMatch
 /** Request payload for Character#list. */
 class CharacterListMatch
 {
-    public ?string $about = null;
-    public ?array $anime = null;
-    public ?array $data = null;
-    public ?int $favorites = null;
-    public ?string $id = null;
-    public ?string $image_url = null;
-    public ?array $images = null;
-    public ?string $language = null;
-    public ?string $large_image_url = null;
-    public ?int $mal_id = null;
-    public ?array $manga = null;
-    public ?string $name = null;
-    public ?string $name_kanji = null;
-    public ?array $nicknames = null;
-    public ?array $pagination = null;
-    public ?array $person = null;
-    public ?string $role = null;
-    public ?string $url = null;
-    public ?array $voices = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
+    public ?string $sort = null;
 }
 
 /** Club entity data model. */
@@ -254,21 +189,14 @@ class ClubLoadMatch
 /** Request payload for Club#list. */
 class ClubListMatch
 {
-    public ?string $access = null;
-    public ?array $anime = null;
     public ?string $category = null;
-    public ?array $characters = null;
-    public ?string $created = null;
-    public ?array $data = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?int $mal_id = null;
-    public ?array $manga = null;
-    public ?int $members = null;
-    public ?string $name = null;
-    public ?array $pagination = null;
-    public ?string $url = null;
-    public ?string $username = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
+    public ?string $sort = null;
+    public ?string $type = null;
 }
 
 /** External entity data model. */
@@ -296,10 +224,7 @@ class Genre
 /** Request payload for Genre#list. */
 class GenreListMatch
 {
-    public ?int $count = null;
-    public ?int $mal_id = null;
-    public ?string $name = null;
-    public ?string $url = null;
+    public ?string $filter = null;
 }
 
 /** Magazine entity data model. */
@@ -312,8 +237,12 @@ class Magazine
 /** Request payload for Magazine#list. */
 class MagazineListMatch
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
+    public ?string $sort = null;
 }
 
 /** Manga entity data model. */
@@ -384,60 +313,24 @@ class MangaLoadMatch
 /** Request payload for Manga#list. */
 class MangaListMatch
 {
-    public ?bool $approved = null;
-    public ?string $author_url = null;
-    public ?string $author_username = null;
-    public ?array $authors = null;
-    public ?string $background = null;
-    public ?int $chapters = null;
-    public ?array $character = null;
-    public ?int $comments = null;
-    public ?int $completed = null;
-    public ?array $data = null;
-    public ?string $date = null;
-    public ?array $demographics = null;
-    public ?int $dropped = null;
-    public ?array $entry = null;
-    public ?array $explicit_genres = null;
-    public ?array $external = null;
-    public ?int $favorites = null;
-    public ?array $genres = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?array $jpg = null;
-    public ?array $last_comment = null;
-    public ?int $mal_id = null;
-    public ?int $members = null;
-    public ?string $moreinfo = null;
-    public ?string $name = null;
-    public ?int $on_hold = null;
-    public ?array $pagination = null;
-    public ?int $plan_to_read = null;
-    public ?int $popularity = null;
-    public ?array $published = null;
-    public ?bool $publishing = null;
-    public ?int $rank = null;
-    public ?int $reading = null;
-    public ?string $relation = null;
-    public ?array $relations = null;
-    public ?string $role = null;
+    public ?string $end_date = null;
+    public ?string $genre = null;
+    public ?string $genres_exclude = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $magazine = null;
+    public ?float $max_score = null;
+    public ?float $min_score = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
     public ?float $score = null;
-    public ?int $scored_by = null;
-    public ?array $scores = null;
-    public ?array $serializations = null;
+    public ?bool $sfw = null;
+    public ?string $sort = null;
+    public ?string $start_date = null;
     public ?string $status = null;
-    public ?string $synopsis = null;
-    public ?array $themes = null;
-    public ?string $title = null;
-    public ?string $title_english = null;
-    public ?string $title_japanese = null;
-    public ?array $title_synonyms = null;
-    public ?array $titles = null;
-    public ?int $total = null;
     public ?string $type = null;
-    public ?string $url = null;
-    public ?int $volumes = null;
-    public ?array $webp = null;
+    public ?bool $unapproved = null;
 }
 
 /** PeopleSearch entity data model. */
@@ -450,8 +343,8 @@ class PeopleSearch
 /** Request payload for PeopleSearch#list. */
 class PeopleSearchListMatch
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
+    public ?int $limit = null;
+    public ?int $page = null;
 }
 
 /** Person entity data model. */
@@ -489,27 +382,12 @@ class PersonLoadMatch
 /** Request payload for Person#list. */
 class PersonListMatch
 {
-    public ?string $about = null;
-    public ?array $alternate_names = null;
-    public ?array $anime = null;
-    public ?string $birthday = null;
-    public ?array $character = null;
-    public ?array $data = null;
-    public ?string $family_name = null;
-    public ?int $favorites = null;
-    public ?string $given_name = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?array $jpg = null;
-    public ?int $mal_id = null;
-    public ?array $manga = null;
-    public ?string $name = null;
-    public ?array $pagination = null;
-    public ?string $position = null;
-    public ?string $role = null;
-    public ?string $url = null;
-    public ?array $voices = null;
-    public ?string $website_url = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
+    public ?string $sort = null;
 }
 
 /** Producer entity data model. */
@@ -539,19 +417,12 @@ class ProducerLoadMatch
 /** Request payload for Producer#list. */
 class ProducerListMatch
 {
-    public ?string $about = null;
-    public ?int $count = null;
-    public ?array $data = null;
-    public ?string $established = null;
-    public ?array $external = null;
-    public ?int $favorites = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?int $mal_id = null;
-    public ?string $name = null;
-    public ?array $pagination = null;
-    public ?array $titles = null;
-    public ?string $url = null;
+    public ?string $letter = null;
+    public ?int $limit = null;
+    public ?string $order_by = null;
+    public ?int $page = null;
+    public ?string $q = null;
+    public ?string $sort = null;
 }
 
 /** Random entity data model. */
@@ -687,6 +558,7 @@ class Recommendation
 class RecommendationListMatch
 {
     public string $username;
+    public ?int $page = null;
 }
 
 /** Review entity data model. */
@@ -697,6 +569,9 @@ class Review
 /** Request payload for Review#load. */
 class ReviewLoadMatch
 {
+    public ?int $page = null;
+    public ?bool $preliminary = null;
+    public ?bool $spoiler = null;
 }
 
 /** Schedule entity data model. */
@@ -709,8 +584,12 @@ class Schedule
 /** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
+    public ?string $filter = null;
+    public ?string $kid = null;
+    public ?int $limit = null;
+    public ?int $page = null;
+    public ?string $sfw = null;
+    public ?bool $unapproved = null;
 }
 
 /** Season entity data model. */
@@ -727,6 +606,12 @@ class SeasonLoadMatch
 {
     public string $season;
     public int $year;
+    public ?bool $continuing = null;
+    public ?string $filter = null;
+    public ?int $limit = null;
+    public ?int $page = null;
+    public ?bool $sfw = null;
+    public ?bool $unapproved = null;
 }
 
 /** Request payload for Season#list. */
@@ -748,8 +633,10 @@ class Top
 /** Request payload for Top#load. */
 class TopLoadMatch
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
+    public ?int $page = null;
+    public ?bool $preliminary = null;
+    public ?bool $spoiler = null;
+    public ?string $type = null;
 }
 
 /** User entity data model. */
@@ -784,24 +671,13 @@ class UserLoadMatch
 /** Request payload for User#list. */
 class UserListMatch
 {
-    public ?array $anime = null;
-    public ?string $birthday = null;
-    public ?array $characters = null;
-    public ?array $data = null;
-    public ?array $external = null;
     public ?string $gender = null;
-    public ?string $id = null;
-    public ?array $images = null;
-    public ?string $joined = null;
-    public ?string $last_online = null;
+    public ?int $limit = null;
     public ?string $location = null;
-    public ?int $mal_id = null;
-    public ?array $manga = null;
-    public ?array $pagination = null;
-    public ?array $people = null;
-    public ?array $statistics = null;
-    public ?string $url = null;
-    public ?string $username = null;
+    public ?int $max_age = null;
+    public ?int $min_age = null;
+    public ?int $page = null;
+    public ?string $q = null;
 }
 
 /** UserAbout entity data model. */
@@ -827,6 +703,7 @@ class UserClub
 class UserClubListMatch
 {
     public string $username;
+    public ?int $page = null;
 }
 
 /** UserFriend entity data model. */
@@ -840,6 +717,7 @@ class UserFriend
 class UserFriendListMatch
 {
     public string $username;
+    public ?int $page = null;
 }
 
 /** UserHistory entity data model. */
@@ -854,6 +732,7 @@ class UserHistory
 class UserHistoryListMatch
 {
     public string $username;
+    public ?string $type = null;
 }
 
 /** UserStatistic entity data model. */
@@ -906,7 +785,6 @@ class WatchPromo
 /** Request payload for WatchPromo#list. */
 class WatchPromoListMatch
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
+    public ?int $page = null;
 }
 

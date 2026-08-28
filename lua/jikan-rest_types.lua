@@ -84,77 +84,25 @@
 ---@field id number
 
 ---@class AnimeListMatch
----@field aired? string
----@field airing? boolean
----@field approved? boolean
----@field author_url? string
----@field author_username? string
----@field background? string
----@field broadcast? table
----@field character? table
----@field comments? number
----@field completed? number
----@field data? table
----@field date? string
----@field demographics? table
----@field dropped? number
----@field duration? number
----@field endings? table
----@field entry? table
----@field episodes? number
----@field explicit_genres? table
----@field external? table
----@field favorites? number
----@field filler? boolean
----@field genres? table
----@field id? string
----@field images? table
----@field last_comment? table
----@field licensors? table
----@field mal_id? number
----@field members? number
----@field moreinfo? string
----@field music_videos? table
----@field name? string
----@field on_hold? number
----@field openings? table
----@field pagination? table
----@field person? table
----@field plan_to_watch? number
----@field popularity? number
----@field positions? table
----@field producers? table
----@field promo? table
----@field rank? number
+---@field end_date? string
+---@field genre? string
+---@field genres_exclude? string
+---@field letter? string
+---@field limit? number
+---@field max_score? number
+---@field min_score? number
+---@field order_by? string
+---@field page? number
+---@field producer? string
+---@field q? string
 ---@field rating? string
----@field recap? boolean
----@field relation? string
----@field relations? table
----@field role? string
 ---@field score? number
----@field scored_by? number
----@field scores? table
----@field season? string
----@field source? string
+---@field sfw? boolean
+---@field sort? string
+---@field start_date? string
 ---@field status? string
----@field streaming? table
----@field studios? table
----@field synopsis? string
----@field theme? table
----@field themes? table
----@field title? string
----@field title_english? string
----@field title_japanese? string
----@field title_romanji? string
----@field title_synonyms? table
----@field titles? table
----@field total? number
----@field trailer? table
 ---@field type? string
----@field url? string
----@field voice_actors? table
----@field watching? number
----@field year? number
+---@field unapproved? boolean
 
 ---@class Character
 ---@field about? string
@@ -181,25 +129,12 @@
 ---@field id number
 
 ---@class CharacterListMatch
----@field about? string
----@field anime? table
----@field data? table
----@field favorites? number
----@field id? string
----@field image_url? string
----@field images? table
----@field language? string
----@field large_image_url? string
----@field mal_id? number
----@field manga? table
----@field name? string
----@field name_kanji? string
----@field nicknames? table
----@field pagination? table
----@field person? table
----@field role? string
----@field url? string
----@field voices? table
+---@field letter? string
+---@field limit? number
+---@field order_by? string
+---@field page? number
+---@field q? string
+---@field sort? string
 
 ---@class Club
 ---@field access? string
@@ -222,21 +157,14 @@
 ---@field id number
 
 ---@class ClubListMatch
----@field access? string
----@field anime? table
 ---@field category? string
----@field characters? table
----@field created? string
----@field data? table
----@field id? string
----@field images? table
----@field mal_id? number
----@field manga? table
----@field members? number
----@field name? string
----@field pagination? table
----@field url? string
----@field username? string
+---@field letter? string
+---@field limit? number
+---@field order_by? string
+---@field page? number
+---@field q? string
+---@field sort? string
+---@field type? string
 
 ---@class External
 ---@field name? string
@@ -252,18 +180,19 @@
 ---@field url? string
 
 ---@class GenreListMatch
----@field count? number
----@field mal_id? number
----@field name? string
----@field url? string
+---@field filter? string
 
 ---@class Magazine
 ---@field data? table
 ---@field pagination? table
 
 ---@class MagazineListMatch
----@field data? table
----@field pagination? table
+---@field letter? string
+---@field limit? number
+---@field order_by? string
+---@field page? number
+---@field q? string
+---@field sort? string
 
 ---@class Manga
 ---@field approved? boolean
@@ -325,68 +254,32 @@
 ---@field id number
 
 ---@class MangaListMatch
----@field approved? boolean
----@field author_url? string
----@field author_username? string
----@field authors? table
----@field background? string
----@field chapters? number
----@field character? table
----@field comments? number
----@field completed? number
----@field data? table
----@field date? string
----@field demographics? table
----@field dropped? number
----@field entry? table
----@field explicit_genres? table
----@field external? table
----@field favorites? number
----@field genres? table
----@field id? string
----@field images? table
----@field jpg? table
----@field last_comment? table
----@field mal_id? number
----@field members? number
----@field moreinfo? string
----@field name? string
----@field on_hold? number
----@field pagination? table
----@field plan_to_read? number
----@field popularity? number
----@field published? table
----@field publishing? boolean
----@field rank? number
----@field reading? number
----@field relation? string
----@field relations? table
----@field role? string
+---@field end_date? string
+---@field genre? string
+---@field genres_exclude? string
+---@field letter? string
+---@field limit? number
+---@field magazine? string
+---@field max_score? number
+---@field min_score? number
+---@field order_by? string
+---@field page? number
+---@field q? string
 ---@field score? number
----@field scored_by? number
----@field scores? table
----@field serializations? table
+---@field sfw? boolean
+---@field sort? string
+---@field start_date? string
 ---@field status? string
----@field synopsis? string
----@field themes? table
----@field title? string
----@field title_english? string
----@field title_japanese? string
----@field title_synonyms? table
----@field titles? table
----@field total? number
 ---@field type? string
----@field url? string
----@field volumes? number
----@field webp? table
+---@field unapproved? boolean
 
 ---@class PeopleSearch
 ---@field data? table
 ---@field pagination? table
 
 ---@class PeopleSearchListMatch
----@field data? table
----@field pagination? table
+---@field limit? number
+---@field page? number
 
 ---@class Person
 ---@field about? string
@@ -415,27 +308,12 @@
 ---@field id number
 
 ---@class PersonListMatch
----@field about? string
----@field alternate_names? table
----@field anime? table
----@field birthday? string
----@field character? table
----@field data? table
----@field family_name? string
----@field favorites? number
----@field given_name? string
----@field id? string
----@field images? table
----@field jpg? table
----@field mal_id? number
----@field manga? table
----@field name? string
----@field pagination? table
----@field position? string
----@field role? string
----@field url? string
----@field voices? table
----@field website_url? string
+---@field letter? string
+---@field limit? number
+---@field order_by? string
+---@field page? number
+---@field q? string
+---@field sort? string
 
 ---@class Producer
 ---@field about? string
@@ -456,19 +334,12 @@
 ---@field id number
 
 ---@class ProducerListMatch
----@field about? string
----@field count? number
----@field data? table
----@field established? string
----@field external? table
----@field favorites? number
----@field id? string
----@field images? table
----@field mal_id? number
----@field name? string
----@field pagination? table
----@field titles? table
----@field url? string
+---@field letter? string
+---@field limit? number
+---@field order_by? string
+---@field page? number
+---@field q? string
+---@field sort? string
 
 ---@class Random
 ---@field about? string
@@ -592,18 +463,26 @@
 
 ---@class RecommendationListMatch
 ---@field username string
+---@field page? number
 
 ---@class Review
 
 ---@class ReviewLoadMatch
+---@field page? number
+---@field preliminary? boolean
+---@field spoiler? boolean
 
 ---@class Schedule
 ---@field data? table
 ---@field pagination? table
 
 ---@class ScheduleListMatch
----@field data? table
----@field pagination? table
+---@field filter? string
+---@field kid? string
+---@field limit? number
+---@field page? number
+---@field sfw? string
+---@field unapproved? boolean
 
 ---@class Season
 ---@field data? table
@@ -614,6 +493,12 @@
 ---@class SeasonLoadMatch
 ---@field season string
 ---@field year number
+---@field continuing? boolean
+---@field filter? string
+---@field limit? number
+---@field page? number
+---@field sfw? boolean
+---@field unapproved? boolean
 
 ---@class SeasonListMatch
 ---@field data? table
@@ -626,8 +511,10 @@
 ---@field pagination? table
 
 ---@class TopLoadMatch
----@field data? table
----@field pagination? table
+---@field page? number
+---@field preliminary? boolean
+---@field spoiler? boolean
+---@field type? string
 
 ---@class User
 ---@field anime? table
@@ -653,24 +540,13 @@
 ---@field id number
 
 ---@class UserListMatch
----@field anime? table
----@field birthday? string
----@field characters? table
----@field data? table
----@field external? table
 ---@field gender? string
----@field id? string
----@field images? table
----@field joined? string
----@field last_online? string
+---@field limit? number
 ---@field location? string
----@field mal_id? number
----@field manga? table
----@field pagination? table
----@field people? table
----@field statistics? table
----@field url? string
----@field username? string
+---@field max_age? number
+---@field min_age? number
+---@field page? number
+---@field q? string
 
 ---@class UserAbout
 ---@field about? string
@@ -684,6 +560,7 @@
 
 ---@class UserClubListMatch
 ---@field username string
+---@field page? number
 
 ---@class UserFriend
 ---@field data? table
@@ -691,6 +568,7 @@
 
 ---@class UserFriendListMatch
 ---@field username string
+---@field page? number
 
 ---@class UserHistory
 ---@field date? string
@@ -699,6 +577,7 @@
 
 ---@class UserHistoryListMatch
 ---@field username string
+---@field type? string
 
 ---@class UserStatistic
 ---@field anime? table
@@ -727,8 +606,7 @@
 ---@field pagination? table
 
 ---@class WatchPromoListMatch
----@field data? table
----@field pagination? table
+---@field page? number
 
 local M = {}
 

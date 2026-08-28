@@ -95,77 +95,25 @@ type AnimeLoadMatch struct {
 
 // AnimeListMatch is the typed request payload for Anime.ListTyped.
 type AnimeListMatch struct {
-	Aired *string `json:"aired,omitempty"`
-	Airing *bool `json:"airing,omitempty"`
-	Approved *bool `json:"approved,omitempty"`
-	AuthorUrl *string `json:"author_url,omitempty"`
-	AuthorUsername *string `json:"author_username,omitempty"`
-	Background *string `json:"background,omitempty"`
-	Broadcast *map[string]any `json:"broadcast,omitempty"`
-	Character *map[string]any `json:"character,omitempty"`
-	Comments *int `json:"comments,omitempty"`
-	Completed *int `json:"completed,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Date *string `json:"date,omitempty"`
-	Demographics *[]any `json:"demographics,omitempty"`
-	Dropped *int `json:"dropped,omitempty"`
-	Duration *int `json:"duration,omitempty"`
-	Endings *[]any `json:"endings,omitempty"`
-	Entry *map[string]any `json:"entry,omitempty"`
-	Episodes *int `json:"episodes,omitempty"`
-	ExplicitGenres *[]any `json:"explicit_genres,omitempty"`
-	External *[]any `json:"external,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Filler *bool `json:"filler,omitempty"`
-	Genres *[]any `json:"genres,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	LastComment *map[string]any `json:"last_comment,omitempty"`
-	Licensors *[]any `json:"licensors,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Moreinfo *string `json:"moreinfo,omitempty"`
-	MusicVideos *[]any `json:"music_videos,omitempty"`
-	Name *string `json:"name,omitempty"`
-	OnHold *int `json:"on_hold,omitempty"`
-	Openings *[]any `json:"openings,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Person *map[string]any `json:"person,omitempty"`
-	PlanToWatch *int `json:"plan_to_watch,omitempty"`
-	Popularity *int `json:"popularity,omitempty"`
-	Positions *[]any `json:"positions,omitempty"`
-	Producers *[]any `json:"producers,omitempty"`
-	Promo *[]any `json:"promo,omitempty"`
-	Rank *int `json:"rank,omitempty"`
+	EndDate *string `json:"end_date,omitempty"`
+	Genre *string `json:"genre,omitempty"`
+	GenresExclude *string `json:"genres_exclude,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	MaxScore *float64 `json:"max_score,omitempty"`
+	MinScore *float64 `json:"min_score,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Producer *string `json:"producer,omitempty"`
+	Q *string `json:"q,omitempty"`
 	Rating *string `json:"rating,omitempty"`
-	Recap *bool `json:"recap,omitempty"`
-	Relation *string `json:"relation,omitempty"`
-	Relations *[]any `json:"relations,omitempty"`
-	Role *string `json:"role,omitempty"`
 	Score *float64 `json:"score,omitempty"`
-	ScoredBy *int `json:"scored_by,omitempty"`
-	Scores *[]any `json:"scores,omitempty"`
-	Season *string `json:"season,omitempty"`
-	Source *string `json:"source,omitempty"`
+	Sfw *bool `json:"sfw,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	StartDate *string `json:"start_date,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Streaming *[]any `json:"streaming,omitempty"`
-	Studios *[]any `json:"studios,omitempty"`
-	Synopsis *string `json:"synopsis,omitempty"`
-	Theme *map[string]any `json:"theme,omitempty"`
-	Themes *[]any `json:"themes,omitempty"`
-	Title *string `json:"title,omitempty"`
-	TitleEnglish *string `json:"title_english,omitempty"`
-	TitleJapanese *string `json:"title_japanese,omitempty"`
-	TitleRomanji *string `json:"title_romanji,omitempty"`
-	TitleSynonyms *[]any `json:"title_synonyms,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Total *int `json:"total,omitempty"`
-	Trailer *map[string]any `json:"trailer,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Url *string `json:"url,omitempty"`
-	VoiceActors *[]any `json:"voice_actors,omitempty"`
-	Watching *int `json:"watching,omitempty"`
-	Year *int `json:"year,omitempty"`
+	Unapproved *bool `json:"unapproved,omitempty"`
 }
 
 // Character is the typed data model for the character entity.
@@ -198,25 +146,12 @@ type CharacterLoadMatch struct {
 
 // CharacterListMatch is the typed request payload for Character.ListTyped.
 type CharacterListMatch struct {
-	About *string `json:"about,omitempty"`
-	Anime *[]any `json:"anime,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Id *string `json:"id,omitempty"`
-	ImageUrl *string `json:"image_url,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Language *string `json:"language,omitempty"`
-	LargeImageUrl *string `json:"large_image_url,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Manga *[]any `json:"manga,omitempty"`
-	Name *string `json:"name,omitempty"`
-	NameKanji *string `json:"name_kanji,omitempty"`
-	Nicknames *[]any `json:"nicknames,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Person *map[string]any `json:"person,omitempty"`
-	Role *string `json:"role,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Voices *[]any `json:"voices,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
+	Sort *string `json:"sort,omitempty"`
 }
 
 // Club is the typed data model for the club entity.
@@ -245,21 +180,14 @@ type ClubLoadMatch struct {
 
 // ClubListMatch is the typed request payload for Club.ListTyped.
 type ClubListMatch struct {
-	Access *string `json:"access,omitempty"`
-	Anime *[]any `json:"anime,omitempty"`
 	Category *string `json:"category,omitempty"`
-	Characters *[]any `json:"characters,omitempty"`
-	Created *string `json:"created,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Manga *[]any `json:"manga,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Username *string `json:"username,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // External is the typed data model for the external entity.
@@ -283,10 +211,7 @@ type Genre struct {
 
 // GenreListMatch is the typed request payload for Genre.ListTyped.
 type GenreListMatch struct {
-	Count *int `json:"count,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Filter *string `json:"filter,omitempty"`
 }
 
 // Magazine is the typed data model for the magazine entity.
@@ -297,8 +222,12 @@ type Magazine struct {
 
 // MagazineListMatch is the typed request payload for Magazine.ListTyped.
 type MagazineListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
+	Sort *string `json:"sort,omitempty"`
 }
 
 // Manga is the typed data model for the manga entity.
@@ -366,60 +295,24 @@ type MangaLoadMatch struct {
 
 // MangaListMatch is the typed request payload for Manga.ListTyped.
 type MangaListMatch struct {
-	Approved *bool `json:"approved,omitempty"`
-	AuthorUrl *string `json:"author_url,omitempty"`
-	AuthorUsername *string `json:"author_username,omitempty"`
-	Authors *[]any `json:"authors,omitempty"`
-	Background *string `json:"background,omitempty"`
-	Chapters *int `json:"chapters,omitempty"`
-	Character *map[string]any `json:"character,omitempty"`
-	Comments *int `json:"comments,omitempty"`
-	Completed *int `json:"completed,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Date *string `json:"date,omitempty"`
-	Demographics *[]any `json:"demographics,omitempty"`
-	Dropped *int `json:"dropped,omitempty"`
-	Entry *map[string]any `json:"entry,omitempty"`
-	ExplicitGenres *[]any `json:"explicit_genres,omitempty"`
-	External *[]any `json:"external,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Genres *[]any `json:"genres,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Jpg *map[string]any `json:"jpg,omitempty"`
-	LastComment *map[string]any `json:"last_comment,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Moreinfo *string `json:"moreinfo,omitempty"`
-	Name *string `json:"name,omitempty"`
-	OnHold *int `json:"on_hold,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	PlanToRead *int `json:"plan_to_read,omitempty"`
-	Popularity *int `json:"popularity,omitempty"`
-	Published *map[string]any `json:"published,omitempty"`
-	Publishing *bool `json:"publishing,omitempty"`
-	Rank *int `json:"rank,omitempty"`
-	Reading *int `json:"reading,omitempty"`
-	Relation *string `json:"relation,omitempty"`
-	Relations *[]any `json:"relations,omitempty"`
-	Role *string `json:"role,omitempty"`
+	EndDate *string `json:"end_date,omitempty"`
+	Genre *string `json:"genre,omitempty"`
+	GenresExclude *string `json:"genres_exclude,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Magazine *string `json:"magazine,omitempty"`
+	MaxScore *float64 `json:"max_score,omitempty"`
+	MinScore *float64 `json:"min_score,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
 	Score *float64 `json:"score,omitempty"`
-	ScoredBy *int `json:"scored_by,omitempty"`
-	Scores *[]any `json:"scores,omitempty"`
-	Serializations *[]any `json:"serializations,omitempty"`
+	Sfw *bool `json:"sfw,omitempty"`
+	Sort *string `json:"sort,omitempty"`
+	StartDate *string `json:"start_date,omitempty"`
 	Status *string `json:"status,omitempty"`
-	Synopsis *string `json:"synopsis,omitempty"`
-	Themes *[]any `json:"themes,omitempty"`
-	Title *string `json:"title,omitempty"`
-	TitleEnglish *string `json:"title_english,omitempty"`
-	TitleJapanese *string `json:"title_japanese,omitempty"`
-	TitleSynonyms *[]any `json:"title_synonyms,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Total *int `json:"total,omitempty"`
 	Type *string `json:"type,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Volumes *int `json:"volumes,omitempty"`
-	Webp *map[string]any `json:"webp,omitempty"`
+	Unapproved *bool `json:"unapproved,omitempty"`
 }
 
 // PeopleSearch is the typed data model for the people_search entity.
@@ -430,8 +323,8 @@ type PeopleSearch struct {
 
 // PeopleSearchListMatch is the typed request payload for PeopleSearch.ListTyped.
 type PeopleSearchListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
 }
 
 // Person is the typed data model for the person entity.
@@ -466,27 +359,12 @@ type PersonLoadMatch struct {
 
 // PersonListMatch is the typed request payload for Person.ListTyped.
 type PersonListMatch struct {
-	About *string `json:"about,omitempty"`
-	AlternateNames *[]any `json:"alternate_names,omitempty"`
-	Anime *[]any `json:"anime,omitempty"`
-	Birthday *string `json:"birthday,omitempty"`
-	Character *map[string]any `json:"character,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	FamilyName *string `json:"family_name,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	GivenName *string `json:"given_name,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Jpg *map[string]any `json:"jpg,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Manga *[]any `json:"manga,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Position *string `json:"position,omitempty"`
-	Role *string `json:"role,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Voices *[]any `json:"voices,omitempty"`
-	WebsiteUrl *string `json:"website_url,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
+	Sort *string `json:"sort,omitempty"`
 }
 
 // Producer is the typed data model for the producer entity.
@@ -513,19 +391,12 @@ type ProducerLoadMatch struct {
 
 // ProducerListMatch is the typed request payload for Producer.ListTyped.
 type ProducerListMatch struct {
-	About *string `json:"about,omitempty"`
-	Count *int `json:"count,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Established *string `json:"established,omitempty"`
-	External *[]any `json:"external,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Url *string `json:"url,omitempty"`
+	Letter *string `json:"letter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	OrderBy *string `json:"order_by,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
+	Sort *string `json:"sort,omitempty"`
 }
 
 // Random is the typed data model for the random entity.
@@ -657,6 +528,7 @@ type Recommendation struct {
 // RecommendationListMatch is the typed request payload for Recommendation.ListTyped.
 type RecommendationListMatch struct {
 	Username string `json:"username"`
+	Page *int `json:"page,omitempty"`
 }
 
 // Review is the typed data model for the review entity.
@@ -665,6 +537,9 @@ type Review struct {
 
 // ReviewLoadMatch is the typed request payload for Review.LoadTyped.
 type ReviewLoadMatch struct {
+	Page *int `json:"page,omitempty"`
+	Preliminary *bool `json:"preliminary,omitempty"`
+	Spoiler *bool `json:"spoiler,omitempty"`
 }
 
 // Schedule is the typed data model for the schedule entity.
@@ -675,8 +550,12 @@ type Schedule struct {
 
 // ScheduleListMatch is the typed request payload for Schedule.ListTyped.
 type ScheduleListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
+	Filter *string `json:"filter,omitempty"`
+	Kid *string `json:"kid,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Sfw *string `json:"sfw,omitempty"`
+	Unapproved *bool `json:"unapproved,omitempty"`
 }
 
 // Season is the typed data model for the season entity.
@@ -691,6 +570,12 @@ type Season struct {
 type SeasonLoadMatch struct {
 	Season string `json:"season"`
 	Year int `json:"year"`
+	Continuing *bool `json:"continuing,omitempty"`
+	Filter *string `json:"filter,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Sfw *bool `json:"sfw,omitempty"`
+	Unapproved *bool `json:"unapproved,omitempty"`
 }
 
 // SeasonListMatch is the typed request payload for Season.ListTyped.
@@ -709,8 +594,10 @@ type Top struct {
 
 // TopLoadMatch is the typed request payload for Top.LoadTyped.
 type TopLoadMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Preliminary *bool `json:"preliminary,omitempty"`
+	Spoiler *bool `json:"spoiler,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
 // User is the typed data model for the user entity.
@@ -742,24 +629,13 @@ type UserLoadMatch struct {
 
 // UserListMatch is the typed request payload for User.ListTyped.
 type UserListMatch struct {
-	Anime *[]any `json:"anime,omitempty"`
-	Birthday *string `json:"birthday,omitempty"`
-	Characters *[]any `json:"characters,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	External *[]any `json:"external,omitempty"`
 	Gender *string `json:"gender,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Joined *string `json:"joined,omitempty"`
-	LastOnline *string `json:"last_online,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 	Location *string `json:"location,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Manga *[]any `json:"manga,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	People *[]any `json:"people,omitempty"`
-	Statistics *map[string]any `json:"statistics,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Username *string `json:"username,omitempty"`
+	MaxAge *int `json:"max_age,omitempty"`
+	MinAge *int `json:"min_age,omitempty"`
+	Page *int `json:"page,omitempty"`
+	Q *string `json:"q,omitempty"`
 }
 
 // UserAbout is the typed data model for the user_about entity.
@@ -781,6 +657,7 @@ type UserClub struct {
 // UserClubListMatch is the typed request payload for UserClub.ListTyped.
 type UserClubListMatch struct {
 	Username string `json:"username"`
+	Page *int `json:"page,omitempty"`
 }
 
 // UserFriend is the typed data model for the user_friend entity.
@@ -792,6 +669,7 @@ type UserFriend struct {
 // UserFriendListMatch is the typed request payload for UserFriend.ListTyped.
 type UserFriendListMatch struct {
 	Username string `json:"username"`
+	Page *int `json:"page,omitempty"`
 }
 
 // UserHistory is the typed data model for the user_history entity.
@@ -804,6 +682,7 @@ type UserHistory struct {
 // UserHistoryListMatch is the typed request payload for UserHistory.ListTyped.
 type UserHistoryListMatch struct {
 	Username string `json:"username"`
+	Type *string `json:"type,omitempty"`
 }
 
 // UserStatistic is the typed data model for the user_statistic entity.
@@ -848,8 +727,7 @@ type WatchPromo struct {
 
 // WatchPromoListMatch is the typed request payload for WatchPromo.ListTyped.
 type WatchPromoListMatch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
+	Page *int `json:"page,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

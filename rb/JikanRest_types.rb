@@ -312,290 +312,82 @@ AnimeLoadMatch = Struct.new(
 
 # Request payload for Anime#list.
 #
-# @!attribute [rw] aired
+# @!attribute [rw] end_date
 #   @return [String, nil]
 #
-# @!attribute [rw] airing
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] approved
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] author_url
+# @!attribute [rw] genre
 #   @return [String, nil]
 #
-# @!attribute [rw] author_username
+# @!attribute [rw] genres_exclude
 #   @return [String, nil]
 #
-# @!attribute [rw] background
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] broadcast
-#   @return [Hash, nil]
-#
-# @!attribute [rw] character
-#   @return [Hash, nil]
-#
-# @!attribute [rw] comments
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] completed
-#   @return [Integer, nil]
+# @!attribute [rw] max_score
+#   @return [Float, nil]
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
+# @!attribute [rw] min_score
+#   @return [Float, nil]
 #
-# @!attribute [rw] date
+# @!attribute [rw] order_by
 #   @return [String, nil]
 #
-# @!attribute [rw] demographics
-#   @return [Array, nil]
-#
-# @!attribute [rw] dropped
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] duration
-#   @return [Integer, nil]
-#
-# @!attribute [rw] endings
-#   @return [Array, nil]
-#
-# @!attribute [rw] entry
-#   @return [Hash, nil]
-#
-# @!attribute [rw] episodes
-#   @return [Integer, nil]
-#
-# @!attribute [rw] explicit_genres
-#   @return [Array, nil]
-#
-# @!attribute [rw] external
-#   @return [Array, nil]
-#
-# @!attribute [rw] favorites
-#   @return [Integer, nil]
-#
-# @!attribute [rw] filler
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] genres
-#   @return [Array, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] producer
 #   @return [String, nil]
 #
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] last_comment
-#   @return [Hash, nil]
-#
-# @!attribute [rw] licensors
-#   @return [Array, nil]
-#
-# @!attribute [rw] mal_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] members
-#   @return [Integer, nil]
-#
-# @!attribute [rw] moreinfo
+# @!attribute [rw] q
 #   @return [String, nil]
-#
-# @!attribute [rw] music_videos
-#   @return [Array, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] on_hold
-#   @return [Integer, nil]
-#
-# @!attribute [rw] openings
-#   @return [Array, nil]
-#
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] person
-#   @return [Hash, nil]
-#
-# @!attribute [rw] plan_to_watch
-#   @return [Integer, nil]
-#
-# @!attribute [rw] popularity
-#   @return [Integer, nil]
-#
-# @!attribute [rw] positions
-#   @return [Array, nil]
-#
-# @!attribute [rw] producers
-#   @return [Array, nil]
-#
-# @!attribute [rw] promo
-#   @return [Array, nil]
-#
-# @!attribute [rw] rank
-#   @return [Integer, nil]
 #
 # @!attribute [rw] rating
-#   @return [String, nil]
-#
-# @!attribute [rw] recap
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] relation
-#   @return [String, nil]
-#
-# @!attribute [rw] relations
-#   @return [Array, nil]
-#
-# @!attribute [rw] role
 #   @return [String, nil]
 #
 # @!attribute [rw] score
 #   @return [Float, nil]
 #
-# @!attribute [rw] scored_by
-#   @return [Integer, nil]
+# @!attribute [rw] sfw
+#   @return [Boolean, nil]
 #
-# @!attribute [rw] scores
-#   @return [Array, nil]
-#
-# @!attribute [rw] season
+# @!attribute [rw] sort
 #   @return [String, nil]
 #
-# @!attribute [rw] source
+# @!attribute [rw] start_date
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] streaming
-#   @return [Array, nil]
-#
-# @!attribute [rw] studios
-#   @return [Array, nil]
-#
-# @!attribute [rw] synopsis
-#   @return [String, nil]
-#
-# @!attribute [rw] theme
-#   @return [Hash, nil]
-#
-# @!attribute [rw] themes
-#   @return [Array, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] title_english
-#   @return [String, nil]
-#
-# @!attribute [rw] title_japanese
-#   @return [String, nil]
-#
-# @!attribute [rw] title_romanji
-#   @return [String, nil]
-#
-# @!attribute [rw] title_synonyms
-#   @return [Array, nil]
-#
-# @!attribute [rw] titles
-#   @return [Array, nil]
-#
-# @!attribute [rw] total
-#   @return [Integer, nil]
-#
-# @!attribute [rw] trailer
-#   @return [Hash, nil]
-#
 # @!attribute [rw] type
 #   @return [String, nil]
 #
-# @!attribute [rw] url
-#   @return [String, nil]
-#
-# @!attribute [rw] voice_actors
-#   @return [Array, nil]
-#
-# @!attribute [rw] watching
-#   @return [Integer, nil]
-#
-# @!attribute [rw] year
-#   @return [Integer, nil]
+# @!attribute [rw] unapproved
+#   @return [Boolean, nil]
 AnimeListMatch = Struct.new(
-  :aired,
-  :airing,
-  :approved,
-  :author_url,
-  :author_username,
-  :background,
-  :broadcast,
-  :character,
-  :comments,
-  :completed,
-  :data,
-  :date,
-  :demographics,
-  :dropped,
-  :duration,
-  :endings,
-  :entry,
-  :episodes,
-  :explicit_genres,
-  :external,
-  :favorites,
-  :filler,
-  :genres,
-  :id,
-  :images,
-  :last_comment,
-  :licensors,
-  :mal_id,
-  :members,
-  :moreinfo,
-  :music_videos,
-  :name,
-  :on_hold,
-  :openings,
-  :pagination,
-  :person,
-  :plan_to_watch,
-  :popularity,
-  :positions,
-  :producers,
-  :promo,
-  :rank,
+  :end_date,
+  :genre,
+  :genres_exclude,
+  :letter,
+  :limit,
+  :max_score,
+  :min_score,
+  :order_by,
+  :page,
+  :producer,
+  :q,
   :rating,
-  :recap,
-  :relation,
-  :relations,
-  :role,
   :score,
-  :scored_by,
-  :scores,
-  :season,
-  :source,
+  :sfw,
+  :sort,
+  :start_date,
   :status,
-  :streaming,
-  :studios,
-  :synopsis,
-  :theme,
-  :themes,
-  :title,
-  :title_english,
-  :title_japanese,
-  :title_romanji,
-  :title_synonyms,
-  :titles,
-  :total,
-  :trailer,
   :type,
-  :url,
-  :voice_actors,
-  :watching,
-  :year,
+  :unapproved,
   keyword_init: true
 )
 
@@ -691,82 +483,30 @@ CharacterLoadMatch = Struct.new(
 
 # Request payload for Character#list.
 #
-# @!attribute [rw] about
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] anime
-#   @return [Array, nil]
-#
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] favorites
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] id
+# @!attribute [rw] order_by
 #   @return [String, nil]
 #
-# @!attribute [rw] image_url
-#   @return [String, nil]
-#
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] language
-#   @return [String, nil]
-#
-# @!attribute [rw] large_image_url
-#   @return [String, nil]
-#
-# @!attribute [rw] mal_id
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] manga
-#   @return [Array, nil]
-#
-# @!attribute [rw] name
+# @!attribute [rw] q
 #   @return [String, nil]
 #
-# @!attribute [rw] name_kanji
+# @!attribute [rw] sort
 #   @return [String, nil]
-#
-# @!attribute [rw] nicknames
-#   @return [Array, nil]
-#
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] person
-#   @return [Hash, nil]
-#
-# @!attribute [rw] role
-#   @return [String, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
-#
-# @!attribute [rw] voices
-#   @return [Array, nil]
 CharacterListMatch = Struct.new(
-  :about,
-  :anime,
-  :data,
-  :favorites,
-  :id,
-  :image_url,
-  :images,
-  :language,
-  :large_image_url,
-  :mal_id,
-  :manga,
-  :name,
-  :name_kanji,
-  :nicknames,
-  :pagination,
-  :person,
-  :role,
-  :url,
-  :voices,
+  :letter,
+  :limit,
+  :order_by,
+  :page,
+  :q,
+  :sort,
   keyword_init: true
 )
 
@@ -846,66 +586,38 @@ ClubLoadMatch = Struct.new(
 
 # Request payload for Club#list.
 #
-# @!attribute [rw] access
-#   @return [String, nil]
-#
-# @!attribute [rw] anime
-#   @return [Array, nil]
-#
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] characters
-#   @return [Array, nil]
-#
-# @!attribute [rw] created
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] mal_id
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] manga
-#   @return [Array, nil]
+# @!attribute [rw] order_by
+#   @return [String, nil]
 #
-# @!attribute [rw] members
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] name
+# @!attribute [rw] q
 #   @return [String, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] sort
 #   @return [String, nil]
 #
-# @!attribute [rw] username
+# @!attribute [rw] type
 #   @return [String, nil]
 ClubListMatch = Struct.new(
-  :access,
-  :anime,
   :category,
-  :characters,
-  :created,
-  :data,
-  :id,
-  :images,
-  :mal_id,
-  :manga,
-  :members,
-  :name,
-  :pagination,
-  :url,
-  :username,
+  :letter,
+  :limit,
+  :order_by,
+  :page,
+  :q,
+  :sort,
+  :type,
   keyword_init: true
 )
 
@@ -954,22 +666,10 @@ Genre = Struct.new(
 
 # Request payload for Genre#list.
 #
-# @!attribute [rw] count
-#   @return [Integer, nil]
-#
-# @!attribute [rw] mal_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] filter
 #   @return [String, nil]
 GenreListMatch = Struct.new(
-  :count,
-  :mal_id,
-  :name,
-  :url,
+  :filter,
   keyword_init: true
 )
 
@@ -988,14 +688,30 @@ Magazine = Struct.new(
 
 # Request payload for Magazine#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
+# @!attribute [rw] letter
+#   @return [String, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] order_by
+#   @return [String, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] q
+#   @return [String, nil]
+#
+# @!attribute [rw] sort
+#   @return [String, nil]
 MagazineListMatch = Struct.new(
-  :data,
-  :pagination,
+  :letter,
+  :limit,
+  :order_by,
+  :page,
+  :q,
+  :sort,
   keyword_init: true
 )
 
@@ -1231,222 +947,78 @@ MangaLoadMatch = Struct.new(
 
 # Request payload for Manga#list.
 #
-# @!attribute [rw] approved
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] author_url
+# @!attribute [rw] end_date
 #   @return [String, nil]
 #
-# @!attribute [rw] author_username
+# @!attribute [rw] genre
 #   @return [String, nil]
 #
-# @!attribute [rw] authors
-#   @return [Array, nil]
-#
-# @!attribute [rw] background
+# @!attribute [rw] genres_exclude
 #   @return [String, nil]
 #
-# @!attribute [rw] chapters
-#   @return [Integer, nil]
-#
-# @!attribute [rw] character
-#   @return [Hash, nil]
-#
-# @!attribute [rw] comments
-#   @return [Integer, nil]
-#
-# @!attribute [rw] completed
-#   @return [Integer, nil]
-#
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] date
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] demographics
-#   @return [Array, nil]
-#
-# @!attribute [rw] dropped
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] entry
-#   @return [Hash, nil]
-#
-# @!attribute [rw] explicit_genres
-#   @return [Array, nil]
-#
-# @!attribute [rw] external
-#   @return [Array, nil]
-#
-# @!attribute [rw] favorites
-#   @return [Integer, nil]
-#
-# @!attribute [rw] genres
-#   @return [Array, nil]
-#
-# @!attribute [rw] id
+# @!attribute [rw] magazine
 #   @return [String, nil]
 #
-# @!attribute [rw] images
-#   @return [Hash, nil]
+# @!attribute [rw] max_score
+#   @return [Float, nil]
 #
-# @!attribute [rw] jpg
-#   @return [Hash, nil]
+# @!attribute [rw] min_score
+#   @return [Float, nil]
 #
-# @!attribute [rw] last_comment
-#   @return [Hash, nil]
-#
-# @!attribute [rw] mal_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] members
-#   @return [Integer, nil]
-#
-# @!attribute [rw] moreinfo
+# @!attribute [rw] order_by
 #   @return [String, nil]
 #
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] on_hold
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] plan_to_read
-#   @return [Integer, nil]
-#
-# @!attribute [rw] popularity
-#   @return [Integer, nil]
-#
-# @!attribute [rw] published
-#   @return [Hash, nil]
-#
-# @!attribute [rw] publishing
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] rank
-#   @return [Integer, nil]
-#
-# @!attribute [rw] reading
-#   @return [Integer, nil]
-#
-# @!attribute [rw] relation
-#   @return [String, nil]
-#
-# @!attribute [rw] relations
-#   @return [Array, nil]
-#
-# @!attribute [rw] role
+# @!attribute [rw] q
 #   @return [String, nil]
 #
 # @!attribute [rw] score
 #   @return [Float, nil]
 #
-# @!attribute [rw] scored_by
-#   @return [Integer, nil]
+# @!attribute [rw] sfw
+#   @return [Boolean, nil]
 #
-# @!attribute [rw] scores
-#   @return [Array, nil]
+# @!attribute [rw] sort
+#   @return [String, nil]
 #
-# @!attribute [rw] serializations
-#   @return [Array, nil]
+# @!attribute [rw] start_date
+#   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 #
-# @!attribute [rw] synopsis
-#   @return [String, nil]
-#
-# @!attribute [rw] themes
-#   @return [Array, nil]
-#
-# @!attribute [rw] title
-#   @return [String, nil]
-#
-# @!attribute [rw] title_english
-#   @return [String, nil]
-#
-# @!attribute [rw] title_japanese
-#   @return [String, nil]
-#
-# @!attribute [rw] title_synonyms
-#   @return [Array, nil]
-#
-# @!attribute [rw] titles
-#   @return [Array, nil]
-#
-# @!attribute [rw] total
-#   @return [Integer, nil]
-#
 # @!attribute [rw] type
 #   @return [String, nil]
 #
-# @!attribute [rw] url
-#   @return [String, nil]
-#
-# @!attribute [rw] volumes
-#   @return [Integer, nil]
-#
-# @!attribute [rw] webp
-#   @return [Hash, nil]
+# @!attribute [rw] unapproved
+#   @return [Boolean, nil]
 MangaListMatch = Struct.new(
-  :approved,
-  :author_url,
-  :author_username,
-  :authors,
-  :background,
-  :chapters,
-  :character,
-  :comments,
-  :completed,
-  :data,
-  :date,
-  :demographics,
-  :dropped,
-  :entry,
-  :explicit_genres,
-  :external,
-  :favorites,
-  :genres,
-  :id,
-  :images,
-  :jpg,
-  :last_comment,
-  :mal_id,
-  :members,
-  :moreinfo,
-  :name,
-  :on_hold,
-  :pagination,
-  :plan_to_read,
-  :popularity,
-  :published,
-  :publishing,
-  :rank,
-  :reading,
-  :relation,
-  :relations,
-  :role,
+  :end_date,
+  :genre,
+  :genres_exclude,
+  :letter,
+  :limit,
+  :magazine,
+  :max_score,
+  :min_score,
+  :order_by,
+  :page,
+  :q,
   :score,
-  :scored_by,
-  :scores,
-  :serializations,
+  :sfw,
+  :sort,
+  :start_date,
   :status,
-  :synopsis,
-  :themes,
-  :title,
-  :title_english,
-  :title_japanese,
-  :title_synonyms,
-  :titles,
-  :total,
   :type,
-  :url,
-  :volumes,
-  :webp,
+  :unapproved,
   keyword_init: true
 )
 
@@ -1465,14 +1037,14 @@ PeopleSearch = Struct.new(
 
 # Request payload for PeopleSearch#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 PeopleSearchListMatch = Struct.new(
-  :data,
-  :pagination,
+  :limit,
+  :page,
   keyword_init: true
 )
 
@@ -1576,90 +1148,30 @@ PersonLoadMatch = Struct.new(
 
 # Request payload for Person#list.
 #
-# @!attribute [rw] about
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] alternate_names
-#   @return [Array, nil]
-#
-# @!attribute [rw] anime
-#   @return [Array, nil]
-#
-# @!attribute [rw] birthday
-#   @return [String, nil]
-#
-# @!attribute [rw] character
-#   @return [Hash, nil]
-#
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] family_name
-#   @return [String, nil]
-#
-# @!attribute [rw] favorites
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] given_name
+# @!attribute [rw] order_by
 #   @return [String, nil]
 #
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] jpg
-#   @return [Hash, nil]
-#
-# @!attribute [rw] mal_id
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] manga
-#   @return [Array, nil]
-#
-# @!attribute [rw] name
+# @!attribute [rw] q
 #   @return [String, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] position
-#   @return [String, nil]
-#
-# @!attribute [rw] role
-#   @return [String, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
-#
-# @!attribute [rw] voices
-#   @return [Array, nil]
-#
-# @!attribute [rw] website_url
+# @!attribute [rw] sort
 #   @return [String, nil]
 PersonListMatch = Struct.new(
-  :about,
-  :alternate_names,
-  :anime,
-  :birthday,
-  :character,
-  :data,
-  :family_name,
-  :favorites,
-  :given_name,
-  :id,
-  :images,
-  :jpg,
-  :mal_id,
-  :manga,
-  :name,
-  :pagination,
-  :position,
-  :role,
-  :url,
-  :voices,
-  :website_url,
+  :letter,
+  :limit,
+  :order_by,
+  :page,
+  :q,
+  :sort,
   keyword_init: true
 )
 
@@ -1731,58 +1243,30 @@ ProducerLoadMatch = Struct.new(
 
 # Request payload for Producer#list.
 #
-# @!attribute [rw] about
+# @!attribute [rw] letter
 #   @return [String, nil]
 #
-# @!attribute [rw] count
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] established
+# @!attribute [rw] order_by
 #   @return [String, nil]
 #
-# @!attribute [rw] external
-#   @return [Array, nil]
-#
-# @!attribute [rw] favorites
+# @!attribute [rw] page
 #   @return [Integer, nil]
 #
-# @!attribute [rw] id
+# @!attribute [rw] q
 #   @return [String, nil]
 #
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] mal_id
-#   @return [Integer, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
-#
-# @!attribute [rw] titles
-#   @return [Array, nil]
-#
-# @!attribute [rw] url
+# @!attribute [rw] sort
 #   @return [String, nil]
 ProducerListMatch = Struct.new(
-  :about,
-  :count,
-  :data,
-  :established,
-  :external,
-  :favorites,
-  :id,
-  :images,
-  :mal_id,
-  :name,
-  :pagination,
-  :titles,
-  :url,
+  :letter,
+  :limit,
+  :order_by,
+  :page,
+  :q,
+  :sort,
   keyword_init: true
 )
 
@@ -2261,8 +1745,12 @@ Recommendation = Struct.new(
 #
 # @!attribute [rw] username
 #   @return [String]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
 RecommendationListMatch = Struct.new(
   :username,
+  :page,
   keyword_init: true
 )
 
@@ -2271,8 +1759,21 @@ class Review
 end
 
 # Request payload for Review#load.
-class ReviewLoadMatch
-end
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] preliminary
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] spoiler
+#   @return [Boolean, nil]
+ReviewLoadMatch = Struct.new(
+  :page,
+  :preliminary,
+  :spoiler,
+  keyword_init: true
+)
 
 # Schedule entity data model.
 #
@@ -2289,14 +1790,30 @@ Schedule = Struct.new(
 
 # Request payload for Schedule#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
+# @!attribute [rw] filter
+#   @return [String, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] kid
+#   @return [String, nil]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] sfw
+#   @return [String, nil]
+#
+# @!attribute [rw] unapproved
+#   @return [Boolean, nil]
 ScheduleListMatch = Struct.new(
-  :data,
-  :pagination,
+  :filter,
+  :kid,
+  :limit,
+  :page,
+  :sfw,
+  :unapproved,
   keyword_init: true
 )
 
@@ -2328,9 +1845,33 @@ Season = Struct.new(
 #
 # @!attribute [rw] year
 #   @return [Integer]
+#
+# @!attribute [rw] continuing
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] filter
+#   @return [String, nil]
+#
+# @!attribute [rw] limit
+#   @return [Integer, nil]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
+#
+# @!attribute [rw] sfw
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] unapproved
+#   @return [Boolean, nil]
 SeasonLoadMatch = Struct.new(
   :season,
   :year,
+  :continuing,
+  :filter,
+  :limit,
+  :page,
+  :sfw,
+  :unapproved,
   keyword_init: true
 )
 
@@ -2370,14 +1911,22 @@ Top = Struct.new(
 
 # Request payload for Top#load.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] preliminary
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] spoiler
+#   @return [Boolean, nil]
+#
+# @!attribute [rw] type
+#   @return [String, nil]
 TopLoadMatch = Struct.new(
-  :data,
-  :pagination,
+  :page,
+  :preliminary,
+  :spoiler,
+  :type,
   keyword_init: true
 )
 
@@ -2469,78 +2018,34 @@ UserLoadMatch = Struct.new(
 
 # Request payload for User#list.
 #
-# @!attribute [rw] anime
-#   @return [Array, nil]
-#
-# @!attribute [rw] birthday
-#   @return [String, nil]
-#
-# @!attribute [rw] characters
-#   @return [Array, nil]
-#
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] external
-#   @return [Array, nil]
-#
 # @!attribute [rw] gender
 #   @return [String, nil]
 #
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] images
-#   @return [Hash, nil]
-#
-# @!attribute [rw] joined
-#   @return [String, nil]
-#
-# @!attribute [rw] last_online
-#   @return [String, nil]
+# @!attribute [rw] limit
+#   @return [Integer, nil]
 #
 # @!attribute [rw] location
 #   @return [String, nil]
 #
-# @!attribute [rw] mal_id
+# @!attribute [rw] max_age
 #   @return [Integer, nil]
 #
-# @!attribute [rw] manga
-#   @return [Array, nil]
+# @!attribute [rw] min_age
+#   @return [Integer, nil]
 #
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 #
-# @!attribute [rw] people
-#   @return [Array, nil]
-#
-# @!attribute [rw] statistics
-#   @return [Hash, nil]
-#
-# @!attribute [rw] url
-#   @return [String, nil]
-#
-# @!attribute [rw] username
+# @!attribute [rw] q
 #   @return [String, nil]
 UserListMatch = Struct.new(
-  :anime,
-  :birthday,
-  :characters,
-  :data,
-  :external,
   :gender,
-  :id,
-  :images,
-  :joined,
-  :last_online,
+  :limit,
   :location,
-  :mal_id,
-  :manga,
-  :pagination,
-  :people,
-  :statistics,
-  :url,
-  :username,
+  :max_age,
+  :min_age,
+  :page,
+  :q,
   keyword_init: true
 )
 
@@ -2579,8 +2084,12 @@ UserClub = Struct.new(
 #
 # @!attribute [rw] username
 #   @return [String]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
 UserClubListMatch = Struct.new(
   :username,
+  :page,
   keyword_init: true
 )
 
@@ -2601,8 +2110,12 @@ UserFriend = Struct.new(
 #
 # @!attribute [rw] username
 #   @return [String]
+#
+# @!attribute [rw] page
+#   @return [Integer, nil]
 UserFriendListMatch = Struct.new(
   :username,
+  :page,
   keyword_init: true
 )
 
@@ -2627,8 +2140,12 @@ UserHistory = Struct.new(
 #
 # @!attribute [rw] username
 #   @return [String]
+#
+# @!attribute [rw] type
+#   @return [String, nil]
 UserHistoryListMatch = Struct.new(
   :username,
+  :type,
   keyword_init: true
 )
 
@@ -2717,14 +2234,10 @@ WatchPromo = Struct.new(
 
 # Request payload for WatchPromo#list.
 #
-# @!attribute [rw] data
-#   @return [Array, nil]
-#
-# @!attribute [rw] pagination
-#   @return [Hash, nil]
+# @!attribute [rw] page
+#   @return [Integer, nil]
 WatchPromoListMatch = Struct.new(
-  :data,
-  :pagination,
+  :page,
   keyword_init: true
 )
 

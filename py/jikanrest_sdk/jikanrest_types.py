@@ -99,77 +99,25 @@ class AnimeLoadMatch(AnimeLoadMatchRequired, total=False):
 
 
 class AnimeListMatch(TypedDict, total=False):
-    aired: str
-    airing: bool
-    approved: bool
-    author_url: str
-    author_username: str
-    background: str
-    broadcast: dict
-    character: dict
-    comments: int
-    completed: int
-    data: list
-    date: str
-    demographics: list
-    dropped: int
-    duration: int
-    endings: list
-    entry: dict
-    episodes: int
-    explicit_genres: list
-    external: list
-    favorites: int
-    filler: bool
-    genres: list
-    id: str
-    images: dict
-    last_comment: dict
-    licensors: list
-    mal_id: int
-    members: int
-    moreinfo: str
-    music_videos: list
-    name: str
-    on_hold: int
-    openings: list
-    pagination: dict
-    person: dict
-    plan_to_watch: int
-    popularity: int
-    positions: list
-    producers: list
-    promo: list
-    rank: int
+    end_date: str
+    genre: str
+    genres_exclude: str
+    letter: str
+    limit: int
+    max_score: float
+    min_score: float
+    order_by: str
+    page: int
+    producer: str
+    q: str
     rating: str
-    recap: bool
-    relation: str
-    relations: list
-    role: str
     score: float
-    scored_by: int
-    scores: list
-    season: str
-    source: str
+    sfw: bool
+    sort: str
+    start_date: str
     status: str
-    streaming: list
-    studios: list
-    synopsis: str
-    theme: dict
-    themes: list
-    title: str
-    title_english: str
-    title_japanese: str
-    title_romanji: str
-    title_synonyms: list
-    titles: list
-    total: int
-    trailer: dict
     type: str
-    url: str
-    voice_actors: list
-    watching: int
-    year: int
+    unapproved: bool
 
 
 class Character(TypedDict, total=False):
@@ -199,25 +147,12 @@ class CharacterLoadMatch(TypedDict):
 
 
 class CharacterListMatch(TypedDict, total=False):
-    about: str
-    anime: list
-    data: list
-    favorites: int
-    id: str
-    image_url: str
-    images: dict
-    language: str
-    large_image_url: str
-    mal_id: int
-    manga: list
-    name: str
-    name_kanji: str
-    nicknames: list
-    pagination: dict
-    person: dict
-    role: str
-    url: str
-    voices: list
+    letter: str
+    limit: int
+    order_by: str
+    page: int
+    q: str
+    sort: str
 
 
 class Club(TypedDict, total=False):
@@ -243,21 +178,14 @@ class ClubLoadMatch(TypedDict):
 
 
 class ClubListMatch(TypedDict, total=False):
-    access: str
-    anime: list
     category: str
-    characters: list
-    created: str
-    data: list
-    id: str
-    images: dict
-    mal_id: int
-    manga: list
-    members: int
-    name: str
-    pagination: dict
-    url: str
-    username: str
+    letter: str
+    limit: int
+    order_by: str
+    page: int
+    q: str
+    sort: str
+    type: str
 
 
 class External(TypedDict, total=False):
@@ -277,10 +205,7 @@ class Genre(TypedDict, total=False):
 
 
 class GenreListMatch(TypedDict, total=False):
-    count: int
-    mal_id: int
-    name: str
-    url: str
+    filter: str
 
 
 class Magazine(TypedDict, total=False):
@@ -289,8 +214,12 @@ class Magazine(TypedDict, total=False):
 
 
 class MagazineListMatch(TypedDict, total=False):
-    data: list
-    pagination: dict
+    letter: str
+    limit: int
+    order_by: str
+    page: int
+    q: str
+    sort: str
 
 
 class Manga(TypedDict, total=False):
@@ -355,60 +284,24 @@ class MangaLoadMatch(TypedDict):
 
 
 class MangaListMatch(TypedDict, total=False):
-    approved: bool
-    author_url: str
-    author_username: str
-    authors: list
-    background: str
-    chapters: int
-    character: dict
-    comments: int
-    completed: int
-    data: list
-    date: str
-    demographics: list
-    dropped: int
-    entry: dict
-    explicit_genres: list
-    external: list
-    favorites: int
-    genres: list
-    id: str
-    images: dict
-    jpg: dict
-    last_comment: dict
-    mal_id: int
-    members: int
-    moreinfo: str
-    name: str
-    on_hold: int
-    pagination: dict
-    plan_to_read: int
-    popularity: int
-    published: dict
-    publishing: bool
-    rank: int
-    reading: int
-    relation: str
-    relations: list
-    role: str
+    end_date: str
+    genre: str
+    genres_exclude: str
+    letter: str
+    limit: int
+    magazine: str
+    max_score: float
+    min_score: float
+    order_by: str
+    page: int
+    q: str
     score: float
-    scored_by: int
-    scores: list
-    serializations: list
+    sfw: bool
+    sort: str
+    start_date: str
     status: str
-    synopsis: str
-    themes: list
-    title: str
-    title_english: str
-    title_japanese: str
-    title_synonyms: list
-    titles: list
-    total: int
     type: str
-    url: str
-    volumes: int
-    webp: dict
+    unapproved: bool
 
 
 class PeopleSearch(TypedDict, total=False):
@@ -417,8 +310,8 @@ class PeopleSearch(TypedDict, total=False):
 
 
 class PeopleSearchListMatch(TypedDict, total=False):
-    data: list
-    pagination: dict
+    limit: int
+    page: int
 
 
 class Person(TypedDict, total=False):
@@ -450,27 +343,12 @@ class PersonLoadMatch(TypedDict):
 
 
 class PersonListMatch(TypedDict, total=False):
-    about: str
-    alternate_names: list
-    anime: list
-    birthday: str
-    character: dict
-    data: list
-    family_name: str
-    favorites: int
-    given_name: str
-    id: str
-    images: dict
-    jpg: dict
-    mal_id: int
-    manga: list
-    name: str
-    pagination: dict
-    position: str
-    role: str
-    url: str
-    voices: list
-    website_url: str
+    letter: str
+    limit: int
+    order_by: str
+    page: int
+    q: str
+    sort: str
 
 
 class Producer(TypedDict, total=False):
@@ -494,19 +372,12 @@ class ProducerLoadMatch(TypedDict):
 
 
 class ProducerListMatch(TypedDict, total=False):
-    about: str
-    count: int
-    data: list
-    established: str
-    external: list
-    favorites: int
-    id: str
-    images: dict
-    mal_id: int
-    name: str
-    pagination: dict
-    titles: list
-    url: str
+    letter: str
+    limit: int
+    order_by: str
+    page: int
+    q: str
+    sort: str
 
 
 class Random(TypedDict, total=False):
@@ -632,16 +503,22 @@ class Recommendation(TypedDict, total=False):
     pagination: dict
 
 
-class RecommendationListMatch(TypedDict):
+class RecommendationListMatchRequired(TypedDict):
     username: str
+
+
+class RecommendationListMatch(RecommendationListMatchRequired, total=False):
+    page: int
 
 
 class Review(TypedDict):
     pass
 
 
-class ReviewLoadMatch(TypedDict):
-    pass
+class ReviewLoadMatch(TypedDict, total=False):
+    page: int
+    preliminary: bool
+    spoiler: bool
 
 
 class Schedule(TypedDict, total=False):
@@ -650,8 +527,12 @@ class Schedule(TypedDict, total=False):
 
 
 class ScheduleListMatch(TypedDict, total=False):
-    data: list
-    pagination: dict
+    filter: str
+    kid: str
+    limit: int
+    page: int
+    sfw: str
+    unapproved: bool
 
 
 class Season(TypedDict, total=False):
@@ -661,9 +542,18 @@ class Season(TypedDict, total=False):
     year: int
 
 
-class SeasonLoadMatch(TypedDict):
+class SeasonLoadMatchRequired(TypedDict):
     season: str
     year: int
+
+
+class SeasonLoadMatch(SeasonLoadMatchRequired, total=False):
+    continuing: bool
+    filter: str
+    limit: int
+    page: int
+    sfw: bool
+    unapproved: bool
 
 
 class SeasonListMatch(TypedDict, total=False):
@@ -679,8 +569,10 @@ class Top(TypedDict, total=False):
 
 
 class TopLoadMatch(TypedDict, total=False):
-    data: list
-    pagination: dict
+    page: int
+    preliminary: bool
+    spoiler: bool
+    type: str
 
 
 class User(TypedDict, total=False):
@@ -709,24 +601,13 @@ class UserLoadMatch(TypedDict):
 
 
 class UserListMatch(TypedDict, total=False):
-    anime: list
-    birthday: str
-    characters: list
-    data: list
-    external: list
     gender: str
-    id: str
-    images: dict
-    joined: str
-    last_online: str
+    limit: int
     location: str
-    mal_id: int
-    manga: list
-    pagination: dict
-    people: list
-    statistics: dict
-    url: str
-    username: str
+    max_age: int
+    min_age: int
+    page: int
+    q: str
 
 
 class UserAbout(TypedDict, total=False):
@@ -742,8 +623,12 @@ class UserClub(TypedDict, total=False):
     pagination: dict
 
 
-class UserClubListMatch(TypedDict):
+class UserClubListMatchRequired(TypedDict):
     username: str
+
+
+class UserClubListMatch(UserClubListMatchRequired, total=False):
+    page: int
 
 
 class UserFriend(TypedDict, total=False):
@@ -751,8 +636,12 @@ class UserFriend(TypedDict, total=False):
     pagination: dict
 
 
-class UserFriendListMatch(TypedDict):
+class UserFriendListMatchRequired(TypedDict):
     username: str
+
+
+class UserFriendListMatch(UserFriendListMatchRequired, total=False):
+    page: int
 
 
 class UserHistory(TypedDict, total=False):
@@ -761,8 +650,12 @@ class UserHistory(TypedDict, total=False):
     increment: int
 
 
-class UserHistoryListMatch(TypedDict):
+class UserHistoryListMatchRequired(TypedDict):
     username: str
+
+
+class UserHistoryListMatch(UserHistoryListMatchRequired, total=False):
+    type: str
 
 
 class UserStatistic(TypedDict, total=False):
@@ -799,5 +692,4 @@ class WatchPromo(TypedDict, total=False):
 
 
 class WatchPromoListMatch(TypedDict, total=False):
-    data: list
-    pagination: dict
+    page: int
