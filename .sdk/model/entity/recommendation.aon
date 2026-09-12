@@ -50,10 +50,16 @@ main: kit: entity: recommendation: {
           }
           method: "GET"
           orig: "/users/{username}/recommendations"
-          parts: [
-            "users"
-            "{username}"
-            "recommendations"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "recommendations"
+            }
           ]
           select: {
             exist: [
@@ -80,9 +86,13 @@ main: kit: entity: recommendation: {
           }
           method: "GET"
           orig: "/recommendations/anime"
-          parts: [
-            "recommendations"
-            "anime"
+          segments: [
+            {
+              lit: "recommendations"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -109,9 +119,13 @@ main: kit: entity: recommendation: {
           }
           method: "GET"
           orig: "/recommendations/manga"
-          parts: [
-            "recommendations"
-            "manga"
+          segments: [
+            {
+              lit: "recommendations"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"

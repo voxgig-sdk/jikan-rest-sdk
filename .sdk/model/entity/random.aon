@@ -209,6 +209,7 @@ main: kit: entity: random: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "score"
       req: false
       short: "Score"
@@ -260,24 +261,28 @@ main: kit: entity: random: {
       type: "`$ARRAY`"
     }
     {
+      deprecated: true
       name: "title"
       req: false
       short: "Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_english"
       req: false
       short: "English Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_japanese"
       req: false
       short: "Japanese Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_synonyms"
       req: false
       short: "Other Titles"
@@ -341,9 +346,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/random/anime"
-          parts: [
-            "random"
-            "anime"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -356,9 +365,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/random/characters"
-          parts: [
-            "random"
-            "characters"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "characters"
+            }
           ]
           select: {
             "$action": "character"
@@ -371,9 +384,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/random/manga"
-          parts: [
-            "random"
-            "manga"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"
@@ -386,9 +403,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/random/people"
-          parts: [
-            "random"
-            "people"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "people"
+            }
           ]
           select: {
             "$action": "person"
@@ -401,9 +422,13 @@ main: kit: entity: random: {
         {
           method: "GET"
           orig: "/random/users"
-          parts: [
-            "random"
-            "users"
+          segments: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "users"
+            }
           ]
           select: {
             "$action": "user"

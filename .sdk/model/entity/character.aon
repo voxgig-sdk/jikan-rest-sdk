@@ -172,8 +172,10 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters"
-          parts: [
-            "characters"
+          segments: [
+            {
+              lit: "characters"
+            }
           ]
           select: {
             exist: [
@@ -211,9 +213,13 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/top/characters"
-          parts: [
-            "top"
-            "characters"
+          segments: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "characters"
+            }
           ]
           select: {
             exist: [
@@ -240,10 +246,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}/anime"
-          parts: [
-            "characters"
-            "{id}"
-            "anime"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -270,10 +282,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}/manga"
-          parts: [
-            "characters"
-            "{id}"
-            "manga"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"
@@ -300,10 +318,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}/pictures"
-          parts: [
-            "characters"
-            "{id}"
-            "pictures"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
           ]
           select: {
             "$action": "picture"
@@ -330,10 +354,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}/voices"
-          parts: [
-            "characters"
-            "{id}"
-            "voices"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "voices"
+            }
           ]
           select: {
             "$action": "voice"
@@ -365,9 +395,13 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}"
-          parts: [
-            "characters"
-            "{id}"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -393,10 +427,16 @@ main: kit: entity: character: {
           }
           method: "GET"
           orig: "/characters/{id}/full"
-          parts: [
-            "characters"
-            "{id}"
-            "full"
+          segments: [
+            {
+              lit: "characters"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"

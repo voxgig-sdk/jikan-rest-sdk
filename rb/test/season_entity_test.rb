@@ -83,9 +83,13 @@ class SeasonEntityTest < Minitest::Test
     assert season_ref01_list_result.is_a?(Array)
 
     # LOAD
-    season_ref01_match_dt0 = {}
+    season_ref01_match_dt0 = {
+      "id" => season_ref01_data["id"],
+    }
     season_ref01_data_dt0_loaded = season_ref01_ent.load(season_ref01_match_dt0, nil)
-    assert !season_ref01_data_dt0_loaded.nil?
+    season_ref01_data_dt0_load_result = Helpers.to_map(season_ref01_data_dt0_loaded.respond_to?(:data_get) ? season_ref01_data_dt0_loaded.data_get : season_ref01_data_dt0_loaded)
+    assert !season_ref01_data_dt0_load_result.nil?
+    assert_equal season_ref01_data_dt0_load_result["id"], season_ref01_data["id"]
 
   end
 end
@@ -133,6 +137,9 @@ def season_basic_setup(extra)
 
   if env["JIKAN_REST_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
       },
       extra || {},

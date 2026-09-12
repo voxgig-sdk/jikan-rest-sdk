@@ -3,27 +3,27 @@
     "season": {
       "SEASON00": {
         "data": [],
+        "id": "SEASON00",
         "pagination": {},
         "seasons": [],
-        "year": "s2b",
-        "season": "SEASON01",
-        "id": "SEASON00"
+        "year": "s36",
+        "season": "SEASON01"
       },
       "SEASON01": {
         "data": [],
+        "id": "SEASON01",
         "pagination": {},
         "seasons": [],
-        "year": "s53",
-        "season": "SEASON01",
-        "id": "SEASON01"
+        "year": "s68",
+        "season": "SEASON01"
       },
       "SEASON02": {
         "data": [],
+        "id": "SEASON02",
         "pagination": {},
         "seasons": [],
-        "year": "s7b",
-        "season": "SEASON01",
-        "id": "SEASON02"
+        "year": "s9a",
+        "season": "SEASON01"
       }
     }
   },
@@ -33,7 +33,7 @@
         "data": [],
         "pagination": {},
         "seasons": [],
-        "year": "sa3"
+        "year": "scc"
       }
     }
   }

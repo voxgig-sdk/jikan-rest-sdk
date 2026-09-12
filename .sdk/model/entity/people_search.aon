@@ -43,9 +43,13 @@ main: kit: entity: people_search: {
           }
           method: "GET"
           orig: "/top/people"
-          parts: [
-            "top"
-            "people"
+          segments: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "people"
+            }
           ]
           select: {
             exist: [

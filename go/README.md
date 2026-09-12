@@ -683,6 +683,7 @@ API path: `/schedules`
 | Field | Description |
 | --- | --- |
 | `"data"` |  |
+| `"id"` |  |
 | `"pagination"` |  |
 | `"seasons"` | List of available seasons |
 | `"year"` | Year |
@@ -1526,6 +1527,7 @@ Create an instance: `season := client.Season(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `data` | `[]any` |  |
+| `id` | `string` |  |
 | `pagination` | `map[string]any` |  |
 | `seasons` | `[]any` | List of available seasons |
 | `year` | `int` | Year |

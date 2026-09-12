@@ -1643,6 +1643,7 @@ const season = client.Season()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `any[]` | No |  |
+| `id` | `string` | No |  |
 | `pagination` | `Record<string, any>` | No |  |
 | `seasons` | `any[]` | No | List of available seasons |
 | `year` | `number` | No | Year |

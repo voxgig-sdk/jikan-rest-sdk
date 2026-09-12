@@ -37,9 +37,13 @@ main: kit: entity: review: {
           }
           method: "GET"
           orig: "/reviews/anime"
-          parts: [
-            "reviews"
-            "anime"
+          segments: [
+            {
+              lit: "reviews"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -82,9 +86,13 @@ main: kit: entity: review: {
           }
           method: "GET"
           orig: "/reviews/manga"
-          parts: [
-            "reviews"
-            "manga"
+          segments: [
+            {
+              lit: "reviews"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"

@@ -50,9 +50,13 @@ main: kit: entity: genre: {
           }
           method: "GET"
           orig: "/genres/anime"
-          parts: [
-            "genres"
-            "anime"
+          segments: [
+            {
+              lit: "genres"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -79,9 +83,13 @@ main: kit: entity: genre: {
           }
           method: "GET"
           orig: "/genres/manga"
-          parts: [
-            "genres"
-            "manga"
+          segments: [
+            {
+              lit: "genres"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"

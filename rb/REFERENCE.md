@@ -1210,6 +1210,7 @@ season = client.Season
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `Array` | No |  |
+| `id` | `String` | No |  |
 | `pagination` | `Hash` | No |  |
 | `seasons` | `Array` | No | List of available seasons |
 | `year` | `Integer` | No | Year |

@@ -676,6 +676,7 @@ API path: `/schedules`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `id` |  |
 | `pagination` |  |
 | `seasons` | List of available seasons |
 | `year` | Year |
@@ -1459,6 +1460,7 @@ Create an instance: `$season = $client->Season();`
 | Field | Type | Description |
 | --- | --- | --- |
 | `data` | `array` |  |
+| `id` | `string` |  |
 | `pagination` | `array` |  |
 | `seasons` | `array` | List of available seasons |
 | `year` | `int` | Year |

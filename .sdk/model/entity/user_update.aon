@@ -38,10 +38,16 @@ main: kit: entity: user_update: {
           }
           method: "GET"
           orig: "/users/{username}/userupdates"
-          parts: [
-            "users"
-            "{username}"
-            "userupdates"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "userupdates"
+            }
           ]
           select: {
             exist: [

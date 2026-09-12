@@ -1225,6 +1225,7 @@ fmt.Println(season.GetName()) // "season"
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `[]any` | No |  |
+| `id` | `string` | No |  |
 | `pagination` | `map[string]any` | No |  |
 | `seasons` | `[]any` | No | List of available seasons |
 | `year` | `int` | No | Year |

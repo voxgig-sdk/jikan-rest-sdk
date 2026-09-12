@@ -11,6 +11,11 @@ main: kit: entity: season: {
       type: "`$ARRAY`"
     }
     {
+      name: "id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
       name: "pagination"
       req: false
       type: "`$OBJECT`"
@@ -28,6 +33,19 @@ main: kit: entity: season: {
       type: "`$INTEGER`"
     }
   ]
+
+  id: {
+    field: "id"
+    from: {
+      year: "year"
+    }
+    name: "id"
+    parts: [
+      "year"
+      "season"
+    ]
+    sep: "/"
+  }
 
   name: "season"
   op: {
@@ -83,9 +101,13 @@ main: kit: entity: season: {
           }
           method: "GET"
           orig: "/seasons/now"
-          parts: [
-            "seasons"
-            "now"
+          segments: [
+            {
+              lit: "seasons"
+            }
+            {
+              lit: "now"
+            }
           ]
           select: {
             "$action": "now"
@@ -152,9 +174,13 @@ main: kit: entity: season: {
           }
           method: "GET"
           orig: "/seasons/upcoming"
-          parts: [
-            "seasons"
-            "upcoming"
+          segments: [
+            {
+              lit: "seasons"
+            }
+            {
+              lit: "upcoming"
+            }
           ]
           select: {
             "$action": "upcoming"
@@ -175,8 +201,10 @@ main: kit: entity: season: {
         {
           method: "GET"
           orig: "/seasons"
-          parts: [
-            "seasons"
+          segments: [
+            {
+              lit: "seasons"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -253,10 +281,16 @@ main: kit: entity: season: {
           }
           method: "GET"
           orig: "/seasons/{year}/{season}"
-          parts: [
-            "seasons"
-            "{year}"
-            "{season}"
+          segments: [
+            {
+              lit: "seasons"
+            }
+            {
+              var: "year"
+            }
+            {
+              var: "season"
+            }
           ]
           select: {
             exist: [

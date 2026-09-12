@@ -1,6 +1,14 @@
 # JikanRest SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -301,6 +309,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "float",
             "name": "score",
             "short": "Score",
             "type": "`$NUMBER`",
@@ -351,16 +360,19 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "deprecated": True,
             "name": "title",
             "short": "Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_english",
             "short": "English Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_japanese",
             "short": "Title Japanese",
             "type": "`$STRING`",
@@ -371,6 +383,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_synonyms",
             "short": "Other Titles",
             "type": "`$ARRAY`",
@@ -415,6 +428,10 @@ def make_config():
             "type": "`$INTEGER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "anime",
         "op": {
           "list": {
@@ -543,8 +560,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime",
-                "parts": [
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -573,6 +592,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -618,9 +640,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/top/anime",
-                "parts": [
-                  "top",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "top",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -636,6 +662,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "top",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -672,10 +702,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/reviews",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "reviews",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "reviews",
+                  },
                 ],
                 "select": {
                   "$action": "review",
@@ -690,6 +726,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "reviews",
+                ],
               },
               {
                 "args": {
@@ -714,10 +755,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/episodes",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "episodes",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "episodes",
+                  },
                 ],
                 "select": {
                   "$action": "episode",
@@ -730,6 +777,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "episodes",
+                ],
               },
               {
                 "args": {
@@ -754,10 +806,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/forum",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "forum",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "forum",
+                  },
                 ],
                 "select": {
                   "$action": "forum",
@@ -770,6 +828,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "forum",
+                ],
               },
               {
                 "args": {
@@ -794,10 +857,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/news",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "news",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "news",
+                  },
                 ],
                 "select": {
                   "$action": "new",
@@ -810,6 +879,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "news",
+                ],
               },
               {
                 "args": {
@@ -834,10 +908,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/userupdates",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "userupdates",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "userupdates",
+                  },
                 ],
                 "select": {
                   "$action": "userupdate",
@@ -850,6 +930,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "userupdates",
+                ],
               },
               {
                 "args": {
@@ -874,11 +959,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/videos/episodes",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "videos",
-                  "episodes",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "videos",
+                  },
+                  {
+                    "lit": "episodes",
+                  },
                 ],
                 "select": {
                   "$action": "video_episode",
@@ -891,6 +984,12 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "videos",
+                  "episodes",
+                ],
               },
               {
                 "args": {
@@ -907,10 +1006,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/characters",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "$action": "character",
@@ -922,6 +1027,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "characters",
+                ],
               },
               {
                 "args": {
@@ -938,10 +1048,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/external",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "external",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "external",
+                  },
                 ],
                 "select": {
                   "$action": "external",
@@ -953,6 +1069,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "external",
+                ],
               },
               {
                 "args": {
@@ -969,10 +1090,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/pictures",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "pictures",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "pictures",
+                  },
                 ],
                 "select": {
                   "$action": "picture",
@@ -984,6 +1111,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "pictures",
+                ],
               },
               {
                 "args": {
@@ -1000,10 +1132,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/recommendations",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "recommendations",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "recommendations",
+                  },
                 ],
                 "select": {
                   "$action": "recommendation",
@@ -1015,6 +1153,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "recommendations",
+                ],
               },
               {
                 "args": {
@@ -1031,10 +1174,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/relations",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "relations",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "relations",
+                  },
                 ],
                 "select": {
                   "$action": "relation",
@@ -1046,6 +1195,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "relations",
+                ],
               },
               {
                 "args": {
@@ -1062,10 +1216,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/staff",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "staff",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "staff",
+                  },
                 ],
                 "select": {
                   "$action": "staff",
@@ -1077,6 +1237,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "staff",
+                ],
               },
               {
                 "args": {
@@ -1093,10 +1258,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/streaming",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "streaming",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "streaming",
+                  },
                 ],
                 "select": {
                   "$action": "streaming",
@@ -1108,6 +1279,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "streaming",
+                ],
               },
             ],
           },
@@ -1137,11 +1313,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/episodes/{episode}",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "episodes",
-                  "{episode}",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "episodes",
+                  },
+                  {
+                    "var": "episode",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1153,6 +1337,12 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "episodes",
+                  "{episode}",
+                ],
               },
               {
                 "args": {
@@ -1169,9 +1359,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}",
-                "parts": [
-                  "anime",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1182,6 +1376,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -1198,10 +1396,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/full",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -1213,6 +1417,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "full",
+                ],
               },
               {
                 "args": {
@@ -1229,10 +1438,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/moreinfo",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "moreinfo",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "moreinfo",
+                  },
                 ],
                 "select": {
                   "$action": "moreinfo",
@@ -1244,6 +1459,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "moreinfo",
+                ],
               },
               {
                 "args": {
@@ -1260,10 +1480,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/statistics",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "statistics",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "statistics",
+                  },
                 ],
                 "select": {
                   "$action": "statistic",
@@ -1275,6 +1501,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "statistics",
+                ],
               },
               {
                 "args": {
@@ -1291,10 +1522,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/themes",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "themes",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "themes",
+                  },
                 ],
                 "select": {
                   "$action": "theme",
@@ -1306,6 +1543,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "themes",
+                ],
               },
               {
                 "args": {
@@ -1322,10 +1564,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/anime/{id}/videos",
-                "parts": [
-                  "anime",
-                  "{id}",
-                  "videos",
+                "segments": [
+                  {
+                    "lit": "anime",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "videos",
+                  },
                 ],
                 "select": {
                   "$action": "video",
@@ -1337,6 +1585,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "anime",
+                  "{id}",
+                  "videos",
+                ],
               },
             ],
           },
@@ -1439,6 +1692,10 @@ def make_config():
             "type": "`$ARRAY`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "character",
         "op": {
           "list": {
@@ -1489,8 +1746,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters",
-                "parts": [
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1506,6 +1765,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "characters",
+                ],
               },
               {
                 "args": {
@@ -1527,9 +1789,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/top/characters",
-                "parts": [
-                  "top",
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "top",
+                  },
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1541,6 +1807,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "top",
+                  "characters",
+                ],
               },
               {
                 "args": {
@@ -1557,10 +1827,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}/anime",
-                "parts": [
-                  "characters",
-                  "{id}",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -1572,6 +1848,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -1588,10 +1869,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}/manga",
-                "parts": [
-                  "characters",
-                  "{id}",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -1603,6 +1890,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                  "manga",
+                ],
               },
               {
                 "args": {
@@ -1619,10 +1911,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}/pictures",
-                "parts": [
-                  "characters",
-                  "{id}",
-                  "pictures",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "pictures",
+                  },
                 ],
                 "select": {
                   "$action": "picture",
@@ -1634,6 +1932,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                  "pictures",
+                ],
               },
               {
                 "args": {
@@ -1650,10 +1953,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}/voices",
-                "parts": [
-                  "characters",
-                  "{id}",
-                  "voices",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "voices",
+                  },
                 ],
                 "select": {
                   "$action": "voice",
@@ -1665,6 +1974,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                  "voices",
+                ],
               },
             ],
           },
@@ -1687,9 +2001,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}",
-                "parts": [
-                  "characters",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1700,6 +2018,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -1716,10 +2038,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/characters/{id}/full",
-                "parts": [
-                  "characters",
-                  "{id}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "characters",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -1731,6 +2059,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "characters",
+                  "{id}",
+                  "full",
+                ],
               },
             ],
           },
@@ -1810,6 +2143,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "club",
         "op": {
           "list": {
@@ -1872,8 +2209,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/clubs",
-                "parts": [
-                  "clubs",
+                "segments": [
+                  {
+                    "lit": "clubs",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1891,6 +2230,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "clubs",
+                ],
               },
               {
                 "args": {
@@ -1915,10 +2257,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/clubs/{id}/members",
-                "parts": [
-                  "clubs",
-                  "{id}",
-                  "members",
+                "segments": [
+                  {
+                    "lit": "clubs",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "members",
+                  },
                 ],
                 "select": {
                   "$action": "member",
@@ -1931,6 +2279,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "clubs",
+                  "{id}",
+                  "members",
+                ],
               },
               {
                 "args": {
@@ -1947,10 +2300,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/clubs/{id}/staff",
-                "parts": [
-                  "clubs",
-                  "{id}",
-                  "staff",
+                "segments": [
+                  {
+                    "lit": "clubs",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "staff",
+                  },
                 ],
                 "select": {
                   "$action": "staff",
@@ -1962,6 +2321,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "clubs",
+                  "{id}",
+                  "staff",
+                ],
               },
             ],
           },
@@ -1984,9 +2348,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/clubs/{id}",
-                "parts": [
-                  "clubs",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "clubs",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -1997,6 +2365,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "clubs",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -2013,10 +2385,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/clubs/{id}/relations",
-                "parts": [
-                  "clubs",
-                  "{id}",
-                  "relations",
+                "segments": [
+                  {
+                    "lit": "clubs",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "relations",
+                  },
                 ],
                 "select": {
                   "$action": "relation",
@@ -2028,6 +2406,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "clubs",
+                  "{id}",
+                  "relations",
+                ],
               },
             ],
           },
@@ -2068,10 +2451,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/external",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "external",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "external",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2082,6 +2471,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "external",
+                ],
               },
             ],
           },
@@ -2137,9 +2531,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/genres/anime",
-                "parts": [
-                  "genres",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "genres",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -2151,6 +2549,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "genres",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -2166,9 +2568,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/genres/manga",
-                "parts": [
-                  "genres",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "genres",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -2180,6 +2586,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "genres",
+                  "manga",
+                ],
               },
             ],
           },
@@ -2249,8 +2659,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/magazines",
-                "parts": [
-                  "magazines",
+                "segments": [
+                  {
+                    "lit": "magazines",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2266,6 +2678,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "magazines",
+                ],
               },
             ],
           },
@@ -2455,6 +2870,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "float",
             "name": "score",
             "short": "Score",
             "type": "`$NUMBER`",
@@ -2487,21 +2903,25 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "deprecated": True,
             "name": "title",
             "short": "Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_english",
             "short": "English Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_japanese",
             "short": "Japanese Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_synonyms",
             "short": "Other Titles",
             "type": "`$ARRAY`",
@@ -2537,6 +2957,10 @@ def make_config():
             "type": "`$OBJECT`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "manga",
         "op": {
           "list": {
@@ -2659,8 +3083,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga",
-                "parts": [
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2688,6 +3114,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "manga",
+                ],
               },
               {
                 "args": {
@@ -2721,9 +3150,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/top/manga",
-                "parts": [
-                  "top",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "top",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -2737,6 +3170,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "top",
+                  "manga",
+                ],
               },
               {
                 "args": {
@@ -2773,10 +3210,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/reviews",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "reviews",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "reviews",
+                  },
                 ],
                 "select": {
                   "$action": "review",
@@ -2791,6 +3234,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "reviews",
+                ],
               },
               {
                 "args": {
@@ -2815,10 +3263,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/forum",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "forum",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "forum",
+                  },
                 ],
                 "select": {
                   "$action": "forum",
@@ -2831,6 +3285,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "forum",
+                ],
               },
               {
                 "args": {
@@ -2855,10 +3314,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/news",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "news",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "news",
+                  },
                 ],
                 "select": {
                   "$action": "new",
@@ -2871,6 +3336,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "news",
+                ],
               },
               {
                 "args": {
@@ -2895,10 +3365,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/userupdates",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "userupdates",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "userupdates",
+                  },
                 ],
                 "select": {
                   "$action": "userupdate",
@@ -2911,6 +3387,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "userupdates",
+                ],
               },
               {
                 "args": {
@@ -2927,10 +3408,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/characters",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "$action": "character",
@@ -2942,6 +3429,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "characters",
+                ],
               },
               {
                 "args": {
@@ -2958,10 +3450,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/external",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "external",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "external",
+                  },
                 ],
                 "select": {
                   "$action": "external",
@@ -2973,6 +3471,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "external",
+                ],
               },
               {
                 "args": {
@@ -2989,10 +3492,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/pictures",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "pictures",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "pictures",
+                  },
                 ],
                 "select": {
                   "$action": "picture",
@@ -3004,6 +3513,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "pictures",
+                ],
               },
               {
                 "args": {
@@ -3020,10 +3534,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/recommendations",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "recommendations",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "recommendations",
+                  },
                 ],
                 "select": {
                   "$action": "recommendation",
@@ -3035,6 +3555,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "recommendations",
+                ],
               },
               {
                 "args": {
@@ -3051,10 +3576,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/relations",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "relations",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "relations",
+                  },
                 ],
                 "select": {
                   "$action": "relation",
@@ -3066,6 +3597,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "relations",
+                ],
               },
             ],
           },
@@ -3088,9 +3624,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}",
-                "parts": [
-                  "manga",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3101,6 +3641,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -3117,10 +3661,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/full",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -3132,6 +3682,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "full",
+                ],
               },
               {
                 "args": {
@@ -3148,10 +3703,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/moreinfo",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "moreinfo",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "moreinfo",
+                  },
                 ],
                 "select": {
                   "$action": "moreinfo",
@@ -3163,6 +3724,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "moreinfo",
+                ],
               },
               {
                 "args": {
@@ -3179,10 +3745,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/manga/{id}/statistics",
-                "parts": [
-                  "manga",
-                  "{id}",
-                  "statistics",
+                "segments": [
+                  {
+                    "lit": "manga",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "statistics",
+                  },
                 ],
                 "select": {
                   "$action": "statistic",
@@ -3194,6 +3766,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "manga",
+                  "{id}",
+                  "statistics",
+                ],
               },
             ],
           },
@@ -3239,9 +3816,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/top/people",
-                "parts": [
-                  "top",
-                  "people",
+                "segments": [
+                  {
+                    "lit": "top",
+                  },
+                  {
+                    "lit": "people",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3253,6 +3834,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "top",
+                  "people",
+                ],
               },
             ],
           },
@@ -3361,6 +3946,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "person",
         "op": {
           "list": {
@@ -3411,8 +4000,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people",
-                "parts": [
-                  "people",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3428,6 +4019,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "people",
+                ],
               },
               {
                 "args": {
@@ -3444,10 +4038,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}/anime",
-                "parts": [
-                  "people",
-                  "{id}",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -3459,6 +4059,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -3475,10 +4080,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}/manga",
-                "parts": [
-                  "people",
-                  "{id}",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -3490,6 +4101,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                  "manga",
+                ],
               },
               {
                 "args": {
@@ -3506,10 +4122,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}/pictures",
-                "parts": [
-                  "people",
-                  "{id}",
-                  "pictures",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "pictures",
+                  },
                 ],
                 "select": {
                   "$action": "picture",
@@ -3521,6 +4143,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                  "pictures",
+                ],
               },
               {
                 "args": {
@@ -3537,10 +4164,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}/voices",
-                "parts": [
-                  "people",
-                  "{id}",
-                  "voices",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "voices",
+                  },
                 ],
                 "select": {
                   "$action": "voice",
@@ -3552,6 +4185,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                  "voices",
+                ],
               },
             ],
           },
@@ -3574,9 +4212,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}",
-                "parts": [
-                  "people",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3587,6 +4229,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -3603,10 +4249,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/people/{id}/full",
-                "parts": [
-                  "people",
-                  "{id}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "people",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -3618,6 +4270,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "people",
+                  "{id}",
+                  "full",
+                ],
               },
             ],
           },
@@ -3688,6 +4345,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "producer",
         "op": {
           "list": {
@@ -3738,8 +4399,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/producers",
-                "parts": [
-                  "producers",
+                "segments": [
+                  {
+                    "lit": "producers",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3755,6 +4418,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "producers",
+                ],
               },
               {
                 "args": {
@@ -3771,10 +4437,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/producers/{id}/external",
-                "parts": [
-                  "producers",
-                  "{id}",
-                  "external",
+                "segments": [
+                  {
+                    "lit": "producers",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "external",
+                  },
                 ],
                 "select": {
                   "$action": "external",
@@ -3786,6 +4458,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "producers",
+                  "{id}",
+                  "external",
+                ],
               },
             ],
           },
@@ -3808,9 +4485,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/producers/{id}",
-                "parts": [
-                  "producers",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "producers",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -3821,6 +4502,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "producers",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -3837,10 +4522,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/producers/{id}/full",
-                "parts": [
-                  "producers",
-                  "{id}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "producers",
+                  },
+                  {
+                    "var": "id",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -3852,6 +4543,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "producers",
+                  "{id}",
+                  "full",
+                ],
               },
             ],
           },
@@ -4031,6 +4727,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "float",
             "name": "score",
             "short": "Score",
             "type": "`$NUMBER`",
@@ -4073,21 +4770,25 @@ def make_config():
             "type": "`$ARRAY`",
           },
           {
+            "deprecated": True,
             "name": "title",
             "short": "Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_english",
             "short": "English Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_japanese",
             "short": "Japanese Title",
             "type": "`$STRING`",
           },
           {
+            "deprecated": True,
             "name": "title_synonyms",
             "short": "Other Titles",
             "type": "`$ARRAY`",
@@ -4144,9 +4845,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/anime",
-                "parts": [
-                  "random",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -4155,15 +4860,23 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "random",
+                  "anime",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/characters",
-                "parts": [
-                  "random",
-                  "characters",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "characters",
+                  },
                 ],
                 "select": {
                   "$action": "character",
@@ -4172,15 +4885,23 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "random",
+                  "characters",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/manga",
-                "parts": [
-                  "random",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -4189,15 +4910,23 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "random",
+                  "manga",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/people",
-                "parts": [
-                  "random",
-                  "people",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "people",
+                  },
                 ],
                 "select": {
                   "$action": "person",
@@ -4206,15 +4935,23 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "random",
+                  "people",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random/users",
-                "parts": [
-                  "random",
-                  "users",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
+                  {
+                    "lit": "users",
+                  },
                 ],
                 "select": {
                   "$action": "user",
@@ -4223,6 +4960,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "random",
+                  "users",
+                ],
               },
             ],
           },
@@ -4276,10 +5017,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/recommendations",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "recommendations",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "recommendations",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -4291,6 +5038,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "recommendations",
+                ],
               },
               {
                 "args": {
@@ -4306,9 +5058,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/recommendations/anime",
-                "parts": [
-                  "recommendations",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "recommendations",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -4320,6 +5076,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "recommendations",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -4335,9 +5095,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/recommendations/manga",
-                "parts": [
-                  "recommendations",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "recommendations",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -4349,6 +5113,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "recommendations",
+                  "manga",
+                ],
               },
             ],
           },
@@ -4395,9 +5163,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/reviews/anime",
-                "parts": [
-                  "reviews",
-                  "anime",
+                "segments": [
+                  {
+                    "lit": "reviews",
+                  },
+                  {
+                    "lit": "anime",
+                  },
                 ],
                 "select": {
                   "$action": "anime",
@@ -4411,6 +5183,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "reviews",
+                  "anime",
+                ],
               },
               {
                 "args": {
@@ -4438,9 +5214,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/reviews/manga",
-                "parts": [
-                  "reviews",
-                  "manga",
+                "segments": [
+                  {
+                    "lit": "reviews",
+                  },
+                  {
+                    "lit": "manga",
+                  },
                 ],
                 "select": {
                   "$action": "manga",
@@ -4454,6 +5234,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "reviews",
+                  "manga",
+                ],
               },
             ],
           },
@@ -4523,8 +5307,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/schedules",
-                "parts": [
-                  "schedules",
+                "segments": [
+                  {
+                    "lit": "schedules",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -4540,6 +5326,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "schedules",
+                ],
               },
             ],
           },
@@ -4553,6 +5342,10 @@ def make_config():
           {
             "name": "data",
             "type": "`$ARRAY`",
+          },
+          {
+            "name": "id",
+            "type": "`$STRING`",
           },
           {
             "name": "pagination",
@@ -4569,6 +5362,18 @@ def make_config():
             "type": "`$INTEGER`",
           },
         ],
+        "id": {
+          "field": "id",
+          "from": {
+            "year": "year",
+          },
+          "name": "id",
+          "parts": [
+            "year",
+            "season",
+          ],
+          "sep": "/",
+        },
         "name": "season",
         "op": {
           "list": {
@@ -4619,9 +5424,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/seasons/now",
-                "parts": [
-                  "seasons",
-                  "now",
+                "segments": [
+                  {
+                    "lit": "seasons",
+                  },
+                  {
+                    "lit": "now",
+                  },
                 ],
                 "select": {
                   "$action": "now",
@@ -4638,6 +5447,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "seasons",
+                  "now",
+                ],
               },
               {
                 "args": {
@@ -4683,9 +5496,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/seasons/upcoming",
-                "parts": [
-                  "seasons",
-                  "upcoming",
+                "segments": [
+                  {
+                    "lit": "seasons",
+                  },
+                  {
+                    "lit": "upcoming",
+                  },
                 ],
                 "select": {
                   "$action": "upcoming",
@@ -4702,20 +5519,29 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "seasons",
+                  "upcoming",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/seasons",
-                "parts": [
-                  "seasons",
+                "segments": [
+                  {
+                    "lit": "seasons",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "seasons",
+                ],
               },
             ],
           },
@@ -4783,10 +5609,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/seasons/{year}/{season}",
-                "parts": [
-                  "seasons",
-                  "{year}",
-                  "{season}",
+                "segments": [
+                  {
+                    "lit": "seasons",
+                  },
+                  {
+                    "var": "year",
+                  },
+                  {
+                    "var": "season",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -4804,6 +5636,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "seasons",
+                  "{year}",
+                  "{season}",
+                ],
               },
             ],
           },
@@ -4870,9 +5707,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/top/reviews",
-                "parts": [
-                  "top",
-                  "reviews",
+                "segments": [
+                  {
+                    "lit": "top",
+                  },
+                  {
+                    "lit": "reviews",
+                  },
                 ],
                 "select": {
                   "$action": "review",
@@ -4887,6 +5728,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "top",
+                  "reviews",
+                ],
               },
             ],
           },
@@ -4987,6 +5832,10 @@ def make_config():
             "type": "`$STRING`",
           },
         ],
+        "id": {
+          "field": "id",
+          "name": "id",
+        },
         "name": "user",
         "op": {
           "list": {
@@ -5043,8 +5892,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users",
-                "parts": [
-                  "users",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5061,6 +5912,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                ],
               },
             ],
           },
@@ -5091,10 +5945,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/animelist",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "animelist",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "animelist",
+                  },
                 ],
                 "select": {
                   "$action": "animelist",
@@ -5107,6 +5967,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "animelist",
+                ],
               },
               {
                 "args": {
@@ -5131,10 +5996,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/mangalist",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "mangalist",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "mangalist",
+                  },
                 ],
                 "select": {
                   "$action": "mangalist",
@@ -5147,6 +6018,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "mangalist",
+                ],
               },
               {
                 "args": {
@@ -5171,10 +6047,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/reviews",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "reviews",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "reviews",
+                  },
                 ],
                 "select": {
                   "$action": "review",
@@ -5187,6 +6069,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "reviews",
+                ],
               },
               {
                 "args": {
@@ -5203,10 +6090,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/userbyid/{id}",
-                "parts": [
-                  "users",
-                  "userbyid",
-                  "{id}",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "lit": "userbyid",
+                  },
+                  {
+                    "var": "id",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5217,6 +6110,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "userbyid",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -5233,15 +6131,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}",
-                "parts": [
-                  "users",
-                  "{id}",
-                ],
                 "rename": {
                   "param": {
                     "username": "id",
                   },
                 },
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "id",
+                  },
+                ],
                 "select": {
                   "exist": [
                     "id",
@@ -5251,6 +6153,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{id}",
+                ],
               },
               {
                 "args": {
@@ -5267,10 +6173,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/favorites",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "favorites",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "favorites",
+                  },
                 ],
                 "select": {
                   "$action": "favorite",
@@ -5282,6 +6194,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "favorites",
+                ],
               },
               {
                 "args": {
@@ -5298,10 +6215,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/full",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "full",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "full",
+                  },
                 ],
                 "select": {
                   "$action": "full",
@@ -5313,6 +6236,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "full",
+                ],
               },
             ],
           },
@@ -5354,10 +6282,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/about",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "about",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "about",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5368,6 +6302,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "about",
+                ],
               },
             ],
           },
@@ -5420,10 +6359,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/clubs",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "clubs",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "clubs",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5435,6 +6380,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "clubs",
+                ],
               },
             ],
           },
@@ -5487,10 +6437,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/friends",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "friends",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "friends",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5502,6 +6458,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "friends",
+                ],
               },
             ],
           },
@@ -5561,10 +6522,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/history",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "history",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "history",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5576,6 +6543,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "history",
+                ],
               },
             ],
           },
@@ -5622,10 +6594,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/statistics",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "statistics",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "statistics",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5636,6 +6614,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "statistics",
+                ],
               },
             ],
           },
@@ -5682,10 +6665,16 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/users/{username}/userupdates",
-                "parts": [
-                  "users",
-                  "{username}",
-                  "userupdates",
+                "segments": [
+                  {
+                    "lit": "users",
+                  },
+                  {
+                    "var": "username",
+                  },
+                  {
+                    "lit": "userupdates",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5696,6 +6685,11 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.data`",
                 },
+                "parts": [
+                  "users",
+                  "{username}",
+                  "userupdates",
+                ],
               },
             ],
           },
@@ -5730,31 +6724,50 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/watch/episodes",
-                "parts": [
-                  "watch",
-                  "episodes",
+                "segments": [
+                  {
+                    "lit": "watch",
+                  },
+                  {
+                    "lit": "episodes",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "watch",
+                  "episodes",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/watch/episodes/popular",
-                "parts": [
-                  "watch",
-                  "episodes",
-                  "popular",
+                "segments": [
+                  {
+                    "lit": "watch",
+                  },
+                  {
+                    "lit": "episodes",
+                  },
+                  {
+                    "lit": "popular",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "watch",
+                  "episodes",
+                  "popular",
+                ],
               },
             ],
           },
@@ -5794,9 +6807,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/watch/promos",
-                "parts": [
-                  "watch",
-                  "promos",
+                "segments": [
+                  {
+                    "lit": "watch",
+                  },
+                  {
+                    "lit": "promos",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -5807,22 +6824,37 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "watch",
+                  "promos",
+                ],
               },
               {
                 "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/watch/promos/popular",
-                "parts": [
-                  "watch",
-                  "promos",
-                  "popular",
+                "segments": [
+                  {
+                    "lit": "watch",
+                  },
+                  {
+                    "lit": "promos",
+                  },
+                  {
+                    "lit": "popular",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "watch",
+                  "promos",
+                  "popular",
+                ],
               },
             ],
           },

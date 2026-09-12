@@ -163,8 +163,10 @@ main: kit: entity: club: {
           }
           method: "GET"
           orig: "/clubs"
-          parts: [
-            "clubs"
+          segments: [
+            {
+              lit: "clubs"
+            }
           ]
           select: {
             exist: [
@@ -206,10 +208,16 @@ main: kit: entity: club: {
           }
           method: "GET"
           orig: "/clubs/{id}/members"
-          parts: [
-            "clubs"
-            "{id}"
-            "members"
+          segments: [
+            {
+              lit: "clubs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "members"
+            }
           ]
           select: {
             "$action": "member"
@@ -237,10 +245,16 @@ main: kit: entity: club: {
           }
           method: "GET"
           orig: "/clubs/{id}/staff"
-          parts: [
-            "clubs"
-            "{id}"
-            "staff"
+          segments: [
+            {
+              lit: "clubs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "staff"
+            }
           ]
           select: {
             "$action": "staff"
@@ -272,9 +286,13 @@ main: kit: entity: club: {
           }
           method: "GET"
           orig: "/clubs/{id}"
-          parts: [
-            "clubs"
-            "{id}"
+          segments: [
+            {
+              lit: "clubs"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -300,10 +318,16 @@ main: kit: entity: club: {
           }
           method: "GET"
           orig: "/clubs/{id}/relations"
-          parts: [
-            "clubs"
-            "{id}"
-            "relations"
+          segments: [
+            {
+              lit: "clubs"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relations"
+            }
           ]
           select: {
             "$action": "relation"

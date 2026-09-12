@@ -25,9 +25,13 @@ main: kit: entity: watch_episode: {
         {
           method: "GET"
           orig: "/watch/episodes"
-          parts: [
-            "watch"
-            "episodes"
+          segments: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "episodes"
+            }
           ]
           transform: {
             req: "`reqdata`"
@@ -37,10 +41,16 @@ main: kit: entity: watch_episode: {
         {
           method: "GET"
           orig: "/watch/episodes/popular"
-          parts: [
-            "watch"
-            "episodes"
-            "popular"
+          segments: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "episodes"
+            }
+            {
+              lit: "popular"
+            }
           ]
           transform: {
             req: "`reqdata`"

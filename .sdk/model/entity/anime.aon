@@ -277,6 +277,7 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "score"
       req: false
       short: "Score"
@@ -338,18 +339,21 @@ main: kit: entity: anime: {
       type: "`$ARRAY`"
     }
     {
+      deprecated: true
       name: "title"
       req: false
       short: "Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_english"
       req: false
       short: "English Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_japanese"
       req: false
       short: "Title Japanese"
@@ -362,6 +366,7 @@ main: kit: entity: anime: {
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_synonyms"
       req: false
       short: "Other Titles"
@@ -566,8 +571,10 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime"
-          parts: [
-            "anime"
+          segments: [
+            {
+              lit: "anime"
+            }
           ]
           select: {
             exist: [
@@ -646,9 +653,13 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/top/anime"
-          parts: [
-            "top"
-            "anime"
+          segments: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             exist: [
@@ -702,10 +713,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/reviews"
-          parts: [
-            "anime"
-            "{id}"
-            "reviews"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reviews"
+            }
           ]
           select: {
             "$action": "review"
@@ -744,10 +761,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/episodes"
-          parts: [
-            "anime"
-            "{id}"
-            "episodes"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "episodes"
+            }
           ]
           select: {
             "$action": "episode"
@@ -784,10 +807,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/forum"
-          parts: [
-            "anime"
-            "{id}"
-            "forum"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "forum"
+            }
           ]
           select: {
             "$action": "forum"
@@ -824,10 +853,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/news"
-          parts: [
-            "anime"
-            "{id}"
-            "news"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "news"
+            }
           ]
           select: {
             "$action": "new"
@@ -864,10 +899,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/userupdates"
-          parts: [
-            "anime"
-            "{id}"
-            "userupdates"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "userupdates"
+            }
           ]
           select: {
             "$action": "userupdate"
@@ -904,11 +945,19 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/videos/episodes"
-          parts: [
-            "anime"
-            "{id}"
-            "videos"
-            "episodes"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "videos"
+            }
+            {
+              lit: "episodes"
+            }
           ]
           select: {
             "$action": "video_episode"
@@ -936,10 +985,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/characters"
-          parts: [
-            "anime"
-            "{id}"
-            "characters"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "characters"
+            }
           ]
           select: {
             "$action": "character"
@@ -966,10 +1021,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/external"
-          parts: [
-            "anime"
-            "{id}"
-            "external"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "external"
+            }
           ]
           select: {
             "$action": "external"
@@ -996,10 +1057,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/pictures"
-          parts: [
-            "anime"
-            "{id}"
-            "pictures"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
           ]
           select: {
             "$action": "picture"
@@ -1026,10 +1093,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/recommendations"
-          parts: [
-            "anime"
-            "{id}"
-            "recommendations"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "recommendations"
+            }
           ]
           select: {
             "$action": "recommendation"
@@ -1056,10 +1129,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/relations"
-          parts: [
-            "anime"
-            "{id}"
-            "relations"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relations"
+            }
           ]
           select: {
             "$action": "relation"
@@ -1086,10 +1165,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/staff"
-          parts: [
-            "anime"
-            "{id}"
-            "staff"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "staff"
+            }
           ]
           select: {
             "$action": "staff"
@@ -1116,10 +1201,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/streaming"
-          parts: [
-            "anime"
-            "{id}"
-            "streaming"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "streaming"
+            }
           ]
           select: {
             "$action": "streaming"
@@ -1158,11 +1249,19 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/episodes/{episode}"
-          parts: [
-            "anime"
-            "{id}"
-            "episodes"
-            "{episode}"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "episodes"
+            }
+            {
+              var: "episode"
+            }
           ]
           select: {
             exist: [
@@ -1189,9 +1288,13 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}"
-          parts: [
-            "anime"
-            "{id}"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -1217,10 +1320,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/full"
-          parts: [
-            "anime"
-            "{id}"
-            "full"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"
@@ -1247,10 +1356,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/moreinfo"
-          parts: [
-            "anime"
-            "{id}"
-            "moreinfo"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "moreinfo"
+            }
           ]
           select: {
             "$action": "moreinfo"
@@ -1277,10 +1392,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/statistics"
-          parts: [
-            "anime"
-            "{id}"
-            "statistics"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "statistics"
+            }
           ]
           select: {
             "$action": "statistic"
@@ -1307,10 +1428,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/themes"
-          parts: [
-            "anime"
-            "{id}"
-            "themes"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "themes"
+            }
           ]
           select: {
             "$action": "theme"
@@ -1337,10 +1464,16 @@ main: kit: entity: anime: {
           }
           method: "GET"
           orig: "/anime/{id}/videos"
-          parts: [
-            "anime"
-            "{id}"
-            "videos"
+          segments: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "videos"
+            }
           ]
           select: {
             "$action": "video"

@@ -36,9 +36,13 @@ main: kit: entity: watch_promo: {
           }
           method: "GET"
           orig: "/watch/promos"
-          parts: [
-            "watch"
-            "promos"
+          segments: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "promos"
+            }
           ]
           select: {
             exist: [
@@ -53,10 +57,16 @@ main: kit: entity: watch_promo: {
         {
           method: "GET"
           orig: "/watch/promos/popular"
-          parts: [
-            "watch"
-            "promos"
-            "popular"
+          segments: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "promos"
+            }
+            {
+              lit: "popular"
+            }
           ]
           transform: {
             req: "`reqdata`"

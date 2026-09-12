@@ -138,8 +138,10 @@ main: kit: entity: producer: {
           }
           method: "GET"
           orig: "/producers"
-          parts: [
-            "producers"
+          segments: [
+            {
+              lit: "producers"
+            }
           ]
           select: {
             exist: [
@@ -170,10 +172,16 @@ main: kit: entity: producer: {
           }
           method: "GET"
           orig: "/producers/{id}/external"
-          parts: [
-            "producers"
-            "{id}"
-            "external"
+          segments: [
+            {
+              lit: "producers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "external"
+            }
           ]
           select: {
             "$action": "external"
@@ -205,9 +213,13 @@ main: kit: entity: producer: {
           }
           method: "GET"
           orig: "/producers/{id}"
-          parts: [
-            "producers"
-            "{id}"
+          segments: [
+            {
+              lit: "producers"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -233,10 +245,16 @@ main: kit: entity: producer: {
           }
           method: "GET"
           orig: "/producers/{id}/full"
-          parts: [
-            "producers"
-            "{id}"
-            "full"
+          segments: [
+            {
+              lit: "producers"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"

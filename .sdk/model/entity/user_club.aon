@@ -45,10 +45,16 @@ main: kit: entity: user_club: {
           }
           method: "GET"
           orig: "/users/{username}/clubs"
-          parts: [
-            "users"
-            "{username}"
-            "clubs"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "clubs"
+            }
           ]
           select: {
             exist: [

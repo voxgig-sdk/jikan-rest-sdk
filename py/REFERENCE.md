@@ -1214,6 +1214,7 @@ season = client.Season()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `list` | No |  |
+| `id` | `str` | No |  |
 | `pagination` | `dict` | No |  |
 | `seasons` | `list` | No | List of available seasons |
 | `year` | `int` | No | Year |

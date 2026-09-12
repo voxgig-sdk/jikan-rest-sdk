@@ -184,8 +184,10 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people"
-          parts: [
-            "people"
+          segments: [
+            {
+              lit: "people"
+            }
           ]
           select: {
             exist: [
@@ -216,10 +218,16 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}/anime"
-          parts: [
-            "people"
-            "{id}"
-            "anime"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "anime"
+            }
           ]
           select: {
             "$action": "anime"
@@ -246,10 +254,16 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}/manga"
-          parts: [
-            "people"
-            "{id}"
-            "manga"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             "$action": "manga"
@@ -276,10 +290,16 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}/pictures"
-          parts: [
-            "people"
-            "{id}"
-            "pictures"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
           ]
           select: {
             "$action": "picture"
@@ -306,10 +326,16 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}/voices"
-          parts: [
-            "people"
-            "{id}"
-            "voices"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "voices"
+            }
           ]
           select: {
             "$action": "voice"
@@ -341,9 +367,13 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}"
-          parts: [
-            "people"
-            "{id}"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -369,10 +399,16 @@ main: kit: entity: person: {
           }
           method: "GET"
           orig: "/people/{id}/full"
-          parts: [
-            "people"
-            "{id}"
-            "full"
+          segments: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"

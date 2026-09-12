@@ -71,8 +71,10 @@ main: kit: entity: magazine: {
           }
           method: "GET"
           orig: "/magazines"
-          parts: [
-            "magazines"
+          segments: [
+            {
+              lit: "magazines"
+            }
           ]
           select: {
             exist: [

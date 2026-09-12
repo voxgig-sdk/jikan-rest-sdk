@@ -98,7 +98,7 @@ func TestUserHistoryEntity(t *testing.T) {
 		client := setup.client
 
 		// Bootstrap entity data from existing test data (no create step in flow).
-		userHistoryRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath("existing.user_history", setup.data)))
+		userHistoryRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.user_history")))
 		var userHistoryRef01Data map[string]any
 		if len(userHistoryRef01DataRaw) > 0 {
 			userHistoryRef01Data = core.ToMapAny(userHistoryRef01DataRaw[0][1])
@@ -149,7 +149,7 @@ func user_historyBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"user_history01", "user_history02", "user_history03", "user01", "user02", "user03", "username01"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -177,10 +177,22 @@ func user_historyBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["JIKAN_REST_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewJikanRestSDK(core.ToMapAny(mergedOpts))
 	}

@@ -221,6 +221,7 @@ main: kit: entity: manga: {
       type: "`$STRING`"
     }
     {
+      format: "float"
       name: "score"
       req: false
       short: "Score"
@@ -260,24 +261,28 @@ main: kit: entity: manga: {
       type: "`$ARRAY`"
     }
     {
+      deprecated: true
       name: "title"
       req: false
       short: "Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_english"
       req: false
       short: "English Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_japanese"
       req: false
       short: "Japanese Title"
       type: "`$STRING`"
     }
     {
+      deprecated: true
       name: "title_synonyms"
       req: false
       short: "Other Titles"
@@ -464,8 +469,10 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga"
-          parts: [
-            "manga"
+          segments: [
+            {
+              lit: "manga"
+            }
           ]
           select: {
             exist: [
@@ -529,9 +536,13 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/top/manga"
-          parts: [
-            "top"
-            "manga"
+          segments: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "manga"
+            }
           ]
           select: {
             exist: [
@@ -583,10 +594,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/reviews"
-          parts: [
-            "manga"
-            "{id}"
-            "reviews"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reviews"
+            }
           ]
           select: {
             "$action": "review"
@@ -625,10 +642,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/forum"
-          parts: [
-            "manga"
-            "{id}"
-            "forum"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "forum"
+            }
           ]
           select: {
             "$action": "forum"
@@ -665,10 +688,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/news"
-          parts: [
-            "manga"
-            "{id}"
-            "news"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "news"
+            }
           ]
           select: {
             "$action": "new"
@@ -705,10 +734,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/userupdates"
-          parts: [
-            "manga"
-            "{id}"
-            "userupdates"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "userupdates"
+            }
           ]
           select: {
             "$action": "userupdate"
@@ -736,10 +771,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/characters"
-          parts: [
-            "manga"
-            "{id}"
-            "characters"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "characters"
+            }
           ]
           select: {
             "$action": "character"
@@ -766,10 +807,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/external"
-          parts: [
-            "manga"
-            "{id}"
-            "external"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "external"
+            }
           ]
           select: {
             "$action": "external"
@@ -796,10 +843,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/pictures"
-          parts: [
-            "manga"
-            "{id}"
-            "pictures"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
           ]
           select: {
             "$action": "picture"
@@ -826,10 +879,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/recommendations"
-          parts: [
-            "manga"
-            "{id}"
-            "recommendations"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "recommendations"
+            }
           ]
           select: {
             "$action": "recommendation"
@@ -856,10 +915,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/relations"
-          parts: [
-            "manga"
-            "{id}"
-            "relations"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relations"
+            }
           ]
           select: {
             "$action": "relation"
@@ -891,9 +956,13 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}"
-          parts: [
-            "manga"
-            "{id}"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -919,10 +988,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/full"
-          parts: [
-            "manga"
-            "{id}"
-            "full"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"
@@ -949,10 +1024,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/moreinfo"
-          parts: [
-            "manga"
-            "{id}"
-            "moreinfo"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "moreinfo"
+            }
           ]
           select: {
             "$action": "moreinfo"
@@ -979,10 +1060,16 @@ main: kit: entity: manga: {
           }
           method: "GET"
           orig: "/manga/{id}/statistics"
-          parts: [
-            "manga"
-            "{id}"
-            "statistics"
+          segments: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "statistics"
+            }
           ]
           select: {
             "$action": "statistic"

@@ -38,10 +38,16 @@ main: kit: entity: user_statistic: {
           }
           method: "GET"
           orig: "/users/{username}/statistics"
-          parts: [
-            "users"
-            "{username}"
-            "statistics"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "statistics"
+            }
           ]
           select: {
             exist: [

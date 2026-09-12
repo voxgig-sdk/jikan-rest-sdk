@@ -45,10 +45,16 @@ main: kit: entity: user_friend: {
           }
           method: "GET"
           orig: "/users/{username}/friends"
-          parts: [
-            "users"
-            "{username}"
-            "friends"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "friends"
+            }
           ]
           select: {
             exist: [

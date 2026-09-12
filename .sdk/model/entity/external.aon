@@ -36,10 +36,16 @@ main: kit: entity: external: {
           }
           method: "GET"
           orig: "/users/{username}/external"
-          parts: [
-            "users"
-            "{username}"
-            "external"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "external"
+            }
           ]
           select: {
             exist: [

@@ -1207,6 +1207,7 @@ local season = client:Season(nil)
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `table` | No |  |
+| `id` | `string` | No |  |
 | `pagination` | `table` | No |  |
 | `seasons` | `table` | No | List of available seasons |
 | `year` | `number` | No | Year |

@@ -657,6 +657,7 @@ API path: `/schedules`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `id` |  |
 | `pagination` |  |
 | `seasons` | List of available seasons |
 | `year` | Year |
@@ -1420,6 +1421,7 @@ Create an instance: `local season = client:Season(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `data` | `table` |  |
+| `id` | `string` |  |
 | `pagination` | `table` |  |
 | `seasons` | `table` | List of available seasons |
 | `year` | `number` | Year |

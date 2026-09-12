@@ -1209,6 +1209,7 @@ $season = $client->Season();
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `data` | `array` | No |  |
+| `id` | `string` | No |  |
 | `pagination` | `array` | No |  |
 | `seasons` | `array` | No | List of available seasons |
 | `year` | `int` | No | Year |

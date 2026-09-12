@@ -561,6 +561,7 @@ type ScheduleListMatch struct {
 // Season is the typed data model for the season entity.
 type Season struct {
 	Data *[]any `json:"data,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
 	Seasons *[]any `json:"seasons,omitempty"`
 	Year *int `json:"year,omitempty"`
@@ -581,6 +582,7 @@ type SeasonLoadMatch struct {
 // SeasonListMatch is the typed request payload for Season.ListTyped.
 type SeasonListMatch struct {
 	Data *[]any `json:"data,omitempty"`
+	Id *string `json:"id,omitempty"`
 	Pagination *map[string]any `json:"pagination,omitempty"`
 	Seasons *[]any `json:"seasons,omitempty"`
 	Year *int `json:"year,omitempty"`

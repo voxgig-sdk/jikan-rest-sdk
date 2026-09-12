@@ -537,6 +537,7 @@ class ScheduleListMatch(TypedDict, total=False):
 
 class Season(TypedDict, total=False):
     data: list
+    id: str
     pagination: dict
     seasons: list
     year: int
@@ -558,6 +559,7 @@ class SeasonLoadMatch(SeasonLoadMatchRequired, total=False):
 
 class SeasonListMatch(TypedDict, total=False):
     data: list
+    id: str
     pagination: dict
     seasons: list
     year: int

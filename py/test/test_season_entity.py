@@ -88,9 +88,13 @@ class TestSeasonEntity:
         assert isinstance(season_ref01_list_result, list)
 
         # LOAD
-        season_ref01_match_dt0 = {}
+        season_ref01_match_dt0 = {
+            "id": season_ref01_data["id"],
+        }
         season_ref01_data_dt0_loaded = season_ref01_ent.load(season_ref01_match_dt0, None)
-        assert season_ref01_data_dt0_loaded is not None
+        season_ref01_data_dt0_load_result = helpers.to_map(runner.entity_data(season_ref01_data_dt0_loaded))
+        assert season_ref01_data_dt0_load_result is not None
+        assert season_ref01_data_dt0_load_result["id"] == season_ref01_data["id"]
 
 
 
@@ -139,6 +143,10 @@ def _season_basic_setup(extra):
 
     if env.get("JIKAN_REST_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
+            # FIRST, so the generated fields below win: sdk-test-control.json's
+            # test.client.options adds to the live client, it does not
+            # redirect it.
+            runner.live_client_options(),
             {
             },
             extra or {},

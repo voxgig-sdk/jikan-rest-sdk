@@ -180,8 +180,10 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users"
-          parts: [
-            "users"
+          segments: [
+            {
+              lit: "users"
+            }
           ]
           select: {
             exist: [
@@ -227,10 +229,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}/animelist"
-          parts: [
-            "users"
-            "{username}"
-            "animelist"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "animelist"
+            }
           ]
           select: {
             "$action": "animelist"
@@ -267,10 +275,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}/mangalist"
-          parts: [
-            "users"
-            "{username}"
-            "mangalist"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "mangalist"
+            }
           ]
           select: {
             "$action": "mangalist"
@@ -307,10 +321,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}/reviews"
-          parts: [
-            "users"
-            "{username}"
-            "reviews"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "reviews"
+            }
           ]
           select: {
             "$action": "review"
@@ -338,10 +358,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/userbyid/{id}"
-          parts: [
-            "users"
-            "userbyid"
-            "{id}"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              lit: "userbyid"
+            }
+            {
+              var: "id"
+            }
           ]
           select: {
             exist: [
@@ -367,15 +393,19 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}"
-          parts: [
-            "users"
-            "{id}"
-          ]
           rename: {
             param: {
               username: "id"
             }
           }
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "id"
+            }
+          ]
           select: {
             exist: [
               "id"
@@ -400,10 +430,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}/favorites"
-          parts: [
-            "users"
-            "{username}"
-            "favorites"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "favorites"
+            }
           ]
           select: {
             "$action": "favorite"
@@ -430,10 +466,16 @@ main: kit: entity: user: {
           }
           method: "GET"
           orig: "/users/{username}/full"
-          parts: [
-            "users"
-            "{username}"
-            "full"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "full"
+            }
           ]
           select: {
             "$action": "full"

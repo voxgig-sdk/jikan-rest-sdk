@@ -1822,6 +1822,9 @@ ScheduleListMatch = Struct.new(
 # @!attribute [rw] data
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
@@ -1832,6 +1835,7 @@ ScheduleListMatch = Struct.new(
 #   @return [Integer, nil]
 Season = Struct.new(
   :data,
+  :id,
   :pagination,
   :seasons,
   :year,
@@ -1880,6 +1884,9 @@ SeasonLoadMatch = Struct.new(
 # @!attribute [rw] data
 #   @return [Array, nil]
 #
+# @!attribute [rw] id
+#   @return [String, nil]
+#
 # @!attribute [rw] pagination
 #   @return [Hash, nil]
 #
@@ -1890,6 +1897,7 @@ SeasonLoadMatch = Struct.new(
 #   @return [Integer, nil]
 SeasonListMatch = Struct.new(
   :data,
+  :id,
   :pagination,
   :seasons,
   :year,

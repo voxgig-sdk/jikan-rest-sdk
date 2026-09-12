@@ -615,6 +615,7 @@ export interface ScheduleListMatch {
 
 export interface Season {
   data?: any[]
+  id?: string
   pagination?: Record<string, any>
   seasons?: any[]
   year?: number
@@ -633,6 +634,7 @@ export interface SeasonLoadMatch {
 
 export interface SeasonListMatch {
   data?: any[]
+  id?: string
   pagination?: Record<string, any>
   seasons?: any[]
   year?: number

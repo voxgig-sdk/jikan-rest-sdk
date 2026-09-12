@@ -720,6 +720,7 @@ API path: `/schedules`
 | Field | Description |
 | --- | --- |
 | `data` |  |
+| `id` |  |
 | `pagination` |  |
 | `seasons` | List of available seasons |
 | `year` | Year |
@@ -1483,6 +1484,7 @@ Create an instance: `const season = client.Season()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `data` | `any[]` |  |
+| `id` | `string` |  |
 | `pagination` | `Record<string, any>` |  |
 | `seasons` | `any[]` | List of available seasons |
 | `year` | `number` | Year |

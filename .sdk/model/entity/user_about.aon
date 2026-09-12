@@ -32,10 +32,16 @@ main: kit: entity: user_about: {
           }
           method: "GET"
           orig: "/users/{username}/about"
-          parts: [
-            "users"
-            "{username}"
-            "about"
+          segments: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "about"
+            }
           ]
           select: {
             exist: [

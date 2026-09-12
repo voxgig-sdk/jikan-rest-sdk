@@ -486,6 +486,7 @@
 
 ---@class Season
 ---@field data? table
+---@field id? string
 ---@field pagination? table
 ---@field seasons? table
 ---@field year? number
@@ -502,6 +503,7 @@
 
 ---@class SeasonListMatch
 ---@field data? table
+---@field id? string
 ---@field pagination? table
 ---@field seasons? table
 ---@field year? number

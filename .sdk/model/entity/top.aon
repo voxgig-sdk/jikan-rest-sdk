@@ -62,9 +62,13 @@ main: kit: entity: top: {
           }
           method: "GET"
           orig: "/top/reviews"
-          parts: [
-            "top"
-            "reviews"
+          segments: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "reviews"
+            }
           ]
           select: {
             "$action": "review"

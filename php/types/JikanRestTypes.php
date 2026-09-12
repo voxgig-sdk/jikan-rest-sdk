@@ -596,6 +596,7 @@ class ScheduleListMatch
 class Season
 {
     public ?array $data = null;
+    public ?string $id = null;
     public ?array $pagination = null;
     public ?array $seasons = null;
     public ?int $year = null;
@@ -618,6 +619,7 @@ class SeasonLoadMatch
 class SeasonListMatch
 {
     public ?array $data = null;
+    public ?string $id = null;
     public ?array $pagination = null;
     public ?array $seasons = null;
     public ?int $year = null;
