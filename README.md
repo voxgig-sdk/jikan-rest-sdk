@@ -105,7 +105,7 @@ local results, err = client:External():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
+| TypeScript | `@voxgig-sdk/jikan-rest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
 | Python | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
 | PHP | `voxgig-sdk/jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/jikan-rest-sdk/go` | `go get github.com/voxgig-sdk/jikan-rest-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:External():list()
 ### TypeScript
 
 ```ts
-import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
+import { JikanRestSDK } from '@voxgig-sdk/jikan-rest-sdk'
 
 const client = new JikanRestSDK()
 

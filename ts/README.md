@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
+import { JikanRestSDK } from '@voxgig-sdk/jikan-rest-sdk'
 
 const client = new JikanRestSDK()
 ```
@@ -1847,7 +1847,7 @@ jikan-rest/
 Import the SDK from the package root:
 
 ```ts
-import { JikanRestSDK } from '@voxgig-sdk/jikan-rest'
+import { JikanRestSDK } from '@voxgig-sdk/jikan-rest-sdk'
 ```
 
 ### Entity state
