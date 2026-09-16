@@ -4,19 +4,19 @@
       "USER_HISTORY00": {
         "date": "s1e",
         "entry": {},
-        "increment": "s20",
+        "increment": 32,
         "username": "USERNAME01"
       },
       "USER_HISTORY01": {
         "date": "s3c",
         "entry": {},
-        "increment": "s3e",
+        "increment": 62,
         "username": "USERNAME01"
       },
       "USER_HISTORY02": {
         "date": "s5a",
         "entry": {},
-        "increment": "s5c",
+        "increment": 92,
         "username": "USERNAME01"
       }
     }
@@ -26,7 +26,95 @@
       "user_history_ref01": {
         "date": "s78",
         "entry": {},
-        "increment": "s7a"
+        "increment": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /users/{username}/history": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getUserHistory",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "required": false,
+            "schema": {
+              "enum": [
+                "anime",
+                "manga"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "description": "Transform the resource into an array.",
+                        "properties": {
+                          "date": {
+                            "description": "Date ISO8601",
+                            "type": "string"
+                          },
+                          "entry": {
+                            "description": "Parsed URL Data",
+                            "properties": {
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "name": {
+                                "description": "Resource Name/Title",
+                                "type": "string"
+                              },
+                              "type": {
+                                "description": "Type of resource",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "increment": {
+                            "description": "Number of episodes/chapters watched/read",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns user history (past 30 days)"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

@@ -28,5 +28,259 @@
         "manga": []
       }
     }
+  },
+  "requests": {
+    "GET /users/{username}/userupdates": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getUserUpdates",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "username",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "properties": {
+                        "anime": {
+                          "description": "Last updated Anime",
+                          "items": {
+                            "allOf": [
+                              {
+                                "properties": {
+                                  "entry": {
+                                    "properties": {
+                                      "images": {
+                                        "properties": {
+                                          "jpg": {
+                                            "description": "Available images in JPG",
+                                            "properties": {
+                                              "image_url": {
+                                                "description": "Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "large_image_url": {
+                                                "description": "Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "small_image_url": {
+                                                "description": "Small Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "webp": {
+                                            "description": "Available images in WEBP",
+                                            "properties": {
+                                              "image_url": {
+                                                "description": "Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "large_image_url": {
+                                                "description": "Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "small_image_url": {
+                                                "description": "Small Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              }
+                                            },
+                                            "type": "object"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "mal_id": {
+                                        "description": "MyAnimeList ID",
+                                        "type": "integer"
+                                      },
+                                      "title": {
+                                        "description": "Entry title",
+                                        "type": "string"
+                                      },
+                                      "url": {
+                                        "description": "MyAnimeList URL",
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "date": {
+                                    "description": "ISO8601 format",
+                                    "type": "string"
+                                  },
+                                  "episodes_seen": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "episodes_total": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "score": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "status": {
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "manga": {
+                          "description": "Last updated Manga",
+                          "items": {
+                            "allOf": [
+                              {
+                                "properties": {
+                                  "entry": {
+                                    "properties": {
+                                      "images": {
+                                        "properties": {
+                                          "jpg": {
+                                            "description": "Available images in JPG",
+                                            "properties": {
+                                              "image_url": {
+                                                "description": "Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "large_image_url": {
+                                                "description": "Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "small_image_url": {
+                                                "description": "Small Image URL JPG",
+                                                "nullable": true,
+                                                "type": "string"
+                                              }
+                                            },
+                                            "type": "object"
+                                          },
+                                          "webp": {
+                                            "description": "Available images in WEBP",
+                                            "properties": {
+                                              "image_url": {
+                                                "description": "Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "large_image_url": {
+                                                "description": "Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              },
+                                              "small_image_url": {
+                                                "description": "Small Image URL WEBP",
+                                                "nullable": true,
+                                                "type": "string"
+                                              }
+                                            },
+                                            "type": "object"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "mal_id": {
+                                        "description": "MyAnimeList ID",
+                                        "type": "integer"
+                                      },
+                                      "title": {
+                                        "description": "Entry title",
+                                        "type": "string"
+                                      },
+                                      "url": {
+                                        "description": "MyAnimeList URL",
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              {
+                                "properties": {
+                                  "chapters_read": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "chapters_total": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "date": {
+                                    "description": "ISO8601 format",
+                                    "type": "string"
+                                  },
+                                  "score": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "status": {
+                                    "type": "string"
+                                  },
+                                  "volumes_read": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  },
+                                  "volumes_total": {
+                                    "nullable": true,
+                                    "type": "integer"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns user updates"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

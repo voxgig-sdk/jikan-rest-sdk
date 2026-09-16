@@ -3,11 +3,11 @@
     "producer": {
       "PRODUCER00": {
         "about": "s82",
-        "count": "s83",
+        "count": 131,
         "data": [],
         "established": "s85",
         "external": [],
-        "favorites": "s87",
+        "favorites": 135,
         "id": "PRODUCER00",
         "images": {},
         "mal_id": "MAL01",
@@ -18,11 +18,11 @@
       },
       "PRODUCER01": {
         "about": "s104",
-        "count": "s105",
+        "count": 261,
         "data": [],
         "established": "s107",
         "external": [],
-        "favorites": "s109",
+        "favorites": 265,
         "id": "PRODUCER01",
         "images": {},
         "mal_id": "MAL01",
@@ -33,11 +33,11 @@
       },
       "PRODUCER02": {
         "about": "s186",
-        "count": "s187",
+        "count": 391,
         "data": [],
         "established": "s189",
         "external": [],
-        "favorites": "s18b",
+        "favorites": 395,
         "id": "PRODUCER02",
         "images": {},
         "mal_id": "MAL01",
@@ -52,17 +52,454 @@
     "producer": {
       "producer_ref01": {
         "about": "s208",
-        "count": "s209",
+        "count": 521,
         "data": [],
         "established": "s20b",
         "external": [],
-        "favorites": "s20d",
+        "favorites": 525,
         "images": {},
         "mal_id": "MAL01",
         "name": "s211",
         "pagination": {},
         "titles": [],
         "url": "s214"
+      }
+    }
+  },
+  "requests": {
+    "GET /producers": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getProducers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "schema": {
+              "description": "Producers Search Query Order By",
+              "enum": [
+                "mal_id",
+                "count",
+                "favorites",
+                "established"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "description": "Search query sort direction",
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return entries starting with the given letter",
+            "in": "query",
+            "name": "letter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "description": "Producers Resource",
+                            "properties": {
+                              "about": {
+                                "description": "About the Producer",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "count": {
+                                "description": "Producers's anime count",
+                                "type": "integer"
+                              },
+                              "established": {
+                                "description": "Established Date ISO8601",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "favorites": {
+                                "description": "Producers's member favorites count",
+                                "type": "integer"
+                              },
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "titles": {
+                                "description": "All titles",
+                                "items": {
+                                  "properties": {
+                                    "title": {
+                                      "description": "Title value",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Title type",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Producers Collection Resource"
+                }
+              }
+            },
+            "description": "Returns producers collection"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /producers/{id}/external": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getProducerExternal",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "External links",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "url": {
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns producer's external links"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /producers/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getProducerById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Producers Resource",
+                      "properties": {
+                        "about": {
+                          "description": "About the Producer",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "count": {
+                          "description": "Producers's anime count",
+                          "type": "integer"
+                        },
+                        "established": {
+                          "description": "Established Date ISO8601",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "favorites": {
+                          "description": "Producers's member favorites count",
+                          "type": "integer"
+                        },
+                        "images": {
+                          "properties": {
+                            "jpg": {
+                              "description": "Available images in JPG",
+                              "properties": {
+                                "image_url": {
+                                  "description": "Image URL JPG",
+                                  "nullable": true,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mal_id": {
+                          "description": "MyAnimeList ID",
+                          "type": "integer"
+                        },
+                        "titles": {
+                          "description": "All titles",
+                          "items": {
+                            "properties": {
+                              "title": {
+                                "description": "Title value",
+                                "type": "string"
+                              },
+                              "type": {
+                                "description": "Title type",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "url": {
+                          "description": "MyAnimeList URL",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns producer resource"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /producers/{id}/full": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getProducerFullById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Producers Resource",
+                      "properties": {
+                        "about": {
+                          "description": "About the Producer",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "count": {
+                          "description": "Producers's anime count",
+                          "type": "integer"
+                        },
+                        "established": {
+                          "description": "Established Date ISO8601",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "external": {
+                          "items": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "url": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "favorites": {
+                          "description": "Producers's member favorites count",
+                          "type": "integer"
+                        },
+                        "images": {
+                          "properties": {
+                            "jpg": {
+                              "description": "Available images in JPG",
+                              "properties": {
+                                "image_url": {
+                                  "description": "Image URL JPG",
+                                  "nullable": true,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mal_id": {
+                          "description": "MyAnimeList ID",
+                          "type": "integer"
+                        },
+                        "titles": {
+                          "description": "All titles",
+                          "items": {
+                            "properties": {
+                              "title": {
+                                "description": "Title value",
+                                "type": "string"
+                              },
+                              "type": {
+                                "description": "Title type",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "url": {
+                          "description": "MyAnimeList URL",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns producer resource"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

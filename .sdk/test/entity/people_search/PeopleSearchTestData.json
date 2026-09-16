@@ -22,5 +22,163 @@
         "pagination": {}
       }
     }
+  },
+  "requests": {
+    "GET /top/people": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getTopPeople",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "allOf": [
+                              {
+                                "description": "Person Resource",
+                                "properties": {
+                                  "about": {
+                                    "description": "Biography",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "alternate_names": {
+                                    "description": "Other Names",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "birthday": {
+                                    "description": "Birthday Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "family_name": {
+                                    "description": "Family Name",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "favorites": {
+                                    "description": "Number of users who have favorited this entry",
+                                    "type": "integer"
+                                  },
+                                  "given_name": {
+                                    "description": "Given Name",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "name": {
+                                    "description": "Name",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  },
+                                  "website_url": {
+                                    "description": "Person's website URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            ]
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "type": "integer"
+                                },
+                                "per_page": {
+                                  "type": "integer"
+                                },
+                                "total": {
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "People Search"
+                }
+              }
+            },
+            "description": "Returns top people"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

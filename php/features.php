@@ -4,7 +4,10 @@ declare(strict_types=1);
 // JikanRest SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class JikanRestFeatures
@@ -14,8 +17,14 @@ class JikanRestFeatures
         switch ($name) {
             case "base":
                 return new JikanRestBaseFeature();
+            case "ratelimit":
+                return new JikanRestRatelimitFeature();
+            case "retry":
+                return new JikanRestRetryFeature();
             case "test":
                 return new JikanRestTestFeature();
+            case "timeout":
+                return new JikanRestTimeoutFeature();
             default:
                 return new JikanRestBaseFeature();
         }
@@ -31,7 +40,10 @@ class JikanRestFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

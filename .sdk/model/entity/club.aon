@@ -161,6 +161,12 @@ main: kit: entity: club: {
               }
             ]
           }
+          contract: {
+            id: "GET /clubs"
+            json: "{\"operationId\":\"getClubsSearch\",\"parameters\":[{\"in\":\"query\",\"name\":\"page\",\"schema\":{\"type\":\"integer\"}},{\"in\":\"query\",\"name\":\"limit\",\"schema\":{\"type\":\"integer\"}},{\"in\":\"query\",\"name\":\"q\",\"schema\":{\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"type\",\"schema\":{\"description\":\"Club Search Query Type\",\"enum\":[\"public\",\"private\",\"secret\"],\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"category\",\"schema\":{\"description\":\"Club Search Query Category\",\"enum\":[\"anime\",\"manga\",\"actors_and_artists\",\"characters\",\"cities_and_neighborhoods\",\"companies\",\"conventions\",\"games\",\"japan\",\"music\",\"other\",\"schools\"],\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"order_by\",\"schema\":{\"description\":\"Club Search Query OrderBy\",\"enum\":[\"mal_id\",\"name\",\"members_count\",\"created\"],\"type\":\"string\"}},{\"in\":\"query\",\"name\":\"sort\",\"schema\":{\"description\":\"Search query sort direction\",\"enum\":[\"desc\",\"asc\"],\"type\":\"string\"}},{\"description\":\"Return entries starting with the given letter\",\"in\":\"query\",\"name\":\"letter\",\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"data\":{\"items\":{\"description\":\"Club Resource\",\"properties\":{\"access\":{\"description\":\"Club access\",\"enum\":[\"public\",\"private\",\"secret\"],\"type\":\"string\"},\"category\":{\"description\":\"Club Category\",\"enum\":[\"actors & artists\",\"anime\",\"characters\",\"cities & neighborhoods\",\"companies\",\"conventions\",\"games\",\"japan\",\"manga\",\"music\",\"others\",\"schools\"],\"type\":\"string\"},\"created\":{\"description\":\"Date Created ISO8601\",\"type\":\"string\"},\"images\":{\"properties\":{\"jpg\":{\"description\":\"Available images in JPG\",\"properties\":{\"image_url\":{\"description\":\"Image URL JPG\",\"nullable\":true,\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"members\":{\"description\":\"Number of club members\",\"type\":\"integer\"},\"name\":{\"description\":\"Club name\",\"type\":\"string\"},\"url\":{\"description\":\"Club URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"},{\"properties\":{\"pagination\":{\"properties\":{\"has_next_page\":{\"type\":\"boolean\"},\"last_visible_page\":{\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"}],\"description\":\"Clubs Search Resource\"}}},\"description\":\"Returns search results for clubs\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/clubs"
           segments: [
@@ -206,6 +212,12 @@ main: kit: entity: club: {
               }
             ]
           }
+          contract: {
+            id: "GET /clubs/{id}/members"
+            json: "{\"operationId\":\"getClubMembers\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"integer\"}},{\"in\":\"query\",\"name\":\"page\",\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"allOf\":[{\"properties\":{\"pagination\":{\"properties\":{\"has_next_page\":{\"type\":\"boolean\"},\"last_visible_page\":{\"type\":\"integer\"}},\"type\":\"object\"}},\"type\":\"object\"},{\"description\":\"Club Member\",\"properties\":{\"data\":{\"items\":{\"properties\":{\"images\":{\"properties\":{\"jpg\":{\"description\":\"Available images in JPG\",\"properties\":{\"image_url\":{\"description\":\"Image URL JPG\",\"nullable\":true,\"type\":\"string\"}},\"type\":\"object\"},\"webp\":{\"description\":\"Available images in WEBP\",\"properties\":{\"image_url\":{\"description\":\"Image URL WEBP\",\"nullable\":true,\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"url\":{\"description\":\"User URL\",\"type\":\"string\"},\"username\":{\"description\":\"User's username\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}]}}},\"description\":\"Returns Club Members Resource\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/clubs/{id}/members"
           segments: [
@@ -242,6 +254,12 @@ main: kit: entity: club: {
                 type: "`$INTEGER`"
               }
             ]
+          }
+          contract: {
+            id: "GET /clubs/{id}/staff"
+            json: "{\"operationId\":\"getClubStaff\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Club Staff Resource\",\"properties\":{\"data\":{\"items\":{\"properties\":{\"url\":{\"description\":\"User URL\",\"type\":\"string\"},\"username\":{\"description\":\"User's username\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Returns Club Staff\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/clubs/{id}/staff"
@@ -284,6 +302,12 @@ main: kit: entity: club: {
               }
             ]
           }
+          contract: {
+            id: "GET /clubs/{id}"
+            json: "{\"operationId\":\"getClubsById\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"description\":\"Club Resource\",\"properties\":{\"access\":{\"description\":\"Club access\",\"enum\":[\"public\",\"private\",\"secret\"],\"type\":\"string\"},\"category\":{\"description\":\"Club Category\",\"enum\":[\"actors & artists\",\"anime\",\"characters\",\"cities & neighborhoods\",\"companies\",\"conventions\",\"games\",\"japan\",\"manga\",\"music\",\"others\",\"schools\"],\"type\":\"string\"},\"created\":{\"description\":\"Date Created ISO8601\",\"type\":\"string\"},\"images\":{\"properties\":{\"jpg\":{\"description\":\"Available images in JPG\",\"properties\":{\"image_url\":{\"description\":\"Image URL JPG\",\"nullable\":true,\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"members\":{\"description\":\"Number of club members\",\"type\":\"integer\"},\"name\":{\"description\":\"Club name\",\"type\":\"string\"},\"url\":{\"description\":\"Club URL\",\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Returns Club Resource\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/clubs/{id}"
           segments: [
@@ -315,6 +339,12 @@ main: kit: entity: club: {
                 type: "`$INTEGER`"
               }
             ]
+          }
+          contract: {
+            id: "GET /clubs/{id}/relations"
+            json: "{\"operationId\":\"getClubRelations\",\"parameters\":[{\"in\":\"path\",\"name\":\"id\",\"required\":true,\"schema\":{\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Club Relations\",\"properties\":{\"data\":{\"properties\":{\"anime\":{\"items\":{\"description\":\"Parsed URL Data\",\"properties\":{\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Resource Name/Title\",\"type\":\"string\"},\"type\":{\"description\":\"Type of resource\",\"type\":\"string\"},\"url\":{\"description\":\"MyAnimeList URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"characters\":{\"items\":{\"description\":\"Parsed URL Data\",\"properties\":{\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Resource Name/Title\",\"type\":\"string\"},\"type\":{\"description\":\"Type of resource\",\"type\":\"string\"},\"url\":{\"description\":\"MyAnimeList URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"},\"manga\":{\"items\":{\"description\":\"Parsed URL Data\",\"properties\":{\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Resource Name/Title\",\"type\":\"string\"},\"type\":{\"description\":\"Type of resource\",\"type\":\"string\"},\"url\":{\"description\":\"MyAnimeList URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Returns Club Relations\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/clubs/{id}/relations"

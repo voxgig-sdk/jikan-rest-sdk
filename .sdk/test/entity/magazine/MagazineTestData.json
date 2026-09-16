@@ -22,5 +22,134 @@
         "pagination": {}
       }
     }
+  },
+  "requests": {
+    "GET /magazines": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getMagazines",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "schema": {
+              "description": "Order by magazine data",
+              "enum": [
+                "mal_id",
+                "name",
+                "count"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "description": "Search query sort direction",
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return entries starting with the given letter",
+            "in": "query",
+            "name": "letter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "description": "Magazine Resource",
+                            "properties": {
+                              "count": {
+                                "description": "Magazine's manga count",
+                                "type": "integer"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "name": {
+                                "description": "Magazine Name",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Magazine Collection Resource"
+                }
+              }
+            },
+            "description": "Returns magazines collection"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

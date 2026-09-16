@@ -48,6 +48,12 @@ main: kit: entity: genre: {
               }
             ]
           }
+          contract: {
+            id: "GET /genres/anime"
+            json: "{\"operationId\":\"getAnimeGenres\",\"parameters\":[{\"in\":\"query\",\"name\":\"filter\",\"schema\":{\"description\":\"Filter genres by type\",\"enum\":[\"genres\",\"explicit_genres\",\"themes\",\"demographics\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Genres Collection Resource\",\"properties\":{\"data\":{\"items\":{\"description\":\"Genre Resource\",\"properties\":{\"count\":{\"description\":\"Genre's entry count\",\"type\":\"integer\"},\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Genre Name\",\"type\":\"string\"},\"url\":{\"description\":\"MyAnimeList URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Returns entry genres, explicit_genres, themes and demographics\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/genres/anime"
           segments: [
@@ -80,6 +86,12 @@ main: kit: entity: genre: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /genres/manga"
+            json: "{\"operationId\":\"getMangaGenres\",\"parameters\":[{\"in\":\"query\",\"name\":\"filter\",\"schema\":{\"description\":\"Filter genres by type\",\"enum\":[\"genres\",\"explicit_genres\",\"themes\",\"demographics\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"Genres Collection Resource\",\"properties\":{\"data\":{\"items\":{\"description\":\"Genre Resource\",\"properties\":{\"count\":{\"description\":\"Genre's entry count\",\"type\":\"integer\"},\"mal_id\":{\"description\":\"MyAnimeList ID\",\"type\":\"integer\"},\"name\":{\"description\":\"Genre Name\",\"type\":\"string\"},\"url\":{\"description\":\"MyAnimeList URL\",\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Returns entry genres, explicit_genres, themes and demographics\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/genres/manga"

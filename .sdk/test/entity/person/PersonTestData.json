@@ -9,7 +9,7 @@
         "character": {},
         "data": [],
         "family_name": "sd8",
-        "favorites": "sd9",
+        "favorites": 217,
         "given_name": "sda",
         "id": "PERSON00",
         "images": {},
@@ -32,7 +32,7 @@
         "character": {},
         "data": [],
         "family_name": "s1aa",
-        "favorites": "s1ab",
+        "favorites": 427,
         "given_name": "s1ac",
         "id": "PERSON01",
         "images": {},
@@ -55,7 +55,7 @@
         "character": {},
         "data": [],
         "family_name": "s27c",
-        "favorites": "s27d",
+        "favorites": 637,
         "given_name": "s27e",
         "id": "PERSON02",
         "images": {},
@@ -82,7 +82,7 @@
         "character": {},
         "data": [],
         "family_name": "s34e",
-        "favorites": "s34f",
+        "favorites": 847,
         "given_name": "s350",
         "images": {},
         "jpg": {},
@@ -95,6 +95,1142 @@
         "url": "s35a",
         "voices": [],
         "website_url": "s35c"
+      }
+    }
+  },
+  "requests": {
+    "GET /people": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPeopleSearch",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "order_by",
+            "schema": {
+              "description": "Available People order_by properties",
+              "enum": [
+                "mal_id",
+                "name",
+                "birthday",
+                "favorites"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "sort",
+            "schema": {
+              "description": "Search query sort direction",
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return entries starting with the given letter",
+            "in": "query",
+            "name": "letter",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "allOf": [
+                              {
+                                "description": "Person Resource",
+                                "properties": {
+                                  "about": {
+                                    "description": "Biography",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "alternate_names": {
+                                    "description": "Other Names",
+                                    "items": {
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "birthday": {
+                                    "description": "Birthday Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "family_name": {
+                                    "description": "Family Name",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "favorites": {
+                                    "description": "Number of users who have favorited this entry",
+                                    "type": "integer"
+                                  },
+                                  "given_name": {
+                                    "description": "Given Name",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "name": {
+                                    "description": "Name",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  },
+                                  "website_url": {
+                                    "description": "Person's website URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              }
+                            ]
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "type": "integer"
+                                },
+                                "per_page": {
+                                  "type": "integer"
+                                },
+                                "total": {
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "People Search"
+                }
+              }
+            },
+            "description": "Returns search results for people"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}/anime": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonAnime",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Person anime staff positions",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "anime": {
+                            "properties": {
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "title": {
+                                "description": "Entry title",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "position": {
+                            "description": "Person's position",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns person's anime staff positions"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}/manga": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonManga",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Person's mangaography",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "manga": {
+                            "properties": {
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "title": {
+                                "description": "Entry title",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "position": {
+                            "description": "Person's position",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns person's published manga works"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}/pictures": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonPictures",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Character Pictures",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "jpg": {
+                            "description": "Available images in JPG",
+                            "properties": {
+                              "image_url": {
+                                "description": "Image URL JPG",
+                                "nullable": true,
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns a list of pictures of the person"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}/voices": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonVoices",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "Person's voice acting roles",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "anime": {
+                            "properties": {
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "title": {
+                                "description": "Entry title",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "character": {
+                            "properties": {
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "name": {
+                                "description": "Entry name",
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "role": {
+                            "description": "Person's Character's role in the anime",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns person's voice acting roles"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Person Resource",
+                      "properties": {
+                        "about": {
+                          "description": "Biography",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "alternate_names": {
+                          "description": "Other Names",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "birthday": {
+                          "description": "Birthday Date ISO8601",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "family_name": {
+                          "description": "Family Name",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "favorites": {
+                          "description": "Number of users who have favorited this entry",
+                          "type": "integer"
+                        },
+                        "given_name": {
+                          "description": "Given Name",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "images": {
+                          "properties": {
+                            "jpg": {
+                              "description": "Available images in JPG",
+                              "properties": {
+                                "image_url": {
+                                  "description": "Image URL JPG",
+                                  "nullable": true,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mal_id": {
+                          "description": "MyAnimeList ID",
+                          "type": "integer"
+                        },
+                        "name": {
+                          "description": "Name",
+                          "type": "string"
+                        },
+                        "url": {
+                          "description": "MyAnimeList URL",
+                          "type": "string"
+                        },
+                        "website_url": {
+                          "description": "Person's website URL",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns pictures related to the entry"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /people/{id}/full": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getPersonFullById",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "data": {
+                      "description": "Person Resource",
+                      "properties": {
+                        "about": {
+                          "description": "Biography",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "alternate_names": {
+                          "description": "Other Names",
+                          "items": {
+                            "type": "string"
+                          },
+                          "type": "array"
+                        },
+                        "anime": {
+                          "items": {
+                            "properties": {
+                              "anime": {
+                                "properties": {
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "webp": {
+                                        "description": "Available images in WEBP",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "title": {
+                                    "description": "Entry title",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "position": {
+                                "description": "Person's position",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "birthday": {
+                          "description": "Birthday Date ISO8601",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "family_name": {
+                          "description": "Family Name",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "favorites": {
+                          "description": "Number of users who have favorited this entry",
+                          "type": "integer"
+                        },
+                        "given_name": {
+                          "description": "Given Name",
+                          "nullable": true,
+                          "type": "string"
+                        },
+                        "images": {
+                          "properties": {
+                            "jpg": {
+                              "description": "Available images in JPG",
+                              "properties": {
+                                "image_url": {
+                                  "description": "Image URL JPG",
+                                  "nullable": true,
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "mal_id": {
+                          "description": "MyAnimeList ID",
+                          "type": "integer"
+                        },
+                        "manga": {
+                          "items": {
+                            "properties": {
+                              "manga": {
+                                "properties": {
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "webp": {
+                                        "description": "Available images in WEBP",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "title": {
+                                    "description": "Entry title",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "position": {
+                                "description": "Person's position",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "name": {
+                          "description": "Name",
+                          "type": "string"
+                        },
+                        "url": {
+                          "description": "MyAnimeList URL",
+                          "type": "string"
+                        },
+                        "voices": {
+                          "items": {
+                            "properties": {
+                              "anime": {
+                                "properties": {
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "webp": {
+                                        "description": "Available images in WEBP",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "large_image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "title": {
+                                    "description": "Entry title",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "character": {
+                                "properties": {
+                                  "images": {
+                                    "properties": {
+                                      "jpg": {
+                                        "description": "Available images in JPG",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL JPG",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "webp": {
+                                        "description": "Available images in WEBP",
+                                        "properties": {
+                                          "image_url": {
+                                            "description": "Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          },
+                                          "small_image_url": {
+                                            "description": "Small Image URL WEBP",
+                                            "nullable": true,
+                                            "type": "string"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "mal_id": {
+                                    "description": "MyAnimeList ID",
+                                    "type": "integer"
+                                  },
+                                  "name": {
+                                    "description": "Entry name",
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "MyAnimeList URL",
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "role": {
+                                "description": "Person's Character's role in the anime",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
+                        "website_url": {
+                          "description": "Person's website URL",
+                          "nullable": true,
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns complete character resource data"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }

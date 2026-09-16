@@ -6,7 +6,7 @@
         "id": "SEASON00",
         "pagination": {},
         "seasons": [],
-        "year": "s36",
+        "year": 54,
         "season": "SEASON01"
       },
       "SEASON01": {
@@ -14,7 +14,7 @@
         "id": "SEASON01",
         "pagination": {},
         "seasons": [],
-        "year": "s68",
+        "year": 104,
         "season": "SEASON01"
       },
       "SEASON02": {
@@ -22,7 +22,7 @@
         "id": "SEASON02",
         "pagination": {},
         "seasons": [],
-        "year": "s9a",
+        "year": 154,
         "season": "SEASON01"
       }
     }
@@ -33,7 +33,1976 @@
         "data": [],
         "pagination": {},
         "seasons": [],
-        "year": "scc"
+        "year": 204
+      }
+    }
+  },
+  "requests": {
+    "GET /seasons/now": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSeasonNow",
+        "parameters": [
+          {
+            "description": "Entry types",
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "enum": [
+                "tv",
+                "movie",
+                "ova",
+                "special",
+                "ona",
+                "music"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "'Safe For Work'. This is a flag. When supplied it will filter out entries according to the SFW Policy. You do not need to pass a value to it. e.g usage: `?sfw`",
+            "in": "query",
+            "name": "sfw",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+            "in": "query",
+            "name": "unapproved",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are continuing from previous seasons. MAL includes these items on the seasons view in the &#8243;TV (continuing)&#8243; section. (Example: https://myanimelist.net/anime/season/2024/winter) <br />Example usage: `?continuing`",
+            "in": "query",
+            "name": "continuing",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "description": "Anime Resource",
+                            "properties": {
+                              "aired": {
+                                "description": "Date range",
+                                "properties": {
+                                  "from": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "prop": {
+                                    "description": "Date Prop",
+                                    "properties": {
+                                      "from": {
+                                        "description": "Date Prop From",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "string": {
+                                        "description": "Raw parsed string",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "to": {
+                                        "description": "Date Prop To",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "to": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "airing": {
+                                "description": "Airing boolean",
+                                "type": "boolean"
+                              },
+                              "approved": {
+                                "description": "Whether the entry is pending approval on MAL or not",
+                                "type": "boolean"
+                              },
+                              "background": {
+                                "description": "Background",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "broadcast": {
+                                "description": "Broadcast Details",
+                                "properties": {
+                                  "day": {
+                                    "description": "Day of the week",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "string": {
+                                    "description": "Raw parsed broadcast string",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "time": {
+                                    "description": "Time in 24 hour format",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "timezone": {
+                                    "description": "Timezone (Tz Database format https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "demographics": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "duration": {
+                                "description": "Parsed raw duration",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "episodes": {
+                                "description": "Episode count",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "explicit_genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "favorites": {
+                                "description": "Number of users who have favorited this entry",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "licensors": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "members": {
+                                "description": "Number of users who have added this entry to their list",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "popularity": {
+                                "description": "Popularity",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "producers": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "rank": {
+                                "description": "Ranking",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "rating": {
+                                "description": "Anime audience rating",
+                                "enum": [
+                                  "G - All Ages",
+                                  "PG - Children",
+                                  "PG-13 - Teens 13 or older",
+                                  "R - 17+ (violence & profanity)",
+                                  "R+ - Mild Nudity",
+                                  "Rx - Hentai"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "score": {
+                                "description": "Score",
+                                "format": "float",
+                                "nullable": true,
+                                "type": "number"
+                              },
+                              "scored_by": {
+                                "description": "Number of users",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "season": {
+                                "description": "Season",
+                                "enum": [
+                                  "summer",
+                                  "winter",
+                                  "spring",
+                                  "fall"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "source": {
+                                "description": "Original Material/Source adapted from",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "status": {
+                                "description": "Airing status",
+                                "enum": [
+                                  "Finished Airing",
+                                  "Currently Airing",
+                                  "Not yet aired"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "studios": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "synopsis": {
+                                "description": "Synopsis",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "themes": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "title": {
+                                "deprecated": true,
+                                "description": "Title",
+                                "type": "string"
+                              },
+                              "title_english": {
+                                "deprecated": true,
+                                "description": "English Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_japanese": {
+                                "deprecated": true,
+                                "description": "Japanese Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_synonyms": {
+                                "deprecated": true,
+                                "description": "Other Titles",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "titles": {
+                                "description": "All titles",
+                                "items": {
+                                  "properties": {
+                                    "title": {
+                                      "description": "Title value",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Title type",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "trailer": {
+                                "description": "Youtube Details",
+                                "properties": {
+                                  "embed_url": {
+                                    "description": "Parsed Embed URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "YouTube URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "youtube_id": {
+                                    "description": "YouTube ID",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "Anime Type",
+                                "enum": [
+                                  "TV",
+                                  "OVA",
+                                  "Movie",
+                                  "Special",
+                                  "ONA",
+                                  "Music"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              },
+                              "year": {
+                                "description": "Year",
+                                "nullable": true,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "type": "integer"
+                                },
+                                "per_page": {
+                                  "type": "integer"
+                                },
+                                "total": {
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Anime Collection Resource"
+                }
+              }
+            },
+            "description": "Returns current seasonal anime"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /seasons/upcoming": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSeasonUpcoming",
+        "parameters": [
+          {
+            "description": "Entry types",
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "enum": [
+                "tv",
+                "movie",
+                "ova",
+                "special",
+                "ona",
+                "music"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "'Safe For Work'. This is a flag. When supplied it will filter out entries according to the SFW Policy. You do not need to pass a value to it. e.g usage: `?sfw`",
+            "in": "query",
+            "name": "sfw",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+            "in": "query",
+            "name": "unapproved",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are continuing from previous seasons. MAL includes these items on the seasons view in the &#8243;TV (continuing)&#8243; section. (Example: https://myanimelist.net/anime/season/2024/winter) <br />Example usage: `?continuing`",
+            "in": "query",
+            "name": "continuing",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "description": "Anime Resource",
+                            "properties": {
+                              "aired": {
+                                "description": "Date range",
+                                "properties": {
+                                  "from": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "prop": {
+                                    "description": "Date Prop",
+                                    "properties": {
+                                      "from": {
+                                        "description": "Date Prop From",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "string": {
+                                        "description": "Raw parsed string",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "to": {
+                                        "description": "Date Prop To",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "to": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "airing": {
+                                "description": "Airing boolean",
+                                "type": "boolean"
+                              },
+                              "approved": {
+                                "description": "Whether the entry is pending approval on MAL or not",
+                                "type": "boolean"
+                              },
+                              "background": {
+                                "description": "Background",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "broadcast": {
+                                "description": "Broadcast Details",
+                                "properties": {
+                                  "day": {
+                                    "description": "Day of the week",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "string": {
+                                    "description": "Raw parsed broadcast string",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "time": {
+                                    "description": "Time in 24 hour format",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "timezone": {
+                                    "description": "Timezone (Tz Database format https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "demographics": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "duration": {
+                                "description": "Parsed raw duration",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "episodes": {
+                                "description": "Episode count",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "explicit_genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "favorites": {
+                                "description": "Number of users who have favorited this entry",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "licensors": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "members": {
+                                "description": "Number of users who have added this entry to their list",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "popularity": {
+                                "description": "Popularity",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "producers": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "rank": {
+                                "description": "Ranking",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "rating": {
+                                "description": "Anime audience rating",
+                                "enum": [
+                                  "G - All Ages",
+                                  "PG - Children",
+                                  "PG-13 - Teens 13 or older",
+                                  "R - 17+ (violence & profanity)",
+                                  "R+ - Mild Nudity",
+                                  "Rx - Hentai"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "score": {
+                                "description": "Score",
+                                "format": "float",
+                                "nullable": true,
+                                "type": "number"
+                              },
+                              "scored_by": {
+                                "description": "Number of users",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "season": {
+                                "description": "Season",
+                                "enum": [
+                                  "summer",
+                                  "winter",
+                                  "spring",
+                                  "fall"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "source": {
+                                "description": "Original Material/Source adapted from",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "status": {
+                                "description": "Airing status",
+                                "enum": [
+                                  "Finished Airing",
+                                  "Currently Airing",
+                                  "Not yet aired"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "studios": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "synopsis": {
+                                "description": "Synopsis",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "themes": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "title": {
+                                "deprecated": true,
+                                "description": "Title",
+                                "type": "string"
+                              },
+                              "title_english": {
+                                "deprecated": true,
+                                "description": "English Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_japanese": {
+                                "deprecated": true,
+                                "description": "Japanese Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_synonyms": {
+                                "deprecated": true,
+                                "description": "Other Titles",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "titles": {
+                                "description": "All titles",
+                                "items": {
+                                  "properties": {
+                                    "title": {
+                                      "description": "Title value",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Title type",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "trailer": {
+                                "description": "Youtube Details",
+                                "properties": {
+                                  "embed_url": {
+                                    "description": "Parsed Embed URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "YouTube URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "youtube_id": {
+                                    "description": "YouTube ID",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "Anime Type",
+                                "enum": [
+                                  "TV",
+                                  "OVA",
+                                  "Movie",
+                                  "Special",
+                                  "ONA",
+                                  "Music"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              },
+                              "year": {
+                                "description": "Year",
+                                "nullable": true,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "type": "integer"
+                                },
+                                "per_page": {
+                                  "type": "integer"
+                                },
+                                "total": {
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Anime Collection Resource"
+                }
+              }
+            },
+            "description": "Returns upcoming season's anime"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /seasons": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSeasonsList",
+        "parameters": [],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "List of available seasons",
+                  "properties": {
+                    "data": {
+                      "items": {
+                        "properties": {
+                          "seasons": {
+                            "description": "List of available seasons",
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "year": {
+                            "description": "Year",
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Returns available list of seasons"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    },
+    "GET /seasons/{year}/{season}": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getSeason",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "year",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "path",
+            "name": "season",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "Entry types",
+            "in": "query",
+            "name": "filter",
+            "schema": {
+              "enum": [
+                "tv",
+                "movie",
+                "ova",
+                "special",
+                "ona",
+                "music"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "'Safe For Work'. This is a flag. When supplied it will filter out entries according to the SFW Policy. You do not need to pass a value to it. e.g usage: `?sfw`",
+            "in": "query",
+            "name": "sfw",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are unapproved. Unapproved entries on MyAnimeList are those that are user submitted and have not yet been approved by MAL to show up on other pages. They will have their own specifc pages and are often removed resulting in a 404 error. You do not need to pass a value to it. e.g usage: `?unapproved`",
+            "in": "query",
+            "name": "unapproved",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "This is a flag. When supplied it will include entries which are continuing from previous seasons. MAL includes these items on the seasons view in the &#8243;TV (continuing)&#8243; section. (Example: https://myanimelist.net/anime/season/2024/winter) <br />Example usage: `?continuing`",
+            "in": "query",
+            "name": "continuing",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "properties": {
+                        "data": {
+                          "items": {
+                            "description": "Anime Resource",
+                            "properties": {
+                              "aired": {
+                                "description": "Date range",
+                                "properties": {
+                                  "from": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "prop": {
+                                    "description": "Date Prop",
+                                    "properties": {
+                                      "from": {
+                                        "description": "Date Prop From",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      },
+                                      "string": {
+                                        "description": "Raw parsed string",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "to": {
+                                        "description": "Date Prop To",
+                                        "properties": {
+                                          "day": {
+                                            "description": "Day",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "month": {
+                                            "description": "Month",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          },
+                                          "year": {
+                                            "description": "Year",
+                                            "nullable": true,
+                                            "type": "integer"
+                                          }
+                                        },
+                                        "type": "object"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "to": {
+                                    "description": "Date ISO8601",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "airing": {
+                                "description": "Airing boolean",
+                                "type": "boolean"
+                              },
+                              "approved": {
+                                "description": "Whether the entry is pending approval on MAL or not",
+                                "type": "boolean"
+                              },
+                              "background": {
+                                "description": "Background",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "broadcast": {
+                                "description": "Broadcast Details",
+                                "properties": {
+                                  "day": {
+                                    "description": "Day of the week",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "string": {
+                                    "description": "Raw parsed broadcast string",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "time": {
+                                    "description": "Time in 24 hour format",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "timezone": {
+                                    "description": "Timezone (Tz Database format https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "demographics": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "duration": {
+                                "description": "Parsed raw duration",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "episodes": {
+                                "description": "Episode count",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "explicit_genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "favorites": {
+                                "description": "Number of users who have favorited this entry",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "genres": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "images": {
+                                "properties": {
+                                  "jpg": {
+                                    "description": "Available images in JPG",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL JPG",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  },
+                                  "webp": {
+                                    "description": "Available images in WEBP",
+                                    "properties": {
+                                      "image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "large_image_url": {
+                                        "description": "Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      },
+                                      "small_image_url": {
+                                        "description": "Small Image URL WEBP",
+                                        "nullable": true,
+                                        "type": "string"
+                                      }
+                                    },
+                                    "type": "object"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "licensors": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "mal_id": {
+                                "description": "MyAnimeList ID",
+                                "type": "integer"
+                              },
+                              "members": {
+                                "description": "Number of users who have added this entry to their list",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "popularity": {
+                                "description": "Popularity",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "producers": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "rank": {
+                                "description": "Ranking",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "rating": {
+                                "description": "Anime audience rating",
+                                "enum": [
+                                  "G - All Ages",
+                                  "PG - Children",
+                                  "PG-13 - Teens 13 or older",
+                                  "R - 17+ (violence & profanity)",
+                                  "R+ - Mild Nudity",
+                                  "Rx - Hentai"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "score": {
+                                "description": "Score",
+                                "format": "float",
+                                "nullable": true,
+                                "type": "number"
+                              },
+                              "scored_by": {
+                                "description": "Number of users",
+                                "nullable": true,
+                                "type": "integer"
+                              },
+                              "season": {
+                                "description": "Season",
+                                "enum": [
+                                  "summer",
+                                  "winter",
+                                  "spring",
+                                  "fall"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "source": {
+                                "description": "Original Material/Source adapted from",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "status": {
+                                "description": "Airing status",
+                                "enum": [
+                                  "Finished Airing",
+                                  "Currently Airing",
+                                  "Not yet aired"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "studios": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "synopsis": {
+                                "description": "Synopsis",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "themes": {
+                                "items": {
+                                  "description": "Parsed URL Data",
+                                  "properties": {
+                                    "mal_id": {
+                                      "description": "MyAnimeList ID",
+                                      "type": "integer"
+                                    },
+                                    "name": {
+                                      "description": "Resource Name/Title",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Type of resource",
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "description": "MyAnimeList URL",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "title": {
+                                "deprecated": true,
+                                "description": "Title",
+                                "type": "string"
+                              },
+                              "title_english": {
+                                "deprecated": true,
+                                "description": "English Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_japanese": {
+                                "deprecated": true,
+                                "description": "Japanese Title",
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "title_synonyms": {
+                                "deprecated": true,
+                                "description": "Other Titles",
+                                "items": {
+                                  "type": "string"
+                                },
+                                "type": "array"
+                              },
+                              "titles": {
+                                "description": "All titles",
+                                "items": {
+                                  "properties": {
+                                    "title": {
+                                      "description": "Title value",
+                                      "type": "string"
+                                    },
+                                    "type": {
+                                      "description": "Title type",
+                                      "type": "string"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "type": "array"
+                              },
+                              "trailer": {
+                                "description": "Youtube Details",
+                                "properties": {
+                                  "embed_url": {
+                                    "description": "Parsed Embed URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "url": {
+                                    "description": "YouTube URL",
+                                    "nullable": true,
+                                    "type": "string"
+                                  },
+                                  "youtube_id": {
+                                    "description": "YouTube ID",
+                                    "nullable": true,
+                                    "type": "string"
+                                  }
+                                },
+                                "type": "object"
+                              },
+                              "type": {
+                                "description": "Anime Type",
+                                "enum": [
+                                  "TV",
+                                  "OVA",
+                                  "Movie",
+                                  "Special",
+                                  "ONA",
+                                  "Music"
+                                ],
+                                "nullable": true,
+                                "type": "string"
+                              },
+                              "url": {
+                                "description": "MyAnimeList URL",
+                                "type": "string"
+                              },
+                              "year": {
+                                "description": "Year",
+                                "nullable": true,
+                                "type": "integer"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "type": "array"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    {
+                      "properties": {
+                        "pagination": {
+                          "properties": {
+                            "current_page": {
+                              "type": "integer"
+                            },
+                            "has_next_page": {
+                              "type": "boolean"
+                            },
+                            "items": {
+                              "properties": {
+                                "count": {
+                                  "type": "integer"
+                                },
+                                "per_page": {
+                                  "type": "integer"
+                                },
+                                "total": {
+                                  "type": "integer"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "last_visible_page": {
+                              "type": "integer"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  ],
+                  "description": "Anime Collection Resource"
+                }
+              }
+            },
+            "description": "Returns seasonal anime"
+          },
+          "400": {
+            "description": "Error: Bad request. When required parameters were not supplied."
+          }
+        },
+        "securitySource": "unspecified"
       }
     }
   }
