@@ -105,12 +105,12 @@ local results, err = client:External():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/jikan-rest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
-| Python | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
-| PHP | `voxgig-sdk/jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
+| TypeScript | `@voxgig-sdk/jikan-rest-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/tags) |
+| Python | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/tags) |
+| PHP | `voxgig-sdk/jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/jikan-rest-sdk/go` | `go get github.com/voxgig-sdk/jikan-rest-sdk/go@latest` |
-| Ruby | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
-| Lua | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/releases) |
+| Ruby | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/tags) |
+| Lua | `voxgig-sdk-jikan-rest` | publish pending — [install from git tag](https://github.com/voxgig-sdk/jikan-rest-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/jikan-rest-sdk/go-cli` | `go install github.com/voxgig-sdk/jikan-rest-sdk/go-cli/cmd/jikan-rest@latest` |
 | Go MCP server | `github.com/voxgig-sdk/jikan-rest-sdk/go-mcp` | `go get github.com/voxgig-sdk/jikan-rest-sdk/go-mcp@latest` |
 

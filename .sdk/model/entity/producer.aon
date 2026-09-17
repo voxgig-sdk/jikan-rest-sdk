@@ -29,11 +29,6 @@ main: kit: entity: producer: {
       type: "`$STRING`"
     }
     {
-      name: "external"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
       name: "favorites"
       req: false
       short: "Producers's member favorites count"
@@ -54,11 +49,6 @@ main: kit: entity: producer: {
       req: false
       short: "MyAnimeList ID"
       type: "`$INTEGER`"
-    }
-    {
-      name: "name"
-      req: false
-      type: "`$STRING`"
     }
     {
       name: "pagination"

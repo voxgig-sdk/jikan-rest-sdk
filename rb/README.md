@@ -279,60 +279,34 @@ returns a result `Hash` with these keys:
 | `aired` | Aired Date ISO8601 |
 | `airing` | Airing boolean |
 | `approved` | Whether the entry is pending approval on MAL or not |
-| `author_url` | Author Profile URL |
-| `author_username` | Author MyAnimeList Username |
 | `background` | Background |
 | `broadcast` | Broadcast Details |
-| `character` | Character details |
-| `comments` | Comment count |
-| `completed` | Number of users who have completed the resource |
 | `data` |  |
-| `date` | Post Date ISO8601 |
 | `demographics` |  |
-| `dropped` | Number of users who have dropped the resource |
 | `duration` | Episode duration in seconds |
-| `endings` |  |
-| `entry` | Related entries |
 | `episodes` | Episode count |
 | `explicit_genres` |  |
-| `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `filler` | Filler episode |
 | `genres` |  |
 | `id` |  |
 | `images` |  |
-| `last_comment` | Last comment details |
 | `licensors` |  |
 | `mal_id` | MyAnimeList ID |
 | `members` | Number of users who have added this entry to their list |
-| `moreinfo` | Additional information on the entry |
-| `music_videos` |  |
-| `name` |  |
-| `on_hold` | Number of users who have put the resource on hold |
-| `openings` |  |
 | `pagination` |  |
-| `person` | Person details |
-| `plan_to_watch` | Number of users who have planned to watch the resource |
 | `popularity` | Popularity |
-| `positions` | Staff Positions |
 | `producers` |  |
-| `promo` |  |
 | `rank` | Ranking |
 | `rating` | Anime audience rating |
 | `recap` | Recap episode |
-| `relation` | Relation type |
-| `relations` |  |
-| `role` | Character's Role |
 | `score` | Score |
 | `scored_by` | Number of users |
-| `scores` |  |
 | `season` | Season |
 | `source` | Original Material/Source adapted from |
 | `status` | Airing status |
-| `streaming` |  |
 | `studios` |  |
 | `synopsis` | Episode Synopsis |
-| `theme` |  |
 | `themes` |  |
 | `title` | Title |
 | `title_english` | English Title |
@@ -340,12 +314,9 @@ returns a result `Hash` with these keys:
 | `title_romanji` | title_romanji |
 | `title_synonyms` | Other Titles |
 | `titles` | All titles |
-| `total` | Total number of users who have the resource added to their lists |
 | `trailer` | Youtube Details |
 | `type` | Anime Type |
 | `url` | MyAnimeList URL |
-| `voice_actors` |  |
-| `watching` | Number of users watching the resource |
 | `year` | Year |
 
 Operations: List, Load.
@@ -357,24 +328,16 @@ API path: `/anime`
 | Field | Description |
 | --- | --- |
 | `about` | Biography |
-| `anime` |  |
 | `data` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `id` |  |
-| `image_url` | Default JPG Image Size URL |
 | `images` |  |
-| `language` | Character's Role |
-| `large_image_url` | Large JPG Image Size URL |
 | `mal_id` | MyAnimeList ID |
-| `manga` |  |
 | `name` | Name |
 | `name_kanji` | Name |
 | `nicknames` | Other Names |
 | `pagination` |  |
-| `person` |  |
-| `role` | Character's Role |
 | `url` | MyAnimeList URL |
-| `voices` |  |
 
 Operations: List, Load.
 
@@ -385,20 +348,16 @@ API path: `/characters`
 | Field | Description |
 | --- | --- |
 | `access` | Club access |
-| `anime` |  |
 | `category` | Club Category |
-| `characters` |  |
 | `created` | Date Created ISO8601 |
 | `data` |  |
 | `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
-| `manga` |  |
 | `members` | Number of club members |
 | `name` | Club name |
 | `pagination` |  |
 | `url` | Club URL |
-| `username` | User's username |
 
 Operations: List, Load.
 
@@ -444,45 +403,25 @@ API path: `/magazines`
 | Field | Description |
 | --- | --- |
 | `approved` | Whether the entry is pending approval on MAL or not |
-| `author_url` | Author Profile URL |
-| `author_username` | Author MyAnimeList Username |
 | `authors` |  |
 | `background` | Background |
 | `chapters` | Chapter count |
-| `character` |  |
-| `comments` | Comment count |
-| `completed` | Number of users who have completed the resource |
 | `data` |  |
-| `date` | Post Date ISO8601 |
 | `demographics` |  |
-| `dropped` | Number of users who have dropped the resource |
-| `entry` | Related entries |
 | `explicit_genres` |  |
-| `external` |  |
 | `favorites` | Number of users who have favorited this entry |
 | `genres` |  |
 | `id` |  |
 | `images` |  |
-| `jpg` | Available images in JPG |
-| `last_comment` | Last comment details |
 | `mal_id` | MyAnimeList ID |
 | `members` | Number of users who have added this entry to their list |
-| `moreinfo` | Additional information on the entry |
-| `name` |  |
-| `on_hold` | Number of users who have put the resource on hold |
 | `pagination` |  |
-| `plan_to_read` | Number of users who have planned to read the resource |
 | `popularity` | Popularity |
 | `published` | Date range |
 | `publishing` | Publishing boolean |
 | `rank` | Ranking |
-| `reading` | Number of users reading the resource |
-| `relation` | Relation type |
-| `relations` |  |
-| `role` | Character's Role |
 | `score` | Score |
 | `scored_by` | Number of users |
-| `scores` |  |
 | `serializations` |  |
 | `status` | Publishing status |
 | `synopsis` | Synopsis |
@@ -490,13 +429,10 @@ API path: `/magazines`
 | `title` | Title |
 | `title_english` | English Title |
 | `title_japanese` | Japanese Title |
-| `title_synonyms` | Other Titles |
 | `titles` | All Titles |
-| `total` | Total number of users who have the resource added to their lists |
 | `type` | Manga Type |
 | `url` | MyAnimeList URL |
 | `volumes` | Volume count |
-| `webp` | Available images in WEBP |
 
 Operations: List, Load.
 
@@ -519,24 +455,17 @@ API path: `/top/people`
 | --- | --- |
 | `about` | Biography |
 | `alternate_names` | Other Names |
-| `anime` |  |
 | `birthday` | Birthday Date ISO8601 |
-| `character` |  |
 | `data` |  |
 | `family_name` | Family Name |
 | `favorites` | Number of users who have favorited this entry |
 | `given_name` | Given Name |
 | `id` |  |
 | `images` |  |
-| `jpg` | Available images in JPG |
 | `mal_id` | MyAnimeList ID |
-| `manga` |  |
 | `name` | Name |
 | `pagination` |  |
-| `position` | Person's position |
-| `role` | Person's Character's role in the anime |
 | `url` | MyAnimeList URL |
-| `voices` |  |
 | `website_url` | Person's website URL |
 
 Operations: List, Load.
@@ -551,12 +480,10 @@ API path: `/people`
 | `count` | Producers's anime count |
 | `data` |  |
 | `established` | Established Date ISO8601 |
-| `external` |  |
 | `favorites` | Producers's member favorites count |
 | `id` |  |
 | `images` |  |
 | `mal_id` | MyAnimeList ID |
-| `name` |  |
 | `pagination` |  |
 | `titles` | All titles |
 | `url` | MyAnimeList URL |
@@ -569,62 +496,6 @@ API path: `/producers`
 
 | Field | Description |
 | --- | --- |
-| `about` | Biography |
-| `aired` | Date range |
-| `airing` | Airing boolean |
-| `alternate_names` | Other Names |
-| `approved` | Whether the entry is pending approval on MAL or not |
-| `authors` |  |
-| `background` | Background |
-| `birthday` | Birthday Date ISO8601 |
-| `broadcast` | Broadcast Details |
-| `chapters` | Chapter count |
-| `demographics` |  |
-| `duration` | Parsed raw duration |
-| `episodes` | Episode count |
-| `explicit_genres` |  |
-| `family_name` | Family Name |
-| `favorites` | Number of users who have favorited this entry |
-| `gender` | User Gender |
-| `genres` |  |
-| `given_name` | Given Name |
-| `images` |  |
-| `joined` | Joined Date ISO8601 |
-| `last_online` | Last Online Date ISO8601 |
-| `licensors` |  |
-| `location` | Location |
-| `mal_id` | MyAnimeList ID |
-| `members` | Number of users who have added this entry to their list |
-| `name` | Name |
-| `name_kanji` | Name |
-| `nicknames` | Other Names |
-| `popularity` | Popularity |
-| `producers` |  |
-| `published` | Date range |
-| `publishing` | Publishing boolean |
-| `rank` | Ranking |
-| `rating` | Anime audience rating |
-| `score` | Score |
-| `scored_by` | Number of users |
-| `season` | Season |
-| `serializations` |  |
-| `source` | Original Material/Source adapted from |
-| `status` | Airing status |
-| `studios` |  |
-| `synopsis` | Synopsis |
-| `themes` |  |
-| `title` | Title |
-| `title_english` | English Title |
-| `title_japanese` | Japanese Title |
-| `title_synonyms` | Other Titles |
-| `titles` | All titles |
-| `trailer` | Youtube Details |
-| `type` | Anime Type |
-| `url` | MyAnimeList URL |
-| `username` | MyAnimeList Username |
-| `volumes` | Volume count |
-| `website_url` | Person's website URL |
-| `year` | Year |
 
 Operations: Load.
 
@@ -679,8 +550,6 @@ API path: `/seasons/now`
 
 | Field | Description |
 | --- | --- |
-| `data` |  |
-| `pagination` |  |
 
 Operations: Load.
 
@@ -690,11 +559,8 @@ API path: `/top/reviews`
 
 | Field | Description |
 | --- | --- |
-| `anime` | Favorite Anime |
 | `birthday` | Birthday Date ISO8601 |
-| `characters` | Favorite Characters |
 | `data` |  |
-| `external` |  |
 | `gender` | User Gender |
 | `id` |  |
 | `images` |  |
@@ -702,10 +568,7 @@ API path: `/top/reviews`
 | `last_online` | Last Online Date ISO8601 |
 | `location` | Location |
 | `mal_id` | MyAnimeList ID |
-| `manga` | Favorite Manga |
 | `pagination` |  |
-| `people` | Favorite People |
-| `statistics` |  |
 | `url` | MyAnimeList URL |
 | `username` | MyAnimeList Username |
 
@@ -824,60 +687,34 @@ Create an instance: `anime = client.Anime`
 | `aired` | `String` | Aired Date ISO8601 |
 | `airing` | `Boolean` | Airing boolean |
 | `approved` | `Boolean` | Whether the entry is pending approval on MAL or not |
-| `author_url` | `String` | Author Profile URL |
-| `author_username` | `String` | Author MyAnimeList Username |
 | `background` | `String` | Background |
 | `broadcast` | `Hash` | Broadcast Details |
-| `character` | `Hash` | Character details |
-| `comments` | `Integer` | Comment count |
-| `completed` | `Integer` | Number of users who have completed the resource |
 | `data` | `Array` |  |
-| `date` | `String` | Post Date ISO8601 |
 | `demographics` | `Array` |  |
-| `dropped` | `Integer` | Number of users who have dropped the resource |
 | `duration` | `Integer` | Episode duration in seconds |
-| `endings` | `Array` |  |
-| `entry` | `Hash` | Related entries |
 | `episodes` | `Integer` | Episode count |
 | `explicit_genres` | `Array` |  |
-| `external` | `Array` |  |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `filler` | `Boolean` | Filler episode |
 | `genres` | `Array` |  |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
-| `last_comment` | `Hash` | Last comment details |
 | `licensors` | `Array` |  |
 | `mal_id` | `Integer` | MyAnimeList ID |
 | `members` | `Integer` | Number of users who have added this entry to their list |
-| `moreinfo` | `String` | Additional information on the entry |
-| `music_videos` | `Array` |  |
-| `name` | `String` |  |
-| `on_hold` | `Integer` | Number of users who have put the resource on hold |
-| `openings` | `Array` |  |
 | `pagination` | `Hash` |  |
-| `person` | `Hash` | Person details |
-| `plan_to_watch` | `Integer` | Number of users who have planned to watch the resource |
 | `popularity` | `Integer` | Popularity |
-| `positions` | `Array` | Staff Positions |
 | `producers` | `Array` |  |
-| `promo` | `Array` |  |
 | `rank` | `Integer` | Ranking |
 | `rating` | `String` | Anime audience rating |
 | `recap` | `Boolean` | Recap episode |
-| `relation` | `String` | Relation type |
-| `relations` | `Array` |  |
-| `role` | `String` | Character's Role |
 | `score` | `Float` | Score |
 | `scored_by` | `Integer` | Number of users |
-| `scores` | `Array` |  |
 | `season` | `String` | Season |
 | `source` | `String` | Original Material/Source adapted from |
 | `status` | `String` | Airing status |
-| `streaming` | `Array` |  |
 | `studios` | `Array` |  |
 | `synopsis` | `String` | Episode Synopsis |
-| `theme` | `Hash` |  |
 | `themes` | `Array` |  |
 | `title` | `String` | Title |
 | `title_english` | `String` | English Title |
@@ -885,12 +722,9 @@ Create an instance: `anime = client.Anime`
 | `title_romanji` | `String` | title_romanji |
 | `title_synonyms` | `Array` | Other Titles |
 | `titles` | `Array` | All titles |
-| `total` | `Integer` | Total number of users who have the resource added to their lists |
 | `trailer` | `Hash` | Youtube Details |
 | `type` | `String` | Anime Type |
 | `url` | `String` | MyAnimeList URL |
-| `voice_actors` | `Array` |  |
-| `watching` | `Integer` | Number of users watching the resource |
 | `year` | `Integer` | Year |
 
 #### Example: Load
@@ -924,24 +758,16 @@ Create an instance: `character = client.Character`
 | Field | Type | Description |
 | --- | --- | --- |
 | `about` | `String` | Biography |
-| `anime` | `Array` |  |
 | `data` | `Array` |  |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `id` | `String` |  |
-| `image_url` | `String` | Default JPG Image Size URL |
 | `images` | `Hash` |  |
-| `language` | `String` | Character's Role |
-| `large_image_url` | `String` | Large JPG Image Size URL |
 | `mal_id` | `Integer` | MyAnimeList ID |
-| `manga` | `Array` |  |
 | `name` | `String` | Name |
 | `name_kanji` | `String` | Name |
 | `nicknames` | `Array` | Other Names |
 | `pagination` | `Hash` |  |
-| `person` | `Hash` |  |
-| `role` | `String` | Character's Role |
 | `url` | `String` | MyAnimeList URL |
-| `voices` | `Array` |  |
 
 #### Example: Load
 
@@ -974,20 +800,16 @@ Create an instance: `club = client.Club`
 | Field | Type | Description |
 | --- | --- | --- |
 | `access` | `String` | Club access |
-| `anime` | `Array` |  |
 | `category` | `String` | Club Category |
-| `characters` | `Array` |  |
 | `created` | `String` | Date Created ISO8601 |
 | `data` | `Array` |  |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
 | `mal_id` | `Integer` | MyAnimeList ID |
-| `manga` | `Array` |  |
 | `members` | `Integer` | Number of club members |
 | `name` | `String` | Club name |
 | `pagination` | `Hash` |  |
 | `url` | `String` | Club URL |
-| `username` | `String` | User's username |
 
 #### Example: Load
 
@@ -1097,45 +919,25 @@ Create an instance: `manga = client.Manga`
 | Field | Type | Description |
 | --- | --- | --- |
 | `approved` | `Boolean` | Whether the entry is pending approval on MAL or not |
-| `author_url` | `String` | Author Profile URL |
-| `author_username` | `String` | Author MyAnimeList Username |
 | `authors` | `Array` |  |
 | `background` | `String` | Background |
 | `chapters` | `Integer` | Chapter count |
-| `character` | `Hash` |  |
-| `comments` | `Integer` | Comment count |
-| `completed` | `Integer` | Number of users who have completed the resource |
 | `data` | `Array` |  |
-| `date` | `String` | Post Date ISO8601 |
 | `demographics` | `Array` |  |
-| `dropped` | `Integer` | Number of users who have dropped the resource |
-| `entry` | `Hash` | Related entries |
 | `explicit_genres` | `Array` |  |
-| `external` | `Array` |  |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `genres` | `Array` |  |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
-| `jpg` | `Hash` | Available images in JPG |
-| `last_comment` | `Hash` | Last comment details |
 | `mal_id` | `Integer` | MyAnimeList ID |
 | `members` | `Integer` | Number of users who have added this entry to their list |
-| `moreinfo` | `String` | Additional information on the entry |
-| `name` | `String` |  |
-| `on_hold` | `Integer` | Number of users who have put the resource on hold |
 | `pagination` | `Hash` |  |
-| `plan_to_read` | `Integer` | Number of users who have planned to read the resource |
 | `popularity` | `Integer` | Popularity |
 | `published` | `Hash` | Date range |
 | `publishing` | `Boolean` | Publishing boolean |
 | `rank` | `Integer` | Ranking |
-| `reading` | `Integer` | Number of users reading the resource |
-| `relation` | `String` | Relation type |
-| `relations` | `Array` |  |
-| `role` | `String` | Character's Role |
 | `score` | `Float` | Score |
 | `scored_by` | `Integer` | Number of users |
-| `scores` | `Array` |  |
 | `serializations` | `Array` |  |
 | `status` | `String` | Publishing status |
 | `synopsis` | `String` | Synopsis |
@@ -1143,13 +945,10 @@ Create an instance: `manga = client.Manga`
 | `title` | `String` | Title |
 | `title_english` | `String` | English Title |
 | `title_japanese` | `String` | Japanese Title |
-| `title_synonyms` | `Array` | Other Titles |
 | `titles` | `Array` | All Titles |
-| `total` | `Integer` | Total number of users who have the resource added to their lists |
 | `type` | `String` | Manga Type |
 | `url` | `String` | MyAnimeList URL |
 | `volumes` | `Integer` | Volume count |
-| `webp` | `Hash` | Available images in WEBP |
 
 #### Example: Load
 
@@ -1208,24 +1007,17 @@ Create an instance: `person = client.Person`
 | --- | --- | --- |
 | `about` | `String` | Biography |
 | `alternate_names` | `Array` | Other Names |
-| `anime` | `Array` |  |
 | `birthday` | `String` | Birthday Date ISO8601 |
-| `character` | `Hash` |  |
 | `data` | `Array` |  |
 | `family_name` | `String` | Family Name |
 | `favorites` | `Integer` | Number of users who have favorited this entry |
 | `given_name` | `String` | Given Name |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
-| `jpg` | `Hash` | Available images in JPG |
 | `mal_id` | `Integer` | MyAnimeList ID |
-| `manga` | `Array` |  |
 | `name` | `String` | Name |
 | `pagination` | `Hash` |  |
-| `position` | `String` | Person's position |
-| `role` | `String` | Person's Character's role in the anime |
 | `url` | `String` | MyAnimeList URL |
-| `voices` | `Array` |  |
 | `website_url` | `String` | Person's website URL |
 
 #### Example: Load
@@ -1262,12 +1054,10 @@ Create an instance: `producer = client.Producer`
 | `count` | `Integer` | Producers's anime count |
 | `data` | `Array` |  |
 | `established` | `String` | Established Date ISO8601 |
-| `external` | `Array` |  |
 | `favorites` | `Integer` | Producers's member favorites count |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
 | `mal_id` | `Integer` | MyAnimeList ID |
-| `name` | `String` |  |
 | `pagination` | `Hash` |  |
 | `titles` | `Array` | All titles |
 | `url` | `String` | MyAnimeList URL |
@@ -1296,67 +1086,6 @@ Create an instance: `random = client.Random`
 | Method | Description |
 | --- | --- |
 | `load(match)` | Load a single entity by match criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `about` | `String` | Biography |
-| `aired` | `Hash` | Date range |
-| `airing` | `Boolean` | Airing boolean |
-| `alternate_names` | `Array` | Other Names |
-| `approved` | `Boolean` | Whether the entry is pending approval on MAL or not |
-| `authors` | `Array` |  |
-| `background` | `String` | Background |
-| `birthday` | `String` | Birthday Date ISO8601 |
-| `broadcast` | `Hash` | Broadcast Details |
-| `chapters` | `Integer` | Chapter count |
-| `demographics` | `Array` |  |
-| `duration` | `String` | Parsed raw duration |
-| `episodes` | `Integer` | Episode count |
-| `explicit_genres` | `Array` |  |
-| `family_name` | `String` | Family Name |
-| `favorites` | `Integer` | Number of users who have favorited this entry |
-| `gender` | `String` | User Gender |
-| `genres` | `Array` |  |
-| `given_name` | `String` | Given Name |
-| `images` | `Hash` |  |
-| `joined` | `String` | Joined Date ISO8601 |
-| `last_online` | `String` | Last Online Date ISO8601 |
-| `licensors` | `Array` |  |
-| `location` | `String` | Location |
-| `mal_id` | `Integer` | MyAnimeList ID |
-| `members` | `Integer` | Number of users who have added this entry to their list |
-| `name` | `String` | Name |
-| `name_kanji` | `String` | Name |
-| `nicknames` | `Array` | Other Names |
-| `popularity` | `Integer` | Popularity |
-| `producers` | `Array` |  |
-| `published` | `Hash` | Date range |
-| `publishing` | `Boolean` | Publishing boolean |
-| `rank` | `Integer` | Ranking |
-| `rating` | `String` | Anime audience rating |
-| `score` | `Float` | Score |
-| `scored_by` | `Integer` | Number of users |
-| `season` | `String` | Season |
-| `serializations` | `Array` |  |
-| `source` | `String` | Original Material/Source adapted from |
-| `status` | `String` | Airing status |
-| `studios` | `Array` |  |
-| `synopsis` | `String` | Synopsis |
-| `themes` | `Array` |  |
-| `title` | `String` | Title |
-| `title_english` | `String` | English Title |
-| `title_japanese` | `String` | Japanese Title |
-| `title_synonyms` | `Array` | Other Titles |
-| `titles` | `Array` | All titles |
-| `trailer` | `Hash` | Youtube Details |
-| `type` | `String` | Anime Type |
-| `url` | `String` | MyAnimeList URL |
-| `username` | `String` | MyAnimeList Username |
-| `volumes` | `Integer` | Volume count |
-| `website_url` | `String` | Person's website URL |
-| `year` | `Integer` | Year |
 
 #### Example: Load
 
@@ -1480,13 +1209,6 @@ Create an instance: `top = client.Top`
 | --- | --- |
 | `load(match)` | Load a single entity by match criteria. |
 
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `data` | `Array` |  |
-| `pagination` | `Hash` |  |
-
 #### Example: Load
 
 ```ruby
@@ -1510,11 +1232,8 @@ Create an instance: `user = client.User`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `anime` | `Array` | Favorite Anime |
 | `birthday` | `String` | Birthday Date ISO8601 |
-| `characters` | `Array` | Favorite Characters |
 | `data` | `Array` |  |
-| `external` | `Array` |  |
 | `gender` | `String` | User Gender |
 | `id` | `String` |  |
 | `images` | `Hash` |  |
@@ -1522,10 +1241,7 @@ Create an instance: `user = client.User`
 | `last_online` | `String` | Last Online Date ISO8601 |
 | `location` | `String` | Location |
 | `mal_id` | `Integer` | MyAnimeList ID |
-| `manga` | `Array` | Favorite Manga |
 | `pagination` | `Hash` |  |
-| `people` | `Array` | Favorite People |
-| `statistics` | `Hash` |  |
 | `url` | `String` | MyAnimeList URL |
 | `username` | `String` | MyAnimeList Username |
 
@@ -1886,6 +1602,7 @@ Use `Helpers.to_map()` to safely validate that a value is a hash.
 rb/
 ├── JikanRest_sdk.rb       -- Main SDK module
 ├── config.rb                  -- Configuration
+├── schema.rb                  -- Generated option + entity specs
 ├── features.rb                -- Feature factory
 ├── core/                      -- Core types and context
 ├── entity/                    -- Entity implementations

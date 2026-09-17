@@ -102,25 +102,12 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 format?: undefined;
                 deprecated?: undefined;
             } | {
                 name: string;
                 type: string;
                 short?: undefined;
-                union?: undefined;
-                format?: undefined;
-                deprecated?: undefined;
-            } | {
-                name: string;
-                short: string;
-                type: string;
-                union: {
-                    branches: number;
-                    count: number;
-                    depth: number;
-                };
                 format?: undefined;
                 deprecated?: undefined;
             } | {
@@ -128,14 +115,12 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 deprecated?: undefined;
             } | {
                 deprecated: boolean;
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 format?: undefined;
             })[];
             id: {
@@ -762,25 +747,12 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 format?: undefined;
                 deprecated?: undefined;
             } | {
                 name: string;
                 type: string;
                 short?: undefined;
-                union?: undefined;
-                format?: undefined;
-                deprecated?: undefined;
-            } | {
-                name: string;
-                short: string;
-                type: string;
-                union: {
-                    branches: number;
-                    count: number;
-                    depth: number;
-                };
                 format?: undefined;
                 deprecated?: undefined;
             } | {
@@ -788,14 +760,12 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 deprecated?: undefined;
             } | {
                 deprecated: boolean;
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
                 format?: undefined;
             })[];
             id: {
@@ -1296,31 +1266,7 @@ declare class Config {
             };
         };
         random: {
-            fields: ({
-                name: string;
-                short: string;
-                type: string;
-                format?: undefined;
-                deprecated?: undefined;
-            } | {
-                name: string;
-                type: string;
-                short?: undefined;
-                format?: undefined;
-                deprecated?: undefined;
-            } | {
-                format: string;
-                name: string;
-                short: string;
-                type: string;
-                deprecated?: undefined;
-            } | {
-                deprecated: boolean;
-                name: string;
-                short: string;
-                type: string;
-                format?: undefined;
-            })[];
+            fields: never[];
             name: string;
             op: {
                 load: {
@@ -1627,19 +1573,7 @@ declare class Config {
             };
         };
         top: {
-            fields: ({
-                name: string;
-                type: string;
-                union: {
-                    branches: number;
-                    count: number;
-                    depth: number;
-                };
-            } | {
-                name: string;
-                type: string;
-                union?: undefined;
-            })[];
+            fields: never[];
             name: string;
             op: {
                 load: {
@@ -1681,21 +1615,10 @@ declare class Config {
                 name: string;
                 short: string;
                 type: string;
-                union?: undefined;
-            } | {
-                name: string;
-                type: string;
-                union: {
-                    branches: number;
-                    count: number;
-                    depth: number;
-                };
-                short?: undefined;
             } | {
                 name: string;
                 type: string;
                 short?: undefined;
-                union?: undefined;
             })[];
             id: {
                 field: string;

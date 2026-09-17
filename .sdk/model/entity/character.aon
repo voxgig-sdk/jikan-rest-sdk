@@ -12,11 +12,6 @@ main: kit: entity: character: {
       type: "`$STRING`"
     }
     {
-      name: "anime"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
       name: "data"
       req: false
       type: "`$ARRAY`"
@@ -33,38 +28,15 @@ main: kit: entity: character: {
       type: "`$STRING`"
     }
     {
-      name: "image_url"
-      req: false
-      short: "Default JPG Image Size URL"
-      type: "`$STRING`"
-    }
-    {
       name: "images"
       req: false
       type: "`$OBJECT`"
-    }
-    {
-      name: "language"
-      req: false
-      short: "Character's Role"
-      type: "`$STRING`"
-    }
-    {
-      name: "large_image_url"
-      req: false
-      short: "Large JPG Image Size URL"
-      type: "`$STRING`"
     }
     {
       name: "mal_id"
       req: false
       short: "MyAnimeList ID"
       type: "`$INTEGER`"
-    }
-    {
-      name: "manga"
-      req: false
-      type: "`$ARRAY`"
     }
     {
       name: "name"
@@ -90,26 +62,10 @@ main: kit: entity: character: {
       type: "`$OBJECT`"
     }
     {
-      name: "person"
-      req: false
-      type: "`$OBJECT`"
-    }
-    {
-      name: "role"
-      req: false
-      short: "Character's Role"
-      type: "`$STRING`"
-    }
-    {
       name: "url"
       req: false
       short: "MyAnimeList URL"
       type: "`$STRING`"
-    }
-    {
-      name: "voices"
-      req: false
-      type: "`$ARRAY`"
     }
   ]
 

@@ -12,18 +12,6 @@ main: kit: entity: manga: {
       type: "`$BOOLEAN`"
     }
     {
-      name: "author_url"
-      req: false
-      short: "Author Profile URL"
-      type: "`$STRING`"
-    }
-    {
-      name: "author_username"
-      req: false
-      short: "Author MyAnimeList Username"
-      type: "`$STRING`"
-    }
-    {
       name: "authors"
       req: false
       type: "`$ARRAY`"
@@ -41,32 +29,9 @@ main: kit: entity: manga: {
       type: "`$INTEGER`"
     }
     {
-      name: "character"
-      req: false
-      type: "`$OBJECT`"
-    }
-    {
-      name: "comments"
-      req: false
-      short: "Comment count"
-      type: "`$INTEGER`"
-    }
-    {
-      name: "completed"
-      req: false
-      short: "Number of users who have completed the resource"
-      type: "`$INTEGER`"
-    }
-    {
       name: "data"
       req: false
       type: "`$ARRAY`"
-    }
-    {
-      name: "date"
-      req: false
-      short: "Post Date ISO8601"
-      type: "`$STRING`"
     }
     {
       name: "demographics"
@@ -74,29 +39,7 @@ main: kit: entity: manga: {
       type: "`$ARRAY`"
     }
     {
-      name: "dropped"
-      req: false
-      short: "Number of users who have dropped the resource"
-      type: "`$INTEGER`"
-    }
-    {
-      name: "entry"
-      req: false
-      short: "Related entries"
-      type: "`$OBJECT`"
-      union: {
-        branches: 2
-        count: 1
-        depth: 0
-      }
-    }
-    {
       name: "explicit_genres"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
-      name: "external"
       req: false
       type: "`$ARRAY`"
     }
@@ -122,18 +65,6 @@ main: kit: entity: manga: {
       type: "`$OBJECT`"
     }
     {
-      name: "jpg"
-      req: false
-      short: "Available images in JPG"
-      type: "`$OBJECT`"
-    }
-    {
-      name: "last_comment"
-      req: false
-      short: "Last comment details"
-      type: "`$OBJECT`"
-    }
-    {
       name: "mal_id"
       req: false
       short: "MyAnimeList ID"
@@ -146,32 +77,9 @@ main: kit: entity: manga: {
       type: "`$INTEGER`"
     }
     {
-      name: "moreinfo"
-      req: false
-      short: "Additional information on the entry"
-      type: "`$STRING`"
-    }
-    {
-      name: "name"
-      req: false
-      type: "`$STRING`"
-    }
-    {
-      name: "on_hold"
-      req: false
-      short: "Number of users who have put the resource on hold"
-      type: "`$INTEGER`"
-    }
-    {
       name: "pagination"
       req: false
       type: "`$OBJECT`"
-    }
-    {
-      name: "plan_to_read"
-      req: false
-      short: "Number of users who have planned to read the resource"
-      type: "`$INTEGER`"
     }
     {
       name: "popularity"
@@ -198,29 +106,6 @@ main: kit: entity: manga: {
       type: "`$INTEGER`"
     }
     {
-      name: "reading"
-      req: false
-      short: "Number of users reading the resource"
-      type: "`$INTEGER`"
-    }
-    {
-      name: "relation"
-      req: false
-      short: "Relation type"
-      type: "`$STRING`"
-    }
-    {
-      name: "relations"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
-      name: "role"
-      req: false
-      short: "Character's Role"
-      type: "`$STRING`"
-    }
-    {
       format: "float"
       name: "score"
       req: false
@@ -232,11 +117,6 @@ main: kit: entity: manga: {
       req: false
       short: "Number of users"
       type: "`$INTEGER`"
-    }
-    {
-      name: "scores"
-      req: false
-      type: "`$ARRAY`"
     }
     {
       name: "serializations"
@@ -282,23 +162,10 @@ main: kit: entity: manga: {
       type: "`$STRING`"
     }
     {
-      deprecated: true
-      name: "title_synonyms"
-      req: false
-      short: "Other Titles"
-      type: "`$ARRAY`"
-    }
-    {
       name: "titles"
       req: false
       short: "All Titles"
       type: "`$ARRAY`"
-    }
-    {
-      name: "total"
-      req: false
-      short: "Total number of users who have the resource added to their lists"
-      type: "`$INTEGER`"
     }
     {
       name: "type"
@@ -317,12 +184,6 @@ main: kit: entity: manga: {
       req: false
       short: "Volume count"
       type: "`$INTEGER`"
-    }
-    {
-      name: "webp"
-      req: false
-      short: "Available images in WEBP"
-      type: "`$OBJECT`"
     }
   ]
 

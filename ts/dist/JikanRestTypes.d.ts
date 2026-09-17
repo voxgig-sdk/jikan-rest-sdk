@@ -2,60 +2,34 @@ export interface Anime {
     aired?: string;
     airing?: boolean;
     approved?: boolean;
-    author_url?: string;
-    author_username?: string;
     background?: string;
     broadcast?: Record<string, any>;
-    character?: Record<string, any>;
-    comments?: number;
-    completed?: number;
     data?: any[];
-    date?: string;
     demographics?: any[];
-    dropped?: number;
     duration?: number;
-    endings?: any[];
-    entry?: Record<string, any>;
     episodes?: number;
     explicit_genres?: any[];
-    external?: any[];
     favorites?: number;
     filler?: boolean;
     genres?: any[];
     id?: string;
     images?: Record<string, any>;
-    last_comment?: Record<string, any>;
     licensors?: any[];
     mal_id?: number;
     members?: number;
-    moreinfo?: string;
-    music_videos?: any[];
-    name?: string;
-    on_hold?: number;
-    openings?: any[];
     pagination?: Record<string, any>;
-    person?: Record<string, any>;
-    plan_to_watch?: number;
     popularity?: number;
-    positions?: any[];
     producers?: any[];
-    promo?: any[];
     rank?: number;
     rating?: string;
     recap?: boolean;
-    relation?: string;
-    relations?: any[];
-    role?: string;
     score?: number;
     scored_by?: number;
-    scores?: any[];
     season?: string;
     source?: string;
     status?: string;
-    streaming?: any[];
     studios?: any[];
     synopsis?: string;
-    theme?: Record<string, any>;
     themes?: any[];
     title?: string;
     title_english?: string;
@@ -63,12 +37,9 @@ export interface Anime {
     title_romanji?: string;
     title_synonyms?: any[];
     titles?: any[];
-    total?: number;
     trailer?: Record<string, any>;
     type?: string;
     url?: string;
-    voice_actors?: any[];
-    watching?: number;
     year?: number;
 }
 export interface AnimeLoadMatch {
@@ -102,24 +73,16 @@ export interface AnimeListMatch {
 }
 export interface Character {
     about?: string;
-    anime?: any[];
     data?: any[];
     favorites?: number;
     id?: string;
-    image_url?: string;
     images?: Record<string, any>;
-    language?: string;
-    large_image_url?: string;
     mal_id?: number;
-    manga?: any[];
     name?: string;
     name_kanji?: string;
     nicknames?: any[];
     pagination?: Record<string, any>;
-    person?: Record<string, any>;
-    role?: string;
     url?: string;
-    voices?: any[];
 }
 export interface CharacterLoadMatch {
     id: number;
@@ -138,20 +101,16 @@ export interface CharacterListMatch {
 }
 export interface Club {
     access?: string;
-    anime?: any[];
     category?: string;
-    characters?: any[];
     created?: string;
     data?: any[];
     id?: string;
     images?: Record<string, any>;
     mal_id?: number;
-    manga?: any[];
     members?: number;
     name?: string;
     pagination?: Record<string, any>;
     url?: string;
-    username?: string;
 }
 export interface ClubLoadMatch {
     id: number;
@@ -202,45 +161,25 @@ export interface MagazineListMatch {
 }
 export interface Manga {
     approved?: boolean;
-    author_url?: string;
-    author_username?: string;
     authors?: any[];
     background?: string;
     chapters?: number;
-    character?: Record<string, any>;
-    comments?: number;
-    completed?: number;
     data?: any[];
-    date?: string;
     demographics?: any[];
-    dropped?: number;
-    entry?: Record<string, any>;
     explicit_genres?: any[];
-    external?: any[];
     favorites?: number;
     genres?: any[];
     id?: string;
     images?: Record<string, any>;
-    jpg?: Record<string, any>;
-    last_comment?: Record<string, any>;
     mal_id?: number;
     members?: number;
-    moreinfo?: string;
-    name?: string;
-    on_hold?: number;
     pagination?: Record<string, any>;
-    plan_to_read?: number;
     popularity?: number;
     published?: Record<string, any>;
     publishing?: boolean;
     rank?: number;
-    reading?: number;
-    relation?: string;
-    relations?: any[];
-    role?: string;
     score?: number;
     scored_by?: number;
-    scores?: any[];
     serializations?: any[];
     status?: string;
     synopsis?: string;
@@ -248,13 +187,10 @@ export interface Manga {
     title?: string;
     title_english?: string;
     title_japanese?: string;
-    title_synonyms?: any[];
     titles?: any[];
-    total?: number;
     type?: string;
     url?: string;
     volumes?: number;
-    webp?: Record<string, any>;
 }
 export interface MangaLoadMatch {
     id: number;
@@ -294,24 +230,17 @@ export interface PeopleSearchListMatch {
 export interface Person {
     about?: string;
     alternate_names?: any[];
-    anime?: any[];
     birthday?: string;
-    character?: Record<string, any>;
     data?: any[];
     family_name?: string;
     favorites?: number;
     given_name?: string;
     id?: string;
     images?: Record<string, any>;
-    jpg?: Record<string, any>;
     mal_id?: number;
-    manga?: any[];
     name?: string;
     pagination?: Record<string, any>;
-    position?: string;
-    role?: string;
     url?: string;
-    voices?: any[];
     website_url?: string;
 }
 export interface PersonLoadMatch {
@@ -334,12 +263,10 @@ export interface Producer {
     count?: number;
     data?: any[];
     established?: string;
-    external?: any[];
     favorites?: number;
     id?: string;
     images?: Record<string, any>;
     mal_id?: number;
-    name?: string;
     pagination?: Record<string, any>;
     titles?: any[];
     url?: string;
@@ -360,120 +287,8 @@ export interface ProducerListMatch {
     [action: string]: any;
 }
 export interface Random {
-    about?: string;
-    aired?: Record<string, any>;
-    airing?: boolean;
-    alternate_names?: any[];
-    approved?: boolean;
-    authors?: any[];
-    background?: string;
-    birthday?: string;
-    broadcast?: Record<string, any>;
-    chapters?: number;
-    demographics?: any[];
-    duration?: string;
-    episodes?: number;
-    explicit_genres?: any[];
-    family_name?: string;
-    favorites?: number;
-    gender?: string;
-    genres?: any[];
-    given_name?: string;
-    images?: Record<string, any>;
-    joined?: string;
-    last_online?: string;
-    licensors?: any[];
-    location?: string;
-    mal_id?: number;
-    members?: number;
-    name?: string;
-    name_kanji?: string;
-    nicknames?: any[];
-    popularity?: number;
-    producers?: any[];
-    published?: Record<string, any>;
-    publishing?: boolean;
-    rank?: number;
-    rating?: string;
-    score?: number;
-    scored_by?: number;
-    season?: string;
-    serializations?: any[];
-    source?: string;
-    status?: string;
-    studios?: any[];
-    synopsis?: string;
-    themes?: any[];
-    title?: string;
-    title_english?: string;
-    title_japanese?: string;
-    title_synonyms?: any[];
-    titles?: any[];
-    trailer?: Record<string, any>;
-    type?: string;
-    url?: string;
-    username?: string;
-    volumes?: number;
-    website_url?: string;
-    year?: number;
 }
 export interface RandomLoadMatch {
-    about?: string;
-    aired?: Record<string, any>;
-    airing?: boolean;
-    alternate_names?: any[];
-    approved?: boolean;
-    authors?: any[];
-    background?: string;
-    birthday?: string;
-    broadcast?: Record<string, any>;
-    chapters?: number;
-    demographics?: any[];
-    duration?: string;
-    episodes?: number;
-    explicit_genres?: any[];
-    family_name?: string;
-    favorites?: number;
-    gender?: string;
-    genres?: any[];
-    given_name?: string;
-    images?: Record<string, any>;
-    joined?: string;
-    last_online?: string;
-    licensors?: any[];
-    location?: string;
-    mal_id?: number;
-    members?: number;
-    name?: string;
-    name_kanji?: string;
-    nicknames?: any[];
-    popularity?: number;
-    producers?: any[];
-    published?: Record<string, any>;
-    publishing?: boolean;
-    rank?: number;
-    rating?: string;
-    score?: number;
-    scored_by?: number;
-    season?: string;
-    serializations?: any[];
-    source?: string;
-    status?: string;
-    studios?: any[];
-    synopsis?: string;
-    themes?: any[];
-    title?: string;
-    title_english?: string;
-    title_japanese?: string;
-    title_synonyms?: any[];
-    titles?: any[];
-    trailer?: Record<string, any>;
-    type?: string;
-    url?: string;
-    username?: string;
-    volumes?: number;
-    website_url?: string;
-    year?: number;
     $action?: string;
     [action: string]: any;
 }
@@ -535,8 +350,6 @@ export interface SeasonListMatch {
     [action: string]: any;
 }
 export interface Top {
-    data?: any[];
-    pagination?: Record<string, any>;
 }
 export interface TopLoadMatch {
     page?: number;
@@ -547,11 +360,8 @@ export interface TopLoadMatch {
     [action: string]: any;
 }
 export interface User {
-    anime?: any[];
     birthday?: string;
-    characters?: any[];
     data?: any[];
-    external?: any[];
     gender?: string;
     id?: string;
     images?: Record<string, any>;
@@ -559,10 +369,7 @@ export interface User {
     last_online?: string;
     location?: string;
     mal_id?: number;
-    manga?: any[];
     pagination?: Record<string, any>;
-    people?: any[];
-    statistics?: Record<string, any>;
     url?: string;
     username?: string;
 }

@@ -152,16 +152,6 @@ class Config {
                     "type": "`$BOOLEAN`"
                 },
                 {
-                    "name": "author_url",
-                    "short": "Author Profile URL",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "author_username",
-                    "short": "Author MyAnimeList Username",
-                    "type": "`$STRING`"
-                },
-                {
                     "name": "background",
                     "short": "Background",
                     "type": "`$STRING`"
@@ -172,56 +162,17 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "character",
-                    "short": "Character details",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "comments",
-                    "short": "Comment count",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "completed",
-                    "short": "Number of users who have completed the resource",
-                    "type": "`$INTEGER`"
-                },
-                {
                     "name": "data",
                     "type": "`$ARRAY`"
-                },
-                {
-                    "name": "date",
-                    "short": "Post Date ISO8601",
-                    "type": "`$STRING`"
                 },
                 {
                     "name": "demographics",
                     "type": "`$ARRAY`"
                 },
                 {
-                    "name": "dropped",
-                    "short": "Number of users who have dropped the resource",
-                    "type": "`$INTEGER`"
-                },
-                {
                     "name": "duration",
                     "short": "Episode duration in seconds",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "endings",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "entry",
-                    "short": "Related entries",
-                    "type": "`$OBJECT`",
-                    "union": {
-                        "branches": 2,
-                        "count": 1,
-                        "depth": 0
-                    }
                 },
                 {
                     "name": "episodes",
@@ -230,10 +181,6 @@ class Config {
                 },
                 {
                     "name": "explicit_genres",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "external",
                     "type": "`$ARRAY`"
                 },
                 {
@@ -259,11 +206,6 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "last_comment",
-                    "short": "Last comment details",
-                    "type": "`$OBJECT`"
-                },
-                {
                     "name": "licensors",
                     "type": "`$ARRAY`"
                 },
@@ -278,40 +220,8 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "moreinfo",
-                    "short": "Additional information on the entry",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "music_videos",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "on_hold",
-                    "short": "Number of users who have put the resource on hold",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "openings",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "pagination",
                     "type": "`$OBJECT`"
-                },
-                {
-                    "name": "person",
-                    "short": "Person details",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "plan_to_watch",
-                    "short": "Number of users who have planned to watch the resource",
-                    "type": "`$INTEGER`"
                 },
                 {
                     "name": "popularity",
@@ -319,16 +229,7 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "positions",
-                    "short": "Staff Positions",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "producers",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "promo",
                     "type": "`$ARRAY`"
                 },
                 {
@@ -347,20 +248,6 @@ class Config {
                     "type": "`$BOOLEAN`"
                 },
                 {
-                    "name": "relation",
-                    "short": "Relation type",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "relations",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "role",
-                    "short": "Character's Role",
-                    "type": "`$STRING`"
-                },
-                {
                     "format": "float",
                     "name": "score",
                     "short": "Score",
@@ -370,10 +257,6 @@ class Config {
                     "name": "scored_by",
                     "short": "Number of users",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "scores",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "season",
@@ -391,10 +274,6 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "streaming",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "studios",
                     "type": "`$ARRAY`"
                 },
@@ -402,10 +281,6 @@ class Config {
                     "name": "synopsis",
                     "short": "Episode Synopsis",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "theme",
-                    "type": "`$OBJECT`"
                 },
                 {
                     "name": "themes",
@@ -446,11 +321,6 @@ class Config {
                     "type": "`$ARRAY`"
                 },
                 {
-                    "name": "total",
-                    "short": "Total number of users who have the resource added to their lists",
-                    "type": "`$INTEGER`"
-                },
-                {
                     "name": "trailer",
                     "short": "Youtube Details",
                     "type": "`$OBJECT`"
@@ -464,15 +334,6 @@ class Config {
                     "name": "url",
                     "short": "MyAnimeList URL",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "voice_actors",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "watching",
-                    "short": "Number of users watching the resource",
-                    "type": "`$INTEGER`"
                 },
                 {
                     "name": "year",
@@ -1662,10 +1523,6 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "anime",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "data",
                     "type": "`$ARRAY`"
                 },
@@ -1679,32 +1536,13 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "image_url",
-                    "short": "Default JPG Image Size URL",
-                    "type": "`$STRING`"
-                },
-                {
                     "name": "images",
                     "type": "`$OBJECT`"
-                },
-                {
-                    "name": "language",
-                    "short": "Character's Role",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "large_image_url",
-                    "short": "Large JPG Image Size URL",
-                    "type": "`$STRING`"
                 },
                 {
                     "name": "mal_id",
                     "short": "MyAnimeList ID",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "manga",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "name",
@@ -1726,22 +1564,9 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "person",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "role",
-                    "short": "Character's Role",
-                    "type": "`$STRING`"
-                },
-                {
                     "name": "url",
                     "short": "MyAnimeList URL",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "voices",
-                    "type": "`$ARRAY`"
                 }
             ],
             "id": {
@@ -2132,17 +1957,9 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "anime",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "category",
                     "short": "Club Category",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "characters",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "created",
@@ -2167,10 +1984,6 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "manga",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "members",
                     "short": "Number of club members",
                     "type": "`$INTEGER`"
@@ -2187,11 +2000,6 @@ class Config {
                 {
                     "name": "url",
                     "short": "Club URL",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "username",
-                    "short": "User's username",
                     "type": "`$STRING`"
                 }
             ],
@@ -2749,16 +2557,6 @@ class Config {
                     "type": "`$BOOLEAN`"
                 },
                 {
-                    "name": "author_url",
-                    "short": "Author Profile URL",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "author_username",
-                    "short": "Author MyAnimeList Username",
-                    "type": "`$STRING`"
-                },
-                {
                     "name": "authors",
                     "type": "`$ARRAY`"
                 },
@@ -2773,53 +2571,15 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "character",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "comments",
-                    "short": "Comment count",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "completed",
-                    "short": "Number of users who have completed the resource",
-                    "type": "`$INTEGER`"
-                },
-                {
                     "name": "data",
                     "type": "`$ARRAY`"
-                },
-                {
-                    "name": "date",
-                    "short": "Post Date ISO8601",
-                    "type": "`$STRING`"
                 },
                 {
                     "name": "demographics",
                     "type": "`$ARRAY`"
                 },
                 {
-                    "name": "dropped",
-                    "short": "Number of users who have dropped the resource",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "entry",
-                    "short": "Related entries",
-                    "type": "`$OBJECT`",
-                    "union": {
-                        "branches": 2,
-                        "count": 1,
-                        "depth": 0
-                    }
-                },
-                {
                     "name": "explicit_genres",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "external",
                     "type": "`$ARRAY`"
                 },
                 {
@@ -2840,16 +2600,6 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "jpg",
-                    "short": "Available images in JPG",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "last_comment",
-                    "short": "Last comment details",
-                    "type": "`$OBJECT`"
-                },
-                {
                     "name": "mal_id",
                     "short": "MyAnimeList ID",
                     "type": "`$INTEGER`"
@@ -2860,27 +2610,8 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "moreinfo",
-                    "short": "Additional information on the entry",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "on_hold",
-                    "short": "Number of users who have put the resource on hold",
-                    "type": "`$INTEGER`"
-                },
-                {
                     "name": "pagination",
                     "type": "`$OBJECT`"
-                },
-                {
-                    "name": "plan_to_read",
-                    "short": "Number of users who have planned to read the resource",
-                    "type": "`$INTEGER`"
                 },
                 {
                     "name": "popularity",
@@ -2903,25 +2634,6 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "reading",
-                    "short": "Number of users reading the resource",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "relation",
-                    "short": "Relation type",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "relations",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "role",
-                    "short": "Character's Role",
-                    "type": "`$STRING`"
-                },
-                {
                     "format": "float",
                     "name": "score",
                     "short": "Score",
@@ -2931,10 +2643,6 @@ class Config {
                     "name": "scored_by",
                     "short": "Number of users",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "scores",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "serializations",
@@ -2973,20 +2681,9 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "deprecated": true,
-                    "name": "title_synonyms",
-                    "short": "Other Titles",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "titles",
                     "short": "All Titles",
                     "type": "`$ARRAY`"
-                },
-                {
-                    "name": "total",
-                    "short": "Total number of users who have the resource added to their lists",
-                    "type": "`$INTEGER`"
                 },
                 {
                     "name": "type",
@@ -3002,11 +2699,6 @@ class Config {
                     "name": "volumes",
                     "short": "Volume count",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "webp",
-                    "short": "Available images in WEBP",
-                    "type": "`$OBJECT`"
                 }
             ],
             "id": {
@@ -3911,17 +3603,9 @@ class Config {
                     "type": "`$ARRAY`"
                 },
                 {
-                    "name": "anime",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "birthday",
                     "short": "Birthday Date ISO8601",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "character",
-                    "type": "`$OBJECT`"
                 },
                 {
                     "name": "data",
@@ -3951,18 +3635,9 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "jpg",
-                    "short": "Available images in JPG",
-                    "type": "`$OBJECT`"
-                },
-                {
                     "name": "mal_id",
                     "short": "MyAnimeList ID",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "manga",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "name",
@@ -3974,23 +3649,9 @@ class Config {
                     "type": "`$OBJECT`"
                 },
                 {
-                    "name": "position",
-                    "short": "Person's position",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "role",
-                    "short": "Person's Character's role in the anime",
-                    "type": "`$STRING`"
-                },
-                {
                     "name": "url",
                     "short": "MyAnimeList URL",
                     "type": "`$STRING`"
-                },
-                {
-                    "name": "voices",
-                    "type": "`$ARRAY`"
                 },
                 {
                     "name": "website_url",
@@ -4357,10 +4018,6 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "external",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "favorites",
                     "short": "Producers's member favorites count",
                     "type": "`$INTEGER`"
@@ -4377,10 +4034,6 @@ class Config {
                     "name": "mal_id",
                     "short": "MyAnimeList ID",
                     "type": "`$INTEGER`"
-                },
-                {
-                    "name": "name",
-                    "type": "`$STRING`"
                 },
                 {
                     "name": "pagination",
@@ -4609,283 +4262,7 @@ class Config {
             }
         },
         "random": {
-            "fields": [
-                {
-                    "name": "about",
-                    "short": "Biography",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "aired",
-                    "short": "Date range",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "airing",
-                    "short": "Airing boolean",
-                    "type": "`$BOOLEAN`"
-                },
-                {
-                    "name": "alternate_names",
-                    "short": "Other Names",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "approved",
-                    "short": "Whether the entry is pending approval on MAL or not",
-                    "type": "`$BOOLEAN`"
-                },
-                {
-                    "name": "authors",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "background",
-                    "short": "Background",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "birthday",
-                    "short": "Birthday Date ISO8601",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "broadcast",
-                    "short": "Broadcast Details",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "chapters",
-                    "short": "Chapter count",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "demographics",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "duration",
-                    "short": "Parsed raw duration",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "episodes",
-                    "short": "Episode count",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "explicit_genres",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "family_name",
-                    "short": "Family Name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "favorites",
-                    "short": "Number of users who have favorited this entry",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "gender",
-                    "short": "User Gender",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "genres",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "given_name",
-                    "short": "Given Name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "images",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "joined",
-                    "short": "Joined Date ISO8601",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "last_online",
-                    "short": "Last Online Date ISO8601",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "licensors",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "location",
-                    "short": "Location",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "mal_id",
-                    "short": "MyAnimeList ID",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "members",
-                    "short": "Number of users who have added this entry to their list",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "name",
-                    "short": "Name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "name_kanji",
-                    "short": "Name",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "nicknames",
-                    "short": "Other Names",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "popularity",
-                    "short": "Popularity",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "producers",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "published",
-                    "short": "Date range",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "publishing",
-                    "short": "Publishing boolean",
-                    "type": "`$BOOLEAN`"
-                },
-                {
-                    "name": "rank",
-                    "short": "Ranking",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "rating",
-                    "short": "Anime audience rating",
-                    "type": "`$STRING`"
-                },
-                {
-                    "format": "float",
-                    "name": "score",
-                    "short": "Score",
-                    "type": "`$NUMBER`"
-                },
-                {
-                    "name": "scored_by",
-                    "short": "Number of users",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "season",
-                    "short": "Season",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "serializations",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "source",
-                    "short": "Original Material/Source adapted from",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "status",
-                    "short": "Airing status",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "studios",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "synopsis",
-                    "short": "Synopsis",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "themes",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "deprecated": true,
-                    "name": "title",
-                    "short": "Title",
-                    "type": "`$STRING`"
-                },
-                {
-                    "deprecated": true,
-                    "name": "title_english",
-                    "short": "English Title",
-                    "type": "`$STRING`"
-                },
-                {
-                    "deprecated": true,
-                    "name": "title_japanese",
-                    "short": "Japanese Title",
-                    "type": "`$STRING`"
-                },
-                {
-                    "deprecated": true,
-                    "name": "title_synonyms",
-                    "short": "Other Titles",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "titles",
-                    "short": "All titles",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "trailer",
-                    "short": "Youtube Details",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "type",
-                    "short": "Anime Type",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "url",
-                    "short": "MyAnimeList URL",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "username",
-                    "short": "MyAnimeList Username",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "volumes",
-                    "short": "Volume count",
-                    "type": "`$INTEGER`"
-                },
-                {
-                    "name": "website_url",
-                    "short": "Person's website URL",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "year",
-                    "short": "Year",
-                    "type": "`$INTEGER`"
-                }
-            ],
+            "fields": [],
             "name": "random",
             "op": {
                 "load": {
@@ -5706,21 +5083,7 @@ class Config {
             }
         },
         "top": {
-            "fields": [
-                {
-                    "name": "data",
-                    "type": "`$ARRAY`",
-                    "union": {
-                        "branches": 2,
-                        "count": 1,
-                        "depth": 1
-                    }
-                },
-                {
-                    "name": "pagination",
-                    "type": "`$OBJECT`"
-                }
-            ],
+            "fields": [],
             "name": "top",
             "op": {
                 "load": {
@@ -5795,31 +5158,12 @@ class Config {
         "user": {
             "fields": [
                 {
-                    "name": "anime",
-                    "short": "Favorite Anime",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "birthday",
                     "short": "Birthday Date ISO8601",
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "characters",
-                    "short": "Favorite Characters",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "data",
-                    "type": "`$ARRAY`",
-                    "union": {
-                        "branches": 2,
-                        "count": 1,
-                        "depth": 1
-                    }
-                },
-                {
-                    "name": "external",
                     "type": "`$ARRAY`"
                 },
                 {
@@ -5856,21 +5200,7 @@ class Config {
                     "type": "`$INTEGER`"
                 },
                 {
-                    "name": "manga",
-                    "short": "Favorite Manga",
-                    "type": "`$ARRAY`"
-                },
-                {
                     "name": "pagination",
-                    "type": "`$OBJECT`"
-                },
-                {
-                    "name": "people",
-                    "short": "Favorite People",
-                    "type": "`$ARRAY`"
-                },
-                {
-                    "name": "statistics",
                     "type": "`$OBJECT`"
                 },
                 {

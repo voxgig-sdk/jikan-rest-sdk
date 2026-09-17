@@ -18,60 +18,34 @@ class Anime
     public ?string $aired = null;
     public ?bool $airing = null;
     public ?bool $approved = null;
-    public ?string $author_url = null;
-    public ?string $author_username = null;
     public ?string $background = null;
     public ?array $broadcast = null;
-    public ?array $character = null;
-    public ?int $comments = null;
-    public ?int $completed = null;
     public ?array $data = null;
-    public ?string $date = null;
     public ?array $demographics = null;
-    public ?int $dropped = null;
     public ?int $duration = null;
-    public ?array $endings = null;
-    public ?array $entry = null;
     public ?int $episodes = null;
     public ?array $explicit_genres = null;
-    public ?array $external = null;
     public ?int $favorites = null;
     public ?bool $filler = null;
     public ?array $genres = null;
     public ?string $id = null;
     public ?array $images = null;
-    public ?array $last_comment = null;
     public ?array $licensors = null;
     public ?int $mal_id = null;
     public ?int $members = null;
-    public ?string $moreinfo = null;
-    public ?array $music_videos = null;
-    public ?string $name = null;
-    public ?int $on_hold = null;
-    public ?array $openings = null;
     public ?array $pagination = null;
-    public ?array $person = null;
-    public ?int $plan_to_watch = null;
     public ?int $popularity = null;
-    public ?array $positions = null;
     public ?array $producers = null;
-    public ?array $promo = null;
     public ?int $rank = null;
     public ?string $rating = null;
     public ?bool $recap = null;
-    public ?string $relation = null;
-    public ?array $relations = null;
-    public ?string $role = null;
     public ?float $score = null;
     public ?int $scored_by = null;
-    public ?array $scores = null;
     public ?string $season = null;
     public ?string $source = null;
     public ?string $status = null;
-    public ?array $streaming = null;
     public ?array $studios = null;
     public ?string $synopsis = null;
-    public ?array $theme = null;
     public ?array $themes = null;
     public ?string $title = null;
     public ?string $title_english = null;
@@ -79,12 +53,9 @@ class Anime
     public ?string $title_romanji = null;
     public ?array $title_synonyms = null;
     public ?array $titles = null;
-    public ?int $total = null;
     public ?array $trailer = null;
     public ?string $type = null;
     public ?string $url = null;
-    public ?array $voice_actors = null;
-    public ?int $watching = null;
     public ?int $year = null;
 }
 
@@ -123,24 +94,16 @@ class AnimeListMatch
 class Character
 {
     public ?string $about = null;
-    public ?array $anime = null;
     public ?array $data = null;
     public ?int $favorites = null;
     public ?string $id = null;
-    public ?string $image_url = null;
     public ?array $images = null;
-    public ?string $language = null;
-    public ?string $large_image_url = null;
     public ?int $mal_id = null;
-    public ?array $manga = null;
     public ?string $name = null;
     public ?string $name_kanji = null;
     public ?array $nicknames = null;
     public ?array $pagination = null;
-    public ?array $person = null;
-    public ?string $role = null;
     public ?string $url = null;
-    public ?array $voices = null;
 }
 
 /** Request payload for Character#load. */
@@ -164,20 +127,16 @@ class CharacterListMatch
 class Club
 {
     public ?string $access = null;
-    public ?array $anime = null;
     public ?string $category = null;
-    public ?array $characters = null;
     public ?string $created = null;
     public ?array $data = null;
     public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
-    public ?array $manga = null;
     public ?int $members = null;
     public ?string $name = null;
     public ?array $pagination = null;
     public ?string $url = null;
-    public ?string $username = null;
 }
 
 /** Request payload for Club#load. */
@@ -249,45 +208,25 @@ class MagazineListMatch
 class Manga
 {
     public ?bool $approved = null;
-    public ?string $author_url = null;
-    public ?string $author_username = null;
     public ?array $authors = null;
     public ?string $background = null;
     public ?int $chapters = null;
-    public ?array $character = null;
-    public ?int $comments = null;
-    public ?int $completed = null;
     public ?array $data = null;
-    public ?string $date = null;
     public ?array $demographics = null;
-    public ?int $dropped = null;
-    public ?array $entry = null;
     public ?array $explicit_genres = null;
-    public ?array $external = null;
     public ?int $favorites = null;
     public ?array $genres = null;
     public ?string $id = null;
     public ?array $images = null;
-    public ?array $jpg = null;
-    public ?array $last_comment = null;
     public ?int $mal_id = null;
     public ?int $members = null;
-    public ?string $moreinfo = null;
-    public ?string $name = null;
-    public ?int $on_hold = null;
     public ?array $pagination = null;
-    public ?int $plan_to_read = null;
     public ?int $popularity = null;
     public ?array $published = null;
     public ?bool $publishing = null;
     public ?int $rank = null;
-    public ?int $reading = null;
-    public ?string $relation = null;
-    public ?array $relations = null;
-    public ?string $role = null;
     public ?float $score = null;
     public ?int $scored_by = null;
-    public ?array $scores = null;
     public ?array $serializations = null;
     public ?string $status = null;
     public ?string $synopsis = null;
@@ -295,13 +234,10 @@ class Manga
     public ?string $title = null;
     public ?string $title_english = null;
     public ?string $title_japanese = null;
-    public ?array $title_synonyms = null;
     public ?array $titles = null;
-    public ?int $total = null;
     public ?string $type = null;
     public ?string $url = null;
     public ?int $volumes = null;
-    public ?array $webp = null;
 }
 
 /** Request payload for Manga#load. */
@@ -352,24 +288,17 @@ class Person
 {
     public ?string $about = null;
     public ?array $alternate_names = null;
-    public ?array $anime = null;
     public ?string $birthday = null;
-    public ?array $character = null;
     public ?array $data = null;
     public ?string $family_name = null;
     public ?int $favorites = null;
     public ?string $given_name = null;
     public ?string $id = null;
     public ?array $images = null;
-    public ?array $jpg = null;
     public ?int $mal_id = null;
-    public ?array $manga = null;
     public ?string $name = null;
     public ?array $pagination = null;
-    public ?string $position = null;
-    public ?string $role = null;
     public ?string $url = null;
-    public ?array $voices = null;
     public ?string $website_url = null;
 }
 
@@ -397,12 +326,10 @@ class Producer
     public ?int $count = null;
     public ?array $data = null;
     public ?string $established = null;
-    public ?array $external = null;
     public ?int $favorites = null;
     public ?string $id = null;
     public ?array $images = null;
     public ?int $mal_id = null;
-    public ?string $name = null;
     public ?array $pagination = null;
     public ?array $titles = null;
     public ?string $url = null;
@@ -428,123 +355,11 @@ class ProducerListMatch
 /** Random entity data model. */
 class Random
 {
-    public ?string $about = null;
-    public ?array $aired = null;
-    public ?bool $airing = null;
-    public ?array $alternate_names = null;
-    public ?bool $approved = null;
-    public ?array $authors = null;
-    public ?string $background = null;
-    public ?string $birthday = null;
-    public ?array $broadcast = null;
-    public ?int $chapters = null;
-    public ?array $demographics = null;
-    public ?string $duration = null;
-    public ?int $episodes = null;
-    public ?array $explicit_genres = null;
-    public ?string $family_name = null;
-    public ?int $favorites = null;
-    public ?string $gender = null;
-    public ?array $genres = null;
-    public ?string $given_name = null;
-    public ?array $images = null;
-    public ?string $joined = null;
-    public ?string $last_online = null;
-    public ?array $licensors = null;
-    public ?string $location = null;
-    public ?int $mal_id = null;
-    public ?int $members = null;
-    public ?string $name = null;
-    public ?string $name_kanji = null;
-    public ?array $nicknames = null;
-    public ?int $popularity = null;
-    public ?array $producers = null;
-    public ?array $published = null;
-    public ?bool $publishing = null;
-    public ?int $rank = null;
-    public ?string $rating = null;
-    public ?float $score = null;
-    public ?int $scored_by = null;
-    public ?string $season = null;
-    public ?array $serializations = null;
-    public ?string $source = null;
-    public ?string $status = null;
-    public ?array $studios = null;
-    public ?string $synopsis = null;
-    public ?array $themes = null;
-    public ?string $title = null;
-    public ?string $title_english = null;
-    public ?string $title_japanese = null;
-    public ?array $title_synonyms = null;
-    public ?array $titles = null;
-    public ?array $trailer = null;
-    public ?string $type = null;
-    public ?string $url = null;
-    public ?string $username = null;
-    public ?int $volumes = null;
-    public ?string $website_url = null;
-    public ?int $year = null;
 }
 
 /** Request payload for Random#load. */
 class RandomLoadMatch
 {
-    public ?string $about = null;
-    public ?array $aired = null;
-    public ?bool $airing = null;
-    public ?array $alternate_names = null;
-    public ?bool $approved = null;
-    public ?array $authors = null;
-    public ?string $background = null;
-    public ?string $birthday = null;
-    public ?array $broadcast = null;
-    public ?int $chapters = null;
-    public ?array $demographics = null;
-    public ?string $duration = null;
-    public ?int $episodes = null;
-    public ?array $explicit_genres = null;
-    public ?string $family_name = null;
-    public ?int $favorites = null;
-    public ?string $gender = null;
-    public ?array $genres = null;
-    public ?string $given_name = null;
-    public ?array $images = null;
-    public ?string $joined = null;
-    public ?string $last_online = null;
-    public ?array $licensors = null;
-    public ?string $location = null;
-    public ?int $mal_id = null;
-    public ?int $members = null;
-    public ?string $name = null;
-    public ?string $name_kanji = null;
-    public ?array $nicknames = null;
-    public ?int $popularity = null;
-    public ?array $producers = null;
-    public ?array $published = null;
-    public ?bool $publishing = null;
-    public ?int $rank = null;
-    public ?string $rating = null;
-    public ?float $score = null;
-    public ?int $scored_by = null;
-    public ?string $season = null;
-    public ?array $serializations = null;
-    public ?string $source = null;
-    public ?string $status = null;
-    public ?array $studios = null;
-    public ?string $synopsis = null;
-    public ?array $themes = null;
-    public ?string $title = null;
-    public ?string $title_english = null;
-    public ?string $title_japanese = null;
-    public ?array $title_synonyms = null;
-    public ?array $titles = null;
-    public ?array $trailer = null;
-    public ?string $type = null;
-    public ?string $url = null;
-    public ?string $username = null;
-    public ?int $volumes = null;
-    public ?string $website_url = null;
-    public ?int $year = null;
 }
 
 /** Recommendation entity data model. */
@@ -628,8 +443,6 @@ class SeasonListMatch
 /** Top entity data model. */
 class Top
 {
-    public ?array $data = null;
-    public ?array $pagination = null;
 }
 
 /** Request payload for Top#load. */
@@ -644,11 +457,8 @@ class TopLoadMatch
 /** User entity data model. */
 class User
 {
-    public ?array $anime = null;
     public ?string $birthday = null;
-    public ?array $characters = null;
     public ?array $data = null;
-    public ?array $external = null;
     public ?string $gender = null;
     public ?string $id = null;
     public ?array $images = null;
@@ -656,10 +466,7 @@ class User
     public ?string $last_online = null;
     public ?string $location = null;
     public ?int $mal_id = null;
-    public ?array $manga = null;
     public ?array $pagination = null;
-    public ?array $people = null;
-    public ?array $statistics = null;
     public ?string $url = null;
     public ?string $username = null;
 }

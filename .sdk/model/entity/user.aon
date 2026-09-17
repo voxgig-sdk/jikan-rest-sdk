@@ -6,35 +6,13 @@ main: kit: entity: user: {
 
   fields: [
     {
-      name: "anime"
-      req: false
-      short: "Favorite Anime"
-      type: "`$ARRAY`"
-    }
-    {
       name: "birthday"
       req: false
       short: "Birthday Date ISO8601"
       type: "`$STRING`"
     }
     {
-      name: "characters"
-      req: false
-      short: "Favorite Characters"
-      type: "`$ARRAY`"
-    }
-    {
       name: "data"
-      req: false
-      type: "`$ARRAY`"
-      union: {
-        branches: 2
-        count: 1
-        depth: 1
-      }
-    }
-    {
-      name: "external"
       req: false
       type: "`$ARRAY`"
     }
@@ -79,24 +57,7 @@ main: kit: entity: user: {
       type: "`$INTEGER`"
     }
     {
-      name: "manga"
-      req: false
-      short: "Favorite Manga"
-      type: "`$ARRAY`"
-    }
-    {
       name: "pagination"
-      req: false
-      type: "`$OBJECT`"
-    }
-    {
-      name: "people"
-      req: false
-      short: "Favorite People"
-      type: "`$ARRAY`"
-    }
-    {
-      name: "statistics"
       req: false
       type: "`$OBJECT`"
     }

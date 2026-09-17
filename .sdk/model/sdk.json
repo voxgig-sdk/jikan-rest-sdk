@@ -24,71 +24,6 @@
         "repr": "auto"
       },
       "contributor": {},
-      "doc": {
-        "active": true,
-        "assets": {
-          "path": ".sdk/doc/assets"
-        },
-        "brand": {
-          "label": "",
-          "notice": "",
-          "shortNotice": "",
-          "url": ""
-        },
-        "ci": {
-          "active": true,
-          "branch": "main"
-        },
-        "content": {
-          "path": ".sdk/doc/content"
-        },
-        "edition": {
-          "summary": {
-            "active": true,
-            "base": "node_modules/@voxgig/docgen/project/.sdk",
-            "brand": {},
-            "filter": {
-              "entities": [],
-              "features": [],
-              "targets": []
-            },
-            "kind": "summary",
-            "name": "summary",
-            "origname": "",
-            "output": {
-              "path": "SUMMARY.md"
-            },
-            "package": "@voxgig/docgen",
-            "site": {
-              "active": true
-            },
-            "style": {},
-            "title": ""
-          }
-        },
-        "qa": {
-          "vocabulary": []
-        },
-        "style": {
-          "color": {
-            "accent": "#00c6d8",
-            "background": "#f5f5f9",
-            "darkBackground": "#0f1117",
-            "darkText": "#e6edf3",
-            "primary": "#e70042",
-            "text": "#0a0a0a"
-          },
-          "font": "Nunito, system-ui, sans-serif",
-          "fontFile": "",
-          "headingFont": "Nunito, system-ui, sans-serif",
-          "headingFontFile": "",
-          "logo": "",
-          "mode": "light",
-          "mono": "ui-monospace, monospace",
-          "monoFile": ""
-        },
-        "target": {}
-      },
       "entity": {
         "anime": {
           "active": true,
@@ -119,20 +54,6 @@
             },
             {
               "active": true,
-              "name": "author_url",
-              "req": false,
-              "short": "Author Profile URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "author_username",
-              "req": false,
-              "short": "Author MyAnimeList Username",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "name": "background",
               "req": false,
               "short": "Background",
@@ -147,37 +68,9 @@
             },
             {
               "active": true,
-              "name": "character",
-              "req": false,
-              "short": "Character details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "comments",
-              "req": false,
-              "short": "Comment count",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "completed",
-              "req": false,
-              "short": "Number of users who have completed the resource",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
               "name": "data",
               "req": false,
               "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "date",
-              "req": false,
-              "short": "Post Date ISO8601",
-              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -187,35 +80,10 @@
             },
             {
               "active": true,
-              "name": "dropped",
-              "req": false,
-              "short": "Number of users who have dropped the resource",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
               "name": "duration",
               "req": false,
               "short": "Episode duration in seconds",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "endings",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "entry",
-              "req": false,
-              "short": "Related entries",
-              "type": "`$OBJECT`",
-              "union": {
-                "branches": 2,
-                "count": 1,
-                "depth": 0
-              }
             },
             {
               "active": true,
@@ -227,12 +95,6 @@
             {
               "active": true,
               "name": "explicit_genres",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "external",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -270,13 +132,6 @@
             },
             {
               "active": true,
-              "name": "last_comment",
-              "req": false,
-              "short": "Last comment details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
               "name": "licensors",
               "req": false,
               "type": "`$ARRAY`"
@@ -297,55 +152,9 @@
             },
             {
               "active": true,
-              "name": "moreinfo",
-              "req": false,
-              "short": "Additional information on the entry",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "music_videos",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "on_hold",
-              "req": false,
-              "short": "Number of users who have put the resource on hold",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "openings",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "pagination",
               "req": false,
               "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "person",
-              "req": false,
-              "short": "Person details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "plan_to_watch",
-              "req": false,
-              "short": "Number of users who have planned to watch the resource",
-              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -356,20 +165,7 @@
             },
             {
               "active": true,
-              "name": "positions",
-              "req": false,
-              "short": "Staff Positions",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "producers",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "promo",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -396,26 +192,6 @@
             },
             {
               "active": true,
-              "name": "relation",
-              "req": false,
-              "short": "Relation type",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "relations",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "role",
-              "req": false,
-              "short": "Character's Role",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "format": "float",
               "name": "score",
               "req": false,
@@ -428,12 +204,6 @@
               "req": false,
               "short": "Number of users",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "scores",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -458,12 +228,6 @@
             },
             {
               "active": true,
-              "name": "streaming",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "studios",
               "req": false,
               "type": "`$ARRAY`"
@@ -474,12 +238,6 @@
               "req": false,
               "short": "Episode Synopsis",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "theme",
-              "req": false,
-              "type": "`$OBJECT`"
             },
             {
               "active": true,
@@ -535,13 +293,6 @@
             },
             {
               "active": true,
-              "name": "total",
-              "req": false,
-              "short": "Total number of users who have the resource added to their lists",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
               "name": "trailer",
               "req": false,
               "short": "Youtube Details",
@@ -560,19 +311,6 @@
               "req": false,
               "short": "MyAnimeList URL",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "voice_actors",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "watching",
-              "req": false,
-              "short": "Number of users watching the resource",
-              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -1904,12 +1642,6 @@
             },
             {
               "active": true,
-              "name": "anime",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "data",
               "req": false,
               "type": "`$ARRAY`"
@@ -1929,30 +1661,9 @@
             },
             {
               "active": true,
-              "name": "image_url",
-              "req": false,
-              "short": "Default JPG Image Size URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "name": "images",
               "req": false,
               "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "language",
-              "req": false,
-              "short": "Character's Role",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "large_image_url",
-              "req": false,
-              "short": "Large JPG Image Size URL",
-              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -1960,12 +1671,6 @@
               "req": false,
               "short": "MyAnimeList ID",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "manga",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -1996,29 +1701,10 @@
             },
             {
               "active": true,
-              "name": "person",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "role",
-              "req": false,
-              "short": "Character's Role",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "name": "url",
               "req": false,
               "short": "MyAnimeList URL",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "voices",
-              "req": false,
-              "type": "`$ARRAY`"
             }
           ],
           "id": {
@@ -2458,22 +2144,10 @@
             },
             {
               "active": true,
-              "name": "anime",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "category",
               "req": false,
               "short": "Club Category",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "characters",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -2509,12 +2183,6 @@
             },
             {
               "active": true,
-              "name": "manga",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "members",
               "req": false,
               "short": "Number of club members",
@@ -2538,13 +2206,6 @@
               "name": "url",
               "req": false,
               "short": "Club URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "username",
-              "req": false,
-              "short": "User's username",
               "type": "`$STRING`"
             }
           ],
@@ -3201,20 +2862,6 @@
             },
             {
               "active": true,
-              "name": "author_url",
-              "req": false,
-              "short": "Author Profile URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "author_username",
-              "req": false,
-              "short": "Author MyAnimeList Username",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "name": "authors",
               "req": false,
               "type": "`$ARRAY`"
@@ -3235,36 +2882,9 @@
             },
             {
               "active": true,
-              "name": "character",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "comments",
-              "req": false,
-              "short": "Comment count",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "completed",
-              "req": false,
-              "short": "Number of users who have completed the resource",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
               "name": "data",
               "req": false,
               "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "date",
-              "req": false,
-              "short": "Post Date ISO8601",
-              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -3274,32 +2894,7 @@
             },
             {
               "active": true,
-              "name": "dropped",
-              "req": false,
-              "short": "Number of users who have dropped the resource",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "entry",
-              "req": false,
-              "short": "Related entries",
-              "type": "`$OBJECT`",
-              "union": {
-                "branches": 2,
-                "count": 1,
-                "depth": 0
-              }
-            },
-            {
-              "active": true,
               "name": "explicit_genres",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "external",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -3330,20 +2925,6 @@
             },
             {
               "active": true,
-              "name": "jpg",
-              "req": false,
-              "short": "Available images in JPG",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "last_comment",
-              "req": false,
-              "short": "Last comment details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
               "name": "mal_id",
               "req": false,
               "short": "MyAnimeList ID",
@@ -3358,36 +2939,9 @@
             },
             {
               "active": true,
-              "name": "moreinfo",
-              "req": false,
-              "short": "Additional information on the entry",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "on_hold",
-              "req": false,
-              "short": "Number of users who have put the resource on hold",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
               "name": "pagination",
               "req": false,
               "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "plan_to_read",
-              "req": false,
-              "short": "Number of users who have planned to read the resource",
-              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -3419,33 +2973,6 @@
             },
             {
               "active": true,
-              "name": "reading",
-              "req": false,
-              "short": "Number of users reading the resource",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "relation",
-              "req": false,
-              "short": "Relation type",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "relations",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "role",
-              "req": false,
-              "short": "Character's Role",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "format": "float",
               "name": "score",
               "req": false,
@@ -3458,12 +2985,6 @@
               "req": false,
               "short": "Number of users",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "scores",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -3517,25 +3038,10 @@
             },
             {
               "active": true,
-              "deprecated": true,
-              "name": "title_synonyms",
-              "req": false,
-              "short": "Other Titles",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "titles",
               "req": false,
               "short": "All Titles",
               "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "total",
-              "req": false,
-              "short": "Total number of users who have the resource added to their lists",
-              "type": "`$INTEGER`"
             },
             {
               "active": true,
@@ -3557,13 +3063,6 @@
               "req": false,
               "short": "Volume count",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "webp",
-              "req": false,
-              "short": "Available images in WEBP",
-              "type": "`$OBJECT`"
             }
           ],
           "id": {
@@ -4595,22 +4094,10 @@
             },
             {
               "active": true,
-              "name": "anime",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "birthday",
               "req": false,
               "short": "Birthday Date ISO8601",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "character",
-              "req": false,
-              "type": "`$OBJECT`"
             },
             {
               "active": true,
@@ -4653,23 +4140,10 @@
             },
             {
               "active": true,
-              "name": "jpg",
-              "req": false,
-              "short": "Available images in JPG",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
               "name": "mal_id",
               "req": false,
               "short": "MyAnimeList ID",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "manga",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -4686,30 +4160,10 @@
             },
             {
               "active": true,
-              "name": "position",
-              "req": false,
-              "short": "Person's position",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "role",
-              "req": false,
-              "short": "Person's Character's role in the anime",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
               "name": "url",
               "req": false,
               "short": "MyAnimeList URL",
               "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "voices",
-              "req": false,
-              "type": "`$ARRAY`"
             },
             {
               "active": true,
@@ -5126,12 +4580,6 @@
             },
             {
               "active": true,
-              "name": "external",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "favorites",
               "req": false,
               "short": "Producers's member favorites count",
@@ -5155,12 +4603,6 @@
               "req": false,
               "short": "MyAnimeList ID",
               "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "type": "`$STRING`"
             },
             {
               "active": true,
@@ -5425,395 +4867,7 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "about",
-              "req": false,
-              "short": "Biography",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "aired",
-              "req": false,
-              "short": "Date range",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "airing",
-              "req": false,
-              "short": "Airing boolean",
-              "type": "`$BOOLEAN`"
-            },
-            {
-              "active": true,
-              "name": "alternate_names",
-              "req": false,
-              "short": "Other Names",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "approved",
-              "req": false,
-              "short": "Whether the entry is pending approval on MAL or not",
-              "type": "`$BOOLEAN`"
-            },
-            {
-              "active": true,
-              "name": "authors",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "background",
-              "req": false,
-              "short": "Background",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "birthday",
-              "req": false,
-              "short": "Birthday Date ISO8601",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "broadcast",
-              "req": false,
-              "short": "Broadcast Details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "chapters",
-              "req": false,
-              "short": "Chapter count",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "demographics",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "duration",
-              "req": false,
-              "short": "Parsed raw duration",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "episodes",
-              "req": false,
-              "short": "Episode count",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "explicit_genres",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "family_name",
-              "req": false,
-              "short": "Family Name",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "favorites",
-              "req": false,
-              "short": "Number of users who have favorited this entry",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "gender",
-              "req": false,
-              "short": "User Gender",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "genres",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "given_name",
-              "req": false,
-              "short": "Given Name",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "images",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "joined",
-              "req": false,
-              "short": "Joined Date ISO8601",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "last_online",
-              "req": false,
-              "short": "Last Online Date ISO8601",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "licensors",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "location",
-              "req": false,
-              "short": "Location",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "mal_id",
-              "req": false,
-              "short": "MyAnimeList ID",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "members",
-              "req": false,
-              "short": "Number of users who have added this entry to their list",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "name",
-              "req": false,
-              "short": "Name",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "name_kanji",
-              "req": false,
-              "short": "Name",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "nicknames",
-              "req": false,
-              "short": "Other Names",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "popularity",
-              "req": false,
-              "short": "Popularity",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "producers",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "published",
-              "req": false,
-              "short": "Date range",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "publishing",
-              "req": false,
-              "short": "Publishing boolean",
-              "type": "`$BOOLEAN`"
-            },
-            {
-              "active": true,
-              "name": "rank",
-              "req": false,
-              "short": "Ranking",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "rating",
-              "req": false,
-              "short": "Anime audience rating",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "format": "float",
-              "name": "score",
-              "req": false,
-              "short": "Score",
-              "type": "`$NUMBER`"
-            },
-            {
-              "active": true,
-              "name": "scored_by",
-              "req": false,
-              "short": "Number of users",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "season",
-              "req": false,
-              "short": "Season",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "serializations",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "source",
-              "req": false,
-              "short": "Original Material/Source adapted from",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "status",
-              "req": false,
-              "short": "Airing status",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "studios",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "synopsis",
-              "req": false,
-              "short": "Synopsis",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "themes",
-              "req": false,
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "deprecated": true,
-              "name": "title",
-              "req": false,
-              "short": "Title",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "deprecated": true,
-              "name": "title_english",
-              "req": false,
-              "short": "English Title",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "deprecated": true,
-              "name": "title_japanese",
-              "req": false,
-              "short": "Japanese Title",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "deprecated": true,
-              "name": "title_synonyms",
-              "req": false,
-              "short": "Other Titles",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "titles",
-              "req": false,
-              "short": "All titles",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "trailer",
-              "req": false,
-              "short": "Youtube Details",
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "type",
-              "req": false,
-              "short": "Anime Type",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "url",
-              "req": false,
-              "short": "MyAnimeList URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "username",
-              "req": false,
-              "short": "MyAnimeList Username",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "volumes",
-              "req": false,
-              "short": "Volume count",
-              "type": "`$INTEGER`"
-            },
-            {
-              "active": true,
-              "name": "website_url",
-              "req": false,
-              "short": "Person's website URL",
-              "type": "`$STRING`"
-            },
-            {
-              "active": true,
-              "name": "year",
-              "req": false,
-              "short": "Year",
-              "type": "`$INTEGER`"
-            }
-          ],
+          "fields": [],
           "name": "random",
           "op": {
             "load": {
@@ -6786,25 +5840,7 @@
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "data",
-              "req": false,
-              "type": "`$ARRAY`",
-              "union": {
-                "branches": 2,
-                "count": 1,
-                "depth": 1
-              }
-            },
-            {
-              "active": true,
-              "name": "pagination",
-              "req": false,
-              "type": "`$OBJECT`"
-            }
-          ],
+          "fields": [],
           "name": "top",
           "op": {
             "load": {
@@ -6895,13 +5931,6 @@
           "fields": [
             {
               "active": true,
-              "name": "anime",
-              "req": false,
-              "short": "Favorite Anime",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "birthday",
               "req": false,
               "short": "Birthday Date ISO8601",
@@ -6909,25 +5938,7 @@
             },
             {
               "active": true,
-              "name": "characters",
-              "req": false,
-              "short": "Favorite Characters",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "data",
-              "req": false,
-              "type": "`$ARRAY`",
-              "union": {
-                "branches": 2,
-                "count": 1,
-                "depth": 1
-              }
-            },
-            {
-              "active": true,
-              "name": "external",
               "req": false,
               "type": "`$ARRAY`"
             },
@@ -6980,27 +5991,7 @@
             },
             {
               "active": true,
-              "name": "manga",
-              "req": false,
-              "short": "Favorite Manga",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
               "name": "pagination",
-              "req": false,
-              "type": "`$OBJECT`"
-            },
-            {
-              "active": true,
-              "name": "people",
-              "req": false,
-              "short": "Favorite People",
-              "type": "`$ARRAY`"
-            },
-            {
-              "active": true,
-              "name": "statistics",
               "req": false,
               "type": "`$OBJECT`"
             },
@@ -9499,6 +8490,8 @@
         "apikey": "",
         "auth": {
           "basic": false,
+          "in": "",
+          "name": "",
           "prefix": ""
         },
         "base": "http://localhost:8000",
@@ -9573,6 +8566,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -9799,6 +8793,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -9864,6 +8859,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -9935,6 +8931,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -10011,6 +9008,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {

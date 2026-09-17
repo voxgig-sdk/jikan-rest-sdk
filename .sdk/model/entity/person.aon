@@ -18,20 +18,10 @@ main: kit: entity: person: {
       type: "`$ARRAY`"
     }
     {
-      name: "anime"
-      req: false
-      type: "`$ARRAY`"
-    }
-    {
       name: "birthday"
       req: false
       short: "Birthday Date ISO8601"
       type: "`$STRING`"
-    }
-    {
-      name: "character"
-      req: false
-      type: "`$OBJECT`"
     }
     {
       name: "data"
@@ -67,21 +57,10 @@ main: kit: entity: person: {
       type: "`$OBJECT`"
     }
     {
-      name: "jpg"
-      req: false
-      short: "Available images in JPG"
-      type: "`$OBJECT`"
-    }
-    {
       name: "mal_id"
       req: false
       short: "MyAnimeList ID"
       type: "`$INTEGER`"
-    }
-    {
-      name: "manga"
-      req: false
-      type: "`$ARRAY`"
     }
     {
       name: "name"
@@ -95,27 +74,10 @@ main: kit: entity: person: {
       type: "`$OBJECT`"
     }
     {
-      name: "position"
-      req: false
-      short: "Person's position"
-      type: "`$STRING`"
-    }
-    {
-      name: "role"
-      req: false
-      short: "Person's Character's role in the anime"
-      type: "`$STRING`"
-    }
-    {
       name: "url"
       req: false
       short: "MyAnimeList URL"
       type: "`$STRING`"
-    }
-    {
-      name: "voices"
-      req: false
-      type: "`$ARRAY`"
     }
     {
       name: "website_url"

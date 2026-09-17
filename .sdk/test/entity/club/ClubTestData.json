@@ -2,75 +2,59 @@
   "existing": {
     "club": {
       "CLUB00": {
-        "access": "s96",
-        "anime": [],
-        "category": "s98",
-        "characters": [],
-        "created": "s9a",
+        "access": "s6e",
+        "category": "s6f",
+        "created": "s70",
         "data": [],
         "id": "CLUB00",
         "images": {},
         "mal_id": "MAL01",
-        "manga": [],
-        "members": 160,
-        "name": "sa1",
+        "members": 117,
+        "name": "s76",
         "pagination": {},
-        "url": "sa3",
-        "username": "sa4"
+        "url": "s78"
       },
       "CLUB01": {
-        "access": "s12c",
-        "anime": [],
-        "category": "s12e",
-        "characters": [],
-        "created": "s130",
+        "access": "sdc",
+        "category": "sdd",
+        "created": "sde",
         "data": [],
         "id": "CLUB01",
         "images": {},
         "mal_id": "MAL01",
-        "manga": [],
-        "members": 310,
-        "name": "s137",
+        "members": 227,
+        "name": "se4",
         "pagination": {},
-        "url": "s139",
-        "username": "s13a"
+        "url": "se6"
       },
       "CLUB02": {
-        "access": "s1c2",
-        "anime": [],
-        "category": "s1c4",
-        "characters": [],
-        "created": "s1c6",
+        "access": "s14a",
+        "category": "s14b",
+        "created": "s14c",
         "data": [],
         "id": "CLUB02",
         "images": {},
         "mal_id": "MAL01",
-        "manga": [],
-        "members": 460,
-        "name": "s1cd",
+        "members": 337,
+        "name": "s152",
         "pagination": {},
-        "url": "s1cf",
-        "username": "s1d0"
+        "url": "s154"
       }
     }
   },
   "new": {
     "club": {
       "club_ref01": {
-        "access": "s258",
-        "anime": [],
-        "category": "s25a",
-        "characters": [],
-        "created": "s25c",
+        "access": "s1b8",
+        "category": "s1b9",
+        "created": "s1ba",
         "data": [],
         "images": {},
         "mal_id": "MAL01",
-        "manga": [],
-        "members": 610,
-        "name": "s263",
+        "members": 447,
+        "name": "s1c0",
         "pagination": {},
-        "url": "s265",
-        "username": "s266"
+        "url": "s1c2"
       }
     }
   },

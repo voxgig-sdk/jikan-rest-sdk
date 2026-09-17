@@ -129,16 +129,6 @@ func MakeConfig() map[string]any {
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
-						"name": "author_url",
-						"short": "Author Profile URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "author_username",
-						"short": "Author MyAnimeList Username",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"name": "background",
 						"short": "Background",
 						"type": "`$STRING`",
@@ -149,56 +139,17 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "character",
-						"short": "Character details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "comments",
-						"short": "Comment count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "completed",
-						"short": "Number of users who have completed the resource",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "data",
 						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "date",
-						"short": "Post Date ISO8601",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demographics",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"name": "dropped",
-						"short": "Number of users who have dropped the resource",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "duration",
 						"short": "Episode duration in seconds",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "endings",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "entry",
-						"short": "Related entries",
-						"type": "`$OBJECT`",
-						"union": map[string]any{
-							"branches": 2,
-							"count": 1,
-							"depth": 0,
-						},
 					},
 					map[string]any{
 						"name": "episodes",
@@ -207,10 +158,6 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "explicit_genres",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "external",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
@@ -236,11 +183,6 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "last_comment",
-						"short": "Last comment details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
 						"name": "licensors",
 						"type": "`$ARRAY`",
 					},
@@ -255,40 +197,8 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "moreinfo",
-						"short": "Additional information on the entry",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "music_videos",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "on_hold",
-						"short": "Number of users who have put the resource on hold",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "openings",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "pagination",
 						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "person",
-						"short": "Person details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "plan_to_watch",
-						"short": "Number of users who have planned to watch the resource",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "popularity",
@@ -296,16 +206,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "positions",
-						"short": "Staff Positions",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "producers",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "promo",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
@@ -324,20 +225,6 @@ func MakeConfig() map[string]any {
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
-						"name": "relation",
-						"short": "Relation type",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "relations",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "role",
-						"short": "Character's Role",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"format": "float",
 						"name": "score",
 						"short": "Score",
@@ -347,10 +234,6 @@ func MakeConfig() map[string]any {
 						"name": "scored_by",
 						"short": "Number of users",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "scores",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "season",
@@ -368,10 +251,6 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "streaming",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "studios",
 						"type": "`$ARRAY`",
 					},
@@ -379,10 +258,6 @@ func MakeConfig() map[string]any {
 						"name": "synopsis",
 						"short": "Episode Synopsis",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "theme",
-						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "themes",
@@ -423,11 +298,6 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"name": "total",
-						"short": "Total number of users who have the resource added to their lists",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "trailer",
 						"short": "Youtube Details",
 						"type": "`$OBJECT`",
@@ -441,15 +311,6 @@ func MakeConfig() map[string]any {
 						"name": "url",
 						"short": "MyAnimeList URL",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "voice_actors",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "watching",
-						"short": "Number of users watching the resource",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "year",
@@ -1639,10 +1500,6 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "anime",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "data",
 						"type": "`$ARRAY`",
 					},
@@ -1656,32 +1513,13 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "image_url",
-						"short": "Default JPG Image Size URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"name": "images",
 						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "language",
-						"short": "Character's Role",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "large_image_url",
-						"short": "Large JPG Image Size URL",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "mal_id",
 						"short": "MyAnimeList ID",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "manga",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
@@ -1703,22 +1541,9 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "person",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "role",
-						"short": "Character's Role",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"name": "url",
 						"short": "MyAnimeList URL",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "voices",
-						"type": "`$ARRAY`",
 					},
 				},
 				"id": map[string]any{
@@ -2109,17 +1934,9 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "anime",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "category",
 						"short": "Club Category",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "characters",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "created",
@@ -2144,10 +1961,6 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "manga",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "members",
 						"short": "Number of club members",
 						"type": "`$INTEGER`",
@@ -2164,11 +1977,6 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "url",
 						"short": "Club URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "username",
-						"short": "User's username",
 						"type": "`$STRING`",
 					},
 				},
@@ -2726,16 +2534,6 @@ func MakeConfig() map[string]any {
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
-						"name": "author_url",
-						"short": "Author Profile URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "author_username",
-						"short": "Author MyAnimeList Username",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"name": "authors",
 						"type": "`$ARRAY`",
 					},
@@ -2750,53 +2548,15 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "character",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "comments",
-						"short": "Comment count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "completed",
-						"short": "Number of users who have completed the resource",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "data",
 						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "date",
-						"short": "Post Date ISO8601",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "demographics",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"name": "dropped",
-						"short": "Number of users who have dropped the resource",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "entry",
-						"short": "Related entries",
-						"type": "`$OBJECT`",
-						"union": map[string]any{
-							"branches": 2,
-							"count": 1,
-							"depth": 0,
-						},
-					},
-					map[string]any{
 						"name": "explicit_genres",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "external",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
@@ -2817,16 +2577,6 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "jpg",
-						"short": "Available images in JPG",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "last_comment",
-						"short": "Last comment details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
 						"name": "mal_id",
 						"short": "MyAnimeList ID",
 						"type": "`$INTEGER`",
@@ -2837,27 +2587,8 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "moreinfo",
-						"short": "Additional information on the entry",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "on_hold",
-						"short": "Number of users who have put the resource on hold",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
 						"name": "pagination",
 						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "plan_to_read",
-						"short": "Number of users who have planned to read the resource",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "popularity",
@@ -2880,25 +2611,6 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "reading",
-						"short": "Number of users reading the resource",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "relation",
-						"short": "Relation type",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "relations",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "role",
-						"short": "Character's Role",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"format": "float",
 						"name": "score",
 						"short": "Score",
@@ -2908,10 +2620,6 @@ func MakeConfig() map[string]any {
 						"name": "scored_by",
 						"short": "Number of users",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "scores",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "serializations",
@@ -2950,20 +2658,9 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"deprecated": true,
-						"name": "title_synonyms",
-						"short": "Other Titles",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "titles",
 						"short": "All Titles",
 						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "total",
-						"short": "Total number of users who have the resource added to their lists",
-						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "type",
@@ -2979,11 +2676,6 @@ func MakeConfig() map[string]any {
 						"name": "volumes",
 						"short": "Volume count",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "webp",
-						"short": "Available images in WEBP",
-						"type": "`$OBJECT`",
 					},
 				},
 				"id": map[string]any{
@@ -3888,17 +3580,9 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
-						"name": "anime",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "birthday",
 						"short": "Birthday Date ISO8601",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "character",
-						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "data",
@@ -3928,18 +3612,9 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "jpg",
-						"short": "Available images in JPG",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
 						"name": "mal_id",
 						"short": "MyAnimeList ID",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "manga",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "name",
@@ -3951,23 +3626,9 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
-						"name": "position",
-						"short": "Person's position",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "role",
-						"short": "Person's Character's role in the anime",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"name": "url",
 						"short": "MyAnimeList URL",
 						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "voices",
-						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "website_url",
@@ -4334,10 +3995,6 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "external",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "favorites",
 						"short": "Producers's member favorites count",
 						"type": "`$INTEGER`",
@@ -4354,10 +4011,6 @@ func MakeConfig() map[string]any {
 						"name": "mal_id",
 						"short": "MyAnimeList ID",
 						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "name",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "pagination",
@@ -4586,283 +4239,7 @@ func MakeConfig() map[string]any {
 				},
 			},
 			"random": map[string]any{
-				"fields": []any{
-					map[string]any{
-						"name": "about",
-						"short": "Biography",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "aired",
-						"short": "Date range",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "airing",
-						"short": "Airing boolean",
-						"type": "`$BOOLEAN`",
-					},
-					map[string]any{
-						"name": "alternate_names",
-						"short": "Other Names",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "approved",
-						"short": "Whether the entry is pending approval on MAL or not",
-						"type": "`$BOOLEAN`",
-					},
-					map[string]any{
-						"name": "authors",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "background",
-						"short": "Background",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "birthday",
-						"short": "Birthday Date ISO8601",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "broadcast",
-						"short": "Broadcast Details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "chapters",
-						"short": "Chapter count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "demographics",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "duration",
-						"short": "Parsed raw duration",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "episodes",
-						"short": "Episode count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "explicit_genres",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "family_name",
-						"short": "Family Name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "favorites",
-						"short": "Number of users who have favorited this entry",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "gender",
-						"short": "User Gender",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "genres",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "given_name",
-						"short": "Given Name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "images",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "joined",
-						"short": "Joined Date ISO8601",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "last_online",
-						"short": "Last Online Date ISO8601",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "licensors",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "location",
-						"short": "Location",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "mal_id",
-						"short": "MyAnimeList ID",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "members",
-						"short": "Number of users who have added this entry to their list",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "name",
-						"short": "Name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "name_kanji",
-						"short": "Name",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "nicknames",
-						"short": "Other Names",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "popularity",
-						"short": "Popularity",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "producers",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "published",
-						"short": "Date range",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "publishing",
-						"short": "Publishing boolean",
-						"type": "`$BOOLEAN`",
-					},
-					map[string]any{
-						"name": "rank",
-						"short": "Ranking",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "rating",
-						"short": "Anime audience rating",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"format": "float",
-						"name": "score",
-						"short": "Score",
-						"type": "`$NUMBER`",
-					},
-					map[string]any{
-						"name": "scored_by",
-						"short": "Number of users",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "season",
-						"short": "Season",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "serializations",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "source",
-						"short": "Original Material/Source adapted from",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "status",
-						"short": "Airing status",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "studios",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "synopsis",
-						"short": "Synopsis",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "themes",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"deprecated": true,
-						"name": "title",
-						"short": "Title",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"deprecated": true,
-						"name": "title_english",
-						"short": "English Title",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"deprecated": true,
-						"name": "title_japanese",
-						"short": "Japanese Title",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"deprecated": true,
-						"name": "title_synonyms",
-						"short": "Other Titles",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "titles",
-						"short": "All titles",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "trailer",
-						"short": "Youtube Details",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "type",
-						"short": "Anime Type",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "url",
-						"short": "MyAnimeList URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "username",
-						"short": "MyAnimeList Username",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "volumes",
-						"short": "Volume count",
-						"type": "`$INTEGER`",
-					},
-					map[string]any{
-						"name": "website_url",
-						"short": "Person's website URL",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "year",
-						"short": "Year",
-						"type": "`$INTEGER`",
-					},
-				},
+				"fields": []any{},
 				"name": "random",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -5683,21 +5060,7 @@ func MakeConfig() map[string]any {
 				},
 			},
 			"top": map[string]any{
-				"fields": []any{
-					map[string]any{
-						"name": "data",
-						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 2,
-							"count": 1,
-							"depth": 1,
-						},
-					},
-					map[string]any{
-						"name": "pagination",
-						"type": "`$OBJECT`",
-					},
-				},
+				"fields": []any{},
 				"name": "top",
 				"op": map[string]any{
 					"load": map[string]any{
@@ -5772,31 +5135,12 @@ func MakeConfig() map[string]any {
 			"user": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"name": "anime",
-						"short": "Favorite Anime",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "birthday",
 						"short": "Birthday Date ISO8601",
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "characters",
-						"short": "Favorite Characters",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "data",
-						"type": "`$ARRAY`",
-						"union": map[string]any{
-							"branches": 2,
-							"count": 1,
-							"depth": 1,
-						},
-					},
-					map[string]any{
-						"name": "external",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
@@ -5833,21 +5177,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
-						"name": "manga",
-						"short": "Favorite Manga",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
 						"name": "pagination",
-						"type": "`$OBJECT`",
-					},
-					map[string]any{
-						"name": "people",
-						"short": "Favorite People",
-						"type": "`$ARRAY`",
-					},
-					map[string]any{
-						"name": "statistics",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
