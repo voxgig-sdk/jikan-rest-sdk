@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserAboutEntity = void 0;
 const JikanRestEntityBase_1 = require("../JikanRestEntityBase");
-// TODO: needs Entity superclass
 class UserAboutEntity extends JikanRestEntityBase_1.JikanRestEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

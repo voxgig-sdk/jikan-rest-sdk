@@ -1,7 +1,7 @@
 // Typed models for the JikanRest SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,48 +14,6 @@ import (
 
 // Anime is the typed data model for the anime entity.
 type Anime struct {
-	Aired *string `json:"aired,omitempty"`
-	Airing *bool `json:"airing,omitempty"`
-	Approved *bool `json:"approved,omitempty"`
-	Background *string `json:"background,omitempty"`
-	Broadcast *map[string]any `json:"broadcast,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Demographics *[]any `json:"demographics,omitempty"`
-	Duration *int `json:"duration,omitempty"`
-	Episodes *int `json:"episodes,omitempty"`
-	ExplicitGenres *[]any `json:"explicit_genres,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Filler *bool `json:"filler,omitempty"`
-	Genres *[]any `json:"genres,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Licensors *[]any `json:"licensors,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Popularity *int `json:"popularity,omitempty"`
-	Producers *[]any `json:"producers,omitempty"`
-	Rank *int `json:"rank,omitempty"`
-	Rating *string `json:"rating,omitempty"`
-	Recap *bool `json:"recap,omitempty"`
-	Score *float64 `json:"score,omitempty"`
-	ScoredBy *int `json:"scored_by,omitempty"`
-	Season *string `json:"season,omitempty"`
-	Source *string `json:"source,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Studios *[]any `json:"studios,omitempty"`
-	Synopsis *string `json:"synopsis,omitempty"`
-	Themes *[]any `json:"themes,omitempty"`
-	Title *string `json:"title,omitempty"`
-	TitleEnglish *string `json:"title_english,omitempty"`
-	TitleJapanese *string `json:"title_japanese,omitempty"`
-	TitleRomanji *string `json:"title_romanji,omitempty"`
-	TitleSynonyms *[]any `json:"title_synonyms,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Trailer *map[string]any `json:"trailer,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Year *int `json:"year,omitempty"`
 }
 
 // AnimeLoadMatch is the typed request payload for Anime.LoadTyped.
@@ -89,17 +47,6 @@ type AnimeListMatch struct {
 
 // Character is the typed data model for the character entity.
 type Character struct {
-	About *string `json:"about,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	NameKanji *string `json:"name_kanji,omitempty"`
-	Nicknames *[]any `json:"nicknames,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // CharacterLoadMatch is the typed request payload for Character.LoadTyped.
@@ -119,17 +66,6 @@ type CharacterListMatch struct {
 
 // Club is the typed data model for the club entity.
 type Club struct {
-	Access *string `json:"access,omitempty"`
-	Category *string `json:"category,omitempty"`
-	Created *string `json:"created,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // ClubLoadMatch is the typed request payload for Club.LoadTyped.
@@ -151,8 +87,6 @@ type ClubListMatch struct {
 
 // External is the typed data model for the external entity.
 type External struct {
-	Name *string `json:"name,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // ExternalListMatch is the typed request payload for External.ListTyped.
@@ -162,10 +96,6 @@ type ExternalListMatch struct {
 
 // Genre is the typed data model for the genre entity.
 type Genre struct {
-	Count *int `json:"count,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // GenreListMatch is the typed request payload for Genre.ListTyped.
@@ -173,10 +103,18 @@ type GenreListMatch struct {
 	Filter *string `json:"filter,omitempty"`
 }
 
+// History is the typed data model for the history entity.
+type History struct {
+}
+
+// HistoryListMatch is the typed request payload for History.ListTyped.
+type HistoryListMatch struct {
+	Username string `json:"username"`
+	Type *string `json:"type,omitempty"`
+}
+
 // Magazine is the typed data model for the magazine entity.
 type Magazine struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // MagazineListMatch is the typed request payload for Magazine.ListTyped.
@@ -191,37 +129,6 @@ type MagazineListMatch struct {
 
 // Manga is the typed data model for the manga entity.
 type Manga struct {
-	Approved *bool `json:"approved,omitempty"`
-	Authors *[]any `json:"authors,omitempty"`
-	Background *string `json:"background,omitempty"`
-	Chapters *int `json:"chapters,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Demographics *[]any `json:"demographics,omitempty"`
-	ExplicitGenres *[]any `json:"explicit_genres,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Genres *[]any `json:"genres,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Members *int `json:"members,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Popularity *int `json:"popularity,omitempty"`
-	Published *map[string]any `json:"published,omitempty"`
-	Publishing *bool `json:"publishing,omitempty"`
-	Rank *int `json:"rank,omitempty"`
-	Score *float64 `json:"score,omitempty"`
-	ScoredBy *int `json:"scored_by,omitempty"`
-	Serializations *[]any `json:"serializations,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Synopsis *string `json:"synopsis,omitempty"`
-	Themes *[]any `json:"themes,omitempty"`
-	Title *string `json:"title,omitempty"`
-	TitleEnglish *string `json:"title_english,omitempty"`
-	TitleJapanese *string `json:"title_japanese,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Type *string `json:"type,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Volumes *int `json:"volumes,omitempty"`
 }
 
 // MangaLoadMatch is the typed request payload for Manga.LoadTyped.
@@ -253,8 +160,6 @@ type MangaListMatch struct {
 
 // PeopleSearch is the typed data model for the people_search entity.
 type PeopleSearch struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // PeopleSearchListMatch is the typed request payload for PeopleSearch.ListTyped.
@@ -265,20 +170,6 @@ type PeopleSearchListMatch struct {
 
 // Person is the typed data model for the person entity.
 type Person struct {
-	About *string `json:"about,omitempty"`
-	AlternateNames *[]any `json:"alternate_names,omitempty"`
-	Birthday *string `json:"birthday,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	FamilyName *string `json:"family_name,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	GivenName *string `json:"given_name,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Url *string `json:"url,omitempty"`
-	WebsiteUrl *string `json:"website_url,omitempty"`
 }
 
 // PersonLoadMatch is the typed request payload for Person.LoadTyped.
@@ -298,17 +189,6 @@ type PersonListMatch struct {
 
 // Producer is the typed data model for the producer entity.
 type Producer struct {
-	About *string `json:"about,omitempty"`
-	Count *int `json:"count,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Established *string `json:"established,omitempty"`
-	Favorites *int `json:"favorites,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Titles *[]any `json:"titles,omitempty"`
-	Url *string `json:"url,omitempty"`
 }
 
 // ProducerLoadMatch is the typed request payload for Producer.LoadTyped.
@@ -336,8 +216,6 @@ type RandomLoadMatch struct {
 
 // Recommendation is the typed data model for the recommendation entity.
 type Recommendation struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // RecommendationListMatch is the typed request payload for Recommendation.ListTyped.
@@ -359,8 +237,6 @@ type ReviewLoadMatch struct {
 
 // Schedule is the typed data model for the schedule entity.
 type Schedule struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // ScheduleListMatch is the typed request payload for Schedule.ListTyped.
@@ -375,11 +251,6 @@ type ScheduleListMatch struct {
 
 // Season is the typed data model for the season entity.
 type Season struct {
-	Data *[]any `json:"data,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Seasons *[]any `json:"seasons,omitempty"`
-	Year *int `json:"year,omitempty"`
 }
 
 // SeasonLoadMatch is the typed request payload for Season.LoadTyped.
@@ -417,18 +288,6 @@ type TopLoadMatch struct {
 
 // User is the typed data model for the user entity.
 type User struct {
-	Birthday *string `json:"birthday,omitempty"`
-	Data *[]any `json:"data,omitempty"`
-	Gender *string `json:"gender,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Images *map[string]any `json:"images,omitempty"`
-	Joined *string `json:"joined,omitempty"`
-	LastOnline *string `json:"last_online,omitempty"`
-	Location *string `json:"location,omitempty"`
-	MalId *int `json:"mal_id,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
-	Url *string `json:"url,omitempty"`
-	Username *string `json:"username,omitempty"`
 }
 
 // UserLoadMatch is the typed request payload for User.LoadTyped.
@@ -449,7 +308,6 @@ type UserListMatch struct {
 
 // UserAbout is the typed data model for the user_about entity.
 type UserAbout struct {
-	About *string `json:"about,omitempty"`
 }
 
 // UserAboutListMatch is the typed request payload for UserAbout.ListTyped.
@@ -459,8 +317,6 @@ type UserAboutListMatch struct {
 
 // UserClub is the typed data model for the user_club entity.
 type UserClub struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // UserClubListMatch is the typed request payload for UserClub.ListTyped.
@@ -471,8 +327,6 @@ type UserClubListMatch struct {
 
 // UserFriend is the typed data model for the user_friend entity.
 type UserFriend struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // UserFriendListMatch is the typed request payload for UserFriend.ListTyped.
@@ -481,23 +335,8 @@ type UserFriendListMatch struct {
 	Page *int `json:"page,omitempty"`
 }
 
-// UserHistory is the typed data model for the user_history entity.
-type UserHistory struct {
-	Date *string `json:"date,omitempty"`
-	Entry *map[string]any `json:"entry,omitempty"`
-	Increment *int `json:"increment,omitempty"`
-}
-
-// UserHistoryListMatch is the typed request payload for UserHistory.ListTyped.
-type UserHistoryListMatch struct {
-	Username string `json:"username"`
-	Type *string `json:"type,omitempty"`
-}
-
 // UserStatistic is the typed data model for the user_statistic entity.
 type UserStatistic struct {
-	Anime *map[string]any `json:"anime,omitempty"`
-	Manga *map[string]any `json:"manga,omitempty"`
 }
 
 // UserStatisticLoadMatch is the typed request payload for UserStatistic.LoadTyped.
@@ -507,8 +346,6 @@ type UserStatisticLoadMatch struct {
 
 // UserUpdate is the typed data model for the user_update entity.
 type UserUpdate struct {
-	Anime *[]any `json:"anime,omitempty"`
-	Manga *[]any `json:"manga,omitempty"`
 }
 
 // UserUpdateLoadMatch is the typed request payload for UserUpdate.LoadTyped.
@@ -518,8 +355,6 @@ type UserUpdateLoadMatch struct {
 
 // WatchEpisode is the typed data model for the watch_episode entity.
 type WatchEpisode struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // WatchEpisodeListMatch is the typed request payload for WatchEpisode.ListTyped.
@@ -530,8 +365,6 @@ type WatchEpisodeListMatch struct {
 
 // WatchPromo is the typed data model for the watch_promo entity.
 type WatchPromo struct {
-	Data *[]any `json:"data,omitempty"`
-	Pagination *map[string]any `json:"pagination,omitempty"`
 }
 
 // WatchPromoListMatch is the typed request payload for WatchPromo.ListTyped.

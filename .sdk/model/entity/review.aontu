@@ -1,0 +1,129 @@
+# Entity: review
+
+main: kit: entity: review: {
+
+  alias: field: {}
+
+  name: "review"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /reviews/anime"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "preliminary"
+                or: "preliminary"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "spoiler"
+                or: "spoiler"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/reviews/anime"
+          q: {
+            "$action": "anime"
+            exist: [
+              "page"
+              "preliminary"
+              "spoiler"
+            ]
+          }
+          s: [
+            {
+              lit: "reviews"
+            }
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /reviews/manga"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "preliminary"
+                or: "preliminary"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "spoiler"
+                or: "spoiler"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/reviews/manga"
+          q: {
+            "$action": "manga"
+            exist: [
+              "page"
+              "preliminary"
+              "spoiler"
+            ]
+          }
+          s: [
+            {
+              lit: "reviews"
+            }
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

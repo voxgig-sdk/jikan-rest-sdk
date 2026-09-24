@@ -19,7 +19,6 @@ import type {
   WatchPromoListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class WatchPromoEntity extends JikanRestEntityBase<WatchPromo> {
 
   constructor(client: JikanRestSDK, entopts: any) {

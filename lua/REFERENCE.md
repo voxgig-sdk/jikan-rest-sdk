@@ -60,6 +60,10 @@ Create a new `External` entity instance. Pass `nil` for no initial data.
 
 Create a new `Genre` entity instance. Pass `nil` for no initial data.
 
+#### `History(data)`
+
+Create a new `History` entity instance. Pass `nil` for no initial data.
+
 #### `Magazine(data)`
 
 Create a new `Magazine` entity instance. Pass `nil` for no initial data.
@@ -119,10 +123,6 @@ Create a new `UserClub` entity instance. Pass `nil` for no initial data.
 #### `UserFriend(data)`
 
 Create a new `UserFriend` entity instance. Pass `nil` for no initial data.
-
-#### `UserHistory(data)`
-
-Create a new `UserHistory` entity instance. Pass `nil` for no initial data.
 
 #### `UserStatistic(data)`
 
@@ -516,6 +516,60 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `GenreEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## HistoryEntity
+
+```lua
+local history = client:History(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `table` | No | Parsed URL Data |
+| `increment` | `number` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `list(reqmatch, ctrl) -> any, err`
+
+List entities matching the given criteria. Returns an array.
+
+```lua
+local results, err = client:History():list()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `HistoryEntity` instance with the same client and
 options.
 
 #### `get_name() -> string`
@@ -1392,60 +1446,6 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `UserFriendEntity` instance with the same client and
-options.
-
-#### `get_name() -> string`
-
-Return the entity name.
-
-
----
-
-## UserHistoryEntity
-
-```lua
-local user_history = client:UserHistory(nil)
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `string` | No | Date ISO8601 |
-| `entry` | `table` | No | Parsed URL Data |
-| `increment` | `number` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `list(reqmatch, ctrl) -> any, err`
-
-List entities matching the given criteria. Returns an array.
-
-```lua
-local results, err = client:UserHistory():list()
-```
-
-### Common Methods
-
-#### `data_get() -> table`
-
-Get the entity data. Returns a copy of the current data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> table`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UserHistoryEntity` instance with the same client and
 options.
 
 #### `get_name() -> string`

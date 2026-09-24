@@ -19,7 +19,6 @@ import type {
   UserClubListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class UserClubEntity extends JikanRestEntityBase<UserClub> {
 
   constructor(client: JikanRestSDK, entopts: any) {

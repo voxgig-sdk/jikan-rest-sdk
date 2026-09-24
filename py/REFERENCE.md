@@ -61,6 +61,10 @@ Create a new `ExternalEntity` instance. Pass `None` for no initial data.
 
 Create a new `GenreEntity` instance. Pass `None` for no initial data.
 
+#### `History(data=None)`
+
+Create a new `HistoryEntity` instance. Pass `None` for no initial data.
+
 #### `Magazine(data=None)`
 
 Create a new `MagazineEntity` instance. Pass `None` for no initial data.
@@ -120,10 +124,6 @@ Create a new `UserClubEntity` instance. Pass `None` for no initial data.
 #### `UserFriend(data=None)`
 
 Create a new `UserFriendEntity` instance. Pass `None` for no initial data.
-
-#### `UserHistory(data=None)`
-
-Create a new `UserHistoryEntity` instance. Pass `None` for no initial data.
 
 #### `UserStatistic(data=None)`
 
@@ -519,6 +519,61 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `GenreEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## HistoryEntity
+
+```python
+history = client.History()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `str` | No | Date ISO8601 |
+| `entry` | `dict` | No | Parsed URL Data |
+| `increment` | `int` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
+
+```python
+results = client.History().list({"username": "example"})
+for history in results:
+    print(history)
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `HistoryEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -1404,61 +1459,6 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `UserFriendEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UserHistoryEntity
-
-```python
-user_history = client.UserHistory()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `str` | No | Date ISO8601 |
-| `entry` | `dict` | No | Parsed URL Data |
-| `increment` | `int` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
-
-```python
-results = client.UserHistory().list({"username": "example"})
-for user_history in results:
-    print(user_history)
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UserHistoryEntity` instance with the same options.
 
 #### `get_name() -> str`
 

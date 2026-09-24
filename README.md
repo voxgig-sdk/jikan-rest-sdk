@@ -14,7 +14,7 @@ Metadata kindly supplied by [www.freepublicapis.com](https://www.freepublicapis.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI with an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
 
-> **Features:** `ratelimit`, `retry`, `test`, `timeout` — opt-in,
+> **Features:** `undefined`, `undefined`, `undefined`, `undefined` — opt-in,
 > inactive until switched on, and configured per client. See the Features
 > section of any SDK README below for what each one does.
 
@@ -129,12 +129,11 @@ for (const anime of animes) {
   console.log(anime)
 }
 
-// Load a specific season (returns a Season)
-const season = await client.Season().load({
-  season: 'example_season',
-  year: 1,
+// Load a specific userstatistic (returns a UserStatistic)
+const userstatistic = await client.UserStatistic().load({
+  username: 'example_username',
 })
-console.log(season)
+console.log(userstatistic)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -180,6 +179,7 @@ The API exposes 25 entities:
 | **Club** | The Club entity (list, load). | `/clubs` |
 | **External** | The External entity (list). | `/users/{username}/external` |
 | **Genre** | The Genre entity (list). | `/genres/anime` |
+| **History** | The History entity (list). | `/users/{username}/history` |
 | **Magazine** | The Magazine entity (list). | `/magazines` |
 | **Manga** | The Manga entity (list, load). | `/manga` |
 | **PeopleSearch** | The PeopleSearch entity (list). | `/top/people` |
@@ -195,7 +195,6 @@ The API exposes 25 entities:
 | **UserAbout** | The UserAbout entity (list). | `/users/{username}/about` |
 | **UserClub** | The UserClub entity (list). | `/users/{username}/clubs` |
 | **UserFriend** | The UserFriend entity (list). | `/users/{username}/friends` |
-| **UserHistory** | The UserHistory entity (list). | `/users/{username}/history` |
 | **UserStatistic** | The UserStatistic entity (load). | `/users/{username}/statistics` |
 | **UserUpdate** | The UserUpdate entity (load). | `/users/{username}/userupdates` |
 | **WatchEpisode** | The WatchEpisode entity (list). | `/watch/episodes` |
@@ -254,14 +253,14 @@ if err != nil {
 }
 fmt.Println(animes)
 
-// Load a specific season
-season, err := client.Season(nil).Load(
-    map[string]any{"season": "example_season", "year": 1}, nil,
+// Load a specific userstatistic
+userStatistic, err := client.UserStatistic(nil).Load(
+    map[string]any{"username": "example_username"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(season)
+fmt.Println(userStatistic)
 ```
 
 ### Ruby

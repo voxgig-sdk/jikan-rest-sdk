@@ -1,0 +1,343 @@
+# Entity: season
+
+main: kit: entity: season: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    seasons: {
+      h: "Seasons"
+      n: "seasons"
+      r: false
+      sh: "List of available seasons"
+      t: "`$ARRAY`"
+    }
+    year: {
+      h: "Year"
+      n: "year"
+      r: false
+      sh: "Year"
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    from: {
+      year: "year"
+    }
+    name: "id"
+    parts: [
+      "year"
+      "season"
+    ]
+    sep: "/"
+  }
+
+  name: "season"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /seasons/now"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "continuing"
+                or: "continuing"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "unapproved"
+                or: "unapproved"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/seasons/now"
+          q: {
+            "$action": "now"
+            exist: [
+              "continuing"
+              "filter"
+              "limit"
+              "page"
+              "sfw"
+              "unapproved"
+            ]
+          }
+          s: [
+            {
+              lit: "seasons"
+            }
+            {
+              lit: "now"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /seasons/upcoming"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "continuing"
+                or: "continuing"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "unapproved"
+                or: "unapproved"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/seasons/upcoming"
+          q: {
+            "$action": "upcoming"
+            exist: [
+              "continuing"
+              "filter"
+              "limit"
+              "page"
+              "sfw"
+              "unapproved"
+            ]
+          }
+          s: [
+            {
+              lit: "seasons"
+            }
+            {
+              lit: "upcoming"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /seasons"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/seasons"
+          s: [
+            {
+              lit: "seasons"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /seasons/{year}/{season}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "season"
+                or: "season"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "year"
+                or: "year"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "continuing"
+                or: "continuing"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "unapproved"
+                or: "unapproved"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/seasons/{year}/{season}"
+          q: {
+            exist: [
+              "continuing"
+              "filter"
+              "limit"
+              "page"
+              "season"
+              "sfw"
+              "unapproved"
+              "year"
+            ]
+          }
+          s: [
+            {
+              lit: "seasons"
+            }
+            {
+              var: "year"
+            }
+            {
+              var: "season"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

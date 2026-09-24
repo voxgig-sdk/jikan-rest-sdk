@@ -147,6 +147,15 @@ export interface GenreListMatch {
     $action?: string;
     [action: string]: any;
 }
+export interface History {
+    date?: string;
+    entry?: Record<string, any>;
+    increment?: number;
+}
+export interface HistoryListMatch {
+    username: string;
+    type?: string;
+}
 export interface Magazine {
     data?: any[];
     pagination?: Record<string, any>;
@@ -408,15 +417,6 @@ export interface UserFriend {
 export interface UserFriendListMatch {
     username: string;
     page?: number;
-}
-export interface UserHistory {
-    date?: string;
-    entry?: Record<string, any>;
-    increment?: number;
-}
-export interface UserHistoryListMatch {
-    username: string;
-    type?: string;
 }
 export interface UserStatistic {
     anime?: Record<string, any>;

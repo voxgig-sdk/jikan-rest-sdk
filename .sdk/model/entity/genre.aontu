@@ -1,0 +1,125 @@
+# Entity: genre
+
+main: kit: entity: genre: {
+
+  alias: field: {}
+
+  fields: {
+    count: {
+      h: "Count"
+      n: "count"
+      r: false
+      sh: "Genre's entry count"
+      t: "`$INTEGER`"
+    }
+    mal_id: {
+      h: "Mal Id"
+      n: "mal_id"
+      r: false
+      sh: "MyAnimeList ID"
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Genre Name"
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "MyAnimeList URL"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "genre"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /genres/anime"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/genres/anime"
+          q: {
+            "$action": "anime"
+            exist: [
+              "filter"
+            ]
+          }
+          s: [
+            {
+              lit: "genres"
+            }
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /genres/manga"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/genres/manga"
+          q: {
+            "$action": "manga"
+            exist: [
+              "filter"
+            ]
+          }
+          s: [
+            {
+              lit: "genres"
+            }
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

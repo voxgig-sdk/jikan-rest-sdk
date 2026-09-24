@@ -1,0 +1,44 @@
+# BasicClubFlow
+
+main: kit: flow: BasicClubFlow:
+{
+  entity: "club",
+  kind: "basic",
+  name: "BasicClubFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "club_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "club_ref01",
+        srcdatavar: "club_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "club01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-club_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicClubFlow"
+}

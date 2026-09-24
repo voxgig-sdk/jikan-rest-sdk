@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "history": {
+      "HISTORY00": {
+        "date": "s1e",
+        "entry": {},
+        "increment": 32,
+        "username": "USERNAME01"
+      },
+      "HISTORY01": {
+        "date": "s3c",
+        "entry": {},
+        "increment": 62,
+        "username": "USERNAME01"
+      },
+      "HISTORY02": {
+        "date": "s5a",
+        "entry": {},
+        "increment": 92,
+        "username": "USERNAME01"
+      }
+    }
+  },
+  "new": {
+    "history": {
+      "history_ref01": {
+        "date": "s78",
+        "entry": {},
+        "increment": 122
+      }
+    }
+  },
+  "requests": {
+    "GET /users/{username}/history": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

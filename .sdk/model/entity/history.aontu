@@ -1,0 +1,95 @@
+# Entity: history
+
+main: kit: entity: history: {
+
+  alias: field: {}
+
+  fields: {
+    date: {
+      h: "Date"
+      n: "date"
+      r: false
+      sh: "Date ISO8601"
+      t: "`$STRING`"
+    }
+    entry: {
+      h: "Entry"
+      n: "entry"
+      r: false
+      sh: "Parsed URL Data"
+      t: "`$OBJECT`"
+    }
+    increment: {
+      h: "Increment"
+      n: "increment"
+      r: false
+      sh: "Number of episodes/chapters watched/read"
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "history"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /users/{username}/history"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "username"
+                or: "username"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/users/{username}/history"
+          q: {
+            exist: [
+              "type"
+              "username"
+            ]
+          }
+          s: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "history"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.user")]
+  ]
+
+}

@@ -25,10 +25,6 @@ import {
 } from '../../utility'
 
 
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 loadEnvLocal(__dirname + '/../../../.env.local')
 
 
@@ -55,7 +51,7 @@ describe('ExternalEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"name","req":false,"type":"`$STRING`","index$":0},{"active":true,"name":"url","req":false,"type":"`$STRING`","index$":1}],"name":"external","op":{"list":{"input":"data","name":"list","points":[{"active":true,"args":{"params":[{"active":true,"kind":"param","name":"username","orig":"username","reqd":true,"type":"`$STRING`","index$":0}]},"contract":{"id":"GET /users/{username}/external","json":"{\"operationId\":\"getUserExternal\",\"parameters\":[{\"in\":\"path\",\"name\":\"username\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"description\":\"External links\",\"properties\":{\"data\":{\"items\":{\"properties\":{\"name\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Returns user's external links\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/users/{username}/external","segments":[{"lit":"users"},{"var":"username"},{"lit":"external"}],"select":{"exist":["username"]},"transform":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[["user"]]},"key$":"external","name__orig":"external","Name":"External","name_":"external","name-":"external","NAME":"EXTERNAL","index$":3}, {"active":true,"entity":"external","key$":"BasicExternalFlow","kind":"basic","name":"BasicExternalFlow","param":{},"step":[{"active":true,"data":{},"input":{},"match":{"username":"username01"},"op":"list","spec":[],"valid":[{"apply":"ItemExists","def":{"ref":"external_ref01"}}],"index$":0}]}, 'External')
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"name":{"a":true,"h":"Name","n":"name","r":false,"t":"`$STRING`","key$":"name","index$":0},"url":{"a":true,"h":"Url","n":"url","r":false,"t":"`$STRING`","key$":"url","index$":1}},"name":"external","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /users/{username}/external","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"username","or":"username","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/users/{username}/external","q":{"exist":["username"]},"r":{},"s":[{"lit":"users"},{"var":"username"},{"lit":"external"}],"t":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[["$.main.kit.entity.user"]]},"key$":"external","name__orig":"external","Name":"External","name_":"external","name-":"external","NAME":"EXTERNAL","index$":3}, {"active":true,"entity":"external","key$":"BasicExternalFlow","kind":"basic","name":"BasicExternalFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{"username":"username01"},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"external_ref01"}}],"index$":0}]}, 'External', {"GET /users/{username}/external":{"protocol":"http","operationId":"getUserExternal","responses":{"200":{"description":"Returns user's external links","content":{"application/json":{"schema":{"description":"External links","properties":{"data":{"items":{"properties":{"name":{"type":"string","key$":"name"},"url":{"type":"string","key$":"url"}},"type":"object","index$":0},"key$":"data","type":"array"}},"type":"object","x-ref":"#/components/schemas/external_links"}}}},"400":{"description":"Error: Bad request. When required parameters were not supplied."}},"parameters":[{"name":"username","in":"path","required":true,"schema":{"type":"string"},"index$":0}],"securitySource":"unspecified"}})
     }
     const client = setup.client
     const struct = setup.struct
@@ -101,7 +97,7 @@ function basicSetup(extra?: any) {
   const transform = struct.transform
 
   let idmap = transform(
-    ['external01','external02','external03','user01','user02','user03'],
+    ['external01','external02','external03','user01','user02','user03','username01'],
     {
       '`$PACK`': ['', {
         '`$KEY`': '`$COPY`',

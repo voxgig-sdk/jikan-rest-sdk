@@ -1,7 +1,7 @@
 # Typed models for the JikanRest SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Field/param types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
 #
@@ -165,6 +165,20 @@ class Genre(TypedDict, total=False):
 
 class GenreListMatch(TypedDict, total=False):
     filter: str
+
+
+class History(TypedDict, total=False):
+    date: str
+    entry: dict
+    increment: int
+
+
+class HistoryListMatchRequired(TypedDict):
+    username: str
+
+
+class HistoryListMatch(HistoryListMatchRequired, total=False):
+    type: str
 
 
 class Magazine(TypedDict, total=False):
@@ -454,20 +468,6 @@ class UserFriendListMatchRequired(TypedDict):
 
 class UserFriendListMatch(UserFriendListMatchRequired, total=False):
     page: int
-
-
-class UserHistory(TypedDict, total=False):
-    date: str
-    entry: dict
-    increment: int
-
-
-class UserHistoryListMatchRequired(TypedDict):
-    username: str
-
-
-class UserHistoryListMatch(UserHistoryListMatchRequired, total=False):
-    type: str
 
 
 class UserStatistic(TypedDict, total=False):

@@ -19,7 +19,6 @@ import type {
   WatchEpisodeListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class WatchEpisodeEntity extends JikanRestEntityBase<WatchEpisode> {
 
   constructor(client: JikanRestSDK, entopts: any) {

@@ -1,7 +1,7 @@
 -- Typed models for the JikanRest SDK (LuaLS annotations).
 --
--- GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
--- params (op.<name>.points[].args.params[]). Field/param types come from the
+-- GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+-- params (op.<name>.points[].g.params[]). Field/param types come from the
 -- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 -- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
 -- edit by hand.
@@ -140,6 +140,15 @@
 
 ---@class GenreListMatch
 ---@field filter? string
+
+---@class History
+---@field date? string
+---@field entry? table
+---@field increment? number
+
+---@class HistoryListMatch
+---@field username string
+---@field type? string
 
 ---@class Magazine
 ---@field data? table
@@ -378,15 +387,6 @@
 ---@class UserFriendListMatch
 ---@field username string
 ---@field page? number
-
----@class UserHistory
----@field date? string
----@field entry? table
----@field increment? number
-
----@class UserHistoryListMatch
----@field username string
----@field type? string
 
 ---@class UserStatistic
 ---@field anime? table

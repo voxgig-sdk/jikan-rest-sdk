@@ -324,6 +324,13 @@ class JikanRestSDK
   end
 
 
+  # Canonical facade: client.History.list / client.History.load({ "id" => ... })
+  def History(data = nil)
+    require_relative 'entity/history_entity'
+    HistoryEntity.new(self, data)
+  end
+
+
   # Canonical facade: client.Magazine.list / client.Magazine.load({ "id" => ... })
   def Magazine(data = nil)
     require_relative 'entity/magazine_entity'
@@ -426,13 +433,6 @@ class JikanRestSDK
   def UserFriend(data = nil)
     require_relative 'entity/user_friend_entity'
     UserFriendEntity.new(self, data)
-  end
-
-
-  # Canonical facade: client.UserHistory.list / client.UserHistory.load({ "id" => ... })
-  def UserHistory(data = nil)
-    require_relative 'entity/user_history_entity'
-    UserHistoryEntity.new(self, data)
   end
 
 

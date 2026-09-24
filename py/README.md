@@ -50,15 +50,15 @@ except Exception as err:
     print(f"list failed: {err}")
 ```
 
-### 3. Load a season
+### 3. Load an userstatistic
 
-Season is nested under season, so provide the `season`.
+UserStatistic is nested under username, so provide the `username`.
 `load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
-    season = client.Season().load({"season": "example_season", "year": 1})
-    print(season)
+    userstatistic = client.UserStatistic().load({"username": "example_username"})
+    print(userstatistic)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -221,6 +221,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `Club` | `(data) -> ClubEntity` | Create a Club entity instance. |
 | `External` | `(data) -> ExternalEntity` | Create an External entity instance. |
 | `Genre` | `(data) -> GenreEntity` | Create a Genre entity instance. |
+| `History` | `(data) -> HistoryEntity` | Create a History entity instance. |
 | `Magazine` | `(data) -> MagazineEntity` | Create a Magazine entity instance. |
 | `Manga` | `(data) -> MangaEntity` | Create a Manga entity instance. |
 | `PeopleSearch` | `(data) -> PeopleSearchEntity` | Create a PeopleSearch entity instance. |
@@ -236,7 +237,6 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `UserAbout` | `(data) -> UserAboutEntity` | Create an UserAbout entity instance. |
 | `UserClub` | `(data) -> UserClubEntity` | Create an UserClub entity instance. |
 | `UserFriend` | `(data) -> UserFriendEntity` | Create an UserFriend entity instance. |
-| `UserHistory` | `(data) -> UserHistoryEntity` | Create an UserHistory entity instance. |
 | `UserStatistic` | `(data) -> UserStatisticEntity` | Create an UserStatistic entity instance. |
 | `UserUpdate` | `(data) -> UserUpdateEntity` | Create an UserUpdate entity instance. |
 | `WatchEpisode` | `(data) -> WatchEpisodeEntity` | Create a WatchEpisode entity instance. |
@@ -391,6 +391,18 @@ API path: `/users/{username}/external`
 Operations: List.
 
 API path: `/genres/anime`
+
+#### History
+
+| Field | Description |
+| --- | --- |
+| `date` | Date ISO8601 |
+| `entry` | Parsed URL Data |
+| `increment` | Number of episodes/chapters watched/read |
+
+Operations: List.
+
+API path: `/users/{username}/history`
 
 #### Magazine
 
@@ -612,18 +624,6 @@ API path: `/users/{username}/clubs`
 Operations: List.
 
 API path: `/users/{username}/friends`
-
-#### UserHistory
-
-| Field | Description |
-| --- | --- |
-| `date` | Date ISO8601 |
-| `entry` | Parsed URL Data |
-| `increment` | Number of episodes/chapters watched/read |
-
-Operations: List.
-
-API path: `/users/{username}/history`
 
 #### UserStatistic
 
@@ -872,6 +872,31 @@ Create an instance: `genre = client.Genre()`
 
 ```python
 genres = client.Genre().list()
+```
+
+
+### History
+
+Create an instance: `history = client.History()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list()` | List entities, optionally matching the given criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `date` | `str` | Date ISO8601 |
+| `entry` | `dict` | Parsed URL Data |
+| `increment` | `int` | Number of episodes/chapters watched/read |
+
+#### Example: List
+
+```python
+historys = client.History().list({"username": "example"})
 ```
 
 
@@ -1308,31 +1333,6 @@ Create an instance: `user_friend = client.UserFriend()`
 
 ```python
 user_friends = client.UserFriend().list({"username": "example"})
-```
-
-
-### UserHistory
-
-Create an instance: `user_history = client.UserHistory()`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `list()` | List entities, optionally matching the given criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `date` | `str` | Date ISO8601 |
-| `entry` | `dict` | Parsed URL Data |
-| `increment` | `int` | Number of episodes/chapters watched/read |
-
-#### Example: List
-
-```python
-user_historys = client.UserHistory().list({"username": "example"})
 ```
 
 

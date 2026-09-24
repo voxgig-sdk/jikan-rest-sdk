@@ -1,0 +1,32 @@
+# BasicUserStatisticFlow
+
+main: kit: flow: BasicUserStatisticFlow:
+{
+  entity: "user_statistic",
+  kind: "basic",
+  name: "BasicUserStatisticFlow",
+  step: [
+    {
+      i: {
+        ref: "user_statistic_ref01",
+        srcdatavar: "user_statistic_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "user_statistic01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-user_statistic_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicUserStatisticFlow"
+}

@@ -25,10 +25,6 @@ import {
 } from '../../utility'
 
 
-// AFTER the imports on purpose: TypeScript hoists `import` above any
-// statement in the emitted CommonJS, so a loader placed above them would
-// run only after every imported module had already been evaluated - and
-// anything reading process.env at module scope would miss these values.
 loadEnvLocal(__dirname + '/../../../.env.local')
 
 
@@ -55,7 +51,7 @@ describe('UserAboutEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":[{"active":true,"name":"about","req":false,"short":"User About.","type":"`$STRING`","index$":0}],"name":"user_about","op":{"list":{"input":"data","name":"list","points":[{"active":true,"args":{"params":[{"active":true,"kind":"param","name":"username","orig":"username","reqd":true,"type":"`$STRING`","index$":0}]},"contract":{"id":"GET /users/{username}/about","json":"{\"operationId\":\"getUserAbout\",\"parameters\":[{\"in\":\"path\",\"name\":\"username\",\"required\":true,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"items\":{\"properties\":{\"about\":{\"description\":\"User About. NOTE: About information is customizable by users through BBCode on MyAnimeList. This means users can add multimedia content, different text sizes, etc. Due to this freeform, Jikan returns parsed HTML. Validate on your end!\",\"nullable\":true,\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Returns user about in raw HTML\"},\"400\":{\"description\":\"Error: Bad request. When required parameters were not supplied.\"}},\"securitySource\":\"unspecified\"}","source":"openapi3","version":1},"kind":"http","method":"GET","orig":"/users/{username}/about","segments":[{"lit":"users"},{"var":"username"},{"lit":"about"}],"select":{"exist":["username"]},"transform":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[["user"]]},"key$":"user_about","name__orig":"user_about","Name":"UserAbout","name_":"user_about","name-":"user-about","NAME":"USER_ABOUT","index$":17}, {"active":true,"entity":"user_about","key$":"BasicUserAboutFlow","kind":"basic","name":"BasicUserAboutFlow","param":{},"step":[{"active":true,"data":{},"input":{},"match":{"username":"username01"},"op":"list","spec":[],"valid":[{"apply":"ItemExists","def":{"ref":"user_about_ref01"}}],"index$":0}]}, 'UserAbout')
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"about":{"a":true,"h":"About","n":"about","r":false,"sh":"User About.","t":"`$STRING`","key$":"about","index$":0}},"name":"user_about","op":{"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /users/{username}/about","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"username","or":"username","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/users/{username}/about","q":{"exist":["username"]},"r":{},"s":[{"lit":"users"},{"var":"username"},{"lit":"about"}],"t":{"req":"`reqdata`","res":"`body.data`"},"index$":0}],"key$":"list"}},"relations":{"ancestors":[["$.main.kit.entity.user"]]},"key$":"user_about","name__orig":"user_about","Name":"UserAbout","name_":"user_about","name-":"user-about","NAME":"USER_ABOUT","index$":18}, {"active":true,"entity":"user_about","key$":"BasicUserAboutFlow","kind":"basic","name":"BasicUserAboutFlow","param":{},"step":[{"a":true,"d":{},"i":{},"m":{"username":"username01"},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"user_about_ref01"}}],"index$":0}]}, 'UserAbout', {"GET /users/{username}/about":{"protocol":"http","operationId":"getUserAbout","responses":{"200":{"description":"Returns user about in raw HTML","content":{"application/json":{"schema":{"properties":{"data":{"items":{"properties":{"about":{"description":"User About. NOTE: About information is customizable by users through BBCode on MyAnimeList. This means users can add multimedia content, different text sizes, etc. Due to this freeform, Jikan returns parsed HTML. Validate on your end!","nullable":true,"type":"string","key$":"about"}},"type":"object","index$":0},"key$":"data","type":"array"}},"type":"object","x-ref":"#/components/schemas/user_about"}}}},"400":{"description":"Error: Bad request. When required parameters were not supplied."}},"parameters":[{"name":"username","in":"path","required":true,"schema":{"type":"string"},"index$":0}],"securitySource":"unspecified"}})
     }
     const client = setup.client
     const struct = setup.struct
@@ -101,7 +97,7 @@ function basicSetup(extra?: any) {
   const transform = struct.transform
 
   let idmap = transform(
-    ['user_about01','user_about02','user_about03','user01','user02','user03'],
+    ['user_about01','user_about02','user_about03','user01','user02','user03','username01'],
     {
       '`$PACK`': ['', {
         '`$KEY`': '`$COPY`',

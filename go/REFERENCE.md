@@ -67,6 +67,10 @@ Create a new `External` entity instance. Pass `nil` for no initial data.
 
 Create a new `Genre` entity instance. Pass `nil` for no initial data.
 
+#### `History(data map[string]any) JikanRestEntity`
+
+Create a new `History` entity instance. Pass `nil` for no initial data.
+
 #### `Magazine(data map[string]any) JikanRestEntity`
 
 Create a new `Magazine` entity instance. Pass `nil` for no initial data.
@@ -126,10 +130,6 @@ Create a new `UserClub` entity instance. Pass `nil` for no initial data.
 #### `UserFriend(data map[string]any) JikanRestEntity`
 
 Create a new `UserFriend` entity instance. Pass `nil` for no initial data.
-
-#### `UserHistory(data map[string]any) JikanRestEntity`
-
-Create a new `UserHistory` entity instance. Pass `nil` for no initial data.
 
 #### `UserStatistic(data map[string]any) JikanRestEntity`
 
@@ -530,6 +530,59 @@ Get or set the entity match criteria. Works the same as `Data()`.
 #### `Make() Entity`
 
 Create a new `GenreEntity` instance with the same client and
+options.
+
+#### `GetName() string`
+
+Return the entity name.
+
+
+---
+
+## HistoryEntity
+
+```go
+history := client.History(nil)
+fmt.Println(history.GetName()) // "history"
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `map[string]any` | No | Parsed URL Data |
+| `increment` | `int` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `List(reqmatch, ctrl map[string]any) (any, error)`
+
+List entities matching the given criteria. Returns an array.
+
+```go
+results, err := client.History(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
+```
+
+### Common Methods
+
+#### `Data(args ...any) any`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `Match(args ...any) any`
+
+Get or set the entity match criteria. Works the same as `Data()`.
+
+#### `Make() Entity`
+
+Create a new `HistoryEntity` instance with the same client and
 options.
 
 #### `GetName() string`
@@ -1411,59 +1464,6 @@ Get or set the entity match criteria. Works the same as `Data()`.
 #### `Make() Entity`
 
 Create a new `UserFriendEntity` instance with the same client and
-options.
-
-#### `GetName() string`
-
-Return the entity name.
-
-
----
-
-## UserHistoryEntity
-
-```go
-userHistory := client.UserHistory(nil)
-fmt.Println(userHistory.GetName()) // "user_history"
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `string` | No | Date ISO8601 |
-| `entry` | `map[string]any` | No | Parsed URL Data |
-| `increment` | `int` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `List(reqmatch, ctrl map[string]any) (any, error)`
-
-List entities matching the given criteria. Returns an array.
-
-```go
-results, err := client.UserHistory(nil).List(nil, nil)
-if err != nil {
-    panic(err)
-}
-fmt.Println(results)
-```
-
-### Common Methods
-
-#### `Data(args ...any) any`
-
-Get or set the entity data. When called with data, sets the entity's
-internal data and returns the current data. When called without
-arguments, returns a copy of the current data.
-
-#### `Match(args ...any) any`
-
-Get or set the entity match criteria. Works the same as `Data()`.
-
-#### `Make() Entity`
-
-Create a new `UserHistoryEntity` instance with the same client and
 options.
 
 #### `GetName() string`

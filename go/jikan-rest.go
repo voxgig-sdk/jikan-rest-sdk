@@ -56,6 +56,9 @@ func init() {
 	core.NewGenreEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
 		return entity.NewGenreEntity(client, entopts)
 	}
+	core.NewHistoryEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
+		return entity.NewHistoryEntity(client, entopts)
+	}
 	core.NewMagazineEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
 		return entity.NewMagazineEntity(client, entopts)
 	}
@@ -100,9 +103,6 @@ func init() {
 	}
 	core.NewUserFriendEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
 		return entity.NewUserFriendEntity(client, entopts)
-	}
-	core.NewUserHistoryEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
-		return entity.NewUserHistoryEntity(client, entopts)
 	}
 	core.NewUserStatisticEntityFunc = func(client *core.JikanRestSDK, entopts map[string]any) core.JikanRestEntity {
 		return entity.NewUserStatisticEntity(client, entopts)

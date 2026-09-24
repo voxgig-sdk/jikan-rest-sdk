@@ -22,6 +22,8 @@ var NewExternalEntityFunc func(client *JikanRestSDK, entopts map[string]any) Jik
 
 var NewGenreEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
 
+var NewHistoryEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
+
 var NewMagazineEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
 
 var NewMangaEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
@@ -51,8 +53,6 @@ var NewUserAboutEntityFunc func(client *JikanRestSDK, entopts map[string]any) Ji
 var NewUserClubEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
 
 var NewUserFriendEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
-
-var NewUserHistoryEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
 
 var NewUserStatisticEntityFunc func(client *JikanRestSDK, entopts map[string]any) JikanRestEntity
 

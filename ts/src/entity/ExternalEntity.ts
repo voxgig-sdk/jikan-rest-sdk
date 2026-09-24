@@ -19,7 +19,6 @@ import type {
   ExternalListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class ExternalEntity extends JikanRestEntityBase<External> {
 
   constructor(client: JikanRestSDK, entopts: any) {

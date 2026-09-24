@@ -1,0 +1,22 @@
+# BasicGenreFlow
+
+main: kit: flow: BasicGenreFlow:
+{
+  entity: "genre",
+  kind: "basic",
+  name: "BasicGenreFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "genre_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicGenreFlow"
+}

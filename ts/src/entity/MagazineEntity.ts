@@ -19,7 +19,6 @@ import type {
   MagazineListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class MagazineEntity extends JikanRestEntityBase<Magazine> {
 
   constructor(client: JikanRestSDK, entopts: any) {

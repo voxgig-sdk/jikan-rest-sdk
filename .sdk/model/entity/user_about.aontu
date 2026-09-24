@@ -1,0 +1,71 @@
+# Entity: user_about
+
+main: kit: entity: user_about: {
+
+  alias: field: {}
+
+  fields: {
+    about: {
+      h: "About"
+      n: "about"
+      r: false
+      sh: "User About."
+      t: "`$STRING`"
+    }
+  }
+
+  name: "user_about"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /users/{username}/about"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "username"
+                or: "username"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/users/{username}/about"
+          q: {
+            exist: [
+              "username"
+            ]
+          }
+          s: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "about"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.user")]
+  ]
+
+}

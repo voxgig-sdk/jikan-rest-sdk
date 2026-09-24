@@ -2,8 +2,8 @@
 
 # Typed models for the JikanRest SDK.
 #
-# GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-# params (op.<name>.points[].args.params[]). Member types come from the
+# GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+# params (op.<name>.points[].g.params[]). Member types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Ruby types are unenforced; these YARD
 # annotations document the shapes. Do not edit by hand.
@@ -506,6 +506,36 @@ Genre = Struct.new(
 #   @return [String, nil]
 GenreListMatch = Struct.new(
   :filter,
+  keyword_init: true
+)
+
+# History entity data model.
+#
+# @!attribute [rw] date
+#   @return [String, nil]
+#
+# @!attribute [rw] entry
+#   @return [Hash, nil]
+#
+# @!attribute [rw] increment
+#   @return [Integer, nil]
+History = Struct.new(
+  :date,
+  :entry,
+  :increment,
+  keyword_init: true
+)
+
+# Request payload for History#list.
+#
+# @!attribute [rw] username
+#   @return [String]
+#
+# @!attribute [rw] type
+#   @return [String, nil]
+HistoryListMatch = Struct.new(
+  :username,
+  :type,
   keyword_init: true
 )
 
@@ -1349,36 +1379,6 @@ UserFriend = Struct.new(
 UserFriendListMatch = Struct.new(
   :username,
   :page,
-  keyword_init: true
-)
-
-# UserHistory entity data model.
-#
-# @!attribute [rw] date
-#   @return [String, nil]
-#
-# @!attribute [rw] entry
-#   @return [Hash, nil]
-#
-# @!attribute [rw] increment
-#   @return [Integer, nil]
-UserHistory = Struct.new(
-  :date,
-  :entry,
-  :increment,
-  keyword_init: true
-)
-
-# Request payload for UserHistory#list.
-#
-# @!attribute [rw] username
-#   @return [String]
-#
-# @!attribute [rw] type
-#   @return [String, nil]
-UserHistoryListMatch = Struct.new(
-  :username,
-  :type,
   keyword_init: true
 )
 

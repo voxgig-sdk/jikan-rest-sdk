@@ -419,6 +419,20 @@ function JikanRestSDK:Genre(data)
 end
 
 
+-- Idiomatic facade: client:History():list() / client:History():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function JikanRestSDK:History(data)
+  local EntityMod = require("entity.history_entity")
+  if data == nil then
+    if self._history == nil then
+      self._history = EntityMod.new(self, nil)
+    end
+    return self._history
+  end
+  return EntityMod.new(self, data)
+end
+
+
 -- Idiomatic facade: client:Magazine():list() / client:Magazine():load({ id = ... })
 -- Entity access is capitalised (PascalCase) for parity with the other SDKs.
 function JikanRestSDK:Magazine(data)
@@ -624,20 +638,6 @@ function JikanRestSDK:UserFriend(data)
       self._user_friend = EntityMod.new(self, nil)
     end
     return self._user_friend
-  end
-  return EntityMod.new(self, data)
-end
-
-
--- Idiomatic facade: client:UserHistory():list() / client:UserHistory():load({ id = ... })
--- Entity access is capitalised (PascalCase) for parity with the other SDKs.
-function JikanRestSDK:UserHistory(data)
-  local EntityMod = require("entity.user_history_entity")
-  if data == nil then
-    if self._user_history == nil then
-      self._user_history = EntityMod.new(self, nil)
-    end
-    return self._user_history
   end
   return EntityMod.new(self, data)
 end

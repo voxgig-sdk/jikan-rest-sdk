@@ -19,7 +19,6 @@ import type {
   RecommendationListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class RecommendationEntity extends JikanRestEntityBase<Recommendation> {
 
   constructor(client: JikanRestSDK, entopts: any) {

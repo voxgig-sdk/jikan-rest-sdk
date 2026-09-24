@@ -1,0 +1,78 @@
+# Entity: user_statistic
+
+main: kit: entity: user_statistic: {
+
+  alias: field: {}
+
+  fields: {
+    anime: {
+      h: "Anime"
+      n: "anime"
+      r: false
+      sh: "Anime Statistics"
+      t: "`$OBJECT`"
+    }
+    manga: {
+      h: "Manga"
+      n: "manga"
+      r: false
+      sh: "Manga Statistics"
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "user_statistic"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /users/{username}/statistics"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "username"
+                or: "username"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/users/{username}/statistics"
+          q: {
+            exist: [
+              "username"
+            ]
+          }
+          s: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "statistics"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.user")]
+  ]
+
+}

@@ -1,0 +1,44 @@
+# BasicMangaFlow
+
+main: kit: flow: BasicMangaFlow:
+{
+  entity: "manga",
+  kind: "basic",
+  name: "BasicMangaFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "manga_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "manga_ref01",
+        srcdatavar: "manga_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "manga01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-manga_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicMangaFlow"
+}

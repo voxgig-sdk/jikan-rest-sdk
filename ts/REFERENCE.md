@@ -108,6 +108,18 @@ Create a new `Genre` entity instance.
 
 **Returns:** `GenreEntity` instance.
 
+#### `History(data?: object)`
+
+Create a new `History` entity instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `data` | `object` | Initial entity data. |
+
+**Returns:** `HistoryEntity` instance.
+
 #### `Magazine(data?: object)`
 
 Create a new `Magazine` entity instance.
@@ -287,18 +299,6 @@ Create a new `UserFriend` entity instance.
 | `data` | `object` | Initial entity data. |
 
 **Returns:** `UserFriendEntity` instance.
-
-#### `UserHistory(data?: object)`
-
-Create a new `UserHistory` entity instance.
-
-**Parameters:**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| `data` | `object` | Initial entity data. |
-
-**Returns:** `UserHistoryEntity` instance.
 
 #### `UserStatistic(data?: object)`
 
@@ -824,6 +824,58 @@ Get or set the entity match criteria. Works the same as `data()`.
 #### `make()`
 
 Create a new `GenreEntity` instance with the same client and
+options.
+
+#### `client()`
+
+Return the parent `JikanRestSDK` instance.
+
+#### `entopts()`
+
+Return a copy of the entity options.
+
+
+---
+
+## HistoryEntity
+
+```ts
+const history = client.History()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `Record<string, any>` | No | Parsed URL Data |
+| `increment` | `number` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `list(match: object, ctrl?: object)`
+
+List entities matching the given criteria. Returns an array.
+
+```ts
+const results = await client.History().list({ username: "example" })
+```
+
+### Common Methods
+
+#### `data(data?: object)`
+
+Get or set the entity data. When called with data, sets the entity's
+internal data and returns the current data. When called without
+arguments, returns a copy of the current data.
+
+#### `match(match?: object)`
+
+Get or set the entity match criteria. Works the same as `data()`.
+
+#### `make()`
+
+Create a new `HistoryEntity` instance with the same client and
 options.
 
 #### `client()`
@@ -1877,58 +1929,6 @@ Get or set the entity match criteria. Works the same as `data()`.
 #### `make()`
 
 Create a new `UserFriendEntity` instance with the same client and
-options.
-
-#### `client()`
-
-Return the parent `JikanRestSDK` instance.
-
-#### `entopts()`
-
-Return a copy of the entity options.
-
-
----
-
-## UserHistoryEntity
-
-```ts
-const user_history = client.UserHistory()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `string` | No | Date ISO8601 |
-| `entry` | `Record<string, any>` | No | Parsed URL Data |
-| `increment` | `number` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `list(match: object, ctrl?: object)`
-
-List entities matching the given criteria. Returns an array.
-
-```ts
-const results = await client.UserHistory().list({ username: "example" })
-```
-
-### Common Methods
-
-#### `data(data?: object)`
-
-Get or set the entity data. When called with data, sets the entity's
-internal data and returns the current data. When called without
-arguments, returns a copy of the current data.
-
-#### `match(match?: object)`
-
-Get or set the entity match criteria. Works the same as `data()`.
-
-#### `make()`
-
-Create a new `UserHistoryEntity` instance with the same client and
 options.
 
 #### `client()`

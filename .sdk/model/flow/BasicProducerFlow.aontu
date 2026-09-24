@@ -1,0 +1,44 @@
+# BasicProducerFlow
+
+main: kit: flow: BasicProducerFlow:
+{
+  entity: "producer",
+  kind: "basic",
+  name: "BasicProducerFlow",
+  step: [
+    {
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "producer_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "producer_ref01",
+        srcdatavar: "producer_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "producer01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-producer_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicProducerFlow"
+}

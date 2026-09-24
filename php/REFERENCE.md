@@ -61,6 +61,10 @@ Create a new `ExternalEntity` instance. Pass `null` for no initial data.
 
 Create a new `GenreEntity` instance. Pass `null` for no initial data.
 
+#### `History($data = null)`
+
+Create a new `HistoryEntity` instance. Pass `null` for no initial data.
+
 #### `Magazine($data = null)`
 
 Create a new `MagazineEntity` instance. Pass `null` for no initial data.
@@ -120,10 +124,6 @@ Create a new `UserClubEntity` instance. Pass `null` for no initial data.
 #### `UserFriend($data = null)`
 
 Create a new `UserFriendEntity` instance. Pass `null` for no initial data.
-
-#### `UserHistory($data = null)`
-
-Create a new `UserHistoryEntity` instance. Pass `null` for no initial data.
 
 #### `UserStatistic($data = null)`
 
@@ -518,6 +518,60 @@ Set the entity match criteria.
 #### `make(): GenreEntity`
 
 Create a new `GenreEntity` instance with the same client and
+options.
+
+#### `get_name(): string`
+
+Return the entity name.
+
+
+---
+
+## HistoryEntity
+
+```php
+$history = $client->History();
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `string` | No | Date ISO8601 |
+| `entry` | `array` | No | Parsed URL Data |
+| `increment` | `int` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
+
+```php
+$results = $client->History()->list();
+```
+
+### Common Methods
+
+#### `data_get(): array`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set($data): void`
+
+Set the entity data.
+
+#### `match_get(): array`
+
+Get the entity match criteria.
+
+#### `match_set($match): void`
+
+Set the entity match criteria.
+
+#### `make(): HistoryEntity`
+
+Create a new `HistoryEntity` instance with the same client and
 options.
 
 #### `get_name(): string`
@@ -1394,60 +1448,6 @@ Set the entity match criteria.
 #### `make(): UserFriendEntity`
 
 Create a new `UserFriendEntity` instance with the same client and
-options.
-
-#### `get_name(): string`
-
-Return the entity name.
-
-
----
-
-## UserHistoryEntity
-
-```php
-$user_history = $client->UserHistory();
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `string` | No | Date ISO8601 |
-| `entry` | `array` | No | Parsed URL Data |
-| `increment` | `int` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
-
-List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
-
-```php
-$results = $client->UserHistory()->list();
-```
-
-### Common Methods
-
-#### `data_get(): array`
-
-Get the entity data. Returns a copy of the current data.
-
-#### `data_set($data): void`
-
-Set the entity data.
-
-#### `match_get(): array`
-
-Get the entity match criteria.
-
-#### `match_set($match): void`
-
-Set the entity match criteria.
-
-#### `make(): UserHistoryEntity`
-
-Create a new `UserHistoryEntity` instance with the same client and
 options.
 
 #### `get_name(): string`

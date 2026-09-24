@@ -1,0 +1,78 @@
+# Entity: user_update
+
+main: kit: entity: user_update: {
+
+  alias: field: {}
+
+  fields: {
+    anime: {
+      h: "Anime"
+      n: "anime"
+      r: false
+      sh: "Last updated Anime"
+      t: "`$ARRAY`"
+    }
+    manga: {
+      h: "Manga"
+      n: "manga"
+      r: false
+      sh: "Last updated Manga"
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "user_update"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /users/{username}/userupdates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "username"
+                or: "username"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/users/{username}/userupdates"
+          q: {
+            exist: [
+              "username"
+            ]
+          }
+          s: [
+            {
+              lit: "users"
+            }
+            {
+              var: "username"
+            }
+            {
+              lit: "userupdates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.user")]
+  ]
+
+}

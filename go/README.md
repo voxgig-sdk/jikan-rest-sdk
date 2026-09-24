@@ -232,6 +232,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `Club` | `(data map[string]any) JikanRestEntity` | Create a Club entity instance. |
 | `External` | `(data map[string]any) JikanRestEntity` | Create an External entity instance. |
 | `Genre` | `(data map[string]any) JikanRestEntity` | Create a Genre entity instance. |
+| `History` | `(data map[string]any) JikanRestEntity` | Create a History entity instance. |
 | `Magazine` | `(data map[string]any) JikanRestEntity` | Create a Magazine entity instance. |
 | `Manga` | `(data map[string]any) JikanRestEntity` | Create a Manga entity instance. |
 | `PeopleSearch` | `(data map[string]any) JikanRestEntity` | Create a PeopleSearch entity instance. |
@@ -247,7 +248,6 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `UserAbout` | `(data map[string]any) JikanRestEntity` | Create an UserAbout entity instance. |
 | `UserClub` | `(data map[string]any) JikanRestEntity` | Create an UserClub entity instance. |
 | `UserFriend` | `(data map[string]any) JikanRestEntity` | Create an UserFriend entity instance. |
-| `UserHistory` | `(data map[string]any) JikanRestEntity` | Create an UserHistory entity instance. |
 | `UserStatistic` | `(data map[string]any) JikanRestEntity` | Create an UserStatistic entity instance. |
 | `UserUpdate` | `(data map[string]any) JikanRestEntity` | Create an UserUpdate entity instance. |
 | `WatchEpisode` | `(data map[string]any) JikanRestEntity` | Create a WatchEpisode entity instance. |
@@ -403,6 +403,18 @@ API path: `/users/{username}/external`
 Operations: List.
 
 API path: `/genres/anime`
+
+#### History
+
+| Field | Description |
+| --- | --- |
+| `"date"` | Date ISO8601 |
+| `"entry"` | Parsed URL Data |
+| `"increment"` | Number of episodes/chapters watched/read |
+
+Operations: List.
+
+API path: `/users/{username}/history`
 
 #### Magazine
 
@@ -624,18 +636,6 @@ API path: `/users/{username}/clubs`
 Operations: List.
 
 API path: `/users/{username}/friends`
-
-#### UserHistory
-
-| Field | Description |
-| --- | --- |
-| `"date"` | Date ISO8601 |
-| `"entry"` | Parsed URL Data |
-| `"increment"` | Number of episodes/chapters watched/read |
-
-Operations: List.
-
-API path: `/users/{username}/history`
 
 #### UserStatistic
 
@@ -916,6 +916,35 @@ if err != nil {
     panic(err)
 }
 fmt.Println(genres) // the array of records
+```
+
+
+### History
+
+Create an instance: `history := client.History(nil)`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `List(match, ctrl)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `date` | `string` | Date ISO8601 |
+| `entry` | `map[string]any` | Parsed URL Data |
+| `increment` | `int` | Number of episodes/chapters watched/read |
+
+#### Example: List
+
+```go
+historys, err := client.History(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(historys) // the array of records
 ```
 
 
@@ -1432,35 +1461,6 @@ if err != nil {
     panic(err)
 }
 fmt.Println(userFriends) // the array of records
-```
-
-
-### UserHistory
-
-Create an instance: `userHistory := client.UserHistory(nil)`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `List(match, ctrl)` | List entities matching the criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `date` | `string` | Date ISO8601 |
-| `entry` | `map[string]any` | Parsed URL Data |
-| `increment` | `int` | Number of episodes/chapters watched/read |
-
-#### Example: List
-
-```go
-userHistorys, err := client.UserHistory(nil).List(nil, nil)
-if err != nil {
-    panic(err)
-}
-fmt.Println(userHistorys) // the array of records
 ```
 
 

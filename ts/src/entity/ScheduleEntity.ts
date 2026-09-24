@@ -19,7 +19,6 @@ import type {
   ScheduleListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class ScheduleEntity extends JikanRestEntityBase<Schedule> {
 
   constructor(client: JikanRestSDK, entopts: any) {

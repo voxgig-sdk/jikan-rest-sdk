@@ -19,7 +19,6 @@ import type {
   PeopleSearchListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class PeopleSearchEntity extends JikanRestEntityBase<PeopleSearch> {
 
   constructor(client: JikanRestSDK, entopts: any) {

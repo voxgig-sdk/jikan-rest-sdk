@@ -19,7 +19,6 @@ import type {
   UserFriendListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class UserFriendEntity extends JikanRestEntityBase<UserFriend> {
 
   constructor(client: JikanRestSDK, entopts: any) {

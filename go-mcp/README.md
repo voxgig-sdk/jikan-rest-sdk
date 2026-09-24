@@ -153,7 +153,7 @@ JSON schemas are emitted by the SDK from the `Args` struct's `json` /
 
 The 25 entities valid as the `entity` argument:
 
-anime | character | club | external | genre | magazine | manga | people_search | person | producer | random | recommendation | review | schedule | season | top | user | user_about | user_club | user_friend | user_history | user_statistic | user_update | watch_episode | watch_promo
+anime | character | club | external | genre | history | magazine | manga | people_search | person | producer | random | recommendation | review | schedule | season | top | user | user_about | user_club | user_friend | user_statistic | user_update | watch_episode | watch_promo
 
 ### Smoke test via HTTP (raw JSON-RPC)
 

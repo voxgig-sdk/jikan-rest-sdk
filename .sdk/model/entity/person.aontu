@@ -1,0 +1,441 @@
+# Entity: person
+
+main: kit: entity: person: {
+
+  alias: field: {}
+
+  fields: {
+    about: {
+      h: "About"
+      n: "about"
+      r: false
+      sh: "Biography"
+      t: "`$STRING`"
+    }
+    alternate_names: {
+      h: "Alternate Names"
+      n: "alternate_names"
+      r: false
+      sh: "Other Names"
+      t: "`$ARRAY`"
+    }
+    birthday: {
+      h: "Birthday"
+      n: "birthday"
+      r: false
+      sh: "Birthday Date ISO8601"
+      t: "`$STRING`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$ARRAY`"
+    }
+    family_name: {
+      h: "Family Name"
+      n: "family_name"
+      r: false
+      sh: "Family Name"
+      t: "`$STRING`"
+    }
+    favorites: {
+      h: "Favorites"
+      n: "favorites"
+      r: false
+      sh: "Number of users who have favorited this entry"
+      t: "`$INTEGER`"
+    }
+    given_name: {
+      h: "Given Name"
+      n: "given_name"
+      r: false
+      sh: "Given Name"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    images: {
+      h: "Images"
+      n: "images"
+      r: false
+      t: "`$OBJECT`"
+    }
+    mal_id: {
+      h: "Mal Id"
+      n: "mal_id"
+      r: false
+      sh: "MyAnimeList ID"
+      t: "`$INTEGER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      sh: "Name"
+      t: "`$STRING`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "MyAnimeList URL"
+      t: "`$STRING`"
+    }
+    website_url: {
+      h: "Website Url"
+      n: "website_url"
+      r: false
+      sh: "Person's website URL"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "person"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /people"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "letter"
+                or: "letter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people"
+          q: {
+            exist: [
+              "letter"
+              "limit"
+              "order_by"
+              "page"
+              "q"
+              "sort"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /people/{id}/anime"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}/anime"
+          q: {
+            "$action": "anime"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /people/{id}/manga"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}/manga"
+          q: {
+            "$action": "manga"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /people/{id}/pictures"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}/pictures"
+          q: {
+            "$action": "picture"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /people/{id}/voices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}/voices"
+          q: {
+            "$action": "voice"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "voices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /people/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /people/{id}/full"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/people/{id}/full"
+          q: {
+            "$action": "full"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "people"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

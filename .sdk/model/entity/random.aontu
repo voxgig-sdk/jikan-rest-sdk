@@ -1,0 +1,141 @@
+# Entity: random
+
+main: kit: entity: random: {
+
+  alias: field: {}
+
+  name: "random"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /random/anime"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/random/anime"
+          q: {
+            "$action": "anime"
+          }
+          s: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /random/characters"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/random/characters"
+          q: {
+            "$action": "character"
+          }
+          s: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "characters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /random/manga"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/random/manga"
+          q: {
+            "$action": "manga"
+          }
+          s: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /random/people"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/random/people"
+          q: {
+            "$action": "person"
+          }
+          s: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "people"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /random/users"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/random/users"
+          q: {
+            "$action": "user"
+          }
+          s: [
+            {
+              lit: "random"
+            }
+            {
+              lit: "users"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

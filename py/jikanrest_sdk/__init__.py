@@ -337,6 +337,12 @@ class JikanRestSDK:
         return GenreEntity(self, data)
 
 
+    def History(self, data=None) -> "HistoryEntity":
+        """Entity factory: client.History().list() / client.History().load({"id": ...})."""
+        from jikanrest_sdk.entity.history_entity import HistoryEntity
+        return HistoryEntity(self, data)
+
+
     def Magazine(self, data=None) -> "MagazineEntity":
         """Entity factory: client.Magazine().list() / client.Magazine().load({"id": ...})."""
         from jikanrest_sdk.entity.magazine_entity import MagazineEntity
@@ -427,12 +433,6 @@ class JikanRestSDK:
         return UserFriendEntity(self, data)
 
 
-    def UserHistory(self, data=None) -> "UserHistoryEntity":
-        """Entity factory: client.UserHistory().list() / client.UserHistory().load({"id": ...})."""
-        from jikanrest_sdk.entity.user_history_entity import UserHistoryEntity
-        return UserHistoryEntity(self, data)
-
-
     def UserStatistic(self, data=None) -> "UserStatisticEntity":
         """Entity factory: client.UserStatistic().list() / client.UserStatistic().load({"id": ...})."""
         from jikanrest_sdk.entity.user_statistic_entity import UserStatisticEntity
@@ -489,6 +489,7 @@ if TYPE_CHECKING:
     from jikanrest_sdk.entity.club_entity import ClubEntity
     from jikanrest_sdk.entity.external_entity import ExternalEntity
     from jikanrest_sdk.entity.genre_entity import GenreEntity
+    from jikanrest_sdk.entity.history_entity import HistoryEntity
     from jikanrest_sdk.entity.magazine_entity import MagazineEntity
     from jikanrest_sdk.entity.manga_entity import MangaEntity
     from jikanrest_sdk.entity.people_search_entity import PeopleSearchEntity
@@ -504,7 +505,6 @@ if TYPE_CHECKING:
     from jikanrest_sdk.entity.user_about_entity import UserAboutEntity
     from jikanrest_sdk.entity.user_club_entity import UserClubEntity
     from jikanrest_sdk.entity.user_friend_entity import UserFriendEntity
-    from jikanrest_sdk.entity.user_history_entity import UserHistoryEntity
     from jikanrest_sdk.entity.user_statistic_entity import UserStatisticEntity
     from jikanrest_sdk.entity.user_update_entity import UserUpdateEntity
     from jikanrest_sdk.entity.watch_episode_entity import WatchEpisodeEntity

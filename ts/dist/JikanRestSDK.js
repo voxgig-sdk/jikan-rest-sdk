@@ -7,6 +7,7 @@ const CharacterEntity_1 = require("./entity/CharacterEntity");
 const ClubEntity_1 = require("./entity/ClubEntity");
 const ExternalEntity_1 = require("./entity/ExternalEntity");
 const GenreEntity_1 = require("./entity/GenreEntity");
+const HistoryEntity_1 = require("./entity/HistoryEntity");
 const MagazineEntity_1 = require("./entity/MagazineEntity");
 const MangaEntity_1 = require("./entity/MangaEntity");
 const PeopleSearchEntity_1 = require("./entity/PeopleSearchEntity");
@@ -22,7 +23,6 @@ const UserEntity_1 = require("./entity/UserEntity");
 const UserAboutEntity_1 = require("./entity/UserAboutEntity");
 const UserClubEntity_1 = require("./entity/UserClubEntity");
 const UserFriendEntity_1 = require("./entity/UserFriendEntity");
-const UserHistoryEntity_1 = require("./entity/UserHistoryEntity");
 const UserStatisticEntity_1 = require("./entity/UserStatisticEntity");
 const UserUpdateEntity_1 = require("./entity/UserUpdateEntity");
 const WatchEpisodeEntity_1 = require("./entity/WatchEpisodeEntity");
@@ -108,7 +108,6 @@ class JikanRestSDK {
             ctrl: fetchargs.ctrl || {},
         }, this._rootctx);
         const options = this._options;
-        // Build spec directly from SDK options + user-provided fetch args.
         const spec = {
             base: options.base,
             prefix: options.prefix,
@@ -122,14 +121,12 @@ class JikanRestSDK {
             step: 'start',
         };
         ctx.spec = spec;
-        // Merge user-provided headers over SDK defaults.
         if (fetchargs.headers) {
             const uheaders = fetchargs.headers;
             for (let key in uheaders) {
                 spec.headers[key] = uheaders[key];
             }
         }
-        // Apply SDK auth (apikey, auth prefix, etc.)
         const authResult = prepareAuth(ctx);
         if (authResult instanceof Error) {
             return authResult;
@@ -204,18 +201,6 @@ class JikanRestSDK {
             return { ok: false, err };
         }
     }
-    // Raw GraphQL access: the pressure valve that makes the generated
-    // surface's deliberate omissions (per-call selection sets, typed filter
-    // builders, batching, subscriptions) livable — the whole schema stays
-    // reachable.
-    //
-    // Thin wrapper over the same prepare/fetch path `direct` uses, with the
-    // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
-    // HTTP 200 as a top-level `errors` array, so status alone would report a
-    // failed query as ok.
-    //
-    // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
-    // ratelimit or paging features apply.
     async graphql(query, variables, ctrl) {
         const options = this._options;
         if (!options.allow.op.includes('graphql')) {
@@ -283,6 +268,13 @@ class JikanRestSDK {
     Genre(entopts) {
         const self = this;
         return new GenreEntity_1.GenreEntity(self, entopts);
+    }
+    // Entity access: `client.History().list()` / `client.History().load({ id })`.
+    // The argument is the entity OPTIONS object (passed to the entity
+    // constructor as entopts), not initial entity data.
+    History(entopts) {
+        const self = this;
+        return new HistoryEntity_1.HistoryEntity(self, entopts);
     }
     // Entity access: `client.Magazine().list()` / `client.Magazine().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity
@@ -388,13 +380,6 @@ class JikanRestSDK {
     UserFriend(entopts) {
         const self = this;
         return new UserFriendEntity_1.UserFriendEntity(self, entopts);
-    }
-    // Entity access: `client.UserHistory().list()` / `client.UserHistory().load({ id })`.
-    // The argument is the entity OPTIONS object (passed to the entity
-    // constructor as entopts), not initial entity data.
-    UserHistory(entopts) {
-        const self = this;
-        return new UserHistoryEntity_1.UserHistoryEntity(self, entopts);
     }
     // Entity access: `client.UserStatistic().list()` / `client.UserStatistic().load({ id })`.
     // The argument is the entity OPTIONS object (passed to the entity

@@ -20,7 +20,7 @@ import (
 const prompt = "jikan-rest"
 
 // entitiesHelp is the space-separated entity list shown by /help.
-const entitiesHelp = "anime character club external genre magazine manga people_search person producer random recommendation review schedule season top user user_about user_club user_friend user_history user_statistic user_update watch_episode watch_promo"
+const entitiesHelp = "anime character club external genre history magazine manga people_search person producer random recommendation review schedule season top user user_about user_club user_friend user_statistic user_update watch_episode watch_promo"
 
 func main() {
 	os.Exit(run(os.Args[1:], os.Stdin, os.Stdout, os.Stderr))

@@ -110,6 +110,7 @@ class JikanRestConfig
                     "club" => [],
                     "external" => [],
                     "genre" => [],
+                    "history" => [],
                     "magazine" => [],
                     "manga" => [],
                     "people_search" => [],
@@ -125,7 +126,6 @@ class JikanRestConfig
                     "user_about" => [],
                     "user_club" => [],
                     "user_friend" => [],
-                    "user_history" => [],
                     "user_statistic" => [],
                     "user_update" => [],
                     "watch_episode" => [],
@@ -137,207 +137,249 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'aired',
-              'short' => 'Aired Date ISO8601',
+              'title' => 'Aired',
               'type' => '`$STRING`',
+              'short' => 'Aired Date ISO8601',
             ],
             [
               'name' => 'airing',
-              'short' => 'Airing boolean',
+              'title' => 'Airing',
               'type' => '`$BOOLEAN`',
+              'short' => 'Airing boolean',
             ],
             [
               'name' => 'approved',
-              'short' => 'Whether the entry is pending approval on MAL or not',
+              'title' => 'Approved',
               'type' => '`$BOOLEAN`',
+              'short' => 'Whether the entry is pending approval on MAL or not',
             ],
             [
               'name' => 'background',
-              'short' => 'Background',
+              'title' => 'Background',
               'type' => '`$STRING`',
+              'short' => 'Background',
             ],
             [
               'name' => 'broadcast',
-              'short' => 'Broadcast Details',
+              'title' => 'Broadcast',
               'type' => '`$OBJECT`',
+              'short' => 'Broadcast Details',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'demographics',
+              'title' => 'Demographics',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'duration',
-              'short' => 'Episode duration in seconds',
+              'title' => 'Duration',
               'type' => '`$INTEGER`',
+              'short' => 'Episode duration in seconds',
             ],
             [
               'name' => 'episodes',
-              'short' => 'Episode count',
+              'title' => 'Episodes',
               'type' => '`$INTEGER`',
+              'short' => 'Episode count',
             ],
             [
               'name' => 'explicit_genres',
+              'title' => 'Explicit Genres',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'favorites',
-              'short' => 'Number of users who have favorited this entry',
+              'title' => 'Favorites',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have favorited this entry',
             ],
             [
               'name' => 'filler',
-              'short' => 'Filler episode',
+              'title' => 'Filler',
               'type' => '`$BOOLEAN`',
+              'short' => 'Filler episode',
             ],
             [
               'name' => 'genres',
+              'title' => 'Genres',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'licensors',
+              'title' => 'Licensors',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'members',
-              'short' => 'Number of users who have added this entry to their list',
+              'title' => 'Members',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have added this entry to their list',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'popularity',
-              'short' => 'Popularity',
+              'title' => 'Popularity',
               'type' => '`$INTEGER`',
+              'short' => 'Popularity',
             ],
             [
               'name' => 'producers',
+              'title' => 'Producers',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'rank',
-              'short' => 'Ranking',
+              'title' => 'Rank',
               'type' => '`$INTEGER`',
+              'short' => 'Ranking',
             ],
             [
               'name' => 'rating',
-              'short' => 'Anime audience rating',
+              'title' => 'Rating',
               'type' => '`$STRING`',
+              'short' => 'Anime audience rating',
             ],
             [
               'name' => 'recap',
-              'short' => 'Recap episode',
+              'title' => 'Recap',
               'type' => '`$BOOLEAN`',
+              'short' => 'Recap episode',
             ],
             [
-              'format' => 'float',
               'name' => 'score',
-              'short' => 'Score',
+              'title' => 'Score',
               'type' => '`$NUMBER`',
+              'short' => 'Score',
+              'format' => 'float',
             ],
             [
               'name' => 'scored_by',
-              'short' => 'Number of users',
+              'title' => 'Scored By',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users',
             ],
             [
               'name' => 'season',
-              'short' => 'Season',
+              'title' => 'Season',
               'type' => '`$STRING`',
+              'short' => 'Season',
             ],
             [
               'name' => 'source',
-              'short' => 'Original Material/Source adapted from',
+              'title' => 'Source',
               'type' => '`$STRING`',
+              'short' => 'Original Material/Source adapted from',
             ],
             [
               'name' => 'status',
-              'short' => 'Airing status',
+              'title' => 'Status',
               'type' => '`$STRING`',
+              'short' => 'Airing status',
             ],
             [
               'name' => 'studios',
+              'title' => 'Studios',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'synopsis',
-              'short' => 'Episode Synopsis',
+              'title' => 'Synopsis',
               'type' => '`$STRING`',
+              'short' => 'Episode Synopsis',
             ],
             [
               'name' => 'themes',
+              'title' => 'Themes',
               'type' => '`$ARRAY`',
             ],
             [
-              'deprecated' => true,
               'name' => 'title',
+              'title' => 'Title',
+              'type' => '`$STRING`',
               'short' => 'Title',
-              'type' => '`$STRING`',
+              'deprecated' => true,
             ],
             [
-              'deprecated' => true,
               'name' => 'title_english',
-              'short' => 'English Title',
+              'title' => 'Title English',
               'type' => '`$STRING`',
+              'short' => 'English Title',
+              'deprecated' => true,
             ],
             [
-              'deprecated' => true,
               'name' => 'title_japanese',
-              'short' => 'Title Japanese',
+              'title' => 'Title Japanese',
               'type' => '`$STRING`',
+              'short' => 'Title Japanese',
+              'deprecated' => true,
             ],
             [
               'name' => 'title_romanji',
-              'short' => 'title_romanji',
+              'title' => 'Title Romanji',
               'type' => '`$STRING`',
+              'short' => 'title_romanji',
             ],
             [
-              'deprecated' => true,
               'name' => 'title_synonyms',
-              'short' => 'Other Titles',
+              'title' => 'Title Synonyms',
               'type' => '`$ARRAY`',
+              'short' => 'Other Titles',
+              'deprecated' => true,
             ],
             [
               'name' => 'titles',
-              'short' => 'All titles',
+              'title' => 'Titles',
               'type' => '`$ARRAY`',
+              'short' => 'All titles',
             ],
             [
               'name' => 'trailer',
-              'short' => 'Youtube Details',
+              'title' => 'Trailer',
               'type' => '`$OBJECT`',
+              'short' => 'Youtube Details',
             ],
             [
               'name' => 'type',
-              'short' => 'Anime Type',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Anime Type',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
             [
               'name' => 'year',
-              'short' => 'Year',
+              'title' => 'Year',
               'type' => '`$INTEGER`',
+              'short' => 'Year',
             ],
           ],
           'id' => [
@@ -351,130 +393,138 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'end_date',
-                        'orig' => 'end_date',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'genre',
-                        'orig' => 'genre',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'genres_exclude',
-                        'orig' => 'genres_exclude',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'max_score',
-                        'orig' => 'max_score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'min_score',
-                        'orig' => 'min_score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'producer',
-                        'orig' => 'producer',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'rating',
-                        'orig' => 'rating',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'score',
-                        'orig' => 'score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'start_date',
-                        'orig' => 'start_date',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'status',
-                        'orig' => 'status',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime',
                   'segments' => [
                     [
                       'lit' => 'anime',
+                    ],
+                  ],
+                  'parts' => [
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'end_date',
+                        'orig' => 'end_date',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'genre',
+                        'orig' => 'genre',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'genres_exclude',
+                        'orig' => 'genres_exclude',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'max_score',
+                        'orig' => 'max_score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'min_score',
+                        'orig' => 'min_score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'producer',
+                        'orig' => 'producer',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'rating',
+                        'orig' => 'rating',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'score',
+                        'orig' => 'score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'start_date',
+                        'orig' => 'start_date',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'status',
+                        'orig' => 'status',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -500,55 +550,8 @@ class JikanRestConfig
                       'unapproved',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'rating',
-                        'orig' => 'rating',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/top/anime',
@@ -558,6 +561,55 @@ class JikanRestConfig
                     ],
                     [
                       'lit' => 'anime',
+                    ],
+                  ],
+                  'parts' => [
+                    'top',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'rating',
+                        'orig' => 'rating',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -570,47 +622,8 @@ class JikanRestConfig
                       'type',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'top',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'preliminary',
-                        'orig' => 'preliminary',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'spoiler',
-                        'orig' => 'spoiler',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/reviews',
@@ -625,6 +638,47 @@ class JikanRestConfig
                       'lit' => 'reviews',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'reviews',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'preliminary',
+                        'orig' => 'preliminary',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'spoiler',
+                        'orig' => 'spoiler',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'review',
                     'exist' => [
@@ -634,36 +688,8 @@ class JikanRestConfig
                       'spoiler',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'reviews',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/episodes',
@@ -678,6 +704,35 @@ class JikanRestConfig
                       'lit' => 'episodes',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'episodes',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'episode',
                     'exist' => [
@@ -685,36 +740,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'episodes',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/forum',
@@ -729,6 +756,35 @@ class JikanRestConfig
                       'lit' => 'forum',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'forum',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'forum',
                     'exist' => [
@@ -736,36 +792,8 @@ class JikanRestConfig
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'forum',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/news',
@@ -780,6 +808,35 @@ class JikanRestConfig
                       'lit' => 'news',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'news',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'new',
                     'exist' => [
@@ -787,36 +844,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'news',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/userupdates',
@@ -831,6 +860,35 @@ class JikanRestConfig
                       'lit' => 'userupdates',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'userupdates',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'userupdate',
                     'exist' => [
@@ -838,36 +896,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'userupdates',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/videos/episodes',
@@ -885,6 +915,36 @@ class JikanRestConfig
                       'lit' => 'episodes',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'videos',
+                    'episodes',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'video_episode',
                     'exist' => [
@@ -892,29 +952,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'videos',
-                    'episodes',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/characters',
@@ -929,34 +968,35 @@ class JikanRestConfig
                       'lit' => 'characters',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'characters',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'character',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'characters',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/external',
@@ -971,34 +1011,35 @@ class JikanRestConfig
                       'lit' => 'external',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'external',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'external',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'external',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/pictures',
@@ -1013,34 +1054,35 @@ class JikanRestConfig
                       'lit' => 'pictures',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'pictures',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'picture',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'pictures',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/recommendations',
@@ -1055,34 +1097,35 @@ class JikanRestConfig
                       'lit' => 'recommendations',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'recommendations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'recommendation',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'recommendations',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/relations',
@@ -1097,34 +1140,35 @@ class JikanRestConfig
                       'lit' => 'relations',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'relations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'relation',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'relations',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/staff',
@@ -1139,34 +1183,35 @@ class JikanRestConfig
                       'lit' => 'staff',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'staff',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'staff',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'staff',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/streaming',
@@ -1181,20 +1226,32 @@ class JikanRestConfig
                       'lit' => 'streaming',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'streaming',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'streaming',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'streaming',
                   ],
                 ],
               ],
@@ -1204,24 +1261,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'episode',
-                        'orig' => 'episode',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/episodes/{episode}',
@@ -1239,35 +1278,43 @@ class JikanRestConfig
                       'var' => 'episode',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'episode',
-                      'id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'anime',
                     '{id}',
                     'episodes',
                     '{episode}',
                   ],
-                ],
-                [
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
                   'args' => [
                     'params' => [
                       [
+                        'name' => 'episode',
+                        'orig' => 'episode',
+                        'type' => '`$INTEGER`',
                         'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                      [
                         'name' => 'id',
                         'orig' => 'id',
-                        'reqd' => true,
                         'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
                       ],
                     ],
                   ],
+                  'select' => [
+                    'exist' => [
+                      'episode',
+                      'id',
+                    ],
+                  ],
+                ],
+                [
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}',
@@ -1279,32 +1326,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/full',
@@ -1319,34 +1367,35 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'full',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/moreinfo',
@@ -1361,34 +1410,35 @@ class JikanRestConfig
                       'lit' => 'moreinfo',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'moreinfo',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'moreinfo',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'moreinfo',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/statistics',
@@ -1403,34 +1453,35 @@ class JikanRestConfig
                       'lit' => 'statistics',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'statistics',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'statistic',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'statistics',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/themes',
@@ -1445,34 +1496,35 @@ class JikanRestConfig
                       'lit' => 'themes',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'themes',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'theme',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'themes',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/anime/{id}/videos',
@@ -1487,85 +1539,104 @@ class JikanRestConfig
                       'lit' => 'videos',
                     ],
                   ],
+                  'parts' => [
+                    'anime',
+                    '{id}',
+                    'videos',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'video',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'anime',
-                    '{id}',
-                    'videos',
-                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                'episode',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'character' => [
           'fields' => [
             [
               'name' => 'about',
-              'short' => 'Biography',
+              'title' => 'About',
               'type' => '`$STRING`',
+              'short' => 'Biography',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'favorites',
-              'short' => 'Number of users who have favorited this entry',
+              'title' => 'Favorites',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have favorited this entry',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'name',
-              'short' => 'Name',
+              'title' => 'Name',
               'type' => '`$STRING`',
+              'short' => 'Name',
             ],
             [
               'name' => 'name_kanji',
-              'short' => 'Name',
+              'title' => 'Name Kanji',
               'type' => '`$STRING`',
+              'short' => 'Name',
             ],
             [
               'name' => 'nicknames',
-              'short' => 'Other Names',
+              'title' => 'Nicknames',
               'type' => '`$ARRAY`',
+              'short' => 'Other Names',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
           ],
           'id' => [
@@ -1579,52 +1650,60 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters',
                   'segments' => [
                     [
                       'lit' => 'characters',
+                    ],
+                  ],
+                  'parts' => [
+                    'characters',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -1637,31 +1716,8 @@ class JikanRestConfig
                       'sort',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'characters',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/top/characters',
@@ -1673,33 +1729,39 @@ class JikanRestConfig
                       'lit' => 'characters',
                     ],
                   ],
+                  'parts' => [
+                    'top',
+                    'characters',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'limit',
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'top',
-                    'characters',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}/anime',
@@ -1714,34 +1776,35 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'anime',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}/manga',
@@ -1756,34 +1819,35 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'manga',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                    'manga',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}/pictures',
@@ -1798,34 +1862,35 @@ class JikanRestConfig
                       'lit' => 'pictures',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                    'pictures',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'picture',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                    'pictures',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}/voices',
@@ -1840,20 +1905,32 @@ class JikanRestConfig
                       'lit' => 'voices',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                    'voices',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'voice',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                    'voices',
                   ],
                 ],
               ],
@@ -1863,17 +1940,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}',
@@ -1885,32 +1951,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/characters/{id}/full',
@@ -1925,20 +1992,32 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'characters',
+                    '{id}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'characters',
-                    '{id}',
-                    'full',
                   ],
                 ],
               ],
@@ -1952,54 +2031,65 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'access',
-              'short' => 'Club access',
+              'title' => 'Access',
               'type' => '`$STRING`',
+              'short' => 'Club access',
             ],
             [
               'name' => 'category',
-              'short' => 'Club Category',
+              'title' => 'Category',
               'type' => '`$STRING`',
+              'short' => 'Club Category',
             ],
             [
               'name' => 'created',
-              'short' => 'Date Created ISO8601',
+              'title' => 'Created',
               'type' => '`$STRING`',
+              'short' => 'Date Created ISO8601',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'members',
-              'short' => 'Number of club members',
+              'title' => 'Members',
               'type' => '`$INTEGER`',
+              'short' => 'Number of club members',
             ],
             [
               'name' => 'name',
-              'short' => 'Club name',
+              'title' => 'Name',
               'type' => '`$STRING`',
+              'short' => 'Club name',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'url',
-              'short' => 'Club URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'Club URL',
             ],
           ],
           'id' => [
@@ -2013,64 +2103,72 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'category',
-                        'orig' => 'category',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/clubs',
                   'segments' => [
                     [
                       'lit' => 'clubs',
+                    ],
+                  ],
+                  'parts' => [
+                    'clubs',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'category',
+                        'orig' => 'category',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -2085,34 +2183,8 @@ class JikanRestConfig
                       'type',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'clubs',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/clubs/{id}/members',
@@ -2127,6 +2199,35 @@ class JikanRestConfig
                       'lit' => 'members',
                     ],
                   ],
+                  'parts' => [
+                    'clubs',
+                    '{id}',
+                    'members',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'member',
                     'exist' => [
@@ -2134,28 +2235,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'clubs',
-                    '{id}',
-                    'members',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/clubs/{id}/staff',
@@ -2170,20 +2251,32 @@ class JikanRestConfig
                       'lit' => 'staff',
                     ],
                   ],
+                  'parts' => [
+                    'clubs',
+                    '{id}',
+                    'staff',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'staff',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'clubs',
-                    '{id}',
-                    'staff',
                   ],
                 ],
               ],
@@ -2193,17 +2286,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/clubs/{id}',
@@ -2215,32 +2297,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'clubs',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'clubs',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/clubs/{id}/relations',
@@ -2255,20 +2338,32 @@ class JikanRestConfig
                       'lit' => 'relations',
                     ],
                   ],
+                  'parts' => [
+                    'clubs',
+                    '{id}',
+                    'relations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'relation',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'clubs',
-                    '{id}',
-                    'relations',
                   ],
                 ],
               ],
@@ -2282,10 +2377,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'name',
+              'title' => 'Name',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'url',
+              'title' => 'Url',
               'type' => '`$STRING`',
             ],
           ],
@@ -2296,17 +2393,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/external',
@@ -2321,19 +2407,31 @@ class JikanRestConfig
                       'lit' => 'external',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'username',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'users',
                     '{username}',
                     'external',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'username',
+                    ],
                   ],
                 ],
               ],
@@ -2342,7 +2440,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -2351,23 +2449,27 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'count',
-              'short' => 'Genre\'s entry count',
+              'title' => 'Count',
               'type' => '`$INTEGER`',
+              'short' => 'Genre\'s entry count',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'name',
-              'short' => 'Genre Name',
+              'title' => 'Name',
               'type' => '`$STRING`',
+              'short' => 'Genre Name',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
           ],
           'name' => 'genre',
@@ -2377,16 +2479,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/genres/anime',
@@ -2398,32 +2490,33 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
+                  'parts' => [
+                    'genres',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'anime',
                     'exist' => [
                       'filter',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'genres',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/genres/manga',
@@ -2435,19 +2528,30 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'genres',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'manga',
                     'exist' => [
                       'filter',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'genres',
-                    'manga',
                   ],
                 ],
               ],
@@ -2457,14 +2561,105 @@ class JikanRestConfig
             'ancestors' => [],
           ],
         ],
+        'history' => [
+          'fields' => [
+            [
+              'name' => 'date',
+              'title' => 'Date',
+              'type' => '`$STRING`',
+              'short' => 'Date ISO8601',
+            ],
+            [
+              'name' => 'entry',
+              'title' => 'Entry',
+              'type' => '`$OBJECT`',
+              'short' => 'Parsed URL Data',
+            ],
+            [
+              'name' => 'increment',
+              'title' => 'Increment',
+              'type' => '`$INTEGER`',
+              'short' => 'Number of episodes/chapters watched/read',
+            ],
+          ],
+          'name' => 'history',
+          'op' => [
+            'list' => [
+              'input' => 'data',
+              'name' => 'list',
+              'points' => [
+                [
+                  'kind' => 'http',
+                  'method' => 'GET',
+                  'orig' => '/users/{username}/history',
+                  'segments' => [
+                    [
+                      'lit' => 'users',
+                    ],
+                    [
+                      'var' => 'username',
+                    ],
+                    [
+                      'lit' => 'history',
+                    ],
+                  ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'history',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'type',
+                      'username',
+                    ],
+                  ],
+                ],
+              ],
+            ],
+          ],
+          'relations' => [
+            'ancestors' => [
+              [
+                '$.main.kit.entity.user',
+              ],
+            ],
+          ],
+        ],
         'magazine' => [
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -2475,52 +2670,60 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/magazines',
                   'segments' => [
                     [
                       'lit' => 'magazines',
+                    ],
+                  ],
+                  'parts' => [
+                    'magazines',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -2532,13 +2735,6 @@ class JikanRestConfig
                       'q',
                       'sort',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'magazines',
                   ],
                 ],
               ],
@@ -2552,152 +2748,183 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'approved',
-              'short' => 'Whether the entry is pending approval on MAL or not',
+              'title' => 'Approved',
               'type' => '`$BOOLEAN`',
+              'short' => 'Whether the entry is pending approval on MAL or not',
             ],
             [
               'name' => 'authors',
+              'title' => 'Authors',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'background',
-              'short' => 'Background',
+              'title' => 'Background',
               'type' => '`$STRING`',
+              'short' => 'Background',
             ],
             [
               'name' => 'chapters',
-              'short' => 'Chapter count',
+              'title' => 'Chapters',
               'type' => '`$INTEGER`',
+              'short' => 'Chapter count',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'demographics',
+              'title' => 'Demographics',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'explicit_genres',
+              'title' => 'Explicit Genres',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'favorites',
-              'short' => 'Number of users who have favorited this entry',
+              'title' => 'Favorites',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have favorited this entry',
             ],
             [
               'name' => 'genres',
+              'title' => 'Genres',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'members',
-              'short' => 'Number of users who have added this entry to their list',
+              'title' => 'Members',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have added this entry to their list',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'popularity',
-              'short' => 'Popularity',
+              'title' => 'Popularity',
               'type' => '`$INTEGER`',
+              'short' => 'Popularity',
             ],
             [
               'name' => 'published',
-              'short' => 'Date range',
+              'title' => 'Published',
               'type' => '`$OBJECT`',
+              'short' => 'Date range',
             ],
             [
               'name' => 'publishing',
-              'short' => 'Publishing boolean',
+              'title' => 'Publishing',
               'type' => '`$BOOLEAN`',
+              'short' => 'Publishing boolean',
             ],
             [
               'name' => 'rank',
-              'short' => 'Ranking',
+              'title' => 'Rank',
               'type' => '`$INTEGER`',
+              'short' => 'Ranking',
             ],
             [
-              'format' => 'float',
               'name' => 'score',
-              'short' => 'Score',
+              'title' => 'Score',
               'type' => '`$NUMBER`',
+              'short' => 'Score',
+              'format' => 'float',
             ],
             [
               'name' => 'scored_by',
-              'short' => 'Number of users',
+              'title' => 'Scored By',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users',
             ],
             [
               'name' => 'serializations',
+              'title' => 'Serializations',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'status',
-              'short' => 'Publishing status',
+              'title' => 'Status',
               'type' => '`$STRING`',
+              'short' => 'Publishing status',
             ],
             [
               'name' => 'synopsis',
-              'short' => 'Synopsis',
+              'title' => 'Synopsis',
               'type' => '`$STRING`',
+              'short' => 'Synopsis',
             ],
             [
               'name' => 'themes',
+              'title' => 'Themes',
               'type' => '`$ARRAY`',
             ],
             [
-              'deprecated' => true,
               'name' => 'title',
+              'title' => 'Title',
+              'type' => '`$STRING`',
               'short' => 'Title',
-              'type' => '`$STRING`',
+              'deprecated' => true,
             ],
             [
-              'deprecated' => true,
               'name' => 'title_english',
-              'short' => 'English Title',
+              'title' => 'Title English',
               'type' => '`$STRING`',
+              'short' => 'English Title',
+              'deprecated' => true,
             ],
             [
-              'deprecated' => true,
               'name' => 'title_japanese',
-              'short' => 'Japanese Title',
+              'title' => 'Title Japanese',
               'type' => '`$STRING`',
+              'short' => 'Japanese Title',
+              'deprecated' => true,
             ],
             [
               'name' => 'titles',
-              'short' => 'All Titles',
+              'title' => 'Titles',
               'type' => '`$ARRAY`',
+              'short' => 'All Titles',
             ],
             [
               'name' => 'type',
-              'short' => 'Manga Type',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Manga Type',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
             [
               'name' => 'volumes',
-              'short' => 'Volume count',
+              'title' => 'Volumes',
               'type' => '`$INTEGER`',
+              'short' => 'Volume count',
             ],
           ],
           'id' => [
@@ -2711,124 +2938,132 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'end_date',
-                        'orig' => 'end_date',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'genre',
-                        'orig' => 'genre',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'genres_exclude',
-                        'orig' => 'genres_exclude',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'magazine',
-                        'orig' => 'magazine',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'max_score',
-                        'orig' => 'max_score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'min_score',
-                        'orig' => 'min_score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'score',
-                        'orig' => 'score',
-                        'type' => '`$NUMBER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'start_date',
-                        'orig' => 'start_date',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'status',
-                        'orig' => 'status',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga',
                   'segments' => [
                     [
                       'lit' => 'manga',
+                    ],
+                  ],
+                  'parts' => [
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'end_date',
+                        'orig' => 'end_date',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'genre',
+                        'orig' => 'genre',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'genres_exclude',
+                        'orig' => 'genres_exclude',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'magazine',
+                        'orig' => 'magazine',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'max_score',
+                        'orig' => 'max_score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'min_score',
+                        'orig' => 'min_score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'score',
+                        'orig' => 'score',
+                        'type' => '`$NUMBER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'start_date',
+                        'orig' => 'start_date',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'status',
+                        'orig' => 'status',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -2853,43 +3088,8 @@ class JikanRestConfig
                       'unapproved',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'manga',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/top/manga',
@@ -2901,6 +3101,43 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'top',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'filter',
@@ -2909,47 +3146,8 @@ class JikanRestConfig
                       'type',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'top',
-                    'manga',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'preliminary',
-                        'orig' => 'preliminary',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'spoiler',
-                        'orig' => 'spoiler',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/reviews',
@@ -2964,6 +3162,47 @@ class JikanRestConfig
                       'lit' => 'reviews',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'reviews',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'preliminary',
+                        'orig' => 'preliminary',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'spoiler',
+                        'orig' => 'spoiler',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'review',
                     'exist' => [
@@ -2973,36 +3212,8 @@ class JikanRestConfig
                       'spoiler',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'reviews',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/forum',
@@ -3017,6 +3228,35 @@ class JikanRestConfig
                       'lit' => 'forum',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'forum',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'forum',
                     'exist' => [
@@ -3024,36 +3264,8 @@ class JikanRestConfig
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'forum',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/news',
@@ -3068,6 +3280,35 @@ class JikanRestConfig
                       'lit' => 'news',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'news',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'new',
                     'exist' => [
@@ -3075,36 +3316,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'news',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/userupdates',
@@ -3119,6 +3332,35 @@ class JikanRestConfig
                       'lit' => 'userupdates',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'userupdates',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'userupdate',
                     'exist' => [
@@ -3126,28 +3368,8 @@ class JikanRestConfig
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'userupdates',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/characters',
@@ -3162,34 +3384,35 @@ class JikanRestConfig
                       'lit' => 'characters',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'characters',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'character',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'characters',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/external',
@@ -3204,34 +3427,35 @@ class JikanRestConfig
                       'lit' => 'external',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'external',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'external',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'external',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/pictures',
@@ -3246,34 +3470,35 @@ class JikanRestConfig
                       'lit' => 'pictures',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'pictures',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'picture',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'pictures',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/recommendations',
@@ -3288,34 +3513,35 @@ class JikanRestConfig
                       'lit' => 'recommendations',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'recommendations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'recommendation',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'recommendations',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/relations',
@@ -3330,20 +3556,32 @@ class JikanRestConfig
                       'lit' => 'relations',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'relations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'relation',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'relations',
                   ],
                 ],
               ],
@@ -3353,17 +3591,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}',
@@ -3375,32 +3602,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/full',
@@ -3415,34 +3643,35 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'full',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/moreinfo',
@@ -3457,34 +3686,35 @@ class JikanRestConfig
                       'lit' => 'moreinfo',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'moreinfo',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'moreinfo',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'moreinfo',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/manga/{id}/statistics',
@@ -3499,20 +3729,32 @@ class JikanRestConfig
                       'lit' => 'statistics',
                     ],
                   ],
+                  'parts' => [
+                    'manga',
+                    '{id}',
+                    'statistics',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'statistic',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'manga',
-                    '{id}',
-                    'statistics',
                   ],
                 ],
               ],
@@ -3526,10 +3768,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -3540,22 +3784,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/top/people',
@@ -3567,19 +3795,36 @@ class JikanRestConfig
                       'lit' => 'people',
                     ],
                   ],
+                  'parts' => [
+                    'top',
+                    'people',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'limit',
                       'page',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'top',
-                    'people',
                   ],
                 ],
               ],
@@ -3593,69 +3838,83 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'about',
-              'short' => 'Biography',
+              'title' => 'About',
               'type' => '`$STRING`',
+              'short' => 'Biography',
             ],
             [
               'name' => 'alternate_names',
-              'short' => 'Other Names',
+              'title' => 'Alternate Names',
               'type' => '`$ARRAY`',
+              'short' => 'Other Names',
             ],
             [
               'name' => 'birthday',
-              'short' => 'Birthday Date ISO8601',
+              'title' => 'Birthday',
               'type' => '`$STRING`',
+              'short' => 'Birthday Date ISO8601',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'family_name',
-              'short' => 'Family Name',
+              'title' => 'Family Name',
               'type' => '`$STRING`',
+              'short' => 'Family Name',
             ],
             [
               'name' => 'favorites',
-              'short' => 'Number of users who have favorited this entry',
+              'title' => 'Favorites',
               'type' => '`$INTEGER`',
+              'short' => 'Number of users who have favorited this entry',
             ],
             [
               'name' => 'given_name',
-              'short' => 'Given Name',
+              'title' => 'Given Name',
               'type' => '`$STRING`',
+              'short' => 'Given Name',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'name',
-              'short' => 'Name',
+              'title' => 'Name',
               'type' => '`$STRING`',
+              'short' => 'Name',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
             [
               'name' => 'website_url',
-              'short' => 'Person\'s website URL',
+              'title' => 'Website Url',
               'type' => '`$STRING`',
+              'short' => 'Person\'s website URL',
             ],
           ],
           'id' => [
@@ -3669,52 +3928,60 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people',
                   'segments' => [
                     [
                       'lit' => 'people',
+                    ],
+                  ],
+                  'parts' => [
+                    'people',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -3727,26 +3994,8 @@ class JikanRestConfig
                       'sort',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'people',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}/anime',
@@ -3761,34 +4010,35 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'anime',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}/manga',
@@ -3803,34 +4053,35 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'manga',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                    'manga',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}/pictures',
@@ -3845,34 +4096,35 @@ class JikanRestConfig
                       'lit' => 'pictures',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                    'pictures',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'picture',
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                    'pictures',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}/voices',
@@ -3887,20 +4139,32 @@ class JikanRestConfig
                       'lit' => 'voices',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                    'voices',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'voice',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                    'voices',
                   ],
                 ],
               ],
@@ -3910,17 +4174,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}',
@@ -3932,32 +4185,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/people/{id}/full',
@@ -3972,20 +4226,32 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'people',
+                    '{id}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'people',
-                    '{id}',
-                    'full',
                   ],
                 ],
               ],
@@ -3999,54 +4265,65 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'about',
-              'short' => 'About the Producer',
+              'title' => 'About',
               'type' => '`$STRING`',
+              'short' => 'About the Producer',
             ],
             [
               'name' => 'count',
-              'short' => 'Producers\'s anime count',
+              'title' => 'Count',
               'type' => '`$INTEGER`',
+              'short' => 'Producers\'s anime count',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'established',
-              'short' => 'Established Date ISO8601',
+              'title' => 'Established',
               'type' => '`$STRING`',
+              'short' => 'Established Date ISO8601',
             ],
             [
               'name' => 'favorites',
-              'short' => 'Producers\'s member favorites count',
+              'title' => 'Favorites',
               'type' => '`$INTEGER`',
+              'short' => 'Producers\'s member favorites count',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'titles',
-              'short' => 'All titles',
+              'title' => 'Titles',
               'type' => '`$ARRAY`',
+              'short' => 'All titles',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
           ],
           'id' => [
@@ -4060,52 +4337,60 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'letter',
-                        'orig' => 'letter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'order_by',
-                        'orig' => 'order_by',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sort',
-                        'orig' => 'sort',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/producers',
                   'segments' => [
                     [
                       'lit' => 'producers',
+                    ],
+                  ],
+                  'parts' => [
+                    'producers',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'letter',
+                        'orig' => 'letter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'order_by',
+                        'orig' => 'order_by',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sort',
+                        'orig' => 'sort',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -4118,26 +4403,8 @@ class JikanRestConfig
                       'sort',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'producers',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/producers/{id}/external',
@@ -4152,20 +4419,32 @@ class JikanRestConfig
                       'lit' => 'external',
                     ],
                   ],
+                  'parts' => [
+                    'producers',
+                    '{id}',
+                    'external',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'external',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'producers',
-                    '{id}',
-                    'external',
                   ],
                 ],
               ],
@@ -4175,17 +4454,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/producers/{id}',
@@ -4197,32 +4465,33 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
+                  'parts' => [
+                    'producers',
+                    '{id}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'id',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'producers',
-                    '{id}',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/producers/{id}/full',
@@ -4237,20 +4506,32 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'producers',
+                    '{id}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'id',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'id',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'producers',
-                    '{id}',
-                    'full',
                   ],
                 ],
               ],
@@ -4269,7 +4550,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/anime',
@@ -4281,20 +4561,21 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
-                  'select' => [
-                    '$action' => 'anime',
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'random',
                     'anime',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [],
+                  'select' => [
+                    '$action' => 'anime',
+                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/characters',
@@ -4306,20 +4587,21 @@ class JikanRestConfig
                       'lit' => 'characters',
                     ],
                   ],
-                  'select' => [
-                    '$action' => 'character',
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'random',
                     'characters',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [],
+                  'select' => [
+                    '$action' => 'character',
+                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/manga',
@@ -4331,20 +4613,21 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
-                  'select' => [
-                    '$action' => 'manga',
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'random',
                     'manga',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [],
+                  'select' => [
+                    '$action' => 'manga',
+                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/people',
@@ -4356,20 +4639,21 @@ class JikanRestConfig
                       'lit' => 'people',
                     ],
                   ],
-                  'select' => [
-                    '$action' => 'person',
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'random',
                     'people',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [],
+                  'select' => [
+                    '$action' => 'person',
+                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random/users',
@@ -4381,16 +4665,18 @@ class JikanRestConfig
                       'lit' => 'users',
                     ],
                   ],
-                  'select' => [
-                    '$action' => 'user',
+                  'parts' => [
+                    'random',
+                    'users',
                   ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
                   ],
-                  'parts' => [
-                    'random',
-                    'users',
+                  'args' => [],
+                  'select' => [
+                    '$action' => 'user',
                   ],
                 ],
               ],
@@ -4404,15 +4690,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
-              'union' => [
-                'branches' => 2,
-                'count' => 1,
-                'depth' => 4,
-              ],
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -4423,25 +4706,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/recommendations',
@@ -4456,33 +4720,43 @@ class JikanRestConfig
                       'lit' => 'recommendations',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'recommendations',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'page',
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'recommendations',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/recommendations/anime',
@@ -4494,32 +4768,33 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
+                  'parts' => [
+                    'recommendations',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'anime',
                     'exist' => [
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'recommendations',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/recommendations/manga',
@@ -4531,19 +4806,30 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'recommendations',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'manga',
                     'exist' => [
                       'page',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'recommendations',
-                    'manga',
                   ],
                 ],
               ],
@@ -4552,7 +4838,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -4566,28 +4852,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'preliminary',
-                        'orig' => 'preliminary',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'spoiler',
-                        'orig' => 'spoiler',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/reviews/anime',
@@ -4599,6 +4863,37 @@ class JikanRestConfig
                       'lit' => 'anime',
                     ],
                   ],
+                  'parts' => [
+                    'reviews',
+                    'anime',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'preliminary',
+                        'orig' => 'preliminary',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'spoiler',
+                        'orig' => 'spoiler',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'anime',
                     'exist' => [
@@ -4607,38 +4902,8 @@ class JikanRestConfig
                       'spoiler',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'reviews',
-                    'anime',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'preliminary',
-                        'orig' => 'preliminary',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'spoiler',
-                        'orig' => 'spoiler',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/reviews/manga',
@@ -4650,6 +4915,37 @@ class JikanRestConfig
                       'lit' => 'manga',
                     ],
                   ],
+                  'parts' => [
+                    'reviews',
+                    'manga',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'preliminary',
+                        'orig' => 'preliminary',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'spoiler',
+                        'orig' => 'spoiler',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'manga',
                     'exist' => [
@@ -4657,14 +4953,6 @@ class JikanRestConfig
                       'preliminary',
                       'spoiler',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'reviews',
-                    'manga',
                   ],
                 ],
               ],
@@ -4678,10 +4966,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -4692,52 +4982,60 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'kid',
-                        'orig' => 'kid',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/schedules',
                   'segments' => [
                     [
                       'lit' => 'schedules',
+                    ],
+                  ],
+                  'parts' => [
+                    'schedules',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'kid',
+                        'orig' => 'kid',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -4749,13 +5047,6 @@ class JikanRestConfig
                       'sfw',
                       'unapproved',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'schedules',
                   ],
                 ],
               ],
@@ -4769,25 +5060,30 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'seasons',
-              'short' => 'List of available seasons',
+              'title' => 'Seasons',
               'type' => '`$ARRAY`',
+              'short' => 'List of available seasons',
             ],
             [
               'name' => 'year',
-              'short' => 'Year',
+              'title' => 'Year',
               'type' => '`$INTEGER`',
+              'short' => 'Year',
             ],
           ],
           'id' => [
@@ -4809,46 +5105,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'continuing',
-                        'orig' => 'continuing',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/seasons/now',
@@ -4858,6 +5114,55 @@ class JikanRestConfig
                     ],
                     [
                       'lit' => 'now',
+                    ],
+                  ],
+                  'parts' => [
+                    'seasons',
+                    'now',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'continuing',
+                        'orig' => 'continuing',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -4871,56 +5176,8 @@ class JikanRestConfig
                       'unapproved',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'seasons',
-                    'now',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'continuing',
-                        'orig' => 'continuing',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/seasons/upcoming',
@@ -4930,6 +5187,55 @@ class JikanRestConfig
                     ],
                     [
                       'lit' => 'upcoming',
+                    ],
+                  ],
+                  'parts' => [
+                    'seasons',
+                    'upcoming',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'continuing',
+                        'orig' => 'continuing',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -4943,17 +5249,8 @@ class JikanRestConfig
                       'unapproved',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'seasons',
-                    'upcoming',
-                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/seasons',
@@ -4962,14 +5259,16 @@ class JikanRestConfig
                       'lit' => 'seasons',
                     ],
                   ],
-                  'select' => [],
+                  'parts' => [
+                    'seasons',
+                  ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
                   ],
-                  'parts' => [
-                    'seasons',
-                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -4978,62 +5277,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'season',
-                        'orig' => 'season',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'param',
-                        'name' => 'year',
-                        'orig' => 'year',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'continuing',
-                        'orig' => 'continuing',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'filter',
-                        'orig' => 'filter',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'sfw',
-                        'orig' => 'sfw',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'unapproved',
-                        'orig' => 'unapproved',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/seasons/{year}/{season}',
@@ -5048,6 +5291,72 @@ class JikanRestConfig
                       'var' => 'season',
                     ],
                   ],
+                  'parts' => [
+                    'seasons',
+                    '{year}',
+                    '{season}',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'season',
+                        'orig' => 'season',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                      [
+                        'name' => 'year',
+                        'orig' => 'year',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'continuing',
+                        'orig' => 'continuing',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'filter',
+                        'orig' => 'filter',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'sfw',
+                        'orig' => 'sfw',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'unapproved',
+                        'orig' => 'unapproved',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'continuing',
@@ -5060,25 +5369,12 @@ class JikanRestConfig
                       'year',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'seasons',
-                    '{year}',
-                    '{season}',
-                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                'season',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'top' => [
@@ -5090,34 +5386,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'preliminary',
-                        'orig' => 'preliminary',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'spoiler',
-                        'orig' => 'spoiler',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/top/reviews',
@@ -5129,6 +5397,43 @@ class JikanRestConfig
                       'lit' => 'reviews',
                     ],
                   ],
+                  'parts' => [
+                    'top',
+                    'reviews',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'preliminary',
+                        'orig' => 'preliminary',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'spoiler',
+                        'orig' => 'spoiler',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'type',
+                        'orig' => 'type',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'review',
                     'exist' => [
@@ -5137,14 +5442,6 @@ class JikanRestConfig
                       'spoiler',
                       'type',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'top',
-                    'reviews',
                   ],
                 ],
               ],
@@ -5158,59 +5455,71 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'birthday',
-              'short' => 'Birthday Date ISO8601',
+              'title' => 'Birthday',
               'type' => '`$STRING`',
+              'short' => 'Birthday Date ISO8601',
             ],
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'gender',
-              'short' => 'User Gender',
+              'title' => 'Gender',
               'type' => '`$STRING`',
+              'short' => 'User Gender',
             ],
             [
               'name' => 'id',
+              'title' => 'Id',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'images',
+              'title' => 'Images',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'joined',
-              'short' => 'Joined Date ISO8601',
+              'title' => 'Joined',
               'type' => '`$STRING`',
+              'short' => 'Joined Date ISO8601',
             ],
             [
               'name' => 'last_online',
-              'short' => 'Last Online Date ISO8601',
+              'title' => 'Last Online',
               'type' => '`$STRING`',
+              'short' => 'Last Online Date ISO8601',
             ],
             [
               'name' => 'location',
-              'short' => 'Location',
+              'title' => 'Location',
               'type' => '`$STRING`',
+              'short' => 'Location',
             ],
             [
               'name' => 'mal_id',
-              'short' => 'MyAnimeList ID',
+              'title' => 'Mal Id',
               'type' => '`$INTEGER`',
+              'short' => 'MyAnimeList ID',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'url',
-              'short' => 'MyAnimeList URL',
+              'title' => 'Url',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList URL',
             ],
             [
               'name' => 'username',
-              'short' => 'MyAnimeList Username',
+              'title' => 'Username',
               'type' => '`$STRING`',
+              'short' => 'MyAnimeList Username',
             ],
           ],
           'id' => [
@@ -5224,58 +5533,66 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'gender',
-                        'orig' => 'gender',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'limit',
-                        'orig' => 'limit',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'location',
-                        'orig' => 'location',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'max_age',
-                        'orig' => 'max_age',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'min_age',
-                        'orig' => 'min_age',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'kind' => 'query',
-                        'name' => 'q',
-                        'orig' => 'q',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users',
                   'segments' => [
                     [
                       'lit' => 'users',
+                    ],
+                  ],
+                  'parts' => [
+                    'users',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'gender',
+                        'orig' => 'gender',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'limit',
+                        'orig' => 'limit',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'location',
+                        'orig' => 'location',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'max_age',
+                        'orig' => 'max_age',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'min_age',
+                        'orig' => 'min_age',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'q',
+                        'orig' => 'q',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
                     ],
                   ],
                   'select' => [
@@ -5289,13 +5606,6 @@ class JikanRestConfig
                       'q',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                  ],
                 ],
               ],
             ],
@@ -5304,25 +5614,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'status',
-                        'orig' => 'status',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/animelist',
@@ -5337,6 +5628,35 @@ class JikanRestConfig
                       'lit' => 'animelist',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'animelist',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'status',
+                        'orig' => 'status',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'animelist',
                     'exist' => [
@@ -5344,36 +5664,8 @@ class JikanRestConfig
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'animelist',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'status',
-                        'orig' => 'status',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/mangalist',
@@ -5388,6 +5680,35 @@ class JikanRestConfig
                       'lit' => 'mangalist',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'mangalist',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'status',
+                        'orig' => 'status',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'mangalist',
                     'exist' => [
@@ -5395,36 +5716,8 @@ class JikanRestConfig
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'mangalist',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/reviews',
@@ -5439,6 +5732,35 @@ class JikanRestConfig
                       'lit' => 'reviews',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'reviews',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'review',
                     'exist' => [
@@ -5446,28 +5768,8 @@ class JikanRestConfig
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'reviews',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'id',
-                        'orig' => 'id',
-                        'reqd' => true,
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/userbyid/{id}',
@@ -5482,41 +5784,37 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'id',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'users',
                     'userbyid',
                     '{id}',
                   ],
-                ],
-                [
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
                   'args' => [
                     'params' => [
                       [
-                        'kind' => 'param',
                         'name' => 'id',
-                        'orig' => 'username',
+                        'orig' => 'id',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'param',
                         'reqd' => true,
-                        'type' => '`$STRING`',
                       ],
                     ],
                   ],
+                  'select' => [
+                    'exist' => [
+                      'id',
+                    ],
+                  ],
+                ],
+                [
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}',
-                  'rename' => [
-                    'param' => [
-                      'username' => 'id',
-                    ],
-                  ],
                   'segments' => [
                     [
                       'lit' => 'users',
@@ -5525,32 +5823,37 @@ class JikanRestConfig
                       'var' => 'id',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'id',
+                  'parts' => [
+                    'users',
+                    '{id}',
+                  ],
+                  'rename' => [
+                    'param' => [
+                      'username' => 'id',
                     ],
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
                   ],
-                  'parts' => [
-                    'users',
-                    '{id}',
-                  ],
-                ],
-                [
                   'args' => [
                     'params' => [
                       [
-                        'kind' => 'param',
-                        'name' => 'username',
+                        'name' => 'id',
                         'orig' => 'username',
-                        'reqd' => true,
                         'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
                       ],
                     ],
                   ],
+                  'select' => [
+                    'exist' => [
+                      'id',
+                    ],
+                  ],
+                ],
+                [
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/favorites',
@@ -5565,34 +5868,35 @@ class JikanRestConfig
                       'lit' => 'favorites',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'favorites',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'favorite',
                     'exist' => [
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'favorites',
-                  ],
                 ],
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/full',
@@ -5607,39 +5911,48 @@ class JikanRestConfig
                       'lit' => 'full',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'full',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
                   'select' => [
                     '$action' => 'full',
                     'exist' => [
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'full',
-                  ],
                 ],
               ],
             ],
           ],
           'relations' => [
-            'ancestors' => [
-              [
-                'user',
-              ],
-            ],
+            'ancestors' => [],
           ],
         ],
         'user_about' => [
           'fields' => [
             [
               'name' => 'about',
-              'short' => 'User About.',
+              'title' => 'About',
               'type' => '`$STRING`',
+              'short' => 'User About.',
             ],
           ],
           'name' => 'user_about',
@@ -5649,17 +5962,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/about',
@@ -5674,19 +5976,31 @@ class JikanRestConfig
                       'lit' => 'about',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'username',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'users',
                     '{username}',
                     'about',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'username',
+                    ],
                   ],
                 ],
               ],
@@ -5695,7 +6009,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -5704,10 +6018,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -5718,25 +6034,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/clubs',
@@ -5751,20 +6048,40 @@ class JikanRestConfig
                       'lit' => 'clubs',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'clubs',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'page',
                       'username',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'clubs',
                   ],
                 ],
               ],
@@ -5773,7 +6090,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -5782,10 +6099,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -5796,25 +6115,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/friends',
@@ -5829,21 +6129,41 @@ class JikanRestConfig
                       'lit' => 'friends',
                     ],
                   ],
+                  'parts' => [
+                    'users',
+                    '{username}',
+                    'friends',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'page',
                       'username',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'friends',
-                  ],
                 ],
               ],
             ],
@@ -5851,92 +6171,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
-              ],
-            ],
-          ],
-        ],
-        'user_history' => [
-          'fields' => [
-            [
-              'name' => 'date',
-              'short' => 'Date ISO8601',
-              'type' => '`$STRING`',
-            ],
-            [
-              'name' => 'entry',
-              'short' => 'Parsed URL Data',
-              'type' => '`$OBJECT`',
-            ],
-            [
-              'name' => 'increment',
-              'short' => 'Number of episodes/chapters watched/read',
-              'type' => '`$INTEGER`',
-            ],
-          ],
-          'name' => 'user_history',
-          'op' => [
-            'list' => [
-              'input' => 'data',
-              'name' => 'list',
-              'points' => [
-                [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'type',
-                        'orig' => 'type',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
-                  'kind' => 'http',
-                  'method' => 'GET',
-                  'orig' => '/users/{username}/history',
-                  'segments' => [
-                    [
-                      'lit' => 'users',
-                    ],
-                    [
-                      'var' => 'username',
-                    ],
-                    [
-                      'lit' => 'history',
-                    ],
-                  ],
-                  'select' => [
-                    'exist' => [
-                      'type',
-                      'username',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
-                  'parts' => [
-                    'users',
-                    '{username}',
-                    'history',
-                  ],
-                ],
-              ],
-            ],
-          ],
-          'relations' => [
-            'ancestors' => [
-              [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -5945,13 +6180,15 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'anime',
-              'short' => 'Anime Statistics',
+              'title' => 'Anime',
               'type' => '`$OBJECT`',
+              'short' => 'Anime Statistics',
             ],
             [
               'name' => 'manga',
-              'short' => 'Manga Statistics',
+              'title' => 'Manga',
               'type' => '`$OBJECT`',
+              'short' => 'Manga Statistics',
             ],
           ],
           'name' => 'user_statistic',
@@ -5961,17 +6198,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/statistics',
@@ -5986,19 +6212,31 @@ class JikanRestConfig
                       'lit' => 'statistics',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'username',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'users',
                     '{username}',
                     'statistics',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'username',
+                    ],
                   ],
                 ],
               ],
@@ -6007,7 +6245,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -6016,13 +6254,15 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'anime',
-              'short' => 'Last updated Anime',
+              'title' => 'Anime',
               'type' => '`$ARRAY`',
+              'short' => 'Last updated Anime',
             ],
             [
               'name' => 'manga',
-              'short' => 'Last updated Manga',
+              'title' => 'Manga',
               'type' => '`$ARRAY`',
+              'short' => 'Last updated Manga',
             ],
           ],
           'name' => 'user_update',
@@ -6032,17 +6272,6 @@ class JikanRestConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'params' => [
-                      [
-                        'kind' => 'param',
-                        'name' => 'username',
-                        'orig' => 'username',
-                        'reqd' => true,
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/users/{username}/userupdates',
@@ -6057,19 +6286,31 @@ class JikanRestConfig
                       'lit' => 'userupdates',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'username',
-                    ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body.data`',
-                  ],
                   'parts' => [
                     'users',
                     '{username}',
                     'userupdates',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body.data`',
+                  ],
+                  'args' => [
+                    'params' => [
+                      [
+                        'name' => 'username',
+                        'orig' => 'username',
+                        'type' => '`$STRING`',
+                        'kind' => 'param',
+                        'reqd' => true,
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'username',
+                    ],
                   ],
                 ],
               ],
@@ -6078,7 +6319,7 @@ class JikanRestConfig
           'relations' => [
             'ancestors' => [
               [
-                'user',
+                '$.main.kit.entity.user',
               ],
             ],
           ],
@@ -6087,10 +6328,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -6101,7 +6344,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/watch/episodes',
@@ -6113,18 +6355,19 @@ class JikanRestConfig
                       'lit' => 'episodes',
                     ],
                   ],
-                  'select' => [],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'watch',
                     'episodes',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/watch/episodes/popular',
@@ -6139,16 +6382,18 @@ class JikanRestConfig
                       'lit' => 'popular',
                     ],
                   ],
-                  'select' => [],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'watch',
                     'episodes',
                     'popular',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -6161,10 +6406,12 @@ class JikanRestConfig
           'fields' => [
             [
               'name' => 'data',
+              'title' => 'Data',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'pagination',
+              'title' => 'Pagination',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -6175,16 +6422,6 @@ class JikanRestConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'page',
-                        'orig' => 'page',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/watch/promos',
@@ -6196,22 +6433,32 @@ class JikanRestConfig
                       'lit' => 'promos',
                     ],
                   ],
+                  'parts' => [
+                    'watch',
+                    'promos',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'page',
+                        'orig' => 'page',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'page',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'watch',
-                    'promos',
-                  ],
                 ],
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/watch/promos/popular',
@@ -6226,16 +6473,18 @@ class JikanRestConfig
                       'lit' => 'popular',
                     ],
                   ],
-                  'select' => [],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
                   'parts' => [
                     'watch',
                     'promos',
                     'popular',
                   ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],

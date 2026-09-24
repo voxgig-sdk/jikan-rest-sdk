@@ -1,0 +1,1058 @@
+# Entity: manga
+
+main: kit: entity: manga: {
+
+  alias: field: {}
+
+  fields: {
+    approved: {
+      h: "Approved"
+      n: "approved"
+      r: false
+      sh: "Whether the entry is pending approval on MAL or not"
+      t: "`$BOOLEAN`"
+    }
+    authors: {
+      h: "Authors"
+      n: "authors"
+      r: false
+      t: "`$ARRAY`"
+    }
+    background: {
+      h: "Background"
+      n: "background"
+      r: false
+      sh: "Background"
+      t: "`$STRING`"
+    }
+    chapters: {
+      h: "Chapters"
+      n: "chapters"
+      r: false
+      sh: "Chapter count"
+      t: "`$INTEGER`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$ARRAY`"
+    }
+    demographics: {
+      h: "Demographics"
+      n: "demographics"
+      r: false
+      t: "`$ARRAY`"
+    }
+    explicit_genres: {
+      h: "Explicit Genres"
+      n: "explicit_genres"
+      r: false
+      t: "`$ARRAY`"
+    }
+    favorites: {
+      h: "Favorites"
+      n: "favorites"
+      r: false
+      sh: "Number of users who have favorited this entry"
+      t: "`$INTEGER`"
+    }
+    genres: {
+      h: "Genres"
+      n: "genres"
+      r: false
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    images: {
+      h: "Images"
+      n: "images"
+      r: false
+      t: "`$OBJECT`"
+    }
+    mal_id: {
+      h: "Mal Id"
+      n: "mal_id"
+      r: false
+      sh: "MyAnimeList ID"
+      t: "`$INTEGER`"
+    }
+    members: {
+      h: "Members"
+      n: "members"
+      r: false
+      sh: "Number of users who have added this entry to their list"
+      t: "`$INTEGER`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    popularity: {
+      h: "Popularity"
+      n: "popularity"
+      r: false
+      sh: "Popularity"
+      t: "`$INTEGER`"
+    }
+    published: {
+      h: "Published"
+      n: "published"
+      r: false
+      sh: "Date range"
+      t: "`$OBJECT`"
+    }
+    publishing: {
+      h: "Publishing"
+      n: "publishing"
+      r: false
+      sh: "Publishing boolean"
+      t: "`$BOOLEAN`"
+    }
+    rank: {
+      h: "Rank"
+      n: "rank"
+      r: false
+      sh: "Ranking"
+      t: "`$INTEGER`"
+    }
+    score: {
+      fo: "float"
+      h: "Score"
+      n: "score"
+      r: false
+      sh: "Score"
+      t: "`$NUMBER`"
+    }
+    scored_by: {
+      h: "Scored By"
+      n: "scored_by"
+      r: false
+      sh: "Number of users"
+      t: "`$INTEGER`"
+    }
+    serializations: {
+      h: "Serializations"
+      n: "serializations"
+      r: false
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Publishing status"
+      t: "`$STRING`"
+    }
+    synopsis: {
+      h: "Synopsis"
+      n: "synopsis"
+      r: false
+      sh: "Synopsis"
+      t: "`$STRING`"
+    }
+    themes: {
+      h: "Themes"
+      n: "themes"
+      r: false
+      t: "`$ARRAY`"
+    }
+    title: {
+      de: true
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Title"
+      t: "`$STRING`"
+    }
+    title_english: {
+      de: true
+      h: "Title English"
+      n: "title_english"
+      r: false
+      sh: "English Title"
+      t: "`$STRING`"
+    }
+    title_japanese: {
+      de: true
+      h: "Title Japanese"
+      n: "title_japanese"
+      r: false
+      sh: "Japanese Title"
+      t: "`$STRING`"
+    }
+    titles: {
+      h: "Titles"
+      n: "titles"
+      r: false
+      sh: "All Titles"
+      t: "`$ARRAY`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Manga Type"
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "MyAnimeList URL"
+      t: "`$STRING`"
+    }
+    volumes: {
+      h: "Volumes"
+      n: "volumes"
+      r: false
+      sh: "Volume count"
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "manga"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /manga"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "end_date"
+                or: "end_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "genre"
+                or: "genre"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "genres_exclude"
+                or: "genres_exclude"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "letter"
+                or: "letter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "magazine"
+                or: "magazine"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "max_score"
+                or: "max_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "min_score"
+                or: "min_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "score"
+                or: "score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "start_date"
+                or: "start_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "unapproved"
+                or: "unapproved"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga"
+          q: {
+            exist: [
+              "end_date"
+              "genre"
+              "genres_exclude"
+              "letter"
+              "limit"
+              "magazine"
+              "max_score"
+              "min_score"
+              "order_by"
+              "page"
+              "q"
+              "score"
+              "sfw"
+              "sort"
+              "start_date"
+              "status"
+              "type"
+              "unapproved"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /top/manga"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/top/manga"
+          q: {
+            exist: [
+              "filter"
+              "limit"
+              "page"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "manga"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/reviews"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "preliminary"
+                or: "preliminary"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "spoiler"
+                or: "spoiler"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/reviews"
+          q: {
+            "$action": "review"
+            exist: [
+              "id"
+              "page"
+              "preliminary"
+              "spoiler"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reviews"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/forum"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/forum"
+          q: {
+            "$action": "forum"
+            exist: [
+              "filter"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "forum"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/news"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/news"
+          q: {
+            "$action": "new"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "news"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/userupdates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/userupdates"
+          q: {
+            "$action": "userupdate"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "userupdates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/characters"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/characters"
+          q: {
+            "$action": "character"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "characters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/external"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/external"
+          q: {
+            "$action": "external"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "external"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/pictures"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/pictures"
+          q: {
+            "$action": "picture"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/recommendations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/recommendations"
+          q: {
+            "$action": "recommendation"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "recommendations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/relations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/relations"
+          q: {
+            "$action": "relation"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /manga/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/full"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/full"
+          q: {
+            "$action": "full"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/moreinfo"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/moreinfo"
+          q: {
+            "$action": "moreinfo"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "moreinfo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /manga/{id}/statistics"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/manga/{id}/statistics"
+          q: {
+            "$action": "statistic"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "manga"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "statistics"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

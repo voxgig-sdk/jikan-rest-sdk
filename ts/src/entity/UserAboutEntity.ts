@@ -19,7 +19,6 @@ import type {
   UserAboutListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class UserAboutEntity extends JikanRestEntityBase<UserAbout> {
 
   constructor(client: JikanRestSDK, entopts: any) {

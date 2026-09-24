@@ -431,6 +431,24 @@ class JikanRestSDK
     }
 
 
+    private $_history = null;
+
+    // Canonical facade: $client->History()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->history()
+    // resolves here too.
+    public function History($data = null)
+    {
+        require_once __DIR__ . '/entity/history_entity.php';
+        if ($data === null) {
+            if ($this->_history === null) {
+                $this->_history = new HistoryEntity($this, null);
+            }
+            return $this->_history;
+        }
+        return new HistoryEntity($this, $data);
+    }
+
+
     private $_magazine = null;
 
     // Canonical facade: $client->Magazine()->list() / ->load(["id" => ...]).
@@ -698,24 +716,6 @@ class JikanRestSDK
             return $this->_user_friend;
         }
         return new UserFriendEntity($this, $data);
-    }
-
-
-    private $_user_history = null;
-
-    // Canonical facade: $client->UserHistory()->list() / ->load(["id" => ...]).
-    // PHP method names are case-insensitive, so lowercase $client->user_history()
-    // resolves here too.
-    public function UserHistory($data = null)
-    {
-        require_once __DIR__ . '/entity/user_history_entity.php';
-        if ($data === null) {
-            if ($this->_user_history === null) {
-                $this->_user_history = new UserHistoryEntity($this, null);
-            }
-            return $this->_user_history;
-        }
-        return new UserHistoryEntity($this, $data);
     }
 
 

@@ -1,0 +1,1479 @@
+# Entity: anime
+
+main: kit: entity: anime: {
+
+  alias: field: {}
+
+  fields: {
+    aired: {
+      h: "Aired"
+      n: "aired"
+      r: false
+      sh: "Aired Date ISO8601"
+      t: "`$STRING`"
+    }
+    airing: {
+      h: "Airing"
+      n: "airing"
+      r: false
+      sh: "Airing boolean"
+      t: "`$BOOLEAN`"
+    }
+    approved: {
+      h: "Approved"
+      n: "approved"
+      r: false
+      sh: "Whether the entry is pending approval on MAL or not"
+      t: "`$BOOLEAN`"
+    }
+    background: {
+      h: "Background"
+      n: "background"
+      r: false
+      sh: "Background"
+      t: "`$STRING`"
+    }
+    broadcast: {
+      h: "Broadcast"
+      n: "broadcast"
+      r: false
+      sh: "Broadcast Details"
+      t: "`$OBJECT`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$ARRAY`"
+    }
+    demographics: {
+      h: "Demographics"
+      n: "demographics"
+      r: false
+      t: "`$ARRAY`"
+    }
+    duration: {
+      h: "Duration"
+      n: "duration"
+      r: false
+      sh: "Episode duration in seconds"
+      t: "`$INTEGER`"
+    }
+    episodes: {
+      h: "Episodes"
+      n: "episodes"
+      r: false
+      sh: "Episode count"
+      t: "`$INTEGER`"
+    }
+    explicit_genres: {
+      h: "Explicit Genres"
+      n: "explicit_genres"
+      r: false
+      t: "`$ARRAY`"
+    }
+    favorites: {
+      h: "Favorites"
+      n: "favorites"
+      r: false
+      sh: "Number of users who have favorited this entry"
+      t: "`$INTEGER`"
+    }
+    filler: {
+      h: "Filler"
+      n: "filler"
+      r: false
+      sh: "Filler episode"
+      t: "`$BOOLEAN`"
+    }
+    genres: {
+      h: "Genres"
+      n: "genres"
+      r: false
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    images: {
+      h: "Images"
+      n: "images"
+      r: false
+      t: "`$OBJECT`"
+    }
+    licensors: {
+      h: "Licensors"
+      n: "licensors"
+      r: false
+      t: "`$ARRAY`"
+    }
+    mal_id: {
+      h: "Mal Id"
+      n: "mal_id"
+      r: false
+      sh: "MyAnimeList ID"
+      t: "`$INTEGER`"
+    }
+    members: {
+      h: "Members"
+      n: "members"
+      r: false
+      sh: "Number of users who have added this entry to their list"
+      t: "`$INTEGER`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+    popularity: {
+      h: "Popularity"
+      n: "popularity"
+      r: false
+      sh: "Popularity"
+      t: "`$INTEGER`"
+    }
+    producers: {
+      h: "Producers"
+      n: "producers"
+      r: false
+      t: "`$ARRAY`"
+    }
+    rank: {
+      h: "Rank"
+      n: "rank"
+      r: false
+      sh: "Ranking"
+      t: "`$INTEGER`"
+    }
+    rating: {
+      h: "Rating"
+      n: "rating"
+      r: false
+      sh: "Anime audience rating"
+      t: "`$STRING`"
+    }
+    recap: {
+      h: "Recap"
+      n: "recap"
+      r: false
+      sh: "Recap episode"
+      t: "`$BOOLEAN`"
+    }
+    score: {
+      fo: "float"
+      h: "Score"
+      n: "score"
+      r: false
+      sh: "Score"
+      t: "`$NUMBER`"
+    }
+    scored_by: {
+      h: "Scored By"
+      n: "scored_by"
+      r: false
+      sh: "Number of users"
+      t: "`$INTEGER`"
+    }
+    season: {
+      h: "Season"
+      n: "season"
+      r: false
+      sh: "Season"
+      t: "`$STRING`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: false
+      sh: "Original Material/Source adapted from"
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Airing status"
+      t: "`$STRING`"
+    }
+    studios: {
+      h: "Studios"
+      n: "studios"
+      r: false
+      t: "`$ARRAY`"
+    }
+    synopsis: {
+      h: "Synopsis"
+      n: "synopsis"
+      r: false
+      sh: "Episode Synopsis"
+      t: "`$STRING`"
+    }
+    themes: {
+      h: "Themes"
+      n: "themes"
+      r: false
+      t: "`$ARRAY`"
+    }
+    title: {
+      de: true
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "Title"
+      t: "`$STRING`"
+    }
+    title_english: {
+      de: true
+      h: "Title English"
+      n: "title_english"
+      r: false
+      sh: "English Title"
+      t: "`$STRING`"
+    }
+    title_japanese: {
+      de: true
+      h: "Title Japanese"
+      n: "title_japanese"
+      r: false
+      sh: "Title Japanese"
+      t: "`$STRING`"
+    }
+    title_romanji: {
+      h: "Title Romanji"
+      n: "title_romanji"
+      r: false
+      sh: "title_romanji"
+      t: "`$STRING`"
+    }
+    title_synonyms: {
+      de: true
+      h: "Title Synonyms"
+      n: "title_synonyms"
+      r: false
+      sh: "Other Titles"
+      t: "`$ARRAY`"
+    }
+    titles: {
+      h: "Titles"
+      n: "titles"
+      r: false
+      sh: "All titles"
+      t: "`$ARRAY`"
+    }
+    trailer: {
+      h: "Trailer"
+      n: "trailer"
+      r: false
+      sh: "Youtube Details"
+      t: "`$OBJECT`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Anime Type"
+      t: "`$STRING`"
+    }
+    url: {
+      h: "Url"
+      n: "url"
+      r: false
+      sh: "MyAnimeList URL"
+      t: "`$STRING`"
+    }
+    year: {
+      h: "Year"
+      n: "year"
+      r: false
+      sh: "Year"
+      t: "`$INTEGER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "anime"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /anime"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "end_date"
+                or: "end_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "genre"
+                or: "genre"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "genres_exclude"
+                or: "genres_exclude"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "letter"
+                or: "letter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "max_score"
+                or: "max_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "min_score"
+                or: "min_score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "producer"
+                or: "producer"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "q"
+                or: "q"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "rating"
+                or: "rating"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "score"
+                or: "score"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "sort"
+                or: "sort"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "start_date"
+                or: "start_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "unapproved"
+                or: "unapproved"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime"
+          q: {
+            exist: [
+              "end_date"
+              "genre"
+              "genres_exclude"
+              "letter"
+              "limit"
+              "max_score"
+              "min_score"
+              "order_by"
+              "page"
+              "producer"
+              "q"
+              "rating"
+              "score"
+              "sfw"
+              "sort"
+              "start_date"
+              "status"
+              "type"
+              "unapproved"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /top/anime"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "rating"
+                or: "rating"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "sfw"
+                or: "sfw"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "type"
+                or: "type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/top/anime"
+          q: {
+            exist: [
+              "filter"
+              "limit"
+              "page"
+              "rating"
+              "sfw"
+              "type"
+            ]
+          }
+          s: [
+            {
+              lit: "top"
+            }
+            {
+              lit: "anime"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/reviews"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "preliminary"
+                or: "preliminary"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "spoiler"
+                or: "spoiler"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/reviews"
+          q: {
+            "$action": "review"
+            exist: [
+              "id"
+              "page"
+              "preliminary"
+              "spoiler"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "reviews"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/episodes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/episodes"
+          q: {
+            "$action": "episode"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "episodes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/forum"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/forum"
+          q: {
+            "$action": "forum"
+            exist: [
+              "filter"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "forum"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/news"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/news"
+          q: {
+            "$action": "new"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "news"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/userupdates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/userupdates"
+          q: {
+            "$action": "userupdate"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "userupdates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/videos/episodes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/videos/episodes"
+          q: {
+            "$action": "video_episode"
+            exist: [
+              "id"
+              "page"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "videos"
+            }
+            {
+              lit: "episodes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/characters"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/characters"
+          q: {
+            "$action": "character"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "characters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/external"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/external"
+          q: {
+            "$action": "external"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "external"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/pictures"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/pictures"
+          q: {
+            "$action": "picture"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "pictures"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/recommendations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/recommendations"
+          q: {
+            "$action": "recommendation"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "recommendations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/relations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/relations"
+          q: {
+            "$action": "relation"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/staff"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/staff"
+          q: {
+            "$action": "staff"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "staff"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/streaming"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/streaming"
+          q: {
+            "$action": "streaming"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "streaming"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /anime/{id}/episodes/{episode}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "episode"
+                or: "episode"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/episodes/{episode}"
+          q: {
+            exist: [
+              "episode"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "episodes"
+            }
+            {
+              var: "episode"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/full"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/full"
+          q: {
+            "$action": "full"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "full"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/moreinfo"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/moreinfo"
+          q: {
+            "$action": "moreinfo"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "moreinfo"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/statistics"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/statistics"
+          q: {
+            "$action": "statistic"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "statistics"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/themes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/themes"
+          q: {
+            "$action": "theme"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "themes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /anime/{id}/videos"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/anime/{id}/videos"
+          q: {
+            "$action": "video"
+            exist: [
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "anime"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "videos"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

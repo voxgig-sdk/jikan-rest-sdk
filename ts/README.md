@@ -47,18 +47,17 @@ for (const anime of animes) {
 }
 ```
 
-### 3. Load a season
+### 3. Load an userstatistic
 
-Season is nested under season, so provide the `season`.
+UserStatistic is nested under username, so provide the `username`.
 `load()` returns the entity directly and throws on failure:
 
 ```ts
 try {
-  const season = await client.Season().load({
-    season: 'example_season',
-    year: 1,
+  const userstatistic = await client.UserStatistic().load({
+    username: 'example_username',
   })
-  console.log(season)
+  console.log(userstatistic)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -244,6 +243,7 @@ new JikanRestSDK(options?: {
 | `Club(data?)` | `ClubEntity` | Create a Club entity instance. |
 | `External(data?)` | `ExternalEntity` | Create an External entity instance. |
 | `Genre(data?)` | `GenreEntity` | Create a Genre entity instance. |
+| `History(data?)` | `HistoryEntity` | Create a History entity instance. |
 | `Magazine(data?)` | `MagazineEntity` | Create a Magazine entity instance. |
 | `Manga(data?)` | `MangaEntity` | Create a Manga entity instance. |
 | `PeopleSearch(data?)` | `PeopleSearchEntity` | Create a PeopleSearch entity instance. |
@@ -259,7 +259,6 @@ new JikanRestSDK(options?: {
 | `UserAbout(data?)` | `UserAboutEntity` | Create an UserAbout entity instance. |
 | `UserClub(data?)` | `UserClubEntity` | Create an UserClub entity instance. |
 | `UserFriend(data?)` | `UserFriendEntity` | Create an UserFriend entity instance. |
-| `UserHistory(data?)` | `UserHistoryEntity` | Create an UserHistory entity instance. |
 | `UserStatistic(data?)` | `UserStatisticEntity` | Create an UserStatistic entity instance. |
 | `UserUpdate(data?)` | `UserUpdateEntity` | Create an UserUpdate entity instance. |
 | `WatchEpisode(data?)` | `WatchEpisodeEntity` | Create a WatchEpisode entity instance. |
@@ -445,6 +444,18 @@ API path: `/users/{username}/external`
 Operations: list.
 
 API path: `/genres/anime`
+
+#### History
+
+| Field | Description |
+| --- | --- |
+| `date` | Date ISO8601 |
+| `entry` | Parsed URL Data |
+| `increment` | Number of episodes/chapters watched/read |
+
+Operations: list.
+
+API path: `/users/{username}/history`
 
 #### Magazine
 
@@ -666,18 +677,6 @@ API path: `/users/{username}/clubs`
 Operations: list.
 
 API path: `/users/{username}/friends`
-
-#### UserHistory
-
-| Field | Description |
-| --- | --- |
-| `date` | Date ISO8601 |
-| `entry` | Parsed URL Data |
-| `increment` | Number of episodes/chapters watched/read |
-
-Operations: list.
-
-API path: `/users/{username}/history`
 
 #### UserStatistic
 
@@ -926,6 +925,31 @@ Create an instance: `const genre = client.Genre()`
 
 ```ts
 const genres = await client.Genre().list()
+```
+
+
+### History
+
+Create an instance: `const history = client.History()`
+
+#### Operations
+
+| Method | Description |
+| --- | --- |
+| `list(match)` | List entities matching the criteria. |
+
+#### Fields
+
+| Field | Type | Description |
+| --- | --- | --- |
+| `date` | `string` | Date ISO8601 |
+| `entry` | `Record<string, any>` | Parsed URL Data |
+| `increment` | `number` | Number of episodes/chapters watched/read |
+
+#### Example: List
+
+```ts
+const historys = await client.History().list({ username: "example" })
 ```
 
 
@@ -1362,31 +1386,6 @@ Create an instance: `const user_friend = client.UserFriend()`
 
 ```ts
 const user_friends = await client.UserFriend().list({ username: "example" })
-```
-
-
-### UserHistory
-
-Create an instance: `const user_history = client.UserHistory()`
-
-#### Operations
-
-| Method | Description |
-| --- | --- |
-| `list(match)` | List entities matching the criteria. |
-
-#### Fields
-
-| Field | Type | Description |
-| --- | --- | --- |
-| `date` | `string` | Date ISO8601 |
-| `entry` | `Record<string, any>` | Parsed URL Data |
-| `increment` | `number` | Number of episodes/chapters watched/read |
-
-#### Example: List
-
-```ts
-const user_historys = await client.UserHistory().list({ username: "example" })
 ```
 
 

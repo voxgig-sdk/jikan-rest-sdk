@@ -174,7 +174,7 @@ Meta-commands use the `/` prefix (everything else on a line is evaluated as boru
 
 The 25 entities this SDK exposes (any is valid as `<entity>`):
 
-anime character club external genre magazine manga people_search person producer random recommendation review schedule season top user user_about user_club user_friend user_history user_statistic user_update watch_episode watch_promo
+anime character club external genre history magazine manga people_search person producer random recommendation review schedule season top user user_about user_club user_friend user_statistic user_update watch_episode watch_promo
 
 ## Explanation
 

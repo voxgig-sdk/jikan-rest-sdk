@@ -5,6 +5,7 @@ import { CharacterEntity } from './entity/CharacterEntity'
 import { ClubEntity } from './entity/ClubEntity'
 import { ExternalEntity } from './entity/ExternalEntity'
 import { GenreEntity } from './entity/GenreEntity'
+import { HistoryEntity } from './entity/HistoryEntity'
 import { MagazineEntity } from './entity/MagazineEntity'
 import { MangaEntity } from './entity/MangaEntity'
 import { PeopleSearchEntity } from './entity/PeopleSearchEntity'
@@ -20,7 +21,6 @@ import { UserEntity } from './entity/UserEntity'
 import { UserAboutEntity } from './entity/UserAboutEntity'
 import { UserClubEntity } from './entity/UserClubEntity'
 import { UserFriendEntity } from './entity/UserFriendEntity'
-import { UserHistoryEntity } from './entity/UserHistoryEntity'
 import { UserStatisticEntity } from './entity/UserStatisticEntity'
 import { UserUpdateEntity } from './entity/UserUpdateEntity'
 import { WatchEpisodeEntity } from './entity/WatchEpisodeEntity'
@@ -148,7 +148,6 @@ class JikanRestSDK {
 
     const options = this._options
 
-    // Build spec directly from SDK options + user-provided fetch args.
     const spec: any = {
       base: options.base,
       prefix: options.prefix,
@@ -164,7 +163,6 @@ class JikanRestSDK {
 
     ctx.spec = spec
 
-    // Merge user-provided headers over SDK defaults.
     if (fetchargs.headers) {
       const uheaders = fetchargs.headers
       for (let key in uheaders) {
@@ -174,7 +172,6 @@ class JikanRestSDK {
 
     
 
-    // Apply SDK auth (apikey, auth prefix, etc.)
     const authResult = prepareAuth(ctx)
     if (authResult instanceof Error) {
       return authResult
@@ -267,18 +264,6 @@ class JikanRestSDK {
 
 
 
-  // Raw GraphQL access: the pressure valve that makes the generated
-  // surface's deliberate omissions (per-call selection sets, typed filter
-  // builders, batching, subscriptions) livable — the whole schema stays
-  // reachable.
-  //
-  // Thin wrapper over the same prepare/fetch path `direct` uses, with the
-  // one thing raw `direct` cannot do for GraphQL: a GraphQL failure rides
-  // HTTP 200 as a top-level `errors` array, so status alone would report a
-  // failed query as ok.
-  //
-  // NOTE: like `direct`, this bypasses the feature pipeline — no retry,
-  // ratelimit or paging features apply.
   async graphql(query: string, variables?: any, ctrl?: any) {
     const options = this._options
 
@@ -363,6 +348,15 @@ class JikanRestSDK {
   Genre(entopts?: Record<string, any>) {
     const self = this
     return new GenreEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.History().list()` / `client.History().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  History(entopts?: Record<string, any>) {
+    const self = this
+    return new HistoryEntity(self, entopts)
   }
 
 
@@ -498,15 +492,6 @@ class JikanRestSDK {
   UserFriend(entopts?: Record<string, any>) {
     const self = this
     return new UserFriendEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UserHistory().list()` / `client.UserHistory().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UserHistory(entopts?: Record<string, any>) {
-    const self = this
-    return new UserHistoryEntity(self, entopts)
   }
 
 

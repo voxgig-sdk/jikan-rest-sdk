@@ -19,7 +19,6 @@ import type {
   GenreListMatch,
 } from '../JikanRestTypes'
 
-// TODO: needs Entity superclass
 class GenreEntity extends JikanRestEntityBase<Genre> {
 
   constructor(client: JikanRestSDK, entopts: any) {

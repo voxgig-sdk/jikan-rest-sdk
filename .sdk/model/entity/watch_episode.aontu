@@ -1,0 +1,78 @@
+# Entity: watch_episode
+
+main: kit: entity: watch_episode: {
+
+  alias: field: {}
+
+  fields: {
+    data: {
+      h: "Data"
+      n: "data"
+      r: false
+      t: "`$ARRAY`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "watch_episode"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /watch/episodes"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/watch/episodes"
+          s: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "episodes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /watch/episodes/popular"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/watch/episodes/popular"
+          s: [
+            {
+              lit: "watch"
+            }
+            {
+              lit: "episodes"
+            }
+            {
+              lit: "popular"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

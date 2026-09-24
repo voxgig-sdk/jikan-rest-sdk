@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 // Typed models for the JikanRest SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 //
@@ -184,6 +184,21 @@ class Genre
 class GenreListMatch
 {
     public ?string $filter = null;
+}
+
+/** History entity data model. */
+class History
+{
+    public ?string $date = null;
+    public ?array $entry = null;
+    public ?int $increment = null;
+}
+
+/** Request payload for History#list. */
+class HistoryListMatch
+{
+    public string $username;
+    public ?string $type = null;
 }
 
 /** Magazine entity data model. */
@@ -527,21 +542,6 @@ class UserFriendListMatch
 {
     public string $username;
     public ?int $page = null;
-}
-
-/** UserHistory entity data model. */
-class UserHistory
-{
-    public ?string $date = null;
-    public ?array $entry = null;
-    public ?int $increment = null;
-}
-
-/** Request payload for UserHistory#list. */
-class UserHistoryListMatch
-{
-    public string $username;
-    public ?string $type = null;
 }
 
 /** UserStatistic entity data model. */

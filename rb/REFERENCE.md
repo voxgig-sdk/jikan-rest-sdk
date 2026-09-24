@@ -61,6 +61,10 @@ Create a new `External` entity instance. Pass `nil` for no initial data.
 
 Create a new `Genre` entity instance. Pass `nil` for no initial data.
 
+#### `History(data = nil)`
+
+Create a new `History` entity instance. Pass `nil` for no initial data.
+
 #### `Magazine(data = nil)`
 
 Create a new `Magazine` entity instance. Pass `nil` for no initial data.
@@ -120,10 +124,6 @@ Create a new `UserClub` entity instance. Pass `nil` for no initial data.
 #### `UserFriend(data = nil)`
 
 Create a new `UserFriend` entity instance. Pass `nil` for no initial data.
-
-#### `UserHistory(data = nil)`
-
-Create a new `UserHistory` entity instance. Pass `nil` for no initial data.
 
 #### `UserStatistic(data = nil)`
 
@@ -519,6 +519,60 @@ Set the entity match criteria.
 #### `make -> Entity`
 
 Create a new `GenreEntity` instance with the same client and
+options.
+
+#### `get_name -> String`
+
+Return the entity name.
+
+
+---
+
+## HistoryEntity
+
+```ruby
+history = client.History
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `date` | `String` | No | Date ISO8601 |
+| `entry` | `Hash` | No | Parsed URL Data |
+| `increment` | `Integer` | No | Number of episodes/chapters watched/read |
+
+### Operations
+
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
+
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
+
+```ruby
+results = client.History.list
+```
+
+### Common Methods
+
+#### `data_get -> Hash`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get -> Hash`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make -> Entity`
+
+Create a new `HistoryEntity` instance with the same client and
 options.
 
 #### `get_name -> String`
@@ -1395,60 +1449,6 @@ Set the entity match criteria.
 #### `make -> Entity`
 
 Create a new `UserFriendEntity` instance with the same client and
-options.
-
-#### `get_name -> String`
-
-Return the entity name.
-
-
----
-
-## UserHistoryEntity
-
-```ruby
-user_history = client.UserHistory
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `date` | `String` | No | Date ISO8601 |
-| `entry` | `Hash` | No | Parsed URL Data |
-| `increment` | `Integer` | No | Number of episodes/chapters watched/read |
-
-### Operations
-
-#### `list(reqmatch = nil, ctrl = nil) -> Array`
-
-List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
-
-```ruby
-results = client.UserHistory.list
-```
-
-### Common Methods
-
-#### `data_get -> Hash`
-
-Get the entity data. Returns a copy of the current data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get -> Hash`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make -> Entity`
-
-Create a new `UserHistoryEntity` instance with the same client and
 options.
 
 #### `get_name -> String`
